@@ -1,0 +1,24 @@
+.cardProduct{
+    text-align: center;
+    margin:6%;
+    border-radius:4px;
+    box-shadow: 5px 5px 5px rgb(228, 228, 228)
+    
+}
+.nameProduct{
+    font-weight:900;
+}
+.imageProduct{
+    width:100%;
+    border-radius:4px;
+    height:300px;
+    object-fit: cover;
+    opacity:0.9;
+}
+.test{
+    background-color:red;
+    margin:0px;
+}
+/* .productImgDescription{
+    height:500px;
+} */
