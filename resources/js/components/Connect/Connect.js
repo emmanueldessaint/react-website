@@ -26,12 +26,12 @@ import {
     marginTopBanner: {
     "margin-top":"170px;",
     
-    "width":"80%",
+    "width":"70%",
     "margin-left":"auto",
     "margin-right":"auto",
     },
     button: {
-        
+        "margin-top":"30px",
         // height:50,
     },
     greyLine: {
@@ -56,7 +56,7 @@ export default function Connect(props) {
 
     return (
         <div className={classes.marginTopBanner}>
-            <Grid container spacing={8}>
+            <Grid container justifyContent="center" spacing={8}>
                 <Grid item  xs={12} sm={6}>
                     <Box
                     >
@@ -89,11 +89,7 @@ export default function Connect(props) {
                 </Grid>
                 <Grid item  xs={12} sm={6}>
                     <h3>Nouveau Client ?</h3>
-                    <TextField
                     
-                    margin="normal"
-                    fullWidth
-                    label="Votre adresse mail"></TextField>
 
                     <Link to="/signup" className="item" className={classes.routerDecoration}>
                         

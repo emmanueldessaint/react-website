@@ -22,34 +22,38 @@ import {
     Switch,
     Route,
     Link
-  } from "react-router-dom";
+} from "react-router-dom";
 
-  const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(theme => ({
     marginTopBanner: {
-    "margin-top":"170px;",
-    
-    "width":"80%",
-    "margin-left":"auto",
-    "margin-right":"auto",
+        "margin-top": "170px;",
+
+        "width": "80%",
+        "margin-left": "auto",
+        "margin-right": "auto",
     },
     button: {
-        
+
         // height:50,
     },
     greyLine: {
-        height:1,
-        "width":"99%",
-        "margin-left":"auto",
-        "margin-right":"auto",
-        "background-color":"grey",
-        marginTop:10,
+        height: 1,
+        "width": "99%",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "background-color": "grey",
+        marginTop: 10,
     },
     forgotPassword: {
-        "display":"flex",
-        "justify-content":"center",
+        "display": "flex",
+        "justify-content": "center",
 
+    },
+    spaceMargin: {
+        "margin-left": "10%",
+        "margin-right": "10%",
     }
-    
+
 }));
 
 export default function Signup(props) {
@@ -58,100 +62,101 @@ export default function Signup(props) {
 
     return (
         <div className={classes.marginTopBanner}>
-            <Grid   >
-                
-                    <h2>Créer mon compte</h2>
-                   
-                        <Grid container spacing={4} >
-                            <Grid item xs={6}>
-                                <TextField 
-                                    margin="normal"
-                                    variant="outlined"
-                                    fullWidth
-                                    label="Votre prénom"
-                                >                                             
-                                </TextField>
-                            </Grid >  
-                            <Grid item xs={6}>
-                                <TextField
-                                    margin="normal"
-                                    variant="outlined"
-                                    fullWidth
-                                    label="Votre prénom"
-                                >                        
-                                </TextField>
-                            </Grid>
-                        </Grid>
+            <Grid container justifyContent="center"  >
 
-                        <Grid container spacing={4} >
-                            <Grid item xs={6}>
-                                <TextField 
-                                    margin="normal"
-                                    variant="outlined"
-                                    fullWidth
-                                    label="Votre email"
-                                >                                             
-                                </TextField>
-                            </Grid >  
-                            <Grid container  item xs={6}>
-                                <Grid item xs={4}>
-                                    <TextField 
-                                        margin="normal"
-                                        variant="outlined"
-                                        fullWidth
-                                        label="Votre email"
-                                    >                                             
-                                    </TextField>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <TextField 
-                                        margin="normal"
-                                        variant="outlined"
-                                        fullWidth
-                                        label="Votre email"
-                                    >                                             
-                                    </TextField>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <TextField 
-                                        margin="normal"
-                                        variant="outlined"
-                                        fullWidth
-                                        label="Votre email"
-                                    >                                             
-                                    </TextField>
-                                </Grid>
-                            </Grid >                            
-                        </Grid> 
-                        <Grid container spacing={4}>
-                            <Grid item xs={12}>
-                                <TextField     
-                                    margin="normal"                                    
-                                    variant="outlined"
-                                    fullWidth
-                                    label="Votre mot de passe"
-                                >                                             
-                                </TextField>
-                            </Grid>
-                        </Grid>   
-                        <Grid className="pt-2">
-                            <FormControlLabel control={<Checkbox />} label="I accept to receive the newsletters from amazingBikes" />                                                                                      
+                <Grid item xs={12} sm={10} md={8} container>
+                    <h2>Créer mon compte</h2>
+                </Grid>
+                <Grid item xs={12} sm={10} md={8} container spacing={4} >
+                    <Grid item xs={6}>
+                        <TextField
+                            margin="normal"
+                            variant="outlined"
+                            fullWidth
+                            label="Votre prénom"
+                        >
+                        </TextField>
+                    </Grid >
+                    <Grid item xs={6}>
+                        <TextField
+                            margin="normal"
+                            variant="outlined"
+                            fullWidth
+                            label="Votre prénom"
+                        >
+                        </TextField>
+                    </Grid>
+                </Grid>
+
+                <Grid item xs={12} sm={10} md={8} container spacing={4} >
+                    <Grid item xs={6}>
+                        <TextField
+                            margin="normal"
+                            variant="outlined"
+                            fullWidth
+                            label="Votre email"
+                        >
+                        </TextField>
+                    </Grid >
+                    <Grid container item xs={6}>
+                        <Grid item xs={4}>
+                            <TextField
+                                margin="normal"
+                                variant="outlined"
+                                fullWidth
+                                label="Votre email"
+                            >
+                            </TextField>
                         </Grid>
-                        <Grid>
-                            <FormControlLabel control={<Checkbox />} label="I accept the general conditions" /> 
+                        <Grid item xs={4}>
+                            <TextField
+                                margin="normal"
+                                variant="outlined"
+                                fullWidth
+                                label="Votre email"
+                            >
+                            </TextField>
                         </Grid>
-                        <Grid className="pt-5" container spacing={4}>
-                            <Grid item xs={12}>
-                                <Button 
-                                    margin="normal" 
-                                    variant="contained" 
-                                    fullWidth
-                                >
-                                    Create account
-                                </Button>
-                            </Grid>
-                        </Grid>                                                                                        
-                
+                        <Grid item xs={4}>
+                            <TextField
+                                margin="normal"
+                                variant="outlined"
+                                fullWidth
+                                label="Votre email"
+                            >
+                            </TextField>
+                        </Grid>
+                    </Grid >
+                </Grid>
+                <Grid item xs={12} sm={10} md={8} container spacing={4}>
+                    <Grid item xs={12}>
+                        <TextField
+                            margin="normal"
+                            variant="outlined"
+                            fullWidth
+                            label="Votre mot de passe"
+                        >
+                        </TextField>
+                    </Grid>
+                </Grid>
+                <Grid item xs={12} sm={10} md={8} container spacing={4} className="pt-4">
+                    <FormControlLabel control={<Checkbox />} label="I accept to receive the newsletters from amazingBikes" />
+                </Grid>
+                <Grid item xs={12} sm={10} md={8} container spacing={4} className="pt-4">
+                    <FormControlLabel control={<Checkbox />} label="I accept the general conditions" />
+                </Grid>
+                <Grid item xs={12} sm={10} md={8} container spacing={4} className="pt-5" >
+                    <Grid item xs={12}>
+                        <Button
+                            margin="normal"
+                            variant="contained"
+                            fullWidth
+                        >
+                            Create account
+                        </Button>
+                    </Grid>
+                </Grid>
+
             </Grid>
         </div>
     )

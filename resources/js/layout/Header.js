@@ -119,14 +119,14 @@ HideOnScroll.propTypes = {
                   </Grid>
                   <Grid container spacing={2} justifyContent="center" className={classes.routerDecoration}>
                     <Grid item xs={2} >
-                      <Link to="/products"  >
-                        <h4>Our products</h4>
+                      <Link to="/"  >
+                        <h4>Home</h4>
                       </Link>
                     </Grid>
                     
                     <Grid item xs={2} >
                       <Link to="/products"  >
-                        <h4>Best deals</h4>
+                        <h4>Catalog</h4>
                       </Link>
                     </Grid>
 

@@ -26960,11 +26960,13 @@ var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_3__["default"])(
   return {
     marginTopBanner: {
       "margin-top": "170px;",
-      "width": "80%",
+      "width": "70%",
       "margin-left": "auto",
       "margin-right": "auto"
     },
-    button: {// height:50,
+    button: {
+      "margin-top": "30px" // height:50,
+
     },
     greyLine: {
       height: 1,
@@ -26988,6 +26990,7 @@ function Connect(props) {
     className: classes.marginTopBanner,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
       container: true,
+      justifyContent: "center",
       spacing: 8,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
         item: true,
@@ -27024,10 +27027,6 @@ function Connect(props) {
         sm: 6,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
           children: "Nouveau Client ?"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_6__["default"], {
-          margin: "normal",
-          fullWidth: true,
-          label: "Votre adresse mail"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, (_jsx2 = {
           to: "/signup",
           className: "item"
@@ -27109,6 +27108,10 @@ var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_3__["default"])(
     forgotPassword: {
       "display": "flex",
       "justify-content": "center"
+    },
+    spaceMargin: {
+      "margin-left": "10%",
+      "margin-right": "10%"
     }
   };
 });
@@ -27117,9 +27120,22 @@ function Signup(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: classes.marginTopBanner,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-        children: "Cr\xE9er mon compte"
+      container: true,
+      justifyContent: "center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        item: true,
+        xs: 12,
+        sm: 10,
+        md: 8,
+        container: true,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Cr\xE9er mon compte"
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        item: true,
+        xs: 12,
+        sm: 10,
+        md: 8,
         container: true,
         spacing: 4,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -27142,6 +27158,10 @@ function Signup(props) {
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        item: true,
+        xs: 12,
+        sm: 10,
+        md: 8,
         container: true,
         spacing: 4,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -27187,6 +27207,10 @@ function Signup(props) {
           })]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        item: true,
+        xs: 12,
+        sm: 10,
+        md: 8,
         container: true,
         spacing: 4,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -27200,20 +27224,37 @@ function Signup(props) {
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        className: "pt-2",
+        item: true,
+        xs: 12,
+        sm: 10,
+        md: 8,
+        container: true,
+        spacing: 4,
+        className: "pt-4",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
           control: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Checkbox__WEBPACK_IMPORTED_MODULE_7__["default"], {}),
           label: "I accept to receive the newsletters from amazingBikes"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        item: true,
+        xs: 12,
+        sm: 10,
+        md: 8,
+        container: true,
+        spacing: 4,
+        className: "pt-4",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
           control: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Checkbox__WEBPACK_IMPORTED_MODULE_7__["default"], {}),
           label: "I accept the general conditions"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        className: "pt-5",
+        item: true,
+        xs: 12,
+        sm: 10,
+        md: 8,
         container: true,
         spacing: 4,
+        className: "pt-5",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__["default"], {
           item: true,
           xs: 12,
@@ -28361,9 +28402,9 @@ function Header(props) {
                 item: true,
                 xs: 2,
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Link, {
-                  to: "/products",
+                  to: "/",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h4", {
-                    children: "Our products"
+                    children: "Home"
                   })
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -28372,7 +28413,7 @@ function Header(props) {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Link, {
                   to: "/products",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h4", {
-                    children: "Best deals"
+                    children: "Catalog"
                   })
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
