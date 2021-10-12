@@ -34,6 +34,10 @@ import {
   const useStyles = makeStyles(theme => ({
     marginTop: {
         marginTop: 200,
+    },
+    productImgDescription: {
+        height:500,
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     }
     
 }));
@@ -66,7 +70,7 @@ export default function Product(props) {
         <Container className={classes.marginTop}>
             <Grid container justifyContent="center" spacing={4}>               
                     <Grid item xs={12} sm={6} >
-                        <Paper className="productImgDescription"></Paper>
+                        <Paper className={classes.productImgDescription}></Paper>
                     </Grid>
                     <Grid item xs={12} sm={5}>
                         <h2>{product.name}</h2>

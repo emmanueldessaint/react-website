@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
-// import Rating from '@material-ui/core/Rating';
+import Rating from '@mui/material/Rating';
 import Typography from '@material-ui/core/Typography';
 
 import Container from '@material-ui/core/Container';
@@ -19,9 +19,6 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { styled } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
-
-
-
 
 
 import {
@@ -47,7 +44,6 @@ import {
     testProduit: {
         backgroundColor: 'black',
     },
-    
 }));
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -67,10 +63,15 @@ export default function Home() {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
+        var promises = [];
+        // promises.push();
         fetch("http://localhost:8000/api/reviews")
+        // fetch("http://localhost:8000/api/average")
           .then(res => res.json())
+          
           .then(
             (result) => {
+               
               setIsLoaded(true);
               setItems(result);
               console.log(result);
@@ -128,24 +129,33 @@ export default function Home() {
                 </Grid>
             </Grid>
             <h2 className="flexCenter">Ils ont vécu l'expérience</h2>
-            <Grid container spacing={2}>
+            <Grid className="pt-10" container spacing={6}>
                 <Grid item xs={3} className={classes.alignTitle}>
-                    <Item>truc</Item>
+                    <Grid container justifyContent="center">
+                        <div className="flexCenter"><span>4.86</span>/5</div>
+                        <div className="flexCenter mt-5"><h4 className="flexCenter">Based on purchases on AmazingSewing</h4></div>
+                        <Rating
+                            className="mt-5"
+                            name="simple-controlled"
+                            value={5}                                      
+                        /> 
+                    </Grid>
                 </Grid>
                 <Grid item xs={9} className={classes.alignTitle}  >
-                    <Grid container justifyContent="center">               
+                    <Grid container spacing={6} justifyContent="center">               
                         {items.map(item => (                    
                             <Grid
                                 item xs={3} 
                                 key={item.id}
                             >
                                 <div>
-                                    <div>{item.note}</div>
-                                    <div>{item.description.length < 100 ? item.description: item.description.substring(0, 70) + " . . ."}</div>
-                                    <div>
-                                        
-                                    </div>
-                                    <div>{item.title}</div>
+                                    <Rating
+                                        className="stars"
+                                        name="simple-controlled"
+                                        value={item.note}                                      
+                                    />                                 
+                                    <div className="mt-5">{item.description.length < 100 ? item.description: item.description.substring(0, 70) + " . . ."}</div>
+                                    <div className="mt-5">{item.title}</div>
                                 
                                 </div>
                                 

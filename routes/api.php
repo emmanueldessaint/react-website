@@ -28,3 +28,6 @@ Route::get('bestsellers', [ProductController::class, 'best']);
 Route::get('product/{id}', [ProductController::class, 'reviews']);
 
 Route::get('reviews', [ProductController::class, 'allreviews']);
+
+Route::get('average', [ProductController::class, 'reviewsAverage']);
+

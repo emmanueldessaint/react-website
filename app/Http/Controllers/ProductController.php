@@ -71,9 +71,17 @@ class ProductController extends Controller
     {
         $allreviews = ProductReviews::where('note', '>', 3)->inRandomOrder()->limit(4)->get();
         
+            return json_encode($allreviews);   
+    }
 
-            return json_encode($allreviews);
+    public function reviewsAverage() 
+    {
+        $reviewsAverage = ProductReviews::where('note', '<', 3)->inRandomOrder()->limit(4)->get();
         
+            return json_encode($reviewsAverage);   
+
+        
+           
     }
 
     public function reviews($id) 
