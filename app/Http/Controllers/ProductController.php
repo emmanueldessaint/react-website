@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Response;
 use App\Models\Product;
 use App\Models\ProductReviews;
 use Illuminate\Http\Request;
@@ -69,15 +70,13 @@ class ProductController extends Controller
 
     public function allreviews() 
     {
-        $allreviews = ProductReviews::where('note', '>', 3)->inRandomOrder()->limit(4)->get();
-        
-            return json_encode($allreviews);   
-    }
+        $allReviews = ProductReviews::where('note', '>', 3)->inRandomOrder()->limit(4)->get();
+        $reviewsAverage = ProductReviews::avg('note');
 
-    public function reviewsAverage() 
-    {
-        $reviewsAverage = ProductReviews::avg('note');  
-        return json_encode($reviewsAverage);       
+        return Response::json(array(
+            'allReviewss' => $allReviews,
+            'reviewsAverage' => $reviewsAverage
+        ));   
     }
 
     public function reviews($id) 
