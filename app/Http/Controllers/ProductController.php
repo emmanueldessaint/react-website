@@ -73,10 +73,10 @@ class ProductController extends Controller
         $allReviews = ProductReviews::where('note', '>', 3)->inRandomOrder()->limit(4)->get();
         $reviewsAverage = ProductReviews::avg('note');
 
-        return Response::json(array(
+        return response()->json([
             'allReviewss' => $allReviews,
             'reviewsAverage' => round($reviewsAverage, 2)
-        ));   
+        ]);   
     }
 
     public function reviews($id) 
