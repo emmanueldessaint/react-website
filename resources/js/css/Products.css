@@ -19,3 +19,72 @@
     background-color:red;
     margin:0px;
 }
+.greyLineMenuProduct{
+    height:1px;
+    background-color:rgb(218, 218, 218);
+    width:100%;
+    margin-top:15px;
+}
+.menuButton{
+    margin-left:40px;
+    padding-bottom:18px;
+    color:rgb(97, 97, 253);
+}
+.menuButton:hover{
+    cursor:pointer;
+    border-bottom:1px solid black;
+    color:rgb(160, 216, 30);
+}
+.paragraphMenuProduct{
+    text-justify: inherit;
+    padding:30px;
+}
+.menuDetailsProduct{
+    padding:80px;
+}
+.alignCenter{
+    display:flex;
+    align-items: center;
+}
+.greyButton{
+    background-color:rgb(243, 243, 243);
+}
+.greyButton:hover{
+    background-color:rgb(231, 231, 231);
+}
+.buttonAdd{
+    cursor:pointer;
+    border-top:1px solid rgb(207, 207, 207);
+    border-bottom:1px solid rgb(207, 207, 207);
+    width:50px;
+    height:30px;
+    font-weight: 600;
+}
+.buttonSubstract{
+    cursor:pointer;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    border:1px solid rgb(207, 207, 207);
+    width:50px;
+    height:30px;
+    font-weight: 600;
+}
+.quantityProduct{
+    border:1px solid rgb(207, 207, 207);
+    width:50px;
+    height:30px;
+    font-weight: 600;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    color:rgb(44, 44, 44);
+}
+.buttonAddToCart{
+    cursor:pointer;
+    border:1px solid rgb(207, 207, 207);
+    width:100%;
+    height:30px;
+    font-weight: 200;
+    border-radius:5px;
+    color:rgb(44, 44, 44);
+}
+

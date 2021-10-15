@@ -68,7 +68,7 @@ export default function Footer() {
                     </Grid>
                 </Grid>
             </div>
-            <div className="backgroundFooter">
+            <div className="backgroundFooter ">
                 <Container>
                 <div className="flexCenter pt-5 mt-2">
                     <YouTubeIcon className="m-3"/>
@@ -77,12 +77,12 @@ export default function Footer() {
                     <YouTubeIcon className="m-3"/>
                 </div>
                 <p className="widthP mt-4">  unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <div></div>
+                
                     <Grid container spacing={2} className="pt-4">
                         <Grid item md={3} xs={12} className={classes.alignTitle}>
                             <h1>AmazingBikes</h1>
                         </Grid>
-                        <Grid item md={9} xs={12} container spacing={2}>
+                        <Grid item md={9} xs={12} container spacing={2} >
                             <Grid item md={3} xs={6}>
                                 <h3>Amazing Bikes</h3>
                                 <ul className="ulFooter">

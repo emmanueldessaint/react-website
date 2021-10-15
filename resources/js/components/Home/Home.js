@@ -58,13 +58,18 @@ export default function Home() {
 
     const classes = useStyles();
 
+
+    const [truc1, setTruc1] = useState('');
+    const [truc2, setTruc2] = useState('');
+
+    const [resp, setResp] = useState('');
+
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        var promises = [];
-        // promises.push();
+        
         fetch("http://localhost:8000/api/reviews")
         // fetch("http://localhost:8000/api/average")
           .then(res => res.json())
@@ -83,15 +88,50 @@ export default function Home() {
             }
         )
     }, [])   
+    // useEffect(() => {
+
+    //     var data = [];
+
+
+    //     Promise.all([
+    //         fetch('http://localhost:8000/api/reviews')
+    //        ])
+    //         .then(responses => {
+    //             data.push(responses)
+    //             console.log(data)
+    //             const response1 = responses
+    //             console.log(responses)
+    //             setTruc1(response1);
+                
+                
+    //         })
+                              
+            
+    //         .catch(err => console.error(err))
+    //         .finally(() => {
+                
+
+    //         });
+
+    // }, [])   
+
+    
+
+   
+     const handleClick = () => {
+        console.log(truc1);
+      }
 
     return (
         <div className={classes.marginTopBanner}>
+           
             <div>
             
                 
                 <img src={logo} alt="Logo" className={classes.imgFull}/>
             </div>
             <Container>
+            <Button onClick={handleClick}>Cliquez ici</Button>
             <Grid container spacing={2} className="menuQuality">
                 <Grid item xs={4} className={classes.alignTitle}>
                     <span className="flexCenter"><LocalShippingIcon /></span>
@@ -135,6 +175,7 @@ export default function Home() {
                         <div className="flexCenter"><span>4.86</span>/5</div>
                         <div className="flexCenter mt-5"><h4 className="flexCenter">Based on purchases on AmazingSewing</h4></div>
                         <Rating
+                            readOnly
                             className="mt-5"
                             name="simple-controlled"
                             value={5}                                      
@@ -150,6 +191,7 @@ export default function Home() {
                             >
                                 <div>
                                     <Rating
+                                        readOnly
                                         className="stars"
                                         name="simple-controlled"
                                         value={item.note}                                      
