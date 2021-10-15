@@ -68,14 +68,14 @@ class ProductController extends Controller
         ]);
     }
 
-    public function allreviews() 
+    public function allReviews() 
     {
         $allReviews = ProductReviews::where('note', '>', 3)->inRandomOrder()->limit(4)->get();
         $reviewsAverage = ProductReviews::avg('note');
 
         return Response::json(array(
             'allReviewss' => $allReviews,
-            'reviewsAverage' => $reviewsAverage
+            'reviewsAverage' => round($reviewsAverage, 2)
         ));   
     }
 
@@ -83,6 +83,13 @@ class ProductController extends Controller
     {
         $reviews = ProductReviews::where('id_product', '=', $id)->get();
         return json_encode($reviews);
+    }
+
+    public function averageProductReview($id)
+    {
+        $productReviews = ProductReviews::where('id_product', $id)->avg('note');
+        $rounded = round($productReviews, 2);
+        return json_encode($rounded);
     }
 
     /**
