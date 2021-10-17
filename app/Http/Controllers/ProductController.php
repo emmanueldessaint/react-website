@@ -23,15 +23,6 @@ class ProductController extends Controller
         ]);
     }
 
-    public function best()
-    {
-        $products = Product::all()->random(4);
-
-        return response()->json([
-            'products' => $products
-        ]);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -68,13 +59,15 @@ class ProductController extends Controller
         ]);
     }
 
-    public function allReviews() 
+    public function homeRequest() 
     {
         $allReviews = ProductReviews::where('note', '>', 3)->inRandomOrder()->limit(4)->get();
         $reviewsAverage = ProductReviews::avg('note');
+        $products = Product::all()->random(4);
 
         return response()->json([
-            'allReviewss' => $allReviews,
+            'bestSellers' => $products,
+            'allReviews' => $allReviews,
             'reviewsAverage' => round($reviewsAverage, 2)
         ]);   
     }

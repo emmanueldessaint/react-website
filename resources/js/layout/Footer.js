@@ -51,20 +51,20 @@ export default function Footer() {
             <div className="width60">
                 <Grid container spacing={2} className="menuQuality">
                     <Grid item sm={6} md={3} className={classes.alignTitle}>
-                        <h4 className="flexCenter">Respect du terroir</h4>
-                        <h5 className="flexCenter">De l'environnement et des traditions</h5>
+                        <h4 className="flexCenter">SECURE PAYMENT</h4>
+                        <h5 className="flexCenter">With credit card or Paypal</h5>
                     </Grid>
                     <Grid item sm={6} md={3} className={classes.alignTitle} className="greyLineBorders">
-                        <h4 className="flexCenter">Respect du terroir</h4>
-                        <h5 className="flexCenter">De l'environnement et des traditions</h5>
+                        <h4 className="flexCenter">SATISFIED OR REFUNDED</h4>
+                        <h5 className="flexCenter">7 days from time of delivery</h5>
                     </Grid>
                     <Grid item sm={6} md={3} className={classes.alignTitle} className="greyLineBorders">
-                    <h4 className="flexCenter">Respect du terroir</h4>
-                        <h5 className="flexCenter">De l'environnement et des traditions</h5>
+                    <h4 className="flexCenter">FREE SHIPPING</h4>
+                        <h5 className="flexCenter">From 40$ of purchases</h5>
                     </Grid>
                     <Grid item sm={6} md={3} className={classes.alignTitle}>
-                    <h4 className="flexCenter">Respect du terroir</h4>
-                        <h5 className="flexCenter">De l'environnement et des traditions</h5>
+                    <h4 className="flexCenter">RESPONSIVE CUSTOMER SERVICE</h4>
+                        <h5 className="flexCenter">Guaranteed response within 24 hours</h5>
                     </Grid>
                 </Grid>
             </div>
