@@ -82,7 +82,7 @@ export default function Connect(props) {
                         variant="contained"
                         margin="normal">Se Connecter</Button>
                         <div className={classes.greyLine}></div>
-                        <h5 classNmae={classes.forgotPassword}>Ou vous avez oublié votre mot de passe ?</h5>
+                        <h5 className={classes.forgotPassword}>Ou vous avez oublié votre mot de passe ?</h5>
 
 
                     </Box>

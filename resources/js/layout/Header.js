@@ -86,11 +86,11 @@ HideOnScroll.propTypes = {
             <AppBar style={{ background: '#ffffff' }}>
               <Toolbar>
                 <Box sx={{ flexGrow: 1 }}>
-                  <Grid container spacing={5} >
+                  <Grid container spacing={10} >
                     <Grid item xs={3} className={classes.alignTitle} >
                         
                         <Link to="/" className="item" className={classes.routerDecoration}>
-                          <h2 className="titleHeader">AmazingBikes</h2>
+                          <h2 className="titleHeader">AmazingSewing</h2>
                         </Link>                             
                       
                     </Grid>

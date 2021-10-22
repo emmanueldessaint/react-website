@@ -76,7 +76,7 @@ export default function Footer() {
                     <YouTubeIcon className="m-3"/>
                     <YouTubeIcon className="m-3"/>
                 </div>
-                <p className="widthP mt-4">  unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <span className="widthP mt-4">  unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
                 
                     <Grid container spacing={2} className="pt-4">
                         <Grid item md={3} xs={12} className={classes.alignTitle}>

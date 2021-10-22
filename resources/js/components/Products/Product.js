@@ -118,18 +118,28 @@ export default function Product(props) {
     }
 
     const addToLocalStorage = () => {
-        localStorage.setItem(`${product.id}`, `${quantityProduct}`)
-        console.log("test");
+        let itemProperties = {
+            id:`${product.id}`,
+            name:`${product.name}`,
+            price:`${product.price}`,
+            quantity:0
+        }
+        if (localStorage.getItem(`${product.name}`) === null) {
+            itemProperties.quantity = quantityProduct;
+        } else {
+            let itemAlreadyInCart = JSON.parse(localStorage.getItem(`${product.name}`));
+            itemProperties.quantity = quantityProduct + itemAlreadyInCart.quantity;           
+        }   
+        localStorage.setItem(`${product.name}`, JSON.stringify(itemProperties)); 
+        setQuantityProduct(1);
     }
 
-    // console.log(this.props.location.state)
-
-    
     let data = useLocation();
     let product = data.state.product;
-    console.log(product);
 
-   
+    const clearCart = () => {
+        localStorage.clear();
+      }
      
     return(     
         <Container className={classes.marginTop}>
@@ -157,6 +167,7 @@ export default function Product(props) {
                     </div>
                     <div>
                         <div className="width90 greyLineProduct m-4"></div>
+                        <Button onClick={clearCart}>Clear</Button>
                     </div>
                 </Grid>                          
             </Grid>
@@ -178,8 +189,8 @@ export default function Product(props) {
                 </Box>
                 <TabPanel className="mt-3" value={value} index={0}>
                     <Grid container spacing={4}>
-                        <Grid xs={8} className="alignCenter"><p >unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></Grid>
-                        <Grid xs={4}><img src={ProductQuality} alt="ProductQuality" className={classes.imgFull}/></Grid>
+                        <Grid item xs={8} className="alignCenter"><span >unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span></Grid>
+                        <Grid item xs={4}><img src={ProductQuality} alt="ProductQuality" className={classes.imgFull}/></Grid>
                     </Grid>
                     
                 </TabPanel>

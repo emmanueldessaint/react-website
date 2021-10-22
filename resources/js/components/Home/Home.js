@@ -134,13 +134,14 @@ export default function Home() {
                         </Grid>
                     ))}                
                 </Grid>
-                <h2 className="flexCenter">Ils ont vécu l'expérience</h2>
+                <h2 className="flexCenter mt-10">Ils ont vécu l'expérience</h2>
                 <Grid className="pt-10" container spacing={6}>
                     <Grid item xs={3} className={classes.alignTitle}>
                         <Grid container justifyContent="center">
                             <div className="flexCenter"><span>{avgNote}</span>/5</div>
                             <div className="flexCenter mt-5"><h4 className="flexCenter">Based on purchases on AmazingSewing</h4></div>
                             <Rating
+                                precision={0.5}
                                 readOnly
                                 className="mt-5"
                                 name="simple-controlled"
@@ -157,6 +158,7 @@ export default function Home() {
                                 >
                                     <div>
                                         <Rating
+                                            precision={0.5}
                                             readOnly
                                             className="stars"
                                             name="simple-controlled"
