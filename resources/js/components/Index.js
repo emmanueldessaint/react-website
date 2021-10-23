@@ -16,10 +16,17 @@ import Footer from '../layout/Footer'
 // import Signup from './components/Signup/Signup'
 // import { Switch, Route } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+    RecoilRoot,
+    atom,
+    selector,
+    useRecoilState,
+    useRecoilValue,
+  } from 'recoil';
 
 function Index() {
     return (
-        <div>      
+        <RecoilRoot>     
             <Router>
                 <div>
                     <Header />
@@ -58,7 +65,7 @@ function Index() {
                     <Footer />
                 </div>
             </Router>
-        </div>
+        </RecoilRoot>
     );
 }
 

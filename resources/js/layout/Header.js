@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 import Slide from '@material-ui/core/Slide';
+import Badge from '@material-ui/core/Badge';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
 // import { AppBar } from '@mui/material';
@@ -35,6 +36,7 @@ const useStyles = makeStyles(theme => ({
         "justify-content":"flex-start"
     },
     icon: {
+        marginTop: '20px',
         "margin-left":"30px",
         "transform":"scale(1.3)",
         
@@ -45,6 +47,15 @@ const useStyles = makeStyles(theme => ({
         
        
     }
+}));
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -3,
+    top: 33,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
 }));
 
 function HideOnScroll(props) {
@@ -107,13 +118,18 @@ HideOnScroll.propTypes = {
                     <Grid className={classes.gridRight} item xs={3}>                    
                        
                         <Link to="/connect" className="item" className={classes.routerDecoration}>
-                          <h2><PersonIcon  className={classes.icon} /></h2>
+                          <PersonIcon  className={classes.icon} />
                         </Link>                             
                       
                       
                         <Link to="/cart" className="item" className={classes.routerDecoration}>
-                          <h2><ShoppingCartIcon  className={classes.icon} /></h2>
-                        </Link>                             
+
+                          <StyledBadge badgeContent={4} color="secondary">
+                            <ShoppingCartIcon className={classes.icon}/>
+                          </StyledBadge>
+                          
+                        </Link>  
+
                                              
                     </Grid>                  
                   </Grid>

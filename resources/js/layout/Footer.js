@@ -48,75 +48,75 @@ export default function Footer() {
 
     return (
         <div className="mt-10">
-            <div className="width60">
-                <Grid container spacing={2} className="menuQuality">
-                    <Grid item sm={6} md={3} className={classes.alignTitle}>
-                        <h4 className="flexCenter">SECURE PAYMENT</h4>
-                        <h5 className="flexCenter">With credit card or Paypal</h5>
-                    </Grid>
-                    <Grid item sm={6} md={3} className={classes.alignTitle} className="greyLineBorders">
-                        <h4 className="flexCenter">SATISFIED OR REFUNDED</h4>
-                        <h5 className="flexCenter">7 days from time of delivery</h5>
-                    </Grid>
-                    <Grid item sm={6} md={3} className={classes.alignTitle} className="greyLineBorders">
-                    <h4 className="flexCenter">FREE SHIPPING</h4>
-                        <h5 className="flexCenter">From 40$ of purchases</h5>
-                    </Grid>
-                    <Grid item sm={6} md={3} className={classes.alignTitle}>
-                    <h4 className="flexCenter">RESPONSIVE CUSTOMER SERVICE</h4>
-                        <h5 className="flexCenter">Guaranteed response within 24 hours</h5>
+            <div className=" backgroundFooterItems">
+                <Grid container justifyContent="center" >
+                    <Grid container xs={12} sm={11} md={9}>
+                        <Grid item sm={6} md={3} className={classes.alignTitle}>
+                            <h4 className="flexCenter">SECURE PAYMENT</h4>
+                            <h5 className="flexCenter">With credit card or Paypal</h5>
+                        </Grid>
+                        <Grid item sm={6} md={3} className={classes.alignTitle} className="greyLineBorders">
+                            <h4 className="flexCenter">SATISFIED OR REFUNDED</h4>
+                            <h5 className="flexCenter">7 days from time of delivery</h5>
+                        </Grid>
+                        <Grid item sm={6} md={3} className={classes.alignTitle} className="greyLineBorders">
+                        <h4 className="flexCenter">FREE SHIPPING</h4>
+                            <h5 className="flexCenter">From 40$ of purchases</h5>
+                        </Grid>
+                        <Grid item sm={6} md={3} className={classes.alignTitle}>
+                        <h4 className="flexCenter">RESPONSIVE CUSTOMER SERVICE</h4>
+                            <h5 className="flexCenter">Guaranteed response within 24 hours</h5>
+                        </Grid>
                     </Grid>
                 </Grid>
             </div>
             <div className="backgroundFooter ">
                 <Container>
-                <div className="flexCenter pt-5 mt-2">
-                    <YouTubeIcon className="m-3"/>
-                    <YouTubeIcon className="m-3"/>
-                    <YouTubeIcon className="m-3"/>
-                    <YouTubeIcon className="m-3"/>
-                </div>
-                <span className="widthP mt-4">  unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                    <Grid container justifyContent="center" className="menuQuality">
+                        <Grid container xs={12} md={10} className="mt-7">
+                            <div className="flexCenter pt-5 mt-2">
+                                <YouTubeIcon className="m-3"/>
+                                <YouTubeIcon className="m-3"/>
+                                <YouTubeIcon className="m-3"/>
+                                <YouTubeIcon className="m-3"/>
+                            </div>
+                            <div className="widthP mt-4">  unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
                 
-                    <Grid container spacing={2} className="pt-4">
-                        <Grid item md={3} xs={12} className={classes.alignTitle}>
-                            <h1>AmazingBikes</h1>
-                        </Grid>
-                        <Grid item md={9} xs={12} container spacing={2} >
-                            <Grid item md={3} xs={6}>
-                                <h3>Amazing Bikes</h3>
-                                <ul className="ulFooter">
-                                    <li >6 rue de la Fontaine<br/>71150 Bouzeron</li>
-                                    <li>+33 03 82 72 63 07</li>
-                                    <li>reception@amzingbikes.com</li>
-                                </ul>
-                            </Grid>
-                            <Grid item md={3} xs={6}>
-                            <h3>A propos</h3>
-                                <ul className="ulFooter">
-                                    <li>6 rue de la Fontaine<br/>71150 Bouzeron</li>
-                                    <li>+33 03 82 72 63 07</li>
-                                    <li>reception@amzingbikes.com</li>
-                                </ul>
-                            </Grid>
-                            <Grid item md={3} xs={6}>
-                            
-                                <ul className="ulFooter">
-                                    <li>6 rue de la Fontaine<br/>71150 Bouzeron</li>
-                                    <li>+33 03 82 72 63 07</li>
-                                    <li>reception@amzingbikes.com</li>
-                                </ul>
-                            </Grid>
-                            <Grid item md={3} xs={6}>
-                            <h3>Vente privée et newsletter</h3>
-                                <ul className="ulFooter">
-                                    <li>Accédez aux ventes privées et restez<br/>informé des informations Chanzy</li>                                                                     
-                                    <li>
-                                        <TextField 
-                                        className="inputFooter"
-                                        placeholder=" Votre mail ..."
-                                        /></li>
-                                </ul>
+                            <Grid container spacing={2} className="pt-10">
+                               
+                                <Grid item md={9} xs={12} container spacing={2} >
+                                    <Grid item md={3} xs={6}>
+                                        <h3>Amazing Bikes</h3>
+                                        <ul className="ulFooter">
+                                            <li >6 rue de la Fontaine<br/>71150 Bouzeron</li>
+                                            <li>+33 03 82 72 63 07</li>
+                                            <li>reception@amzingbikes.com</li>
+                                        </ul>
+                                    </Grid>
+                                    <Grid item md={3} xs={6}>
+                                    <h3>A propos</h3>
+                                        <ul className="ulFooter">
+                                            <li>6 rue de la Fontaine<br/>71150 Bouzeron</li>
+                                            <li>+33 03 82 72 63 07</li>
+                                            <li>reception@amzingbikes.com</li>
+                                        </ul>
+                                    </Grid>
+                                    
+                                    <Grid item md={3} xs={6}>
+                                    <h3>Vente privée et newsletter</h3>
+                                        <ul className="ulFooter">
+                                            <li>Accédez aux ventes privées et restez<br/>informé des informations Chanzy</li>                                                                     
+                                            <li>
+                                                <TextField 
+                                                className="inputFooter"
+                                                placeholder=" Votre mail ..."
+                                                /></li>
+                                        </ul>
+                                    </Grid>
+                                </Grid>
+                                <Grid item md={3} xs={12} className={classes.alignTitle}>
+                                    <h1>AmazingBikes</h1>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Grid>

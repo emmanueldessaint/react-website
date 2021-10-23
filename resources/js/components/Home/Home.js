@@ -18,6 +18,7 @@ import { makeStyles } from '@material-ui/styles';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { styled } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import { LoadData } from '../../Constants.js'
 import axios from 'axios';
@@ -97,83 +98,88 @@ export default function Home() {
                     <img src={logo} alt="Logo" className={classes.imgFull}/>
                 </div>
                 <Container>
-                <Grid container spacing={2} className="menuQuality">
-                    <Grid item xs={4} className={classes.alignTitle}>
-                        <span className="flexCenter"><LocalShippingIcon /></span>
-                        <h4 className="flexCenter">Respect for the land</h4>
-                        <h5 className="flexCenter">Environment and traditions</h5>
+                    <Grid container justifyContent="center" className="menuQuality">
+                        <Grid container xs={12} md={10}>
+                            <Grid item xs={4} className={classes.alignTitle}>
+                                <span className="flexCenter"><LocalShippingIcon /></span>
+                                <span className="flexCenter">Respect for the land</span>
+                                <span className="flexCenter">Environment and traditions</span>
+                            </Grid>
+                            <Grid item xs={4} className={classes.alignTitle} className="greyLineBorders">
+                                <span className="flexCenter"><LocalShippingIcon /></span>
+                                <h4 className="flexCenter">Tracking delivery</h4>
+                                <h5 className="flexCenter">All around the world</h5>
+                            </Grid>
+                            <Grid item xs={4} className={classes.alignTitle}>
+                                <span className="flexCenter"><LocalShippingIcon /></span>
+                                <h4 className="flexCenter">Respect du terroir</h4>
+                                <h5 className="flexCenter">De l'environnement et des traditions</h5>
+                            </Grid>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={4} className={classes.alignTitle} className="greyLineBorders">
-                        <span className="flexCenter"><LocalShippingIcon /></span>
-                        <h4 className="flexCenter">Tracking delivery</h4>
-                        <h5 className="flexCenter">All around the world</h5>
-                    </Grid>
-                    <Grid item xs={4} className={classes.alignTitle}>
-                        <span className="flexCenter"><LocalShippingIcon /></span>
-                        <h4 className="flexCenter">Respect du terroir</h4>
-                        <h5 className="flexCenter">De l'environnement et des traditions</h5>
-                    </Grid>
-                </Grid>
                 <div className="mt-10">
                     <h3 className="flexCenter">Our best sellers</h3>
                     <h4 className="flexCenter">Discover our customers' favorite products !</h4>
                 </div>
                 <Grid container justifyContent="center">
-                    {bestSellers.map(item => (
-                        <Grid 
-                            item xs={6} sm={3} md={3} lg={3} 
-                            key={item.id}                                                 
-                        >
-                            <Link to={{ pathname: '/product', state: { product : item } }}>
-                                <div className="cardProduct">                                   
-                                    <img className="imageProduct" src="https://picsum.photos/200/300"/>
-                                    <div className="nameProduct">{item.name}</div>                                  
-                                    <div>{item.price}</div>                                   
-                                </div>
-                            </Link>
-                        </Grid>
-                    ))}                
+                    <Grid container xs={12} md={10}>
+                        {bestSellers.map(item => (
+                            <Grid 
+                                item xs={6} sm={3} md={3} lg={3} 
+                                key={item.id}                                                 
+                            >
+                                <div className="cardProduct lightShadowCard">   
+                                    <Link to={{ pathname: '/product', state: { product : item } }}>                                
+                                        <img className="imageProduct" src="https://picsum.photos/200/300"/>
+                                        <div className="nameProduct flexCenter">{item.name}</div>                                  
+                                        <div className="priceProduct">{item.price},00 €</div> 
+                                    </Link>                                  
+                                </div>                                
+                            </Grid>
+                        ))}     
+                    </Grid>          
                 </Grid>
                 <h2 className="flexCenter mt-10">Ils ont vécu l'expérience</h2>
-                <Grid className="pt-10" container spacing={6}>
-                    <Grid item xs={3} className={classes.alignTitle}>
-                        <Grid container justifyContent="center">
-                            <div className="flexCenter"><span>{avgNote}</span>/5</div>
-                            <div className="flexCenter mt-5"><h4 className="flexCenter">Based on purchases on AmazingSewing</h4></div>
-                            <Rating
-                                precision={0.5}
-                                readOnly
-                                className="mt-5"
-                                name="simple-controlled"
-                                value={avgNote}                                     
-                            /> 
+                <Grid className="pt-10" container justifyContent="center">
+                    <Grid container xs={12} md={10}>
+                        <Grid item xs={3} className={classes.alignTitle}>
+                            <Grid container justifyContent="center">
+                                <div className="flexCenter"><span>{avgNote}</span>/5</div>
+                                <div className="flexCenter mt-5"><h4 className="flexCenter">Based on purchases on AmazingSewing</h4></div>
+                                <Rating
+                                    precision={0.5}
+                                    readOnly
+                                    className="mt-5"
+                                    name="simple-controlled"
+                                    value={avgNote}                                     
+                                /> 
+                            </Grid>
+                        </Grid>
+                        <Grid item xs={9} className={classes.alignTitle}  >
+                            <Grid container justifyContent="center" spacing={6}>             
+                                {userReviews.map(item => (                    
+                                    <Grid
+                                        item xs={3} 
+                                        key={item.id}
+                                    >
+                                        <div>
+                                            <Rating
+                                                precision={0.5}
+                                                readOnly
+                                                className="stars"
+                                                name="simple-controlled"
+                                                value={item.note}                                      
+                                            />                                 
+                                            <div className="mt-5">{item.description.length < 100 ? item.description: item.description.substring(0, 70) + " . . ."}</div>
+                                            <div className="mt-5">{item.title}</div>
+                                        
+                                        </div>
+                                        
+                                    </Grid>                  
+                                ))}                   
+                            </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item xs={9} className={classes.alignTitle}  >
-                        <Grid container spacing={6} justifyContent="center">               
-                            {userReviews.map(item => (                    
-                                <Grid
-                                    item xs={3} 
-                                    key={item.id}
-                                >
-                                    <div>
-                                        <Rating
-                                            precision={0.5}
-                                            readOnly
-                                            className="stars"
-                                            name="simple-controlled"
-                                            value={item.note}                                      
-                                        />                                 
-                                        <div className="mt-5">{item.description.length < 100 ? item.description: item.description.substring(0, 70) + " . . ."}</div>
-                                        <div className="mt-5">{item.title}</div>
-                                    
-                                    </div>
-                                    
-                                </Grid>                  
-                            ))}                   
-                        </Grid>
-                    </Grid>
-                    
                 </Grid>
                 </Container>
 

@@ -1,16 +1,25 @@
 .cardProduct{
-    text-align: center;
+    /* text-align: center; */
     margin:6%;
     border-radius:4px;
-    box-shadow: 5px 5px 5px rgb(228, 228, 228)
+    /* box-shadow: 5px 5px 5px rgb(228, 228, 228) */
     
 }
 .nameProduct{
     font-weight:900;
+    /* height:40px; */
+}
+.priceProduct{
+    font-weight:600;
+    /* font-size:em; */
+    margin-top:20px;
+    margin-left:20px;
+    padding-bottom:7px;
 }
 .imageProduct{
     width:100%;
-    border-radius:4px;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
     height:300px;
     object-fit: cover;
     opacity:0.9;

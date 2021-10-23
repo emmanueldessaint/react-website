@@ -63,7 +63,16 @@ export default function Cart() {
     const [itemsInCart, setItemsInCart] = useState([]);
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-   
+
+    // const textState = atom({
+    //   key: 'textState', // unique ID (with respect to other atoms/selectors)
+    //   default: '', // valeur par défaut (alias valeur initials)
+    // });
+    // const onChange = (event) => {
+    //   setText(event.target.value);
+    // };
+
+
     // for(var i=0; i < localStorage.length; i++) {
     //   var key = localStorage.key(i);
     //   var value = JSON.parse(localStorage[key]);
@@ -78,77 +87,94 @@ export default function Cart() {
       for (var i = 0 ; i < localStorage.length ; i ++) {
         var key = localStorage.key(i);
         var value = JSON.parse(localStorage[key]);
-        // myArray.push(value)
         itemsInCart.push(value);
-        
       }
-      
-      // setItemsInCart(1);
       console.log("useeffect")
-      setIsLoaded(true);
-      
+      setIsLoaded(true);      
     }, [])  
     
     const addQuantityInCart = (product) => {
-      // localStorage.setItem(`ezaea`, JSON.stringify("zaeaez")); 
-      // for (var i = 0 ; i < localStorage.length ; i ++) {
-      //   console.log("1 local")
-      //   // itemsInCart.push((value.name),(value.price));
-        
-      // }
-      // console.log(itemsInCart)
-      
-      
-      console.log(itemsInCart)
+      var thisArray = [...itemsInCart];
+      var find = thisArray.find(element => element.name === product.name).quantity++;
+      var findPlus = find + 1;
+      var itemProperties = {
+        id: `${product.id}`,
+        name: `${product.name}`,
+        price: `${product.price}`,
+        quantity: findPlus,
+     }
+      setItemsInCart(thisArray);
+      localStorage.setItem(`${product.name}`, JSON.stringify(itemProperties));
     }
-    console.log(itemsInCart)
-    // const addQuantityInCart = (product) => {
-    //     let itemAlreadyInCart = JSON.parse(localStorage.getItem(`${product.name}`));
-    //     console.log(itemAlreadyInCart)
-    //     console.log('clic')
-    //     console.log(product)
-    //     myArray[0].quantity ++
-    //     console.log(myArray[0].quantity)
-    // }
+    const substractQuantityInCart = (product) => {
+      var thisArray = [...itemsInCart];
+      var find = thisArray.find(element => element.name === product.name).quantity--;
+      if (find > 1) {
+        var findPlus = find - 1;
+        var itemProperties = {
+          id: `${product.id}`,
+          name: `${product.name}`,
+          price: `${product.price}`,
+          quantity: findPlus,
+        }
+        setItemsInCart(thisArray);
+        localStorage.setItem(`${product.name}`, JSON.stringify(itemProperties));
+      }    
+    }
+    
     const clearCart = () => {
       localStorage.clear();
     }
+
+    const handleClickTest = () => {
+      // console.log(itemsInCart);
+      for (var i = 0 ; i < localStorage.length ; i ++) {
+        var key = localStorage.key(i);
+        var value = JSON.parse(localStorage[key]);
+        console.log(value);
+      }
+    }
+
+
+
+
      if (!isLoaded) {
       return <div className={classes.marginTop}>Loading...</div>;
   } else {
     return(
       <Container>
         <Grid className={classes.marginTop} container justifyContent="center">
-          <Grid item xs={12} md={9} >
+          <Grid item xs={12} sm={11} md={9} >
             <h2 className="flexCenter">MY CART</h2>
             <span className="flexCenter"> {myArray.length} items</span>
             
-            <Grid container spacing={5} className="pt-8">
+            <Grid container spacing={5} className="pt-8 pb-10 flexCenter">
               
-              <Grid item xs={8}>
+              <Grid item xs={11} sm={8}>
                 {itemsInCart.map(product => (
                   <div
-                    className="productLineCart"
+                    className="productLineCart lightShadowCard mt-6"
                     key={product.id}
                   >
                     
-                    <div className="imgLineCart">hmm</div>
+                    <img className="imgLineCart" src="https://picsum.photos/200/300"/>
                     <div className="quantityNameCart">{product.name}</div>
                     <div className="quantityPriceCart">{product.price}</div>
                     <div className="quantityProductCart mr-5">
                       <span>{product.quantity}</span>
                       <button onClick={() => addQuantityInCart(product)}>+</button>
+                      <button onClick={() => substractQuantityInCart(product)}>-</button>
                     </div>
                   </div>
                 ))}
                 
               </Grid>
               
-              <Grid item xs={4}>
-                <div className="RecapCart">
+              <Grid item xs={11} sm={4}>
+                <div className="RecapCart lightShadowCard">
                   <h3>The total amount of</h3>
                   {/* <div>{count}</div> */}
-                  <button onClick={addQuantityInCart}>click</button>
+                  <button onClick={handleClickTest}>console log</button>
                   <div>{itemsInCart.name}</div>
                   <Button onClick={clearCart}>Clear</Button>
                   
