@@ -64,13 +64,7 @@ export default function Cart() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
-    // const textState = atom({
-    //   key: 'textState', // unique ID (with respect to other atoms/selectors)
-    //   default: '', // valeur par défaut (alias valeur initials)
-    // });
-    // const onChange = (event) => {
-    //   setText(event.target.value);
-    // };
+   
 
 
     // for(var i=0; i < localStorage.length; i++) {

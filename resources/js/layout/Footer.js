@@ -41,7 +41,7 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
     backgroundColor: '#ebf1f5',
   }));
-
+  
 export default function Footer() {
 
     const classes = useStyles();
@@ -83,10 +83,10 @@ export default function Footer() {
                             <div className="widthP mt-4">  unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
                 
                             <Grid container spacing={2} className="pt-10">
-                               
+                            
                                 <Grid item md={9} xs={12} container spacing={2} >
                                     <Grid item md={3} xs={6}>
-                                        <h3>Amazing Bikes</h3>
+                                        <h3>Amazing Sewing</h3>
                                         <ul className="ulFooter">
                                             <li >6 rue de la Fontaine<br/>71150 Bouzeron</li>
                                             <li>+33 03 82 72 63 07</li>

@@ -22,6 +22,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import { LoadData } from '../../Constants.js'
 import axios from 'axios';
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
 
 import {
     BrowserRouter as Router,
@@ -29,16 +36,13 @@ import {
     Route,
     Link
   } from "react-router-dom";
-  import logo from "../../../assets/img/logo1.png";
+  import logo from "../../../assets/img/sewing1.jpg";
   import '../../App.css';
   import '../../css/Home.css';
 
   const useStyles = makeStyles(theme => ({
     marginTopBanner: {
         "margin-top":"100px;",
-    },
-    imgFull: {
-        "width":"100%;",
     },
     greyLine: {
         "border-left":"1px solid black;"
@@ -95,12 +99,14 @@ export default function Home() {
         return (
             <div className={classes.marginTopBanner}>  
                 <div>
-                    <img src={logo} alt="Logo" className={classes.imgFull}/>
+                    <img src={logo} alt="Logo" className="imgIntro"/>
                 </div>
                 <Container>
                     <Grid container justifyContent="center" className="menuQuality">
                         <Grid container xs={12} md={10}>
+                            
                             <Grid item xs={4} className={classes.alignTitle}>
+                            <Button onClick={onChange}>update panier</Button>
                                 <span className="flexCenter"><LocalShippingIcon /></span>
                                 <span className="flexCenter">Respect for the land</span>
                                 <span className="flexCenter">Environment and traditions</span>
@@ -170,7 +176,7 @@ export default function Home() {
                                                 name="simple-controlled"
                                                 value={item.note}                                      
                                             />                                 
-                                            <div className="mt-5">{item.description.length < 100 ? item.description: item.description.substring(0, 70) + " . . ."}</div>
+                                            <div className="mt-5">{item.description.length < 60 ? item.description: item.description.substring(0, 70) + " . . ."}</div>
                                             <div className="mt-5">{item.title}</div>
                                         
                                         </div>

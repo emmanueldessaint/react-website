@@ -8,8 +8,9 @@
     
 }
 .imgLineCart{
-    height:90px;
+    height:120px;
     width:90px;
+    object-fit: cover;
     border-top-left-radius:2px;
     border-bottom-left-radius:2px;
 
