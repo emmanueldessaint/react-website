@@ -33,6 +33,8 @@ import {
   import '../../App.css';
   import '../../css/Products.css';
   import YouTubeIcon from '@material-ui/icons/YouTube';
+  import { numberOfItemsInCart } from '../Shared/globalState'
+  import { useRecoilState } from 'recoil';
   
 
   const useStyles = makeStyles(theme => ({
@@ -102,6 +104,7 @@ export default function Product(props) {
 
     const [value, setValue] = React.useState(0);
     const [quantityProduct, setQuantityProduct] = useState(1);
+    const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -132,6 +135,7 @@ export default function Product(props) {
         }   
         localStorage.setItem(`${product.name}`, JSON.stringify(itemProperties)); 
         setQuantityProduct(1);
+        setNumberInCart(numberInCart + quantityProduct);    
     }
 
     let data = useLocation();
@@ -199,6 +203,7 @@ export default function Product(props) {
                 </TabPanel>
                 <TabPanel value={value} index={2}>
                     Item Three
+                    
                 </TabPanel>
             </Box>
         </Container>

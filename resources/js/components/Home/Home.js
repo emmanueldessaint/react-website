@@ -106,7 +106,7 @@ export default function Home() {
                         <Grid container xs={12} md={10}>
                             
                             <Grid item xs={4} className={classes.alignTitle}>
-                            <Button onClick={onChange}>update panier</Button>
+                            {/* <Button onClick={onChange}>update panier</Button> */}
                                 <span className="flexCenter"><LocalShippingIcon /></span>
                                 <span className="flexCenter">Respect for the land</span>
                                 <span className="flexCenter">Environment and traditions</span>

@@ -1,3 +1,4 @@
+import { useState, useEffect  } from 'react';
 import * as React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -21,6 +22,7 @@ import { Link } from "react-router-dom";
 import { BrowserRouter as Router } from 'react-router-dom';
 import '../App.css';
 import '../css/Header.css'
+import { numberOfItemsInCart } from '../components/Shared/globalState'
 import {
   RecoilRoot,
   atom,
@@ -96,8 +98,24 @@ HideOnScroll.propTypes = {
     export default function Header(props) {
     
       const classes = useStyles();
+
+      const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
+
       
-    
+      var quantityInCart = 0;
+      for (var i = 0 ; i < localStorage.length ; i ++) {
+        var key = localStorage.key(i);
+        var value = JSON.parse(localStorage[key]);
+        quantityInCart += value.quantity;
+      }
+      
+
+      useEffect(() => {
+        
+        setNumberInCart(quantityInCart)
+        console.log('useeffect header')
+      }, [quantityInCart])
+      
       return (
         <React.Fragment>
           <CssBaseline />
@@ -132,7 +150,7 @@ HideOnScroll.propTypes = {
                       
                         <Link to="/cart" className="item" className={classes.routerDecoration}>
 
-                          <StyledBadge badgeContent={4} color="secondary">
+                          <StyledBadge badgeContent={numberInCart} color="secondary">
                             <ShoppingCartIcon className={classes.icon}/>
                           </StyledBadge>
                           
