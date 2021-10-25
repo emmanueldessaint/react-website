@@ -28,6 +28,7 @@ import {
   import '../App.css';
   import '../css/Footer.css';
   import YouTubeIcon from '@material-ui/icons/YouTube';
+  import '../../assets/css/fonts.css';
 
   const useStyles = makeStyles(theme => ({
     

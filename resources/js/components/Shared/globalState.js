@@ -6,3 +6,13 @@ const { atom } = require("recoil");
     key: 'numberOfItemsInCart',
     default: 0,
   });
+
+  export const numberOfPageProducts = atom({
+      key: 'numberOfPageProducts',
+      default: [],
+  })
+
+  export const currentPageProduct = atom({
+      key: 'currentPageProduct',
+      default: 1,
+  })

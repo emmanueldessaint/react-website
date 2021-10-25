@@ -9,6 +9,7 @@ import Signup from '../components/Connect/Signup'
 import Products from '../components/Products/Products'
 import Product from '../components/Products/Product'
 import Home from '../components/Home/Home'
+import '../App.css'
 
 import Header from '../layout/Header'
 import Footer from '../layout/Footer'
@@ -28,7 +29,7 @@ function Index() {
     return (
         <RecoilRoot>     
             <Router>
-                <div>
+                <div className="generalFont">
                     <Header />
                     <div>
                         <Switch>

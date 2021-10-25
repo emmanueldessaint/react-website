@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import Rating from '@mui/material/Rating';
 import Typography from '@material-ui/core/Typography';
-
+import StarBorderIcon from "@material-ui/icons/StarBorder";
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
@@ -50,15 +50,14 @@ import {
     testProduit: {
         backgroundColor: 'black',
     },
+    root: {
+        display: 'flex',
+        flexDirection: 'column',
+        '& > * + *': {
+          marginTop: 10,
+        },
+      },
 }));
-
-const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    backgroundColor: '#ebf1f5',
-  }));
 
 export default function Home() {
 
@@ -81,9 +80,6 @@ export default function Home() {
               setAvgNote(result.reviewsAverage);
               setUserReviews(result.allReviews);
             },
-            // Note: it's important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
             (error) => {
               setIsLoaded(true);
               setError(error);
@@ -91,106 +87,112 @@ export default function Home() {
           )                   
     }, [])   
    
-    if (error) {
-        return <div className={classes.marginTop}>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-        return <div className={classes.marginTop}>Loading...</div>;
-    } else {
-        return (
-            <div className={classes.marginTopBanner}>  
-                <div>
-                    <img src={logo} alt="Logo" className="imgIntro"/>
-                </div>
-                <Container>
-                    <Grid container justifyContent="center" className="menuQuality">
-                        <Grid container xs={12} md={10}>
-                            
-                            <Grid item xs={4} className={classes.alignTitle}>
-                            {/* <Button onClick={onChange}>update panier</Button> */}
-                                <span className="flexCenter"><LocalShippingIcon /></span>
-                                <span className="flexCenter">Respect for the land</span>
-                                <span className="flexCenter">Environment and traditions</span>
-                            </Grid>
-                            <Grid item xs={4} className={classes.alignTitle} className="greyLineBorders">
-                                <span className="flexCenter"><LocalShippingIcon /></span>
-                                <h4 className="flexCenter">Tracking delivery</h4>
-                                <h5 className="flexCenter">All around the world</h5>
-                            </Grid>
-                            <Grid item xs={4} className={classes.alignTitle}>
-                                <span className="flexCenter"><LocalShippingIcon /></span>
-                                <h4 className="flexCenter">Respect du terroir</h4>
-                                <h5 className="flexCenter">De l'environnement et des traditions</h5>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                <div className="mt-10">
-                    <h3 className="flexCenter">Our best sellers</h3>
-                    <h4 className="flexCenter">Discover our customers' favorite products !</h4>
-                </div>
-                <Grid container justifyContent="center">
-                    <Grid container xs={12} md={10}>
-                        {bestSellers.map(item => (
-                            <Grid 
-                                item xs={6} sm={3} md={3} lg={3} 
-                                key={item.id}                                                 
-                            >
-                                <div className="cardProduct lightShadowCard">   
-                                    <Link to={{ pathname: '/product', state: { product : item } }}>                                
-                                        <img className="imageProduct" src="https://picsum.photos/200/300"/>
-                                        <div className="nameProduct flexCenter">{item.name}</div>                                  
-                                        <div className="priceProduct">{item.price},00 €</div> 
-                                    </Link>                                  
-                                </div>                                
-                            </Grid>
-                        ))}     
-                    </Grid>          
-                </Grid>
-                <h2 className="flexCenter mt-10">Ils ont vécu l'expérience</h2>
-                <Grid className="pt-10" container justifyContent="center">
-                    <Grid container xs={12} md={10}>
-                        <Grid item xs={3} className={classes.alignTitle}>
-                            <Grid container justifyContent="center">
-                                <div className="flexCenter"><span>{avgNote}</span>/5</div>
-                                <div className="flexCenter mt-5"><h4 className="flexCenter">Based on purchases on AmazingSewing</h4></div>
-                                <Rating
-                                    precision={0.5}
-                                    readOnly
-                                    className="mt-5"
-                                    name="simple-controlled"
-                                    value={avgNote}                                     
-                                /> 
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={9} className={classes.alignTitle}  >
-                            <Grid container justifyContent="center" spacing={6}>             
-                                {userReviews.map(item => (                    
-                                    <Grid
-                                        item xs={3} 
-                                        key={item.id}
-                                    >
-                                        <div>
-                                            <Rating
-                                                precision={0.5}
-                                                readOnly
-                                                className="stars"
-                                                name="simple-controlled"
-                                                value={item.note}                                      
-                                            />                                 
-                                            <div className="mt-5">{item.description.length < 60 ? item.description: item.description.substring(0, 70) + " . . ."}</div>
-                                            <div className="mt-5">{item.title}</div>
-                                        
-                                        </div>
-                                        
-                                    </Grid>                  
-                                ))}                   
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
-                </Container>
-
+    return (
+        <div className={classes.marginTopBanner}>  
+            <div>
+                <img src={logo} alt="Logo" className="imgIntro"/>
             </div>
-        )
-    }
+            <Container>
+                <Grid container justifyContent="center" className="menuQuality">
+                    <Grid container xs={12} md={10}>
+                        
+                        <Grid item xs={4} className={classes.alignTitle}>
+                        {/* <Button onClick={onChange}>update panier</Button> */}
+                            <span className="flexCenter"><LocalShippingIcon /></span>
+                            <span className="flexCenter">Respect for the land</span>
+                            <span className="flexCenter">Environment and traditions</span>
+                        </Grid>
+                        <Grid item xs={4} className={classes.alignTitle} className="greyLineBorders">
+                            <span className="flexCenter"><LocalShippingIcon /></span>
+                            <h4 className="flexCenter">Tracking delivery</h4>
+                            <h5 className="flexCenter">All around the world</h5>
+                        </Grid>
+                        <Grid item xs={4} className={classes.alignTitle}>
+                            <span className="flexCenter"><LocalShippingIcon /></span>
+                            <h4 className="flexCenter">Respect du terroir</h4>
+                            <h5 className="flexCenter">De l'environnement et des traditions</h5>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            <div className="mt-10">
+                <h3 className="flexCenter">Our best sellers</h3>
+                <h4 className="flexCenter">Discover our customers' favorite products !</h4>
+            </div>
+            {isLoaded && <div>
+            <Grid container justifyContent="center">
+                <Grid container xs={12} md={10}>
+                    
+                    {bestSellers.map(item => (
+                        <Grid 
+                            item xs={6} sm={3} md={3} lg={3} 
+                            key={item.id}                                                 
+                        >
+                            <div className="cardProduct lightShadowCard">   
+                                <Link to={{ pathname: '/product', state: { product : item } }}>                                
+                                    <img className="imageProduct" src="https://picsum.photos/200/300"/>
+                                    <div className="nameProduct centerText">{item.name}</div>                                  
+                                    <div className="priceProduct mt-4 ml-3 pb-1">{item.price},00 €</div> 
+                                </Link>                                  
+                            </div>                                
+                        </Grid>
+                    ))}    
+                    
+                </Grid>          
+            </Grid>
+            </div>
+                    } 
+            <h2 className="flexCenter mt-10">Ils ont vécu l'expérience</h2>
+            <Grid className="pt-10" container justifyContent="center">
+                <Grid container xs={12} md={11} spacing={4}>
+                    <Grid item xs={3} className={classes.alignTitle}>
+                        <Grid container justifyContent="center">
+                            <div className="flexCenter"><span>{avgNote}</span>/5</div>
+                            <div className="flexCenter mt-5"><h4 className="flexCenter">Based on purchases on AmazingSewing</h4></div>
+                            <Rating
+                                precision={0.5}
+                                readOnly
+                                className="mt-5"
+                                name="simple-controlled"
+                                value={avgNote}  
+                                emptyIcon={
+                                    <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                  }                                     
+                            /> 
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={9} className={classes.alignTitle}  >
+                        <Grid container justifyContent="center" spacing={6}>             
+                            {userReviews.map(item => (                    
+                                <Grid
+                                    item xs={3} 
+                                    key={item.id}
+                                >
+                                    <div>
+                                        <Rating
+                                            precision={0.5}
+                                            readOnly
+                                            className="stars"
+                                            name="simple-controlled"
+                                            value={item.note} 
+                                            emptyIcon={
+                                                <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                              }                                      
+                                        />                                 
+                                        <div className="mt-5 ">{item.description.length < 60 ? item.description: item.description.substring(0, 70) + " . . ."}</div>
+                                        <div className="mt-5">{item.title}</div>
+                                    
+                                    </div>
+                                    
+                                </Grid>                  
+                            ))}                   
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            </Container>
+
+        </div>
+    )
 }
+
 

@@ -23,6 +23,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import '../App.css';
 import '../css/Header.css'
 import { numberOfItemsInCart } from '../components/Shared/globalState'
+import { currentPageProduct } from '../components/Shared/globalState'
+
 import {
   RecoilRoot,
   atom,
@@ -100,7 +102,7 @@ HideOnScroll.propTypes = {
       const classes = useStyles();
 
       const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
-
+      const [actuelPage, setActuelPage] = useRecoilState(currentPageProduct);
       
       var quantityInCart = 0;
       for (var i = 0 ; i < localStorage.length ; i ++) {
@@ -116,6 +118,11 @@ HideOnScroll.propTypes = {
         console.log('useeffect header')
       }, [quantityInCart])
       
+      const resetPage = () => {
+        setActuelPage(1);
+      }
+
+
       return (
         <React.Fragment>
           <CssBaseline />
@@ -126,7 +133,7 @@ HideOnScroll.propTypes = {
                   <Grid container spacing={10} >
                     <Grid item xs={3} className={classes.alignTitle} >
                         
-                        <Link to="/" className="item" className={classes.routerDecoration}>
+                        <Link to="/" onClick={resetPage} className="item" className={classes.routerDecoration}>
                           <h2 className="titleHeader">AmazingSewing</h2>
                         </Link>                             
                       
@@ -143,12 +150,12 @@ HideOnScroll.propTypes = {
                     </Grid>
                     <Grid className={classes.gridRight} item xs={3}>                    
                        
-                        <Link to="/connect" className="item" className={classes.routerDecoration}>
+                        <Link to="/connect" onClick={resetPage} className="item" className={classes.routerDecoration}>
                           <PersonIcon  className={classes.icon} />
                         </Link>                             
                       
                       
-                        <Link to="/cart" className="item" className={classes.routerDecoration}>
+                        <Link to="/cart" onClick={resetPage} className="item" className={classes.routerDecoration}>
 
                           <StyledBadge badgeContent={numberInCart} color="secondary">
                             <ShoppingCartIcon className={classes.icon}/>
@@ -160,25 +167,26 @@ HideOnScroll.propTypes = {
                     </Grid>                  
                   </Grid>
                   <Grid container spacing={2} justifyContent="center" className={classes.routerDecoration}>
-                    <Grid item xs={2} >
+                    <Grid  item xs={2} >
                       <Link to="/"  >
-                        <h4>Home</h4>
+                        <h4 onClick={resetPage}>Home</h4>
                       </Link>
                     </Grid>
                     
                     <Grid item xs={2} >
                       <Link to="/products"  >
-                        <h4>Catalog</h4>
+                        <h4 onClick={resetPage}>Catalog</h4>
                       </Link>
                     </Grid>
 
                     <Grid item xs={2} >
                       <Link to="/products"  >
-                        <h4>About us</h4>
+                        <h4 onClick={resetPage}>About us</h4>
                       </Link>
                     </Grid>
                     
                   </Grid>
+                  
                 </Box>
               </Toolbar>
             </AppBar>

@@ -9,8 +9,11 @@ import {
     Route,
     Link,
   } from "react-router-dom";
-  import '../../App.css';
-  import '../../css/Products.css';
+import '../../App.css';
+import '../../css/Products.css';
+import { numberOfPageProducts } from '../Shared/globalState'
+import { currentPageProduct } from '../Shared/globalState'
+import { useRecoilState } from 'recoil';
  
   
 
@@ -28,11 +31,13 @@ export default function Products() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
-    const [numberOfPages, setNumberOfPages] = useState([]);
-    const [actualPage, setActualPage] = useState(1);
+    const [numberOfPages, setNumberOfPages] = useRecoilState(numberOfPageProducts);
     const [itemsInCurrentPage, setItemsInCurrentPage] = useState([]);
+    const [actuelPage, setActuelPage] = useRecoilState(currentPageProduct);
+
+    
     var itemsByPage = 12;
-    var a = 1; 
+    var increment = 1; 
     var emptyArray = [];
 
     useEffect(() => {
@@ -43,13 +48,14 @@ export default function Products() {
               
                 let newArray= [];
                
-                newArray = result.products.slice(0,itemsByPage);
+                newArray = result.products.slice(itemsByPage*(actuelPage-1),itemsByPage*(actuelPage));
                 setItems(result.products);       
                 for (var i = 0; i < result.products.length/itemsByPage; i++) {
-                    emptyArray.push(a)
+                    emptyArray.push(increment)
                     console.log(' 1 page')
-                    a++
+                    increment++
                 }   
+
                 setNumberOfPages(emptyArray); 
                 setItemsInCurrentPage(newArray)
                 setIsLoaded(true);
@@ -71,24 +77,10 @@ export default function Products() {
     const handleChangePage = (item) => {
         let arrayWithItemsOnPage = [];
         let arrayWithAllItems = [...items];
-        if (item === 1) {
-            arrayWithItemsOnPage = arrayWithAllItems.slice(0,itemsByPage);
-            console.log(arrayWithItemsOnPage);
-        }
-        if (item === 2) {
-            arrayWithItemsOnPage = arrayWithAllItems.slice(itemsByPage,itemsByPage*2);
-            console.log(arrayWithItemsOnPage);
-        }   
-        if (item === 3) {
-            arrayWithItemsOnPage = arrayWithAllItems.slice(itemsByPage*2,itemsByPage*3);
-            console.log(arrayWithItemsOnPage);
-        }   
-        if (item === 4) {
-            arrayWithItemsOnPage = arrayWithAllItems.slice(itemsByPage*3,itemsByPage*4);
-            console.log(arrayWithItemsOnPage);
-        }   
+        arrayWithItemsOnPage = arrayWithAllItems.slice(itemsByPage*(item-1),itemsByPage*(item));
         setItemsInCurrentPage(arrayWithItemsOnPage);
         window.scrollTo(0, 0);
+        setActuelPage(item);
     }
       
     
@@ -110,7 +102,7 @@ export default function Products() {
                                     <Link to={{ pathname: '/product', state: { product : item } }}>                                
                                         <img className="imageProduct" src="https://picsum.photos/200/300"/>
                                         <div className="nameProduct flexCenter">{item.name}</div>                                  
-                                        <div className="priceProduct">{item.price},00 €</div> 
+                                        <div className="priceProduct mt-4 ml-3 pb-1">{item.price},00 €</div> 
                                     </Link>                                  
                                 </div>      
                             </Grid>                    
@@ -128,6 +120,7 @@ export default function Products() {
                                 </div>                    
                             ))}  
                         </div>
+                        
                     </Grid>
                 </Grid>
 
