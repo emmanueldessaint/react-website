@@ -33,6 +33,10 @@ import {
   import '../../App.css';
   import '../../css/Products.css';
   import YouTubeIcon from '@material-ui/icons/YouTube';
+  import { numberOfItemsInCart } from '../Shared/globalState'
+  import { useRecoilState } from 'recoil';
+  import Rating from '@mui/material/Rating';
+
   
 
   const useStyles = makeStyles(theme => ({
@@ -102,6 +106,7 @@ export default function Product(props) {
 
     const [value, setValue] = React.useState(0);
     const [quantityProduct, setQuantityProduct] = useState(1);
+    const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -118,31 +123,50 @@ export default function Product(props) {
     }
 
     const addToLocalStorage = () => {
-        localStorage.setItem(`${product.id}`, `${quantityProduct}`)
-        console.log("test");
+        let itemProperties = {
+            id:`${product.id}`,
+            name:`${product.name}`,
+            price:`${product.price}`,
+            quantity:0
+        }
+        if (localStorage.getItem(`${product.name}`) === null) {
+            itemProperties.quantity = quantityProduct;
+        } else {
+            let itemAlreadyInCart = JSON.parse(localStorage.getItem(`${product.name}`));
+            itemProperties.quantity = quantityProduct + itemAlreadyInCart.quantity;           
+        }   
+        localStorage.setItem(`${product.name}`, JSON.stringify(itemProperties)); 
+        setQuantityProduct(1);
+        setNumberInCart(numberInCart + quantityProduct);    
     }
 
-    // console.log(this.props.location.state)
-
-    
     let data = useLocation();
     let product = data.state.product;
-    console.log(product);
 
-   
+    const clearCart = () => {
+        localStorage.clear();
+      }
      
     return(     
         <Container className={classes.marginTop}>
-            <Grid container justifyContent="center" spacing={4}>               
+            <Grid container justifyContent="center" spacing={10}>               
                 <Grid item xs={12} sm={6} >
-                    <Paper className={classes.productImgDescription}></Paper>
+                <img className="imageOneProduct" src="https://picsum.photos/200/300"/>
                 </Grid>
                 <Grid item xs={12} sm={5}>
                     <h2>{product.name}</h2>
                     <div className="flexBetween mt-13">
-                        <span>{product.price} €</span>
-                        <span>average note</span>
-                        <span>lire les avis</span>
+                        <span className="priceProduct">{product.price},00 €</span>
+                        <span>
+                            <Rating
+                                precision={0.5}
+                                readOnly
+                                className=""
+                                name="simple-controlled"
+                                value={4.5}                                     
+                            />  
+                        </span>
+                        <span>Read reviews</span>
                     </div>
                     <div className="flexBetween mt-9">
                         <span className="width40 addSubstractCart">
@@ -178,8 +202,8 @@ export default function Product(props) {
                 </Box>
                 <TabPanel className="mt-3" value={value} index={0}>
                     <Grid container spacing={4}>
-                        <Grid xs={8} className="alignCenter"><p >unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></Grid>
-                        <Grid xs={4}><img src={ProductQuality} alt="ProductQuality" className={classes.imgFull}/></Grid>
+                        <Grid item xs={8} className="alignCenter"><span >unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span></Grid>
+                        <Grid item xs={4}><img src={ProductQuality} alt="ProductQuality" className={classes.imgFull}/></Grid>
                     </Grid>
                     
                 </TabPanel>
@@ -188,6 +212,7 @@ export default function Product(props) {
                 </TabPanel>
                 <TabPanel value={value} index={2}>
                     Item Three
+                    
                 </TabPanel>
             </Box>
         </Container>

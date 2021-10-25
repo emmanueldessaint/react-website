@@ -9,6 +9,7 @@ import Signup from '../components/Connect/Signup'
 import Products from '../components/Products/Products'
 import Product from '../components/Products/Product'
 import Home from '../components/Home/Home'
+import '../App.css'
 
 import Header from '../layout/Header'
 import Footer from '../layout/Footer'
@@ -16,12 +17,19 @@ import Footer from '../layout/Footer'
 // import Signup from './components/Signup/Signup'
 // import { Switch, Route } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+    RecoilRoot,
+    atom,
+    selector,
+    useRecoilState,
+    useRecoilValue,
+  } from 'recoil';
 
 function Index() {
     return (
-        <div>      
+        <RecoilRoot>     
             <Router>
-                <div>
+                <div className="generalFont">
                     <Header />
                     <div>
                         <Switch>
@@ -58,7 +66,7 @@ function Index() {
                     <Footer />
                 </div>
             </Router>
-        </div>
+        </RecoilRoot>
     );
 }
 

@@ -1,0 +1,32 @@
+.productLineCart{
+    background-color:rgb(255, 255, 255);
+    margin-top:20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius:2px;
+    
+}
+.imgLineCart{
+    height:90px;
+    width:90px;
+    object-fit: cover;
+    border-top-left-radius:2px;
+    border-bottom-left-radius:2px;
+
+}
+.RecapCart{
+    margin-top:20px;
+    background-color:white;
+    border-radius:2px;
+    
+}
+.quantityNameCart{
+    width:140px;
+}
+.fontTrash{
+    color:rgb(83, 83, 83);
+}
+.itemOrItems{
+    margin-left:10px;
+}

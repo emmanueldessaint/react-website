@@ -1,8 +1,5 @@
 
-.menuQuality{
-    padding-top:20px;
-    
-}
+
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -35,6 +32,9 @@
     font-size: 80px;
     color: white;
   }
-  .stars{
-    /* font-size:200%; */
+  .imgIntro{
+    width:100%;
+    height:300px;
+    object-fit: cover;
   }
+ 
