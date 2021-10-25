@@ -79,9 +79,11 @@ class ProductController extends Controller
         ]);   
     }
 
-    public function reviews($id) 
+    public function getOneProduct($id) 
     {
         $reviews = ProductReviews::where('id_product', '=', $id)->get();
+        // for 
+        // $avg = $reviews->
         return json_encode($reviews);
     }
 
