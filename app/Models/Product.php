@@ -20,6 +20,6 @@ class Product extends Model
     protected $guarded = [];
 
     public function reviews() {
-        return $this->hasMany(ProductReviews::class);
+        return $this->hasMany(ProductReviews::class, 'id_product');
     }
 }

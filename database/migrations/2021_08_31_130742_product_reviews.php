@@ -14,15 +14,15 @@ class ProductReviews extends Migration
     public function up()
     {
         Schema::create('product_reviews', function(Blueprint $table) {
-            // $table->id();
-            // $table->unsignedBigInteger('id_product');
-            // $table->foreign('id_product')->references('id')->on('products');
-            // $table->unsignedBigInteger('id_user');
-            // $table->foreign('id_user')->references('id')->on('users');
-            // $table->string('note');
-            // $table->string('title');
-            // $table->text('description')->nullable();
-            // $table->timestamps();
+            $table->id();
+            $table->unsignedBigInteger('id_product');
+            $table->foreign('id_product')->references('id')->on('products');
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users');
+            $table->integer('note');
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->timestamps();
         });
     }
 
