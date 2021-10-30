@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Payment\StripePaymentController;
+use App\Http\Controllers\Payment\PaypalPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,12 @@ Route::post('register', [RegisterController::class, 'register']);
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// ******** PAYMENT ROUTES ********
+
+// STRIPE
+
+Route::post('/charge', [StripePaymentController::class, 'charge']);
+
+// PAYPAL

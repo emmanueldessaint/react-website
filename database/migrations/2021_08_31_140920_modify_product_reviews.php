@@ -14,13 +14,13 @@ class ModifyProductReviews extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('address');
-            $table->string('zip_code');
-            $table->string('city');
-            $table->string('tel');
-            $table->string('birthday');
+            // $table->string('firstname');
+            // $table->string('lastname');
+            // $table->string('address');
+            // $table->string('zip_code');
+            // $table->string('city');
+            // $table->string('tel');
+            // $table->string('birthday');
         });
     }
 

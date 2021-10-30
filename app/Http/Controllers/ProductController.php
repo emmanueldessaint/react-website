@@ -16,12 +16,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::with('reviews')->get();
 
         return response()->json([
             'products' => $products
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -63,7 +64,7 @@ class ProductController extends Controller
     {
         $allReviews = ProductReviews::where('note', '>', 3)->inRandomOrder()->limit(4)->get();
         $reviewsAverage = ProductReviews::avg('note');
-        $products = Product::all()->random(4);
+        $products = Product::with('reviews')->get()->random(4);
 
         return response()->json([
             'bestSellers' => $products,
@@ -72,9 +73,11 @@ class ProductController extends Controller
         ]);   
     }
 
-    public function reviews($id) 
+    public function getOneProduct($id) 
     {
         $reviews = ProductReviews::where('id_product', '=', $id)->get();
+        // for 
+        // $avg = $reviews->
         return json_encode($reviews);
     }
 
