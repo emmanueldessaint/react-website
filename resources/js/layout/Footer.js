@@ -74,17 +74,23 @@ export default function Footer() {
             <div className="backgroundFooter ">
                 <Container>
                     <Grid container justifyContent="center" className="menuQuality">
-                        <Grid container xs={12} md={10} className="mt-7">
-                            <div className="flexCenter pt-5 mt-2">
-                                <YouTubeIcon className="m-3"/>
-                                <YouTubeIcon className="m-3"/>
-                                <YouTubeIcon className="m-3"/>
-                                <YouTubeIcon className="m-3"/>
-                            </div>
-                            <div className="widthP mt-4">  unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                
-                            <Grid container spacing={2} className="pt-10">
+                        <Grid container xs={12} md={10}  className="mt-7">
+
+                            <Grid md={6}>
+                                <div className="flexCenter pt-5 mt-2">
+                                    <YouTubeIcon className="m-3"/>
+                                    <YouTubeIcon className="m-3"/>
+                                    <YouTubeIcon className="m-3"/>
+                                    <YouTubeIcon className="m-3"/>
+                                </div>
+                            </Grid>
+                            <Grid md={6}>
+                                <div className="widthP mt-4">  
+                                    <p>unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                </div>
+                            </Grid>
                             
+                            <Grid container spacing={2} className="pt-10">  
                                 <Grid item md={9} xs={12} container spacing={2} >
                                     <Grid item md={3} xs={6}>
                                         <h3>Amazing Sewing</h3>

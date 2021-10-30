@@ -1,5 +1,5 @@
 .widthP{
-    width:40%;
+    /* width:40%; */
     margin-left:auto;
     margin-right:auto;
     text-align: justify;
@@ -9,6 +9,7 @@
 }
 .backgroundFooter{
     background-image: url("../../assets/img/backgroundFooter1.jpg");
+    /* filter: blur(0.1px); */
     /* background: rgb(0,0,0);
     background: linear-gradient(47deg, rgba(0,0,0,1) 0%, rgba(2,2,32,1) 18%, rgba(11,11,62,1) 36%, rgba(16,15,101,1) 100%); */
     color:rgb(204, 204, 204);

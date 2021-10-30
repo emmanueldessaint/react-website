@@ -122,7 +122,8 @@ export default function Cart() {
                     <div className="quantityProductCart mr-5">
                       <span>{product.quantity}</span>
                       <button onClick={() => addQuantityInCart(product)}>+</button>
-                      <button onClick={() => substractQuantityInCart(product)}>-</button>
+                      {product.quantity > 1 &&<button onClick={() => substractQuantityInCart(product)}>-</button>}
+                      {product.quantity === 1 &&<button disabled onClick={() => substractQuantityInCart(product)}>-</button>}
                     </div>
                     <button onClick={() => removeProduct(product)}><DeleteIcon className="fontTrash"/></button>
                   </div>
