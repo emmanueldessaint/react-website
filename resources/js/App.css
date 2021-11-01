@@ -5,6 +5,9 @@ html {
 .generalFont{
     font-family:  cursive;
 }
+.testDiv{
+    background-color:rgb(248, 248, 248);
+}
 .flex{
     display:flex;
 }
@@ -15,13 +18,21 @@ html {
     text-justify: inter-word;
 }
 .emptyStar{
-    color:rgb(219, 219, 219);
+    color:rgb(253, 225, 149);
 }
 .centerText{
     margin-left:auto;
     margin-right:auto;
     text-align: center;
     
+}
+.textAlignCenter{
+    text-align: center;
+}
+.verticalAlign{
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 .flexCenter{
     display:flex;
@@ -36,9 +47,9 @@ html {
     justify-content: space-between;
 }
 .lightShadowCard{
-    -webkit-box-shadow: 0 0 2px 1px rgb(224, 224, 224);
-    -moz-box-shadow: 0 0 2px 1px rgb(224, 224, 224);
-    box-shadow: 0 0 2px 1px rgb(224, 224, 224);
+    -webkit-box-shadow: 0 0 2px 1px rgb(214, 214, 214);
+    -moz-box-shadow: 0 0 2px 1px rgb(214, 214, 214);
+    box-shadow: 0 0 2px 1px rgb(214, 214, 214);
 }
 .productCard{
     width:200px;

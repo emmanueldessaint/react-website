@@ -23,16 +23,16 @@ import {
     Switch,
     Route,
     Link
-  } from "react-router-dom";
-  import logo from "../../assets/img/logo1.png";
-  import '../App.css';
-  import '../css/Footer.css';
-  import YouTubeIcon from '@material-ui/icons/YouTube';
-  import '../../assets/css/fonts.css';
+} from "react-router-dom";
+import logo from "../../assets/img/logo1.png";
+import '../App.css';
+import '../css/Footer.css';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import '../../assets/css/fonts.css';
 
-  const useStyles = makeStyles(theme => ({
-    
-    
+const useStyles = makeStyles(theme => ({
+
+
 }));
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -41,92 +41,97 @@ const Item = styled(Paper)(({ theme }) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
     backgroundColor: '#ebf1f5',
-  }));
-  
+}));
+
 export default function Footer() {
 
     const classes = useStyles();
 
     return (
-        <div className="mt-10">
+        <div className="pt-10 testDiv">
             <div className=" backgroundFooterItems">
                 <Grid container justifyContent="center" >
-                    <Grid container xs={12} sm={11} md={9}>
-                        <Grid item sm={6} md={3} className={classes.alignTitle}>
-                            <h4 className="flexCenter">SECURE PAYMENT</h4>
-                            <h5 className="flexCenter">With credit card or Paypal</h5>
+                    <Grid spacing={2} container item xs={12} sm={11} md={9}>
+                        <Grid className="textAlignCenter" item xs={12} sm={6} md={3} >
+                            <h4>SECURE PAYMENT</h4>
+                            <h5>With credit card or Paypal</h5>
                         </Grid>
-                        <Grid item sm={6} md={3} className={classes.alignTitle} className="greyLineBorders">
-                            <h4 className="flexCenter">SATISFIED OR REFUNDED</h4>
-                            <h5 className="flexCenter">7 days from time of delivery</h5>
+                        <Grid item xs={12} sm={6} md={3} className="greyLineBorders textAlignCenter">
+                            <h4>SATISFIED OR REFUNDED</h4>
+                            <h5>7 days from time of delivery</h5>
                         </Grid>
-                        <Grid item sm={6} md={3} className={classes.alignTitle} className="greyLineBorders">
-                        <h4 className="flexCenter">FREE SHIPPING</h4>
-                            <h5 className="flexCenter">From 40$ of purchases</h5>
+                        <Grid item xs={12} sm={6} md={3} className="greyLineBorders textAlignCenter">
+                            <h4>FREE SHIPPING</h4>
+                            <h5>From 40$ of purchases</h5>
                         </Grid>
-                        <Grid item sm={6} md={3} className={classes.alignTitle}>
-                        <h4 className="flexCenter">RESPONSIVE CUSTOMER SERVICE</h4>
-                            <h5 className="flexCenter">Guaranteed response within 24 hours</h5>
+                        <Grid className="textAlignCenter" item xs={12} sm={6} md={3} >
+                            <h4>RESPONSIVE CUSTOMER SERVICE</h4>
+                            <h5>Guaranteed response within 24 hours</h5>
                         </Grid>
                     </Grid>
                 </Grid>
             </div>
             <div className="backgroundFooter ">
                 <Container>
-                    <Grid container justifyContent="center" className="menuQuality">
-                        <Grid container xs={12} md={10}  className="mt-7">
+                    <Grid container justifyContent="center" className="menuQuality pt-5">
+                        <Grid container item xs={12} md={11} lg={10} >
 
-                            <Grid md={6}>
+                            <Grid justifyContent="center" item xs={12} md={5}>
                                 <div className="flexCenter pt-5 mt-2">
-                                    <YouTubeIcon className="m-3"/>
-                                    <YouTubeIcon className="m-3"/>
-                                    <YouTubeIcon className="m-3"/>
-                                    <YouTubeIcon className="m-3"/>
+                                    <YouTubeIcon className="m-3" />
+                                    <YouTubeIcon className="m-3" />
+                                    <YouTubeIcon className="m-3" />
+                                    <YouTubeIcon className="m-3" />
                                 </div>
                             </Grid>
-                            <Grid md={6}>
-                                <div className="widthP mt-4">  
-                                    <p>unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                </div>
-                            </Grid>
-                            
-                            <Grid container spacing={2} className="pt-10">  
-                                <Grid item md={9} xs={12} container spacing={2} >
-                                    <Grid item md={3} xs={6}>
-                                        <h3>Amazing Sewing</h3>
-                                        <ul className="ulFooter">
-                                            <li >6 rue de la Fontaine<br/>71150 Bouzeron</li>
-                                            <li>+33 03 82 72 63 07</li>
-                                            <li>reception@amzingbikes.com</li>
-                                        </ul>
-                                    </Grid>
-                                    <Grid item md={3} xs={6}>
-                                    <h3>A propos</h3>
-                                        <ul className="ulFooter">
-                                            <li>6 rue de la Fontaine<br/>71150 Bouzeron</li>
-                                            <li>+33 03 82 72 63 07</li>
-                                            <li>reception@amzingbikes.com</li>
-                                        </ul>
-                                    </Grid>
-                                    
-                                    <Grid item md={3} xs={6}>
-                                    <h3>Vente privée et newsletter</h3>
-                                        <ul className="ulFooter">
-                                            <li>Accédez aux ventes privées et restez<br/>informé des informations Chanzy</li>                                                                     
-                                            <li>
-                                                <TextField 
-                                                className="inputFooter"
-                                                placeholder=" Votre mail ..."
-                                                /></li>
-                                        </ul>
-                                    </Grid>
-                                </Grid>
-                                <Grid item md={3} xs={12} className={classes.alignTitle}>
-                                    <h1>AmazingBikes</h1>
+                            <Grid xs={12} md={7} container justifyContent="center" >
+                                <Grid xs={11} md={12} item >
+                                    <div className="widthP mt-4">
+                                        <p>unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                    </div>
                                 </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
+                    <Grid container justifyContent="center" className="menuQuality pb-5">
+                        <Grid container item xs={12} md={11} lg={10} className="mt-7">
+                            <Grid className="pt-5" container justifyContent="center" md={12} lg={8}>
+                                <Grid className="flexCenter" item md={4} sm={6} xs={12}>
+                                    <div className="widthItemsFooter">
+                                        <h3>Amazing Sewing</h3>
+                                        <div>5 rue des oiseaux</div>
+                                        <div>27220 Fresney</div>
+                                        <div>contact@amazingsewing.com</div>
+                                    </div>
+                                </Grid>
+                                <Grid className="flexCenter" item md={4} sm={6} xs={12}>
+                                    <div className="widthItemsFooter">
+                                        <h3>About us</h3>
+                                        <div>Who are we ?</div>
+                                        <div>Our corporate values</div>
+                                        <div>Guaranty and return</div>
+                                    </div>
+                                </Grid>
+
+                                <Grid className="flexCenter" item md={4} sm={6} xs={12}>
+                                    <div className="widthItemsFooter">
+                                        <h3>Privates sales and newsletter</h3>
+
+                                        <div>Access privates sales and stay<br />up to date with AmazingSewing news</div>
+                                        <div className="flexCenter mt-4">
+                                            <TextField
+                                                className="inputFooter"
+                                                placeholder=" Your email ..."
+                                            /></div>
+                                    </div>
+                                </Grid>
+                            </Grid>
+                            <Grid className="pt-5 verticalAlign" container justifyContent="center" md={12} lg={4}>
+                                <h1 className="verticalAlign">AmazingSewing</h1>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
                 </Container>
             </div>
         </div>

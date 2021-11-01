@@ -17,6 +17,7 @@ import { styled } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import PersonIcon from '@material-ui/icons/Person';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import SearchIcon from '@material-ui/icons/Search';
 import Connect from '../components/Connect/Connect'
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -138,54 +139,43 @@ HideOnScroll.propTypes = {
                         </Link>                             
                       
                     </Grid>
-                    <Grid item xs={6} >
-                      <Grid className="pt-2">
-                        <TextField 
-                          fullWidth
-                          id="standard-basic" 
-                          placeholder="search a product ..."
-                          variant="standard" 
-                        />
+                    <Grid xs={6} spacing={2} item container justifyContent="center" className={classes.routerDecoration}>
+                      <Grid  item xs={3} >
+                        <Link to="/"  >
+                          <h4 onClick={resetPage}>Home</h4>
+                        </Link>
                       </Grid>
+                    
+                      <Grid item xs={3} >
+                        <Link to="/products"  >
+                          <h4 onClick={resetPage}>Catalog</h4>
+                        </Link>
+                      </Grid>
+
+                      <Grid item xs={3} >
+                        <Link to="/products"  >
+                          <h4 onClick={resetPage}>About us</h4>
+                        </Link>
+                      </Grid>
+                    
                     </Grid>
+                    
                     <Grid className={classes.gridRight} item xs={3}>                    
                        
                         <Link to="/connect" onClick={resetPage} className="item" className={classes.routerDecoration}>
-                          <PersonIcon  className={classes.icon} />
+                          <SearchIcon  className={classes.icon} />
                         </Link>                             
-                      
-                      
+                                            
                         <Link to="/cart" onClick={resetPage} className="item" className={classes.routerDecoration}>
-
                           <StyledBadge badgeContent={numberInCart} color="secondary">
                             <ShoppingCartIcon className={classes.icon}/>
-                          </StyledBadge>
-                          
+                          </StyledBadge>                         
                         </Link>  
 
                                              
                     </Grid>                  
                   </Grid>
-                  <Grid container spacing={2} justifyContent="center" className={classes.routerDecoration}>
-                    <Grid  item xs={2} >
-                      <Link to="/"  >
-                        <h4 onClick={resetPage}>Home</h4>
-                      </Link>
-                    </Grid>
-                    
-                    <Grid item xs={2} >
-                      <Link to="/products"  >
-                        <h4 onClick={resetPage}>Catalog</h4>
-                      </Link>
-                    </Grid>
-
-                    <Grid item xs={2} >
-                      <Link to="/products"  >
-                        <h4 onClick={resetPage}>About us</h4>
-                      </Link>
-                    </Grid>
-                    
-                  </Grid>
+                  
                   
                 </Box>
               </Toolbar>

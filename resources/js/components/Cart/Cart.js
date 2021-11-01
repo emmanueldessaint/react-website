@@ -10,6 +10,7 @@ import '../../css/Cart.css';
 import { numberOfItemsInCart } from '../Shared/globalState'
 import { useRecoilState } from 'recoil';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { Link } from "react-router-dom";
 
   const useStyles = makeStyles(theme => ({
     marginTop: {
@@ -92,11 +93,11 @@ export default function Cart() {
     }
 
      if (!isLoaded) {
-      return <div className={classes.marginTop}>Loading...</div>;
+      return <div className="pt-15">Loading...</div>;
   } else {
     return(
       <Container>
-        <Grid className={classes.marginTop} container justifyContent="center">
+        <Grid className="pt-15" container justifyContent="center">
           <Grid item xs={12} sm={11} md={9} >
             <h2 className="flexCenter">MY CART</h2>
 
@@ -118,7 +119,7 @@ export default function Cart() {
                     
                     <img className="imgLineCart" src="https://picsum.photos/200/300"/>
                     <div className="quantityNameCart">{product.name}</div>
-                    <div className="quantityPriceCart">{product.price}</div>
+                    <div className="quantityPriceCart">${product.price}.00</div>
                     <div className="quantityProductCart mr-5">
                       <span>{product.quantity}</span>
                       <button onClick={() => addQuantityInCart(product)}>+</button>
@@ -134,8 +135,10 @@ export default function Cart() {
               <Grid item xs={11} sm={4}>
                 <div className="RecapCart lightShadowCard">
                   <h3>The total amount of</h3>
-                  
-                  
+              
+                <Link to="/checkout"  >
+                  <h3>Order</h3>
+                </Link>
                 </div>
               </Grid>
               

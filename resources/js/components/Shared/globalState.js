@@ -16,3 +16,12 @@ const { atom } = require("recoil");
       key: 'currentPageProduct',
       default: 1,
   })
+
+  var thisWidth = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+
+    export const currentWidth = atom ({
+      key: 'currentWidth',
+      default: thisWidth,
+    })

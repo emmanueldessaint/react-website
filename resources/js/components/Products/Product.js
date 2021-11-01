@@ -148,7 +148,7 @@ export default function Product(props) {
       }
      
     return(     
-        <Container className={classes.marginTop}>
+        <Container className="pt-15">
             <Grid container justifyContent="center" spacing={10}>               
                 <Grid item xs={12} sm={6} >
                 <img className="imageOneProduct" src="https://picsum.photos/200/300"/>

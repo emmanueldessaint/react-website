@@ -18451,9 +18451,9 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ "./node_modules/@material-ui/icons/Person.js":
+/***/ "./node_modules/@material-ui/icons/Search.js":
 /*!***************************************************!*\
-  !*** ./node_modules/@material-ui/icons/Person.js ***!
+  !*** ./node_modules/@material-ui/icons/Search.js ***!
   \***************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
@@ -18474,8 +18474,8 @@ var React = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_mod
 var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
 
 var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
-  d: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-}), 'Person');
+  d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+}), 'Search');
 
 exports["default"] = _default;
 
@@ -26553,6 +26553,870 @@ const visuallyHidden = {
 
 /***/ }),
 
+/***/ "./node_modules/@stripe/react-stripe-js/dist/react-stripe.umd.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@stripe/react-stripe-js/dist/react-stripe.umd.js ***!
+  \***********************************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+(function (global, factory) {
+	 true ? factory(exports, __webpack_require__(/*! react */ "./node_modules/react/index.js")) :
+	0;
+}(this, (function (exports, React) { 'use strict';
+
+	React = React && Object.prototype.hasOwnProperty.call(React, 'default') ? React['default'] : React;
+
+	function createCommonjsModule(fn, module) {
+		return module = { exports: {} }, fn(module, module.exports), module.exports;
+	}
+
+	/**
+	 * Copyright (c) 2013-present, Facebook, Inc.
+	 *
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
+	 */
+
+	var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+	var ReactPropTypesSecret_1 = ReactPropTypesSecret;
+
+	function emptyFunction() {}
+
+	function emptyFunctionWithReset() {}
+
+	emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+	var factoryWithThrowingShims = function () {
+	  function shim(props, propName, componentName, location, propFullName, secret) {
+	    if (secret === ReactPropTypesSecret_1) {
+	      // It is still safe when called from React.
+	      return;
+	    }
+
+	    var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+	    err.name = 'Invariant Violation';
+	    throw err;
+	  }
+	  shim.isRequired = shim;
+
+	  function getShim() {
+	    return shim;
+	  }
+	  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+
+	  var ReactPropTypes = {
+	    array: shim,
+	    bool: shim,
+	    func: shim,
+	    number: shim,
+	    object: shim,
+	    string: shim,
+	    symbol: shim,
+	    any: shim,
+	    arrayOf: getShim,
+	    element: shim,
+	    elementType: shim,
+	    instanceOf: getShim,
+	    node: shim,
+	    objectOf: getShim,
+	    oneOf: getShim,
+	    oneOfType: getShim,
+	    shape: getShim,
+	    exact: getShim,
+	    checkPropTypes: emptyFunctionWithReset,
+	    resetWarningCache: emptyFunction
+	  };
+	  ReactPropTypes.PropTypes = ReactPropTypes;
+	  return ReactPropTypes;
+	};
+
+	var propTypes = createCommonjsModule(function (module) {
+	/**
+	 * Copyright (c) 2013-present, Facebook, Inc.
+	 *
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
+	 */
+	{
+	  // By explicitly using `prop-types` you are opting into new production behavior.
+	  // http://fb.me/prop-types-in-prod
+	  module.exports = factoryWithThrowingShims();
+	}
+	});
+
+	function _typeof(obj) {
+	  "@babel/helpers - typeof";
+
+	  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+	    _typeof = function (obj) {
+	      return typeof obj;
+	    };
+	  } else {
+	    _typeof = function (obj) {
+	      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+	    };
+	  }
+
+	  return _typeof(obj);
+	}
+
+	function _defineProperty(obj, key, value) {
+	  if (key in obj) {
+	    Object.defineProperty(obj, key, {
+	      value: value,
+	      enumerable: true,
+	      configurable: true,
+	      writable: true
+	    });
+	  } else {
+	    obj[key] = value;
+	  }
+
+	  return obj;
+	}
+
+	function ownKeys(object, enumerableOnly) {
+	  var keys = Object.keys(object);
+
+	  if (Object.getOwnPropertySymbols) {
+	    var symbols = Object.getOwnPropertySymbols(object);
+	    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+	      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+	    });
+	    keys.push.apply(keys, symbols);
+	  }
+
+	  return keys;
+	}
+
+	function _objectSpread2(target) {
+	  for (var i = 1; i < arguments.length; i++) {
+	    var source = arguments[i] != null ? arguments[i] : {};
+
+	    if (i % 2) {
+	      ownKeys(Object(source), true).forEach(function (key) {
+	        _defineProperty(target, key, source[key]);
+	      });
+	    } else if (Object.getOwnPropertyDescriptors) {
+	      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+	    } else {
+	      ownKeys(Object(source)).forEach(function (key) {
+	        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+	      });
+	    }
+	  }
+
+	  return target;
+	}
+
+	function _slicedToArray(arr, i) {
+	  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+	}
+
+	function _arrayWithHoles(arr) {
+	  if (Array.isArray(arr)) return arr;
+	}
+
+	function _iterableToArrayLimit(arr, i) {
+	  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+	  var _arr = [];
+	  var _n = true;
+	  var _d = false;
+	  var _e = undefined;
+
+	  try {
+	    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+	      _arr.push(_s.value);
+
+	      if (i && _arr.length === i) break;
+	    }
+	  } catch (err) {
+	    _d = true;
+	    _e = err;
+	  } finally {
+	    try {
+	      if (!_n && _i["return"] != null) _i["return"]();
+	    } finally {
+	      if (_d) throw _e;
+	    }
+	  }
+
+	  return _arr;
+	}
+
+	function _unsupportedIterableToArray(o, minLen) {
+	  if (!o) return;
+	  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+	  var n = Object.prototype.toString.call(o).slice(8, -1);
+	  if (n === "Object" && o.constructor) n = o.constructor.name;
+	  if (n === "Map" || n === "Set") return Array.from(o);
+	  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+	}
+
+	function _arrayLikeToArray(arr, len) {
+	  if (len == null || len > arr.length) len = arr.length;
+
+	  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+	  return arr2;
+	}
+
+	function _nonIterableRest() {
+	  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+	}
+
+	var usePrevious = function usePrevious(value) {
+	  var ref = React.useRef(value);
+	  React.useEffect(function () {
+	    ref.current = value;
+	  }, [value]);
+	  return ref.current;
+	};
+
+	var isUnknownObject = function isUnknownObject(raw) {
+	  return raw !== null && _typeof(raw) === 'object';
+	};
+	var isPromise = function isPromise(raw) {
+	  return isUnknownObject(raw) && typeof raw.then === 'function';
+	}; // We are using types to enforce the `stripe` prop in this lib,
+	// but in an untyped integration `stripe` could be anything, so we need
+	// to do some sanity validation to prevent type errors.
+
+	var isStripe = function isStripe(raw) {
+	  return isUnknownObject(raw) && typeof raw.elements === 'function' && typeof raw.createToken === 'function' && typeof raw.createPaymentMethod === 'function' && typeof raw.confirmCardPayment === 'function';
+	};
+
+	var PLAIN_OBJECT_STR = '[object Object]';
+	var isEqual = function isEqual(left, right) {
+	  if (!isUnknownObject(left) || !isUnknownObject(right)) {
+	    return left === right;
+	  }
+
+	  var leftArray = Array.isArray(left);
+	  var rightArray = Array.isArray(right);
+	  if (leftArray !== rightArray) return false;
+	  var leftPlainObject = Object.prototype.toString.call(left) === PLAIN_OBJECT_STR;
+	  var rightPlainObject = Object.prototype.toString.call(right) === PLAIN_OBJECT_STR;
+	  if (leftPlainObject !== rightPlainObject) return false;
+	  if (!leftPlainObject && !leftArray) return false;
+	  var leftKeys = Object.keys(left);
+	  var rightKeys = Object.keys(right);
+	  if (leftKeys.length !== rightKeys.length) return false;
+	  var keySet = {};
+
+	  for (var i = 0; i < leftKeys.length; i += 1) {
+	    keySet[leftKeys[i]] = true;
+	  }
+
+	  for (var _i = 0; _i < rightKeys.length; _i += 1) {
+	    keySet[rightKeys[_i]] = true;
+	  }
+
+	  var allKeys = Object.keys(keySet);
+
+	  if (allKeys.length !== leftKeys.length) {
+	    return false;
+	  }
+
+	  var l = left;
+	  var r = right;
+
+	  var pred = function pred(key) {
+	    return isEqual(l[key], r[key]);
+	  };
+
+	  return allKeys.every(pred);
+	};
+
+	var extractAllowedOptionsUpdates = function extractAllowedOptionsUpdates(options, prevOptions, immutableKeys) {
+	  if (!isUnknownObject(options)) {
+	    return null;
+	  }
+
+	  return Object.keys(options).reduce(function (newOptions, key) {
+	    var isUpdated = !isUnknownObject(prevOptions) || !isEqual(options[key], prevOptions[key]);
+
+	    if (immutableKeys.includes(key)) {
+	      if (isUpdated) {
+	        console.warn("Unsupported prop change: options.".concat(key, " is not a mutable property."));
+	      }
+
+	      return newOptions;
+	    }
+
+	    if (!isUpdated) {
+	      return newOptions;
+	    }
+
+	    return _objectSpread2(_objectSpread2({}, newOptions || {}), {}, _defineProperty({}, key, options[key]));
+	  }, null);
+	};
+
+	var INVALID_STRIPE_ERROR = 'Invalid prop `stripe` supplied to `Elements`. We recommend using the `loadStripe` utility from `@stripe/stripe-js`. See https://stripe.com/docs/stripe-js/react#elements-props-stripe for details.'; // We are using types to enforce the `stripe` prop in this lib, but in a real
+	// integration `stripe` could be anything, so we need to do some sanity
+	// validation to prevent type errors.
+
+	var validateStripe = function validateStripe(maybeStripe) {
+	  if (maybeStripe === null || isStripe(maybeStripe)) {
+	    return maybeStripe;
+	  }
+
+	  throw new Error(INVALID_STRIPE_ERROR);
+	};
+
+	var parseStripeProp = function parseStripeProp(raw) {
+	  if (isPromise(raw)) {
+	    return {
+	      tag: 'async',
+	      stripePromise: Promise.resolve(raw).then(validateStripe)
+	    };
+	  }
+
+	  var stripe = validateStripe(raw);
+
+	  if (stripe === null) {
+	    return {
+	      tag: 'empty'
+	    };
+	  }
+
+	  return {
+	    tag: 'sync',
+	    stripe: stripe
+	  };
+	};
+
+	var ElementsContext = /*#__PURE__*/React.createContext(null);
+	ElementsContext.displayName = 'ElementsContext';
+	var parseElementsContext = function parseElementsContext(ctx, useCase) {
+	  if (!ctx) {
+	    throw new Error("Could not find Elements context; You need to wrap the part of your app that ".concat(useCase, " in an <Elements> provider."));
+	  }
+
+	  return ctx;
+	};
+	/**
+	 * The `Elements` provider allows you to use [Element components](https://stripe.com/docs/stripe-js/react#element-components) and access the [Stripe object](https://stripe.com/docs/js/initializing) in any nested component.
+	 * Render an `Elements` provider at the root of your React app so that it is available everywhere you need it.
+	 *
+	 * To use the `Elements` provider, call `loadStripe` from `@stripe/stripe-js` with your publishable key.
+	 * The `loadStripe` function will asynchronously load the Stripe.js script and initialize a `Stripe` object.
+	 * Pass the returned `Promise` to `Elements`.
+	 *
+	 * @docs https://stripe.com/docs/stripe-js/react#elements-provider
+	 */
+
+	var Elements = function Elements(_ref) {
+	  var rawStripeProp = _ref.stripe,
+	      options = _ref.options,
+	      children = _ref.children;
+
+	  var _final = React.useRef(false);
+
+	  var isMounted = React.useRef(true);
+	  var parsed = React.useMemo(function () {
+	    return parseStripeProp(rawStripeProp);
+	  }, [rawStripeProp]);
+
+	  var _React$useState = React.useState(function () {
+	    return {
+	      stripe: null,
+	      elements: null
+	    };
+	  }),
+	      _React$useState2 = _slicedToArray(_React$useState, 2),
+	      ctx = _React$useState2[0],
+	      setContext = _React$useState2[1];
+
+	  var prevStripe = usePrevious(rawStripeProp);
+
+	  if (prevStripe !== null) {
+	    if (prevStripe !== rawStripeProp) {
+	      console.warn('Unsupported prop change on Elements: You cannot change the `stripe` prop after setting it.');
+	    }
+	  }
+
+	  if (!_final.current) {
+	    if (parsed.tag === 'sync') {
+	      _final.current = true;
+	      setContext({
+	        stripe: parsed.stripe,
+	        elements: parsed.stripe.elements(options)
+	      });
+	    }
+
+	    if (parsed.tag === 'async') {
+	      _final.current = true;
+	      parsed.stripePromise.then(function (stripe) {
+	        if (stripe && isMounted.current) {
+	          // Only update Elements context if the component is still mounted
+	          // and stripe is not null. We allow stripe to be null to make
+	          // handling SSR easier.
+	          setContext({
+	            stripe: stripe,
+	            elements: stripe.elements(options)
+	          });
+	        }
+	      });
+	    }
+	  }
+
+	  var prevOptions = usePrevious(options);
+	  React.useEffect(function () {
+	    if (!ctx.elements) {
+	      return;
+	    }
+
+	    var updates = extractAllowedOptionsUpdates(options, prevOptions, ['clientSecret', 'fonts']);
+
+	    if (updates) {
+	      ctx.elements.update(updates);
+	    }
+	  }, [options, prevOptions, ctx.elements]);
+	  React.useEffect(function () {
+	    return function () {
+	      isMounted.current = false;
+	    };
+	  }, []);
+	  React.useEffect(function () {
+	    var anyStripe = ctx.stripe;
+
+	    if (!anyStripe || !anyStripe._registerWrapper || !anyStripe.registerAppInfo) {
+	      return;
+	    }
+
+	    anyStripe._registerWrapper({
+	      name: 'react-stripe-js',
+	      version: "1.6.0"
+	    });
+
+	    anyStripe.registerAppInfo({
+	      name: 'react-stripe-js',
+	      version: "1.6.0",
+	      url: 'https://stripe.com/docs/stripe-js/react'
+	    });
+	  }, [ctx.stripe]);
+	  return /*#__PURE__*/React.createElement(ElementsContext.Provider, {
+	    value: ctx
+	  }, children);
+	};
+	Elements.propTypes = {
+	  stripe: propTypes.any,
+	  options: propTypes.object
+	};
+	var useElementsContextWithUseCase = function useElementsContextWithUseCase(useCaseMessage) {
+	  var ctx = React.useContext(ElementsContext);
+	  return parseElementsContext(ctx, useCaseMessage);
+	};
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#useelements-hook
+	 */
+
+	var useElements = function useElements() {
+	  var _useElementsContextWi = useElementsContextWithUseCase('calls useElements()'),
+	      elements = _useElementsContextWi.elements;
+
+	  return elements;
+	};
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#usestripe-hook
+	 */
+
+	var useStripe = function useStripe() {
+	  var _useElementsContextWi2 = useElementsContextWithUseCase('calls useStripe()'),
+	      stripe = _useElementsContextWi2.stripe;
+
+	  return stripe;
+	};
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#elements-consumer
+	 */
+
+	var ElementsConsumer = function ElementsConsumer(_ref2) {
+	  var children = _ref2.children;
+	  var ctx = useElementsContextWithUseCase('mounts <ElementsConsumer>'); // Assert to satisfy the busted React.FC return type (it should be ReactNode)
+
+	  return children(ctx);
+	};
+	ElementsConsumer.propTypes = {
+	  children: propTypes.func.isRequired
+	};
+
+	var useCallbackReference = function useCallbackReference(cb) {
+	  var ref = React.useRef(cb);
+	  React.useEffect(function () {
+	    ref.current = cb;
+	  }, [cb]);
+	  return function () {
+	    if (ref.current) {
+	      ref.current.apply(ref, arguments);
+	    }
+	  };
+	};
+
+	var noop = function noop() {};
+
+	var capitalized = function capitalized(str) {
+	  return str.charAt(0).toUpperCase() + str.slice(1);
+	};
+
+	var createElementComponent = function createElementComponent(type, isServer) {
+	  var displayName = "".concat(capitalized(type), "Element");
+
+	  var ClientElement = function ClientElement(_ref) {
+	    var id = _ref.id,
+	        className = _ref.className,
+	        _ref$options = _ref.options,
+	        options = _ref$options === void 0 ? {} : _ref$options,
+	        _ref$onBlur = _ref.onBlur,
+	        onBlur = _ref$onBlur === void 0 ? noop : _ref$onBlur,
+	        _ref$onFocus = _ref.onFocus,
+	        onFocus = _ref$onFocus === void 0 ? noop : _ref$onFocus,
+	        _ref$onReady = _ref.onReady,
+	        onReady = _ref$onReady === void 0 ? noop : _ref$onReady,
+	        _ref$onChange = _ref.onChange,
+	        onChange = _ref$onChange === void 0 ? noop : _ref$onChange,
+	        _ref$onEscape = _ref.onEscape,
+	        onEscape = _ref$onEscape === void 0 ? noop : _ref$onEscape,
+	        _ref$onClick = _ref.onClick,
+	        onClick = _ref$onClick === void 0 ? noop : _ref$onClick;
+
+	    var _useElementsContextWi = useElementsContextWithUseCase("mounts <".concat(displayName, ">")),
+	        elements = _useElementsContextWi.elements;
+
+	    var elementRef = React.useRef(null);
+	    var domNode = React.useRef(null);
+	    var callOnReady = useCallbackReference(onReady);
+	    var callOnBlur = useCallbackReference(onBlur);
+	    var callOnFocus = useCallbackReference(onFocus);
+	    var callOnClick = useCallbackReference(onClick);
+	    var callOnChange = useCallbackReference(onChange);
+	    var callOnEscape = useCallbackReference(onEscape);
+	    React.useLayoutEffect(function () {
+	      if (elementRef.current == null && elements && domNode.current != null) {
+	        var element = elements.create(type, options);
+	        elementRef.current = element;
+	        element.mount(domNode.current);
+	        element.on('ready', function () {
+	          return callOnReady(element);
+	        });
+	        element.on('change', callOnChange);
+	        element.on('blur', callOnBlur);
+	        element.on('focus', callOnFocus);
+	        element.on('escape', callOnEscape); // Users can pass an an onClick prop on any Element component
+	        // just as they could listen for the `click` event on any Element,
+	        // but only the PaymentRequestButton will actually trigger the event.
+
+	        element.on('click', callOnClick);
+	      }
+	    });
+	    var prevOptions = usePrevious(options);
+	    React.useEffect(function () {
+	      if (!elementRef.current) {
+	        return;
+	      }
+
+	      var updates = extractAllowedOptionsUpdates(options, prevOptions, ['paymentRequest']);
+
+	      if (updates) {
+	        elementRef.current.update(updates);
+	      }
+	    }, [options, prevOptions]);
+	    React.useLayoutEffect(function () {
+	      return function () {
+	        if (elementRef.current) {
+	          elementRef.current.destroy();
+	        }
+	      };
+	    }, []);
+	    return /*#__PURE__*/React.createElement("div", {
+	      id: id,
+	      className: className,
+	      ref: domNode
+	    });
+	  }; // Only render the Element wrapper in a server environment.
+
+
+	  var ServerElement = function ServerElement(props) {
+	    // Validate that we are in the right context by calling useElementsContextWithUseCase.
+	    useElementsContextWithUseCase("mounts <".concat(displayName, ">"));
+	    var id = props.id,
+	        className = props.className;
+	    return /*#__PURE__*/React.createElement("div", {
+	      id: id,
+	      className: className
+	    });
+	  };
+
+	  var Element = isServer ? ServerElement : ClientElement;
+	  Element.propTypes = {
+	    id: propTypes.string,
+	    className: propTypes.string,
+	    onChange: propTypes.func,
+	    onBlur: propTypes.func,
+	    onFocus: propTypes.func,
+	    onReady: propTypes.func,
+	    onClick: propTypes.func,
+	    options: propTypes.object
+	  };
+	  Element.displayName = displayName;
+	  Element.__elementType = type;
+	  return Element;
+	};
+
+	var isServer = typeof window === 'undefined';
+	/**
+	 * Requires beta access:
+	 * Contact [Stripe support](https://support.stripe.com/) for more information.
+	 *
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var AuBankAccountElement = createElementComponent('auBankAccount', isServer);
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var CardElement = createElementComponent('card', isServer);
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var CardNumberElement = createElementComponent('cardNumber', isServer);
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var CardExpiryElement = createElementComponent('cardExpiry', isServer);
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var CardCvcElement = createElementComponent('cardCvc', isServer);
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var FpxBankElement = createElementComponent('fpxBank', isServer);
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var IbanElement = createElementComponent('iban', isServer);
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var IdealBankElement = createElementComponent('idealBank', isServer);
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var P24BankElement = createElementComponent('p24Bank', isServer);
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var EpsBankElement = createElementComponent('epsBank', isServer);
+	var PaymentElement = createElementComponent('payment', isServer);
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var PaymentRequestButtonElement = createElementComponent('paymentRequestButton', isServer);
+	/**
+	 * Requires beta access:
+	 * Contact [Stripe support](https://support.stripe.com/) for more information.
+	 *
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var LinkAuthenticationElement = createElementComponent('linkAuthentication', isServer);
+	/**
+	 * Requires beta access:
+	 * Contact [Stripe support](https://support.stripe.com/) for more information.
+	 *
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var ShippingAddressElement = createElementComponent('shippingAddress', isServer);
+	/**
+	 * @docs https://stripe.com/docs/stripe-js/react#element-components
+	 */
+
+	var AfterpayClearpayMessageElement = createElementComponent('afterpayClearpayMessage', isServer);
+
+	exports.AfterpayClearpayMessageElement = AfterpayClearpayMessageElement;
+	exports.AuBankAccountElement = AuBankAccountElement;
+	exports.CardCvcElement = CardCvcElement;
+	exports.CardElement = CardElement;
+	exports.CardExpiryElement = CardExpiryElement;
+	exports.CardNumberElement = CardNumberElement;
+	exports.Elements = Elements;
+	exports.ElementsConsumer = ElementsConsumer;
+	exports.EpsBankElement = EpsBankElement;
+	exports.FpxBankElement = FpxBankElement;
+	exports.IbanElement = IbanElement;
+	exports.IdealBankElement = IdealBankElement;
+	exports.LinkAuthenticationElement = LinkAuthenticationElement;
+	exports.P24BankElement = P24BankElement;
+	exports.PaymentElement = PaymentElement;
+	exports.PaymentRequestButtonElement = PaymentRequestButtonElement;
+	exports.ShippingAddressElement = ShippingAddressElement;
+	exports.useElements = useElements;
+	exports.useStripe = useStripe;
+
+	Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
+
+
+/***/ }),
+
+/***/ "./node_modules/@stripe/stripe-js/dist/stripe.esm.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@stripe/stripe-js/dist/stripe.esm.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "loadStripe": () => (/* binding */ loadStripe)
+/* harmony export */ });
+var V3_URL = 'https://js.stripe.com/v3';
+var V3_URL_REGEX = /^https:\/\/js\.stripe\.com\/v3\/?(\?.*)?$/;
+var EXISTING_SCRIPT_MESSAGE = 'loadStripe.setLoadParameters was called but an existing Stripe.js script already exists in the document; existing script parameters will be used';
+var findScript = function findScript() {
+  var scripts = document.querySelectorAll("script[src^=\"".concat(V3_URL, "\"]"));
+
+  for (var i = 0; i < scripts.length; i++) {
+    var script = scripts[i];
+
+    if (!V3_URL_REGEX.test(script.src)) {
+      continue;
+    }
+
+    return script;
+  }
+
+  return null;
+};
+
+var injectScript = function injectScript(params) {
+  var queryString = params && !params.advancedFraudSignals ? '?advancedFraudSignals=false' : '';
+  var script = document.createElement('script');
+  script.src = "".concat(V3_URL).concat(queryString);
+  var headOrBody = document.head || document.body;
+
+  if (!headOrBody) {
+    throw new Error('Expected document.body not to be null. Stripe.js requires a <body> element.');
+  }
+
+  headOrBody.appendChild(script);
+  return script;
+};
+
+var registerWrapper = function registerWrapper(stripe, startTime) {
+  if (!stripe || !stripe._registerWrapper) {
+    return;
+  }
+
+  stripe._registerWrapper({
+    name: 'stripe-js',
+    version: "1.20.3",
+    startTime: startTime
+  });
+};
+
+var stripePromise = null;
+var loadScript = function loadScript(params) {
+  // Ensure that we only attempt to load Stripe.js at most once
+  if (stripePromise !== null) {
+    return stripePromise;
+  }
+
+  stripePromise = new Promise(function (resolve, reject) {
+    if (typeof window === 'undefined') {
+      // Resolve to null when imported server side. This makes the module
+      // safe to import in an isomorphic code base.
+      resolve(null);
+      return;
+    }
+
+    if (window.Stripe && params) {
+      console.warn(EXISTING_SCRIPT_MESSAGE);
+    }
+
+    if (window.Stripe) {
+      resolve(window.Stripe);
+      return;
+    }
+
+    try {
+      var script = findScript();
+
+      if (script && params) {
+        console.warn(EXISTING_SCRIPT_MESSAGE);
+      } else if (!script) {
+        script = injectScript(params);
+      }
+
+      script.addEventListener('load', function () {
+        if (window.Stripe) {
+          resolve(window.Stripe);
+        } else {
+          reject(new Error('Stripe.js not available'));
+        }
+      });
+      script.addEventListener('error', function () {
+        reject(new Error('Failed to load Stripe.js'));
+      });
+    } catch (error) {
+      reject(error);
+      return;
+    }
+  });
+  return stripePromise;
+};
+var initStripe = function initStripe(maybeStripe, args, startTime) {
+  if (maybeStripe === null) {
+    return null;
+  }
+
+  var stripe = maybeStripe.apply(undefined, args);
+  registerWrapper(stripe, startTime);
+  return stripe;
+};
+
+// own script injection.
+
+var stripePromise$1 = Promise.resolve().then(function () {
+  return loadScript(null);
+});
+var loadCalled = false;
+stripePromise$1["catch"](function (err) {
+  if (!loadCalled) {
+    console.warn(err);
+  }
+});
+var loadStripe = function loadStripe() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  loadCalled = true;
+  var startTime = Date.now();
+  return stripePromise$1.then(function (maybeStripe) {
+    return initStripe(maybeStripe, args, startTime);
+  });
+};
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -28715,6 +29579,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_globalState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Shared/globalState */ "./resources/js/components/Shared/globalState.js");
 /* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
 /* harmony import */ var _material_ui_icons_Delete__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons/Delete */ "./node_modules/@material-ui/icons/Delete.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -28741,6 +29606,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -28861,13 +29727,13 @@ function Cart() {
 
   if (!isLoaded) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: classes.marginTop,
+      className: "pt-15",
       children: "Loading..."
     });
   } else {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_8__["default"], {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        className: classes.marginTop,
+        className: "pt-15",
         container: true,
         justifyContent: "center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -28904,9 +29770,9 @@ function Cart() {
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                     className: "quantityNameCart",
                     children: product.name
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "quantityPriceCart",
-                    children: product.price
+                    children: ["$", product.price, ".00"]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "quantityProductCart mr-5",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
@@ -28916,7 +29782,13 @@ function Cart() {
                         return addQuantityInCart(product);
                       },
                       children: "+"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                    }), product.quantity > 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                      onClick: function onClick() {
+                        return substractQuantityInCart(product);
+                      },
+                      children: "-"
+                    }), product.quantity === 1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                      disabled: true,
                       onClick: function onClick() {
                         return substractQuantityInCart(product);
                       },
@@ -28936,11 +29808,16 @@ function Cart() {
               item: true,
               xs: 11,
               sm: 4,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                 className: "RecapCart lightShadowCard",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
                   children: "The total amount of"
-                })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
+                  to: "/checkout",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+                    children: "Order"
+                  })
+                })]
               })
             })]
           })]
@@ -28948,6 +29825,346 @@ function Cart() {
       })
     });
   }
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Cart/Checkout.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/Cart/Checkout.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Checkout)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/Button.js");
+/* harmony import */ var _css_Cart_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/Cart.css */ "./resources/js/css/Cart.css");
+/* harmony import */ var _Shared_globalState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Shared/globalState */ "./resources/js/components/Shared/globalState.js");
+/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
+/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @stripe/react-stripe-js */ "./node_modules/@stripe/react-stripe-js/dist/react-stripe.umd.js");
+/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _stripe_stripe_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @stripe/stripe-js */ "./node_modules/@stripe/stripe-js/dist/stripe.esm.js");
+/* harmony import */ var _PaymentForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PaymentForm */ "./resources/js/components/Cart/PaymentForm.js");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var PUBLIC_KEY = "pk_test_jsy4tWY65SkgwjP0YVflB9xI";
+var stripePromise = (0,_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_5__.loadStripe)(PUBLIC_KEY); // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK_KEY);
+
+function Checkout() {
+  // const options = {
+  //     // passing the client secret obtained from the server
+  //     clientSecret: process.env.REACT_APP_STRIPE_SK_KEY,
+  //   };
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      firstName = _useState2[0],
+      setFirstName = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      lastName = _useState4[0],
+      setLastName = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      email = _useState6[0],
+      setEmail = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      address = _useState8[0],
+      setAddress = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      city = _useState10[0],
+      setCity = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      zipCode = _useState12[0],
+      setZipCode = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState14 = _slicedToArray(_useState13, 2),
+      itemsInCart = _useState14[0],
+      setItemsInCart = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState16 = _slicedToArray(_useState15, 2),
+      isLoaded = _useState16[0],
+      setIsLoaded = _useState16[1];
+
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState18 = _slicedToArray(_useState17, 2),
+      localStorageLength = _useState18[0],
+      setLocalStorageLength = _useState18[1];
+
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState20 = _slicedToArray(_useState19, 2),
+      isProcessing = _useState20[0],
+      setIsProcessing = _useState20[1];
+
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState22 = _slicedToArray(_useState21, 2),
+      price = _useState22[0],
+      setPrice = _useState22[1];
+
+  var localLength = localStorage.length;
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var myPrice = 0;
+    var array = [];
+
+    for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+      var value = JSON.parse(localStorage[key]);
+      array.push(value);
+      myPrice += value.price * value.quantity;
+    }
+
+    setPrice(myPrice);
+    setLocalStorageLength(array.length);
+    setItemsInCart(array);
+    setIsLoaded(true);
+  }, [localLength]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+    className: "mt-15",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__.Elements, {
+      stripe: stripePromise,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        container: true,
+        justifyContent: "center",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          container: true,
+          spacing: 5,
+          item: true,
+          xs: 12,
+          sm: 12,
+          md: 11,
+          lg: 10,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            spacing: 2,
+            container: true,
+            item: true,
+            xs: 12,
+            md: 8,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              item: true,
+              xs: 12,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+                className: " centerText ",
+                children: "Billing details"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              item: true,
+              xs: 12,
+              sm: 6,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                variant: "outlined",
+                fullWidth: true,
+                label: "FirstName"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              item: true,
+              xs: 12,
+              sm: 6,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                variant: "outlined",
+                fullWidth: true,
+                label: "LastName"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              item: true,
+              xs: 12,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                variant: "outlined",
+                fullWidth: true,
+                label: "Email"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              item: true,
+              xs: 5,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                variant: "outlined",
+                fullWidth: true,
+                label: "Address"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              item: true,
+              xs: 4,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                variant: "outlined",
+                fullWidth: true,
+                label: "City"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              item: true,
+              xs: 3,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                variant: "outlined",
+                fullWidth: true,
+                label: "Zip code"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              item: true,
+              xs: 12,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_PaymentForm__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            container: true,
+            item: true,
+            xs: 12,
+            md: 4,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              item: true,
+              xs: 12,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+                className: " centerText ",
+                children: "Your order"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "yourOrder lightShadowCard",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "mt-4 flexBetween",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                    className: "ml-2 mt-2",
+                    children: "Product"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                    className: "mr-2 mt-2",
+                    children: "Subtotal"
+                  })]
+                }), itemsInCart.map(function (product) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                    className: "productLineCart mt-5 p-2",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                      children: [product.name, " x ", product.quantity]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                      children: ["$", product.price * product.quantity, ".00"]
+                    })]
+                  }, product.id);
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                className: "mt-5",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                  fullWidth: true,
+                  variant: "contained",
+                  margin: "normal",
+                  children: isProcessing ? "Processing..." : "Pay $".concat(price, ".00")
+                })
+              })]
+            })
+          })]
+        })
+      })
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Cart/PaymentForm.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Cart/PaymentForm.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ PaymentForm)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _css_Cart_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/Cart.css */ "./resources/js/css/Cart.css");
+/* harmony import */ var _Shared_globalState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Shared/globalState */ "./resources/js/components/Shared/globalState.js");
+/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
+/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @stripe/react-stripe-js */ "./node_modules/@stripe/react-stripe-js/dist/react-stripe.umd.js");
+/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _stripe_stripe_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @stripe/stripe-js */ "./node_modules/@stripe/stripe-js/dist/stripe.esm.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // const CardElementContainer = styled.div`
+//  height: 40px;
+//  display: flex;
+//  align-items: center;
+//  `;
+
+
+function PaymentForm() {
+  // const { data: clientSecret } = await axios.post('http://localhost:8000/api/charge', {
+  //     amount: price * 100
+  // })
+  var cardElementOptions = {
+    style: {
+      base: {
+        fontSize: '18px',
+        color: 'black'
+      },
+      invalid: {}
+    },
+    hidePostalCode: true
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: " ",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__.CardElement, {
+        className: "testCard",
+        options: cardElementOptions
+      })
+    })
+  });
 }
 
 /***/ }),
@@ -29405,7 +30622,7 @@ var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_9__["default"])(
   };
 });
 function Home() {
-  var _jsxs2;
+  var _jsx2;
 
   var classes = useStyles();
 
@@ -29466,50 +30683,63 @@ function Home() {
         justifyContent: "center",
         className: "menuQuality",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          item: true,
           container: true,
           xs: 12,
           md: 10,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
             item: true,
-            xs: 4,
+            xs: 12,
+            sm: 4,
             className: classes.alignTitle,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-              className: "flexCenter",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-              className: "flexCenter",
-              children: "Respect for the land"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-              className: "flexCenter",
-              children: "Environment and traditions"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], (_jsxs2 = {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              className: "mt-6",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "flexCenter",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_12__["default"], {})
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "flexCenter mt-2",
+                children: "Respect for the land"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "flexCenter mt-2",
+                children: "Environment and traditions"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], (_jsx2 = {
             item: true,
-            xs: 4,
+            xs: 12,
+            sm: 4,
             className: classes.alignTitle
-          }, _defineProperty(_jsxs2, "className", "greyLineBorders"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-            className: "flexCenter",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
-            className: "flexCenter",
-            children: "Tracking delivery"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h5", {
-            className: "flexCenter",
-            children: "All around the world"
-          })]), _jsxs2)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
-            item: true,
-            xs: 4,
-            className: classes.alignTitle,
+          }, _defineProperty(_jsx2, "className", "greyLineBorders"), _defineProperty(_jsx2, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            className: "mt-6",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
               className: "flexCenter",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
-              className: "flexCenter",
-              children: "Respect du terroir"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h5", {
-              className: "flexCenter",
-              children: "De l'environnement et des traditions"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              className: "flexCenter mt-2",
+              children: "Tracking delivery"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              className: "flexCenter mt-2",
+              children: "All around the world"
             })]
+          })), _jsx2)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+            item: true,
+            xs: 12,
+            sm: 4,
+            className: classes.alignTitle,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              className: "mt-6",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "flexCenter",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_12__["default"], {})
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "flexCenter mt-2",
+                children: "Respect du terroir"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "flexCenter mt-2",
+                children: "De l'environnement et des traditions"
+              })]
+            })
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
@@ -29526,14 +30756,16 @@ function Home() {
           container: true,
           justifyContent: "center",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+            item: true,
             container: true,
             xs: 12,
-            md: 10,
+            md: 11,
+            lg: 10,
             children: bestSellers.map(function (item) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
                 item: true,
-                xs: 6,
-                sm: 3,
+                xs: 12,
+                sm: 6,
                 md: 3,
                 lg: 3,
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
@@ -29553,7 +30785,7 @@ function Home() {
                       children: item.name
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                       className: "priceProduct mt-4 ml-3 pb-1",
-                      children: [item.price, ",00 \u20AC"]
+                      children: ["$", item.price, ".00"]
                     })]
                   })
                 })
@@ -29563,49 +30795,48 @@ function Home() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
         className: "flexCenter mt-10",
-        children: "Ils ont v\xE9cu l'exp\xE9rience"
+        children: "They lived the experience"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
-        className: "pt-10",
+        className: "pt-7",
         container: true,
         justifyContent: "center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
           container: true,
-          xs: 12,
+          item: true,
+          xs: 11,
           md: 11,
           spacing: 4,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
             item: true,
-            xs: 3,
-            className: classes.alignTitle,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
-              container: true,
-              justifyContent: "center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                className: "flexCenter",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-                  children: avgNote
-                }), "/5"]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-                className: "flexCenter mt-5",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
+            md: 3,
+            xs: 12,
+            className: " verticalAlign",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "textAlignCenter",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  children: [avgNote, "/5"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
                   className: "flexCenter",
                   children: "Based on purchases on AmazingSewing"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_14__["default"], {
-                precision: 0.5,
-                readOnly: true,
-                className: "mt-5",
-                name: "simple-controlled",
-                value: avgNote,
-                emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_15__["default"], {
-                  fontSize: "inherit",
-                  className: "emptyStar"
-                })
-              })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_14__["default"], {
+                    precision: 0.5,
+                    readOnly: true,
+                    name: "simple-controlled",
+                    value: avgNote,
+                    emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_15__["default"], {
+                      fontSize: "inherit",
+                      className: "emptyStar"
+                    })
+                  })
+                })]
+              })
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
             item: true,
-            xs: 9,
+            md: 9,
+            sm: 12,
             className: classes.alignTitle,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
               container: true,
@@ -29614,7 +30845,9 @@ function Home() {
               children: userReviews.map(function (item) {
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
                   item: true,
-                  xs: 3,
+                  xs: 12,
+                  sm: 6,
+                  lg: 3,
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_14__["default"], {
                       precision: 0.5,
@@ -29660,7 +30893,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _Cart_Cart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cart/Cart */ "./resources/js/components/Cart/Cart.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../routes */ "./resources/js/routes/index.js");
+/* harmony import */ var _Cart_Checkout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Cart/Checkout */ "./resources/js/components/Cart/Checkout.js");
 /* harmony import */ var _components_Connect_Connect__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Connect/Connect */ "./resources/js/components/Connect/Connect.js");
 /* harmony import */ var _components_Connect_Signup__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Connect/Signup */ "./resources/js/components/Connect/Signup.js");
 /* harmony import */ var _components_Products_Products__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Products/Products */ "./resources/js/components/Products/Products.js");
@@ -29674,8 +30907,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
- // import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
-// import Connect from './components/Connect/Connect'
 
 
 
@@ -29686,9 +30917,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import Header from './layout/Header'
-// import Signup from './components/Signup/Signup'
-// import { Switch, Route } from 'react-router-dom';
 
 
 
@@ -29701,6 +30929,7 @@ function Index() {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
         className: "generalFont",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_layout_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+          className: "testDiv",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Switch, {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
               path: "/connect",
@@ -29731,6 +30960,11 @@ function Index() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
               path: "/product",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_Products_Product__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Switch, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+              path: "/checkout",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Cart_Checkout__WEBPACK_IMPORTED_MODULE_3__["default"], {})
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_layout_Footer__WEBPACK_IMPORTED_MODULE_11__["default"], {})]
@@ -29961,7 +31195,7 @@ function Product(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_14__["default"], {
-    className: classes.marginTop,
+    className: "pt-15",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
       container: true,
       justifyContent: "center",
@@ -30106,7 +31340,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
 /* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Container */ "./node_modules/@material-ui/core/esm/Container/Container.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/Button.js");
 /* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/makeStyles/makeStyles.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../App.css */ "./resources/js/App.css");
@@ -30148,11 +31381,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_6__["default"])(function (theme) {
-  return {
-    marginTop: {
-      marginTop: 200
-    }
-  };
+  return {};
 });
 function Products() {
   var classes = useStyles();
@@ -30243,12 +31472,13 @@ function Products() {
     });
   } else {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      className: classes.marginTop,
+      className: "pt-15",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
         container: true,
         justifyContent: "center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
           container: true,
+          item: true,
           xs: 12,
           sm: 11,
           md: 10,
@@ -30289,6 +31519,7 @@ function Products() {
         className: "mt-10",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
           container: true,
+          item: true,
           justifyContent: "center",
           xs: 12,
           sm: 11,
@@ -30297,7 +31528,8 @@ function Products() {
             className: "flex",
             children: numberOfPages.map(function (item) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                  className: "boutonPagination testDiv",
                   onClick: function onClick() {
                     return handleChangePage(item);
                   },
@@ -30325,7 +31557,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "numberOfItemsInCart": () => (/* binding */ numberOfItemsInCart),
 /* harmony export */   "numberOfPageProducts": () => (/* binding */ numberOfPageProducts),
-/* harmony export */   "currentPageProduct": () => (/* binding */ currentPageProduct)
+/* harmony export */   "currentPageProduct": () => (/* binding */ currentPageProduct),
+/* harmony export */   "currentWidth": () => (/* binding */ currentWidth)
 /* harmony export */ });
 var _require = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js"),
     atom = _require.atom;
@@ -30341,6 +31574,11 @@ var numberOfPageProducts = atom({
 var currentPageProduct = atom({
   key: 'currentPageProduct',
   "default": 1
+});
+var thisWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+var currentWidth = atom({
+  key: 'currentWidth',
+  "default": thisWidth
 });
 
 /***/ }),
@@ -30417,65 +31655,63 @@ var Item = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__["default"])(
   });
 });
 function Footer() {
-  var _jsxs2, _jsxs3;
-
   var classes = useStyles();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    className: "mt-10",
+    className: "pt-10 testDiv",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: " backgroundFooterItems",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
         container: true,
         justifyContent: "center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          spacing: 2,
           container: true,
+          item: true,
           xs: 12,
           sm: 11,
           md: 9,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            className: "textAlignCenter",
             item: true,
+            xs: 12,
             sm: 6,
             md: 3,
-            className: classes.alignTitle,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
-              className: "flexCenter",
               children: "SECURE PAYMENT"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
-              className: "flexCenter",
               children: "With credit card or Paypal"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], (_jsxs2 = {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
             item: true,
+            xs: 12,
             sm: 6,
             md: 3,
-            className: classes.alignTitle
-          }, _defineProperty(_jsxs2, "className", "greyLineBorders"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
-            className: "flexCenter",
-            children: "SATISFIED OR REFUNDED"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
-            className: "flexCenter",
-            children: "7 days from time of delivery"
-          })]), _jsxs2)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], (_jsxs3 = {
-            item: true,
-            sm: 6,
-            md: 3,
-            className: classes.alignTitle
-          }, _defineProperty(_jsxs3, "className", "greyLineBorders"), _defineProperty(_jsxs3, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
-            className: "flexCenter",
-            children: "FREE SHIPPING"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
-            className: "flexCenter",
-            children: "From 40$ of purchases"
-          })]), _jsxs3)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-            item: true,
-            sm: 6,
-            md: 3,
-            className: classes.alignTitle,
+            className: "greyLineBorders textAlignCenter",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
-              className: "flexCenter",
+              children: "SATISFIED OR REFUNDED"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
+              children: "7 days from time of delivery"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            item: true,
+            xs: 12,
+            sm: 6,
+            md: 3,
+            className: "greyLineBorders textAlignCenter",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
+              children: "FREE SHIPPING"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
+              children: "From 40$ of purchases"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            className: "textAlignCenter",
+            item: true,
+            xs: 12,
+            sm: 6,
+            md: 3,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
               children: "RESPONSIVE CUSTOMER SERVICE"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
-              className: "flexCenter",
               children: "Guaranteed response within 24 hours"
             })]
           })]
@@ -30483,102 +31719,139 @@ function Footer() {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "backgroundFooter ",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_11__["default"], {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
           container: true,
           justifyContent: "center",
-          className: "menuQuality",
+          className: "menuQuality pt-5",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
             container: true,
+            item: true,
             xs: 12,
-            md: 10,
-            className: "mt-7",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-              className: "flexCenter pt-5 mt-2",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
-                className: "m-3"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
-                className: "m-3"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
-                className: "m-3"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
-                className: "m-3"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-              className: "widthP mt-4",
-              children: "  unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-              container: true,
-              spacing: 2,
-              className: "pt-10",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                item: true,
-                md: 9,
-                xs: 12,
-                container: true,
-                spacing: 2,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                  item: true,
-                  md: 3,
-                  xs: 6,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
-                    children: "Amazing Sewing"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("ul", {
-                    className: "ulFooter",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
-                      children: ["6 rue de la Fontaine", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), "71150 Bouzeron"]
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
-                      children: "+33 03 82 72 63 07"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
-                      children: "reception@amzingbikes.com"
-                    })]
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                  item: true,
-                  md: 3,
-                  xs: 6,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
-                    children: "A propos"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("ul", {
-                    className: "ulFooter",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
-                      children: ["6 rue de la Fontaine", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), "71150 Bouzeron"]
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
-                      children: "+33 03 82 72 63 07"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
-                      children: "reception@amzingbikes.com"
-                    })]
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                  item: true,
-                  md: 3,
-                  xs: 6,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
-                    children: "Vente priv\xE9e et newsletter"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("ul", {
-                    className: "ulFooter",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
-                      children: ["Acc\xE9dez aux ventes priv\xE9es et restez", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), "inform\xE9 des informations Chanzy"]
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_13__["default"], {
-                        className: "inputFooter",
-                        placeholder: " Votre mail ..."
-                      })
-                    })]
-                  })]
+            md: 11,
+            lg: 10,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              justifyContent: "center",
+              item: true,
+              xs: 12,
+              md: 5,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "flexCenter pt-5 mt-2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                  className: "m-3"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                  className: "m-3"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                  className: "m-3"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                  className: "m-3"
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              xs: 12,
+              md: 7,
+              container: true,
+              justifyContent: "center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                xs: 11,
+                md: 12,
                 item: true,
-                md: 3,
-                xs: 12,
-                className: classes.alignTitle,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
-                  children: "AmazingBikes"
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  className: "widthP mt-4",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+                    children: "unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                  })
                 })
-              })]
+              })
             })]
           })
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          container: true,
+          justifyContent: "center",
+          className: "menuQuality pb-5",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            container: true,
+            item: true,
+            xs: 12,
+            md: 11,
+            lg: 10,
+            className: "mt-7",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              className: "pt-5",
+              container: true,
+              justifyContent: "center",
+              md: 12,
+              lg: 8,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                className: "flexCenter",
+                item: true,
+                md: 4,
+                sm: 6,
+                xs: 12,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                  className: "widthItemsFooter",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+                    children: "Amazing Sewing"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                    children: "5 rue des oiseaux"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                    children: "27220 Fresney"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                    children: "contact@amazingsewing.com"
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                className: "flexCenter",
+                item: true,
+                md: 4,
+                sm: 6,
+                xs: 12,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                  className: "widthItemsFooter",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+                    children: "About us"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                    children: "Who are we ?"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                    children: "Our corporate values"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                    children: "Guaranty and return"
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                className: "flexCenter",
+                item: true,
+                md: 4,
+                sm: 6,
+                xs: 12,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                  className: "widthItemsFooter",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+                    children: "Privates sales and newsletter"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                    children: ["Access privates sales and stay", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), "up to date with AmazingSewing news"]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                    className: "flexCenter mt-4",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                      className: "inputFooter",
+                      placeholder: " Your email ..."
+                    })
+                  })]
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              className: "pt-5 verticalAlign",
+              container: true,
+              justifyContent: "center",
+              md: 12,
+              lg: 4,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
+                className: "verticalAlign",
+                children: "AmazingSewing"
+              })
+            })]
+          })
+        })]
       })
     })]
   });
@@ -30600,7 +31873,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
 /* harmony import */ var _material_ui_core_Box__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @material-ui/core/Box */ "./node_modules/@material-ui/core/esm/Box/Box.js");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/Slide */ "./node_modules/@material-ui/core/esm/Slide/Slide.js");
@@ -30611,8 +31883,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_useScrollTrigger__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/useScrollTrigger */ "./node_modules/@material-ui/core/esm/useScrollTrigger/useScrollTrigger.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/styled.js");
 /* harmony import */ var _material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core/CssBaseline */ "./node_modules/@material-ui/core/esm/CssBaseline/CssBaseline.js");
-/* harmony import */ var _material_ui_icons_Person__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/icons/Person */ "./node_modules/@material-ui/icons/Person.js");
-/* harmony import */ var _material_ui_icons_ShoppingCart__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @material-ui/icons/ShoppingCart */ "./node_modules/@material-ui/icons/ShoppingCart.js");
+/* harmony import */ var _material_ui_icons_ShoppingCart__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/icons/ShoppingCart */ "./node_modules/@material-ui/icons/ShoppingCart.js");
+/* harmony import */ var _material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/icons/Search */ "./node_modules/@material-ui/icons/Search.js");
 /* harmony import */ var _components_Connect_Connect__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Connect/Connect */ "./resources/js/components/Connect/Connect.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../App.css */ "./resources/js/App.css");
@@ -30650,6 +31922,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
  // import { AppBar } from '@mui/material';
+
 
 
 
@@ -30766,11 +32039,11 @@ function Header(props) {
           background: '#ffffff'
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_15__["default"], {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_16__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Box__WEBPACK_IMPORTED_MODULE_16__["default"], {
             sx: {
               flexGrow: 1
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
               container: true,
               spacing: 10,
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
@@ -30785,18 +32058,44 @@ function Header(props) {
                   className: "titleHeader",
                   children: "AmazingSewing"
                 })), _jsx2))
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
-                item: true,
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
                 xs: 6,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
-                  className: "pt-2",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_19__["default"], {
-                    fullWidth: true,
-                    id: "standard-basic",
-                    placeholder: "search a product ...",
-                    variant: "standard"
+                spacing: 2,
+                item: true,
+                container: true,
+                justifyContent: "center",
+                className: classes.routerDecoration,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
+                  item: true,
+                  xs: 3,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
+                    to: "/",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+                      onClick: resetPage,
+                      children: "Home"
+                    })
                   })
-                })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
+                  item: true,
+                  xs: 3,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
+                    to: "/products",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+                      onClick: resetPage,
+                      children: "Catalog"
+                    })
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
+                  item: true,
+                  xs: 3,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
+                    to: "/products",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+                      onClick: resetPage,
+                      children: "About us"
+                    })
+                  })
+                })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
                 className: classes.gridRight,
                 item: true,
@@ -30805,7 +32104,7 @@ function Header(props) {
                   to: "/connect",
                   onClick: resetPage,
                   className: "item"
-                }, _defineProperty(_jsx3, "className", classes.routerDecoration), _defineProperty(_jsx3, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_Person__WEBPACK_IMPORTED_MODULE_20__["default"], {
+                }, _defineProperty(_jsx3, "className", classes.routerDecoration), _defineProperty(_jsx3, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_19__["default"], {
                   className: classes.icon
                 })), _jsx3)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, (_jsx4 = {
                   to: "/cart",
@@ -30814,108 +32113,16 @@ function Header(props) {
                 }, _defineProperty(_jsx4, "className", classes.routerDecoration), _defineProperty(_jsx4, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(StyledBadge, {
                   badgeContent: numberInCart,
                   color: "secondary",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_ShoppingCart__WEBPACK_IMPORTED_MODULE_21__["default"], {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_ShoppingCart__WEBPACK_IMPORTED_MODULE_20__["default"], {
                     className: classes.icon
                   })
                 })), _jsx4))]
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
-              container: true,
-              spacing: 2,
-              justifyContent: "center",
-              className: classes.routerDecoration,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
-                item: true,
-                xs: 2,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
-                  to: "/",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
-                    onClick: resetPage,
-                    children: "Home"
-                  })
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
-                item: true,
-                xs: 2,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
-                  to: "/products",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
-                    onClick: resetPage,
-                    children: "Catalog"
-                  })
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
-                item: true,
-                xs: 2,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
-                  to: "/products",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
-                    onClick: resetPage,
-                    children: "About us"
-                  })
-                })
-              })]
-            })]
+            })
           })
         })
       })
     }))]
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/routes/index.js":
-/*!**************************************!*\
-  !*** ./resources/js/routes/index.js ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Routes)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _components_Connect_Connect__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Connect/Connect */ "./resources/js/components/Connect/Connect.js");
-/* harmony import */ var _components_Cart_Cart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Cart/Cart */ "./resources/js/components/Cart/Cart.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _layout_Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../layout/Header */ "./resources/js/layout/Header.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
- // import { Home } from '../components/Home';
-// import { Switch, Route } from 'react-router-dom';
-
-
-
-
-
-function Routes() {
-  //     var Router = require("react-router").Router;
-  // var Route = require("react-router").Route;
-  // var Switch = require("react-router").Switch;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_layout_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Switch, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-              path: "/connect",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Connect_Connect__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Switch, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-              path: "/cart",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Cart_Cart__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-            })
-          })]
-        })]
-      })
-    })
   });
 }
 
@@ -35459,7 +36666,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html { \r\n    scroll-behavior: smooth; \r\n    \r\n  }\r\n.generalFont{\r\n    font-family:  cursive;\r\n}\r\n.flex{\r\n    display:flex;\r\n}\r\n.justifyText{\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: justify;\r\n    text-justify: inter-word;\r\n}\r\n.emptyStar{\r\n    color:rgb(219, 219, 219);\r\n}\r\n.centerText{\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: center;\r\n    \r\n}\r\n.flexCenter{\r\n    display:flex;\r\n    justify-content: center;\r\n}\r\n.flexColumn{\r\n    display:flex;\r\n    flex-direction: column;\r\n}\r\n.flexBetween{\r\n    display:flex;\r\n    justify-content: space-between;\r\n}\r\n.lightShadowCard{\r\n    box-shadow: 0 0 2px 1px rgb(224, 224, 224);\r\n}\r\n.productCard{\r\n    width:200px;\r\n    /* height:300px; */\r\n    background-color: rgb(173, 199, 199);\r\n}\r\n.greyLineProduct{\r\n    width:100%;\r\n    height:1px;\r\n    background-color:rgb(223, 223, 223);\r\n}\r\n.lightGrey{\r\n    background-color:rgb(223, 223, 223);\r\n}\r\n.marginTopHeader{\r\n    margin-top:130px;\r\n}\r\n\r\n.mt-1{\r\n    margin-top:5px\r\n}\r\n.mt-2{\r\n    margin-top:10px\r\n}\r\n.mt-3{\r\n    margin-top:15px\r\n}\r\n.mt-4{\r\n    margin-top:20px\r\n}\r\n.mt-5{\r\n    margin-top:25px\r\n}\r\n.mt-6{\r\n    margin-top:30px\r\n}\r\n.mt-7{\r\n    margin-top:40px\r\n}\r\n.mt-8{\r\n    margin-top:50px\r\n}\r\n.mt-9{\r\n    margin-top:60px\r\n}\r\n.mt-10{\r\n    margin-top:70px\r\n}\r\n.mt-11{\r\n    margin-top:80px\r\n}\r\n.mt-12{\r\n    margin-top:90px\r\n}\r\n.mt-13{\r\n    margin-top:100px\r\n}\r\n.mt-14{\r\n    margin-top:120px\r\n}\r\n.mt-15{\r\n    margin-top:140px\r\n}\r\n.pt-1{\r\n    padding-top:5px\r\n}\r\n.pt-2{\r\n    padding-top:10px\r\n}\r\n.pt-3{\r\n    padding-top:15px\r\n}\r\n.pt-4{\r\n    padding-top:20px\r\n}\r\n.pt-5{\r\n    padding-top:25px\r\n}\r\n.pt-6{\r\n    padding-top:30px\r\n}\r\n.pt-7{\r\n    padding-top:40px\r\n}\r\n.pt-8{\r\n    padding-top:50px\r\n}\r\n.pt-9{\r\n    padding-top:60px\r\n}\r\n.pt-10{\r\n    padding-top:70px\r\n}\r\n.pt-11{\r\n    padding-top:80px\r\n}\r\n.pt-12{\r\n    padding-top:90px\r\n}\r\n.pt-13{\r\n    padding-top:100px\r\n}\r\n.pt-14{\r\n    padding-top:120px\r\n}\r\n.pt-15{\r\n    padding-top:140px\r\n}\r\n.m-1{\r\n    margin:5px\r\n}\r\n.m-2{\r\n    margin:10px\r\n}\r\n.m-3{\r\n    margin:15px\r\n}\r\n.m-4{\r\n    margin:20px\r\n}\r\n.m-5{\r\n    margin:25px\r\n}\r\n.m-6{\r\n    margin:30px\r\n}\r\n.m-7{\r\n    margin:40px\r\n}\r\n.m-8{\r\n    margin:50px\r\n}\r\n.m-9{\r\n    margin:60px\r\n}\r\n.m-10{\r\n    margin:70px\r\n}\r\n.m-11{\r\n    margin:80px\r\n}\r\n.m-12{\r\n    margin:90px\r\n}\r\n.m-13{\r\n    margin:100px\r\n}\r\n.m-14{\r\n    margin:120px\r\n}\r\n.m-15{\r\n    margin:140px\r\n}\r\n.p-1{\r\n    padding:5px\r\n}\r\n.p-2{\r\n    padding:10px\r\n}\r\n.p-3{\r\n    padding:15px\r\n}\r\n.p-4{\r\n    padding:20px\r\n}\r\n.p-5{\r\n    padding:25px\r\n}\r\n.p-6{\r\n    padding:30px\r\n}\r\n.p-7{\r\n    padding:40px\r\n}\r\n.p-8{\r\n    padding:50px\r\n}\r\n.p-9{\r\n    padding:60px\r\n}\r\n.p-10{\r\n    padding:70px\r\n}\r\n.p-11{\r\n    padding:80px\r\n}\r\n.p-12{\r\n    padding:90px\r\n}\r\n.p-13{\r\n    padding:100px\r\n}\r\n.p-14{\r\n    padding:120px\r\n}\r\n.p-15{\r\n    padding:140px\r\n}\r\n.ml-1{\r\n    margin-left:5px\r\n}\r\n.ml-2{\r\n    margin-left:10px\r\n}\r\n.ml-3{\r\n    margin-left:15px\r\n}\r\n.ml-4{\r\n    margin-left:20px\r\n}\r\n.ml-5{\r\n    margin-left:25px\r\n}\r\n.ml-6{\r\n    margin-left:30px\r\n}\r\n.ml-7{\r\n    margin-left:40px\r\n}\r\n.ml-8{\r\n    margin-left:50px\r\n}\r\n.ml-9{\r\n    margin-left:60px\r\n}\r\n.ml-10{\r\n    margin-left:70px\r\n}\r\n.ml-11{\r\n    margin-left:80px\r\n}\r\n.ml-12{\r\n    margin-left:90px\r\n}\r\n.ml-13{\r\n    margin-left:100px\r\n}\r\n.ml-14{\r\n    margin-left:120px\r\n}\r\n.ml-15{\r\n    margin-left:140px\r\n}\r\n.pl-1{\r\n    padding-left:5px\r\n}\r\n.pl-2{\r\n    padding-left:10px\r\n}\r\n.pl-3{\r\n    padding-left:15px\r\n}\r\n.pl-4{\r\n    padding-left:20px\r\n}\r\n.pl-5{\r\n    padding-left:25px\r\n}\r\n.pl-6{\r\n    padding-left:30px\r\n}\r\n.pl-7{\r\n    padding-left:40px\r\n}\r\n.pl-8{\r\n    padding-left:50px\r\n}\r\n.pl-9{\r\n    padding-left:60px\r\n}\r\n.pl-10{\r\n    padding-left:70px\r\n}\r\n.pl-11{\r\n    padding-left:80px\r\n}\r\n.pl-12{\r\n    padding-left:90px\r\n}\r\n.pl-13{\r\n    padding-left:100px\r\n}\r\n.pl-14{\r\n    padding-left:120px\r\n}\r\n.pl-15{\r\n    padding-left:140px\r\n}\r\n.mr-1{\r\n    margin-right:5px\r\n}\r\n.mr-2{\r\n    margin-right:10px\r\n}\r\n.mr-3{\r\n    margin-right:15px\r\n}\r\n.mr-4{\r\n    margin-right:20px\r\n}\r\n.mr-5{\r\n    margin-right:25px\r\n}\r\n.mr-6{\r\n    margin-right:30px\r\n}\r\n.mr-7{\r\n    margin-right:40px\r\n}\r\n.mr-8{\r\n    margin-right:50px\r\n}\r\n.mr-9{\r\n    margin-right:60px\r\n}\r\n.mr-10{\r\n    margin-right:70px\r\n}\r\n.mr-11{\r\n    margin-right:80px\r\n}\r\n.mr-12{\r\n    margin-right:90px\r\n}\r\n.mr-13{\r\n    margin-right:100px\r\n}\r\n.mr-14{\r\n    margin-right:120px\r\n}\r\n.mr-15{\r\n    margin-right:140px\r\n}\r\n.pr-1{\r\n    padding-right:5px\r\n}\r\n.pr-2{\r\n    padding-right:10px\r\n}\r\n.pr-3{\r\n    padding-right:15px\r\n}\r\n.pr-4{\r\n    padding-right:20px\r\n}\r\n.pr-5{\r\n    padding-right:25px\r\n}\r\n.pr-6{\r\n    padding-right:30px\r\n}\r\n.pr-7{\r\n    padding-right:40px\r\n}\r\n.pr-8{\r\n    padding-right:50px\r\n}\r\n.pr-9{\r\n    padding-right:60px\r\n}\r\n.pr-10{\r\n    padding-right:70px\r\n}\r\n.pr-11{\r\n    padding-right:80px\r\n}\r\n.pr-12{\r\n    padding-right:90px\r\n}\r\n.pr-13{\r\n    padding-right:100px\r\n}\r\n.pr-14{\r\n    padding-right:120px\r\n}\r\n.pr-15{\r\n    padding-right:140px\r\n}\r\n.mb-1{\r\n    margin-bottom:5px\r\n}\r\n.mb-2{\r\n    margin-bottom:10px\r\n}\r\n.mb-3{\r\n    margin-bottom:15px\r\n}\r\n.mb-4{\r\n    margin-bottom:20px\r\n}\r\n.mb-5{\r\n    margin-bottom:25px\r\n}\r\n.mb-6{\r\n    margin-bottom:30px\r\n}\r\n.mb-7{\r\n    margin-bottom:40px\r\n}\r\n.mb-8{\r\n    margin-bottom:50px\r\n}\r\n.mb-9{\r\n    margin-bottom:60px\r\n}\r\n.mb-10{\r\n    margin-bottom:70px\r\n}\r\n.mb-11{\r\n    margin-bottom:80px\r\n}\r\n.mb-12{\r\n    margin-bottom:90px\r\n}\r\n.mb-13{\r\n    margin-bottom:100px\r\n}\r\n.mb-14{\r\n    margin-bottom:120px\r\n}\r\n.mb-15{\r\n    margin-bottom:140px\r\n}\r\n.pb-1{\r\n    padding-bottom:5px\r\n}\r\n.pb-2{\r\n    padding-bottom:10px\r\n}\r\n.pb-3{\r\n    padding-bottom:15px\r\n}\r\n.pb-4{\r\n    padding-bottom:20px\r\n}\r\n.pb-5{\r\n    padding-bottom:25px\r\n}\r\n.pb-6{\r\n    padding-bottom:30px\r\n}\r\n.pb-7{\r\n    padding-bottom:40px\r\n}\r\n.pb-8{\r\n    padding-bottom:50px\r\n}\r\n.pb-9{\r\n    padding-bottom:60px\r\n}\r\n.pb-10{\r\n    padding-bottom:70px\r\n}\r\n.pb-11{\r\n    padding-bottom:80px\r\n}\r\n.pb-12{\r\n    padding-bottom:90px\r\n}\r\n.pb-13{\r\n    padding-bottom:100px\r\n}\r\n.pb-14{\r\n    padding-bottom:120px\r\n}\r\n.pb-15{\r\n    padding-bottom:140px\r\n}\r\n.width90{\r\n    width:90%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width80{\r\n    width:80%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width70{\r\n    width:70%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width60{\r\n    width:60%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width50{\r\n    width:50%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width40{\r\n    width:40%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width30{\r\n    width:30%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width30{\r\n    width:30%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width30{\r\n    width:30%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "html { \n    scroll-behavior: smooth; \n    \n  }\n.generalFont{\n    font-family:  cursive;\n}\n.testDiv{\n    background-color:rgb(248, 248, 248);\n}\n.flex{\n    display:flex;\n}\n.justifyText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: justify;\n    text-justify: inter-word;\n}\n.emptyStar{\n    color:rgb(253, 225, 149);\n}\n.centerText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: center;\n    \n}\n.textAlignCenter{\n    text-align: center;\n}\n.verticalAlign{\n    display:flex;\n    align-items: center;\n    justify-content: center;\n}\n.flexCenter{\n    display:flex;\n    justify-content: center;\n}\n.flexColumn{\n    display:flex;\n    flex-direction: column;\n}\n.flexBetween{\n    display:flex;\n    justify-content: space-between;\n}\n.lightShadowCard{\n    box-shadow: 0 0 2px 1px rgb(214, 214, 214);\n}\n.productCard{\n    width:200px;\n    /* height:300px; */\n    background-color: rgb(173, 199, 199);\n}\n.greyLineProduct{\n    width:100%;\n    height:1px;\n    background-color:rgb(223, 223, 223);\n}\n.lightGrey{\n    background-color:rgb(223, 223, 223);\n}\n.marginTopHeader{\n    margin-top:130px;\n}\n\n.mt-1{\n    margin-top:5px\n}\n.mt-2{\n    margin-top:10px\n}\n.mt-3{\n    margin-top:15px\n}\n.mt-4{\n    margin-top:20px\n}\n.mt-5{\n    margin-top:25px\n}\n.mt-6{\n    margin-top:30px\n}\n.mt-7{\n    margin-top:40px\n}\n.mt-8{\n    margin-top:50px\n}\n.mt-9{\n    margin-top:60px\n}\n.mt-10{\n    margin-top:70px\n}\n.mt-11{\n    margin-top:80px\n}\n.mt-12{\n    margin-top:90px\n}\n.mt-13{\n    margin-top:100px\n}\n.mt-14{\n    margin-top:120px\n}\n.mt-15{\n    margin-top:140px\n}\n.pt-1{\n    padding-top:5px\n}\n.pt-2{\n    padding-top:10px\n}\n.pt-3{\n    padding-top:15px\n}\n.pt-4{\n    padding-top:20px\n}\n.pt-5{\n    padding-top:25px\n}\n.pt-6{\n    padding-top:30px\n}\n.pt-7{\n    padding-top:40px\n}\n.pt-8{\n    padding-top:50px\n}\n.pt-9{\n    padding-top:60px\n}\n.pt-10{\n    padding-top:70px\n}\n.pt-11{\n    padding-top:80px\n}\n.pt-12{\n    padding-top:90px\n}\n.pt-13{\n    padding-top:100px\n}\n.pt-14{\n    padding-top:120px\n}\n.pt-15{\n    padding-top:140px\n}\n.m-1{\n    margin:5px\n}\n.m-2{\n    margin:10px\n}\n.m-3{\n    margin:15px\n}\n.m-4{\n    margin:20px\n}\n.m-5{\n    margin:25px\n}\n.m-6{\n    margin:30px\n}\n.m-7{\n    margin:40px\n}\n.m-8{\n    margin:50px\n}\n.m-9{\n    margin:60px\n}\n.m-10{\n    margin:70px\n}\n.m-11{\n    margin:80px\n}\n.m-12{\n    margin:90px\n}\n.m-13{\n    margin:100px\n}\n.m-14{\n    margin:120px\n}\n.m-15{\n    margin:140px\n}\n.p-1{\n    padding:5px\n}\n.p-2{\n    padding:10px\n}\n.p-3{\n    padding:15px\n}\n.p-4{\n    padding:20px\n}\n.p-5{\n    padding:25px\n}\n.p-6{\n    padding:30px\n}\n.p-7{\n    padding:40px\n}\n.p-8{\n    padding:50px\n}\n.p-9{\n    padding:60px\n}\n.p-10{\n    padding:70px\n}\n.p-11{\n    padding:80px\n}\n.p-12{\n    padding:90px\n}\n.p-13{\n    padding:100px\n}\n.p-14{\n    padding:120px\n}\n.p-15{\n    padding:140px\n}\n.ml-1{\n    margin-left:5px\n}\n.ml-2{\n    margin-left:10px\n}\n.ml-3{\n    margin-left:15px\n}\n.ml-4{\n    margin-left:20px\n}\n.ml-5{\n    margin-left:25px\n}\n.ml-6{\n    margin-left:30px\n}\n.ml-7{\n    margin-left:40px\n}\n.ml-8{\n    margin-left:50px\n}\n.ml-9{\n    margin-left:60px\n}\n.ml-10{\n    margin-left:70px\n}\n.ml-11{\n    margin-left:80px\n}\n.ml-12{\n    margin-left:90px\n}\n.ml-13{\n    margin-left:100px\n}\n.ml-14{\n    margin-left:120px\n}\n.ml-15{\n    margin-left:140px\n}\n.pl-1{\n    padding-left:5px\n}\n.pl-2{\n    padding-left:10px\n}\n.pl-3{\n    padding-left:15px\n}\n.pl-4{\n    padding-left:20px\n}\n.pl-5{\n    padding-left:25px\n}\n.pl-6{\n    padding-left:30px\n}\n.pl-7{\n    padding-left:40px\n}\n.pl-8{\n    padding-left:50px\n}\n.pl-9{\n    padding-left:60px\n}\n.pl-10{\n    padding-left:70px\n}\n.pl-11{\n    padding-left:80px\n}\n.pl-12{\n    padding-left:90px\n}\n.pl-13{\n    padding-left:100px\n}\n.pl-14{\n    padding-left:120px\n}\n.pl-15{\n    padding-left:140px\n}\n.mr-1{\n    margin-right:5px\n}\n.mr-2{\n    margin-right:10px\n}\n.mr-3{\n    margin-right:15px\n}\n.mr-4{\n    margin-right:20px\n}\n.mr-5{\n    margin-right:25px\n}\n.mr-6{\n    margin-right:30px\n}\n.mr-7{\n    margin-right:40px\n}\n.mr-8{\n    margin-right:50px\n}\n.mr-9{\n    margin-right:60px\n}\n.mr-10{\n    margin-right:70px\n}\n.mr-11{\n    margin-right:80px\n}\n.mr-12{\n    margin-right:90px\n}\n.mr-13{\n    margin-right:100px\n}\n.mr-14{\n    margin-right:120px\n}\n.mr-15{\n    margin-right:140px\n}\n.pr-1{\n    padding-right:5px\n}\n.pr-2{\n    padding-right:10px\n}\n.pr-3{\n    padding-right:15px\n}\n.pr-4{\n    padding-right:20px\n}\n.pr-5{\n    padding-right:25px\n}\n.pr-6{\n    padding-right:30px\n}\n.pr-7{\n    padding-right:40px\n}\n.pr-8{\n    padding-right:50px\n}\n.pr-9{\n    padding-right:60px\n}\n.pr-10{\n    padding-right:70px\n}\n.pr-11{\n    padding-right:80px\n}\n.pr-12{\n    padding-right:90px\n}\n.pr-13{\n    padding-right:100px\n}\n.pr-14{\n    padding-right:120px\n}\n.pr-15{\n    padding-right:140px\n}\n.mb-1{\n    margin-bottom:5px\n}\n.mb-2{\n    margin-bottom:10px\n}\n.mb-3{\n    margin-bottom:15px\n}\n.mb-4{\n    margin-bottom:20px\n}\n.mb-5{\n    margin-bottom:25px\n}\n.mb-6{\n    margin-bottom:30px\n}\n.mb-7{\n    margin-bottom:40px\n}\n.mb-8{\n    margin-bottom:50px\n}\n.mb-9{\n    margin-bottom:60px\n}\n.mb-10{\n    margin-bottom:70px\n}\n.mb-11{\n    margin-bottom:80px\n}\n.mb-12{\n    margin-bottom:90px\n}\n.mb-13{\n    margin-bottom:100px\n}\n.mb-14{\n    margin-bottom:120px\n}\n.mb-15{\n    margin-bottom:140px\n}\n.pb-1{\n    padding-bottom:5px\n}\n.pb-2{\n    padding-bottom:10px\n}\n.pb-3{\n    padding-bottom:15px\n}\n.pb-4{\n    padding-bottom:20px\n}\n.pb-5{\n    padding-bottom:25px\n}\n.pb-6{\n    padding-bottom:30px\n}\n.pb-7{\n    padding-bottom:40px\n}\n.pb-8{\n    padding-bottom:50px\n}\n.pb-9{\n    padding-bottom:60px\n}\n.pb-10{\n    padding-bottom:70px\n}\n.pb-11{\n    padding-bottom:80px\n}\n.pb-12{\n    padding-bottom:90px\n}\n.pb-13{\n    padding-bottom:100px\n}\n.pb-14{\n    padding-bottom:120px\n}\n.pb-15{\n    padding-bottom:140px\n}\n.width90{\n    width:90%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width80{\n    width:80%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width70{\n    width:70%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width60{\n    width:60%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width50{\n    width:50%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width40{\n    width:40%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35483,7 +36690,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".productLineCart{\r\n    background-color:rgb(255, 255, 255);\r\n    margin-top:20px;\r\n    display:flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    border-radius:2px;\r\n    \r\n}\r\n.imgLineCart{\r\n    height:90px;\r\n    width:90px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    border-top-left-radius:2px;\r\n    border-bottom-left-radius:2px;\r\n\r\n}\r\n.RecapCart{\r\n    margin-top:20px;\r\n    background-color:white;\r\n    border-radius:2px;\r\n    \r\n}\r\n.quantityNameCart{\r\n    width:140px;\r\n}\r\n.fontTrash{\r\n    color:rgb(83, 83, 83);\r\n}\r\n.itemOrItems{\r\n    margin-left:10px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".productLineCart{\r\n    background-color:rgb(255, 255, 255);\r\n    margin-top:20px;\r\n    display:flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    border-radius:2px;\r\n    font-size:1.1em;\r\n}\r\n.imgLineCart{\r\n    height:90px;\r\n    width:90px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    border-top-left-radius:2px;\r\n    border-bottom-left-radius:2px;\r\n\r\n}\r\n.RecapCart{\r\n    margin-top:20px;\r\n    background-color:white;\r\n    border-radius:2px;\r\n    \r\n}\r\n.quantityNameCart{\r\n    width:140px;\r\n}\r\n.fontTrash{\r\n    color:rgb(83, 83, 83);\r\n}\r\n.itemOrItems{\r\n    margin-left:10px;\r\n}\r\n.yourOrder{\r\n    margin-top:34px;\r\n    /* border:1px solid rgb(196, 196, 196); */\r\n    border-radius:5px;\r\n}\r\n.testCard{\r\n    padding-top:12px;\r\n    padding-left:5px;\r\n    border: 1px solid rgb(201, 201, 201);\r\n    border-radius:5px;\r\n    height:50px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35513,7 +36720,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_assets_img_backgroundFooter1_jpg__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".widthP{\r\n    width:40%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: justify;\r\n    text-justify: inter-word;\r\n    font-size:1.3em;\r\n    /* font-family: 'Bungee Inline', cursive; */\r\n}\r\n.backgroundFooter{\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    /* background: rgb(0,0,0);\r\n    background: linear-gradient(47deg, rgba(0,0,0,1) 0%, rgba(2,2,32,1) 18%, rgba(11,11,62,1) 36%, rgba(16,15,101,1) 100%); */\r\n    color:rgb(204, 204, 204);\r\n    padding-bottom:17px;\r\n}\r\n.backgroundFooterItems{\r\n    background-color:rgb(231, 231, 231);\r\n}\r\n.inputFooter{\r\n    background:white;\r\n}\r\n.ulFooter{\r\n    list-style-type:none;\r\n}\r\n.liFooter{\r\n    list-style:none;\r\n    list-style-type:none;\r\n}\r\n.greyLineBorders{\r\n    height:100px;\r\n    border-left:1px solid rgb(189, 189, 189);\r\n    border-right:1px solid rgb(189, 189, 189);\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".widthP{\n    /* width:40%; */\n    margin-left:auto;\n    margin-right:auto;\n    text-align: justify;\n    text-justify: inter-word;\n    font-size:1.3em;\n    /* font-family: 'Bungee Inline', cursive; */\n}\n.backgroundFooter{\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    /* filter: blur(0.1px); */\n    /* background: rgb(0,0,0);\n    background: linear-gradient(47deg, rgba(0,0,0,1) 0%, rgba(2,2,32,1) 18%, rgba(11,11,62,1) 36%, rgba(16,15,101,1) 100%); */\n    color:rgb(223, 223, 223);\n    padding-bottom:17px;\n}\n.backgroundFooterItems{\n    background-color:rgb(241, 241, 241);\n}\n.inputFooter{\n    background:white;\n}\n.ulFooter{\n    list-style-type:none;\n}\n.liFooter{\n    list-style:none;\n    list-style-type:none;\n}\n/* .greyLineBorders{\n    height:100px;\n    border-left:1px solid rgb(189, 189, 189);\n    border-right:1px solid rgb(189, 189, 189);\n} */\n.iconsSocialMedias{\n    display:flex;\n    justify-content: center;\n}\n.widthItemsFooter{\n    min-width:240px;\n    margin-top:20px;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35561,7 +36768,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n\r\n* {\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  body { font-family: sans-serif; }\r\n  \r\n  .gallery {\r\n    background: #EEE;\r\n  }\r\n  \r\n  .gallery-cell {\r\n    width: 28%;\r\n    height: 200px;\r\n    margin-right: 10px;\r\n    background: #8C8;\r\n    counter-increment: gallery-cell;\r\n  }\r\n  \r\n  .gallery-cell.is-selected {\r\n    background: #ED2;\r\n  }\r\n  \r\n  /* cell number */\r\n  .gallery-cell:before {\r\n    display: block;\r\n    text-align: center;\r\n    content: counter(gallery-cell);\r\n    line-height: 200px;\r\n    font-size: 80px;\r\n    color: white;\r\n  }\r\n  .imgIntro{\r\n    width:100%;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n  }\r\n ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n* {\n    box-sizing: border-box;\n  }\n  \n  body { font-family: sans-serif; }\n  \n  .gallery {\n    background: #EEE;\n  }\n  \n  .gallery-cell {\n    width: 28%;\n    height: 200px;\n    margin-right: 10px;\n    background: #8C8;\n    counter-increment: gallery-cell;\n  }\n  \n  .gallery-cell.is-selected {\n    background: #ED2;\n  }\n  \n  /* cell number */\n  .gallery-cell:before {\n    display: block;\n    text-align: center;\n    content: counter(gallery-cell);\n    line-height: 200px;\n    font-size: 80px;\n    color: white;\n  }\n  .imgIntro{\n    width:100%;\n    height:300px;\n    -o-object-fit: cover;\n       object-fit: cover;\n  }\n ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35585,7 +36792,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".cardProduct{\r\n    /* text-align: center; */\r\n    margin:6%;\r\n    border-radius:4px;\r\n    /* box-shadow: 5px 5px 5px rgb(228, 228, 228) */\r\n    \r\n}\r\n.nameProduct{\r\n    font-weight:900;\r\n    width:80%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: center;\r\n    /* height:40px; */\r\n}\r\n.priceProduct{\r\n    font-weight:600;\r\n    /* font-size:em; */\r\n}\r\n.imageProduct{\r\n    width:100%;\r\n    border-top-left-radius:4px;\r\n    border-top-right-radius:4px;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:0.9;\r\n}\r\n.imageOneProduct{\r\n    width:100%;\r\n    border-radius:4px;\r\n    height:500px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:1;\r\n}\r\n.test{\r\n    background-color:red;\r\n    margin:0px;\r\n}\r\n.greyLineMenuProduct{\r\n    height:1px;\r\n    background-color:rgb(218, 218, 218);\r\n    width:100%;\r\n    margin-top:15px;\r\n}\r\n.menuButton{\r\n    margin-left:40px;\r\n    padding-bottom:18px;\r\n    color:rgb(97, 97, 253);\r\n}\r\n.menuButton:hover{\r\n    cursor:pointer;\r\n    border-bottom:1px solid black;\r\n    color:rgb(160, 216, 30);\r\n}\r\n.paragraphMenuProduct{\r\n    text-justify: inherit;\r\n    padding:30px;\r\n}\r\n.menuDetailsProduct{\r\n    padding:80px;\r\n}\r\n.alignCenter{\r\n    display:flex;\r\n    align-items: center;\r\n}\r\n.greyButton{\r\n    background-color:rgb(243, 243, 243);\r\n}\r\n.greyButton:hover{\r\n    background-color:rgb(231, 231, 231);\r\n}\r\n.buttonAdd{\r\n    cursor:pointer;\r\n    border-top:1px solid rgb(207, 207, 207);\r\n    border-bottom:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.buttonSubstract{\r\n    cursor:pointer;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius:5px;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.quantityProduct{\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.buttonAddToCart{\r\n    cursor:pointer;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:100%;\r\n    height:30px;\r\n    font-weight: 200;\r\n    border-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".cardProduct{\r\n    /* text-align: center; */\r\n    margin:6%;\r\n    border-radius:4px;\r\n    /* box-shadow: 5px 5px 5px rgb(228, 228, 228) */\r\n    \r\n}\r\n.nameProduct{\r\n    font-weight:900;\r\n    width:80%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: center;\r\n    /* height:40px; */\r\n}\r\n.priceProduct{\r\n    font-weight:600;\r\n    /* font-size:em; */\r\n}\r\n.imageProduct{\r\n    width:100%;\r\n    border-top-left-radius:4px;\r\n    border-top-right-radius:4px;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:0.9;\r\n}\r\n.imageOneProduct{\r\n    width:100%;\r\n    border-radius:4px;\r\n    height:500px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:1;\r\n}\r\n.test{\r\n    background-color:red;\r\n    margin:0px;\r\n}\r\n.greyLineMenuProduct{\r\n    height:1px;\r\n    background-color:rgb(218, 218, 218);\r\n    width:100%;\r\n    margin-top:15px;\r\n}\r\n.menuButton{\r\n    margin-left:40px;\r\n    padding-bottom:18px;\r\n    color:rgb(97, 97, 253);\r\n}\r\n.menuButton:hover{\r\n    cursor:pointer;\r\n    border-bottom:1px solid black;\r\n    color:rgb(160, 216, 30);\r\n}\r\n.paragraphMenuProduct{\r\n    text-justify: inherit;\r\n    padding:30px;\r\n}\r\n.menuDetailsProduct{\r\n    padding:80px;\r\n}\r\n.alignCenter{\r\n    display:flex;\r\n    align-items: center;\r\n}\r\n.greyButton{\r\n    background-color:rgb(243, 243, 243);\r\n}\r\n.greyButton:hover{\r\n    background-color:rgb(231, 231, 231);\r\n}\r\n.buttonAdd{\r\n    cursor:pointer;\r\n    border-top:1px solid rgb(207, 207, 207);\r\n    border-bottom:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.buttonSubstract{\r\n    cursor:pointer;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius:5px;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.quantityProduct{\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.buttonAddToCart{\r\n    cursor:pointer;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:100%;\r\n    height:30px;\r\n    font-weight: 200;\r\n    border-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.boutonPagination{\r\n    color:rgb(36, 36, 36)(0, 0, 0);\r\n    /* background-color:rgb(243, 243, 243); */\r\n}\r\n.divTest{\r\n    background-color:white;\r\n}\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -117345,7 +118552,7 @@ function combine (array, callback) {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Projects\\\\react-website"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Projects\\\\react-website","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"axios@^0.21","name":"axios","escapedName":"axios","rawSpec":"^0.21","saveSpec":null,"fetchSpec":"^0.21"},"_requiredBy":["#DEV:/","#USER"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_shasum":"c67b90dc0568e5c1cf2b0b858c43ba28e2eda575","_spec":"axios@^0.21","_where":"C:\\\\Users\\\\33623\\\\Documents\\\\site-react\\\\ecom-master","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundleDependencies":false,"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"deprecated":false,"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

@@ -69,6 +69,8 @@ export default function Home() {
     const [avgNote, setAvgNote] = useState('');
     const [userReviews, setUserReviews] = useState([]);
     const [items, setItems] = useState([]);
+
+    
  
     useEffect(() => {
         fetch("http://localhost:8000/api/reviews")
@@ -86,6 +88,7 @@ export default function Home() {
             }
           )                   
     }, [])   
+    
    
     return (
         <div className={classes.marginTopBanner}>  
@@ -94,23 +97,29 @@ export default function Home() {
             </div>
             <Container>
                 <Grid container justifyContent="center" className="menuQuality">
-                    <Grid container xs={12} md={10}>
+                    <Grid item container xs={12} md={10}>
                         
-                        <Grid item xs={4} className={classes.alignTitle}>
+                        <Grid item xs={12} sm={4} className={classes.alignTitle}>
                         {/* <Button onClick={onChange}>update panier</Button> */}
-                            <span className="flexCenter"><LocalShippingIcon /></span>
-                            <span className="flexCenter">Respect for the land</span>
-                            <span className="flexCenter">Environment and traditions</span>
+                            <div className="mt-6">
+                                <span className="flexCenter"><LocalShippingIcon /></span>
+                                <span className="flexCenter mt-2">Respect for the land</span>
+                                <span className="flexCenter mt-2">Environment and traditions</span>
+                            </div>
                         </Grid>
-                        <Grid item xs={4} className={classes.alignTitle} className="greyLineBorders">
-                            <span className="flexCenter"><LocalShippingIcon /></span>
-                            <h4 className="flexCenter">Tracking delivery</h4>
-                            <h5 className="flexCenter">All around the world</h5>
+                        <Grid item xs={12} sm={4} className={classes.alignTitle} className="greyLineBorders">
+                            <div className="mt-6">
+                                <span className="flexCenter"><LocalShippingIcon /></span>
+                                <span className="flexCenter mt-2">Tracking delivery</span>
+                                <span className="flexCenter mt-2">All around the world</span>
+                            </div>
                         </Grid>
-                        <Grid item xs={4} className={classes.alignTitle}>
-                            <span className="flexCenter"><LocalShippingIcon /></span>
-                            <h4 className="flexCenter">Respect du terroir</h4>
-                            <h5 className="flexCenter">De l'environnement et des traditions</h5>
+                        <Grid item xs={12} sm={4} className={classes.alignTitle}>
+                            <div className="mt-6">
+                                <span className="flexCenter"><LocalShippingIcon /></span>
+                                <span className="flexCenter mt-2">Respect du terroir</span>
+                                <span className="flexCenter mt-2">De l'environnement et des traditions</span>
+                            </div>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -120,18 +129,18 @@ export default function Home() {
             </div>
             {isLoaded && <div>
             <Grid container justifyContent="center">
-                <Grid container xs={12} md={10}>
+                <Grid item container xs={12} md={11} lg={10}>
                     
                     {bestSellers.map(item => (
                         <Grid 
-                            item xs={6} sm={3} md={3} lg={3} 
+                            item xs={12} sm={6} md={3} lg={3} 
                             key={item.id}                                                 
                         >
                             <div className="cardProduct lightShadowCard">   
                                 <Link to={{ pathname: '/product', state: { product : item } }}>                                
                                     <img className="imageProduct" src="https://picsum.photos/200/300"/>
                                     <div className="nameProduct centerText">{item.name}</div>                                  
-                                    <div className="priceProduct mt-4 ml-3 pb-1">{item.price},00 €</div> 
+                                    <div className="priceProduct mt-4 ml-3 pb-1">${item.price}.00</div> 
                                 </Link>                                  
                             </div>                                
                         </Grid>
@@ -141,30 +150,34 @@ export default function Home() {
             </Grid>
             </div>
                     } 
-            <h2 className="flexCenter mt-10">Ils ont vécu l'expérience</h2>
-            <Grid className="pt-10" container justifyContent="center">
-                <Grid container xs={12} md={11} spacing={4}>
-                    <Grid item xs={3} className={classes.alignTitle}>
-                        <Grid container justifyContent="center">
-                            <div className="flexCenter"><span>{avgNote}</span>/5</div>
-                            <div className="flexCenter mt-5"><h4 className="flexCenter">Based on purchases on AmazingSewing</h4></div>
-                            <Rating
-                                precision={0.5}
-                                readOnly
-                                className="mt-5"
-                                name="simple-controlled"
-                                value={avgNote}  
-                                emptyIcon={
-                                    <StarBorderIcon fontSize="inherit" className="emptyStar" />
-                                  }                                     
-                            /> 
+            <h2 className="flexCenter mt-10">They lived the experience</h2>
+            <Grid className="pt-7" container justifyContent="center">
+                <Grid container item xs={11} md={11} spacing={4}>
+                    <Grid item md={3} xs={12} className=" verticalAlign">
+                        <Grid >
+                            <div className="textAlignCenter">
+                                <div>{avgNote}/5</div>
+                                <h4 className="flexCenter">Based on purchases on AmazingSewing</h4>
+                                <div>
+                                    <Rating
+                                        precision={0.5}
+                                        readOnly
+                                        
+                                        name="simple-controlled"
+                                        value={avgNote}  
+                                        emptyIcon={
+                                            <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                        }                                     
+                                    /> 
+                                </div>
+                            </div>
                         </Grid>
                     </Grid>
-                    <Grid item xs={9} className={classes.alignTitle}  >
+                    <Grid item md={9} sm={12}  className={classes.alignTitle}  >
                         <Grid container justifyContent="center" spacing={6}>             
                             {userReviews.map(item => (                    
                                 <Grid
-                                    item xs={3} 
+                                    item xs={12} sm={6} lg={3}
                                     key={item.id}
                                 >
                                     <div>

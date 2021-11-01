@@ -18,9 +18,7 @@ import { useRecoilState } from 'recoil';
   
 
   const useStyles = makeStyles(theme => ({
-    marginTop: {
-        marginTop: 200,
-    }
+    
 }));
 
 
@@ -47,7 +45,7 @@ export default function Products() {
             (result) => {
               
                 let newArray= [];
-               
+
                 newArray = result.products.slice(itemsByPage*(actuelPage-1),itemsByPage*(actuelPage));
                 setItems(result.products);       
                 for (var i = 0; i < result.products.length/itemsByPage; i++) {
@@ -90,9 +88,9 @@ export default function Products() {
         return <div className={classes.marginTop}>Loading...</div>;
     } else {
         return(     
-            <Container className={classes.marginTop}>
+            <Container className="pt-15">
                 <Grid container justifyContent="center">   
-                    <Grid container xs={12} sm={11} md={10}>            
+                    <Grid container item xs={12} sm={11} md={10}>            
                         {itemsInCurrentPage.map(item => (                    
                             <Grid 
                                 item xs={12} sm={6} md={4} lg={3} 
@@ -110,13 +108,14 @@ export default function Products() {
                     </Grid>               
                 </Grid>
                 <Grid container justifyContent="center" className="mt-10">   
-                    <Grid container justifyContent="center" xs={12} sm={11} md={10}>   
+                    <Grid container item justifyContent="center" xs={12} sm={11} md={10}>   
                         <div className="flex">
                             {numberOfPages.map(item => (                    
-                                <div                             
+                                <div   
+                                                             
                                     key={item}                                                 
                                 >
-                                    <Button  onClick={() => handleChangePage(item)}>{item}</Button> 
+                                    <button className="boutonPagination testDiv" onClick={() => handleChangePage(item)}>{item}</button> 
                                 </div>                    
                             ))}  
                         </div>
