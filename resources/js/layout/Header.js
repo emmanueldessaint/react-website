@@ -131,7 +131,7 @@ HideOnScroll.propTypes = {
             <AppBar style={{ background: '#ffffff' }}>
               <Toolbar>
                 <Box sx={{ flexGrow: 1 }}>
-                  <Grid container spacing={10} >
+                  <Grid container  >
                     <Grid item xs={3} className={classes.alignTitle} >
                         
                         <Link to="/" onClick={resetPage} className="item" className={classes.routerDecoration}>

@@ -89,8 +89,24 @@ export default function Products() {
     } else {
         return(     
             <Container className="pt-15">
-                <Grid container justifyContent="center">   
-                
+                <Grid container justifyContent="center" className="mt-10">   
+                    <Grid container item  xs={12} sm={11} md={10}>   
+                        <div className="flex ml-3 mb-5 lightShadowCard">
+                            {numberOfPages.map(item => (                    
+                                <div   
+                                                             
+                                    key={item}                                                 
+                                >
+                                    {item === actuelPage 
+                                    ? <button className="boutonPaginationSelected  generalBackground" onClick={() => handleChangePage(item)}>{item}</button> 
+                                    : <button className="boutonPagination generalBackground" onClick={() => handleChangePage(item)}>{item}</button> 
+                                }                                     
+                                </div>                    
+                            ))}  
+                        </div>                       
+                    </Grid>
+                </Grid>
+                <Grid container justifyContent="center">         
                     <Grid container item xs={12} sm={11} md={10}>            
                         {itemsInCurrentPage.map(item => (                    
                             <Grid 
@@ -116,7 +132,6 @@ export default function Products() {
                 <Grid container justifyContent="center" className="mt-10">   
                     <Grid container item justifyContent="center" xs={12} sm={11} md={10}>   
                         <div className="flex lightShadowCard">
-                            {/* <Button onClick={handleTest}>Click</Button> */}
                             {numberOfPages.map(item => (                    
                                 <div   
                                                              
@@ -125,15 +140,12 @@ export default function Products() {
                                     {item === actuelPage 
                                     ? <button className="boutonPaginationSelected  generalBackground" onClick={() => handleChangePage(item)}>{item}</button> 
                                     : <button className="boutonPagination generalBackground" onClick={() => handleChangePage(item)}>{item}</button> 
-                                }
-                                     
+                                }                                     
                                 </div>                    
                             ))}  
-                        </div>
-                        
+                        </div>                       
                     </Grid>
                 </Grid>
-
             </Container>
         )
     }

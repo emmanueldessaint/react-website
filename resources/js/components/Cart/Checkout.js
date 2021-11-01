@@ -78,14 +78,14 @@ export default function Checkout() {
                       <TextField 
                         variant="outlined"
                         fullWidth                                           
-                        label="FirstName"
+                        label="Firstname"
                       />
                     </Grid> 
                     <Grid item xs={12} sm={6}>
                       <TextField 
                         variant="outlined"
                         fullWidth
-                        label="LastName"
+                        label="Lastname"
                       />
                     </Grid> 
                     <Grid item xs={12} >
@@ -141,6 +141,12 @@ export default function Checkout() {
                         ))}
                         
                       </div>
+
+                      <div className="yourOrder shippingFees lightShadowCard flexBetween">
+                          <span className="ml-2 mt-2">Shipping fees</span>
+                          <span className="mr-2 mt-2">$13.00</span>
+                      </div>
+                      
                       <div className="mt-5">
                         <Button 
                           fullWidth 

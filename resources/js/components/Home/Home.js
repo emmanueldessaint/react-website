@@ -105,7 +105,7 @@ export default function Home() {
                         {/* <Button onClick={onChange}>update panier</Button> */}
                             <div className="mt-6">
                                 <span className="flexCenter"><img src={earth} alt="earth_icon" className="smallIcons "/></span>
-                                <span className="flexCenter mt-2">Respect for the land</span>
+                                <span className="flexCenter mt-2">RESPECT FOR THE LAND</span>
                                 <span className="flexCenter mt-2">Environment and traditions</span>
                             </div>
                         </Grid>

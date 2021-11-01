@@ -170,8 +170,7 @@ export default function Product(props) {
                     </div>
                     <div className="flexBetween mt-9">
                         <span className="width40 addSubstractCart">
-                            <button disabled className=" quantityProduct">{quantityProduct}</button>
-                            
+                            <button disabled className=" quantityProduct">{quantityProduct}</button>                        
                             <button onClick={addQuantity} className="greyButton buttonAdd">+</button>
                             <button onClick={substractQuantity} className="greyButton buttonSubstract">-</button>
                         </span>
