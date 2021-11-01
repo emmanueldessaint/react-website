@@ -18421,6 +18421,36 @@ exports["default"] = _default;
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/LiveHelp.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@material-ui/icons/LiveHelp.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+
+var React = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
+  d: "M19 2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h4l3 3 3-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 16h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 11.9 13 12.5 13 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"
+}), 'LiveHelp');
+
+exports["default"] = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/LocalShipping.js":
 /*!**********************************************************!*\
   !*** ./node_modules/@material-ui/icons/LocalShipping.js ***!
@@ -30540,23 +30570,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Home)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
-/* harmony import */ var _mui_material_Rating__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material/Rating */ "./node_modules/@mui/material/Rating/Rating.js");
-/* harmony import */ var _material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/icons/StarBorder */ "./node_modules/@material-ui/icons/StarBorder.js");
-/* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Container */ "./node_modules/@material-ui/core/esm/Container/Container.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
+/* harmony import */ var _mui_material_Rating__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material/Rating */ "./node_modules/@mui/material/Rating/Rating.js");
+/* harmony import */ var _material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/icons/StarBorder */ "./node_modules/@material-ui/icons/StarBorder.js");
+/* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/core/Container */ "./node_modules/@material-ui/core/esm/Container/Container.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/makeStyles/makeStyles.js");
-/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/icons/LocalShipping */ "./node_modules/@material-ui/icons/LocalShipping.js");
+/* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/makeStyles/makeStyles.js");
+/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @material-ui/icons/LocalShipping */ "./node_modules/@material-ui/icons/LocalShipping.js");
 /* harmony import */ var _Constants_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Constants.js */ "./resources/js/Constants.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _assets_img_sewing1_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../assets/img/sewing1.jpg */ "./resources/assets/img/sewing1.jpg");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../App.css */ "./resources/js/App.css");
-/* harmony import */ var _css_Home_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../css/Home.css */ "./resources/js/css/Home.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _assets_img_reward1_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../assets/img/reward1.png */ "./resources/assets/img/reward1.png");
+/* harmony import */ var _assets_img_earth1_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../assets/img/earth1.png */ "./resources/assets/img/earth1.png");
+/* harmony import */ var _assets_img_sewing2_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../assets/img/sewing2.jpg */ "./resources/assets/img/sewing2.jpg");
+/* harmony import */ var _assets_img_review1_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../assets/img/review1.png */ "./resources/assets/img/review1.png");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../App.css */ "./resources/js/App.css");
+/* harmony import */ var _css_Home_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../css/Home.css */ "./resources/js/css/Home.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -30601,11 +30635,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_9__["default"])(function (theme) {
+
+
+
+
+var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_13__["default"])(function (theme) {
   return {
-    marginTopBanner: {
-      "margin-top": "100px;"
-    },
     greyLine: {
       "border-left": "1px solid black;"
     },
@@ -30669,121 +30704,142 @@ function Home() {
       setError(error);
     });
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-    className: classes.marginTopBanner,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+    className: "mt-9",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
         src: _assets_img_sewing1_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
         alt: "Logo",
         className: "imgIntro"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_10__["default"], {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
         container: true,
         justifyContent: "center",
         className: "menuQuality",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
           item: true,
           container: true,
           xs: 12,
           md: 10,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
             item: true,
             xs: 12,
             sm: 4,
             className: classes.alignTitle,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
               className: "mt-6",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
                 className: "flexCenter",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
+                  src: _assets_img_earth1_png__WEBPACK_IMPORTED_MODULE_7__["default"],
+                  alt: "earth_icon",
+                  className: "smallIcons "
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
                 className: "flexCenter mt-2",
                 children: "Respect for the land"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
                 className: "flexCenter mt-2",
                 children: "Environment and traditions"
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], (_jsx2 = {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], (_jsx2 = {
             item: true,
             xs: 12,
             sm: 4,
             className: classes.alignTitle
-          }, _defineProperty(_jsx2, "className", "greyLineBorders"), _defineProperty(_jsx2, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          }, _defineProperty(_jsx2, "className", "greyLineBorders"), _defineProperty(_jsx2, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
             className: "mt-6",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
               className: "flexCenter",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_16__["default"], {})
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
               className: "flexCenter mt-2",
               children: "Tracking delivery"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
               className: "flexCenter mt-2",
               children: "All around the world"
             })]
-          })), _jsx2)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          })), _jsx2)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
             item: true,
             xs: 12,
             sm: 4,
             className: classes.alignTitle,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
               className: "mt-6",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
                 className: "flexCenter",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
+                  src: _assets_img_sewing2_jpg__WEBPACK_IMPORTED_MODULE_8__["default"],
+                  alt: "sewing_icon",
+                  className: "smallIcons backgroundIcons"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
                 className: "flexCenter mt-2",
-                children: "Respect du terroir"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                children: "A real know-how "
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
                 className: "flexCenter mt-2",
-                children: "De l'environnement et des traditions"
+                children: "The highest quality"
               })]
             })
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
         className: "mt-10",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+          className: "flexCenter",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
+            src: _assets_img_reward1_png__WEBPACK_IMPORTED_MODULE_6__["default"],
+            alt: "reward_svg",
+            className: "rewardIcon"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h3", {
           className: "flexCenter",
           children: "Our best sellers"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h4", {
           className: "flexCenter",
           children: "Discover our customers' favorite products !"
         })]
-      }), isLoaded && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      }), isLoaded && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
           container: true,
           justifyContent: "center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
             item: true,
             container: true,
             xs: 12,
             md: 11,
             lg: 10,
             children: bestSellers.map(function (item) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
                 item: true,
                 xs: 12,
                 sm: 6,
                 md: 3,
                 lg: 3,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                   className: "cardProduct lightShadowCard",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Link, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Link, {
                     to: {
                       pathname: '/product',
                       state: {
                         product: item
                       }
                     },
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
                       className: "imageProduct",
                       src: "https://picsum.photos/200/300"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-                      className: "nameProduct centerText",
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+                      className: "hideProduct",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+                        className: "elementAppear",
+                        children: "DISCOVER"
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+                      className: "nameProduct flexCenter",
                       children: item.name
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
                       className: "priceProduct mt-4 ml-3 pb-1",
                       children: ["$", item.price, ".00"]
                     })]
@@ -30793,39 +30849,46 @@ function Home() {
             })
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
         className: "flexCenter mt-10",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
+          src: _assets_img_review1_png__WEBPACK_IMPORTED_MODULE_9__["default"],
+          alt: "reward_svg",
+          className: "reviewIcon"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h2", {
+        className: "flexCenter",
         children: "They lived the experience"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
         className: "pt-7",
         container: true,
         justifyContent: "center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
           container: true,
           item: true,
           xs: 11,
           md: 11,
           spacing: 4,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
             item: true,
             md: 3,
             xs: 12,
             className: " verticalAlign",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
                 className: "textAlignCenter",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
                   children: [avgNote, "/5"]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h4", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h4", {
                   className: "flexCenter",
                   children: "Based on purchases on AmazingSewing"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_14__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_18__["default"], {
                     precision: 0.5,
                     readOnly: true,
                     name: "simple-controlled",
                     value: avgNote,
-                    emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_15__["default"], {
+                    emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_19__["default"], {
                       fontSize: "inherit",
                       className: "emptyStar"
                     })
@@ -30833,36 +30896,36 @@ function Home() {
                 })]
               })
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
             item: true,
             md: 9,
             sm: 12,
-            className: classes.alignTitle,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+            className: "textReviews",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
               container: true,
               justifyContent: "center",
               spacing: 6,
               children: userReviews.map(function (item) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
                   item: true,
                   xs: 12,
                   sm: 6,
                   lg: 3,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_14__["default"], {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_18__["default"], {
                       precision: 0.5,
                       readOnly: true,
                       className: "stars",
                       name: "simple-controlled",
                       value: item.note,
-                      emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_15__["default"], {
+                      emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_19__["default"], {
                         fontSize: "inherit",
                         className: "emptyStar"
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                       className: "mt-5 ",
                       children: item.description.length < 60 ? item.description : item.description.substring(0, 70) + " . . ."
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                       className: "mt-5",
                       children: item.title
                     })]
@@ -30929,7 +30992,7 @@ function Index() {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
         className: "generalFont",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_layout_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
-          className: "testDiv",
+          className: "generalBackground",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Switch, {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
               path: "/connect",
@@ -31445,8 +31508,8 @@ function Products() {
     });
   }, []);
 
-  var consoleFunction = function consoleFunction() {
-    console.log(items);
+  var handleTest = function handleTest() {
+    console.log(actuelPage);
   };
 
   var handleChangePage = function handleChangePage(item) {
@@ -31502,6 +31565,12 @@ function Products() {
                     className: "imageProduct",
                     src: "https://picsum.photos/200/300"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                    className: "hideProduct",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                      className: "elementAppear",
+                      children: "DISCOVER"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                     className: "nameProduct flexCenter",
                     children: item.name
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -31525,11 +31594,17 @@ function Products() {
           sm: 11,
           md: 10,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            className: "flex",
+            className: "flex lightShadowCard",
             children: numberOfPages.map(function (item) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                  className: "boutonPagination testDiv",
+                children: item === actuelPage ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                  className: "boutonPaginationSelected  generalBackground",
+                  onClick: function onClick() {
+                    return handleChangePage(item);
+                  },
+                  children: item
+                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                  className: "boutonPagination generalBackground",
                   onClick: function onClick() {
                     return handleChangePage(item);
                   },
@@ -31595,20 +31670,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Footer)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
-/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Paper */ "./node_modules/@material-ui/core/esm/Paper/Paper.js");
-/* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Container */ "./node_modules/@material-ui/core/esm/Container/Container.js");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
+/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/Paper */ "./node_modules/@material-ui/core/esm/Paper/Paper.js");
+/* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @material-ui/core/Container */ "./node_modules/@material-ui/core/esm/Container/Container.js");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/makeStyles/makeStyles.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/styled.js");
+/* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/makeStyles/makeStyles.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/styled.js");
+/* harmony import */ var _material_ui_icons_LiveHelp__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/icons/LiveHelp */ "./node_modules/@material-ui/icons/LiveHelp.js");
 /* harmony import */ var _assets_img_logo1_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/img/logo1.png */ "./resources/assets/img/logo1.png");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../App.css */ "./resources/js/App.css");
-/* harmony import */ var _css_Footer_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/Footer.css */ "./resources/js/css/Footer.css");
-/* harmony import */ var _material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/icons/YouTube */ "./node_modules/@material-ui/icons/YouTube.js");
-/* harmony import */ var _assets_css_fonts_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/css/fonts.css */ "./resources/assets/css/fonts.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _assets_img_creditCard1_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/img/creditCard1.png */ "./resources/assets/img/creditCard1.png");
+/* harmony import */ var _assets_img_delivery2_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/img/delivery2.jpg */ "./resources/assets/img/delivery2.jpg");
+/* harmony import */ var _assets_img_trackPackage1_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/img/trackPackage1.png */ "./resources/assets/img/trackPackage1.png");
+/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/icons/LocalShipping */ "./node_modules/@material-ui/icons/LocalShipping.js");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../App.css */ "./resources/js/App.css");
+/* harmony import */ var _css_Footer_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/Footer.css */ "./resources/js/css/Footer.css");
+/* harmony import */ var _material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/icons/YouTube */ "./node_modules/@material-ui/icons/YouTube.js");
+/* harmony import */ var _assets_css_fonts_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/css/fonts.css */ "./resources/assets/css/fonts.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -31642,10 +31722,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_7__["default"])(function (theme) {
+
+
+
+
+
+var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_10__["default"])(function (theme) {
   return {};
 });
-var Item = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__["default"])(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_9__["default"])(function (_ref) {
+var Item = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_11__["default"])(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_12__["default"])(function (_ref) {
   var theme = _ref.theme;
   return _objectSpread(_objectSpread({}, theme.typography.body2), {}, {
     padding: theme.spacing(1),
@@ -31656,196 +31741,218 @@ var Item = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__["default"])(
 });
 function Footer() {
   var classes = useStyles();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    className: "pt-10 testDiv",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+    className: "pt-10 generalBackground",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
       className: " backgroundFooterItems",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
         container: true,
         justifyContent: "center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
           spacing: 2,
           container: true,
           item: true,
           xs: 12,
           sm: 11,
           md: 9,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
             className: "textAlignCenter",
             item: true,
             xs: 12,
             sm: 6,
             md: 3,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+              className: "heightIconsFooter ",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+                src: _assets_img_creditCard1_png__WEBPACK_IMPORTED_MODULE_3__["default"],
+                className: "iconsFooter pt-4"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h4", {
               children: "SECURE PAYMENT"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h5", {
               children: "With credit card or Paypal"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
             item: true,
             xs: 12,
             sm: 6,
             md: 3,
             className: "greyLineBorders textAlignCenter",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+              className: "heightIconsFooter ",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+                src: _assets_img_trackPackage1_png__WEBPACK_IMPORTED_MODULE_5__["default"],
+                className: "iconsFooterTrack pt-4"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h4", {
               children: "SATISFIED OR REFUNDED"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h5", {
               children: "7 days from time of delivery"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
             item: true,
             xs: 12,
             sm: 6,
             md: 3,
             className: "greyLineBorders textAlignCenter",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+              className: "heightIconsFooter pt-4",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_14__["default"], {
+                className: "iconsFooter"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h4", {
               children: "FREE SHIPPING"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h5", {
               children: "From 40$ of purchases"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
             className: "textAlignCenter",
             item: true,
             xs: 12,
             sm: 6,
             md: 3,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+              className: "heightIconsFooter pt-4",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_icons_LiveHelp__WEBPACK_IMPORTED_MODULE_15__["default"], {
+                className: "iconsFooter"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h4", {
               children: "RESPONSIVE CUSTOMER SERVICE"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h5", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h5", {
               children: "Guaranteed response within 24 hours"
             })]
           })]
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
       className: "backgroundFooter ",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_11__["default"], {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
           container: true,
           justifyContent: "center",
           className: "menuQuality pt-5",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
             container: true,
             item: true,
             xs: 12,
             md: 11,
             lg: 10,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
               justifyContent: "center",
               item: true,
               xs: 12,
               md: 5,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                 className: "flexCenter pt-5 mt-2",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_17__["default"], {
                   className: "m-3"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_17__["default"], {
                   className: "m-3"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_17__["default"], {
                   className: "m-3"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_17__["default"], {
                   className: "m-3"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
               xs: 12,
               md: 7,
               container: true,
               justifyContent: "center",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
                 xs: 11,
                 md: 12,
                 item: true,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                   className: "widthP mt-4",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
                     children: "unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
                   })
                 })
               })
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
           container: true,
           justifyContent: "center",
           className: "menuQuality pb-5",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
             container: true,
             item: true,
             xs: 12,
             md: 11,
             lg: 10,
             className: "mt-7",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
               className: "pt-5",
               container: true,
               justifyContent: "center",
               md: 12,
               lg: 8,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
                 className: "flexCenter",
                 item: true,
                 md: 4,
                 sm: 6,
                 xs: 12,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                   className: "widthItemsFooter",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
                     children: "Amazing Sewing"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     children: "5 rue des oiseaux"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     children: "27220 Fresney"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     children: "contact@amazingsewing.com"
                   })]
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
                 className: "flexCenter",
                 item: true,
                 md: 4,
                 sm: 6,
                 xs: 12,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                   className: "widthItemsFooter",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
                     children: "About us"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     children: "Who are we ?"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     children: "Our corporate values"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     children: "Guaranty and return"
                   })]
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
                 className: "flexCenter",
                 item: true,
                 md: 4,
                 sm: 6,
                 xs: 12,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                   className: "widthItemsFooter",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
                     children: "Privates sales and newsletter"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-                    children: ["Access privates sales and stay", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), "up to date with AmazingSewing news"]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+                    children: ["Access privates sales and stay", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), "up to date with AmazingSewing news"]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     className: "flexCenter mt-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_18__["default"], {
                       className: "inputFooter",
                       placeholder: " Your email ..."
                     })
                   })]
                 })
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
               className: "pt-5 verticalAlign",
               container: true,
               justifyContent: "center",
               md: 12,
               lg: 4,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h1", {
                 className: "verticalAlign",
                 children: "AmazingSewing"
               })
@@ -36666,7 +36773,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html { \n    scroll-behavior: smooth; \n    \n  }\n.generalFont{\n    font-family:  cursive;\n}\n.testDiv{\n    background-color:rgb(248, 248, 248);\n}\n.flex{\n    display:flex;\n}\n.justifyText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: justify;\n    text-justify: inter-word;\n}\n.emptyStar{\n    color:rgb(253, 225, 149);\n}\n.centerText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: center;\n    \n}\n.textAlignCenter{\n    text-align: center;\n}\n.verticalAlign{\n    display:flex;\n    align-items: center;\n    justify-content: center;\n}\n.flexCenter{\n    display:flex;\n    justify-content: center;\n}\n.flexColumn{\n    display:flex;\n    flex-direction: column;\n}\n.flexBetween{\n    display:flex;\n    justify-content: space-between;\n}\n.lightShadowCard{\n    box-shadow: 0 0 2px 1px rgb(214, 214, 214);\n}\n.productCard{\n    width:200px;\n    /* height:300px; */\n    background-color: rgb(173, 199, 199);\n}\n.greyLineProduct{\n    width:100%;\n    height:1px;\n    background-color:rgb(223, 223, 223);\n}\n.lightGrey{\n    background-color:rgb(223, 223, 223);\n}\n.marginTopHeader{\n    margin-top:130px;\n}\n\n.mt-1{\n    margin-top:5px\n}\n.mt-2{\n    margin-top:10px\n}\n.mt-3{\n    margin-top:15px\n}\n.mt-4{\n    margin-top:20px\n}\n.mt-5{\n    margin-top:25px\n}\n.mt-6{\n    margin-top:30px\n}\n.mt-7{\n    margin-top:40px\n}\n.mt-8{\n    margin-top:50px\n}\n.mt-9{\n    margin-top:60px\n}\n.mt-10{\n    margin-top:70px\n}\n.mt-11{\n    margin-top:80px\n}\n.mt-12{\n    margin-top:90px\n}\n.mt-13{\n    margin-top:100px\n}\n.mt-14{\n    margin-top:120px\n}\n.mt-15{\n    margin-top:140px\n}\n.pt-1{\n    padding-top:5px\n}\n.pt-2{\n    padding-top:10px\n}\n.pt-3{\n    padding-top:15px\n}\n.pt-4{\n    padding-top:20px\n}\n.pt-5{\n    padding-top:25px\n}\n.pt-6{\n    padding-top:30px\n}\n.pt-7{\n    padding-top:40px\n}\n.pt-8{\n    padding-top:50px\n}\n.pt-9{\n    padding-top:60px\n}\n.pt-10{\n    padding-top:70px\n}\n.pt-11{\n    padding-top:80px\n}\n.pt-12{\n    padding-top:90px\n}\n.pt-13{\n    padding-top:100px\n}\n.pt-14{\n    padding-top:120px\n}\n.pt-15{\n    padding-top:140px\n}\n.m-1{\n    margin:5px\n}\n.m-2{\n    margin:10px\n}\n.m-3{\n    margin:15px\n}\n.m-4{\n    margin:20px\n}\n.m-5{\n    margin:25px\n}\n.m-6{\n    margin:30px\n}\n.m-7{\n    margin:40px\n}\n.m-8{\n    margin:50px\n}\n.m-9{\n    margin:60px\n}\n.m-10{\n    margin:70px\n}\n.m-11{\n    margin:80px\n}\n.m-12{\n    margin:90px\n}\n.m-13{\n    margin:100px\n}\n.m-14{\n    margin:120px\n}\n.m-15{\n    margin:140px\n}\n.p-1{\n    padding:5px\n}\n.p-2{\n    padding:10px\n}\n.p-3{\n    padding:15px\n}\n.p-4{\n    padding:20px\n}\n.p-5{\n    padding:25px\n}\n.p-6{\n    padding:30px\n}\n.p-7{\n    padding:40px\n}\n.p-8{\n    padding:50px\n}\n.p-9{\n    padding:60px\n}\n.p-10{\n    padding:70px\n}\n.p-11{\n    padding:80px\n}\n.p-12{\n    padding:90px\n}\n.p-13{\n    padding:100px\n}\n.p-14{\n    padding:120px\n}\n.p-15{\n    padding:140px\n}\n.ml-1{\n    margin-left:5px\n}\n.ml-2{\n    margin-left:10px\n}\n.ml-3{\n    margin-left:15px\n}\n.ml-4{\n    margin-left:20px\n}\n.ml-5{\n    margin-left:25px\n}\n.ml-6{\n    margin-left:30px\n}\n.ml-7{\n    margin-left:40px\n}\n.ml-8{\n    margin-left:50px\n}\n.ml-9{\n    margin-left:60px\n}\n.ml-10{\n    margin-left:70px\n}\n.ml-11{\n    margin-left:80px\n}\n.ml-12{\n    margin-left:90px\n}\n.ml-13{\n    margin-left:100px\n}\n.ml-14{\n    margin-left:120px\n}\n.ml-15{\n    margin-left:140px\n}\n.pl-1{\n    padding-left:5px\n}\n.pl-2{\n    padding-left:10px\n}\n.pl-3{\n    padding-left:15px\n}\n.pl-4{\n    padding-left:20px\n}\n.pl-5{\n    padding-left:25px\n}\n.pl-6{\n    padding-left:30px\n}\n.pl-7{\n    padding-left:40px\n}\n.pl-8{\n    padding-left:50px\n}\n.pl-9{\n    padding-left:60px\n}\n.pl-10{\n    padding-left:70px\n}\n.pl-11{\n    padding-left:80px\n}\n.pl-12{\n    padding-left:90px\n}\n.pl-13{\n    padding-left:100px\n}\n.pl-14{\n    padding-left:120px\n}\n.pl-15{\n    padding-left:140px\n}\n.mr-1{\n    margin-right:5px\n}\n.mr-2{\n    margin-right:10px\n}\n.mr-3{\n    margin-right:15px\n}\n.mr-4{\n    margin-right:20px\n}\n.mr-5{\n    margin-right:25px\n}\n.mr-6{\n    margin-right:30px\n}\n.mr-7{\n    margin-right:40px\n}\n.mr-8{\n    margin-right:50px\n}\n.mr-9{\n    margin-right:60px\n}\n.mr-10{\n    margin-right:70px\n}\n.mr-11{\n    margin-right:80px\n}\n.mr-12{\n    margin-right:90px\n}\n.mr-13{\n    margin-right:100px\n}\n.mr-14{\n    margin-right:120px\n}\n.mr-15{\n    margin-right:140px\n}\n.pr-1{\n    padding-right:5px\n}\n.pr-2{\n    padding-right:10px\n}\n.pr-3{\n    padding-right:15px\n}\n.pr-4{\n    padding-right:20px\n}\n.pr-5{\n    padding-right:25px\n}\n.pr-6{\n    padding-right:30px\n}\n.pr-7{\n    padding-right:40px\n}\n.pr-8{\n    padding-right:50px\n}\n.pr-9{\n    padding-right:60px\n}\n.pr-10{\n    padding-right:70px\n}\n.pr-11{\n    padding-right:80px\n}\n.pr-12{\n    padding-right:90px\n}\n.pr-13{\n    padding-right:100px\n}\n.pr-14{\n    padding-right:120px\n}\n.pr-15{\n    padding-right:140px\n}\n.mb-1{\n    margin-bottom:5px\n}\n.mb-2{\n    margin-bottom:10px\n}\n.mb-3{\n    margin-bottom:15px\n}\n.mb-4{\n    margin-bottom:20px\n}\n.mb-5{\n    margin-bottom:25px\n}\n.mb-6{\n    margin-bottom:30px\n}\n.mb-7{\n    margin-bottom:40px\n}\n.mb-8{\n    margin-bottom:50px\n}\n.mb-9{\n    margin-bottom:60px\n}\n.mb-10{\n    margin-bottom:70px\n}\n.mb-11{\n    margin-bottom:80px\n}\n.mb-12{\n    margin-bottom:90px\n}\n.mb-13{\n    margin-bottom:100px\n}\n.mb-14{\n    margin-bottom:120px\n}\n.mb-15{\n    margin-bottom:140px\n}\n.pb-1{\n    padding-bottom:5px\n}\n.pb-2{\n    padding-bottom:10px\n}\n.pb-3{\n    padding-bottom:15px\n}\n.pb-4{\n    padding-bottom:20px\n}\n.pb-5{\n    padding-bottom:25px\n}\n.pb-6{\n    padding-bottom:30px\n}\n.pb-7{\n    padding-bottom:40px\n}\n.pb-8{\n    padding-bottom:50px\n}\n.pb-9{\n    padding-bottom:60px\n}\n.pb-10{\n    padding-bottom:70px\n}\n.pb-11{\n    padding-bottom:80px\n}\n.pb-12{\n    padding-bottom:90px\n}\n.pb-13{\n    padding-bottom:100px\n}\n.pb-14{\n    padding-bottom:120px\n}\n.pb-15{\n    padding-bottom:140px\n}\n.width90{\n    width:90%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width80{\n    width:80%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width70{\n    width:70%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width60{\n    width:60%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width50{\n    width:50%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width40{\n    width:40%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "html { \n    scroll-behavior: smooth; \n    \n  }\n.generalFont{\n    font-family:  cursive;\n}\n.generalBackground{\n    background-color:rgb(248, 248, 248);\n}\n.flex{\n    display:flex;\n}\n.justifyText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: justify;\n    text-justify: inter-word;\n}\n.emptyStar{\n    color:rgb(253, 225, 149);\n}\n.centerText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: center;\n    \n}\n.textAlignCenter{\n    text-align: center;\n}\n.verticalAlign{\n    display:flex;\n    align-items: center;\n    justify-content: center;\n}\n.flexCenter{\n    display:flex;\n    justify-content: center;\n}\n.flexColumn{\n    display:flex;\n    flex-direction: column;\n}\n.flexBetween{\n    display:flex;\n    justify-content: space-between;\n}\n.lightShadowCard{\n    box-shadow: 0 0 2px 1px rgb(214, 214, 214);\n}\n.productCard{\n    width:200px;\n    /* height:300px; */\n    background-color: rgb(173, 199, 199);\n}\n.greyLineProduct{\n    width:100%;\n    height:1px;\n    background-color:rgb(223, 223, 223);\n}\n.lightGrey{\n    background-color:rgb(223, 223, 223);\n}\n.marginTopHeader{\n    margin-top:130px;\n}\n.cardProduct{\n    margin:6%;\n    border-radius:4px; \n    transition: all .2s ease-in-out;\n}\n.cardProduct:hover{\n    margin:6%;\n    border-radius:4px; \n    /* opacity:0.8; */\n    /* transform: scale(1.02); */\n}\n.cardProduct:hover{\n    opacity:0.8;\n}\n.cardProduct:hover .imageProduct{\n    opacity:0.3;\n}\n.hideProduct{\n    opacity:0;\n    height:50px;\n    /* margin-right:auto; */\n}\n.elementAppear{\n    font-size:1.1em;\n    font-weight:600;\n}\n.cardProduct:hover .hideProduct{\n   display:block;\n   position:relative;\n   top:-130px;\n   z-index: 100;\n   /* font-size:1.5em; */\n   background:transparent;\n   opacity:1;\n}\n.cardProduct:hover .elementAppear{\n    width:80%;\n    margin-right:auto;\n    margin-left:auto;\n    height:50px;\n    display:flex;\n    justify-content: center;\n    align-items: center;\n    /* background-color:rgb(219, 219, 219); */\n    border:2px solid grey;\n    border-radius:2px;\n }\n.mt-1{\n    margin-top:5px\n}\n.mt-2{\n    margin-top:10px\n}\n.mt-3{\n    margin-top:15px\n}\n.mt-4{\n    margin-top:20px\n}\n.mt-5{\n    margin-top:25px\n}\n.mt-6{\n    margin-top:30px\n}\n.mt-7{\n    margin-top:40px\n}\n.mt-8{\n    margin-top:50px\n}\n.mt-9{\n    margin-top:60px\n}\n.mt-10{\n    margin-top:70px\n}\n.mt-11{\n    margin-top:80px\n}\n.mt-12{\n    margin-top:90px\n}\n.mt-13{\n    margin-top:100px\n}\n.mt-14{\n    margin-top:120px\n}\n.mt-15{\n    margin-top:140px\n}\n.pt-1{\n    padding-top:5px\n}\n.pt-2{\n    padding-top:10px\n}\n.pt-3{\n    padding-top:15px\n}\n.pt-4{\n    padding-top:20px\n}\n.pt-5{\n    padding-top:25px\n}\n.pt-6{\n    padding-top:30px\n}\n.pt-7{\n    padding-top:40px\n}\n.pt-8{\n    padding-top:50px\n}\n.pt-9{\n    padding-top:60px\n}\n.pt-10{\n    padding-top:70px\n}\n.pt-11{\n    padding-top:80px\n}\n.pt-12{\n    padding-top:90px\n}\n.pt-13{\n    padding-top:100px\n}\n.pt-14{\n    padding-top:120px\n}\n.pt-15{\n    padding-top:140px\n}\n.m-1{\n    margin:5px\n}\n.m-2{\n    margin:10px\n}\n.m-3{\n    margin:15px\n}\n.m-4{\n    margin:20px\n}\n.m-5{\n    margin:25px\n}\n.m-6{\n    margin:30px\n}\n.m-7{\n    margin:40px\n}\n.m-8{\n    margin:50px\n}\n.m-9{\n    margin:60px\n}\n.m-10{\n    margin:70px\n}\n.m-11{\n    margin:80px\n}\n.m-12{\n    margin:90px\n}\n.m-13{\n    margin:100px\n}\n.m-14{\n    margin:120px\n}\n.m-15{\n    margin:140px\n}\n.p-1{\n    padding:5px\n}\n.p-2{\n    padding:10px\n}\n.p-3{\n    padding:15px\n}\n.p-4{\n    padding:20px\n}\n.p-5{\n    padding:25px\n}\n.p-6{\n    padding:30px\n}\n.p-7{\n    padding:40px\n}\n.p-8{\n    padding:50px\n}\n.p-9{\n    padding:60px\n}\n.p-10{\n    padding:70px\n}\n.p-11{\n    padding:80px\n}\n.p-12{\n    padding:90px\n}\n.p-13{\n    padding:100px\n}\n.p-14{\n    padding:120px\n}\n.p-15{\n    padding:140px\n}\n.ml-1{\n    margin-left:5px\n}\n.ml-2{\n    margin-left:10px\n}\n.ml-3{\n    margin-left:15px\n}\n.ml-4{\n    margin-left:20px\n}\n.ml-5{\n    margin-left:25px\n}\n.ml-6{\n    margin-left:30px\n}\n.ml-7{\n    margin-left:40px\n}\n.ml-8{\n    margin-left:50px\n}\n.ml-9{\n    margin-left:60px\n}\n.ml-10{\n    margin-left:70px\n}\n.ml-11{\n    margin-left:80px\n}\n.ml-12{\n    margin-left:90px\n}\n.ml-13{\n    margin-left:100px\n}\n.ml-14{\n    margin-left:120px\n}\n.ml-15{\n    margin-left:140px\n}\n.pl-1{\n    padding-left:5px\n}\n.pl-2{\n    padding-left:10px\n}\n.pl-3{\n    padding-left:15px\n}\n.pl-4{\n    padding-left:20px\n}\n.pl-5{\n    padding-left:25px\n}\n.pl-6{\n    padding-left:30px\n}\n.pl-7{\n    padding-left:40px\n}\n.pl-8{\n    padding-left:50px\n}\n.pl-9{\n    padding-left:60px\n}\n.pl-10{\n    padding-left:70px\n}\n.pl-11{\n    padding-left:80px\n}\n.pl-12{\n    padding-left:90px\n}\n.pl-13{\n    padding-left:100px\n}\n.pl-14{\n    padding-left:120px\n}\n.pl-15{\n    padding-left:140px\n}\n.mr-1{\n    margin-right:5px\n}\n.mr-2{\n    margin-right:10px\n}\n.mr-3{\n    margin-right:15px\n}\n.mr-4{\n    margin-right:20px\n}\n.mr-5{\n    margin-right:25px\n}\n.mr-6{\n    margin-right:30px\n}\n.mr-7{\n    margin-right:40px\n}\n.mr-8{\n    margin-right:50px\n}\n.mr-9{\n    margin-right:60px\n}\n.mr-10{\n    margin-right:70px\n}\n.mr-11{\n    margin-right:80px\n}\n.mr-12{\n    margin-right:90px\n}\n.mr-13{\n    margin-right:100px\n}\n.mr-14{\n    margin-right:120px\n}\n.mr-15{\n    margin-right:140px\n}\n.pr-1{\n    padding-right:5px\n}\n.pr-2{\n    padding-right:10px\n}\n.pr-3{\n    padding-right:15px\n}\n.pr-4{\n    padding-right:20px\n}\n.pr-5{\n    padding-right:25px\n}\n.pr-6{\n    padding-right:30px\n}\n.pr-7{\n    padding-right:40px\n}\n.pr-8{\n    padding-right:50px\n}\n.pr-9{\n    padding-right:60px\n}\n.pr-10{\n    padding-right:70px\n}\n.pr-11{\n    padding-right:80px\n}\n.pr-12{\n    padding-right:90px\n}\n.pr-13{\n    padding-right:100px\n}\n.pr-14{\n    padding-right:120px\n}\n.pr-15{\n    padding-right:140px\n}\n.mb-1{\n    margin-bottom:5px\n}\n.mb-2{\n    margin-bottom:10px\n}\n.mb-3{\n    margin-bottom:15px\n}\n.mb-4{\n    margin-bottom:20px\n}\n.mb-5{\n    margin-bottom:25px\n}\n.mb-6{\n    margin-bottom:30px\n}\n.mb-7{\n    margin-bottom:40px\n}\n.mb-8{\n    margin-bottom:50px\n}\n.mb-9{\n    margin-bottom:60px\n}\n.mb-10{\n    margin-bottom:70px\n}\n.mb-11{\n    margin-bottom:80px\n}\n.mb-12{\n    margin-bottom:90px\n}\n.mb-13{\n    margin-bottom:100px\n}\n.mb-14{\n    margin-bottom:120px\n}\n.mb-15{\n    margin-bottom:140px\n}\n.pb-1{\n    padding-bottom:5px\n}\n.pb-2{\n    padding-bottom:10px\n}\n.pb-3{\n    padding-bottom:15px\n}\n.pb-4{\n    padding-bottom:20px\n}\n.pb-5{\n    padding-bottom:25px\n}\n.pb-6{\n    padding-bottom:30px\n}\n.pb-7{\n    padding-bottom:40px\n}\n.pb-8{\n    padding-bottom:50px\n}\n.pb-9{\n    padding-bottom:60px\n}\n.pb-10{\n    padding-bottom:70px\n}\n.pb-11{\n    padding-bottom:80px\n}\n.pb-12{\n    padding-bottom:90px\n}\n.pb-13{\n    padding-bottom:100px\n}\n.pb-14{\n    padding-bottom:120px\n}\n.pb-15{\n    padding-bottom:140px\n}\n.width90{\n    width:90%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width80{\n    width:80%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width70{\n    width:70%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width60{\n    width:60%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width50{\n    width:50%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width40{\n    width:40%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36720,7 +36827,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_assets_img_backgroundFooter1_jpg__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".widthP{\n    /* width:40%; */\n    margin-left:auto;\n    margin-right:auto;\n    text-align: justify;\n    text-justify: inter-word;\n    font-size:1.3em;\n    /* font-family: 'Bungee Inline', cursive; */\n}\n.backgroundFooter{\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    /* filter: blur(0.1px); */\n    /* background: rgb(0,0,0);\n    background: linear-gradient(47deg, rgba(0,0,0,1) 0%, rgba(2,2,32,1) 18%, rgba(11,11,62,1) 36%, rgba(16,15,101,1) 100%); */\n    color:rgb(223, 223, 223);\n    padding-bottom:17px;\n}\n.backgroundFooterItems{\n    background-color:rgb(241, 241, 241);\n}\n.inputFooter{\n    background:white;\n}\n.ulFooter{\n    list-style-type:none;\n}\n.liFooter{\n    list-style:none;\n    list-style-type:none;\n}\n/* .greyLineBorders{\n    height:100px;\n    border-left:1px solid rgb(189, 189, 189);\n    border-right:1px solid rgb(189, 189, 189);\n} */\n.iconsSocialMedias{\n    display:flex;\n    justify-content: center;\n}\n.widthItemsFooter{\n    min-width:240px;\n    margin-top:20px;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".widthP{\n    /* width:40%; */\n    margin-left:auto;\n    margin-right:auto;\n    text-align: justify;\n    text-justify: inter-word;\n    font-size:1.3em;\n    /* font-family: 'Bungee Inline', cursive; */\n}\n.backgroundFooter{\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    /* filter: blur(0.1px); */\n    /* background: rgb(0,0,0);\n    background: linear-gradient(47deg, rgba(0,0,0,1) 0%, rgba(2,2,32,1) 18%, rgba(11,11,62,1) 36%, rgba(16,15,101,1) 100%); */\n    color:rgb(223, 223, 223);\n    padding-bottom:17px;\n}\n.backgroundFooterItems{\n    background-color:rgb(241, 241, 241);\n    color:rgb(56, 56, 56);\n}\n.inputFooter{\n    background:white;\n}\n.ulFooter{\n    list-style-type:none;\n}\n.liFooter{\n    list-style:none;\n    list-style-type:none;\n}\n/* .greyLineBorders{\n    height:100px;\n    border-left:1px solid rgb(189, 189, 189);\n    border-right:1px solid rgb(189, 189, 189);\n} */\n.iconsSocialMedias{\n    display:flex;\n    justify-content: center;\n}\n.widthItemsFooter{\n    min-width:240px;\n    margin-top:20px;\n}\n.iconsFooter{\n    width:25px;\n}\n.iconsFooterTrack{\n    width:35px;\n}\n.heightIconsFooter{\n    height:50px;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36768,7 +36875,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n* {\n    box-sizing: border-box;\n  }\n  \n  body { font-family: sans-serif; }\n  \n  .gallery {\n    background: #EEE;\n  }\n  \n  .gallery-cell {\n    width: 28%;\n    height: 200px;\n    margin-right: 10px;\n    background: #8C8;\n    counter-increment: gallery-cell;\n  }\n  \n  .gallery-cell.is-selected {\n    background: #ED2;\n  }\n  \n  /* cell number */\n  .gallery-cell:before {\n    display: block;\n    text-align: center;\n    content: counter(gallery-cell);\n    line-height: 200px;\n    font-size: 80px;\n    color: white;\n  }\n  .imgIntro{\n    width:100%;\n    height:300px;\n    -o-object-fit: cover;\n       object-fit: cover;\n  }\n ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n* {\n    box-sizing: border-box;\n  }\n  \n  body { font-family: sans-serif; }\n  \n  .gallery {\n    background: #EEE;\n  }\n  \n  .gallery-cell {\n    width: 28%;\n    height: 200px;\n    margin-right: 10px;\n    background: #8C8;\n    counter-increment: gallery-cell;\n  }\n  \n  .gallery-cell.is-selected {\n    background: #ED2;\n  }\n  \n  /* cell number */\n  .gallery-cell:before {\n    display: block;\n    text-align: center;\n    content: counter(gallery-cell);\n    line-height: 200px;\n    font-size: 80px;\n    color: white;\n  }\n  .imgIntro{\n    width:100%;\n    height:300px;\n    -o-object-fit: cover;\n       object-fit: cover;\n  }\n  .textReviews{\n    color:rgb(39, 39, 39);\n  }\n  .rewardIcon{\n    width:60px;\n  }\n  .smallIcons{\n    width:25px\n  }\n  .earthIcon{\n    width:25px\n  }\n  .backgroundIcons{\n   color:red;\n  }\n  .reviewIcon{\n    width:100px;\n    /* background-color:rgb(248, 248, 248); */\n    /* background-color:rgb(255, 0, 0); */\n  }\n ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36792,7 +36899,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".cardProduct{\r\n    /* text-align: center; */\r\n    margin:6%;\r\n    border-radius:4px;\r\n    /* box-shadow: 5px 5px 5px rgb(228, 228, 228) */\r\n    \r\n}\r\n.nameProduct{\r\n    font-weight:900;\r\n    width:80%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: center;\r\n    /* height:40px; */\r\n}\r\n.priceProduct{\r\n    font-weight:600;\r\n    /* font-size:em; */\r\n}\r\n.imageProduct{\r\n    width:100%;\r\n    border-top-left-radius:4px;\r\n    border-top-right-radius:4px;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:0.9;\r\n}\r\n.imageOneProduct{\r\n    width:100%;\r\n    border-radius:4px;\r\n    height:500px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:1;\r\n}\r\n.test{\r\n    background-color:red;\r\n    margin:0px;\r\n}\r\n.greyLineMenuProduct{\r\n    height:1px;\r\n    background-color:rgb(218, 218, 218);\r\n    width:100%;\r\n    margin-top:15px;\r\n}\r\n.menuButton{\r\n    margin-left:40px;\r\n    padding-bottom:18px;\r\n    color:rgb(97, 97, 253);\r\n}\r\n.menuButton:hover{\r\n    cursor:pointer;\r\n    border-bottom:1px solid black;\r\n    color:rgb(160, 216, 30);\r\n}\r\n.paragraphMenuProduct{\r\n    text-justify: inherit;\r\n    padding:30px;\r\n}\r\n.menuDetailsProduct{\r\n    padding:80px;\r\n}\r\n.alignCenter{\r\n    display:flex;\r\n    align-items: center;\r\n}\r\n.greyButton{\r\n    background-color:rgb(243, 243, 243);\r\n}\r\n.greyButton:hover{\r\n    background-color:rgb(231, 231, 231);\r\n}\r\n.buttonAdd{\r\n    cursor:pointer;\r\n    border-top:1px solid rgb(207, 207, 207);\r\n    border-bottom:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.buttonSubstract{\r\n    cursor:pointer;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius:5px;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.quantityProduct{\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.buttonAddToCart{\r\n    cursor:pointer;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:100%;\r\n    height:30px;\r\n    font-weight: 200;\r\n    border-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.boutonPagination{\r\n    color:rgb(36, 36, 36)(0, 0, 0);\r\n    /* background-color:rgb(243, 243, 243); */\r\n}\r\n.divTest{\r\n    background-color:white;\r\n}\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n\r\n\r\n\r\n.nameProduct{\r\n    margin-top:-40px;\r\n    font-weight:900;\r\n    width:80%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: center;\r\n    /* height:40px; */\r\n}\r\n.priceProduct{\r\n    font-weight:600;\r\n    /* font-size:em; */\r\n}\r\n.imageProduct{\r\n    width:100%;\r\n    border-top-left-radius:4px;\r\n    border-top-right-radius:4px;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:0.9;\r\n    transition: .5s ease;\r\n    -webkit-backface-visibility: hidden;\r\n            backface-visibility: hidden;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n.imageOneProduct{\r\n    width:100%;\r\n    border-radius:4px;\r\n    height:500px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:1;\r\n}\r\n.test{\r\n    background-color:red;\r\n    margin:0px;\r\n}\r\n.greyLineMenuProduct{\r\n    height:1px;\r\n    background-color:rgb(218, 218, 218);\r\n    width:100%;\r\n    margin-top:15px;\r\n}\r\n.menuButton{\r\n    margin-left:40px;\r\n    padding-bottom:18px;\r\n    color:rgb(97, 97, 253);\r\n}\r\n.menuButton:hover{\r\n    cursor:pointer;\r\n    border-bottom:1px solid black;\r\n    color:rgb(160, 216, 30);\r\n}\r\n.paragraphMenuProduct{\r\n    text-justify: inherit;\r\n    padding:30px;\r\n}\r\n.menuDetailsProduct{\r\n    padding:80px;\r\n}\r\n.alignCenter{\r\n    display:flex;\r\n    align-items: center;\r\n}\r\n.greyButton{\r\n    background-color:rgb(243, 243, 243);\r\n}\r\n.greyButton:hover{\r\n    background-color:rgb(231, 231, 231);\r\n}\r\n.buttonAdd{\r\n    cursor:pointer;\r\n    border-top:1px solid rgb(207, 207, 207);\r\n    border-bottom:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.buttonSubstract{\r\n    cursor:pointer;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius:5px;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.quantityProduct{\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.buttonAddToCart{\r\n    cursor:pointer;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:100%;\r\n    height:30px;\r\n    font-weight: 200;\r\n    border-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.boutonPagination{\r\n    color:rgb(36, 36, 36)(0, 0, 0);\r\n    /* background-color:rgb(243, 243, 243); */\r\n}\r\n\r\n\r\n.boutonPagination{\r\n    width:25px;\r\n    padding:10px;\r\n    padding-left:25px;\r\n    padding-right:32px;\r\n    /* margin:10px; */\r\n    font-size:1.1em;\r\n    border-radius:5px;\r\n}\r\n.boutonPaginationSelected{\r\n    width:25px;\r\n    padding:10px;\r\n    padding-left:25px;\r\n    padding-right:32px;\r\n    font-size:1.1em;\r\n    color:rgb(82, 82, 82);\r\n    font-weight:600;\r\n    background-color:rgb(226, 226, 226)\r\n}\r\n.boutonPagination:hover{\r\n    font-size:1.1em;\r\n    color:grey;\r\n    background-color:rgb(241, 241, 241);\r\n    cursor:pointer;\r\n    \r\n}\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -37527,6 +37634,51 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/assets/img/creditCard1.png":
+/*!**********************************************!*\
+  !*** ./resources/assets/img/creditCard1.png ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/creditCard1.png?6c446812fb9d247696e9f92a8ec76f3d");
+
+/***/ }),
+
+/***/ "./resources/assets/img/delivery2.jpg":
+/*!********************************************!*\
+  !*** ./resources/assets/img/delivery2.jpg ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/delivery2.jpg?bf6f82f8c6c684c49fa9e74b1f0ee2e0");
+
+/***/ }),
+
+/***/ "./resources/assets/img/earth1.png":
+/*!*****************************************!*\
+  !*** ./resources/assets/img/earth1.png ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/earth1.png?2ce0c7ad4de2a5cfce0d50fc83fdbc6b");
+
+/***/ }),
+
 /***/ "./resources/assets/img/logo1.png":
 /*!****************************************!*\
   !*** ./resources/assets/img/logo1.png ***!
@@ -37557,6 +37709,36 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/assets/img/review1.png":
+/*!******************************************!*\
+  !*** ./resources/assets/img/review1.png ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/review1.png?789ee93e15ad231ed7cacd1acee18374");
+
+/***/ }),
+
+/***/ "./resources/assets/img/reward1.png":
+/*!******************************************!*\
+  !*** ./resources/assets/img/reward1.png ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/reward1.png?b195e4dffa751670daa5c92004d0d18e");
+
+/***/ }),
+
 /***/ "./resources/assets/img/sewing1.jpg":
 /*!******************************************!*\
   !*** ./resources/assets/img/sewing1.jpg ***!
@@ -37569,6 +37751,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/sewing1.jpg?082078f8dcbc03a56da90adf004df8d6");
+
+/***/ }),
+
+/***/ "./resources/assets/img/sewing2.jpg":
+/*!******************************************!*\
+  !*** ./resources/assets/img/sewing2.jpg ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/sewing2.jpg?2ea5da2cbbcb597c4bfbbe23671f48cb");
+
+/***/ }),
+
+/***/ "./resources/assets/img/trackPackage1.png":
+/*!************************************************!*\
+  !*** ./resources/assets/img/trackPackage1.png ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/trackPackage1.png?2861c7edbdb9cf8c60111afaa516a17d");
 
 /***/ }),
 

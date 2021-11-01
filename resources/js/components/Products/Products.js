@@ -68,8 +68,8 @@ export default function Products() {
           )
       }, [])   
 
-    const consoleFunction = () => {
-        console.log(items)
+    const handleTest = () => {
+        console.log(actuelPage)
     }
 
     const handleChangePage = (item) => {
@@ -90,6 +90,7 @@ export default function Products() {
         return(     
             <Container className="pt-15">
                 <Grid container justifyContent="center">   
+                
                     <Grid container item xs={12} sm={11} md={10}>            
                         {itemsInCurrentPage.map(item => (                    
                             <Grid 
@@ -98,24 +99,34 @@ export default function Products() {
                             >
                                 <div className="cardProduct lightShadowCard">   
                                     <Link to={{ pathname: '/product', state: { product : item } }}>                                
-                                        <img className="imageProduct" src="https://picsum.photos/200/300"/>
+                                        <img className="imageProduct" src="https://picsum.photos/200/300"/>                                       
+                                        <div className="hideProduct">
+                                            <div className="elementAppear">
+                                                DISCOVER
+                                            </div>
+                                        </div>  
                                         <div className="nameProduct flexCenter">{item.name}</div>                                  
-                                        <div className="priceProduct mt-4 ml-3 pb-1">{item.price},00 €</div> 
-                                    </Link>                                  
-                                </div>      
+                                        <div className="priceProduct mt-4 ml-3 pb-1">{item.price},00 €</div>                                                                      
+                                    </Link>                                        
+                                </div>                                     
                             </Grid>                    
                         ))}    
                     </Grid>               
                 </Grid>
                 <Grid container justifyContent="center" className="mt-10">   
                     <Grid container item justifyContent="center" xs={12} sm={11} md={10}>   
-                        <div className="flex">
+                        <div className="flex lightShadowCard">
+                            {/* <Button onClick={handleTest}>Click</Button> */}
                             {numberOfPages.map(item => (                    
                                 <div   
                                                              
                                     key={item}                                                 
                                 >
-                                    <button className="boutonPagination testDiv" onClick={() => handleChangePage(item)}>{item}</button> 
+                                    {item === actuelPage 
+                                    ? <button className="boutonPaginationSelected  generalBackground" onClick={() => handleChangePage(item)}>{item}</button> 
+                                    : <button className="boutonPagination generalBackground" onClick={() => handleChangePage(item)}>{item}</button> 
+                                }
+                                     
                                 </div>                    
                             ))}  
                         </div>

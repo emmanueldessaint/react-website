@@ -17,6 +17,7 @@
 }
 .backgroundFooterItems{
     background-color:rgb(241, 241, 241);
+    color:rgb(56, 56, 56);
 }
 .inputFooter{
     background:white;
@@ -40,5 +41,14 @@
 .widthItemsFooter{
     min-width:240px;
     margin-top:20px;
+}
+.iconsFooter{
+    width:25px;
+}
+.iconsFooterTrack{
+    width:35px;
+}
+.heightIconsFooter{
+    height:50px;
 }
 

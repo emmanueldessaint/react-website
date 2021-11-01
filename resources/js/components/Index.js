@@ -26,7 +26,7 @@ function Index() {
                 <Router>
                     <div className="generalFont">
                         <Header />
-                        <div className="testDiv">
+                        <div className="generalBackground">
                             <Switch>
                                 <Route path="/connect">
                                     <Connect />

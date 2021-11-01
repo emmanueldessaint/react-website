@@ -37,13 +37,15 @@ import {
     Link
   } from "react-router-dom";
   import logo from "../../../assets/img/sewing1.jpg";
+  import reward from "../../../assets/img/reward1.png";
+  import earth from "../../../assets/img/earth1.png";
+  import sewing from "../../../assets/img/sewing2.jpg";
+  import review from "../../../assets/img/review1.png";
   import '../../App.css';
   import '../../css/Home.css';
 
   const useStyles = makeStyles(theme => ({
-    marginTopBanner: {
-        "margin-top":"100px;",
-    },
+   
     greyLine: {
         "border-left":"1px solid black;"
     },
@@ -91,7 +93,7 @@ export default function Home() {
     
    
     return (
-        <div className={classes.marginTopBanner}>  
+        <div className="mt-9">  
             <div>
                 <img src={logo} alt="Logo" className="imgIntro"/>
             </div>
@@ -102,7 +104,7 @@ export default function Home() {
                         <Grid item xs={12} sm={4} className={classes.alignTitle}>
                         {/* <Button onClick={onChange}>update panier</Button> */}
                             <div className="mt-6">
-                                <span className="flexCenter"><LocalShippingIcon /></span>
+                                <span className="flexCenter"><img src={earth} alt="earth_icon" className="smallIcons "/></span>
                                 <span className="flexCenter mt-2">Respect for the land</span>
                                 <span className="flexCenter mt-2">Environment and traditions</span>
                             </div>
@@ -116,41 +118,49 @@ export default function Home() {
                         </Grid>
                         <Grid item xs={12} sm={4} className={classes.alignTitle}>
                             <div className="mt-6">
-                                <span className="flexCenter"><LocalShippingIcon /></span>
-                                <span className="flexCenter mt-2">Respect du terroir</span>
-                                <span className="flexCenter mt-2">De l'environnement et des traditions</span>
+                            <span className="flexCenter"><img src={sewing} alt="sewing_icon" className="smallIcons backgroundIcons"/></span>
+                                <span className="flexCenter mt-2">A real know-how </span>
+                                <span className="flexCenter mt-2">The highest quality</span>
                             </div>
                         </Grid>
                     </Grid>
                 </Grid>
             <div className="mt-10">
+                <div className="flexCenter"><img src={reward} alt="reward_svg" className="rewardIcon"/></div>
                 <h3 className="flexCenter">Our best sellers</h3>
                 <h4 className="flexCenter">Discover our customers' favorite products !</h4>
             </div>
-            {isLoaded && <div>
-            <Grid container justifyContent="center">
-                <Grid item container xs={12} md={11} lg={10}>
-                    
-                    {bestSellers.map(item => (
-                        <Grid 
-                            item xs={12} sm={6} md={3} lg={3} 
-                            key={item.id}                                                 
-                        >
-                            <div className="cardProduct lightShadowCard">   
-                                <Link to={{ pathname: '/product', state: { product : item } }}>                                
-                                    <img className="imageProduct" src="https://picsum.photos/200/300"/>
-                                    <div className="nameProduct centerText">{item.name}</div>                                  
-                                    <div className="priceProduct mt-4 ml-3 pb-1">${item.price}.00</div> 
-                                </Link>                                  
-                            </div>                                
-                        </Grid>
-                    ))}    
-                    
-                </Grid>          
-            </Grid>
-            </div>
-                    } 
-            <h2 className="flexCenter mt-10">They lived the experience</h2>
+            {isLoaded && 
+                <div>
+                    <Grid container justifyContent="center">
+                        <Grid item container xs={12} md={11} lg={10}>
+                            
+                            {bestSellers.map(item => (
+                                <Grid 
+                                    item xs={12} sm={6} md={3} lg={3} 
+                                    key={item.id}                                                 
+                                >
+                                    <div className="cardProduct lightShadowCard">   
+                                    <Link to={{ pathname: '/product', state: { product : item } }}>                                
+                                        <img className="imageProduct" src="https://picsum.photos/200/300"/>                                       
+                                        <div className="hideProduct">
+                                            <div className="elementAppear">
+                                                DISCOVER
+                                            </div>
+                                        </div>  
+                                        <div className="nameProduct flexCenter">{item.name}</div>                                  
+                                        <div className="priceProduct mt-4 ml-3 pb-1">${item.price}.00</div>                                                                      
+                                    </Link>                                        
+                                </div>                               
+                                </Grid>
+                            ))}    
+                            
+                        </Grid>          
+                    </Grid>
+                </div>
+            } 
+            <div className="flexCenter mt-10"><img src={review} alt="reward_svg" className="reviewIcon"/></div>
+            <h2 className="flexCenter">They lived the experience</h2>
             <Grid className="pt-7" container justifyContent="center">
                 <Grid container item xs={11} md={11} spacing={4}>
                     <Grid item md={3} xs={12} className=" verticalAlign">
@@ -173,7 +183,7 @@ export default function Home() {
                             </div>
                         </Grid>
                     </Grid>
-                    <Grid item md={9} sm={12}  className={classes.alignTitle}  >
+                    <Grid item md={9} sm={12}  className="textReviews"  >
                         <Grid container justifyContent="center" spacing={6}>             
                             {userReviews.map(item => (                    
                                 <Grid
