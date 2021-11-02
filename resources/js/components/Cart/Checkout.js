@@ -16,7 +16,7 @@ import {loadStripe} from '@stripe/stripe-js';
 import {useStripe, useElements, PaymentElement} from '@stripe/react-stripe-js';
 import PaymentForm from './PaymentForm';
 import TextField from '@material-ui/core/TextField';
-
+import axios from 'axios';
 
 
 const PUBLIC_KEY = "pk_test_jsy4tWY65SkgwjP0YVflB9xI"
@@ -60,7 +60,15 @@ export default function Checkout() {
       setIsLoaded(true);    
     }, [localLength])  
 
-    
+    const payment = () => { axios.post('http://localhost:8000/api/charge', {
+      amount: price * 100,
+      firstName: firstName,
+      lastName: lastName,
+      city: city,
+      zipCode: zipCode,
+      email: email,
+      address: address,
+    })}
     
       return (
         <div className="mt-15">
@@ -152,6 +160,7 @@ export default function Checkout() {
                           fullWidth 
                           variant="contained"
                           margin="normal"
+                          onClick={payment}
                         >
                           {isProcessing ? "Processing..." : `Pay $${price}.00`}
                           
