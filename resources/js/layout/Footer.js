@@ -60,22 +60,22 @@ export default function Footer() {
                     <Grid spacing={2} container item xs={12} sm={11} md={9}>
                         <Grid className="textAlignCenter" item xs={12} sm={6} md={3} >
                             <div className="heightIconsFooter "><img src={creditCard} className="iconsFooter pt-4"/></div>
-                            <h4>SECURE PAYMENT</h4>
+                            <span className="grey2 font6 size2">SECURE PAYMENT</span>
                             <h5>With credit card or Paypal</h5>
                         </Grid>
                         <Grid item xs={12} sm={6} md={3} className="greyLineBorders textAlignCenter">
                             <div className="heightIconsFooter "><img src={trackPackage} className="iconsFooterTrack pt-4"/></div>                  
-                            <h4>SATISFIED OR REFUNDED</h4>
+                            <span className="grey2 font6 size2">SATISFIED OR REFUNDED</span>
                             <h5>7 days from time of delivery</h5>
                         </Grid>
                         <Grid item xs={12} sm={6} md={3} className="greyLineBorders textAlignCenter">
                             <div className="heightIconsFooter pt-4"><LocalShippingIcon className="iconsFooter"/></div>                  
-                            <h4>FREE SHIPPING</h4>
+                            <span className="grey2 font6 size2">FREE SHIPPING</span>
                             <h5>From 40$ of purchases</h5>
                         </Grid>
                         <Grid className="textAlignCenter" item xs={12} sm={6} md={3} >
                             <div className="heightIconsFooter pt-4"><LiveHelpIcon className="iconsFooter"/></div>
-                            <h4>RESPONSIVE CUSTOMER SERVICE</h4>
+                            <span className="grey2 font6 size2">RESPONSIVE CUSTOMER SERVICE</span>
                             <h5>Guaranteed response within 24 hours</h5>
                         </Grid>
                     </Grid>

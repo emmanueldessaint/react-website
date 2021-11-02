@@ -29,7 +29,6 @@ import {
   useRecoilState,
   useRecoilValue,
 } from 'recoil';
-
 import {
     BrowserRouter as Router,
     Switch,
@@ -105,30 +104,37 @@ export default function Home() {
                         {/* <Button onClick={onChange}>update panier</Button> */}
                             <div className="mt-6">
                                 <span className="flexCenter"><img src={earth} alt="earth_icon" className="smallIcons "/></span>
-                                <span className="flexCenter mt-2">RESPECT FOR THE LAND</span>
-                                <span className="flexCenter mt-2">Environment and traditions</span>
+                                <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2">RESPECT FOR THE LAND</span>
+                                <div className="blueBar"></div>
+                                <span className="flexCenter mt-2 grey2 font4">Environment and traditions</span>
                             </div>
                         </Grid>
-                        <Grid item xs={12} sm={4} className={classes.alignTitle} className="greyLineBorders">
+                        
+                        <Grid item xs={12} sm={4} className="flexBetween">
+                            <div className="orangeBar"></div>
                             <div className="mt-6">
                                 <span className="flexCenter"><LocalShippingIcon /></span>
-                                <span className="flexCenter mt-2">Tracking delivery</span>
-                                <span className="flexCenter mt-2">All around the world</span>
+                                <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2">TRACKING DELIVERY</span>
+                                <div className="blueBar"></div>
+                                <span className="flexCenter mt-2 grey2 font4">All around the world</span>
                             </div>
+                            <div className="orangeBar"></div>
                         </Grid>
+                        
                         <Grid item xs={12} sm={4} className={classes.alignTitle}>
                             <div className="mt-6">
                             <span className="flexCenter"><img src={sewing} alt="sewing_icon" className="smallIcons backgroundIcons"/></span>
-                                <span className="flexCenter mt-2">A real know-how </span>
-                                <span className="flexCenter mt-2">The highest quality</span>
+                                <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2">A REAL KNOW-HOW</span>
+                                <div className="blueBar"></div>
+                                <span className="flexCenter mt-2 grey2 font4">The highest quality</span>
                             </div>
                         </Grid>
                     </Grid>
                 </Grid>
             <div className="mt-10">
                 <div className="flexCenter"><img src={reward} alt="reward_svg" className="rewardIcon"/></div>
-                <h3 className="flexCenter">Our best sellers</h3>
-                <h4 className="flexCenter">Discover our customers' favorite products !</h4>
+                <span className="flexCenter font3 size7 mt-3 bold600 grey2">Our best sellers</span>
+                <span className="flexCenter font4 grey2">Discover our customers' favorite products !</span>
             </div>
             {isLoaded && 
                 <div>
@@ -141,17 +147,17 @@ export default function Home() {
                                     key={item.id}                                                 
                                 >
                                     <div className="cardProduct lightShadowCard">   
-                                    <Link to={{ pathname: '/product', state: { product : item } }}>                                
-                                        <img className="imageProduct" src="https://picsum.photos/200/300"/>                                       
-                                        <div className="hideProduct">
-                                            <div className="elementAppear">
-                                                DISCOVER
-                                            </div>
-                                        </div>  
-                                        <div className="nameProduct flexCenter">{item.name}</div>                                  
-                                        <div className="priceProduct mt-4 ml-3 pb-1">${item.price}.00</div>                                                                      
-                                    </Link>                                        
-                                </div>                               
+                                        <Link to={{ pathname: '/product', state: { product : item } }}>                                
+                                            <img className="imageProduct" src="https://picsum.photos/200/300"/>                                       
+                                            <div className="hideProduct">
+                                                <div className="elementAppear">
+                                                    DISCOVER
+                                                </div>
+                                            </div>  
+                                            <div className="nameProduct flexCenter">{item.name}</div>                                  
+                                            <div className="priceProduct mt-4 ml-3 pb-1">${item.price}.00</div>                                                                      
+                                        </Link>                                        
+                                    </div>                               
                                 </Grid>
                             ))}    
                             
@@ -171,8 +177,7 @@ export default function Home() {
                                 <div>
                                     <Rating
                                         precision={0.5}
-                                        readOnly
-                                        
+                                        readOnly                                       
                                         name="simple-controlled"
                                         value={avgNote}  
                                         emptyIcon={
@@ -200,10 +205,11 @@ export default function Home() {
                                             emptyIcon={
                                                 <StarBorderIcon fontSize="inherit" className="emptyStar" />
                                               }                                      
-                                        />                                 
-                                        <div className="mt-5 ">{item.description.length < 60 ? item.description: item.description.substring(0, 70) + " . . ."}</div>
-                                        <div className="mt-5">{item.title}</div>
-                                    
+                                        /> 
+                                        <div className="lightShadowCard1">                              
+                                        <div className="mt-5 pl-2 pt-2">{item.description.length < 60 ? item.description: item.description.substring(0, 70) + " . . ."}</div>
+                                        <div className="mt-5 pl-2 pb-2">{item.title}</div>
+                                        </div>  
                                     </div>
                                     
                                 </Grid>                  

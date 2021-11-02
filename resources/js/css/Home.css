@@ -58,3 +58,24 @@
     /* background-color:rgb(255, 0, 0); */
   }
  
+
+  .blueBar{
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+    height:4px;
+    background-color:rgb(234, 240, 246);
+    margin-top:-5px;
+  }
+  .titleHomeArguments{
+    font-weight:bold;
+  }
+  @media all and (min-width: 600px) {
+    .orangeBar{
+      margin-top:auto;
+      margin-bottom:auto;
+      height:80%;
+      width:2px;
+      background-color:rgb(205, 221, 236);
+    }
+  }

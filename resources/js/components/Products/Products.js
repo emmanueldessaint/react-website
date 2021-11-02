@@ -14,6 +14,8 @@ import '../../css/Products.css';
 import { numberOfPageProducts } from '../Shared/globalState'
 import { currentPageProduct } from '../Shared/globalState'
 import { useRecoilState } from 'recoil';
+import Rating from '@mui/material/Rating';
+import StarBorderIcon from "@material-ui/icons/StarBorder";
  
   
 
@@ -43,17 +45,22 @@ export default function Products() {
           .then(res => res.json())
           .then(
             (result) => {
-              
-                let newArray= [];
-
+                let averageNote = 0;                
+                let newArray= [];               
                 newArray = result.products.slice(itemsByPage*(actuelPage-1),itemsByPage*(actuelPage));
                 setItems(result.products);       
                 for (var i = 0; i < result.products.length/itemsByPage; i++) {
                     emptyArray.push(increment)
-                    console.log(' 1 page')
                     increment++
                 }   
-
+                for (let j = 0; j < newArray.length; j ++) {
+                    let totalNotes = 0;
+                    for (let k = 0; k < newArray[j].reviews.length; k++) {
+                        totalNotes += newArray[j].reviews[k].note;                                             
+                    }                    
+                    averageNote = totalNotes/newArray[j].reviews.length;
+                    newArray[j].updated_at = averageNote;                   
+                }               
                 setNumberOfPages(emptyArray); 
                 setItemsInCurrentPage(newArray)
                 setIsLoaded(true);
@@ -70,6 +77,10 @@ export default function Products() {
 
     const handleTest = () => {
         console.log(actuelPage)
+    }
+
+    const averageNote = (item) => {
+        console.log(item)
     }
 
     const handleChangePage = (item) => {
@@ -121,8 +132,28 @@ export default function Products() {
                                                 DISCOVER
                                             </div>
                                         </div>  
-                                        <div className="nameProduct flexCenter">{item.name}</div>                                  
-                                        <div className="priceProduct mt-4 ml-3 pb-1">{item.price},00 €</div>                                                                      
+                                        <div className="nameProduct flexCenter">{item.name}</div>       
+                                        <div className="flexBetween">                         
+                                            <div className="priceProduct mt-4 ml-3 pb-1">${item.price}.00</div>
+                                            
+                                                   
+                                                {item.reviews.length > 0 &&   
+                                                <div className="flex productDetails mt-4 mr-3 pb-1">
+                                                    <div className="grey1">({item.reviews.length})</div> 
+                                                    <Rating
+                                                        precision={0.5}
+                                                        readOnly   
+                                                        size="small"                                        
+                                                        name="simple-controlled"
+                                                        value={item.updated_at}  
+                                                        emptyIcon={
+                                                            <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                        }                                     
+                                                    />                                          
+                                                </div>
+                                                }     
+                                              
+                                        </div>                                                                                                
                                     </Link>                                        
                                 </div>                                     
                             </Grid>                    

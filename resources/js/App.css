@@ -58,6 +58,12 @@ html {
     box-shadow: 0 0 2px 1px rgb(214, 214, 214);
     background-color: white!important;
 }
+.lightShadowCard1{
+    -webkit-box-shadow: 0 0 2px 1px rgb(233, 233, 233);
+    -moz-box-shadow: 0 0 2px 1px rgb(233, 233, 233);
+    box-shadow: 0 0 2px 1px rgb(233, 233, 233);
+    
+}
 .productCard{
     width:200px;
     /* height:300px; */
@@ -71,8 +77,14 @@ html {
 .lightGrey{
     background-color:rgb(223, 223, 223);
 }
-.marginTopHeader{
-    margin-top:130px;
+.grey1{
+    color:rgb(92, 92, 92)
+}
+.grey2{
+    color:rgb(54, 54, 54)
+}
+.grey3{
+    color:rgb(31, 31, 31)
 }
 .cardProduct{
     margin:6%;
@@ -120,6 +132,78 @@ html {
     /* background-color:rgb(219, 219, 219); */
     border:2px solid grey;
     border-radius:2px;
+ }
+ .bold100{
+     font-weight:100;
+ }
+ .bold200{
+     font-weight:200;
+ }
+ .bold300{
+     font-weight:300;
+ }
+ .bold400{
+     font-weight:400;
+ }
+ .bold500{
+     font-weight:500;
+ }
+ .bold600{
+     font-weight:600;
+ }
+ .bold700{
+     font-weight:700;
+ }
+ .bold800{
+     font-weight:800;
+ }
+ .size1{
+     font-size:1.1em;
+ }
+ .size2{
+     font-size:1.2em;
+ }
+ .size3{
+     font-size:1.3em;
+ }
+ .size4{
+     font-size:1.4em;
+ }
+ .size5{
+     font-size:1.5em;
+ }
+ .size6{
+     font-size:1.6em;
+ }
+ .size7{
+     font-size:1.7em;
+ }
+ .size8{
+     font-size:1.8em;
+ }
+ .size9{
+     font-size:1.9em;
+ }
+ .font1{
+    font-family: Georgia, serif;
+ }
+ .font2{
+    font-family: sans-serif;
+ }
+ .font3{
+    font-family: serif;
+ }
+ .font4{
+    font-family: cursive;
+ }
+ .font5{
+    font-family: system-ui;
+ }
+ .font6{
+    font-family: monospace;
+ }
+ .font7{
+    font-family: fantasy;
  }
 .mt-1{
     margin-top:5px
