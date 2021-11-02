@@ -30,15 +30,4 @@ Route::get('reviews', [ProductController::class, 'homeRequest']);
 
 Route::get('averageProductReview/{id}', [ProductController::class, 'averageProductReview']);
 
-<<<<<<< HEAD
-
-// ******** PAYMENT ROUTES ********
-
-// STRIPE
-Route::post('/charge', [StripePaymentController::class, 'charge']);
-
-// PAYPAL
-
-=======
 Route::post('charge', [StripePaymentController::class, 'charge']);
->>>>>>> 17f82014e803b2160b875a1c9269583580e36aea
