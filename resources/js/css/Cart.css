@@ -5,11 +5,11 @@
     justify-content: space-between;
     align-items: center;
     border-radius:2px;
-    
+    font-size:1.1em;
 }
 .imgLineCart{
-    height:90px;
-    width:90px;
+    height:120px;
+    width:120px;
     object-fit: cover;
     border-top-left-radius:2px;
     border-bottom-left-radius:2px;
@@ -26,7 +26,36 @@
 }
 .fontTrash{
     color:rgb(83, 83, 83);
+    margin-right:10px;
 }
 .itemOrItems{
     margin-left:10px;
+}
+.yourOrder{
+    margin-top:34px;
+    /* border:1px solid rgb(196, 196, 196); */
+    border-radius:5px;
+}
+.shippingFees{
+    height:40px;
+}
+.buttonModifyQuantity{
+    border: 1px solid grey;
+    border-radius:2px;
+    width:30px;
+    cursor:pointer;
+}
+.testCard{
+    padding-top:12px;
+    padding-left:5px;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius:5px;
+    height:50px;
+}
+.quantityPriceCart{
+    font-size:1.2em;
+    font-weight: bold;
+}
+.widthQuantityPrice{
+    width:100px;
 }

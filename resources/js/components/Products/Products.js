@@ -14,13 +14,13 @@ import '../../css/Products.css';
 import { numberOfPageProducts } from '../Shared/globalState'
 import { currentPageProduct } from '../Shared/globalState'
 import { useRecoilState } from 'recoil';
+import Rating from '@mui/material/Rating';
+import StarBorderIcon from "@material-ui/icons/StarBorder";
  
   
 
   const useStyles = makeStyles(theme => ({
-    marginTop: {
-        marginTop: 200,
-    }
+    
 }));
 
 
@@ -45,17 +45,22 @@ export default function Products() {
           .then(res => res.json())
           .then(
             (result) => {
-              
-                let newArray= [];
-               
+                let averageNote = 0;                
+                let newArray= [];               
                 newArray = result.products.slice(itemsByPage*(actuelPage-1),itemsByPage*(actuelPage));
                 setItems(result.products);       
                 for (var i = 0; i < result.products.length/itemsByPage; i++) {
                     emptyArray.push(increment)
-                    console.log(' 1 page')
                     increment++
                 }   
-
+                for (let j = 0; j < newArray.length; j ++) {
+                    let totalNotes = 0;
+                    for (let k = 0; k < newArray[j].reviews.length; k++) {
+                        totalNotes += newArray[j].reviews[k].note;                                             
+                    }                    
+                    averageNote = totalNotes/newArray[j].reviews.length;
+                    newArray[j].updated_at = averageNote;                   
+                }               
                 setNumberOfPages(emptyArray); 
                 setItemsInCurrentPage(newArray)
                 setIsLoaded(true);
@@ -70,8 +75,12 @@ export default function Products() {
           )
       }, [])   
 
-    const consoleFunction = () => {
-        console.log(items)
+    const handleTest = () => {
+        console.log(actuelPage)
+    }
+
+    const averageNote = (item) => {
+        console.log(item)
     }
 
     const handleChangePage = (item) => {
@@ -90,9 +99,26 @@ export default function Products() {
         return <div className={classes.marginTop}>Loading...</div>;
     } else {
         return(     
-            <Container className={classes.marginTop}>
-                <Grid container justifyContent="center">   
-                    <Grid container xs={12} sm={11} md={10}>            
+            <Container className="pt-15">
+                <Grid container justifyContent="center" className="mt-10">   
+                    <Grid container item  xs={12} sm={11} md={10}>   
+                        <div className="flex ml-3 mb-5 lightShadowCard">
+                            {numberOfPages.map(item => (                    
+                                <div   
+                                                             
+                                    key={item}                                                 
+                                >
+                                    {item === actuelPage 
+                                    ? <button className="boutonPaginationSelected  generalBackground" onClick={() => handleChangePage(item)}>{item}</button> 
+                                    : <button className="boutonPagination generalBackground" onClick={() => handleChangePage(item)}>{item}</button> 
+                                }                                     
+                                </div>                    
+                            ))}  
+                        </div>                       
+                    </Grid>
+                </Grid>
+                <Grid container justifyContent="center">         
+                    <Grid container item xs={12} sm={11} md={10}>            
                         {itemsInCurrentPage.map(item => (                    
                             <Grid 
                                 item xs={12} sm={6} md={4} lg={3} 
@@ -100,30 +126,57 @@ export default function Products() {
                             >
                                 <div className="cardProduct lightShadowCard">   
                                     <Link to={{ pathname: '/product', state: { product : item } }}>                                
-                                        <img className="imageProduct" src="https://picsum.photos/200/300"/>
-                                        <div className="nameProduct flexCenter">{item.name}</div>                                  
-                                        <div className="priceProduct mt-4 ml-3 pb-1">{item.price},00 €</div> 
-                                    </Link>                                  
-                                </div>      
+                                        <img className="imageProduct" src="https://picsum.photos/200/300"/>                                       
+                                        <div className="hideProduct">
+                                            <div className="elementAppear">
+                                                DISCOVER
+                                            </div>
+                                        </div>  
+                                        <div className="nameProduct flexCenter">{item.name}</div>       
+                                        <div className="flexBetween">                         
+                                            <div className="priceProduct mt-4 ml-3 pb-1">${item.price}.00</div>
+                                            
+                                                   
+                                                {item.reviews.length > 0 &&   
+                                                <div className="flex productDetails mt-4 mr-3 pb-1">
+                                                    <div className="grey1">({item.reviews.length})</div> 
+                                                    <Rating
+                                                        precision={0.5}
+                                                        readOnly   
+                                                        size="small"                                        
+                                                        name="simple-controlled"
+                                                        value={item.updated_at}  
+                                                        emptyIcon={
+                                                            <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                        }                                     
+                                                    />                                          
+                                                </div>
+                                                }     
+                                              
+                                        </div>                                                                                                
+                                    </Link>                                        
+                                </div>                                     
                             </Grid>                    
                         ))}    
                     </Grid>               
                 </Grid>
                 <Grid container justifyContent="center" className="mt-10">   
-                    <Grid container justifyContent="center" xs={12} sm={11} md={10}>   
-                        <div className="flex">
+                    <Grid container item justifyContent="center" xs={12} sm={11} md={10}>   
+                        <div className="flex lightShadowCard">
                             {numberOfPages.map(item => (                    
-                                <div                             
+                                <div   
+                                                             
                                     key={item}                                                 
                                 >
-                                    <Button  onClick={() => handleChangePage(item)}>{item}</Button> 
+                                    {item === actuelPage 
+                                    ? <button className="boutonPaginationSelected  generalBackground" onClick={() => handleChangePage(item)}>{item}</button> 
+                                    : <button className="boutonPagination generalBackground" onClick={() => handleChangePage(item)}>{item}</button> 
+                                }                                     
                                 </div>                    
                             ))}  
-                        </div>
-                        
+                        </div>                       
                     </Grid>
                 </Grid>
-
             </Container>
         )
     }
