@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Payment\StripePaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,12 @@ Route::get('product/{id}', [ProductController::class, 'getOneProduct']);
 Route::get('reviews', [ProductController::class, 'homeRequest']);
 
 Route::get('averageProductReview/{id}', [ProductController::class, 'averageProductReview']);
+
+
+// ******** PAYMENT ROUTES ********
+
+// STRIPE
+Route::post('/charge', [StripePaymentController::class, 'charge']);
+
+// PAYPAL
 
