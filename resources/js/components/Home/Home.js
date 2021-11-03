@@ -35,7 +35,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
-  import logo from "../../../assets/img/sewing1.jpg";
+  import logo from "../../../assets/img/sewing3.jpg";
   import reward from "../../../assets/img/reward1.png";
   import earth from "../../../assets/img/earth1.png";
   import sewing from "../../../assets/img/sewing2.jpg";
@@ -114,7 +114,7 @@ export default function Home() {
                             <div className="orangeBar"></div>
                             <div className="mt-6">
                                 <span className="flexCenter"><LocalShippingIcon /></span>
-                                <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2">TRACKING DELIVERY</span>
+                                <span className="flexCenter mt-2 titleHomeArguments grey2 testFont size2">TRACKING DELIVERY</span>
                                 <div className="blueBar"></div>
                                 <span className="flexCenter mt-2 grey2 font4">All around the world</span>
                             </div>
@@ -133,7 +133,7 @@ export default function Home() {
                 </Grid>
             <div className="mt-10">
                 <div className="flexCenter"><img src={reward} alt="reward_svg" className="rewardIcon"/></div>
-                <span className="flexCenter font3 size7 mt-3 bold600 grey2">Our best sellers</span>
+                <span className="flexCenter font8 size7 mt-3 bold600 grey2">Our best sellers</span>
                 <span className="flexCenter font4 grey2">Discover our customers' favorite products !</span>
             </div>
             {isLoaded && 

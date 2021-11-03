@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Zen+Antique+Soft&display=swap');
 html { 
     scroll-behavior: smooth; 
     
@@ -13,6 +15,9 @@ html {
 }
 .flex{
     display:flex;
+}
+.testFont{
+    font-family: 'Roboto', sans-serif;
 }
 .justifyText{
     margin-left:auto;
@@ -204,6 +209,10 @@ html {
  }
  .font7{
     font-family: fantasy;
+ }
+ .font8{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Zen Antique Soft', serif;
  }
 .mt-1{
     margin-top:5px

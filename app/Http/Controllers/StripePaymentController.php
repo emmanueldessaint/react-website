@@ -14,7 +14,11 @@ class StripePaymentController extends Controller
     public function charge(Request $request)
     {
         // Calculer le total 
-        return 'test';
+        if (1 == 1) {
+            return response('Le paiement a réussi', 200);
+        } else {
+            return response('Le paiement a échoué', 403);
+        }
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET_DEV'));
         Stripe\Charge::create ([
                 "amount" => $request->amount, // Prix total
