@@ -132,8 +132,8 @@ export default function Products() {
                                                 DISCOVER
                                             </div>
                                         </div>  
-                                        <div className="nameProduct flexCenter">{item.name}</div>       
-                                        <div className="flexBetween">                         
+                                        <div className="nameProduct flexCenter font1">{item.name}</div>       
+                                        <div className="flexBetween font2">                         
                                             <div className="priceProduct mt-4 ml-3 pb-1">${item.price}.00</div>
                                             
                                                    

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
+use App\Http\Controllers\Payment\PaypalPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,9 @@ Route::post('register', [RegisterController::class, 'register']);
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+// ******** PAYMENT ROUTES ********
+
+// STRIPE
+
+
+// PAYPAL

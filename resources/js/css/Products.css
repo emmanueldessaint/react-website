@@ -143,5 +143,14 @@
 /* .productDetails{
     font-size:1.9em;
 } */
+.starsProductReview{
+    display:flex;
+    flex-direction: row-reverse;
+}
+@media all and (max-width: 600px) {
+    .marginTop600px{
+      margin-top:20px;
+    }
+  }
 
 

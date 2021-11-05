@@ -152,7 +152,7 @@ export default function Cart() {
               {localStorageLength > 0 &&
                 <Grid container item xs={12} md={4}>
                   <Grid item xs={12} >
-                    <div className="yourOrder lightShadowCard">
+                    <div className="yourOrder bgWhite lightShadowCard">
                       <div className="mt-4 flexBetween">
                         <span className="ml-2 mt-2">Product</span>
                         <span className="mr-2 mt-2">Subtotal</span>

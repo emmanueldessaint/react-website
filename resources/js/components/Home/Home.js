@@ -154,8 +154,8 @@ export default function Home() {
                                                     DISCOVER
                                                 </div>
                                             </div>  
-                                            <div className="nameProduct flexCenter">{item.name}</div>                                  
-                                            <div className="priceProduct mt-4 ml-3 pb-1">${item.price}.00</div>                                                                      
+                                            <div className="nameProduct font1 flexCenter">{item.name}</div>                                  
+                                            <div className="priceProduct font2 mt-4 ml-3 pb-1">${item.price}.00</div>                                                                      
                                         </Link>                                        
                                     </div>                               
                                 </Grid>
