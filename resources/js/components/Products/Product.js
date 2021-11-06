@@ -145,10 +145,13 @@ export default function Product(props) {
     let data = useLocation();
     let product = data.state.product;
 
+    
 
-
-    const handleConsole = () => {
-        console.log(product)
+    const scrollToReviews = () => {
+        window.scrollTo(0, 700);
+        setValue(2);
+        console.log(value);
+        
     }
 
     return (
@@ -158,11 +161,12 @@ export default function Product(props) {
                     <img className="imageOneProduct" src="https://picsum.photos/200/300" />
                 </Grid>
                 <Grid item xs={12} sm={5}>
-                    <h2>{product.name}</h2>
+                    <h2 className="font1">{product.name}</h2>
                     <div className="flexBetween mt-13">
-                        <span className="priceProduct">{product.price},00 €</span>
+                        <span className="priceProduct font2">{product.price},00 €</span>
                         <span>
                             <Rating
+                                size="small"
                                 precision={0.5}
                                 readOnly
                                 className=""
@@ -170,7 +174,7 @@ export default function Product(props) {
                                 value={4.5}
                             />
                         </span>
-                        <span>Read reviews</span>
+                        <span onClick={scrollToReviews} className="font5 hoverUnderlined grey3">Read reviews ({product.reviews.length})</span>
                     </div>
                     <div className="flexBetween mt-9">
                         <span className="width40 addSubstractCart">
@@ -199,7 +203,7 @@ export default function Product(props) {
                     >
                         <Tab label="Description" {...a11yProps(0)} />
                         <Tab label="Fiche produit" {...a11yProps(1)} />
-                        <Tab label={product.price + " reviews"} {...a11yProps(2)} />
+                        <Tab label="reviews" {...a11yProps(2)} />
                     </Tabs>
                     <div className=" greyLineProduct "></div>
                 </Box>

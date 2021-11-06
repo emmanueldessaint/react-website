@@ -153,4 +153,11 @@
     }
   }
 
+.buttonCategory{
+border-radius:20px;
+background-color: rgb(198, 202, 235);
+border:1px solid grey;
+color:rgb(59, 59, 59);
+}
+
 

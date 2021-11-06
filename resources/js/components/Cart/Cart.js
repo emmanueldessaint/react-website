@@ -116,9 +116,9 @@ export default function Cart() {
                 {localStorageLength > 1 && <span className="itemOrItems"> items</span>}
               </span>
             }
-            <Grid container spacing={5} className="pt-5 pb-10 flexCenter">
+            <Grid container  className="pt-5 pb-10 flexCenter">
 
-              <Grid item xs={11} md={8}>
+              <Grid item xs={12}>
                 {itemsInCart.map(product => (
                   <div
                     className="productLineCart lightShadowCard mt-6"
@@ -132,7 +132,7 @@ export default function Cart() {
                       <div className="quantityPriceCart mt-2">${product.price}.00</div>
                       <div className="quantityProductCart flex mb-2 mt-8">
 
-                        
+
                         <div className="mr-2">{product.quantity}</div>
 
                         <button className="buttonAddQuantity backgroundWhite" onClick={() => addQuantityInCart(product)}>+</button>
@@ -143,6 +143,12 @@ export default function Cart() {
 
                     </div>
 
+                    <div>
+                      <div>
+                        ${product.price * product.quantity}.00
+                      </div>
+                    </div>
+
                     <button className="backgroundWhite cursorPointer" onClick={() => removeProduct(product)}><DeleteIcon className="fontTrash" /></button>
                   </div>
                 ))}
@@ -150,41 +156,43 @@ export default function Cart() {
               </Grid>
 
               {localStorageLength > 0 &&
-                <Grid container item xs={12} md={4}>
-                  <Grid item xs={12} >
-                    <div className="yourOrder bgWhite lightShadowCard">
-                      <div className="mt-4 flexBetween">
-                        <span className="ml-2 mt-2">Product</span>
-                        <span className="mr-2 mt-2">Subtotal</span>
-                      </div>
-                      {itemsInCart.map(product => (
-                        <div
-                          className="productLineCart mt-5 p-2"
-                          key={product.id}
-                        >
-                          <div>{product.name} x {product.quantity}</div>
-                          <div>${product.price * product.quantity}.00</div>
+                <Grid container>
+                  <Grid xs={0} md={7}></Grid>
+                  <Grid container item xs={12} md={5} className="alignRight">
+                    <Grid item xs={12} >
+                      <div className="yourOrder bgWhite lightShadowCard2">
+                        <div className="mt-4 flexBetween">
+                          <span className="ml-2 mt-2">Product</span>
+                          <span className="mr-2 mt-2">Subtotal</span>
                         </div>
-                      ))}
-                    </div>
-                    <div className="yourOrder shippingFees lightShadowCard flexBetween">
-                      <span className="ml-2 mt-2">Shipping fees</span>
-                      <span className="mr-2 mt-2">$13.00</span>
-                    </div>
-                    <div className="mt-5">
-                      <Link to="/checkout"  >
-                        <Button
-                          fullWidth
-                          variant="contained"
-                          margin="normal"
-                        >
-                          Go to checkout
-                        </Button>
-                      </Link>
-                    </div>
+                        {itemsInCart.map(product => (
+                          <div
+                            className="productLineCart mt-5 p-2"
+                            key={product.id}
+                          >
+                            <div>{product.name} x {product.quantity}</div>
+                            <div>${product.price * product.quantity}.00</div>
+                          </div>
+                        ))}
+                      
+                        <span className="ml-2 mt-2">Shipping fees</span>
+                        <span className="mr-2 mt-2">$13.00</span>
+                      </div>
+                      <div className="mt-5">
+                        <Link to="/checkout"  >
+                          <Button
+                            fullWidth
+                            variant="contained"
+                            margin="normal"
+                          >
+                            Go to checkout
+                          </Button>
+                        </Link>
+                      </div>
+
+                    </Grid>
 
                   </Grid>
-
                 </Grid>
               }
 

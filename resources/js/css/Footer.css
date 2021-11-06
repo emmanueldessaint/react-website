@@ -51,4 +51,11 @@
 .heightIconsFooter{
     height:50px;
 }
+.buttonSendNewsletters{
+    background:transparent;
+    margin-left:5px;
+    border-radius:3px;
+    color:white;
+    border:1px solid black;
+}
 

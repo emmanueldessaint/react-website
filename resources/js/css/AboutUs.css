@@ -1,0 +1,30 @@
+.testAnim{
+    animation-duration: 1s;
+    animation-name: slidein;
+    
+}
+
+@keyframes slidein {
+    from {
+      transform: translateX(+100%);
+      opacity:0;
+      
+    }
+    to {
+      transform: translateX(0);
+      opacity:1;
+      
+  
+    }
+  }
+
+  .imgAboutUsP1{
+    float: right;
+    margin: 0px 0px 20px 30px;  }
+  .imgAboutUsP2{
+    float: left;
+    margin: 30px 30px 0 0;
+  }
+  .importantWords{
+      color:rgb(180, 136, 32)
+  }

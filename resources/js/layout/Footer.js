@@ -86,7 +86,7 @@ export default function Footer() {
                     <Grid container justifyContent="center" className="menuQuality pt-5">
                         <Grid container item xs={12} md={11} lg={10} >
 
-                            <Grid justifyContent="center" item xs={12} md={5}>
+                            <Grid container justifyContent="center" item xs={12} md={5}>
                                 <div className="flexCenter pt-5 mt-2">
                                     <YouTubeIcon className="m-3" />
                                     <YouTubeIcon className="m-3" />
@@ -94,8 +94,8 @@ export default function Footer() {
                                     <YouTubeIcon className="m-3" />
                                 </div>
                             </Grid>
-                            <Grid xs={12} md={7} container justifyContent="center" >
-                                <Grid xs={11} md={12} item >
+                            <Grid item xs={12} md={7} container justifyContent="center" >
+                                <Grid item xs={11} md={12}  >
                                     <div className="widthP mt-4">
                                         <p>unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                                     </div>
@@ -105,7 +105,7 @@ export default function Footer() {
                     </Grid>
                     <Grid container justifyContent="center" className="menuQuality pb-5">
                         <Grid container item xs={12} md={11} lg={10} className="mt-7">
-                            <Grid className="pt-5" container justifyContent="center" md={12} lg={8}>
+                            <Grid item className="pt-5" container justifyContent="center" md={12} lg={8}>
                                 <Grid className="flexCenter" item md={4} sm={6} xs={12}>
                                     <div className="widthItemsFooter">
                                         <h3>Amazing Sewing</h3>
@@ -132,11 +132,13 @@ export default function Footer() {
                                             <TextField
                                                 className="inputFooter"
                                                 placeholder=" Your email ..."
-                                            /></div>
+                                            />
+                                            <button className="buttonSendNewsletters font8">ok</button>
+                                            </div>
                                     </div>
                                 </Grid>
                             </Grid>
-                            <Grid className="pt-5 verticalAlign" container justifyContent="center" md={12} lg={4}>
+                            <Grid item className="pt-5 verticalAlign" container justifyContent="center" md={12} lg={4}>
                                 <h1 className="verticalAlign">AmazingSewing</h1>
                             </Grid>
                         </Grid>
