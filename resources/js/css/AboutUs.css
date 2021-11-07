@@ -1,0 +1,62 @@
+.testAnim{
+    animation-duration: 1s;
+    animation-name: slidein;
+    
+}
+
+@keyframes slidein {
+    from {
+      transform: translateX(+100%);
+      opacity:0;
+      
+    }
+    to {
+      transform: translateX(0);
+      opacity:1;
+      
+  
+    }
+  }
+
+  .imgAboutUsP1{
+    float: right;
+    margin: 0px 0px 20px 30px;  }
+  .imgAboutUsP2{
+    float: left;
+    margin: 30px 30px 0 0;
+  }
+  .importantWords{
+      color:rgb(180, 136, 32)
+  }
+
+
+  
+
+  .multi-item-carousel .carousel-inner > .item {
+    transition: 500ms ease-in-out left;
+  }
+  .multi-item-carousel .carousel-inner .active.left {
+    left: -33%;
+  }
+  .multi-item-carousel .carousel-inner .active.right {
+    left: 33%;
+  }
+  .multi-item-carousel .carousel-inner .next {
+    left: 33%;
+  }
+  .multi-item-carousel .carousel-inner .prev {
+    left: -33%;
+  }
+  @media all and (transform-3d), (-webkit-transform-3d) {
+    .multi-item-carousel .carousel-inner > .item {
+      transition: 500ms ease-in-out left;
+      transition: 500ms ease-in-out all;
+      -webkit-backface-visibility: visible;
+              backface-visibility: visible;
+      transform: none !important;
+    }
+  }
+  .multi-item-carousel .carouse-control.left,
+  .multi-item-carousel .carouse-control.right {
+    background-image: none;
+  }

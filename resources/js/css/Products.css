@@ -68,46 +68,44 @@
     display:flex;
     align-items: center;
 }
-.greyButton{
-    background-color:rgb(243, 243, 243);
-}
+
 .greyButton:hover{
     background-color:rgb(231, 231, 231);
 }
 .buttonAdd{
     cursor:pointer;
-    border-top:1px solid rgb(207, 207, 207);
-    border-bottom:1px solid rgb(207, 207, 207);
+    border-top:1px solid rgb(230, 230, 230);
+    border-bottom:1px solid rgb(230, 230, 230);
     width:50px;
-    height:30px;
-    font-weight: 600;
+    font-weight: 300;
+
 }
 .buttonSubstract{
     cursor:pointer;
     border-top-right-radius:5px;
     border-bottom-right-radius:5px;
-    border:1px solid rgb(207, 207, 207);
+    border:1px solid rgb(230, 230, 230);
     width:50px;
-    height:30px;
-    font-weight: 600;
+    font-weight: 300;
+    color:rgb(116, 116, 116);
+   
 }
 .quantityProduct{
-    border:1px solid rgb(207, 207, 207);
+    border:1px solid rgb(230, 230, 230);
     width:50px;
-    height:30px;
-    font-weight: 600;
+    font-weight: 300;
     border-top-left-radius:5px;
     border-bottom-left-radius:5px;
     color:rgb(44, 44, 44);
 }
 .buttonAddToCart{
     cursor:pointer;
-    border:1px solid rgb(207, 207, 207);
-    width:100%;
-    height:30px;
+    border:1px solid rgb(230, 230, 230);
+    width:200px;
+    /* width:90%; */
     font-weight: 200;
     border-radius:5px;
-    color:rgb(44, 44, 44);
+    color:rgb(58, 58, 58);
 }
 .boutonPagination{
     color:rgb(36, 36, 36)(0, 0, 0);
@@ -143,5 +141,79 @@
 /* .productDetails{
     font-size:1.9em;
 } */
+.starsProductReview{
+    display:flex;
+    flex-direction: row-reverse;
+}
+@media all and (max-width: 600px) {
+    .marginTop600px{
+      margin-top:20px;
+    }
+  }
+  @media all and (max-width: 400px) {
+  
+    .buttonAddToCart{
+        width:120px;
+    }
+  }
+
+.buttonCategory{
+    border-radius:20px;
+    background-color: rgb(232, 233, 241);
+    border:1px solid rgb(189, 189, 189);
+    color:rgb(133, 133, 133);
+}
+.buttonCategory:hover {
+    background-color: rgb(212, 213, 238);
+    cursor:pointer;
+}
+.widthFormControl{
+    width:140px;
+}
+.optionSelect{
+    height:30px;
+}
+.optionSelect:hover{
+    cursor:pointer;
+    background-color:rgb(220, 224, 241);
+}
+.hideProduct2{
+    opacity:0;
+    height:50px;
+    margin-bottom:20px;
+}
+.cardProduct:hover .hideProduct2{
+    display:block;
+    position:relative;
+    top:10px;
+    z-index: 100;
+    /* font-size:1.5em; */
+    background:white;
+    opacity:1;
+    color:rgb(75, 75, 75);
+ }
+ /* .cardProduct:hover .nameProduct{
+    opacity:0;
+ }
+ .cardProduct:hover .productDetails{
+    opacity:0;
+ }
+ .cardProduct:hover .priceProduct {
+    opacity:0;
+ } */
+ .cardProduct:hover .imageProduct2{
+    opacity:0.6;
+}
+.imageProduct2{
+    width:100%;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    height:300px;
+    object-fit: cover;
+    opacity:0.9;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
 
 

@@ -112,6 +112,17 @@ module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+
+/***/ }),
+
 /***/ "./node_modules/@emotion/cache/dist/emotion-cache.browser.esm.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@emotion/cache/dist/emotion-cache.browser.esm.js ***!
@@ -18391,6 +18402,36 @@ function useIsFocusVisible() {
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/AccountCircle.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/AccountCircle.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+
+var React = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
+  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+}), 'AccountCircle');
+
+exports["default"] = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/Delete.js":
 /*!***************************************************!*\
   !*** ./node_modules/@material-ui/icons/Delete.js ***!
@@ -18506,6 +18547,36 @@ var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/crea
 var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
   d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
 }), 'Search');
+
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Send.js":
+/*!*************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Send.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+
+var React = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
+  d: "M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+}), 'Send');
 
 exports["default"] = _default;
 
@@ -29797,12 +29868,10 @@ function Cart() {
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
             container: true,
-            spacing: 5,
             className: "pt-5 pb-10 flexCenter",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
               item: true,
-              xs: 11,
-              md: 8,
+              xs: 12,
               children: itemsInCart.map(function (product) {
                 return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                   className: "productLineCart lightShadowCard mt-6",
@@ -29843,6 +29912,10 @@ function Cart() {
                         children: "-"
                       })]
                     })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                      children: ["$", product.price * product.quantity, ".00"]
+                    })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
                     className: "backgroundWhite cursorPointer",
                     onClick: function onClick() {
@@ -29854,57 +29927,61 @@ function Cart() {
                   })]
                 }, product.id);
               })
-            }), localStorageLength > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            }), localStorageLength > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
               container: true,
-              item: true,
-              xs: 12,
-              md: 4,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                xs: 0,
+                md: 7
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                container: true,
                 item: true,
                 xs: 12,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                  className: "yourOrder lightShadowCard",
+                md: 5,
+                className: "alignRight",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                  item: true,
+                  xs: 12,
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                    className: "mt-4 flexBetween",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                    className: "yourOrder bgWhite lightShadowCard2",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                      className: "mt-4 flexBetween",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                        className: "ml-2 mt-2",
+                        children: "Product"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                        className: "mr-2 mt-2",
+                        children: "Subtotal"
+                      })]
+                    }), itemsInCart.map(function (product) {
+                      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                        className: "productLineCart mt-5 p-2",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                          children: [product.name, " x ", product.quantity]
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                          children: ["$", product.price * product.quantity, ".00"]
+                        })]
+                      }, product.id);
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
                       className: "ml-2 mt-2",
-                      children: "Product"
+                      children: "Shipping fees"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
                       className: "mr-2 mt-2",
-                      children: "Subtotal"
+                      children: "$13.00"
                     })]
-                  }), itemsInCart.map(function (product) {
-                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                      className: "productLineCart mt-5 p-2",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                        children: [product.name, " x ", product.quantity]
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                        children: ["$", product.price * product.quantity, ".00"]
-                      })]
-                    }, product.id);
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                  className: "yourOrder shippingFees lightShadowCard flexBetween",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                    className: "ml-2 mt-2",
-                    children: "Shipping fees"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                    className: "mr-2 mt-2",
-                    children: "$13.00"
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-                  className: "mt-5",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
-                    to: "/checkout",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12__["default"], {
-                      fullWidth: true,
-                      variant: "contained",
-                      margin: "normal",
-                      children: "Go to checkout"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                    className: "mt-5",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
+                      to: "/checkout",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                        fullWidth: true,
+                        variant: "contained",
+                        margin: "normal",
+                        children: "Go to checkout"
+                      })
                     })
-                  })
-                })]
-              })
+                  })]
+                })
+              })]
             })]
           })]
         })
@@ -29927,8 +30004,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Checkout)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/Button.js");
 /* harmony import */ var _css_Cart_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/Cart.css */ "./resources/js/css/Cart.css");
 /* harmony import */ var _Shared_globalState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Shared/globalState */ "./resources/js/components/Shared/globalState.js");
 /* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
@@ -29936,10 +30011,80 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _stripe_stripe_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @stripe/stripe-js */ "./node_modules/@stripe/stripe-js/dist/stripe.esm.js");
 /* harmony import */ var _PaymentForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PaymentForm */ "./resources/js/components/Cart/PaymentForm.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var PUBLIC_KEY = "pk_test_jsy4tWY65SkgwjP0YVflB9xI";
+var stripePromise = (0,_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_5__.loadStripe)(PUBLIC_KEY); // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK_KEY);
+
+function Checkout() {
+  // const options = {
+  //     // passing the client secret obtained from the server
+  //     clientSecret: process.env.REACT_APP_STRIPE_SK_KEY,
+  //   };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+    className: "mt-15",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__.Elements, {
+      stripe: stripePromise,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_PaymentForm__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Cart/PaymentForm.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Cart/PaymentForm.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ PaymentForm)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/Button.js");
+/* harmony import */ var _css_Cart_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/Cart.css */ "./resources/js/css/Cart.css");
+/* harmony import */ var _Shared_globalState__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Shared/globalState */ "./resources/js/components/Shared/globalState.js");
+/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
+/* harmony import */ var _stripe_stripe_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @stripe/stripe-js */ "./node_modules/@stripe/stripe-js/dist/stripe.esm.js");
+/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @stripe/react-stripe-js */ "./node_modules/@stripe/react-stripe-js/dist/react-stripe.umd.js");
+/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -29971,73 +30116,66 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
-var PUBLIC_KEY = "pk_test_jsy4tWY65SkgwjP0YVflB9xI";
-var stripePromise = (0,_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_5__.loadStripe)(PUBLIC_KEY); // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK_KEY);
-
-function Checkout() {
-  // const options = {
-  //     // passing the client secret obtained from the server
-  //     clientSecret: process.env.REACT_APP_STRIPE_SK_KEY,
-  //   };
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+function PaymentForm() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       firstName = _useState2[0],
       setFirstName = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState4 = _slicedToArray(_useState3, 2),
       lastName = _useState4[0],
       setLastName = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState6 = _slicedToArray(_useState5, 2),
       email = _useState6[0],
       setEmail = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState8 = _slicedToArray(_useState7, 2),
       address = _useState8[0],
       setAddress = _useState8[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState10 = _slicedToArray(_useState9, 2),
       city = _useState10[0],
       setCity = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState12 = _slicedToArray(_useState11, 2),
       zipCode = _useState12[0],
       setZipCode = _useState12[1];
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState14 = _slicedToArray(_useState13, 2),
       itemsInCart = _useState14[0],
       setItemsInCart = _useState14[1];
 
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState16 = _slicedToArray(_useState15, 2),
       isLoaded = _useState16[0],
       setIsLoaded = _useState16[1];
 
-  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState18 = _slicedToArray(_useState17, 2),
       localStorageLength = _useState18[0],
       setLocalStorageLength = _useState18[1];
 
-  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState20 = _slicedToArray(_useState19, 2),
       isProcessing = _useState20[0],
       setIsProcessing = _useState20[1];
 
-  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState22 = _slicedToArray(_useState21, 2),
       price = _useState22[0],
       setPrice = _useState22[1];
 
+  var stripe = (0,_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_6__.useStripe)();
+  var elements = (0,_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_6__.useElements)();
   var localLength = localStorage.length;
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     var myPrice = 0;
     var array = [];
 
@@ -30064,200 +30202,106 @@ function Checkout() {
       email: email,
       address: address
     });
-  };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-    className: "mt-15",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__.Elements, {
-      stripe: stripePromise,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        container: true,
-        justifyContent: "center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-          container: true,
-          spacing: 5,
-          item: true,
-          xs: 12,
-          sm: 12,
-          md: 11,
-          lg: 10,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-            spacing: 2,
-            container: true,
-            item: true,
-            xs: 12,
-            md: 8,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              item: true,
-              xs: 12,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
-                className: " centerText ",
-                children: "Billing details"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              item: true,
-              xs: 12,
-              sm: 6,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                variant: "outlined",
-                fullWidth: true,
-                label: "Firstname"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              item: true,
-              xs: 12,
-              sm: 6,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                variant: "outlined",
-                fullWidth: true,
-                label: "Lastname"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              item: true,
-              xs: 12,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                variant: "outlined",
-                fullWidth: true,
-                label: "Email"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              item: true,
-              xs: 5,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                variant: "outlined",
-                fullWidth: true,
-                label: "Address"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              item: true,
-              xs: 4,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                variant: "outlined",
-                fullWidth: true,
-                label: "City"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              item: true,
-              xs: 3,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                variant: "outlined",
-                fullWidth: true,
-                label: "Zip code"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              item: true,
-              xs: 12,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_PaymentForm__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-            container: true,
-            item: true,
-            xs: 12,
-            md: 4,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-              item: true,
-              xs: 12,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
-                className: " centerText ",
-                children: "Your order"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                className: "yourOrder lightShadowCard",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                  className: "mt-4 flexBetween",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-                    className: "ml-2 mt-2",
-                    children: "Product"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-                    className: "mr-2 mt-2",
-                    children: "Subtotal"
-                  })]
-                }), itemsInCart.map(function (product) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                    className: "productLineCart mt-5 p-2",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                      children: [product.name, " x ", product.quantity]
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                      children: ["$", product.price * product.quantity, ".00"]
-                    })]
-                  }, product.id);
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                className: "yourOrder shippingFees lightShadowCard flexBetween",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-                  className: "ml-2 mt-2",
-                  children: "Shipping fees"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-                  className: "mr-2 mt-2",
-                  children: "$13.00"
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-                className: "mt-5",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
-                  fullWidth: true,
-                  variant: "contained",
-                  margin: "normal",
-                  onClick: payment,
-                  children: isProcessing ? "Processing..." : "Pay $".concat(price, ".00")
-                })
-              })]
-            })
-          })]
-        })
-      })
-    })
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/Cart/PaymentForm.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/Cart/PaymentForm.js ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ PaymentForm)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _css_Cart_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/Cart.css */ "./resources/js/css/Cart.css");
-/* harmony import */ var _Shared_globalState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Shared/globalState */ "./resources/js/components/Shared/globalState.js");
-/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
-/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @stripe/react-stripe-js */ "./node_modules/@stripe/react-stripe-js/dist/react-stripe.umd.js");
-/* harmony import */ var _stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _stripe_stripe_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @stripe/stripe-js */ "./node_modules/@stripe/stripe-js/dist/stripe.esm.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+  }; // méthode de stripe officielle
+  // const handlePaymentSubmit = async () => {
+  //     const cardElement = elements.getElement("card");
+  //     try {
+  //         const { data: clientSecret } = await axios.post("http://localhost:8000/api/charge", {
+  //             amount: price * 100
+  //           });
+  //         const paymentMethodReq = await stripe.createPaymentMethod({
+  //             type: "card",
+  //             card: cardElement,
+  //             billing_details: 'billingDetails'
+  //         });
+  //         if (paymentMethodReq.error) {
+  //           // setCheckoutError(paymentMethodReq.error.message);
+  //           // setProcessingTo(false);
+  //           return;
+  //         }
+  //         const { error } = await stripe.confirmCardPayment(clientSecret, {
+  //           payment_method: paymentMethodReq.paymentMethod.id
+  //         });
+  //         if (error) {
+  //           setCheckoutError(error.message);
+  //           setProcessingTo(false);
+  //           return;
+  //         }
+  //         onSuccessfulCheckout();
+  //     } catch (err) {
+  //         setCheckoutError(err.message);
+  //       }
+  // }
 
 
+  var handlePaymentSubmit = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var _yield$stripe$createP, error, paymentMethod, id, response;
 
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return stripe.createPaymentMethod({
+                type: "card",
+                card: elements.getElement(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_6__.CardElement)
+              });
 
+            case 2:
+              _yield$stripe$createP = _context.sent;
+              error = _yield$stripe$createP.error;
+              paymentMethod = _yield$stripe$createP.paymentMethod;
 
+              if (error) {
+                _context.next = 19;
+                break;
+              }
 
+              _context.prev = 6;
+              id = paymentMethod.id;
+              _context.next = 10;
+              return axios__WEBPACK_IMPORTED_MODULE_7___default().post("http://localhost:8000/api/charge", {
+                amount: price * 100,
+                id: id
+              });
 
+            case 10:
+              response = _context.sent;
 
+              if (response.data.success) {
+                console.log("Successful payment");
+                setSuccess(true);
+              }
 
+              _context.next = 17;
+              break;
 
+            case 14:
+              _context.prev = 14;
+              _context.t0 = _context["catch"](6);
+              console.log("Error", _context.t0);
 
+            case 17:
+              _context.next = 20;
+              break;
 
+            case 19:
+              console.log(error.message);
 
+            case 20:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[6, 14]]);
+    }));
 
+    return function handlePaymentSubmit() {
+      return _ref.apply(this, arguments);
+    };
+  }();
 
-
- // const CardElementContainer = styled.div`
-//  height: 40px;
-//  display: flex;
-//  align-items: center;
-//  `;
-
-
-function PaymentForm() {
-  // const { data: clientSecret } = await axios.post('http://localhost:8000/api/charge', {
-  //     amount: price * 100
-  // })
   var cardElementOptions = {
     style: {
       base: {
@@ -30268,12 +30312,145 @@ function PaymentForm() {
     },
     hidePostalCode: true
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: " ",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_4__.CardElement, {
-        className: "testCard",
-        options: cardElementOptions
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      container: true,
+      justifyContent: "center",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        container: true,
+        spacing: 5,
+        item: true,
+        xs: 12,
+        sm: 12,
+        md: 11,
+        lg: 10,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          spacing: 2,
+          container: true,
+          item: true,
+          xs: 12,
+          md: 8,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            item: true,
+            xs: 12,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: " centerText ",
+              children: "Billing details"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            item: true,
+            xs: 12,
+            sm: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              variant: "outlined",
+              fullWidth: true,
+              label: "Firstname"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            item: true,
+            xs: 12,
+            sm: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              variant: "outlined",
+              fullWidth: true,
+              label: "Lastname"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            item: true,
+            xs: 12,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              variant: "outlined",
+              fullWidth: true,
+              label: "Email"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            item: true,
+            xs: 5,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              variant: "outlined",
+              fullWidth: true,
+              label: "Address"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            item: true,
+            xs: 4,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              variant: "outlined",
+              fullWidth: true,
+              label: "City"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            item: true,
+            xs: 3,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              variant: "outlined",
+              fullWidth: true,
+              label: "Zip code"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            item: true,
+            xs: 12,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              className: "",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_6__.CardElement, {
+                className: "testCard",
+                options: cardElementOptions
+              })
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          container: true,
+          item: true,
+          xs: 12,
+          md: 4,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            item: true,
+            xs: 12,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
+              className: " centerText ",
+              children: "Your order"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              className: "yourOrder lightShadowCard",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                className: "mt-4 flexBetween",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                  className: "ml-2 mt-2",
+                  children: "Product"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                  className: "mr-2 mt-2",
+                  children: "Subtotal"
+                })]
+              }), itemsInCart.map(function (product) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  className: "productLineCart mt-5 p-2",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    children: [product.name, " x ", product.quantity]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    children: ["$", product.price * product.quantity, ".00"]
+                  })]
+                }, product.id);
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              className: "yourOrder shippingFees lightShadowCard flexBetween",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "ml-2 mt-2",
+                children: "Shipping fees"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                className: "mr-2 mt-2",
+                children: "$13.00"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              className: "mt-5",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                fullWidth: true,
+                variant: "contained",
+                margin: "normal",
+                onClick: handlePaymentSubmit,
+                children: isProcessing ? "Processing..." : "Pay $".concat(price, ".00")
+              })
+            })]
+          })
+        })]
       })
     })
   });
@@ -30665,8 +30842,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _assets_img_sewing1_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../assets/img/sewing1.jpg */ "./resources/assets/img/sewing1.jpg");
-/* harmony import */ var _assets_img_reward1_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../assets/img/reward1.png */ "./resources/assets/img/reward1.png");
+/* harmony import */ var _assets_img_sewing3_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../assets/img/sewing3.jpg */ "./resources/assets/img/sewing3.jpg");
+/* harmony import */ var _assets_img_reward2_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../assets/img/reward2.svg */ "./resources/assets/img/reward2.svg");
 /* harmony import */ var _assets_img_earth1_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../assets/img/earth1.png */ "./resources/assets/img/earth1.png");
 /* harmony import */ var _assets_img_sewing2_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../assets/img/sewing2.jpg */ "./resources/assets/img/sewing2.jpg");
 /* harmony import */ var _assets_img_review1_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../assets/img/review1.png */ "./resources/assets/img/review1.png");
@@ -30769,12 +30946,37 @@ function Home() {
       items = _useState12[0],
       setItems = _useState12[1];
 
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState14 = _slicedToArray(_useState13, 2),
+      arrayCarousel = _useState14[0],
+      setArrayCarousel = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
+      _useState16 = _slicedToArray(_useState15, 2),
+      p = _useState16[0],
+      setP = _useState16[1];
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     fetch("http://localhost:8000/api/reviews").then(function (res) {
       return res.json();
     }).then(function (result) {
+      var averageNote = 0;
+      var allProducts = [];
+      allProducts = result.bestSellers;
+
+      for (var j = 0; j < allProducts.length; j++) {
+        var totalNotes = 0;
+
+        for (var k = 0; k < allProducts[j].reviews.length; k++) {
+          totalNotes += allProducts[j].reviews[k].note;
+        }
+
+        averageNote = totalNotes / allProducts[j].reviews.length;
+        allProducts[j].updated_at = averageNote;
+      }
+
       setIsLoaded(true);
-      setBestSellers(result.bestSellers);
+      setBestSellers(allProducts);
       setAvgNote(result.reviewsAverage);
       setUserReviews(result.allReviews);
     }, function (error) {
@@ -30782,11 +30984,53 @@ function Home() {
       setError(error);
     });
   }, []);
+
+  var consoleLog = function consoleLog() {
+    console.log(userReviews);
+  }; // const goingRight = () => {
+  //     if (p === userReviews.length) {
+  //         setP(1);
+  //     } else {
+  //         setP(p+1);
+  //     }     
+  //     var element = document.getElementsByClassName("myDIV");
+  //     element.classList.add("show");        
+  // }
+  // const goingLeft = () => {
+  //     if (p === 1) {
+  //         setP(userReviews.length);
+  //     } else {
+  //         setP(p-1);
+  //     }    
+  // }
+  // useEffect(() => {   
+  //     if(userReviews.length > 0) {
+  //         if (userReviews.slice(p+1,p+2).length > 0) {
+  //             var arrayCarousel2 = [];
+  //             arrayCarousel2[0] = (userReviews.slice(p-1,p)[0]);
+  //             arrayCarousel2.push(userReviews.slice(p,p+1)[0]);
+  //             arrayCarousel2.push(userReviews.slice(p+1,p+2)[0]);
+  //         } else if (userReviews.slice(p,p+1).length > 0) {
+  //             var arrayCarousel2 = [];
+  //             arrayCarousel2.push(userReviews.slice(p-1,p)[0]);
+  //             arrayCarousel2.push(userReviews.slice(p,p+1)[0]);
+  //             arrayCarousel2.push(userReviews.slice(0,1)[0]);
+  //         } else {
+  //             var arrayCarousel2 = [];
+  //             arrayCarousel2.push(userReviews.slice(p-1,p)[0]);
+  //             arrayCarousel2.push(userReviews.slice(0,1)[0]);
+  //             arrayCarousel2.push(userReviews.slice(1,2)[0]);
+  //         }   
+  //         setArrayCarousel(arrayCarousel2);
+  //     } 
+  // }, [p, userReviews])
+
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
     className: "mt-9",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
-        src: _assets_img_sewing1_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
+        src: _assets_img_sewing3_jpg__WEBPACK_IMPORTED_MODULE_5__["default"],
         alt: "Logo",
         className: "imgIntro"
       })
@@ -30815,12 +31059,12 @@ function Home() {
                   className: "smallIcons "
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2",
+                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2",
                 children: "RESPECT FOR THE LAND"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                 className: "blueBar"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 grey2 font4",
+                className: "flexCenter mt-2 grey2 font4 opacity9 letterSpacing1",
                 children: "Environment and traditions"
               })]
             })
@@ -30837,12 +31081,12 @@ function Home() {
                 className: "flexCenter",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_16__["default"], {})
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2",
+                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2",
                 children: "TRACKING DELIVERY"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                 className: "blueBar"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 grey2 font4",
+                className: "flexCenter mt-2 grey2 font4 opacity9 letterSpacing1",
                 children: "All around the world"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
@@ -30863,12 +31107,12 @@ function Home() {
                   className: "smallIcons backgroundIcons"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2",
+                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2",
                 children: "A REAL KNOW-HOW"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                 className: "blueBar"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 grey2 font4",
+                className: "flexCenter mt-2 grey2 font4 opacity9 letterSpacing1",
                 children: "The highest quality"
               })]
             })
@@ -30879,15 +31123,15 @@ function Home() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
           className: "flexCenter",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
-            src: _assets_img_reward1_png__WEBPACK_IMPORTED_MODULE_6__["default"],
+            src: _assets_img_reward2_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
             alt: "reward_svg",
-            className: "rewardIcon"
+            className: "rewardIcon opacity6"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-          className: "flexCenter font3 size7 mt-3 bold600 grey2",
+          className: "flexCenter font8 size7 mt-3 bold600 grey2 opacity9 letterSpacing2",
           children: "Our best sellers"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-          className: "flexCenter font4 grey2",
+          className: "flexCenter font4 grey2 opacity9",
           children: "Discover our customers' favorite products !"
         })]
       }), isLoaded && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
@@ -30908,7 +31152,7 @@ function Home() {
                 md: 3,
                 lg: 3,
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
-                  className: "cardProduct lightShadowCard",
+                  className: "cardProduct lightShadowCard2",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Link, {
                     to: {
                       pathname: '/product',
@@ -30926,10 +31170,23 @@ function Home() {
                         children: "DISCOVER"
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
-                      className: "nameProduct flexCenter",
+                      className: "nameProduct font1 flexCenter",
                       children: item.name
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
+                      className: "centerText mt-3",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_18__["default"], {
+                        precision: 0.5,
+                        readOnly: true,
+                        size: "small",
+                        name: "simple-controlled",
+                        value: item.updated_at,
+                        emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_19__["default"], {
+                          fontSize: "inherit",
+                          className: "emptyStar"
+                        })
+                      })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
-                      className: "priceProduct mt-4 ml-3 pb-1",
+                      className: "priceProduct font2 mt-2 ml-3 pb-1 opacity9",
                       children: ["$", item.price, ".00"]
                     })]
                   })
@@ -30943,10 +31200,10 @@ function Home() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("img", {
           src: _assets_img_review1_png__WEBPACK_IMPORTED_MODULE_9__["default"],
           alt: "reward_svg",
-          className: "reviewIcon"
+          className: "reviewIcon opacity6"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h2", {
-        className: "flexCenter",
+        className: "flexCenter font8 size7 bold600 grey2 opacity9 letterSpacing2",
         children: "They lived the experience"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
         className: "pt-7",
@@ -30962,14 +31219,17 @@ function Home() {
             item: true,
             md: 3,
             xs: 12,
-            className: " verticalAlign",
+            className: " bgWhite3 verticalAlign",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
                 className: "textAlignCenter",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
-                  children: [avgNote, "/5"]
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+                    className: "size3 bold800 mr-1",
+                    children: avgNote
+                  }), "/ 5"]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h4", {
-                  className: "flexCenter",
+                  className: "flexCenter opacity9 letterSpacing1 lineHeight1",
                   children: "Based on purchases on AmazingSewing"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_18__["default"], {
@@ -31001,10 +31261,11 @@ function Home() {
                   sm: 6,
                   lg: 3,
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+                    className: "transitionReview myDIV",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_18__["default"], {
                       precision: 0.5,
                       readOnly: true,
-                      className: "stars",
+                      className: "stars ml-2",
                       name: "simple-controlled",
                       value: item.note,
                       emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_19__["default"], {
@@ -31014,7 +31275,7 @@ function Home() {
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
                       className: "lightShadowCard1",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
-                        className: "mt-5 pl-2 pt-2",
+                        className: "mt-5 pl-2 pt-2 opacity9",
                         children: item.description.length < 60 ? item.description : item.description.substring(0, 70) + " . . ."
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                         className: "mt-5 pl-2 pb-2",
@@ -31053,14 +31314,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Connect_Signup__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Connect/Signup */ "./resources/js/components/Connect/Signup.js");
 /* harmony import */ var _components_Products_Products__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Products/Products */ "./resources/js/components/Products/Products.js");
 /* harmony import */ var _components_Products_Product__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Products/Product */ "./resources/js/components/Products/Product.js");
-/* harmony import */ var _components_Home_Home__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Home/Home */ "./resources/js/components/Home/Home.js");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../App.css */ "./resources/js/App.css");
-/* harmony import */ var _layout_Header__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../layout/Header */ "./resources/js/layout/Header.js");
-/* harmony import */ var _layout_Footer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../layout/Footer */ "./resources/js/layout/Footer.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_Others_AboutUs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Others/AboutUs */ "./resources/js/components/Others/AboutUs.js");
+/* harmony import */ var _components_Home_Home__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Home/Home */ "./resources/js/components/Home/Home.js");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../App.css */ "./resources/js/App.css");
+/* harmony import */ var _layout_Header__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../layout/Header */ "./resources/js/layout/Header.js");
+/* harmony import */ var _layout_Footer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../layout/Footer */ "./resources/js/layout/Footer.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -31079,50 +31342,55 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Index() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recoil__WEBPACK_IMPORTED_MODULE_12__.RecoilRoot, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.BrowserRouter, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(recoil__WEBPACK_IMPORTED_MODULE_13__.RecoilRoot, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.BrowserRouter, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
         className: "generalFont",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_layout_Header__WEBPACK_IMPORTED_MODULE_10__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_layout_Header__WEBPACK_IMPORTED_MODULE_11__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
           className: "generalBackground",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Switch, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Switch, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
               path: "/connect",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_Connect_Connect__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Connect_Connect__WEBPACK_IMPORTED_MODULE_4__["default"], {})
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Switch, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Switch, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
               path: "/signup",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_Connect_Signup__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Connect_Signup__WEBPACK_IMPORTED_MODULE_5__["default"], {})
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Switch, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Switch, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
               path: "/cart",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Cart_Cart__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Cart_Cart__WEBPACK_IMPORTED_MODULE_2__["default"], {})
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Switch, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Switch, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
               exact: true,
               path: "/",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_Home_Home__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Home_Home__WEBPACK_IMPORTED_MODULE_9__["default"], {})
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Switch, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Switch, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
               path: "/products",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_Products_Products__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Products_Products__WEBPACK_IMPORTED_MODULE_6__["default"], {})
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Switch, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Switch, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
               path: "/product",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_Products_Product__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Products_Product__WEBPACK_IMPORTED_MODULE_7__["default"], {})
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Switch, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Switch, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
               path: "/checkout",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Cart_Checkout__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Cart_Checkout__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Switch, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
+              path: "/aboutus",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_Others_AboutUs__WEBPACK_IMPORTED_MODULE_8__["default"], {})
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_layout_Footer__WEBPACK_IMPORTED_MODULE_11__["default"], {})]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_layout_Footer__WEBPACK_IMPORTED_MODULE_12__["default"], {})]
       })
     })
   });
@@ -31131,7 +31399,202 @@ function Index() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
 
 if (document.getElementById('index')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(Index, {}), document.getElementById('index'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(Index, {}), document.getElementById('index'));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Others/AboutUs.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Others/AboutUs.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AboutUs)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../App.css */ "./resources/js/App.css");
+/* harmony import */ var _css_AboutUs_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/AboutUs.css */ "./resources/js/css/AboutUs.css");
+/* harmony import */ var _Shared_globalState__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Shared/globalState */ "./resources/js/components/Shared/globalState.js");
+/* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function AboutUs() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      arrayCarousel = _useState2[0],
+      setArrayCarousel = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
+      _useState4 = _slicedToArray(_useState3, 2),
+      p = _useState4[0],
+      setP = _useState4[1];
+
+  var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  var goingRight = function goingRight() {
+    if (p === array.length) {
+      setP(1);
+    } else {
+      setP(p + 1);
+    }
+  };
+
+  var goingLeft = function goingLeft() {
+    if (p === 1) {
+      setP(array.length);
+    } else {
+      setP(p - 1);
+    }
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (array.slice(p + 1, p + 2).length > 0) {
+      var arrayCarousel2 = [];
+      arrayCarousel2.push(array.slice(p - 1, p));
+      arrayCarousel2.push(array.slice(p, p + 1));
+      arrayCarousel2.push(array.slice(p + 1, p + 2));
+    } else if (array.slice(p, p + 1).length > 0) {
+      var arrayCarousel2 = [];
+      arrayCarousel2.push(array.slice(p - 1, p));
+      arrayCarousel2.push(array.slice(p, p + 1));
+      arrayCarousel2.push(array.slice(0, 1));
+    } else {
+      var arrayCarousel2 = [];
+      arrayCarousel2.push(array.slice(p - 1, p));
+      arrayCarousel2.push(array.slice(0, 1));
+      arrayCarousel2.push(array.slice(1, 2));
+    }
+
+    setArrayCarousel(arrayCarousel2);
+  }, [p]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    className: "mt-13",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      container: true,
+      justifyContent: "center",
+      className: "menuQuality",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        item: true,
+        container: true,
+        xs: 12,
+        md: 10,
+        spacing: 2,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          xs: 12,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+            className: "centerText opacity9 font9",
+            children: "RETROUVEZ TOUTE L\u2019HISTOIRE D\u2019AIM\xC9E DE MARS"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
+            className: "centerText opacity9 font9 mb-8",
+            children: "Une cr\xE9atrice, un savoir-faire naturel, une \xE9thique\u2026"
+          })]
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      container: true,
+      justifyContent: "center",
+      className: "menuQuality",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        item: true,
+        container: true,
+        xs: 12,
+        md: 10,
+        spacing: 2,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+            className: "imageProduct",
+            src: "https://picsum.photos/200/300"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+            className: "imageProduct",
+            src: "https://picsum.photos/200/300"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          item: true,
+          xs: 4,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+            className: "imageProduct",
+            src: "https://picsum.photos/200/300"
+          })
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      container: true,
+      justifyContent: "center",
+      className: "menuQuality",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        item: true,
+        container: true,
+        xs: 11,
+        md: 10,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+          className: "centerText opacity9 font9",
+          children: "A GENUINE KNOW-HOW"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
+          className: "justifyText size5 opacity6 font2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+            className: "imgAboutUsP1",
+            src: "https://picsum.photos/200/300",
+            width: "300",
+            height: "300"
+          }), "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            className: "importantWords",
+            children: "1.10.32 and 1.10.33 of \"de Finibus Bonorum"
+          }), " et Malorum\"", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), " (The Extremes of Good and Evil) by Cicero, written in 45 BC.This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32Contrary to popular belief, ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            className: "importantWords",
+            children: "Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor"
+          }), " at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+          className: "centerText opacity9 font6",
+          children: "THE SEWING MADNESS ..."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
+          className: "justifyText size5 opacity6 font2",
+          children: ["Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+            className: "imgAboutUsP2",
+            src: "https://picsum.photos/200/300",
+            width: "300",
+            height: "300"
+          }), " a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\"", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("br", {}), " (The Extremes of Good and Evil) by Cicero, written in 45 BC.This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections"]
+        })]
+      })
+    })]
+  });
 }
 
 /***/ }),
@@ -31156,16 +31619,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/makeStyles/makeStyles.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/styled.js");
-/* harmony import */ var _material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/core/Tabs */ "./node_modules/@material-ui/core/esm/Tabs/Tabs.js");
-/* harmony import */ var _material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/core/Tab */ "./node_modules/@material-ui/core/esm/Tab/Tab.js");
+/* harmony import */ var _material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/core/Tabs */ "./node_modules/@material-ui/core/esm/Tabs/Tabs.js");
+/* harmony import */ var _material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/core/Tab */ "./node_modules/@material-ui/core/esm/Tab/Tab.js");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
 /* harmony import */ var _assets_img_qualityProduct_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../assets/img/qualityProduct.png */ "./resources/assets/img/qualityProduct.png");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../App.css */ "./resources/js/App.css");
 /* harmony import */ var _css_Products_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../css/Products.css */ "./resources/js/css/Products.css");
 /* harmony import */ var _Shared_globalState__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Shared/globalState */ "./resources/js/components/Shared/globalState.js");
 /* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
 /* harmony import */ var _mui_material_Rating__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/material/Rating */ "./node_modules/@mui/material/Rating/Rating.js");
+/* harmony import */ var _material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @material-ui/icons/StarBorder */ "./node_modules/@material-ui/icons/StarBorder.js");
+/* harmony import */ var _material_ui_icons_AccountCircle__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/icons/AccountCircle */ "./node_modules/@material-ui/icons/AccountCircle.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _excluded = ["children", "value", "index"];
 
@@ -31202,6 +31668,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
  // import AppBar from '@mui/material/AppBar';
+
+
 
 
 
@@ -31306,6 +31774,11 @@ function Product(props) {
       numberInCart = _useRecoilState2[0],
       setNumberInCart = _useRecoilState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      averageNote = _useState4[0],
+      setAverageNote = _useState4[1];
+
   var handleChange = function handleChange(event, newValue) {
     setValue(newValue);
   };
@@ -31345,20 +31818,34 @@ function Product(props) {
   var data = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_13__.useLocation)();
   var product = data.state.product;
 
-  var clearCart = function clearCart() {
-    localStorage.clear();
+  var scrollToReviews = function scrollToReviews() {
+    window.scrollTo(0, 700);
+    setValue(2);
+    console.log(value);
   };
 
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    console.log(product.reviews);
+    var totalNotes = 0;
+
+    for (var i = 0; i < product.reviews.length; i++) {
+      totalNotes += product.reviews[i].note;
+    }
+
+    var average = totalNotes / product.reviews.length;
+    setAverageNote(average);
+    window.moveTo(0, 0);
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_14__["default"], {
     className: "pt-15",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
       container: true,
       justifyContent: "center",
-      spacing: 10,
+      spacing: 6,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
         item: true,
         xs: 12,
-        sm: 6,
+        md: 6,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
           className: "imageOneProduct",
           src: "https://picsum.photos/200/300"
@@ -31366,53 +31853,65 @@ function Product(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
         item: true,
         xs: 12,
-        sm: 5,
+        sm: 10,
+        md: 5,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+          className: "font1 letterSpacing2",
           children: product.name
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "flexBetween mt-13",
+          className: "flexBetween mt-9",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("span", {
-            className: "priceProduct",
+            className: "priceProduct font2 letterSpacing2",
             children: [product.price, ",00 \u20AC"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_16__["default"], {
+              size: "small",
               precision: 0.5,
               readOnly: true,
               className: "",
               name: "simple-controlled",
-              value: 4.5
+              value: averageNote
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-            children: "Read reviews"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("span", {
+            onClick: scrollToReviews,
+            className: "font5 underlined grey3 cursorPointer",
+            children: ["Read reviews (", product.reviews.length, ")"]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "flexBetween mt-9",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("span", {
-            className: "width40 addSubstractCart",
+            className: " addSubstractCart",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
               disabled: true,
-              className: " quantityProduct",
+              className: " quantityProduct size2 height30",
               children: quantityProduct
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
               onClick: addQuantity,
-              className: "greyButton buttonAdd",
+              className: "colorButton1 greyButton size2 buttonAdd height30",
               children: "+"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
               onClick: substractQuantity,
-              className: "greyButton buttonSubstract",
+              className: "colorButton1 greyButton size2 buttonSubstract height30",
               children: "-"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-            className: "width60",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-              onClick: addToLocalStorage,
-              className: "greyButton buttonAddToCart",
-              children: " Add to cart"
+            className: " alignRight",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Link, {
+              to: "/cart",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                onClick: addToLocalStorage,
+                className: "colorButton1 greyButton bold300 letterSpacing2 font2 buttonAddToCart height30",
+                children: " Add to cart"
+              })
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "width90 greyLineProduct m-4"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            children: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical "
           })
         })]
       })]
@@ -31426,18 +31925,18 @@ function Product(props) {
           borderBottom: 1,
           borderColor: 'divider'
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_17__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_18__["default"], {
           value: value,
           onChange: handleChange,
           "aria-label": "basic tabs example",
           indicatorColor: "primary",
           textColor: "primary",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_18__["default"], _objectSpread({
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_19__["default"], _objectSpread({
             label: "Description"
-          }, a11yProps(0))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_18__["default"], _objectSpread({
+          }, a11yProps(0))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_19__["default"], _objectSpread({
             label: "Fiche produit"
-          }, a11yProps(1))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_18__["default"], _objectSpread({
-            label: "Details"
+          }, a11yProps(1))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_19__["default"], _objectSpread({
+            label: "reviews"
           }, a11yProps(2)))]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: " greyLineProduct "
@@ -31446,25 +31945,17 @@ function Product(props) {
         className: "mt-3",
         value: value,
         index: 0,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
           container: true,
           spacing: 4,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
             item: true,
             xs: 8,
             className: "alignCenter",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
               children: "unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
-            item: true,
-            xs: 4,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
-              src: _assets_img_qualityProduct_png__WEBPACK_IMPORTED_MODULE_2__["default"],
-              alt: "ProductQuality",
-              className: classes.imgFull
-            })
-          })]
+          })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(TabPanel, {
         value: value,
@@ -31473,7 +31964,52 @@ function Product(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(TabPanel, {
         value: value,
         index: 2,
-        children: "Item Three"
+        children: product.reviews.map(function (review) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "lightShadowCard1 p-3 mb-5",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
+              container: true,
+              className: "flexBetween",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
+                item: true,
+                sm: 10,
+                xs: 12,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "mb-2",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                    className: "mr-2",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_AccountCircle__WEBPACK_IMPORTED_MODULE_20__["default"], {})
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                    className: "font5 bold600 grey2",
+                    children: review.title
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                    className: "font3 grey1",
+                    children: review.description
+                  })
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
+                item: true,
+                sm: 2,
+                xs: 12,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                  className: "starsProductReview marginTop600px",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_16__["default"], {
+                    precision: 0.5,
+                    readOnly: true,
+                    name: "simple-controlled",
+                    value: review.note,
+                    emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_21__["default"], {
+                      fontSize: "inherit",
+                      className: "emptyStar"
+                    })
+                  })
+                })
+              })]
+            })
+          }, review.id);
+        })
       })]
     })]
   });
@@ -31496,13 +32032,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
 /* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Container */ "./node_modules/@material-ui/core/esm/Container/Container.js");
 /* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/makeStyles/makeStyles.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../App.css */ "./resources/js/App.css");
 /* harmony import */ var _css_Products_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/Products.css */ "./resources/js/css/Products.css");
 /* harmony import */ var _Shared_globalState__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Shared/globalState */ "./resources/js/components/Shared/globalState.js");
 /* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
-/* harmony import */ var _mui_material_Rating__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material/Rating */ "./node_modules/@mui/material/Rating/Rating.js");
-/* harmony import */ var _material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons/StarBorder */ "./node_modules/@material-ui/icons/StarBorder.js");
+/* harmony import */ var _mui_material_Rating__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material/Rating */ "./node_modules/@mui/material/Rating/Rating.js");
+/* harmony import */ var _material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/icons/StarBorder */ "./node_modules/@material-ui/icons/StarBorder.js");
+/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/Select.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/FormControl.js");
+/* harmony import */ var _material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/InputLabel */ "./node_modules/@material-ui/core/esm/InputLabel/InputLabel.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -31523,6 +32062,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
 
 
 
@@ -31575,6 +32117,11 @@ function Products() {
       actuelPage = _useRecoilState4[0],
       setActuelPage = _useRecoilState4[1];
 
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      age = _useState10[0],
+      setAge = _useState10[1];
+
   var itemsByPage = 12;
   var increment = 1;
   var emptyArray = [];
@@ -31584,44 +32131,38 @@ function Products() {
     }).then(function (result) {
       var averageNote = 0;
       var newArray = [];
-      newArray = result.products.slice(itemsByPage * (actuelPage - 1), itemsByPage * actuelPage);
-      setItems(result.products);
+      var allProducts = [];
+      allProducts = result.products;
+      console.log(allProducts.length);
 
-      for (var i = 0; i < result.products.length / itemsByPage; i++) {
+      for (var j = 0; j < allProducts.length; j++) {
+        var totalNotes = 0;
+
+        for (var k = 0; k < allProducts[j].reviews.length; k++) {
+          totalNotes += allProducts[j].reviews[k].note;
+        }
+
+        averageNote = totalNotes / allProducts[j].reviews.length;
+        allProducts[j].updated_at = averageNote;
+      }
+
+      setItems(allProducts);
+      newArray = allProducts.slice(itemsByPage * (actuelPage - 1), itemsByPage * actuelPage);
+
+      for (var i = 0; i < allProducts.length / itemsByPage; i++) {
         emptyArray.push(increment);
         increment++;
       }
 
-      for (var j = 0; j < newArray.length; j++) {
-        var totalNotes = 0;
-
-        for (var k = 0; k < newArray[j].reviews.length; k++) {
-          totalNotes += newArray[j].reviews[k].note;
-        }
-
-        averageNote = totalNotes / newArray[j].reviews.length;
-        newArray[j].updated_at = averageNote;
-      }
-
+      console.log('useEffect');
       setNumberOfPages(emptyArray);
       setItemsInCurrentPage(newArray);
       setIsLoaded(true);
-    }, // Note: it's important to handle errors here
-    // instead of a catch() block so that we don't swallow
-    // exceptions from actual bugs in components.
-    function (error) {
+    }, function (error) {
       setIsLoaded(true);
       setError(error);
     });
   }, []);
-
-  var handleTest = function handleTest() {
-    console.log(actuelPage);
-  };
-
-  var averageNote = function averageNote(item) {
-    console.log(item);
-  };
 
   var handleChangePage = function handleChangePage(item) {
     var arrayWithItemsOnPage = [];
@@ -31632,6 +32173,10 @@ function Products() {
     setItemsInCurrentPage(arrayWithItemsOnPage);
     window.scrollTo(0, 0);
     setActuelPage(item);
+  };
+
+  var handleChange = function handleChange(event) {
+    setAge(event.target.value);
   };
 
   if (error) {
@@ -31646,37 +32191,92 @@ function Products() {
     });
   } else {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      className: "pt-15",
+      className: "pt-10",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
         container: true,
         justifyContent: "center",
-        className: "mt-10",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        className: "mt-8",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
           container: true,
           item: true,
           xs: 12,
-          sm: 11,
-          md: 10,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            className: "flex ml-3 mb-5 lightShadowCard",
-            children: numberOfPages.map(function (item) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                children: item === actuelPage ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                  className: "boutonPaginationSelected  generalBackground",
-                  onClick: function onClick() {
-                    return handleChangePage(item);
-                  },
-                  children: item
-                }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                  className: "boutonPagination generalBackground",
-                  onClick: function onClick() {
-                    return handleChangePage(item);
-                  },
-                  children: item
-                })
-              }, item);
+          sm: 12,
+          lg: 11,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            item: true,
+            xs: 12,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "flex",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                className: "buttonCategory p-2 pl-4 pr-4 mb-8 ml-4 font5 bold500",
+                children: "Category 1"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                className: "buttonCategory p-2 pl-4 pr-4 mb-8 ml-4 font5 bold500",
+                children: "Category 2"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                className: "buttonCategory p-2 pl-4 pr-4 mb-8 ml-4 font5 bold500",
+                children: "Category 3"
+              })]
             })
-          })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            item: true,
+            xs: 12,
+            sm: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+              className: "flex ml-5 mb-5 ",
+              children: numberOfPages.map(function (item) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                  children: item === actuelPage ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                    className: "boutonPaginationSelected  generalBackground",
+                    onClick: function onClick() {
+                      return handleChangePage(item);
+                    },
+                    children: item
+                  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                    className: "boutonPagination generalBackground",
+                    onClick: function onClick() {
+                      return handleChangePage(item);
+                    },
+                    children: item
+                  })
+                }, item);
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            item: true,
+            xs: 12,
+            sm: 6,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+              className: "alignRight",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                className: "widthFormControl",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                    className: "ml-4"
+                  }), "Filter by"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                  variant: "outlined",
+                  value: age,
+                  onChange: handleChange,
+                  fullWidth: true,
+                  className: "testSelect",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+                    className: "optionSelect pl-1 pr-1 verticalItem",
+                    value: 10,
+                    children: "Popularity"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+                    className: "optionSelect pl-1 pr-1 verticalItem",
+                    value: 20,
+                    children: "Ascending price order"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+                    className: "optionSelect pl-1 pr-1 verticalItem",
+                    value: 30,
+                    children: "Descending price order"
+                  })]
+                })]
+              })
+            })
+          })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
         container: true,
@@ -31685,8 +32285,8 @@ function Products() {
           container: true,
           item: true,
           xs: 12,
-          sm: 11,
-          md: 10,
+          sm: 12,
+          xl: 10,
           children: itemsInCurrentPage.map(function (item) {
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
               item: true,
@@ -31695,8 +32295,8 @@ function Products() {
               md: 4,
               lg: 3,
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "cardProduct lightShadowCard",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+                className: "cardProduct lightShadowCard2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Link, {
                   to: {
                     pathname: '/product',
                     state: {
@@ -31704,19 +32304,19 @@ function Products() {
                     }
                   },
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-                    className: "imageProduct",
+                    className: "imageProduct2",
                     src: "https://picsum.photos/200/300"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                    className: "hideProduct",
+                    className: "hideProduct2",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                       className: "elementAppear",
                       children: "DISCOVER"
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                    className: "nameProduct flexCenter",
+                    className: "nameProduct flexCenter font1",
                     children: item.name
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                    className: "flexBetween",
+                    className: "flexBetween font2",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                       className: "priceProduct mt-4 ml-3 pb-1",
                       children: ["$", item.price, ".00"]
@@ -31724,14 +32324,16 @@ function Products() {
                       className: "flex productDetails mt-4 mr-3 pb-1",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                         className: "grey1",
-                        children: ["(", item.reviews.length, ")"]
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                        children: ["(", item.reviews.length, ")", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                          className: "ml-1"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_13__["default"], {
                         precision: 0.5,
                         readOnly: true,
                         size: "small",
                         name: "simple-controlled",
                         value: item.updated_at,
-                        emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_11__["default"], {
+                        emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_14__["default"], {
                           fontSize: "inherit",
                           className: "emptyStar"
                         })
@@ -31843,6 +32445,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_Footer_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/Footer.css */ "./resources/js/css/Footer.css");
 /* harmony import */ var _material_ui_icons_YouTube__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/icons/YouTube */ "./node_modules/@material-ui/icons/YouTube.js");
 /* harmony import */ var _assets_css_fonts_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/css/fonts.css */ "./resources/assets/css/fonts.css");
+/* harmony import */ var _material_ui_icons_Send__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/icons/Send */ "./node_modules/@material-ui/icons/Send.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -31861,6 +32464,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
  // import AppBar from '@mui/material/AppBar';
+
 
 
 
@@ -31997,6 +32601,7 @@ function Footer() {
             md: 11,
             lg: 10,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
+              container: true,
               justifyContent: "center",
               item: true,
               xs: 12,
@@ -32014,14 +32619,15 @@ function Footer() {
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
+              item: true,
               xs: 12,
               md: 7,
               container: true,
               justifyContent: "center",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
+                item: true,
                 xs: 11,
                 md: 12,
-                item: true,
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                   className: "widthP mt-4",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("p", {
@@ -32043,6 +32649,7 @@ function Footer() {
             lg: 10,
             className: "mt-7",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
+              item: true,
               className: "pt-5",
               container: true,
               justifyContent: "center",
@@ -32096,16 +32703,20 @@ function Footer() {
                     children: "Privates sales and newsletter"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                     children: ["Access privates sales and stay", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), "up to date with AmazingSewing news"]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                     className: "flexCenter mt-4",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_18__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_18__["default"], {
                       className: "inputFooter",
                       placeholder: " Your email ..."
-                    })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+                      className: "buttonSendNewsletters font8",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_icons_Send__WEBPACK_IMPORTED_MODULE_19__["default"], {})
+                    })]
                   })]
                 })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_13__["default"], {
+              item: true,
               className: "pt-5 verticalAlign",
               container: true,
               justifyContent: "center",
@@ -32219,7 +32830,8 @@ var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_8__["default"])(
     icon: {
       marginTop: '20px',
       "margin-left": "30px",
-      "transform": "scale(1.3)"
+      "transform": "scale(1.3)",
+      "opacity": "0.8"
     },
     alignTitle: {
       "display": "flex",
@@ -32291,7 +32903,6 @@ function Header(props) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setNumberInCart(quantityInCart);
-    console.log('useeffect header');
   }, [quantityInCart]);
 
   var resetPage = function resetPage() {
@@ -32319,9 +32930,11 @@ function Header(props) {
                   to: "/",
                   onClick: resetPage,
                   className: "item"
-                }, _defineProperty(_jsx2, "className", classes.routerDecoration), _defineProperty(_jsx2, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
-                  className: "titleHeader",
-                  children: "AmazingSewing"
+                }, _defineProperty(_jsx2, "className", classes.routerDecoration), _defineProperty(_jsx2, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("h2", {
+                  className: "titleHeader opacity8 font8",
+                  children: ["Amazing", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                    className: "ml-1"
+                  }), "Sewing"]
                 })), _jsx2))
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
                 xs: 6,
@@ -32336,6 +32949,7 @@ function Header(props) {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
                     to: "/",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+                      className: "opacity6 size2 itemMenu font5",
                       onClick: resetPage,
                       children: "Home"
                     })
@@ -32346,6 +32960,7 @@ function Header(props) {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
                     to: "/products",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+                      className: "opacity6 size2 itemMenu font5",
                       onClick: resetPage,
                       children: "Catalog"
                     })
@@ -32354,8 +32969,9 @@ function Header(props) {
                   item: true,
                   xs: 3,
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
-                    to: "/products",
+                    to: "/aboutus",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+                      className: "opacity6 size2 itemMenu font5",
                       onClick: resetPage,
                       children: "About us"
                     })
@@ -32397,2677 +33013,1320 @@ function Header(props) {
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
   \*****************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ (() => {
 
 /*!
-  * Bootstrap v4.6.0 (https://getbootstrap.com/)
-  * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
-(function (global, factory) {
-   true ? factory(exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")) :
-  0;
-}(this, (function (exports, $, Popper) { 'use strict';
+ * Bootstrap v3.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under the MIT license
+ */
 
-  function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+if (typeof jQuery === 'undefined') {
+  throw new Error('Bootstrap\'s JavaScript requires jQuery')
+}
 
-  var $__default = /*#__PURE__*/_interopDefaultLegacy($);
-  var Popper__default = /*#__PURE__*/_interopDefaultLegacy(Popper);
-
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
++function ($) {
+  'use strict';
+  var version = $.fn.jquery.split(' ')[0].split('.')
+  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
+    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4')
   }
+}(jQuery);
 
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
-  }
+/* ========================================================================
+ * Bootstrap: transition.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#transitions
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
 
-  function _extends() {
-    _extends = Object.assign || function (target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
 
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
-      }
++function ($) {
+  'use strict';
 
-      return target;
-    };
+  // CSS TRANSITION SUPPORT (Shoutout: https://modernizr.com/)
+  // ============================================================
 
-    return _extends.apply(this, arguments);
-  }
+  function transitionEnd() {
+    var el = document.createElement('bootstrap')
 
-  function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
-    subClass.prototype.constructor = subClass;
-    subClass.__proto__ = superClass;
-  }
-
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.6.0): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-  /**
-   * ------------------------------------------------------------------------
-   * Private TransitionEnd Helpers
-   * ------------------------------------------------------------------------
-   */
-
-  var TRANSITION_END = 'transitionend';
-  var MAX_UID = 1000000;
-  var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
-
-  function toType(obj) {
-    if (obj === null || typeof obj === 'undefined') {
-      return "" + obj;
+    var transEndEventNames = {
+      WebkitTransition : 'webkitTransitionEnd',
+      MozTransition    : 'transitionend',
+      OTransition      : 'oTransitionEnd otransitionend',
+      transition       : 'transitionend'
     }
 
-    return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
-  }
-
-  function getSpecialTransitionEndEvent() {
-    return {
-      bindType: TRANSITION_END,
-      delegateType: TRANSITION_END,
-      handle: function handle(event) {
-        if ($__default['default'](event.target).is(this)) {
-          return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
-        }
-
-        return undefined;
-      }
-    };
-  }
-
-  function transitionEndEmulator(duration) {
-    var _this = this;
-
-    var called = false;
-    $__default['default'](this).one(Util.TRANSITION_END, function () {
-      called = true;
-    });
-    setTimeout(function () {
-      if (!called) {
-        Util.triggerTransitionEnd(_this);
-      }
-    }, duration);
-    return this;
-  }
-
-  function setTransitionEndSupport() {
-    $__default['default'].fn.emulateTransitionEnd = transitionEndEmulator;
-    $__default['default'].event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
-  }
-  /**
-   * --------------------------------------------------------------------------
-   * Public Util Api
-   * --------------------------------------------------------------------------
-   */
-
-
-  var Util = {
-    TRANSITION_END: 'bsTransitionEnd',
-    getUID: function getUID(prefix) {
-      do {
-        prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
-      } while (document.getElementById(prefix));
-
-      return prefix;
-    },
-    getSelectorFromElement: function getSelectorFromElement(element) {
-      var selector = element.getAttribute('data-target');
-
-      if (!selector || selector === '#') {
-        var hrefAttr = element.getAttribute('href');
-        selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : '';
-      }
-
-      try {
-        return document.querySelector(selector) ? selector : null;
-      } catch (_) {
-        return null;
-      }
-    },
-    getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
-      if (!element) {
-        return 0;
-      } // Get transition-duration of the element
-
-
-      var transitionDuration = $__default['default'](element).css('transition-duration');
-      var transitionDelay = $__default['default'](element).css('transition-delay');
-      var floatTransitionDuration = parseFloat(transitionDuration);
-      var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
-
-      if (!floatTransitionDuration && !floatTransitionDelay) {
-        return 0;
-      } // If multiple durations are defined, take the first
-
-
-      transitionDuration = transitionDuration.split(',')[0];
-      transitionDelay = transitionDelay.split(',')[0];
-      return (parseFloat(transitionDuration) + parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
-    },
-    reflow: function reflow(element) {
-      return element.offsetHeight;
-    },
-    triggerTransitionEnd: function triggerTransitionEnd(element) {
-      $__default['default'](element).trigger(TRANSITION_END);
-    },
-    supportsTransitionEnd: function supportsTransitionEnd() {
-      return Boolean(TRANSITION_END);
-    },
-    isElement: function isElement(obj) {
-      return (obj[0] || obj).nodeType;
-    },
-    typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
-      for (var property in configTypes) {
-        if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
-          var expectedTypes = configTypes[property];
-          var value = config[property];
-          var valueType = value && Util.isElement(value) ? 'element' : toType(value);
-
-          if (!new RegExp(expectedTypes).test(valueType)) {
-            throw new Error(componentName.toUpperCase() + ": " + ("Option \"" + property + "\" provided type \"" + valueType + "\" ") + ("but expected type \"" + expectedTypes + "\"."));
-          }
-        }
-      }
-    },
-    findShadowRoot: function findShadowRoot(element) {
-      if (!document.documentElement.attachShadow) {
-        return null;
-      } // Can find the shadow root otherwise it'll return the document
-
-
-      if (typeof element.getRootNode === 'function') {
-        var root = element.getRootNode();
-        return root instanceof ShadowRoot ? root : null;
-      }
-
-      if (element instanceof ShadowRoot) {
-        return element;
-      } // when we don't find a shadow root
-
-
-      if (!element.parentNode) {
-        return null;
-      }
-
-      return Util.findShadowRoot(element.parentNode);
-    },
-    jQueryDetection: function jQueryDetection() {
-      if (typeof $__default['default'] === 'undefined') {
-        throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
-      }
-
-      var version = $__default['default'].fn.jquery.split(' ')[0].split('.');
-      var minMajor = 1;
-      var ltMajor = 2;
-      var minMinor = 9;
-      var minPatch = 1;
-      var maxMajor = 4;
-
-      if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
-        throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
+    for (var name in transEndEventNames) {
+      if (el.style[name] !== undefined) {
+        return { end: transEndEventNames[name] }
       }
     }
-  };
-  Util.jQueryDetection();
-  setTransitionEndSupport();
 
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+    return false // explicit for ie8 (  ._.)
+  }
 
-  var NAME = 'alert';
-  var VERSION = '4.6.0';
-  var DATA_KEY = 'bs.alert';
-  var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $__default['default'].fn[NAME];
-  var SELECTOR_DISMISS = '[data-dismiss="alert"]';
-  var EVENT_CLOSE = "close" + EVENT_KEY;
-  var EVENT_CLOSED = "closed" + EVENT_KEY;
-  var EVENT_CLICK_DATA_API = "click" + EVENT_KEY + DATA_API_KEY;
-  var CLASS_NAME_ALERT = 'alert';
-  var CLASS_NAME_FADE = 'fade';
-  var CLASS_NAME_SHOW = 'show';
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
+  // https://blog.alexmaccaw.com/css-transitions
+  $.fn.emulateTransitionEnd = function (duration) {
+    var called = false
+    var $el = this
+    $(this).one('bsTransitionEnd', function () { called = true })
+    var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
+    setTimeout(callback, duration)
+    return this
+  }
 
-  var Alert = /*#__PURE__*/function () {
-    function Alert(element) {
-      this._element = element;
-    } // Getters
+  $(function () {
+    $.support.transition = transitionEnd()
 
+    if (!$.support.transition) return
 
-    var _proto = Alert.prototype;
-
-    // Public
-    _proto.close = function close(element) {
-      var rootElement = this._element;
-
-      if (element) {
-        rootElement = this._getRootElement(element);
+    $.event.special.bsTransitionEnd = {
+      bindType: $.support.transition.end,
+      delegateType: $.support.transition.end,
+      handle: function (e) {
+        if ($(e.target).is(this)) return e.handleObj.handler.apply(this, arguments)
       }
+    }
+  })
 
-      var customEvent = this._triggerCloseEvent(rootElement);
+}(jQuery);
 
-      if (customEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      this._removeElement(rootElement);
-    };
-
-    _proto.dispose = function dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY);
-      this._element = null;
-    } // Private
-    ;
-
-    _proto._getRootElement = function _getRootElement(element) {
-      var selector = Util.getSelectorFromElement(element);
-      var parent = false;
-
-      if (selector) {
-        parent = document.querySelector(selector);
-      }
-
-      if (!parent) {
-        parent = $__default['default'](element).closest("." + CLASS_NAME_ALERT)[0];
-      }
-
-      return parent;
-    };
-
-    _proto._triggerCloseEvent = function _triggerCloseEvent(element) {
-      var closeEvent = $__default['default'].Event(EVENT_CLOSE);
-      $__default['default'](element).trigger(closeEvent);
-      return closeEvent;
-    };
-
-    _proto._removeElement = function _removeElement(element) {
-      var _this = this;
-
-      $__default['default'](element).removeClass(CLASS_NAME_SHOW);
-
-      if (!$__default['default'](element).hasClass(CLASS_NAME_FADE)) {
-        this._destroyElement(element);
-
-        return;
-      }
-
-      var transitionDuration = Util.getTransitionDurationFromElement(element);
-      $__default['default'](element).one(Util.TRANSITION_END, function (event) {
-        return _this._destroyElement(element, event);
-      }).emulateTransitionEnd(transitionDuration);
-    };
-
-    _proto._destroyElement = function _destroyElement(element) {
-      $__default['default'](element).detach().trigger(EVENT_CLOSED).remove();
-    } // Static
-    ;
-
-    Alert._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var $element = $__default['default'](this);
-        var data = $element.data(DATA_KEY);
-
-        if (!data) {
-          data = new Alert(this);
-          $element.data(DATA_KEY, data);
-        }
-
-        if (config === 'close') {
-          data[config](this);
-        }
-      });
-    };
-
-    Alert._handleDismiss = function _handleDismiss(alertInstance) {
-      return function (event) {
-        if (event) {
-          event.preventDefault();
-        }
-
-        alertInstance.close(this);
-      };
-    };
-
-    _createClass(Alert, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION;
-      }
-    }]);
-
-    return Alert;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
+/* ========================================================================
+ * Bootstrap: alert.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#alerts
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
 
 
-  $__default['default'](document).on(EVENT_CLICK_DATA_API, SELECTOR_DISMISS, Alert._handleDismiss(new Alert()));
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
++function ($) {
+  'use strict';
 
-  $__default['default'].fn[NAME] = Alert._jQueryInterface;
-  $__default['default'].fn[NAME].Constructor = Alert;
+  // ALERT CLASS DEFINITION
+  // ======================
 
-  $__default['default'].fn[NAME].noConflict = function () {
-    $__default['default'].fn[NAME] = JQUERY_NO_CONFLICT;
-    return Alert._jQueryInterface;
-  };
+  var dismiss = '[data-dismiss="alert"]'
+  var Alert   = function (el) {
+    $(el).on('click', dismiss, this.close)
+  }
 
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+  Alert.VERSION = '3.4.1'
 
-  var NAME$1 = 'button';
-  var VERSION$1 = '4.6.0';
-  var DATA_KEY$1 = 'bs.button';
-  var EVENT_KEY$1 = "." + DATA_KEY$1;
-  var DATA_API_KEY$1 = '.data-api';
-  var JQUERY_NO_CONFLICT$1 = $__default['default'].fn[NAME$1];
-  var CLASS_NAME_ACTIVE = 'active';
-  var CLASS_NAME_BUTTON = 'btn';
-  var CLASS_NAME_FOCUS = 'focus';
-  var SELECTOR_DATA_TOGGLE_CARROT = '[data-toggle^="button"]';
-  var SELECTOR_DATA_TOGGLES = '[data-toggle="buttons"]';
-  var SELECTOR_DATA_TOGGLE = '[data-toggle="button"]';
-  var SELECTOR_DATA_TOGGLES_BUTTONS = '[data-toggle="buttons"] .btn';
-  var SELECTOR_INPUT = 'input:not([type="hidden"])';
-  var SELECTOR_ACTIVE = '.active';
-  var SELECTOR_BUTTON = '.btn';
-  var EVENT_CLICK_DATA_API$1 = "click" + EVENT_KEY$1 + DATA_API_KEY$1;
-  var EVENT_FOCUS_BLUR_DATA_API = "focus" + EVENT_KEY$1 + DATA_API_KEY$1 + " " + ("blur" + EVENT_KEY$1 + DATA_API_KEY$1);
-  var EVENT_LOAD_DATA_API = "load" + EVENT_KEY$1 + DATA_API_KEY$1;
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
+  Alert.TRANSITION_DURATION = 150
 
-  var Button = /*#__PURE__*/function () {
-    function Button(element) {
-      this._element = element;
-      this.shouldAvoidTriggerChange = false;
-    } // Getters
+  Alert.prototype.close = function (e) {
+    var $this    = $(this)
+    var selector = $this.attr('data-target')
 
-
-    var _proto = Button.prototype;
-
-    // Public
-    _proto.toggle = function toggle() {
-      var triggerChangeEvent = true;
-      var addAriaPressed = true;
-      var rootElement = $__default['default'](this._element).closest(SELECTOR_DATA_TOGGLES)[0];
-
-      if (rootElement) {
-        var input = this._element.querySelector(SELECTOR_INPUT);
-
-        if (input) {
-          if (input.type === 'radio') {
-            if (input.checked && this._element.classList.contains(CLASS_NAME_ACTIVE)) {
-              triggerChangeEvent = false;
-            } else {
-              var activeElement = rootElement.querySelector(SELECTOR_ACTIVE);
-
-              if (activeElement) {
-                $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE);
-              }
-            }
-          }
-
-          if (triggerChangeEvent) {
-            // if it's not a radio button or checkbox don't add a pointless/invalid checked property to the input
-            if (input.type === 'checkbox' || input.type === 'radio') {
-              input.checked = !this._element.classList.contains(CLASS_NAME_ACTIVE);
-            }
-
-            if (!this.shouldAvoidTriggerChange) {
-              $__default['default'](input).trigger('change');
-            }
-          }
-
-          input.focus();
-          addAriaPressed = false;
-        }
-      }
-
-      if (!(this._element.hasAttribute('disabled') || this._element.classList.contains('disabled'))) {
-        if (addAriaPressed) {
-          this._element.setAttribute('aria-pressed', !this._element.classList.contains(CLASS_NAME_ACTIVE));
-        }
-
-        if (triggerChangeEvent) {
-          $__default['default'](this._element).toggleClass(CLASS_NAME_ACTIVE);
-        }
-      }
-    };
-
-    _proto.dispose = function dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY$1);
-      this._element = null;
-    } // Static
-    ;
-
-    Button._jQueryInterface = function _jQueryInterface(config, avoidTriggerChange) {
-      return this.each(function () {
-        var $element = $__default['default'](this);
-        var data = $element.data(DATA_KEY$1);
-
-        if (!data) {
-          data = new Button(this);
-          $element.data(DATA_KEY$1, data);
-        }
-
-        data.shouldAvoidTriggerChange = avoidTriggerChange;
-
-        if (config === 'toggle') {
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Button, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$1;
-      }
-    }]);
-
-    return Button;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $__default['default'](document).on(EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
-    var button = event.target;
-    var initialButton = button;
-
-    if (!$__default['default'](button).hasClass(CLASS_NAME_BUTTON)) {
-      button = $__default['default'](button).closest(SELECTOR_BUTTON)[0];
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-    if (!button || button.hasAttribute('disabled') || button.classList.contains('disabled')) {
-      event.preventDefault(); // work around Firefox bug #1540995
+    selector    = selector === '#' ? [] : selector
+    var $parent = $(document).find(selector)
+
+    if (e) e.preventDefault()
+
+    if (!$parent.length) {
+      $parent = $this.closest('.alert')
+    }
+
+    $parent.trigger(e = $.Event('close.bs.alert'))
+
+    if (e.isDefaultPrevented()) return
+
+    $parent.removeClass('in')
+
+    function removeElement() {
+      // detach from parent, fire event then clean up data
+      $parent.detach().trigger('closed.bs.alert').remove()
+    }
+
+    $.support.transition && $parent.hasClass('fade') ?
+      $parent
+        .one('bsTransitionEnd', removeElement)
+        .emulateTransitionEnd(Alert.TRANSITION_DURATION) :
+      removeElement()
+  }
+
+
+  // ALERT PLUGIN DEFINITION
+  // =======================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this = $(this)
+      var data  = $this.data('bs.alert')
+
+      if (!data) $this.data('bs.alert', (data = new Alert(this)))
+      if (typeof option == 'string') data[option].call($this)
+    })
+  }
+
+  var old = $.fn.alert
+
+  $.fn.alert             = Plugin
+  $.fn.alert.Constructor = Alert
+
+
+  // ALERT NO CONFLICT
+  // =================
+
+  $.fn.alert.noConflict = function () {
+    $.fn.alert = old
+    return this
+  }
+
+
+  // ALERT DATA-API
+  // ==============
+
+  $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: button.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#buttons
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // BUTTON PUBLIC CLASS DEFINITION
+  // ==============================
+
+  var Button = function (element, options) {
+    this.$element  = $(element)
+    this.options   = $.extend({}, Button.DEFAULTS, options)
+    this.isLoading = false
+  }
+
+  Button.VERSION  = '3.4.1'
+
+  Button.DEFAULTS = {
+    loadingText: 'loading...'
+  }
+
+  Button.prototype.setState = function (state) {
+    var d    = 'disabled'
+    var $el  = this.$element
+    var val  = $el.is('input') ? 'val' : 'html'
+    var data = $el.data()
+
+    state += 'Text'
+
+    if (data.resetText == null) $el.data('resetText', $el[val]())
+
+    // push to event loop to allow forms to submit
+    setTimeout($.proxy(function () {
+      $el[val](data[state] == null ? this.options[state] : data[state])
+
+      if (state == 'loadingText') {
+        this.isLoading = true
+        $el.addClass(d).attr(d, d).prop(d, true)
+      } else if (this.isLoading) {
+        this.isLoading = false
+        $el.removeClass(d).removeAttr(d).prop(d, false)
+      }
+    }, this), 0)
+  }
+
+  Button.prototype.toggle = function () {
+    var changed = true
+    var $parent = this.$element.closest('[data-toggle="buttons"]')
+
+    if ($parent.length) {
+      var $input = this.$element.find('input')
+      if ($input.prop('type') == 'radio') {
+        if ($input.prop('checked')) changed = false
+        $parent.find('.active').removeClass('active')
+        this.$element.addClass('active')
+      } else if ($input.prop('type') == 'checkbox') {
+        if (($input.prop('checked')) !== this.$element.hasClass('active')) changed = false
+        this.$element.toggleClass('active')
+      }
+      $input.prop('checked', this.$element.hasClass('active'))
+      if (changed) $input.trigger('change')
     } else {
-      var inputBtn = button.querySelector(SELECTOR_INPUT);
-
-      if (inputBtn && (inputBtn.hasAttribute('disabled') || inputBtn.classList.contains('disabled'))) {
-        event.preventDefault(); // work around Firefox bug #1540995
-
-        return;
-      }
-
-      if (initialButton.tagName === 'INPUT' || button.tagName !== 'LABEL') {
-        Button._jQueryInterface.call($__default['default'](button), 'toggle', initialButton.tagName === 'INPUT');
-      }
+      this.$element.attr('aria-pressed', !this.$element.hasClass('active'))
+      this.$element.toggleClass('active')
     }
-  }).on(EVENT_FOCUS_BLUR_DATA_API, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
-    var button = $__default['default'](event.target).closest(SELECTOR_BUTTON)[0];
-    $__default['default'](button).toggleClass(CLASS_NAME_FOCUS, /^focus(in)?$/.test(event.type));
-  });
-  $__default['default'](window).on(EVENT_LOAD_DATA_API, function () {
-    // ensure correct active class is set to match the controls' actual values/states
-    // find all checkboxes/readio buttons inside data-toggle groups
-    var buttons = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLES_BUTTONS));
+  }
 
-    for (var i = 0, len = buttons.length; i < len; i++) {
-      var button = buttons[i];
-      var input = button.querySelector(SELECTOR_INPUT);
 
-      if (input.checked || input.hasAttribute('checked')) {
-        button.classList.add(CLASS_NAME_ACTIVE);
-      } else {
-        button.classList.remove(CLASS_NAME_ACTIVE);
+  // BUTTON PLUGIN DEFINITION
+  // ========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.button')
+      var options = typeof option == 'object' && option
+
+      if (!data) $this.data('bs.button', (data = new Button(this, options)))
+
+      if (option == 'toggle') data.toggle()
+      else if (option) data.setState(option)
+    })
+  }
+
+  var old = $.fn.button
+
+  $.fn.button             = Plugin
+  $.fn.button.Constructor = Button
+
+
+  // BUTTON NO CONFLICT
+  // ==================
+
+  $.fn.button.noConflict = function () {
+    $.fn.button = old
+    return this
+  }
+
+
+  // BUTTON DATA-API
+  // ===============
+
+  $(document)
+    .on('click.bs.button.data-api', '[data-toggle^="button"]', function (e) {
+      var $btn = $(e.target).closest('.btn')
+      Plugin.call($btn, 'toggle')
+      if (!($(e.target).is('input[type="radio"], input[type="checkbox"]'))) {
+        // Prevent double click on radios, and the double selections (so cancellation) on checkboxes
+        e.preventDefault()
+        // The target component still receive the focus
+        if ($btn.is('input,button')) $btn.trigger('focus')
+        else $btn.find('input:visible,button:visible').first().trigger('focus')
       }
-    } // find all button toggles
+    })
+    .on('focus.bs.button.data-api blur.bs.button.data-api', '[data-toggle^="button"]', function (e) {
+      $(e.target).closest('.btn').toggleClass('focus', /^focus(in)?$/.test(e.type))
+    })
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: carousel.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#carousel
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
 
 
-    buttons = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE));
++function ($) {
+  'use strict';
 
-    for (var _i = 0, _len = buttons.length; _i < _len; _i++) {
-      var _button = buttons[_i];
+  // CAROUSEL CLASS DEFINITION
+  // =========================
 
-      if (_button.getAttribute('aria-pressed') === 'true') {
-        _button.classList.add(CLASS_NAME_ACTIVE);
-      } else {
-        _button.classList.remove(CLASS_NAME_ACTIVE);
-      }
-    }
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
+  var Carousel = function (element, options) {
+    this.$element    = $(element)
+    this.$indicators = this.$element.find('.carousel-indicators')
+    this.options     = options
+    this.paused      = null
+    this.sliding     = null
+    this.interval    = null
+    this.$active     = null
+    this.$items      = null
 
-  $__default['default'].fn[NAME$1] = Button._jQueryInterface;
-  $__default['default'].fn[NAME$1].Constructor = Button;
+    this.options.keyboard && this.$element.on('keydown.bs.carousel', $.proxy(this.keydown, this))
 
-  $__default['default'].fn[NAME$1].noConflict = function () {
-    $__default['default'].fn[NAME$1] = JQUERY_NO_CONFLICT$1;
-    return Button._jQueryInterface;
-  };
+    this.options.pause == 'hover' && !('ontouchstart' in document.documentElement) && this.$element
+      .on('mouseenter.bs.carousel', $.proxy(this.pause, this))
+      .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
+  }
 
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+  Carousel.VERSION  = '3.4.1'
 
-  var NAME$2 = 'carousel';
-  var VERSION$2 = '4.6.0';
-  var DATA_KEY$2 = 'bs.carousel';
-  var EVENT_KEY$2 = "." + DATA_KEY$2;
-  var DATA_API_KEY$2 = '.data-api';
-  var JQUERY_NO_CONFLICT$2 = $__default['default'].fn[NAME$2];
-  var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
+  Carousel.TRANSITION_DURATION = 600
 
-  var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
-
-  var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
-
-  var SWIPE_THRESHOLD = 40;
-  var Default = {
+  Carousel.DEFAULTS = {
     interval: 5000,
-    keyboard: true,
-    slide: false,
     pause: 'hover',
     wrap: true,
-    touch: true
-  };
-  var DefaultType = {
-    interval: '(number|boolean)',
-    keyboard: 'boolean',
-    slide: '(boolean|string)',
-    pause: '(string|boolean)',
-    wrap: 'boolean',
-    touch: 'boolean'
-  };
-  var DIRECTION_NEXT = 'next';
-  var DIRECTION_PREV = 'prev';
-  var DIRECTION_LEFT = 'left';
-  var DIRECTION_RIGHT = 'right';
-  var EVENT_SLIDE = "slide" + EVENT_KEY$2;
-  var EVENT_SLID = "slid" + EVENT_KEY$2;
-  var EVENT_KEYDOWN = "keydown" + EVENT_KEY$2;
-  var EVENT_MOUSEENTER = "mouseenter" + EVENT_KEY$2;
-  var EVENT_MOUSELEAVE = "mouseleave" + EVENT_KEY$2;
-  var EVENT_TOUCHSTART = "touchstart" + EVENT_KEY$2;
-  var EVENT_TOUCHMOVE = "touchmove" + EVENT_KEY$2;
-  var EVENT_TOUCHEND = "touchend" + EVENT_KEY$2;
-  var EVENT_POINTERDOWN = "pointerdown" + EVENT_KEY$2;
-  var EVENT_POINTERUP = "pointerup" + EVENT_KEY$2;
-  var EVENT_DRAG_START = "dragstart" + EVENT_KEY$2;
-  var EVENT_LOAD_DATA_API$1 = "load" + EVENT_KEY$2 + DATA_API_KEY$2;
-  var EVENT_CLICK_DATA_API$2 = "click" + EVENT_KEY$2 + DATA_API_KEY$2;
-  var CLASS_NAME_CAROUSEL = 'carousel';
-  var CLASS_NAME_ACTIVE$1 = 'active';
-  var CLASS_NAME_SLIDE = 'slide';
-  var CLASS_NAME_RIGHT = 'carousel-item-right';
-  var CLASS_NAME_LEFT = 'carousel-item-left';
-  var CLASS_NAME_NEXT = 'carousel-item-next';
-  var CLASS_NAME_PREV = 'carousel-item-prev';
-  var CLASS_NAME_POINTER_EVENT = 'pointer-event';
-  var SELECTOR_ACTIVE$1 = '.active';
-  var SELECTOR_ACTIVE_ITEM = '.active.carousel-item';
-  var SELECTOR_ITEM = '.carousel-item';
-  var SELECTOR_ITEM_IMG = '.carousel-item img';
-  var SELECTOR_NEXT_PREV = '.carousel-item-next, .carousel-item-prev';
-  var SELECTOR_INDICATORS = '.carousel-indicators';
-  var SELECTOR_DATA_SLIDE = '[data-slide], [data-slide-to]';
-  var SELECTOR_DATA_RIDE = '[data-ride="carousel"]';
-  var PointerType = {
-    TOUCH: 'touch',
-    PEN: 'pen'
-  };
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
+    keyboard: true
+  }
 
-  var Carousel = /*#__PURE__*/function () {
-    function Carousel(element, config) {
-      this._items = null;
-      this._interval = null;
-      this._activeElement = null;
-      this._isPaused = false;
-      this._isSliding = false;
-      this.touchTimeout = null;
-      this.touchStartX = 0;
-      this.touchDeltaX = 0;
-      this._config = this._getConfig(config);
-      this._element = element;
-      this._indicatorsElement = this._element.querySelector(SELECTOR_INDICATORS);
-      this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
-      this._pointerEvent = Boolean(window.PointerEvent || window.MSPointerEvent);
+  Carousel.prototype.keydown = function (e) {
+    if (/input|textarea/i.test(e.target.tagName)) return
+    switch (e.which) {
+      case 37: this.prev(); break
+      case 39: this.next(); break
+      default: return
+    }
 
-      this._addEventListeners();
-    } // Getters
+    e.preventDefault()
+  }
 
+  Carousel.prototype.cycle = function (e) {
+    e || (this.paused = false)
 
-    var _proto = Carousel.prototype;
+    this.interval && clearInterval(this.interval)
 
-    // Public
-    _proto.next = function next() {
-      if (!this._isSliding) {
-        this._slide(DIRECTION_NEXT);
+    this.options.interval
+      && !this.paused
+      && (this.interval = setInterval($.proxy(this.next, this), this.options.interval))
+
+    return this
+  }
+
+  Carousel.prototype.getItemIndex = function (item) {
+    this.$items = item.parent().children('.item')
+    return this.$items.index(item || this.$active)
+  }
+
+  Carousel.prototype.getItemForDirection = function (direction, active) {
+    var activeIndex = this.getItemIndex(active)
+    var willWrap = (direction == 'prev' && activeIndex === 0)
+                || (direction == 'next' && activeIndex == (this.$items.length - 1))
+    if (willWrap && !this.options.wrap) return active
+    var delta = direction == 'prev' ? -1 : 1
+    var itemIndex = (activeIndex + delta) % this.$items.length
+    return this.$items.eq(itemIndex)
+  }
+
+  Carousel.prototype.to = function (pos) {
+    var that        = this
+    var activeIndex = this.getItemIndex(this.$active = this.$element.find('.item.active'))
+
+    if (pos > (this.$items.length - 1) || pos < 0) return
+
+    if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(pos) }) // yes, "slid"
+    if (activeIndex == pos) return this.pause().cycle()
+
+    return this.slide(pos > activeIndex ? 'next' : 'prev', this.$items.eq(pos))
+  }
+
+  Carousel.prototype.pause = function (e) {
+    e || (this.paused = true)
+
+    if (this.$element.find('.next, .prev').length && $.support.transition) {
+      this.$element.trigger($.support.transition.end)
+      this.cycle(true)
+    }
+
+    this.interval = clearInterval(this.interval)
+
+    return this
+  }
+
+  Carousel.prototype.next = function () {
+    if (this.sliding) return
+    return this.slide('next')
+  }
+
+  Carousel.prototype.prev = function () {
+    if (this.sliding) return
+    return this.slide('prev')
+  }
+
+  Carousel.prototype.slide = function (type, next) {
+    var $active   = this.$element.find('.item.active')
+    var $next     = next || this.getItemForDirection(type, $active)
+    var isCycling = this.interval
+    var direction = type == 'next' ? 'left' : 'right'
+    var that      = this
+
+    if ($next.hasClass('active')) return (this.sliding = false)
+
+    var relatedTarget = $next[0]
+    var slideEvent = $.Event('slide.bs.carousel', {
+      relatedTarget: relatedTarget,
+      direction: direction
+    })
+    this.$element.trigger(slideEvent)
+    if (slideEvent.isDefaultPrevented()) return
+
+    this.sliding = true
+
+    isCycling && this.pause()
+
+    if (this.$indicators.length) {
+      this.$indicators.find('.active').removeClass('active')
+      var $nextIndicator = $(this.$indicators.children()[this.getItemIndex($next)])
+      $nextIndicator && $nextIndicator.addClass('active')
+    }
+
+    var slidEvent = $.Event('slid.bs.carousel', { relatedTarget: relatedTarget, direction: direction }) // yes, "slid"
+    if ($.support.transition && this.$element.hasClass('slide')) {
+      $next.addClass(type)
+      if (typeof $next === 'object' && $next.length) {
+        $next[0].offsetWidth // force reflow
       }
-    };
-
-    _proto.nextWhenVisible = function nextWhenVisible() {
-      var $element = $__default['default'](this._element); // Don't call next when the page isn't visible
-      // or the carousel or its parent isn't visible
-
-      if (!document.hidden && $element.is(':visible') && $element.css('visibility') !== 'hidden') {
-        this.next();
-      }
-    };
-
-    _proto.prev = function prev() {
-      if (!this._isSliding) {
-        this._slide(DIRECTION_PREV);
-      }
-    };
-
-    _proto.pause = function pause(event) {
-      if (!event) {
-        this._isPaused = true;
-      }
-
-      if (this._element.querySelector(SELECTOR_NEXT_PREV)) {
-        Util.triggerTransitionEnd(this._element);
-        this.cycle(true);
-      }
-
-      clearInterval(this._interval);
-      this._interval = null;
-    };
-
-    _proto.cycle = function cycle(event) {
-      if (!event) {
-        this._isPaused = false;
-      }
-
-      if (this._interval) {
-        clearInterval(this._interval);
-        this._interval = null;
-      }
-
-      if (this._config.interval && !this._isPaused) {
-        this._updateInterval();
-
-        this._interval = setInterval((document.visibilityState ? this.nextWhenVisible : this.next).bind(this), this._config.interval);
-      }
-    };
-
-    _proto.to = function to(index) {
-      var _this = this;
-
-      this._activeElement = this._element.querySelector(SELECTOR_ACTIVE_ITEM);
-
-      var activeIndex = this._getItemIndex(this._activeElement);
-
-      if (index > this._items.length - 1 || index < 0) {
-        return;
-      }
-
-      if (this._isSliding) {
-        $__default['default'](this._element).one(EVENT_SLID, function () {
-          return _this.to(index);
-        });
-        return;
-      }
-
-      if (activeIndex === index) {
-        this.pause();
-        this.cycle();
-        return;
-      }
-
-      var direction = index > activeIndex ? DIRECTION_NEXT : DIRECTION_PREV;
-
-      this._slide(direction, this._items[index]);
-    };
-
-    _proto.dispose = function dispose() {
-      $__default['default'](this._element).off(EVENT_KEY$2);
-      $__default['default'].removeData(this._element, DATA_KEY$2);
-      this._items = null;
-      this._config = null;
-      this._element = null;
-      this._interval = null;
-      this._isPaused = null;
-      this._isSliding = null;
-      this._activeElement = null;
-      this._indicatorsElement = null;
-    } // Private
-    ;
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _extends({}, Default, config);
-      Util.typeCheckConfig(NAME$2, config, DefaultType);
-      return config;
-    };
-
-    _proto._handleSwipe = function _handleSwipe() {
-      var absDeltax = Math.abs(this.touchDeltaX);
-
-      if (absDeltax <= SWIPE_THRESHOLD) {
-        return;
-      }
-
-      var direction = absDeltax / this.touchDeltaX;
-      this.touchDeltaX = 0; // swipe left
-
-      if (direction > 0) {
-        this.prev();
-      } // swipe right
-
-
-      if (direction < 0) {
-        this.next();
-      }
-    };
-
-    _proto._addEventListeners = function _addEventListeners() {
-      var _this2 = this;
-
-      if (this._config.keyboard) {
-        $__default['default'](this._element).on(EVENT_KEYDOWN, function (event) {
-          return _this2._keydown(event);
-        });
-      }
-
-      if (this._config.pause === 'hover') {
-        $__default['default'](this._element).on(EVENT_MOUSEENTER, function (event) {
-          return _this2.pause(event);
-        }).on(EVENT_MOUSELEAVE, function (event) {
-          return _this2.cycle(event);
-        });
-      }
-
-      if (this._config.touch) {
-        this._addTouchEventListeners();
-      }
-    };
-
-    _proto._addTouchEventListeners = function _addTouchEventListeners() {
-      var _this3 = this;
-
-      if (!this._touchSupported) {
-        return;
-      }
-
-      var start = function start(event) {
-        if (_this3._pointerEvent && PointerType[event.originalEvent.pointerType.toUpperCase()]) {
-          _this3.touchStartX = event.originalEvent.clientX;
-        } else if (!_this3._pointerEvent) {
-          _this3.touchStartX = event.originalEvent.touches[0].clientX;
-        }
-      };
-
-      var move = function move(event) {
-        // ensure swiping with one touch and not pinching
-        if (event.originalEvent.touches && event.originalEvent.touches.length > 1) {
-          _this3.touchDeltaX = 0;
-        } else {
-          _this3.touchDeltaX = event.originalEvent.touches[0].clientX - _this3.touchStartX;
-        }
-      };
-
-      var end = function end(event) {
-        if (_this3._pointerEvent && PointerType[event.originalEvent.pointerType.toUpperCase()]) {
-          _this3.touchDeltaX = event.originalEvent.clientX - _this3.touchStartX;
-        }
-
-        _this3._handleSwipe();
-
-        if (_this3._config.pause === 'hover') {
-          // If it's a touch-enabled device, mouseenter/leave are fired as
-          // part of the mouse compatibility events on first tap - the carousel
-          // would stop cycling until user tapped out of it;
-          // here, we listen for touchend, explicitly pause the carousel
-          // (as if it's the second time we tap on it, mouseenter compat event
-          // is NOT fired) and after a timeout (to allow for mouse compatibility
-          // events to fire) we explicitly restart cycling
-          _this3.pause();
-
-          if (_this3.touchTimeout) {
-            clearTimeout(_this3.touchTimeout);
-          }
-
-          _this3.touchTimeout = setTimeout(function (event) {
-            return _this3.cycle(event);
-          }, TOUCHEVENT_COMPAT_WAIT + _this3._config.interval);
-        }
-      };
-
-      $__default['default'](this._element.querySelectorAll(SELECTOR_ITEM_IMG)).on(EVENT_DRAG_START, function (e) {
-        return e.preventDefault();
-      });
-
-      if (this._pointerEvent) {
-        $__default['default'](this._element).on(EVENT_POINTERDOWN, function (event) {
-          return start(event);
-        });
-        $__default['default'](this._element).on(EVENT_POINTERUP, function (event) {
-          return end(event);
-        });
-
-        this._element.classList.add(CLASS_NAME_POINTER_EVENT);
-      } else {
-        $__default['default'](this._element).on(EVENT_TOUCHSTART, function (event) {
-          return start(event);
-        });
-        $__default['default'](this._element).on(EVENT_TOUCHMOVE, function (event) {
-          return move(event);
-        });
-        $__default['default'](this._element).on(EVENT_TOUCHEND, function (event) {
-          return end(event);
-        });
-      }
-    };
-
-    _proto._keydown = function _keydown(event) {
-      if (/input|textarea/i.test(event.target.tagName)) {
-        return;
-      }
-
-      switch (event.which) {
-        case ARROW_LEFT_KEYCODE:
-          event.preventDefault();
-          this.prev();
-          break;
-
-        case ARROW_RIGHT_KEYCODE:
-          event.preventDefault();
-          this.next();
-          break;
-      }
-    };
-
-    _proto._getItemIndex = function _getItemIndex(element) {
-      this._items = element && element.parentNode ? [].slice.call(element.parentNode.querySelectorAll(SELECTOR_ITEM)) : [];
-      return this._items.indexOf(element);
-    };
-
-    _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
-      var isNextDirection = direction === DIRECTION_NEXT;
-      var isPrevDirection = direction === DIRECTION_PREV;
-
-      var activeIndex = this._getItemIndex(activeElement);
-
-      var lastItemIndex = this._items.length - 1;
-      var isGoingToWrap = isPrevDirection && activeIndex === 0 || isNextDirection && activeIndex === lastItemIndex;
-
-      if (isGoingToWrap && !this._config.wrap) {
-        return activeElement;
-      }
-
-      var delta = direction === DIRECTION_PREV ? -1 : 1;
-      var itemIndex = (activeIndex + delta) % this._items.length;
-      return itemIndex === -1 ? this._items[this._items.length - 1] : this._items[itemIndex];
-    };
-
-    _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
-      var targetIndex = this._getItemIndex(relatedTarget);
-
-      var fromIndex = this._getItemIndex(this._element.querySelector(SELECTOR_ACTIVE_ITEM));
-
-      var slideEvent = $__default['default'].Event(EVENT_SLIDE, {
-        relatedTarget: relatedTarget,
-        direction: eventDirectionName,
-        from: fromIndex,
-        to: targetIndex
-      });
-      $__default['default'](this._element).trigger(slideEvent);
-      return slideEvent;
-    };
-
-    _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
-      if (this._indicatorsElement) {
-        var indicators = [].slice.call(this._indicatorsElement.querySelectorAll(SELECTOR_ACTIVE$1));
-        $__default['default'](indicators).removeClass(CLASS_NAME_ACTIVE$1);
-
-        var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
-
-        if (nextIndicator) {
-          $__default['default'](nextIndicator).addClass(CLASS_NAME_ACTIVE$1);
-        }
-      }
-    };
-
-    _proto._updateInterval = function _updateInterval() {
-      var element = this._activeElement || this._element.querySelector(SELECTOR_ACTIVE_ITEM);
-
-      if (!element) {
-        return;
-      }
-
-      var elementInterval = parseInt(element.getAttribute('data-interval'), 10);
-
-      if (elementInterval) {
-        this._config.defaultInterval = this._config.defaultInterval || this._config.interval;
-        this._config.interval = elementInterval;
-      } else {
-        this._config.interval = this._config.defaultInterval || this._config.interval;
-      }
-    };
-
-    _proto._slide = function _slide(direction, element) {
-      var _this4 = this;
-
-      var activeElement = this._element.querySelector(SELECTOR_ACTIVE_ITEM);
-
-      var activeElementIndex = this._getItemIndex(activeElement);
-
-      var nextElement = element || activeElement && this._getItemByDirection(direction, activeElement);
-
-      var nextElementIndex = this._getItemIndex(nextElement);
-
-      var isCycling = Boolean(this._interval);
-      var directionalClassName;
-      var orderClassName;
-      var eventDirectionName;
-
-      if (direction === DIRECTION_NEXT) {
-        directionalClassName = CLASS_NAME_LEFT;
-        orderClassName = CLASS_NAME_NEXT;
-        eventDirectionName = DIRECTION_LEFT;
-      } else {
-        directionalClassName = CLASS_NAME_RIGHT;
-        orderClassName = CLASS_NAME_PREV;
-        eventDirectionName = DIRECTION_RIGHT;
-      }
-
-      if (nextElement && $__default['default'](nextElement).hasClass(CLASS_NAME_ACTIVE$1)) {
-        this._isSliding = false;
-        return;
-      }
-
-      var slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName);
-
-      if (slideEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      if (!activeElement || !nextElement) {
-        // Some weirdness is happening, so we bail
-        return;
-      }
-
-      this._isSliding = true;
-
-      if (isCycling) {
-        this.pause();
-      }
-
-      this._setActiveIndicatorElement(nextElement);
-
-      this._activeElement = nextElement;
-      var slidEvent = $__default['default'].Event(EVENT_SLID, {
-        relatedTarget: nextElement,
-        direction: eventDirectionName,
-        from: activeElementIndex,
-        to: nextElementIndex
-      });
-
-      if ($__default['default'](this._element).hasClass(CLASS_NAME_SLIDE)) {
-        $__default['default'](nextElement).addClass(orderClassName);
-        Util.reflow(nextElement);
-        $__default['default'](activeElement).addClass(directionalClassName);
-        $__default['default'](nextElement).addClass(directionalClassName);
-        var transitionDuration = Util.getTransitionDurationFromElement(activeElement);
-        $__default['default'](activeElement).one(Util.TRANSITION_END, function () {
-          $__default['default'](nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(CLASS_NAME_ACTIVE$1);
-          $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE$1 + " " + orderClassName + " " + directionalClassName);
-          _this4._isSliding = false;
+      $active.addClass(direction)
+      $next.addClass(direction)
+      $active
+        .one('bsTransitionEnd', function () {
+          $next.removeClass([type, direction].join(' ')).addClass('active')
+          $active.removeClass(['active', direction].join(' '))
+          that.sliding = false
           setTimeout(function () {
-            return $__default['default'](_this4._element).trigger(slidEvent);
-          }, 0);
-        }).emulateTransitionEnd(transitionDuration);
-      } else {
-        $__default['default'](activeElement).removeClass(CLASS_NAME_ACTIVE$1);
-        $__default['default'](nextElement).addClass(CLASS_NAME_ACTIVE$1);
-        this._isSliding = false;
-        $__default['default'](this._element).trigger(slidEvent);
-      }
-
-      if (isCycling) {
-        this.cycle();
-      }
-    } // Static
-    ;
-
-    Carousel._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $__default['default'](this).data(DATA_KEY$2);
-
-        var _config = _extends({}, Default, $__default['default'](this).data());
-
-        if (typeof config === 'object') {
-          _config = _extends({}, _config, config);
-        }
-
-        var action = typeof config === 'string' ? config : _config.slide;
-
-        if (!data) {
-          data = new Carousel(this, _config);
-          $__default['default'](this).data(DATA_KEY$2, data);
-        }
-
-        if (typeof config === 'number') {
-          data.to(config);
-        } else if (typeof action === 'string') {
-          if (typeof data[action] === 'undefined') {
-            throw new TypeError("No method named \"" + action + "\"");
-          }
-
-          data[action]();
-        } else if (_config.interval && _config.ride) {
-          data.pause();
-          data.cycle();
-        }
-      });
-    };
-
-    Carousel._dataApiClickHandler = function _dataApiClickHandler(event) {
-      var selector = Util.getSelectorFromElement(this);
-
-      if (!selector) {
-        return;
-      }
-
-      var target = $__default['default'](selector)[0];
-
-      if (!target || !$__default['default'](target).hasClass(CLASS_NAME_CAROUSEL)) {
-        return;
-      }
-
-      var config = _extends({}, $__default['default'](target).data(), $__default['default'](this).data());
-
-      var slideIndex = this.getAttribute('data-slide-to');
-
-      if (slideIndex) {
-        config.interval = false;
-      }
-
-      Carousel._jQueryInterface.call($__default['default'](target), config);
-
-      if (slideIndex) {
-        $__default['default'](target).data(DATA_KEY$2).to(slideIndex);
-      }
-
-      event.preventDefault();
-    };
-
-    _createClass(Carousel, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$2;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default;
-      }
-    }]);
-
-    return Carousel;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $__default['default'](document).on(EVENT_CLICK_DATA_API$2, SELECTOR_DATA_SLIDE, Carousel._dataApiClickHandler);
-  $__default['default'](window).on(EVENT_LOAD_DATA_API$1, function () {
-    var carousels = [].slice.call(document.querySelectorAll(SELECTOR_DATA_RIDE));
-
-    for (var i = 0, len = carousels.length; i < len; i++) {
-      var $carousel = $__default['default'](carousels[i]);
-
-      Carousel._jQueryInterface.call($carousel, $carousel.data());
-    }
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $__default['default'].fn[NAME$2] = Carousel._jQueryInterface;
-  $__default['default'].fn[NAME$2].Constructor = Carousel;
-
-  $__default['default'].fn[NAME$2].noConflict = function () {
-    $__default['default'].fn[NAME$2] = JQUERY_NO_CONFLICT$2;
-    return Carousel._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$3 = 'collapse';
-  var VERSION$3 = '4.6.0';
-  var DATA_KEY$3 = 'bs.collapse';
-  var EVENT_KEY$3 = "." + DATA_KEY$3;
-  var DATA_API_KEY$3 = '.data-api';
-  var JQUERY_NO_CONFLICT$3 = $__default['default'].fn[NAME$3];
-  var Default$1 = {
-    toggle: true,
-    parent: ''
-  };
-  var DefaultType$1 = {
-    toggle: 'boolean',
-    parent: '(string|element)'
-  };
-  var EVENT_SHOW = "show" + EVENT_KEY$3;
-  var EVENT_SHOWN = "shown" + EVENT_KEY$3;
-  var EVENT_HIDE = "hide" + EVENT_KEY$3;
-  var EVENT_HIDDEN = "hidden" + EVENT_KEY$3;
-  var EVENT_CLICK_DATA_API$3 = "click" + EVENT_KEY$3 + DATA_API_KEY$3;
-  var CLASS_NAME_SHOW$1 = 'show';
-  var CLASS_NAME_COLLAPSE = 'collapse';
-  var CLASS_NAME_COLLAPSING = 'collapsing';
-  var CLASS_NAME_COLLAPSED = 'collapsed';
-  var DIMENSION_WIDTH = 'width';
-  var DIMENSION_HEIGHT = 'height';
-  var SELECTOR_ACTIVES = '.show, .collapsing';
-  var SELECTOR_DATA_TOGGLE$1 = '[data-toggle="collapse"]';
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
-
-  var Collapse = /*#__PURE__*/function () {
-    function Collapse(element, config) {
-      this._isTransitioning = false;
-      this._element = element;
-      this._config = this._getConfig(config);
-      this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
-      var toggleList = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$1));
-
-      for (var i = 0, len = toggleList.length; i < len; i++) {
-        var elem = toggleList[i];
-        var selector = Util.getSelectorFromElement(elem);
-        var filterElement = [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
-          return foundElem === element;
-        });
-
-        if (selector !== null && filterElement.length > 0) {
-          this._selector = selector;
-
-          this._triggerArray.push(elem);
-        }
-      }
-
-      this._parent = this._config.parent ? this._getParent() : null;
-
-      if (!this._config.parent) {
-        this._addAriaAndCollapsedClass(this._element, this._triggerArray);
-      }
-
-      if (this._config.toggle) {
-        this.toggle();
-      }
-    } // Getters
-
-
-    var _proto = Collapse.prototype;
-
-    // Public
-    _proto.toggle = function toggle() {
-      if ($__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
-        this.hide();
-      } else {
-        this.show();
-      }
-    };
-
-    _proto.show = function show() {
-      var _this = this;
-
-      if (this._isTransitioning || $__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
-        return;
-      }
-
-      var actives;
-      var activesData;
-
-      if (this._parent) {
-        actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES)).filter(function (elem) {
-          if (typeof _this._config.parent === 'string') {
-            return elem.getAttribute('data-parent') === _this._config.parent;
-          }
-
-          return elem.classList.contains(CLASS_NAME_COLLAPSE);
-        });
-
-        if (actives.length === 0) {
-          actives = null;
-        }
-      }
-
-      if (actives) {
-        activesData = $__default['default'](actives).not(this._selector).data(DATA_KEY$3);
-
-        if (activesData && activesData._isTransitioning) {
-          return;
-        }
-      }
-
-      var startEvent = $__default['default'].Event(EVENT_SHOW);
-      $__default['default'](this._element).trigger(startEvent);
-
-      if (startEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      if (actives) {
-        Collapse._jQueryInterface.call($__default['default'](actives).not(this._selector), 'hide');
-
-        if (!activesData) {
-          $__default['default'](actives).data(DATA_KEY$3, null);
-        }
-      }
-
-      var dimension = this._getDimension();
-
-      $__default['default'](this._element).removeClass(CLASS_NAME_COLLAPSE).addClass(CLASS_NAME_COLLAPSING);
-      this._element.style[dimension] = 0;
-
-      if (this._triggerArray.length) {
-        $__default['default'](this._triggerArray).removeClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', true);
-      }
-
-      this.setTransitioning(true);
-
-      var complete = function complete() {
-        $__default['default'](_this._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
-        _this._element.style[dimension] = '';
-
-        _this.setTransitioning(false);
-
-        $__default['default'](_this._element).trigger(EVENT_SHOWN);
-      };
-
-      var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
-      var scrollSize = "scroll" + capitalizedDimension;
-      var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-      $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      this._element.style[dimension] = this._element[scrollSize] + "px";
-    };
-
-    _proto.hide = function hide() {
-      var _this2 = this;
-
-      if (this._isTransitioning || !$__default['default'](this._element).hasClass(CLASS_NAME_SHOW$1)) {
-        return;
-      }
-
-      var startEvent = $__default['default'].Event(EVENT_HIDE);
-      $__default['default'](this._element).trigger(startEvent);
-
-      if (startEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      var dimension = this._getDimension();
-
-      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
-      Util.reflow(this._element);
-      $__default['default'](this._element).addClass(CLASS_NAME_COLLAPSING).removeClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW$1);
-      var triggerArrayLength = this._triggerArray.length;
-
-      if (triggerArrayLength > 0) {
-        for (var i = 0; i < triggerArrayLength; i++) {
-          var trigger = this._triggerArray[i];
-          var selector = Util.getSelectorFromElement(trigger);
-
-          if (selector !== null) {
-            var $elem = $__default['default']([].slice.call(document.querySelectorAll(selector)));
-
-            if (!$elem.hasClass(CLASS_NAME_SHOW$1)) {
-              $__default['default'](trigger).addClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', false);
-            }
-          }
-        }
-      }
-
-      this.setTransitioning(true);
-
-      var complete = function complete() {
-        _this2.setTransitioning(false);
-
-        $__default['default'](_this2._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE).trigger(EVENT_HIDDEN);
-      };
-
-      this._element.style[dimension] = '';
-      var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-      $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-    };
-
-    _proto.setTransitioning = function setTransitioning(isTransitioning) {
-      this._isTransitioning = isTransitioning;
-    };
-
-    _proto.dispose = function dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY$3);
-      this._config = null;
-      this._parent = null;
-      this._element = null;
-      this._triggerArray = null;
-      this._isTransitioning = null;
-    } // Private
-    ;
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _extends({}, Default$1, config);
-      config.toggle = Boolean(config.toggle); // Coerce string values
-
-      Util.typeCheckConfig(NAME$3, config, DefaultType$1);
-      return config;
-    };
-
-    _proto._getDimension = function _getDimension() {
-      var hasWidth = $__default['default'](this._element).hasClass(DIMENSION_WIDTH);
-      return hasWidth ? DIMENSION_WIDTH : DIMENSION_HEIGHT;
-    };
-
-    _proto._getParent = function _getParent() {
-      var _this3 = this;
-
-      var parent;
-
-      if (Util.isElement(this._config.parent)) {
-        parent = this._config.parent; // It's a jQuery object
-
-        if (typeof this._config.parent.jquery !== 'undefined') {
-          parent = this._config.parent[0];
-        }
-      } else {
-        parent = document.querySelector(this._config.parent);
-      }
-
-      var selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
-      var children = [].slice.call(parent.querySelectorAll(selector));
-      $__default['default'](children).each(function (i, element) {
-        _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
-      });
-      return parent;
-    };
-
-    _proto._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
-      var isOpen = $__default['default'](element).hasClass(CLASS_NAME_SHOW$1);
-
-      if (triggerArray.length) {
-        $__default['default'](triggerArray).toggleClass(CLASS_NAME_COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
-      }
-    } // Static
-    ;
-
-    Collapse._getTargetFromElement = function _getTargetFromElement(element) {
-      var selector = Util.getSelectorFromElement(element);
-      return selector ? document.querySelector(selector) : null;
-    };
-
-    Collapse._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var $element = $__default['default'](this);
-        var data = $element.data(DATA_KEY$3);
-
-        var _config = _extends({}, Default$1, $element.data(), typeof config === 'object' && config ? config : {});
-
-        if (!data && _config.toggle && typeof config === 'string' && /show|hide/.test(config)) {
-          _config.toggle = false;
-        }
-
-        if (!data) {
-          data = new Collapse(this, _config);
-          $element.data(DATA_KEY$3, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Collapse, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$3;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$1;
-      }
-    }]);
-
-    return Collapse;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $__default['default'](document).on(EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$1, function (event) {
-    // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
-    if (event.currentTarget.tagName === 'A') {
-      event.preventDefault();
+            that.$element.trigger(slidEvent)
+          }, 0)
+        })
+        .emulateTransitionEnd(Carousel.TRANSITION_DURATION)
+    } else {
+      $active.removeClass('active')
+      $next.addClass('active')
+      this.sliding = false
+      this.$element.trigger(slidEvent)
     }
 
-    var $trigger = $__default['default'](this);
-    var selector = Util.getSelectorFromElement(this);
-    var selectors = [].slice.call(document.querySelectorAll(selector));
-    $__default['default'](selectors).each(function () {
-      var $target = $__default['default'](this);
-      var data = $target.data(DATA_KEY$3);
-      var config = data ? 'toggle' : $trigger.data();
+    isCycling && this.cycle()
 
-      Collapse._jQueryInterface.call($target, config);
-    });
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $__default['default'].fn[NAME$3] = Collapse._jQueryInterface;
-  $__default['default'].fn[NAME$3].Constructor = Collapse;
-
-  $__default['default'].fn[NAME$3].noConflict = function () {
-    $__default['default'].fn[NAME$3] = JQUERY_NO_CONFLICT$3;
-    return Collapse._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$4 = 'dropdown';
-  var VERSION$4 = '4.6.0';
-  var DATA_KEY$4 = 'bs.dropdown';
-  var EVENT_KEY$4 = "." + DATA_KEY$4;
-  var DATA_API_KEY$4 = '.data-api';
-  var JQUERY_NO_CONFLICT$4 = $__default['default'].fn[NAME$4];
-  var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
-
-  var SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
-
-  var TAB_KEYCODE = 9; // KeyboardEvent.which value for tab key
-
-  var ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for up arrow key
-
-  var ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which value for down arrow key
-
-  var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
-
-  var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
-  var EVENT_HIDE$1 = "hide" + EVENT_KEY$4;
-  var EVENT_HIDDEN$1 = "hidden" + EVENT_KEY$4;
-  var EVENT_SHOW$1 = "show" + EVENT_KEY$4;
-  var EVENT_SHOWN$1 = "shown" + EVENT_KEY$4;
-  var EVENT_CLICK = "click" + EVENT_KEY$4;
-  var EVENT_CLICK_DATA_API$4 = "click" + EVENT_KEY$4 + DATA_API_KEY$4;
-  var EVENT_KEYDOWN_DATA_API = "keydown" + EVENT_KEY$4 + DATA_API_KEY$4;
-  var EVENT_KEYUP_DATA_API = "keyup" + EVENT_KEY$4 + DATA_API_KEY$4;
-  var CLASS_NAME_DISABLED = 'disabled';
-  var CLASS_NAME_SHOW$2 = 'show';
-  var CLASS_NAME_DROPUP = 'dropup';
-  var CLASS_NAME_DROPRIGHT = 'dropright';
-  var CLASS_NAME_DROPLEFT = 'dropleft';
-  var CLASS_NAME_MENURIGHT = 'dropdown-menu-right';
-  var CLASS_NAME_POSITION_STATIC = 'position-static';
-  var SELECTOR_DATA_TOGGLE$2 = '[data-toggle="dropdown"]';
-  var SELECTOR_FORM_CHILD = '.dropdown form';
-  var SELECTOR_MENU = '.dropdown-menu';
-  var SELECTOR_NAVBAR_NAV = '.navbar-nav';
-  var SELECTOR_VISIBLE_ITEMS = '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)';
-  var PLACEMENT_TOP = 'top-start';
-  var PLACEMENT_TOPEND = 'top-end';
-  var PLACEMENT_BOTTOM = 'bottom-start';
-  var PLACEMENT_BOTTOMEND = 'bottom-end';
-  var PLACEMENT_RIGHT = 'right-start';
-  var PLACEMENT_LEFT = 'left-start';
-  var Default$2 = {
-    offset: 0,
-    flip: true,
-    boundary: 'scrollParent',
-    reference: 'toggle',
-    display: 'dynamic',
-    popperConfig: null
-  };
-  var DefaultType$2 = {
-    offset: '(number|string|function)',
-    flip: 'boolean',
-    boundary: '(string|element)',
-    reference: '(string|element)',
-    display: 'string',
-    popperConfig: '(null|object)'
-  };
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
-
-  var Dropdown = /*#__PURE__*/function () {
-    function Dropdown(element, config) {
-      this._element = element;
-      this._popper = null;
-      this._config = this._getConfig(config);
-      this._menu = this._getMenuElement();
-      this._inNavbar = this._detectNavbar();
-
-      this._addEventListeners();
-    } // Getters
+    return this
+  }
 
 
-    var _proto = Dropdown.prototype;
+  // CAROUSEL PLUGIN DEFINITION
+  // ==========================
 
-    // Public
-    _proto.toggle = function toggle() {
-      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED)) {
-        return;
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.carousel')
+      var options = $.extend({}, Carousel.DEFAULTS, $this.data(), typeof option == 'object' && option)
+      var action  = typeof option == 'string' ? option : options.slide
+
+      if (!data) $this.data('bs.carousel', (data = new Carousel(this, options)))
+      if (typeof option == 'number') data.to(option)
+      else if (action) data[action]()
+      else if (options.interval) data.pause().cycle()
+    })
+  }
+
+  var old = $.fn.carousel
+
+  $.fn.carousel             = Plugin
+  $.fn.carousel.Constructor = Carousel
+
+
+  // CAROUSEL NO CONFLICT
+  // ====================
+
+  $.fn.carousel.noConflict = function () {
+    $.fn.carousel = old
+    return this
+  }
+
+
+  // CAROUSEL DATA-API
+  // =================
+
+  var clickHandler = function (e) {
+    var $this   = $(this)
+    var href    = $this.attr('href')
+    if (href) {
+      href = href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
+    }
+
+    var target  = $this.attr('data-target') || href
+    var $target = $(document).find(target)
+
+    if (!$target.hasClass('carousel')) return
+
+    var options = $.extend({}, $target.data(), $this.data())
+    var slideIndex = $this.attr('data-slide-to')
+    if (slideIndex) options.interval = false
+
+    Plugin.call($target, options)
+
+    if (slideIndex) {
+      $target.data('bs.carousel').to(slideIndex)
+    }
+
+    e.preventDefault()
+  }
+
+  $(document)
+    .on('click.bs.carousel.data-api', '[data-slide]', clickHandler)
+    .on('click.bs.carousel.data-api', '[data-slide-to]', clickHandler)
+
+  $(window).on('load', function () {
+    $('[data-ride="carousel"]').each(function () {
+      var $carousel = $(this)
+      Plugin.call($carousel, $carousel.data())
+    })
+  })
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: collapse.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#collapse
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+/* jshint latedef: false */
+
++function ($) {
+  'use strict';
+
+  // COLLAPSE PUBLIC CLASS DEFINITION
+  // ================================
+
+  var Collapse = function (element, options) {
+    this.$element      = $(element)
+    this.options       = $.extend({}, Collapse.DEFAULTS, options)
+    this.$trigger      = $('[data-toggle="collapse"][href="#' + element.id + '"],' +
+                           '[data-toggle="collapse"][data-target="#' + element.id + '"]')
+    this.transitioning = null
+
+    if (this.options.parent) {
+      this.$parent = this.getParent()
+    } else {
+      this.addAriaAndCollapsedClass(this.$element, this.$trigger)
+    }
+
+    if (this.options.toggle) this.toggle()
+  }
+
+  Collapse.VERSION  = '3.4.1'
+
+  Collapse.TRANSITION_DURATION = 350
+
+  Collapse.DEFAULTS = {
+    toggle: true
+  }
+
+  Collapse.prototype.dimension = function () {
+    var hasWidth = this.$element.hasClass('width')
+    return hasWidth ? 'width' : 'height'
+  }
+
+  Collapse.prototype.show = function () {
+    if (this.transitioning || this.$element.hasClass('in')) return
+
+    var activesData
+    var actives = this.$parent && this.$parent.children('.panel').children('.in, .collapsing')
+
+    if (actives && actives.length) {
+      activesData = actives.data('bs.collapse')
+      if (activesData && activesData.transitioning) return
+    }
+
+    var startEvent = $.Event('show.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
+
+    if (actives && actives.length) {
+      Plugin.call(actives, 'hide')
+      activesData || actives.data('bs.collapse', null)
+    }
+
+    var dimension = this.dimension()
+
+    this.$element
+      .removeClass('collapse')
+      .addClass('collapsing')[dimension](0)
+      .attr('aria-expanded', true)
+
+    this.$trigger
+      .removeClass('collapsed')
+      .attr('aria-expanded', true)
+
+    this.transitioning = 1
+
+    var complete = function () {
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse in')[dimension]('')
+      this.transitioning = 0
+      this.$element
+        .trigger('shown.bs.collapse')
+    }
+
+    if (!$.support.transition) return complete.call(this)
+
+    var scrollSize = $.camelCase(['scroll', dimension].join('-'))
+
+    this.$element
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize])
+  }
+
+  Collapse.prototype.hide = function () {
+    if (this.transitioning || !this.$element.hasClass('in')) return
+
+    var startEvent = $.Event('hide.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
+
+    var dimension = this.dimension()
+
+    this.$element[dimension](this.$element[dimension]())[0].offsetHeight
+
+    this.$element
+      .addClass('collapsing')
+      .removeClass('collapse in')
+      .attr('aria-expanded', false)
+
+    this.$trigger
+      .addClass('collapsed')
+      .attr('aria-expanded', false)
+
+    this.transitioning = 1
+
+    var complete = function () {
+      this.transitioning = 0
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse')
+        .trigger('hidden.bs.collapse')
+    }
+
+    if (!$.support.transition) return complete.call(this)
+
+    this.$element
+      [dimension](0)
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)
+  }
+
+  Collapse.prototype.toggle = function () {
+    this[this.$element.hasClass('in') ? 'hide' : 'show']()
+  }
+
+  Collapse.prototype.getParent = function () {
+    return $(document).find(this.options.parent)
+      .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
+      .each($.proxy(function (i, element) {
+        var $element = $(element)
+        this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element)
+      }, this))
+      .end()
+  }
+
+  Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
+    var isOpen = $element.hasClass('in')
+
+    $element.attr('aria-expanded', isOpen)
+    $trigger
+      .toggleClass('collapsed', !isOpen)
+      .attr('aria-expanded', isOpen)
+  }
+
+  function getTargetFromTrigger($trigger) {
+    var href
+    var target = $trigger.attr('data-target')
+      || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
+
+    return $(document).find(target)
+  }
+
+
+  // COLLAPSE PLUGIN DEFINITION
+  // ==========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.collapse')
+      var options = $.extend({}, Collapse.DEFAULTS, $this.data(), typeof option == 'object' && option)
+
+      if (!data && options.toggle && /show|hide/.test(option)) options.toggle = false
+      if (!data) $this.data('bs.collapse', (data = new Collapse(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.collapse
+
+  $.fn.collapse             = Plugin
+  $.fn.collapse.Constructor = Collapse
+
+
+  // COLLAPSE NO CONFLICT
+  // ====================
+
+  $.fn.collapse.noConflict = function () {
+    $.fn.collapse = old
+    return this
+  }
+
+
+  // COLLAPSE DATA-API
+  // =================
+
+  $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
+    var $this   = $(this)
+
+    if (!$this.attr('data-target')) e.preventDefault()
+
+    var $target = getTargetFromTrigger($this)
+    var data    = $target.data('bs.collapse')
+    var option  = data ? 'toggle' : $this.data()
+
+    Plugin.call($target, option)
+  })
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: dropdown.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#dropdowns
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // DROPDOWN CLASS DEFINITION
+  // =========================
+
+  var backdrop = '.dropdown-backdrop'
+  var toggle   = '[data-toggle="dropdown"]'
+  var Dropdown = function (element) {
+    $(element).on('click.bs.dropdown', this.toggle)
+  }
+
+  Dropdown.VERSION = '3.4.1'
+
+  function getParent($this) {
+    var selector = $this.attr('data-target')
+
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    }
+
+    var $parent = selector !== '#' ? $(document).find(selector) : null
+
+    return $parent && $parent.length ? $parent : $this.parent()
+  }
+
+  function clearMenus(e) {
+    if (e && e.which === 3) return
+    $(backdrop).remove()
+    $(toggle).each(function () {
+      var $this         = $(this)
+      var $parent       = getParent($this)
+      var relatedTarget = { relatedTarget: this }
+
+      if (!$parent.hasClass('open')) return
+
+      if (e && e.type == 'click' && /input|textarea/i.test(e.target.tagName) && $.contains($parent[0], e.target)) return
+
+      $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
+
+      if (e.isDefaultPrevented()) return
+
+      $this.attr('aria-expanded', 'false')
+      $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
+    })
+  }
+
+  Dropdown.prototype.toggle = function (e) {
+    var $this = $(this)
+
+    if ($this.is('.disabled, :disabled')) return
+
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
+
+    clearMenus()
+
+    if (!isActive) {
+      if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
+        // if mobile we use a backdrop because click events don't delegate
+        $(document.createElement('div'))
+          .addClass('dropdown-backdrop')
+          .insertAfter($(this))
+          .on('click', clearMenus)
       }
 
-      var isActive = $__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2);
+      var relatedTarget = { relatedTarget: this }
+      $parent.trigger(e = $.Event('show.bs.dropdown', relatedTarget))
 
-      Dropdown._clearMenus();
+      if (e.isDefaultPrevented()) return
 
-      if (isActive) {
-        return;
-      }
+      $this
+        .trigger('focus')
+        .attr('aria-expanded', 'true')
 
-      this.show(true);
-    };
+      $parent
+        .toggleClass('open')
+        .trigger($.Event('shown.bs.dropdown', relatedTarget))
+    }
 
-    _proto.show = function show(usePopper) {
-      if (usePopper === void 0) {
-        usePopper = false;
-      }
+    return false
+  }
 
-      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED) || $__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2)) {
-        return;
-      }
+  Dropdown.prototype.keydown = function (e) {
+    if (!/(38|40|27|32)/.test(e.which) || /input|textarea/i.test(e.target.tagName)) return
 
-      var relatedTarget = {
-        relatedTarget: this._element
-      };
-      var showEvent = $__default['default'].Event(EVENT_SHOW$1, relatedTarget);
+    var $this = $(this)
 
-      var parent = Dropdown._getParentFromElement(this._element);
+    e.preventDefault()
+    e.stopPropagation()
 
-      $__default['default'](parent).trigger(showEvent);
+    if ($this.is('.disabled, :disabled')) return
 
-      if (showEvent.isDefaultPrevented()) {
-        return;
-      } // Totally disable Popper for Dropdowns in Navbar
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
 
+    if (!isActive && e.which != 27 || isActive && e.which == 27) {
+      if (e.which == 27) $parent.find(toggle).trigger('focus')
+      return $this.trigger('click')
+    }
 
-      if (!this._inNavbar && usePopper) {
-        /**
-         * Check for Popper dependency
-         * Popper - https://popper.js.org
-         */
-        if (typeof Popper__default['default'] === 'undefined') {
-          throw new TypeError('Bootstrap\'s dropdowns require Popper (https://popper.js.org)');
-        }
+    var desc = ' li:not(.disabled):visible a'
+    var $items = $parent.find('.dropdown-menu' + desc)
 
-        var referenceElement = this._element;
+    if (!$items.length) return
 
-        if (this._config.reference === 'parent') {
-          referenceElement = parent;
-        } else if (Util.isElement(this._config.reference)) {
-          referenceElement = this._config.reference; // Check if it's jQuery element
+    var index = $items.index(e.target)
 
-          if (typeof this._config.reference.jquery !== 'undefined') {
-            referenceElement = this._config.reference[0];
-          }
-        } // If boundary is not `scrollParent`, then set position to `static`
-        // to allow the menu to "escape" the scroll parent's boundaries
-        // https://github.com/twbs/bootstrap/issues/24251
+    if (e.which == 38 && index > 0)                 index--         // up
+    if (e.which == 40 && index < $items.length - 1) index++         // down
+    if (!~index)                                    index = 0
 
+    $items.eq(index).trigger('focus')
+  }
 
-        if (this._config.boundary !== 'scrollParent') {
-          $__default['default'](parent).addClass(CLASS_NAME_POSITION_STATIC);
-        }
 
-        this._popper = new Popper__default['default'](referenceElement, this._menu, this._getPopperConfig());
-      } // If this is a touch-enabled device we add extra
-      // empty mouseover listeners to the body's immediate children;
-      // only needed because of broken event delegation on iOS
-      // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
+  // DROPDOWN PLUGIN DEFINITION
+  // ==========================
 
+  function Plugin(option) {
+    return this.each(function () {
+      var $this = $(this)
+      var data  = $this.data('bs.dropdown')
 
-      if ('ontouchstart' in document.documentElement && $__default['default'](parent).closest(SELECTOR_NAVBAR_NAV).length === 0) {
-        $__default['default'](document.body).children().on('mouseover', null, $__default['default'].noop);
-      }
+      if (!data) $this.data('bs.dropdown', (data = new Dropdown(this)))
+      if (typeof option == 'string') data[option].call($this)
+    })
+  }
 
-      this._element.focus();
+  var old = $.fn.dropdown
 
-      this._element.setAttribute('aria-expanded', true);
+  $.fn.dropdown             = Plugin
+  $.fn.dropdown.Constructor = Dropdown
 
-      $__default['default'](this._menu).toggleClass(CLASS_NAME_SHOW$2);
-      $__default['default'](parent).toggleClass(CLASS_NAME_SHOW$2).trigger($__default['default'].Event(EVENT_SHOWN$1, relatedTarget));
-    };
 
-    _proto.hide = function hide() {
-      if (this._element.disabled || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED) || !$__default['default'](this._menu).hasClass(CLASS_NAME_SHOW$2)) {
-        return;
-      }
+  // DROPDOWN NO CONFLICT
+  // ====================
 
-      var relatedTarget = {
-        relatedTarget: this._element
-      };
-      var hideEvent = $__default['default'].Event(EVENT_HIDE$1, relatedTarget);
+  $.fn.dropdown.noConflict = function () {
+    $.fn.dropdown = old
+    return this
+  }
 
-      var parent = Dropdown._getParentFromElement(this._element);
 
-      $__default['default'](parent).trigger(hideEvent);
+  // APPLY TO STANDARD DROPDOWN ELEMENTS
+  // ===================================
 
-      if (hideEvent.isDefaultPrevented()) {
-        return;
-      }
+  $(document)
+    .on('click.bs.dropdown.data-api', clearMenus)
+    .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
+    .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
+    .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', '.dropdown-menu', Dropdown.prototype.keydown)
 
-      if (this._popper) {
-        this._popper.destroy();
-      }
-
-      $__default['default'](this._menu).toggleClass(CLASS_NAME_SHOW$2);
-      $__default['default'](parent).toggleClass(CLASS_NAME_SHOW$2).trigger($__default['default'].Event(EVENT_HIDDEN$1, relatedTarget));
-    };
-
-    _proto.dispose = function dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY$4);
-      $__default['default'](this._element).off(EVENT_KEY$4);
-      this._element = null;
-      this._menu = null;
-
-      if (this._popper !== null) {
-        this._popper.destroy();
-
-        this._popper = null;
-      }
-    };
-
-    _proto.update = function update() {
-      this._inNavbar = this._detectNavbar();
-
-      if (this._popper !== null) {
-        this._popper.scheduleUpdate();
-      }
-    } // Private
-    ;
-
-    _proto._addEventListeners = function _addEventListeners() {
-      var _this = this;
-
-      $__default['default'](this._element).on(EVENT_CLICK, function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        _this.toggle();
-      });
-    };
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _extends({}, this.constructor.Default, $__default['default'](this._element).data(), config);
-      Util.typeCheckConfig(NAME$4, config, this.constructor.DefaultType);
-      return config;
-    };
-
-    _proto._getMenuElement = function _getMenuElement() {
-      if (!this._menu) {
-        var parent = Dropdown._getParentFromElement(this._element);
-
-        if (parent) {
-          this._menu = parent.querySelector(SELECTOR_MENU);
-        }
-      }
-
-      return this._menu;
-    };
-
-    _proto._getPlacement = function _getPlacement() {
-      var $parentDropdown = $__default['default'](this._element.parentNode);
-      var placement = PLACEMENT_BOTTOM; // Handle dropup
-
-      if ($parentDropdown.hasClass(CLASS_NAME_DROPUP)) {
-        placement = $__default['default'](this._menu).hasClass(CLASS_NAME_MENURIGHT) ? PLACEMENT_TOPEND : PLACEMENT_TOP;
-      } else if ($parentDropdown.hasClass(CLASS_NAME_DROPRIGHT)) {
-        placement = PLACEMENT_RIGHT;
-      } else if ($parentDropdown.hasClass(CLASS_NAME_DROPLEFT)) {
-        placement = PLACEMENT_LEFT;
-      } else if ($__default['default'](this._menu).hasClass(CLASS_NAME_MENURIGHT)) {
-        placement = PLACEMENT_BOTTOMEND;
-      }
-
-      return placement;
-    };
-
-    _proto._detectNavbar = function _detectNavbar() {
-      return $__default['default'](this._element).closest('.navbar').length > 0;
-    };
-
-    _proto._getOffset = function _getOffset() {
-      var _this2 = this;
-
-      var offset = {};
-
-      if (typeof this._config.offset === 'function') {
-        offset.fn = function (data) {
-          data.offsets = _extends({}, data.offsets, _this2._config.offset(data.offsets, _this2._element) || {});
-          return data;
-        };
-      } else {
-        offset.offset = this._config.offset;
-      }
-
-      return offset;
-    };
-
-    _proto._getPopperConfig = function _getPopperConfig() {
-      var popperConfig = {
-        placement: this._getPlacement(),
-        modifiers: {
-          offset: this._getOffset(),
-          flip: {
-            enabled: this._config.flip
-          },
-          preventOverflow: {
-            boundariesElement: this._config.boundary
-          }
-        }
-      }; // Disable Popper if we have a static display
-
-      if (this._config.display === 'static') {
-        popperConfig.modifiers.applyStyle = {
-          enabled: false
-        };
-      }
-
-      return _extends({}, popperConfig, this._config.popperConfig);
-    } // Static
-    ;
-
-    Dropdown._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $__default['default'](this).data(DATA_KEY$4);
-
-        var _config = typeof config === 'object' ? config : null;
-
-        if (!data) {
-          data = new Dropdown(this, _config);
-          $__default['default'](this).data(DATA_KEY$4, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
-        }
-      });
-    };
-
-    Dropdown._clearMenus = function _clearMenus(event) {
-      if (event && (event.which === RIGHT_MOUSE_BUTTON_WHICH || event.type === 'keyup' && event.which !== TAB_KEYCODE)) {
-        return;
-      }
-
-      var toggles = [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE$2));
-
-      for (var i = 0, len = toggles.length; i < len; i++) {
-        var parent = Dropdown._getParentFromElement(toggles[i]);
-
-        var context = $__default['default'](toggles[i]).data(DATA_KEY$4);
-        var relatedTarget = {
-          relatedTarget: toggles[i]
-        };
-
-        if (event && event.type === 'click') {
-          relatedTarget.clickEvent = event;
-        }
-
-        if (!context) {
-          continue;
-        }
-
-        var dropdownMenu = context._menu;
-
-        if (!$__default['default'](parent).hasClass(CLASS_NAME_SHOW$2)) {
-          continue;
-        }
-
-        if (event && (event.type === 'click' && /input|textarea/i.test(event.target.tagName) || event.type === 'keyup' && event.which === TAB_KEYCODE) && $__default['default'].contains(parent, event.target)) {
-          continue;
-        }
-
-        var hideEvent = $__default['default'].Event(EVENT_HIDE$1, relatedTarget);
-        $__default['default'](parent).trigger(hideEvent);
-
-        if (hideEvent.isDefaultPrevented()) {
-          continue;
-        } // If this is a touch-enabled device we remove the extra
-        // empty mouseover listeners we added for iOS support
-
-
-        if ('ontouchstart' in document.documentElement) {
-          $__default['default'](document.body).children().off('mouseover', null, $__default['default'].noop);
-        }
-
-        toggles[i].setAttribute('aria-expanded', 'false');
-
-        if (context._popper) {
-          context._popper.destroy();
-        }
-
-        $__default['default'](dropdownMenu).removeClass(CLASS_NAME_SHOW$2);
-        $__default['default'](parent).removeClass(CLASS_NAME_SHOW$2).trigger($__default['default'].Event(EVENT_HIDDEN$1, relatedTarget));
-      }
-    };
-
-    Dropdown._getParentFromElement = function _getParentFromElement(element) {
-      var parent;
-      var selector = Util.getSelectorFromElement(element);
-
-      if (selector) {
-        parent = document.querySelector(selector);
-      }
-
-      return parent || element.parentNode;
-    } // eslint-disable-next-line complexity
-    ;
-
-    Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(event) {
-      // If not input/textarea:
-      //  - And not a key in REGEXP_KEYDOWN => not a dropdown command
-      // If input/textarea:
-      //  - If space key => not a dropdown command
-      //  - If key is other than escape
-      //    - If key is not up or down => not a dropdown command
-      //    - If trigger inside the menu => not a dropdown command
-      if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $__default['default'](event.target).closest(SELECTOR_MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
-        return;
-      }
-
-      if (this.disabled || $__default['default'](this).hasClass(CLASS_NAME_DISABLED)) {
-        return;
-      }
-
-      var parent = Dropdown._getParentFromElement(this);
-
-      var isActive = $__default['default'](parent).hasClass(CLASS_NAME_SHOW$2);
-
-      if (!isActive && event.which === ESCAPE_KEYCODE) {
-        return;
-      }
-
-      event.preventDefault();
-      event.stopPropagation();
-
-      if (!isActive || event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE) {
-        if (event.which === ESCAPE_KEYCODE) {
-          $__default['default'](parent.querySelector(SELECTOR_DATA_TOGGLE$2)).trigger('focus');
-        }
-
-        $__default['default'](this).trigger('click');
-        return;
-      }
-
-      var items = [].slice.call(parent.querySelectorAll(SELECTOR_VISIBLE_ITEMS)).filter(function (item) {
-        return $__default['default'](item).is(':visible');
-      });
-
-      if (items.length === 0) {
-        return;
-      }
-
-      var index = items.indexOf(event.target);
-
-      if (event.which === ARROW_UP_KEYCODE && index > 0) {
-        // Up
-        index--;
-      }
-
-      if (event.which === ARROW_DOWN_KEYCODE && index < items.length - 1) {
-        // Down
-        index++;
-      }
-
-      if (index < 0) {
-        index = 0;
-      }
-
-      items[index].focus();
-    };
-
-    _createClass(Dropdown, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$4;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$2;
-      }
-    }, {
-      key: "DefaultType",
-      get: function get() {
-        return DefaultType$2;
-      }
-    }]);
-
-    return Dropdown;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $__default['default'](document).on(EVENT_KEYDOWN_DATA_API, SELECTOR_DATA_TOGGLE$2, Dropdown._dataApiKeydownHandler).on(EVENT_KEYDOWN_DATA_API, SELECTOR_MENU, Dropdown._dataApiKeydownHandler).on(EVENT_CLICK_DATA_API$4 + " " + EVENT_KEYUP_DATA_API, Dropdown._clearMenus).on(EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$2, function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    Dropdown._jQueryInterface.call($__default['default'](this), 'toggle');
-  }).on(EVENT_CLICK_DATA_API$4, SELECTOR_FORM_CHILD, function (e) {
-    e.stopPropagation();
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $__default['default'].fn[NAME$4] = Dropdown._jQueryInterface;
-  $__default['default'].fn[NAME$4].Constructor = Dropdown;
-
-  $__default['default'].fn[NAME$4].noConflict = function () {
-    $__default['default'].fn[NAME$4] = JQUERY_NO_CONFLICT$4;
-    return Dropdown._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$5 = 'modal';
-  var VERSION$5 = '4.6.0';
-  var DATA_KEY$5 = 'bs.modal';
-  var EVENT_KEY$5 = "." + DATA_KEY$5;
-  var DATA_API_KEY$5 = '.data-api';
-  var JQUERY_NO_CONFLICT$5 = $__default['default'].fn[NAME$5];
-  var ESCAPE_KEYCODE$1 = 27; // KeyboardEvent.which value for Escape (Esc) key
-
-  var Default$3 = {
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: modal.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#modals
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // MODAL CLASS DEFINITION
+  // ======================
+
+  var Modal = function (element, options) {
+    this.options = options
+    this.$body = $(document.body)
+    this.$element = $(element)
+    this.$dialog = this.$element.find('.modal-dialog')
+    this.$backdrop = null
+    this.isShown = null
+    this.originalBodyPad = null
+    this.scrollbarWidth = 0
+    this.ignoreBackdropClick = false
+    this.fixedContent = '.navbar-fixed-top, .navbar-fixed-bottom'
+
+    if (this.options.remote) {
+      this.$element
+        .find('.modal-content')
+        .load(this.options.remote, $.proxy(function () {
+          this.$element.trigger('loaded.bs.modal')
+        }, this))
+    }
+  }
+
+  Modal.VERSION = '3.4.1'
+
+  Modal.TRANSITION_DURATION = 300
+  Modal.BACKDROP_TRANSITION_DURATION = 150
+
+  Modal.DEFAULTS = {
     backdrop: true,
     keyboard: true,
-    focus: true,
     show: true
-  };
-  var DefaultType$3 = {
-    backdrop: '(boolean|string)',
-    keyboard: 'boolean',
-    focus: 'boolean',
-    show: 'boolean'
-  };
-  var EVENT_HIDE$2 = "hide" + EVENT_KEY$5;
-  var EVENT_HIDE_PREVENTED = "hidePrevented" + EVENT_KEY$5;
-  var EVENT_HIDDEN$2 = "hidden" + EVENT_KEY$5;
-  var EVENT_SHOW$2 = "show" + EVENT_KEY$5;
-  var EVENT_SHOWN$2 = "shown" + EVENT_KEY$5;
-  var EVENT_FOCUSIN = "focusin" + EVENT_KEY$5;
-  var EVENT_RESIZE = "resize" + EVENT_KEY$5;
-  var EVENT_CLICK_DISMISS = "click.dismiss" + EVENT_KEY$5;
-  var EVENT_KEYDOWN_DISMISS = "keydown.dismiss" + EVENT_KEY$5;
-  var EVENT_MOUSEUP_DISMISS = "mouseup.dismiss" + EVENT_KEY$5;
-  var EVENT_MOUSEDOWN_DISMISS = "mousedown.dismiss" + EVENT_KEY$5;
-  var EVENT_CLICK_DATA_API$5 = "click" + EVENT_KEY$5 + DATA_API_KEY$5;
-  var CLASS_NAME_SCROLLABLE = 'modal-dialog-scrollable';
-  var CLASS_NAME_SCROLLBAR_MEASURER = 'modal-scrollbar-measure';
-  var CLASS_NAME_BACKDROP = 'modal-backdrop';
-  var CLASS_NAME_OPEN = 'modal-open';
-  var CLASS_NAME_FADE$1 = 'fade';
-  var CLASS_NAME_SHOW$3 = 'show';
-  var CLASS_NAME_STATIC = 'modal-static';
-  var SELECTOR_DIALOG = '.modal-dialog';
-  var SELECTOR_MODAL_BODY = '.modal-body';
-  var SELECTOR_DATA_TOGGLE$3 = '[data-toggle="modal"]';
-  var SELECTOR_DATA_DISMISS = '[data-dismiss="modal"]';
-  var SELECTOR_FIXED_CONTENT = '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top';
-  var SELECTOR_STICKY_CONTENT = '.sticky-top';
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
+  }
 
-  var Modal = /*#__PURE__*/function () {
-    function Modal(element, config) {
-      this._config = this._getConfig(config);
-      this._element = element;
-      this._dialog = element.querySelector(SELECTOR_DIALOG);
-      this._backdrop = null;
-      this._isShown = false;
-      this._isBodyOverflowing = false;
-      this._ignoreBackdropClick = false;
-      this._isTransitioning = false;
-      this._scrollbarWidth = 0;
-    } // Getters
+  Modal.prototype.toggle = function (_relatedTarget) {
+    return this.isShown ? this.hide() : this.show(_relatedTarget)
+  }
 
+  Modal.prototype.show = function (_relatedTarget) {
+    var that = this
+    var e = $.Event('show.bs.modal', { relatedTarget: _relatedTarget })
 
-    var _proto = Modal.prototype;
+    this.$element.trigger(e)
 
-    // Public
-    _proto.toggle = function toggle(relatedTarget) {
-      return this._isShown ? this.hide() : this.show(relatedTarget);
-    };
+    if (this.isShown || e.isDefaultPrevented()) return
 
-    _proto.show = function show(relatedTarget) {
-      var _this = this;
+    this.isShown = true
 
-      if (this._isShown || this._isTransitioning) {
-        return;
+    this.checkScrollbar()
+    this.setScrollbar()
+    this.$body.addClass('modal-open')
+
+    this.escape()
+    this.resize()
+
+    this.$element.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
+
+    this.$dialog.on('mousedown.dismiss.bs.modal', function () {
+      that.$element.one('mouseup.dismiss.bs.modal', function (e) {
+        if ($(e.target).is(that.$element)) that.ignoreBackdropClick = true
+      })
+    })
+
+    this.backdrop(function () {
+      var transition = $.support.transition && that.$element.hasClass('fade')
+
+      if (!that.$element.parent().length) {
+        that.$element.appendTo(that.$body) // don't move modals dom position
       }
 
-      if ($__default['default'](this._element).hasClass(CLASS_NAME_FADE$1)) {
-        this._isTransitioning = true;
-      }
+      that.$element
+        .show()
+        .scrollTop(0)
 
-      var showEvent = $__default['default'].Event(EVENT_SHOW$2, {
-        relatedTarget: relatedTarget
-      });
-      $__default['default'](this._element).trigger(showEvent);
-
-      if (this._isShown || showEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      this._isShown = true;
-
-      this._checkScrollbar();
-
-      this._setScrollbar();
-
-      this._adjustDialog();
-
-      this._setEscapeEvent();
-
-      this._setResizeEvent();
-
-      $__default['default'](this._element).on(EVENT_CLICK_DISMISS, SELECTOR_DATA_DISMISS, function (event) {
-        return _this.hide(event);
-      });
-      $__default['default'](this._dialog).on(EVENT_MOUSEDOWN_DISMISS, function () {
-        $__default['default'](_this._element).one(EVENT_MOUSEUP_DISMISS, function (event) {
-          if ($__default['default'](event.target).is(_this._element)) {
-            _this._ignoreBackdropClick = true;
-          }
-        });
-      });
-
-      this._showBackdrop(function () {
-        return _this._showElement(relatedTarget);
-      });
-    };
-
-    _proto.hide = function hide(event) {
-      var _this2 = this;
-
-      if (event) {
-        event.preventDefault();
-      }
-
-      if (!this._isShown || this._isTransitioning) {
-        return;
-      }
-
-      var hideEvent = $__default['default'].Event(EVENT_HIDE$2);
-      $__default['default'](this._element).trigger(hideEvent);
-
-      if (!this._isShown || hideEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      this._isShown = false;
-      var transition = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1);
+      that.adjustDialog()
 
       if (transition) {
-        this._isTransitioning = true;
+        that.$element[0].offsetWidth // force reflow
       }
 
-      this._setEscapeEvent();
+      that.$element.addClass('in')
 
-      this._setResizeEvent();
+      that.enforceFocus()
 
-      $__default['default'](document).off(EVENT_FOCUSIN);
-      $__default['default'](this._element).removeClass(CLASS_NAME_SHOW$3);
-      $__default['default'](this._element).off(EVENT_CLICK_DISMISS);
-      $__default['default'](this._dialog).off(EVENT_MOUSEDOWN_DISMISS);
+      var e = $.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
 
-      if (transition) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-        $__default['default'](this._element).one(Util.TRANSITION_END, function (event) {
-          return _this2._hideModal(event);
-        }).emulateTransitionEnd(transitionDuration);
-      } else {
-        this._hideModal();
-      }
-    };
+      transition ?
+        that.$dialog // wait for modal to slide in
+          .one('bsTransitionEnd', function () {
+            that.$element.trigger('focus').trigger(e)
+          })
+          .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
+        that.$element.trigger('focus').trigger(e)
+    })
+  }
 
-    _proto.dispose = function dispose() {
-      [window, this._element, this._dialog].forEach(function (htmlElement) {
-        return $__default['default'](htmlElement).off(EVENT_KEY$5);
-      });
-      /**
-       * `document` has 2 events `EVENT_FOCUSIN` and `EVENT_CLICK_DATA_API`
-       * Do not move `document` in `htmlElements` array
-       * It will remove `EVENT_CLICK_DATA_API` event that should remain
-       */
+  Modal.prototype.hide = function (e) {
+    if (e) e.preventDefault()
 
-      $__default['default'](document).off(EVENT_FOCUSIN);
-      $__default['default'].removeData(this._element, DATA_KEY$5);
-      this._config = null;
-      this._element = null;
-      this._dialog = null;
-      this._backdrop = null;
-      this._isShown = null;
-      this._isBodyOverflowing = null;
-      this._ignoreBackdropClick = null;
-      this._isTransitioning = null;
-      this._scrollbarWidth = null;
-    };
+    e = $.Event('hide.bs.modal')
 
-    _proto.handleUpdate = function handleUpdate() {
-      this._adjustDialog();
-    } // Private
-    ;
+    this.$element.trigger(e)
 
-    _proto._getConfig = function _getConfig(config) {
-      config = _extends({}, Default$3, config);
-      Util.typeCheckConfig(NAME$5, config, DefaultType$3);
-      return config;
-    };
+    if (!this.isShown || e.isDefaultPrevented()) return
 
-    _proto._triggerBackdropTransition = function _triggerBackdropTransition() {
-      var _this3 = this;
+    this.isShown = false
 
-      var hideEventPrevented = $__default['default'].Event(EVENT_HIDE_PREVENTED);
-      $__default['default'](this._element).trigger(hideEventPrevented);
+    this.escape()
+    this.resize()
 
-      if (hideEventPrevented.isDefaultPrevented()) {
-        return;
-      }
+    $(document).off('focusin.bs.modal')
 
-      var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
+    this.$element
+      .removeClass('in')
+      .off('click.dismiss.bs.modal')
+      .off('mouseup.dismiss.bs.modal')
 
-      if (!isModalOverflowing) {
-        this._element.style.overflowY = 'hidden';
-      }
+    this.$dialog.off('mousedown.dismiss.bs.modal')
 
-      this._element.classList.add(CLASS_NAME_STATIC);
+    $.support.transition && this.$element.hasClass('fade') ?
+      this.$element
+        .one('bsTransitionEnd', $.proxy(this.hideModal, this))
+        .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
+      this.hideModal()
+  }
 
-      var modalTransitionDuration = Util.getTransitionDurationFromElement(this._dialog);
-      $__default['default'](this._element).off(Util.TRANSITION_END);
-      $__default['default'](this._element).one(Util.TRANSITION_END, function () {
-        _this3._element.classList.remove(CLASS_NAME_STATIC);
-
-        if (!isModalOverflowing) {
-          $__default['default'](_this3._element).one(Util.TRANSITION_END, function () {
-            _this3._element.style.overflowY = '';
-          }).emulateTransitionEnd(_this3._element, modalTransitionDuration);
+  Modal.prototype.enforceFocus = function () {
+    $(document)
+      .off('focusin.bs.modal') // guard against infinite focus loop
+      .on('focusin.bs.modal', $.proxy(function (e) {
+        if (document !== e.target &&
+          this.$element[0] !== e.target &&
+          !this.$element.has(e.target).length) {
+          this.$element.trigger('focus')
         }
-      }).emulateTransitionEnd(modalTransitionDuration);
-
-      this._element.focus();
-    };
-
-    _proto._showElement = function _showElement(relatedTarget) {
-      var _this4 = this;
-
-      var transition = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1);
-      var modalBody = this._dialog ? this._dialog.querySelector(SELECTOR_MODAL_BODY) : null;
-
-      if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
-        // Don't move modal's DOM position
-        document.body.appendChild(this._element);
-      }
-
-      this._element.style.display = 'block';
-
-      this._element.removeAttribute('aria-hidden');
-
-      this._element.setAttribute('aria-modal', true);
-
-      this._element.setAttribute('role', 'dialog');
-
-      if ($__default['default'](this._dialog).hasClass(CLASS_NAME_SCROLLABLE) && modalBody) {
-        modalBody.scrollTop = 0;
-      } else {
-        this._element.scrollTop = 0;
-      }
-
-      if (transition) {
-        Util.reflow(this._element);
-      }
-
-      $__default['default'](this._element).addClass(CLASS_NAME_SHOW$3);
-
-      if (this._config.focus) {
-        this._enforceFocus();
-      }
-
-      var shownEvent = $__default['default'].Event(EVENT_SHOWN$2, {
-        relatedTarget: relatedTarget
-      });
-
-      var transitionComplete = function transitionComplete() {
-        if (_this4._config.focus) {
-          _this4._element.focus();
-        }
-
-        _this4._isTransitioning = false;
-        $__default['default'](_this4._element).trigger(shownEvent);
-      };
-
-      if (transition) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._dialog);
-        $__default['default'](this._dialog).one(Util.TRANSITION_END, transitionComplete).emulateTransitionEnd(transitionDuration);
-      } else {
-        transitionComplete();
-      }
-    };
-
-    _proto._enforceFocus = function _enforceFocus() {
-      var _this5 = this;
-
-      $__default['default'](document).off(EVENT_FOCUSIN) // Guard against infinite focus loop
-      .on(EVENT_FOCUSIN, function (event) {
-        if (document !== event.target && _this5._element !== event.target && $__default['default'](_this5._element).has(event.target).length === 0) {
-          _this5._element.focus();
-        }
-      });
-    };
-
-    _proto._setEscapeEvent = function _setEscapeEvent() {
-      var _this6 = this;
-
-      if (this._isShown) {
-        $__default['default'](this._element).on(EVENT_KEYDOWN_DISMISS, function (event) {
-          if (_this6._config.keyboard && event.which === ESCAPE_KEYCODE$1) {
-            event.preventDefault();
-
-            _this6.hide();
-          } else if (!_this6._config.keyboard && event.which === ESCAPE_KEYCODE$1) {
-            _this6._triggerBackdropTransition();
-          }
-        });
-      } else if (!this._isShown) {
-        $__default['default'](this._element).off(EVENT_KEYDOWN_DISMISS);
-      }
-    };
-
-    _proto._setResizeEvent = function _setResizeEvent() {
-      var _this7 = this;
-
-      if (this._isShown) {
-        $__default['default'](window).on(EVENT_RESIZE, function (event) {
-          return _this7.handleUpdate(event);
-        });
-      } else {
-        $__default['default'](window).off(EVENT_RESIZE);
-      }
-    };
-
-    _proto._hideModal = function _hideModal() {
-      var _this8 = this;
-
-      this._element.style.display = 'none';
-
-      this._element.setAttribute('aria-hidden', true);
-
-      this._element.removeAttribute('aria-modal');
-
-      this._element.removeAttribute('role');
-
-      this._isTransitioning = false;
-
-      this._showBackdrop(function () {
-        $__default['default'](document.body).removeClass(CLASS_NAME_OPEN);
-
-        _this8._resetAdjustments();
-
-        _this8._resetScrollbar();
-
-        $__default['default'](_this8._element).trigger(EVENT_HIDDEN$2);
-      });
-    };
-
-    _proto._removeBackdrop = function _removeBackdrop() {
-      if (this._backdrop) {
-        $__default['default'](this._backdrop).remove();
-        this._backdrop = null;
-      }
-    };
-
-    _proto._showBackdrop = function _showBackdrop(callback) {
-      var _this9 = this;
-
-      var animate = $__default['default'](this._element).hasClass(CLASS_NAME_FADE$1) ? CLASS_NAME_FADE$1 : '';
-
-      if (this._isShown && this._config.backdrop) {
-        this._backdrop = document.createElement('div');
-        this._backdrop.className = CLASS_NAME_BACKDROP;
-
-        if (animate) {
-          this._backdrop.classList.add(animate);
-        }
-
-        $__default['default'](this._backdrop).appendTo(document.body);
-        $__default['default'](this._element).on(EVENT_CLICK_DISMISS, function (event) {
-          if (_this9._ignoreBackdropClick) {
-            _this9._ignoreBackdropClick = false;
-            return;
-          }
-
-          if (event.target !== event.currentTarget) {
-            return;
-          }
-
-          if (_this9._config.backdrop === 'static') {
-            _this9._triggerBackdropTransition();
-          } else {
-            _this9.hide();
-          }
-        });
-
-        if (animate) {
-          Util.reflow(this._backdrop);
-        }
-
-        $__default['default'](this._backdrop).addClass(CLASS_NAME_SHOW$3);
-
-        if (!callback) {
-          return;
-        }
-
-        if (!animate) {
-          callback();
-          return;
-        }
-
-        var backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
-        $__default['default'](this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
-      } else if (!this._isShown && this._backdrop) {
-        $__default['default'](this._backdrop).removeClass(CLASS_NAME_SHOW$3);
-
-        var callbackRemove = function callbackRemove() {
-          _this9._removeBackdrop();
-
-          if (callback) {
-            callback();
-          }
-        };
-
-        if ($__default['default'](this._element).hasClass(CLASS_NAME_FADE$1)) {
-          var _backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
-
-          $__default['default'](this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
-        } else {
-          callbackRemove();
-        }
-      } else if (callback) {
-        callback();
-      }
-    } // ----------------------------------------------------------------------
-    // the following methods are used to handle overflowing modals
-    // todo (fat): these should probably be refactored out of modal.js
-    // ----------------------------------------------------------------------
-    ;
-
-    _proto._adjustDialog = function _adjustDialog() {
-      var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
-
-      if (!this._isBodyOverflowing && isModalOverflowing) {
-        this._element.style.paddingLeft = this._scrollbarWidth + "px";
-      }
-
-      if (this._isBodyOverflowing && !isModalOverflowing) {
-        this._element.style.paddingRight = this._scrollbarWidth + "px";
-      }
-    };
-
-    _proto._resetAdjustments = function _resetAdjustments() {
-      this._element.style.paddingLeft = '';
-      this._element.style.paddingRight = '';
-    };
-
-    _proto._checkScrollbar = function _checkScrollbar() {
-      var rect = document.body.getBoundingClientRect();
-      this._isBodyOverflowing = Math.round(rect.left + rect.right) < window.innerWidth;
-      this._scrollbarWidth = this._getScrollbarWidth();
-    };
-
-    _proto._setScrollbar = function _setScrollbar() {
-      var _this10 = this;
-
-      if (this._isBodyOverflowing) {
-        // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
-        //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
-        var fixedContent = [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT));
-        var stickyContent = [].slice.call(document.querySelectorAll(SELECTOR_STICKY_CONTENT)); // Adjust fixed content padding
-
-        $__default['default'](fixedContent).each(function (index, element) {
-          var actualPadding = element.style.paddingRight;
-          var calculatedPadding = $__default['default'](element).css('padding-right');
-          $__default['default'](element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this10._scrollbarWidth + "px");
-        }); // Adjust sticky content margin
-
-        $__default['default'](stickyContent).each(function (index, element) {
-          var actualMargin = element.style.marginRight;
-          var calculatedMargin = $__default['default'](element).css('margin-right');
-          $__default['default'](element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this10._scrollbarWidth + "px");
-        }); // Adjust body padding
-
-        var actualPadding = document.body.style.paddingRight;
-        var calculatedPadding = $__default['default'](document.body).css('padding-right');
-        $__default['default'](document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
-      }
-
-      $__default['default'](document.body).addClass(CLASS_NAME_OPEN);
-    };
-
-    _proto._resetScrollbar = function _resetScrollbar() {
-      // Restore fixed content padding
-      var fixedContent = [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT));
-      $__default['default'](fixedContent).each(function (index, element) {
-        var padding = $__default['default'](element).data('padding-right');
-        $__default['default'](element).removeData('padding-right');
-        element.style.paddingRight = padding ? padding : '';
-      }); // Restore sticky content
-
-      var elements = [].slice.call(document.querySelectorAll("" + SELECTOR_STICKY_CONTENT));
-      $__default['default'](elements).each(function (index, element) {
-        var margin = $__default['default'](element).data('margin-right');
-
-        if (typeof margin !== 'undefined') {
-          $__default['default'](element).css('margin-right', margin).removeData('margin-right');
-        }
-      }); // Restore body padding
-
-      var padding = $__default['default'](document.body).data('padding-right');
-      $__default['default'](document.body).removeData('padding-right');
-      document.body.style.paddingRight = padding ? padding : '';
-    };
-
-    _proto._getScrollbarWidth = function _getScrollbarWidth() {
-      // thx d.walsh
-      var scrollDiv = document.createElement('div');
-      scrollDiv.className = CLASS_NAME_SCROLLBAR_MEASURER;
-      document.body.appendChild(scrollDiv);
-      var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
-      document.body.removeChild(scrollDiv);
-      return scrollbarWidth;
-    } // Static
-    ;
-
-    Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
-      return this.each(function () {
-        var data = $__default['default'](this).data(DATA_KEY$5);
-
-        var _config = _extends({}, Default$3, $__default['default'](this).data(), typeof config === 'object' && config ? config : {});
-
-        if (!data) {
-          data = new Modal(this, _config);
-          $__default['default'](this).data(DATA_KEY$5, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config](relatedTarget);
-        } else if (_config.show) {
-          data.show(relatedTarget);
-        }
-      });
-    };
-
-    _createClass(Modal, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$5;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$3;
-      }
-    }]);
-
-    return Modal;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $__default['default'](document).on(EVENT_CLICK_DATA_API$5, SELECTOR_DATA_TOGGLE$3, function (event) {
-    var _this11 = this;
-
-    var target;
-    var selector = Util.getSelectorFromElement(this);
-
-    if (selector) {
-      target = document.querySelector(selector);
+      }, this))
+  }
+
+  Modal.prototype.escape = function () {
+    if (this.isShown && this.options.keyboard) {
+      this.$element.on('keydown.dismiss.bs.modal', $.proxy(function (e) {
+        e.which == 27 && this.hide()
+      }, this))
+    } else if (!this.isShown) {
+      this.$element.off('keydown.dismiss.bs.modal')
     }
+  }
 
-    var config = $__default['default'](target).data(DATA_KEY$5) ? 'toggle' : _extends({}, $__default['default'](target).data(), $__default['default'](this).data());
-
-    if (this.tagName === 'A' || this.tagName === 'AREA') {
-      event.preventDefault();
+  Modal.prototype.resize = function () {
+    if (this.isShown) {
+      $(window).on('resize.bs.modal', $.proxy(this.handleUpdate, this))
+    } else {
+      $(window).off('resize.bs.modal')
     }
+  }
 
-    var $target = $__default['default'](target).one(EVENT_SHOW$2, function (showEvent) {
-      if (showEvent.isDefaultPrevented()) {
-        // Only register focus restorer if modal will actually get shown
-        return;
-      }
+  Modal.prototype.hideModal = function () {
+    var that = this
+    this.$element.hide()
+    this.backdrop(function () {
+      that.$body.removeClass('modal-open')
+      that.resetAdjustments()
+      that.resetScrollbar()
+      that.$element.trigger('hidden.bs.modal')
+    })
+  }
 
-      $target.one(EVENT_HIDDEN$2, function () {
-        if ($__default['default'](_this11).is(':visible')) {
-          _this11.focus();
+  Modal.prototype.removeBackdrop = function () {
+    this.$backdrop && this.$backdrop.remove()
+    this.$backdrop = null
+  }
+
+  Modal.prototype.backdrop = function (callback) {
+    var that = this
+    var animate = this.$element.hasClass('fade') ? 'fade' : ''
+
+    if (this.isShown && this.options.backdrop) {
+      var doAnimate = $.support.transition && animate
+
+      this.$backdrop = $(document.createElement('div'))
+        .addClass('modal-backdrop ' + animate)
+        .appendTo(this.$body)
+
+      this.$element.on('click.dismiss.bs.modal', $.proxy(function (e) {
+        if (this.ignoreBackdropClick) {
+          this.ignoreBackdropClick = false
+          return
         }
-      });
-    });
+        if (e.target !== e.currentTarget) return
+        this.options.backdrop == 'static'
+          ? this.$element[0].focus()
+          : this.hide()
+      }, this))
 
-    Modal._jQueryInterface.call($__default['default'](target), config, this);
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
+      if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
 
-  $__default['default'].fn[NAME$5] = Modal._jQueryInterface;
-  $__default['default'].fn[NAME$5].Constructor = Modal;
+      this.$backdrop.addClass('in')
 
-  $__default['default'].fn[NAME$5].noConflict = function () {
-    $__default['default'].fn[NAME$5] = JQUERY_NO_CONFLICT$5;
-    return Modal._jQueryInterface;
-  };
+      if (!callback) return
 
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.6.0): tools/sanitizer.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-  var uriAttrs = ['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href'];
-  var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
+      doAnimate ?
+        this.$backdrop
+          .one('bsTransitionEnd', callback)
+          .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
+        callback()
+
+    } else if (!this.isShown && this.$backdrop) {
+      this.$backdrop.removeClass('in')
+
+      var callbackRemove = function () {
+        that.removeBackdrop()
+        callback && callback()
+      }
+      $.support.transition && this.$element.hasClass('fade') ?
+        this.$backdrop
+          .one('bsTransitionEnd', callbackRemove)
+          .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
+        callbackRemove()
+
+    } else if (callback) {
+      callback()
+    }
+  }
+
+  // these following methods are used to handle overflowing modals
+
+  Modal.prototype.handleUpdate = function () {
+    this.adjustDialog()
+  }
+
+  Modal.prototype.adjustDialog = function () {
+    var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight
+
+    this.$element.css({
+      paddingLeft: !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
+      paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
+    })
+  }
+
+  Modal.prototype.resetAdjustments = function () {
+    this.$element.css({
+      paddingLeft: '',
+      paddingRight: ''
+    })
+  }
+
+  Modal.prototype.checkScrollbar = function () {
+    var fullWindowWidth = window.innerWidth
+    if (!fullWindowWidth) { // workaround for missing window.innerWidth in IE8
+      var documentElementRect = document.documentElement.getBoundingClientRect()
+      fullWindowWidth = documentElementRect.right - Math.abs(documentElementRect.left)
+    }
+    this.bodyIsOverflowing = document.body.clientWidth < fullWindowWidth
+    this.scrollbarWidth = this.measureScrollbar()
+  }
+
+  Modal.prototype.setScrollbar = function () {
+    var bodyPad = parseInt((this.$body.css('padding-right') || 0), 10)
+    this.originalBodyPad = document.body.style.paddingRight || ''
+    var scrollbarWidth = this.scrollbarWidth
+    if (this.bodyIsOverflowing) {
+      this.$body.css('padding-right', bodyPad + scrollbarWidth)
+      $(this.fixedContent).each(function (index, element) {
+        var actualPadding = element.style.paddingRight
+        var calculatedPadding = $(element).css('padding-right')
+        $(element)
+          .data('padding-right', actualPadding)
+          .css('padding-right', parseFloat(calculatedPadding) + scrollbarWidth + 'px')
+      })
+    }
+  }
+
+  Modal.prototype.resetScrollbar = function () {
+    this.$body.css('padding-right', this.originalBodyPad)
+    $(this.fixedContent).each(function (index, element) {
+      var padding = $(element).data('padding-right')
+      $(element).removeData('padding-right')
+      element.style.paddingRight = padding ? padding : ''
+    })
+  }
+
+  Modal.prototype.measureScrollbar = function () { // thx walsh
+    var scrollDiv = document.createElement('div')
+    scrollDiv.className = 'modal-scrollbar-measure'
+    this.$body.append(scrollDiv)
+    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
+    this.$body[0].removeChild(scrollDiv)
+    return scrollbarWidth
+  }
+
+
+  // MODAL PLUGIN DEFINITION
+  // =======================
+
+  function Plugin(option, _relatedTarget) {
+    return this.each(function () {
+      var $this = $(this)
+      var data = $this.data('bs.modal')
+      var options = $.extend({}, Modal.DEFAULTS, $this.data(), typeof option == 'object' && option)
+
+      if (!data) $this.data('bs.modal', (data = new Modal(this, options)))
+      if (typeof option == 'string') data[option](_relatedTarget)
+      else if (options.show) data.show(_relatedTarget)
+    })
+  }
+
+  var old = $.fn.modal
+
+  $.fn.modal = Plugin
+  $.fn.modal.Constructor = Modal
+
+
+  // MODAL NO CONFLICT
+  // =================
+
+  $.fn.modal.noConflict = function () {
+    $.fn.modal = old
+    return this
+  }
+
+
+  // MODAL DATA-API
+  // ==============
+
+  $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
+    var $this = $(this)
+    var href = $this.attr('href')
+    var target = $this.attr('data-target') ||
+      (href && href.replace(/.*(?=#[^\s]+$)/, '')) // strip for ie7
+
+    var $target = $(document).find(target)
+    var option = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
+
+    if ($this.is('a')) e.preventDefault()
+
+    $target.one('show.bs.modal', function (showEvent) {
+      if (showEvent.isDefaultPrevented()) return // only register focus restorer if modal will actually get shown
+      $target.one('hidden.bs.modal', function () {
+        $this.is(':visible') && $this.trigger('focus')
+      })
+    })
+    Plugin.call($target, option, this)
+  })
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: tooltip.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#tooltip
+ * Inspired by the original jQuery.tipsy by Jason Frame
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
++function ($) {
+  'use strict';
+
+  var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn']
+
+  var uriAttrs = [
+    'background',
+    'cite',
+    'href',
+    'itemtype',
+    'longdesc',
+    'poster',
+    'src',
+    'xlink:href'
+  ]
+
+  var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i
+
   var DefaultWhitelist = {
     // Global attributes allowed on any supplied element below.
     '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
@@ -35087,7 +34346,7 @@ function Header(props) {
     h5: [],
     h6: [],
     i: [],
-    img: ['src', 'srcset', 'alt', 'title', 'width', 'height'],
+    img: ['src', 'alt', 'title', 'width', 'height'],
     li: [],
     ol: [],
     p: [],
@@ -35100,1736 +34359,1242 @@ function Header(props) {
     strong: [],
     u: [],
     ul: []
-  };
+  }
+
   /**
    * A pattern that recognizes a commonly useful subset of URLs that are safe.
    *
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
+  var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi
 
-  var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^#&/:?]*(?:[#/?]|$))/gi;
   /**
    * A pattern that matches safe data URLs. Only matches image, video and audio types.
    *
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
-
-  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i;
+  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i
 
   function allowedAttribute(attr, allowedAttributeList) {
-    var attrName = attr.nodeName.toLowerCase();
+    var attrName = attr.nodeName.toLowerCase()
 
-    if (allowedAttributeList.indexOf(attrName) !== -1) {
-      if (uriAttrs.indexOf(attrName) !== -1) {
-        return Boolean(attr.nodeValue.match(SAFE_URL_PATTERN) || attr.nodeValue.match(DATA_URL_PATTERN));
+    if ($.inArray(attrName, allowedAttributeList) !== -1) {
+      if ($.inArray(attrName, uriAttrs) !== -1) {
+        return Boolean(attr.nodeValue.match(SAFE_URL_PATTERN) || attr.nodeValue.match(DATA_URL_PATTERN))
       }
 
-      return true;
+      return true
     }
 
-    var regExp = allowedAttributeList.filter(function (attrRegex) {
-      return attrRegex instanceof RegExp;
-    }); // Check if a regular expression validates the attribute.
+    var regExp = $(allowedAttributeList).filter(function (index, value) {
+      return value instanceof RegExp
+    })
 
-    for (var i = 0, len = regExp.length; i < len; i++) {
+    // Check if a regular expression validates the attribute.
+    for (var i = 0, l = regExp.length; i < l; i++) {
       if (attrName.match(regExp[i])) {
-        return true;
+        return true
       }
     }
 
-    return false;
+    return false
   }
 
   function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
     if (unsafeHtml.length === 0) {
-      return unsafeHtml;
+      return unsafeHtml
     }
 
     if (sanitizeFn && typeof sanitizeFn === 'function') {
-      return sanitizeFn(unsafeHtml);
+      return sanitizeFn(unsafeHtml)
     }
 
-    var domParser = new window.DOMParser();
-    var createdDocument = domParser.parseFromString(unsafeHtml, 'text/html');
-    var whitelistKeys = Object.keys(whiteList);
-    var elements = [].slice.call(createdDocument.body.querySelectorAll('*'));
+    // IE 8 and below don't support createHTMLDocument
+    if (!document.implementation || !document.implementation.createHTMLDocument) {
+      return unsafeHtml
+    }
 
-    var _loop = function _loop(i, len) {
-      var el = elements[i];
-      var elName = el.nodeName.toLowerCase();
+    var createdDocument = document.implementation.createHTMLDocument('sanitization')
+    createdDocument.body.innerHTML = unsafeHtml
 
-      if (whitelistKeys.indexOf(el.nodeName.toLowerCase()) === -1) {
-        el.parentNode.removeChild(el);
-        return "continue";
-      }
-
-      var attributeList = [].slice.call(el.attributes);
-      var whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || []);
-      attributeList.forEach(function (attr) {
-        if (!allowedAttribute(attr, whitelistedAttributes)) {
-          el.removeAttribute(attr.nodeName);
-        }
-      });
-    };
+    var whitelistKeys = $.map(whiteList, function (el, i) { return i })
+    var elements = $(createdDocument.body).find('*')
 
     for (var i = 0, len = elements.length; i < len; i++) {
-      var _ret = _loop(i);
+      var el = elements[i]
+      var elName = el.nodeName.toLowerCase()
 
-      if (_ret === "continue") continue;
+      if ($.inArray(elName, whitelistKeys) === -1) {
+        el.parentNode.removeChild(el)
+
+        continue
+      }
+
+      var attributeList = $.map(el.attributes, function (el) { return el })
+      var whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || [])
+
+      for (var j = 0, len2 = attributeList.length; j < len2; j++) {
+        if (!allowedAttribute(attributeList[j], whitelistedAttributes)) {
+          el.removeAttribute(attributeList[j].nodeName)
+        }
+      }
     }
 
-    return createdDocument.body.innerHTML;
+    return createdDocument.body.innerHTML
   }
 
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+  // TOOLTIP PUBLIC CLASS DEFINITION
+  // ===============================
 
-  var NAME$6 = 'tooltip';
-  var VERSION$6 = '4.6.0';
-  var DATA_KEY$6 = 'bs.tooltip';
-  var EVENT_KEY$6 = "." + DATA_KEY$6;
-  var JQUERY_NO_CONFLICT$6 = $__default['default'].fn[NAME$6];
-  var CLASS_PREFIX = 'bs-tooltip';
-  var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
-  var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn'];
-  var DefaultType$4 = {
-    animation: 'boolean',
-    template: 'string',
-    title: '(string|element|function)',
-    trigger: 'string',
-    delay: '(number|object)',
-    html: 'boolean',
-    selector: '(string|boolean)',
-    placement: '(string|function)',
-    offset: '(number|string|function)',
-    container: '(string|element|boolean)',
-    fallbackPlacement: '(string|array)',
-    boundary: '(string|element)',
-    customClass: '(string|function)',
-    sanitize: 'boolean',
-    sanitizeFn: '(null|function)',
-    whiteList: 'object',
-    popperConfig: '(null|object)'
-  };
-  var AttachmentMap = {
-    AUTO: 'auto',
-    TOP: 'top',
-    RIGHT: 'right',
-    BOTTOM: 'bottom',
-    LEFT: 'left'
-  };
-  var Default$4 = {
+  var Tooltip = function (element, options) {
+    this.type       = null
+    this.options    = null
+    this.enabled    = null
+    this.timeout    = null
+    this.hoverState = null
+    this.$element   = null
+    this.inState    = null
+
+    this.init('tooltip', element, options)
+  }
+
+  Tooltip.VERSION  = '3.4.1'
+
+  Tooltip.TRANSITION_DURATION = 150
+
+  Tooltip.DEFAULTS = {
     animation: true,
-    template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',
+    placement: 'top',
+    selector: false,
+    template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
     trigger: 'hover focus',
     title: '',
     delay: 0,
     html: false,
-    selector: false,
-    placement: 'top',
-    offset: 0,
     container: false,
-    fallbackPlacement: 'flip',
-    boundary: 'scrollParent',
-    customClass: '',
-    sanitize: true,
-    sanitizeFn: null,
-    whiteList: DefaultWhitelist,
-    popperConfig: null
-  };
-  var HOVER_STATE_SHOW = 'show';
-  var HOVER_STATE_OUT = 'out';
-  var Event = {
-    HIDE: "hide" + EVENT_KEY$6,
-    HIDDEN: "hidden" + EVENT_KEY$6,
-    SHOW: "show" + EVENT_KEY$6,
-    SHOWN: "shown" + EVENT_KEY$6,
-    INSERTED: "inserted" + EVENT_KEY$6,
-    CLICK: "click" + EVENT_KEY$6,
-    FOCUSIN: "focusin" + EVENT_KEY$6,
-    FOCUSOUT: "focusout" + EVENT_KEY$6,
-    MOUSEENTER: "mouseenter" + EVENT_KEY$6,
-    MOUSELEAVE: "mouseleave" + EVENT_KEY$6
-  };
-  var CLASS_NAME_FADE$2 = 'fade';
-  var CLASS_NAME_SHOW$4 = 'show';
-  var SELECTOR_TOOLTIP_INNER = '.tooltip-inner';
-  var SELECTOR_ARROW = '.arrow';
-  var TRIGGER_HOVER = 'hover';
-  var TRIGGER_FOCUS = 'focus';
-  var TRIGGER_CLICK = 'click';
-  var TRIGGER_MANUAL = 'manual';
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
+    viewport: {
+      selector: 'body',
+      padding: 0
+    },
+    sanitize : true,
+    sanitizeFn : null,
+    whiteList : DefaultWhitelist
+  }
 
-  var Tooltip = /*#__PURE__*/function () {
-    function Tooltip(element, config) {
-      if (typeof Popper__default['default'] === 'undefined') {
-        throw new TypeError('Bootstrap\'s tooltips require Popper (https://popper.js.org)');
-      } // private
+  Tooltip.prototype.init = function (type, element, options) {
+    this.enabled   = true
+    this.type      = type
+    this.$element  = $(element)
+    this.options   = this.getOptions(options)
+    this.$viewport = this.options.viewport && $(document).find($.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : (this.options.viewport.selector || this.options.viewport))
+    this.inState   = { click: false, hover: false, focus: false }
 
+    if (this.$element[0] instanceof document.constructor && !this.options.selector) {
+      throw new Error('`selector` option must be specified when initializing ' + this.type + ' on the window.document object!')
+    }
 
-      this._isEnabled = true;
-      this._timeout = 0;
-      this._hoverState = '';
-      this._activeTrigger = {};
-      this._popper = null; // Protected
+    var triggers = this.options.trigger.split(' ')
 
-      this.element = element;
-      this.config = this._getConfig(config);
-      this.tip = null;
+    for (var i = triggers.length; i--;) {
+      var trigger = triggers[i]
 
-      this._setListeners();
-    } // Getters
+      if (trigger == 'click') {
+        this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this))
+      } else if (trigger != 'manual') {
+        var eventIn  = trigger == 'hover' ? 'mouseenter' : 'focusin'
+        var eventOut = trigger == 'hover' ? 'mouseleave' : 'focusout'
 
+        this.$element.on(eventIn  + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
+        this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
+      }
+    }
 
-    var _proto = Tooltip.prototype;
+    this.options.selector ?
+      (this._options = $.extend({}, this.options, { trigger: 'manual', selector: '' })) :
+      this.fixTitle()
+  }
 
-    // Public
-    _proto.enable = function enable() {
-      this._isEnabled = true;
-    };
+  Tooltip.prototype.getDefaults = function () {
+    return Tooltip.DEFAULTS
+  }
 
-    _proto.disable = function disable() {
-      this._isEnabled = false;
-    };
+  Tooltip.prototype.getOptions = function (options) {
+    var dataAttributes = this.$element.data()
 
-    _proto.toggleEnabled = function toggleEnabled() {
-      this._isEnabled = !this._isEnabled;
-    };
+    for (var dataAttr in dataAttributes) {
+      if (dataAttributes.hasOwnProperty(dataAttr) && $.inArray(dataAttr, DISALLOWED_ATTRIBUTES) !== -1) {
+        delete dataAttributes[dataAttr]
+      }
+    }
 
-    _proto.toggle = function toggle(event) {
-      if (!this._isEnabled) {
-        return;
+    options = $.extend({}, this.getDefaults(), dataAttributes, options)
+
+    if (options.delay && typeof options.delay == 'number') {
+      options.delay = {
+        show: options.delay,
+        hide: options.delay
+      }
+    }
+
+    if (options.sanitize) {
+      options.template = sanitizeHtml(options.template, options.whiteList, options.sanitizeFn)
+    }
+
+    return options
+  }
+
+  Tooltip.prototype.getDelegateOptions = function () {
+    var options  = {}
+    var defaults = this.getDefaults()
+
+    this._options && $.each(this._options, function (key, value) {
+      if (defaults[key] != value) options[key] = value
+    })
+
+    return options
+  }
+
+  Tooltip.prototype.enter = function (obj) {
+    var self = obj instanceof this.constructor ?
+      obj : $(obj.currentTarget).data('bs.' + this.type)
+
+    if (!self) {
+      self = new this.constructor(obj.currentTarget, this.getDelegateOptions())
+      $(obj.currentTarget).data('bs.' + this.type, self)
+    }
+
+    if (obj instanceof $.Event) {
+      self.inState[obj.type == 'focusin' ? 'focus' : 'hover'] = true
+    }
+
+    if (self.tip().hasClass('in') || self.hoverState == 'in') {
+      self.hoverState = 'in'
+      return
+    }
+
+    clearTimeout(self.timeout)
+
+    self.hoverState = 'in'
+
+    if (!self.options.delay || !self.options.delay.show) return self.show()
+
+    self.timeout = setTimeout(function () {
+      if (self.hoverState == 'in') self.show()
+    }, self.options.delay.show)
+  }
+
+  Tooltip.prototype.isInStateTrue = function () {
+    for (var key in this.inState) {
+      if (this.inState[key]) return true
+    }
+
+    return false
+  }
+
+  Tooltip.prototype.leave = function (obj) {
+    var self = obj instanceof this.constructor ?
+      obj : $(obj.currentTarget).data('bs.' + this.type)
+
+    if (!self) {
+      self = new this.constructor(obj.currentTarget, this.getDelegateOptions())
+      $(obj.currentTarget).data('bs.' + this.type, self)
+    }
+
+    if (obj instanceof $.Event) {
+      self.inState[obj.type == 'focusout' ? 'focus' : 'hover'] = false
+    }
+
+    if (self.isInStateTrue()) return
+
+    clearTimeout(self.timeout)
+
+    self.hoverState = 'out'
+
+    if (!self.options.delay || !self.options.delay.hide) return self.hide()
+
+    self.timeout = setTimeout(function () {
+      if (self.hoverState == 'out') self.hide()
+    }, self.options.delay.hide)
+  }
+
+  Tooltip.prototype.show = function () {
+    var e = $.Event('show.bs.' + this.type)
+
+    if (this.hasContent() && this.enabled) {
+      this.$element.trigger(e)
+
+      var inDom = $.contains(this.$element[0].ownerDocument.documentElement, this.$element[0])
+      if (e.isDefaultPrevented() || !inDom) return
+      var that = this
+
+      var $tip = this.tip()
+
+      var tipId = this.getUID(this.type)
+
+      this.setContent()
+      $tip.attr('id', tipId)
+      this.$element.attr('aria-describedby', tipId)
+
+      if (this.options.animation) $tip.addClass('fade')
+
+      var placement = typeof this.options.placement == 'function' ?
+        this.options.placement.call(this, $tip[0], this.$element[0]) :
+        this.options.placement
+
+      var autoToken = /\s?auto?\s?/i
+      var autoPlace = autoToken.test(placement)
+      if (autoPlace) placement = placement.replace(autoToken, '') || 'top'
+
+      $tip
+        .detach()
+        .css({ top: 0, left: 0, display: 'block' })
+        .addClass(placement)
+        .data('bs.' + this.type, this)
+
+      this.options.container ? $tip.appendTo($(document).find(this.options.container)) : $tip.insertAfter(this.$element)
+      this.$element.trigger('inserted.bs.' + this.type)
+
+      var pos          = this.getPosition()
+      var actualWidth  = $tip[0].offsetWidth
+      var actualHeight = $tip[0].offsetHeight
+
+      if (autoPlace) {
+        var orgPlacement = placement
+        var viewportDim = this.getPosition(this.$viewport)
+
+        placement = placement == 'bottom' && pos.bottom + actualHeight > viewportDim.bottom ? 'top'    :
+                    placement == 'top'    && pos.top    - actualHeight < viewportDim.top    ? 'bottom' :
+                    placement == 'right'  && pos.right  + actualWidth  > viewportDim.width  ? 'left'   :
+                    placement == 'left'   && pos.left   - actualWidth  < viewportDim.left   ? 'right'  :
+                    placement
+
+        $tip
+          .removeClass(orgPlacement)
+          .addClass(placement)
       }
 
-      if (event) {
-        var dataKey = this.constructor.DATA_KEY;
-        var context = $__default['default'](event.currentTarget).data(dataKey);
+      var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight)
 
-        if (!context) {
-          context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-          $__default['default'](event.currentTarget).data(dataKey, context);
-        }
+      this.applyPlacement(calculatedOffset, placement)
 
-        context._activeTrigger.click = !context._activeTrigger.click;
+      var complete = function () {
+        var prevHoverState = that.hoverState
+        that.$element.trigger('shown.bs.' + that.type)
+        that.hoverState = null
 
-        if (context._isWithActiveTrigger()) {
-          context._enter(null, context);
-        } else {
-          context._leave(null, context);
-        }
-      } else {
-        if ($__default['default'](this.getTipElement()).hasClass(CLASS_NAME_SHOW$4)) {
-          this._leave(null, this);
-
-          return;
-        }
-
-        this._enter(null, this);
-      }
-    };
-
-    _proto.dispose = function dispose() {
-      clearTimeout(this._timeout);
-      $__default['default'].removeData(this.element, this.constructor.DATA_KEY);
-      $__default['default'](this.element).off(this.constructor.EVENT_KEY);
-      $__default['default'](this.element).closest('.modal').off('hide.bs.modal', this._hideModalHandler);
-
-      if (this.tip) {
-        $__default['default'](this.tip).remove();
+        if (prevHoverState == 'out') that.leave(that)
       }
 
-      this._isEnabled = null;
-      this._timeout = null;
-      this._hoverState = null;
-      this._activeTrigger = null;
+      $.support.transition && this.$tip.hasClass('fade') ?
+        $tip
+          .one('bsTransitionEnd', complete)
+          .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
+        complete()
+    }
+  }
 
-      if (this._popper) {
-        this._popper.destroy();
+  Tooltip.prototype.applyPlacement = function (offset, placement) {
+    var $tip   = this.tip()
+    var width  = $tip[0].offsetWidth
+    var height = $tip[0].offsetHeight
+
+    // manually read margins because getBoundingClientRect includes difference
+    var marginTop = parseInt($tip.css('margin-top'), 10)
+    var marginLeft = parseInt($tip.css('margin-left'), 10)
+
+    // we must check for NaN for ie 8/9
+    if (isNaN(marginTop))  marginTop  = 0
+    if (isNaN(marginLeft)) marginLeft = 0
+
+    offset.top  += marginTop
+    offset.left += marginLeft
+
+    // $.fn.offset doesn't round pixel values
+    // so we use setOffset directly with our own function B-0
+    $.offset.setOffset($tip[0], $.extend({
+      using: function (props) {
+        $tip.css({
+          top: Math.round(props.top),
+          left: Math.round(props.left)
+        })
+      }
+    }, offset), 0)
+
+    $tip.addClass('in')
+
+    // check to see if placing tip in new offset caused the tip to resize itself
+    var actualWidth  = $tip[0].offsetWidth
+    var actualHeight = $tip[0].offsetHeight
+
+    if (placement == 'top' && actualHeight != height) {
+      offset.top = offset.top + height - actualHeight
+    }
+
+    var delta = this.getViewportAdjustedDelta(placement, offset, actualWidth, actualHeight)
+
+    if (delta.left) offset.left += delta.left
+    else offset.top += delta.top
+
+    var isVertical          = /top|bottom/.test(placement)
+    var arrowDelta          = isVertical ? delta.left * 2 - width + actualWidth : delta.top * 2 - height + actualHeight
+    var arrowOffsetPosition = isVertical ? 'offsetWidth' : 'offsetHeight'
+
+    $tip.offset(offset)
+    this.replaceArrow(arrowDelta, $tip[0][arrowOffsetPosition], isVertical)
+  }
+
+  Tooltip.prototype.replaceArrow = function (delta, dimension, isVertical) {
+    this.arrow()
+      .css(isVertical ? 'left' : 'top', 50 * (1 - delta / dimension) + '%')
+      .css(isVertical ? 'top' : 'left', '')
+  }
+
+  Tooltip.prototype.setContent = function () {
+    var $tip  = this.tip()
+    var title = this.getTitle()
+
+    if (this.options.html) {
+      if (this.options.sanitize) {
+        title = sanitizeHtml(title, this.options.whiteList, this.options.sanitizeFn)
       }
 
-      this._popper = null;
-      this.element = null;
-      this.config = null;
-      this.tip = null;
-    };
+      $tip.find('.tooltip-inner').html(title)
+    } else {
+      $tip.find('.tooltip-inner').text(title)
+    }
 
-    _proto.show = function show() {
-      var _this = this;
+    $tip.removeClass('fade in top bottom left right')
+  }
 
-      if ($__default['default'](this.element).css('display') === 'none') {
-        throw new Error('Please use show on visible elements');
+  Tooltip.prototype.hide = function (callback) {
+    var that = this
+    var $tip = $(this.$tip)
+    var e    = $.Event('hide.bs.' + this.type)
+
+    function complete() {
+      if (that.hoverState != 'in') $tip.detach()
+      if (that.$element) { // TODO: Check whether guarding this code with this `if` is really necessary.
+        that.$element
+          .removeAttr('aria-describedby')
+          .trigger('hidden.bs.' + that.type)
       }
+      callback && callback()
+    }
 
-      var showEvent = $__default['default'].Event(this.constructor.Event.SHOW);
+    this.$element.trigger(e)
 
-      if (this.isWithContent() && this._isEnabled) {
-        $__default['default'](this.element).trigger(showEvent);
-        var shadowRoot = Util.findShadowRoot(this.element);
-        var isInTheDom = $__default['default'].contains(shadowRoot !== null ? shadowRoot : this.element.ownerDocument.documentElement, this.element);
+    if (e.isDefaultPrevented()) return
 
-        if (showEvent.isDefaultPrevented() || !isInTheDom) {
-          return;
-        }
+    $tip.removeClass('in')
 
-        var tip = this.getTipElement();
-        var tipId = Util.getUID(this.constructor.NAME);
-        tip.setAttribute('id', tipId);
-        this.element.setAttribute('aria-describedby', tipId);
-        this.setContent();
+    $.support.transition && $tip.hasClass('fade') ?
+      $tip
+        .one('bsTransitionEnd', complete)
+        .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
+      complete()
 
-        if (this.config.animation) {
-          $__default['default'](tip).addClass(CLASS_NAME_FADE$2);
-        }
+    this.hoverState = null
 
-        var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
+    return this
+  }
 
-        var attachment = this._getAttachment(placement);
+  Tooltip.prototype.fixTitle = function () {
+    var $e = this.$element
+    if ($e.attr('title') || typeof $e.attr('data-original-title') != 'string') {
+      $e.attr('data-original-title', $e.attr('title') || '').attr('title', '')
+    }
+  }
 
-        this.addAttachmentClass(attachment);
+  Tooltip.prototype.hasContent = function () {
+    return this.getTitle()
+  }
 
-        var container = this._getContainer();
+  Tooltip.prototype.getPosition = function ($element) {
+    $element   = $element || this.$element
 
-        $__default['default'](tip).data(this.constructor.DATA_KEY, this);
+    var el     = $element[0]
+    var isBody = el.tagName == 'BODY'
 
-        if (!$__default['default'].contains(this.element.ownerDocument.documentElement, this.tip)) {
-          $__default['default'](tip).appendTo(container);
-        }
+    var elRect    = el.getBoundingClientRect()
+    if (elRect.width == null) {
+      // width and height are missing in IE8, so compute them manually; see https://github.com/twbs/bootstrap/issues/14093
+      elRect = $.extend({}, elRect, { width: elRect.right - elRect.left, height: elRect.bottom - elRect.top })
+    }
+    var isSvg = window.SVGElement && el instanceof window.SVGElement
+    // Avoid using $.offset() on SVGs since it gives incorrect results in jQuery 3.
+    // See https://github.com/twbs/bootstrap/issues/20280
+    var elOffset  = isBody ? { top: 0, left: 0 } : (isSvg ? null : $element.offset())
+    var scroll    = { scroll: isBody ? document.documentElement.scrollTop || document.body.scrollTop : $element.scrollTop() }
+    var outerDims = isBody ? { width: $(window).width(), height: $(window).height() } : null
 
-        $__default['default'](this.element).trigger(this.constructor.Event.INSERTED);
-        this._popper = new Popper__default['default'](this.element, tip, this._getPopperConfig(attachment));
-        $__default['default'](tip).addClass(CLASS_NAME_SHOW$4);
-        $__default['default'](tip).addClass(this.config.customClass); // If this is a touch-enabled device we add extra
-        // empty mouseover listeners to the body's immediate children;
-        // only needed because of broken event delegation on iOS
-        // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
+    return $.extend({}, elRect, scroll, outerDims, elOffset)
+  }
 
-        if ('ontouchstart' in document.documentElement) {
-          $__default['default'](document.body).children().on('mouseover', null, $__default['default'].noop);
-        }
+  Tooltip.prototype.getCalculatedOffset = function (placement, pos, actualWidth, actualHeight) {
+    return placement == 'bottom' ? { top: pos.top + pos.height,   left: pos.left + pos.width / 2 - actualWidth / 2 } :
+           placement == 'top'    ? { top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2 } :
+           placement == 'left'   ? { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth } :
+        /* placement == 'right' */ { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width }
 
-        var complete = function complete() {
-          if (_this.config.animation) {
-            _this._fixTransition();
-          }
+  }
 
-          var prevHoverState = _this._hoverState;
-          _this._hoverState = null;
-          $__default['default'](_this.element).trigger(_this.constructor.Event.SHOWN);
+  Tooltip.prototype.getViewportAdjustedDelta = function (placement, pos, actualWidth, actualHeight) {
+    var delta = { top: 0, left: 0 }
+    if (!this.$viewport) return delta
 
-          if (prevHoverState === HOVER_STATE_OUT) {
-            _this._leave(null, _this);
-          }
-        };
+    var viewportPadding = this.options.viewport && this.options.viewport.padding || 0
+    var viewportDimensions = this.getPosition(this.$viewport)
 
-        if ($__default['default'](this.tip).hasClass(CLASS_NAME_FADE$2)) {
-          var transitionDuration = Util.getTransitionDurationFromElement(this.tip);
-          $__default['default'](this.tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-        } else {
-          complete();
-        }
+    if (/right|left/.test(placement)) {
+      var topEdgeOffset    = pos.top - viewportPadding - viewportDimensions.scroll
+      var bottomEdgeOffset = pos.top + viewportPadding - viewportDimensions.scroll + actualHeight
+      if (topEdgeOffset < viewportDimensions.top) { // top overflow
+        delta.top = viewportDimensions.top - topEdgeOffset
+      } else if (bottomEdgeOffset > viewportDimensions.top + viewportDimensions.height) { // bottom overflow
+        delta.top = viewportDimensions.top + viewportDimensions.height - bottomEdgeOffset
       }
-    };
-
-    _proto.hide = function hide(callback) {
-      var _this2 = this;
-
-      var tip = this.getTipElement();
-      var hideEvent = $__default['default'].Event(this.constructor.Event.HIDE);
-
-      var complete = function complete() {
-        if (_this2._hoverState !== HOVER_STATE_SHOW && tip.parentNode) {
-          tip.parentNode.removeChild(tip);
-        }
-
-        _this2._cleanTipClass();
-
-        _this2.element.removeAttribute('aria-describedby');
-
-        $__default['default'](_this2.element).trigger(_this2.constructor.Event.HIDDEN);
-
-        if (_this2._popper !== null) {
-          _this2._popper.destroy();
-        }
-
-        if (callback) {
-          callback();
-        }
-      };
-
-      $__default['default'](this.element).trigger(hideEvent);
-
-      if (hideEvent.isDefaultPrevented()) {
-        return;
+    } else {
+      var leftEdgeOffset  = pos.left - viewportPadding
+      var rightEdgeOffset = pos.left + viewportPadding + actualWidth
+      if (leftEdgeOffset < viewportDimensions.left) { // left overflow
+        delta.left = viewportDimensions.left - leftEdgeOffset
+      } else if (rightEdgeOffset > viewportDimensions.right) { // right overflow
+        delta.left = viewportDimensions.left + viewportDimensions.width - rightEdgeOffset
       }
+    }
 
-      $__default['default'](tip).removeClass(CLASS_NAME_SHOW$4); // If this is a touch-enabled device we remove the extra
-      // empty mouseover listeners we added for iOS support
+    return delta
+  }
 
-      if ('ontouchstart' in document.documentElement) {
-        $__default['default'](document.body).children().off('mouseover', null, $__default['default'].noop);
+  Tooltip.prototype.getTitle = function () {
+    var title
+    var $e = this.$element
+    var o  = this.options
+
+    title = $e.attr('data-original-title')
+      || (typeof o.title == 'function' ? o.title.call($e[0]) :  o.title)
+
+    return title
+  }
+
+  Tooltip.prototype.getUID = function (prefix) {
+    do prefix += ~~(Math.random() * 1000000)
+    while (document.getElementById(prefix))
+    return prefix
+  }
+
+  Tooltip.prototype.tip = function () {
+    if (!this.$tip) {
+      this.$tip = $(this.options.template)
+      if (this.$tip.length != 1) {
+        throw new Error(this.type + ' `template` option must consist of exactly 1 top-level element!')
       }
+    }
+    return this.$tip
+  }
 
-      this._activeTrigger[TRIGGER_CLICK] = false;
-      this._activeTrigger[TRIGGER_FOCUS] = false;
-      this._activeTrigger[TRIGGER_HOVER] = false;
+  Tooltip.prototype.arrow = function () {
+    return (this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow'))
+  }
 
-      if ($__default['default'](this.tip).hasClass(CLASS_NAME_FADE$2)) {
-        var transitionDuration = Util.getTransitionDurationFromElement(tip);
-        $__default['default'](tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      } else {
-        complete();
+  Tooltip.prototype.enable = function () {
+    this.enabled = true
+  }
+
+  Tooltip.prototype.disable = function () {
+    this.enabled = false
+  }
+
+  Tooltip.prototype.toggleEnabled = function () {
+    this.enabled = !this.enabled
+  }
+
+  Tooltip.prototype.toggle = function (e) {
+    var self = this
+    if (e) {
+      self = $(e.currentTarget).data('bs.' + this.type)
+      if (!self) {
+        self = new this.constructor(e.currentTarget, this.getDelegateOptions())
+        $(e.currentTarget).data('bs.' + this.type, self)
       }
+    }
 
-      this._hoverState = '';
-    };
+    if (e) {
+      self.inState.click = !self.inState.click
+      if (self.isInStateTrue()) self.enter(self)
+      else self.leave(self)
+    } else {
+      self.tip().hasClass('in') ? self.leave(self) : self.enter(self)
+    }
+  }
 
-    _proto.update = function update() {
-      if (this._popper !== null) {
-        this._popper.scheduleUpdate();
+  Tooltip.prototype.destroy = function () {
+    var that = this
+    clearTimeout(this.timeout)
+    this.hide(function () {
+      that.$element.off('.' + that.type).removeData('bs.' + that.type)
+      if (that.$tip) {
+        that.$tip.detach()
       }
-    } // Protected
-    ;
-
-    _proto.isWithContent = function isWithContent() {
-      return Boolean(this.getTitle());
-    };
-
-    _proto.addAttachmentClass = function addAttachmentClass(attachment) {
-      $__default['default'](this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
-    };
-
-    _proto.getTipElement = function getTipElement() {
-      this.tip = this.tip || $__default['default'](this.config.template)[0];
-      return this.tip;
-    };
-
-    _proto.setContent = function setContent() {
-      var tip = this.getTipElement();
-      this.setElementContent($__default['default'](tip.querySelectorAll(SELECTOR_TOOLTIP_INNER)), this.getTitle());
-      $__default['default'](tip).removeClass(CLASS_NAME_FADE$2 + " " + CLASS_NAME_SHOW$4);
-    };
-
-    _proto.setElementContent = function setElementContent($element, content) {
-      if (typeof content === 'object' && (content.nodeType || content.jquery)) {
-        // Content is a DOM node or a jQuery
-        if (this.config.html) {
-          if (!$__default['default'](content).parent().is($element)) {
-            $element.empty().append(content);
-          }
-        } else {
-          $element.text($__default['default'](content).text());
-        }
-
-        return;
-      }
-
-      if (this.config.html) {
-        if (this.config.sanitize) {
-          content = sanitizeHtml(content, this.config.whiteList, this.config.sanitizeFn);
-        }
-
-        $element.html(content);
-      } else {
-        $element.text(content);
-      }
-    };
-
-    _proto.getTitle = function getTitle() {
-      var title = this.element.getAttribute('data-original-title');
-
-      if (!title) {
-        title = typeof this.config.title === 'function' ? this.config.title.call(this.element) : this.config.title;
-      }
-
-      return title;
-    } // Private
-    ;
-
-    _proto._getPopperConfig = function _getPopperConfig(attachment) {
-      var _this3 = this;
-
-      var defaultBsConfig = {
-        placement: attachment,
-        modifiers: {
-          offset: this._getOffset(),
-          flip: {
-            behavior: this.config.fallbackPlacement
-          },
-          arrow: {
-            element: SELECTOR_ARROW
-          },
-          preventOverflow: {
-            boundariesElement: this.config.boundary
-          }
-        },
-        onCreate: function onCreate(data) {
-          if (data.originalPlacement !== data.placement) {
-            _this3._handlePopperPlacementChange(data);
-          }
-        },
-        onUpdate: function onUpdate(data) {
-          return _this3._handlePopperPlacementChange(data);
-        }
-      };
-      return _extends({}, defaultBsConfig, this.config.popperConfig);
-    };
-
-    _proto._getOffset = function _getOffset() {
-      var _this4 = this;
-
-      var offset = {};
-
-      if (typeof this.config.offset === 'function') {
-        offset.fn = function (data) {
-          data.offsets = _extends({}, data.offsets, _this4.config.offset(data.offsets, _this4.element) || {});
-          return data;
-        };
-      } else {
-        offset.offset = this.config.offset;
-      }
-
-      return offset;
-    };
-
-    _proto._getContainer = function _getContainer() {
-      if (this.config.container === false) {
-        return document.body;
-      }
-
-      if (Util.isElement(this.config.container)) {
-        return $__default['default'](this.config.container);
-      }
-
-      return $__default['default'](document).find(this.config.container);
-    };
-
-    _proto._getAttachment = function _getAttachment(placement) {
-      return AttachmentMap[placement.toUpperCase()];
-    };
-
-    _proto._setListeners = function _setListeners() {
-      var _this5 = this;
-
-      var triggers = this.config.trigger.split(' ');
-      triggers.forEach(function (trigger) {
-        if (trigger === 'click') {
-          $__default['default'](_this5.element).on(_this5.constructor.Event.CLICK, _this5.config.selector, function (event) {
-            return _this5.toggle(event);
-          });
-        } else if (trigger !== TRIGGER_MANUAL) {
-          var eventIn = trigger === TRIGGER_HOVER ? _this5.constructor.Event.MOUSEENTER : _this5.constructor.Event.FOCUSIN;
-          var eventOut = trigger === TRIGGER_HOVER ? _this5.constructor.Event.MOUSELEAVE : _this5.constructor.Event.FOCUSOUT;
-          $__default['default'](_this5.element).on(eventIn, _this5.config.selector, function (event) {
-            return _this5._enter(event);
-          }).on(eventOut, _this5.config.selector, function (event) {
-            return _this5._leave(event);
-          });
-        }
-      });
-
-      this._hideModalHandler = function () {
-        if (_this5.element) {
-          _this5.hide();
-        }
-      };
-
-      $__default['default'](this.element).closest('.modal').on('hide.bs.modal', this._hideModalHandler);
-
-      if (this.config.selector) {
-        this.config = _extends({}, this.config, {
-          trigger: 'manual',
-          selector: ''
-        });
-      } else {
-        this._fixTitle();
-      }
-    };
-
-    _proto._fixTitle = function _fixTitle() {
-      var titleType = typeof this.element.getAttribute('data-original-title');
-
-      if (this.element.getAttribute('title') || titleType !== 'string') {
-        this.element.setAttribute('data-original-title', this.element.getAttribute('title') || '');
-        this.element.setAttribute('title', '');
-      }
-    };
-
-    _proto._enter = function _enter(event, context) {
-      var dataKey = this.constructor.DATA_KEY;
-      context = context || $__default['default'](event.currentTarget).data(dataKey);
-
-      if (!context) {
-        context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-        $__default['default'](event.currentTarget).data(dataKey, context);
-      }
-
-      if (event) {
-        context._activeTrigger[event.type === 'focusin' ? TRIGGER_FOCUS : TRIGGER_HOVER] = true;
-      }
-
-      if ($__default['default'](context.getTipElement()).hasClass(CLASS_NAME_SHOW$4) || context._hoverState === HOVER_STATE_SHOW) {
-        context._hoverState = HOVER_STATE_SHOW;
-        return;
-      }
-
-      clearTimeout(context._timeout);
-      context._hoverState = HOVER_STATE_SHOW;
-
-      if (!context.config.delay || !context.config.delay.show) {
-        context.show();
-        return;
-      }
-
-      context._timeout = setTimeout(function () {
-        if (context._hoverState === HOVER_STATE_SHOW) {
-          context.show();
-        }
-      }, context.config.delay.show);
-    };
-
-    _proto._leave = function _leave(event, context) {
-      var dataKey = this.constructor.DATA_KEY;
-      context = context || $__default['default'](event.currentTarget).data(dataKey);
-
-      if (!context) {
-        context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-        $__default['default'](event.currentTarget).data(dataKey, context);
-      }
-
-      if (event) {
-        context._activeTrigger[event.type === 'focusout' ? TRIGGER_FOCUS : TRIGGER_HOVER] = false;
-      }
-
-      if (context._isWithActiveTrigger()) {
-        return;
-      }
-
-      clearTimeout(context._timeout);
-      context._hoverState = HOVER_STATE_OUT;
-
-      if (!context.config.delay || !context.config.delay.hide) {
-        context.hide();
-        return;
-      }
-
-      context._timeout = setTimeout(function () {
-        if (context._hoverState === HOVER_STATE_OUT) {
-          context.hide();
-        }
-      }, context.config.delay.hide);
-    };
-
-    _proto._isWithActiveTrigger = function _isWithActiveTrigger() {
-      for (var trigger in this._activeTrigger) {
-        if (this._activeTrigger[trigger]) {
-          return true;
-        }
-      }
-
-      return false;
-    };
-
-    _proto._getConfig = function _getConfig(config) {
-      var dataAttributes = $__default['default'](this.element).data();
-      Object.keys(dataAttributes).forEach(function (dataAttr) {
-        if (DISALLOWED_ATTRIBUTES.indexOf(dataAttr) !== -1) {
-          delete dataAttributes[dataAttr];
-        }
-      });
-      config = _extends({}, this.constructor.Default, dataAttributes, typeof config === 'object' && config ? config : {});
-
-      if (typeof config.delay === 'number') {
-        config.delay = {
-          show: config.delay,
-          hide: config.delay
-        };
-      }
-
-      if (typeof config.title === 'number') {
-        config.title = config.title.toString();
-      }
-
-      if (typeof config.content === 'number') {
-        config.content = config.content.toString();
-      }
-
-      Util.typeCheckConfig(NAME$6, config, this.constructor.DefaultType);
-
-      if (config.sanitize) {
-        config.template = sanitizeHtml(config.template, config.whiteList, config.sanitizeFn);
-      }
-
-      return config;
-    };
-
-    _proto._getDelegateConfig = function _getDelegateConfig() {
-      var config = {};
-
-      if (this.config) {
-        for (var key in this.config) {
-          if (this.constructor.Default[key] !== this.config[key]) {
-            config[key] = this.config[key];
-          }
-        }
-      }
-
-      return config;
-    };
-
-    _proto._cleanTipClass = function _cleanTipClass() {
-      var $tip = $__default['default'](this.getTipElement());
-      var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
-
-      if (tabClass !== null && tabClass.length) {
-        $tip.removeClass(tabClass.join(''));
-      }
-    };
-
-    _proto._handlePopperPlacementChange = function _handlePopperPlacementChange(popperData) {
-      this.tip = popperData.instance.popper;
-
-      this._cleanTipClass();
-
-      this.addAttachmentClass(this._getAttachment(popperData.placement));
-    };
-
-    _proto._fixTransition = function _fixTransition() {
-      var tip = this.getTipElement();
-      var initConfigAnimation = this.config.animation;
-
-      if (tip.getAttribute('x-placement') !== null) {
-        return;
-      }
-
-      $__default['default'](tip).removeClass(CLASS_NAME_FADE$2);
-      this.config.animation = false;
-      this.hide();
-      this.show();
-      this.config.animation = initConfigAnimation;
-    } // Static
-    ;
-
-    Tooltip._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var $element = $__default['default'](this);
-        var data = $element.data(DATA_KEY$6);
-
-        var _config = typeof config === 'object' && config;
-
-        if (!data && /dispose|hide/.test(config)) {
-          return;
-        }
-
-        if (!data) {
-          data = new Tooltip(this, _config);
-          $element.data(DATA_KEY$6, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Tooltip, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$6;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$4;
-      }
-    }, {
-      key: "NAME",
-      get: function get() {
-        return NAME$6;
-      }
-    }, {
-      key: "DATA_KEY",
-      get: function get() {
-        return DATA_KEY$6;
-      }
-    }, {
-      key: "Event",
-      get: function get() {
-        return Event;
-      }
-    }, {
-      key: "EVENT_KEY",
-      get: function get() {
-        return EVENT_KEY$6;
-      }
-    }, {
-      key: "DefaultType",
-      get: function get() {
-        return DefaultType$4;
-      }
-    }]);
-
-    return Tooltip;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-
-  $__default['default'].fn[NAME$6] = Tooltip._jQueryInterface;
-  $__default['default'].fn[NAME$6].Constructor = Tooltip;
-
-  $__default['default'].fn[NAME$6].noConflict = function () {
-    $__default['default'].fn[NAME$6] = JQUERY_NO_CONFLICT$6;
-    return Tooltip._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$7 = 'popover';
-  var VERSION$7 = '4.6.0';
-  var DATA_KEY$7 = 'bs.popover';
-  var EVENT_KEY$7 = "." + DATA_KEY$7;
-  var JQUERY_NO_CONFLICT$7 = $__default['default'].fn[NAME$7];
-  var CLASS_PREFIX$1 = 'bs-popover';
-  var BSCLS_PREFIX_REGEX$1 = new RegExp("(^|\\s)" + CLASS_PREFIX$1 + "\\S+", 'g');
-
-  var Default$5 = _extends({}, Tooltip.Default, {
+      that.$tip = null
+      that.$arrow = null
+      that.$viewport = null
+      that.$element = null
+    })
+  }
+
+  Tooltip.prototype.sanitizeHtml = function (unsafeHtml) {
+    return sanitizeHtml(unsafeHtml, this.options.whiteList, this.options.sanitizeFn)
+  }
+
+  // TOOLTIP PLUGIN DEFINITION
+  // =========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.tooltip')
+      var options = typeof option == 'object' && option
+
+      if (!data && /destroy|hide/.test(option)) return
+      if (!data) $this.data('bs.tooltip', (data = new Tooltip(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.tooltip
+
+  $.fn.tooltip             = Plugin
+  $.fn.tooltip.Constructor = Tooltip
+
+
+  // TOOLTIP NO CONFLICT
+  // ===================
+
+  $.fn.tooltip.noConflict = function () {
+    $.fn.tooltip = old
+    return this
+  }
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: popover.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#popovers
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // POPOVER PUBLIC CLASS DEFINITION
+  // ===============================
+
+  var Popover = function (element, options) {
+    this.init('popover', element, options)
+  }
+
+  if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
+
+  Popover.VERSION  = '3.4.1'
+
+  Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
     trigger: 'click',
     content: '',
-    template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
-  });
+    template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+  })
 
-  var DefaultType$5 = _extends({}, Tooltip.DefaultType, {
-    content: '(string|element|function)'
-  });
 
-  var CLASS_NAME_FADE$3 = 'fade';
-  var CLASS_NAME_SHOW$5 = 'show';
-  var SELECTOR_TITLE = '.popover-header';
-  var SELECTOR_CONTENT = '.popover-body';
-  var Event$1 = {
-    HIDE: "hide" + EVENT_KEY$7,
-    HIDDEN: "hidden" + EVENT_KEY$7,
-    SHOW: "show" + EVENT_KEY$7,
-    SHOWN: "shown" + EVENT_KEY$7,
-    INSERTED: "inserted" + EVENT_KEY$7,
-    CLICK: "click" + EVENT_KEY$7,
-    FOCUSIN: "focusin" + EVENT_KEY$7,
-    FOCUSOUT: "focusout" + EVENT_KEY$7,
-    MOUSEENTER: "mouseenter" + EVENT_KEY$7,
-    MOUSELEAVE: "mouseleave" + EVENT_KEY$7
-  };
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
+  // NOTE: POPOVER EXTENDS tooltip.js
+  // ================================
 
-  var Popover = /*#__PURE__*/function (_Tooltip) {
-    _inheritsLoose(Popover, _Tooltip);
+  Popover.prototype = $.extend({}, $.fn.tooltip.Constructor.prototype)
 
-    function Popover() {
-      return _Tooltip.apply(this, arguments) || this;
+  Popover.prototype.constructor = Popover
+
+  Popover.prototype.getDefaults = function () {
+    return Popover.DEFAULTS
+  }
+
+  Popover.prototype.setContent = function () {
+    var $tip    = this.tip()
+    var title   = this.getTitle()
+    var content = this.getContent()
+
+    if (this.options.html) {
+      var typeContent = typeof content
+
+      if (this.options.sanitize) {
+        title = this.sanitizeHtml(title)
+
+        if (typeContent === 'string') {
+          content = this.sanitizeHtml(content)
+        }
+      }
+
+      $tip.find('.popover-title').html(title)
+      $tip.find('.popover-content').children().detach().end()[
+        typeContent === 'string' ? 'html' : 'append'
+      ](content)
+    } else {
+      $tip.find('.popover-title').text(title)
+      $tip.find('.popover-content').children().detach().end().text(content)
     }
 
-    var _proto = Popover.prototype;
-
-    // Overrides
-    _proto.isWithContent = function isWithContent() {
-      return this.getTitle() || this._getContent();
-    };
-
-    _proto.addAttachmentClass = function addAttachmentClass(attachment) {
-      $__default['default'](this.getTipElement()).addClass(CLASS_PREFIX$1 + "-" + attachment);
-    };
-
-    _proto.getTipElement = function getTipElement() {
-      this.tip = this.tip || $__default['default'](this.config.template)[0];
-      return this.tip;
-    };
-
-    _proto.setContent = function setContent() {
-      var $tip = $__default['default'](this.getTipElement()); // We use append for html objects to maintain js events
-
-      this.setElementContent($tip.find(SELECTOR_TITLE), this.getTitle());
-
-      var content = this._getContent();
-
-      if (typeof content === 'function') {
-        content = content.call(this.element);
-      }
-
-      this.setElementContent($tip.find(SELECTOR_CONTENT), content);
-      $tip.removeClass(CLASS_NAME_FADE$3 + " " + CLASS_NAME_SHOW$5);
-    } // Private
-    ;
-
-    _proto._getContent = function _getContent() {
-      return this.element.getAttribute('data-content') || this.config.content;
-    };
-
-    _proto._cleanTipClass = function _cleanTipClass() {
-      var $tip = $__default['default'](this.getTipElement());
-      var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX$1);
-
-      if (tabClass !== null && tabClass.length > 0) {
-        $tip.removeClass(tabClass.join(''));
-      }
-    } // Static
-    ;
-
-    Popover._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $__default['default'](this).data(DATA_KEY$7);
-
-        var _config = typeof config === 'object' ? config : null;
-
-        if (!data && /dispose|hide/.test(config)) {
-          return;
-        }
-
-        if (!data) {
-          data = new Popover(this, _config);
-          $__default['default'](this).data(DATA_KEY$7, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Popover, null, [{
-      key: "VERSION",
-      // Getters
-      get: function get() {
-        return VERSION$7;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$5;
-      }
-    }, {
-      key: "NAME",
-      get: function get() {
-        return NAME$7;
-      }
-    }, {
-      key: "DATA_KEY",
-      get: function get() {
-        return DATA_KEY$7;
-      }
-    }, {
-      key: "Event",
-      get: function get() {
-        return Event$1;
-      }
-    }, {
-      key: "EVENT_KEY",
-      get: function get() {
-        return EVENT_KEY$7;
-      }
-    }, {
-      key: "DefaultType",
-      get: function get() {
-        return DefaultType$5;
-      }
-    }]);
-
-    return Popover;
-  }(Tooltip);
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-
-  $__default['default'].fn[NAME$7] = Popover._jQueryInterface;
-  $__default['default'].fn[NAME$7].Constructor = Popover;
-
-  $__default['default'].fn[NAME$7].noConflict = function () {
-    $__default['default'].fn[NAME$7] = JQUERY_NO_CONFLICT$7;
-    return Popover._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$8 = 'scrollspy';
-  var VERSION$8 = '4.6.0';
-  var DATA_KEY$8 = 'bs.scrollspy';
-  var EVENT_KEY$8 = "." + DATA_KEY$8;
-  var DATA_API_KEY$6 = '.data-api';
-  var JQUERY_NO_CONFLICT$8 = $__default['default'].fn[NAME$8];
-  var Default$6 = {
-    offset: 10,
-    method: 'auto',
-    target: ''
-  };
-  var DefaultType$6 = {
-    offset: 'number',
-    method: 'string',
-    target: '(string|element)'
-  };
-  var EVENT_ACTIVATE = "activate" + EVENT_KEY$8;
-  var EVENT_SCROLL = "scroll" + EVENT_KEY$8;
-  var EVENT_LOAD_DATA_API$2 = "load" + EVENT_KEY$8 + DATA_API_KEY$6;
-  var CLASS_NAME_DROPDOWN_ITEM = 'dropdown-item';
-  var CLASS_NAME_ACTIVE$2 = 'active';
-  var SELECTOR_DATA_SPY = '[data-spy="scroll"]';
-  var SELECTOR_NAV_LIST_GROUP = '.nav, .list-group';
-  var SELECTOR_NAV_LINKS = '.nav-link';
-  var SELECTOR_NAV_ITEMS = '.nav-item';
-  var SELECTOR_LIST_ITEMS = '.list-group-item';
-  var SELECTOR_DROPDOWN = '.dropdown';
-  var SELECTOR_DROPDOWN_ITEMS = '.dropdown-item';
-  var SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle';
-  var METHOD_OFFSET = 'offset';
-  var METHOD_POSITION = 'position';
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
-
-  var ScrollSpy = /*#__PURE__*/function () {
-    function ScrollSpy(element, config) {
-      var _this = this;
-
-      this._element = element;
-      this._scrollElement = element.tagName === 'BODY' ? window : element;
-      this._config = this._getConfig(config);
-      this._selector = this._config.target + " " + SELECTOR_NAV_LINKS + "," + (this._config.target + " " + SELECTOR_LIST_ITEMS + ",") + (this._config.target + " " + SELECTOR_DROPDOWN_ITEMS);
-      this._offsets = [];
-      this._targets = [];
-      this._activeTarget = null;
-      this._scrollHeight = 0;
-      $__default['default'](this._scrollElement).on(EVENT_SCROLL, function (event) {
-        return _this._process(event);
-      });
-      this.refresh();
-
-      this._process();
-    } // Getters
-
-
-    var _proto = ScrollSpy.prototype;
-
-    // Public
-    _proto.refresh = function refresh() {
-      var _this2 = this;
-
-      var autoMethod = this._scrollElement === this._scrollElement.window ? METHOD_OFFSET : METHOD_POSITION;
-      var offsetMethod = this._config.method === 'auto' ? autoMethod : this._config.method;
-      var offsetBase = offsetMethod === METHOD_POSITION ? this._getScrollTop() : 0;
-      this._offsets = [];
-      this._targets = [];
-      this._scrollHeight = this._getScrollHeight();
-      var targets = [].slice.call(document.querySelectorAll(this._selector));
-      targets.map(function (element) {
-        var target;
-        var targetSelector = Util.getSelectorFromElement(element);
-
-        if (targetSelector) {
-          target = document.querySelector(targetSelector);
-        }
-
-        if (target) {
-          var targetBCR = target.getBoundingClientRect();
-
-          if (targetBCR.width || targetBCR.height) {
-            // TODO (fat): remove sketch reliance on jQuery position/offset
-            return [$__default['default'](target)[offsetMethod]().top + offsetBase, targetSelector];
-          }
-        }
-
-        return null;
-      }).filter(function (item) {
-        return item;
-      }).sort(function (a, b) {
-        return a[0] - b[0];
-      }).forEach(function (item) {
-        _this2._offsets.push(item[0]);
-
-        _this2._targets.push(item[1]);
-      });
-    };
-
-    _proto.dispose = function dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY$8);
-      $__default['default'](this._scrollElement).off(EVENT_KEY$8);
-      this._element = null;
-      this._scrollElement = null;
-      this._config = null;
-      this._selector = null;
-      this._offsets = null;
-      this._targets = null;
-      this._activeTarget = null;
-      this._scrollHeight = null;
-    } // Private
-    ;
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _extends({}, Default$6, typeof config === 'object' && config ? config : {});
-
-      if (typeof config.target !== 'string' && Util.isElement(config.target)) {
-        var id = $__default['default'](config.target).attr('id');
-
-        if (!id) {
-          id = Util.getUID(NAME$8);
-          $__default['default'](config.target).attr('id', id);
-        }
-
-        config.target = "#" + id;
-      }
-
-      Util.typeCheckConfig(NAME$8, config, DefaultType$6);
-      return config;
-    };
-
-    _proto._getScrollTop = function _getScrollTop() {
-      return this._scrollElement === window ? this._scrollElement.pageYOffset : this._scrollElement.scrollTop;
-    };
-
-    _proto._getScrollHeight = function _getScrollHeight() {
-      return this._scrollElement.scrollHeight || Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-    };
-
-    _proto._getOffsetHeight = function _getOffsetHeight() {
-      return this._scrollElement === window ? window.innerHeight : this._scrollElement.getBoundingClientRect().height;
-    };
-
-    _proto._process = function _process() {
-      var scrollTop = this._getScrollTop() + this._config.offset;
-
-      var scrollHeight = this._getScrollHeight();
-
-      var maxScroll = this._config.offset + scrollHeight - this._getOffsetHeight();
-
-      if (this._scrollHeight !== scrollHeight) {
-        this.refresh();
-      }
-
-      if (scrollTop >= maxScroll) {
-        var target = this._targets[this._targets.length - 1];
-
-        if (this._activeTarget !== target) {
-          this._activate(target);
-        }
-
-        return;
-      }
-
-      if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
-        this._activeTarget = null;
-
-        this._clear();
-
-        return;
-      }
-
-      for (var i = this._offsets.length; i--;) {
-        var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
-
-        if (isActiveTarget) {
-          this._activate(this._targets[i]);
-        }
-      }
-    };
-
-    _proto._activate = function _activate(target) {
-      this._activeTarget = target;
-
-      this._clear();
-
-      var queries = this._selector.split(',').map(function (selector) {
-        return selector + "[data-target=\"" + target + "\"]," + selector + "[href=\"" + target + "\"]";
-      });
-
-      var $link = $__default['default']([].slice.call(document.querySelectorAll(queries.join(','))));
-
-      if ($link.hasClass(CLASS_NAME_DROPDOWN_ITEM)) {
-        $link.closest(SELECTOR_DROPDOWN).find(SELECTOR_DROPDOWN_TOGGLE).addClass(CLASS_NAME_ACTIVE$2);
-        $link.addClass(CLASS_NAME_ACTIVE$2);
-      } else {
-        // Set triggered link as active
-        $link.addClass(CLASS_NAME_ACTIVE$2); // Set triggered links parents as active
-        // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
-
-        $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_LINKS + ", " + SELECTOR_LIST_ITEMS).addClass(CLASS_NAME_ACTIVE$2); // Handle special case when .nav-link is inside .nav-item
-
-        $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_ITEMS).children(SELECTOR_NAV_LINKS).addClass(CLASS_NAME_ACTIVE$2);
-      }
-
-      $__default['default'](this._scrollElement).trigger(EVENT_ACTIVATE, {
-        relatedTarget: target
-      });
-    };
-
-    _proto._clear = function _clear() {
-      [].slice.call(document.querySelectorAll(this._selector)).filter(function (node) {
-        return node.classList.contains(CLASS_NAME_ACTIVE$2);
-      }).forEach(function (node) {
-        return node.classList.remove(CLASS_NAME_ACTIVE$2);
-      });
-    } // Static
-    ;
-
-    ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $__default['default'](this).data(DATA_KEY$8);
-
-        var _config = typeof config === 'object' && config;
-
-        if (!data) {
-          data = new ScrollSpy(this, _config);
-          $__default['default'](this).data(DATA_KEY$8, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(ScrollSpy, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$8;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$6;
-      }
-    }]);
-
-    return ScrollSpy;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $__default['default'](window).on(EVENT_LOAD_DATA_API$2, function () {
-    var scrollSpys = [].slice.call(document.querySelectorAll(SELECTOR_DATA_SPY));
-    var scrollSpysLength = scrollSpys.length;
-
-    for (var i = scrollSpysLength; i--;) {
-      var $spy = $__default['default'](scrollSpys[i]);
-
-      ScrollSpy._jQueryInterface.call($spy, $spy.data());
+    $tip.removeClass('fade top bottom left right in')
+
+    // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
+    // this manually by checking the contents.
+    if (!$tip.find('.popover-title').html()) $tip.find('.popover-title').hide()
+  }
+
+  Popover.prototype.hasContent = function () {
+    return this.getTitle() || this.getContent()
+  }
+
+  Popover.prototype.getContent = function () {
+    var $e = this.$element
+    var o  = this.options
+
+    return $e.attr('data-content')
+      || (typeof o.content == 'function' ?
+        o.content.call($e[0]) :
+        o.content)
+  }
+
+  Popover.prototype.arrow = function () {
+    return (this.$arrow = this.$arrow || this.tip().find('.arrow'))
+  }
+
+
+  // POPOVER PLUGIN DEFINITION
+  // =========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.popover')
+      var options = typeof option == 'object' && option
+
+      if (!data && /destroy|hide/.test(option)) return
+      if (!data) $this.data('bs.popover', (data = new Popover(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.popover
+
+  $.fn.popover             = Plugin
+  $.fn.popover.Constructor = Popover
+
+
+  // POPOVER NO CONFLICT
+  // ===================
+
+  $.fn.popover.noConflict = function () {
+    $.fn.popover = old
+    return this
+  }
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: scrollspy.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#scrollspy
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // SCROLLSPY CLASS DEFINITION
+  // ==========================
+
+  function ScrollSpy(element, options) {
+    this.$body          = $(document.body)
+    this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+    this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+    this.selector       = (this.options.target || '') + ' .nav li > a'
+    this.offsets        = []
+    this.targets        = []
+    this.activeTarget   = null
+    this.scrollHeight   = 0
+
+    this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+    this.refresh()
+    this.process()
+  }
+
+  ScrollSpy.VERSION  = '3.4.1'
+
+  ScrollSpy.DEFAULTS = {
+    offset: 10
+  }
+
+  ScrollSpy.prototype.getScrollHeight = function () {
+    return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+  }
+
+  ScrollSpy.prototype.refresh = function () {
+    var that          = this
+    var offsetMethod  = 'offset'
+    var offsetBase    = 0
+
+    this.offsets      = []
+    this.targets      = []
+    this.scrollHeight = this.getScrollHeight()
+
+    if (!$.isWindow(this.$scrollElement[0])) {
+      offsetMethod = 'position'
+      offsetBase   = this.$scrollElement.scrollTop()
     }
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
 
-  $__default['default'].fn[NAME$8] = ScrollSpy._jQueryInterface;
-  $__default['default'].fn[NAME$8].Constructor = ScrollSpy;
+    this.$body
+      .find(this.selector)
+      .map(function () {
+        var $el   = $(this)
+        var href  = $el.data('target') || $el.attr('href')
+        var $href = /^#./.test(href) && $(href)
 
-  $__default['default'].fn[NAME$8].noConflict = function () {
-    $__default['default'].fn[NAME$8] = JQUERY_NO_CONFLICT$8;
-    return ScrollSpy._jQueryInterface;
-  };
+        return ($href
+          && $href.length
+          && $href.is(':visible')
+          && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+      })
+      .sort(function (a, b) { return a[0] - b[0] })
+      .each(function () {
+        that.offsets.push(this[0])
+        that.targets.push(this[1])
+      })
+  }
 
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+  ScrollSpy.prototype.process = function () {
+    var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+    var scrollHeight = this.getScrollHeight()
+    var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+    var offsets      = this.offsets
+    var targets      = this.targets
+    var activeTarget = this.activeTarget
+    var i
 
-  var NAME$9 = 'tab';
-  var VERSION$9 = '4.6.0';
-  var DATA_KEY$9 = 'bs.tab';
-  var EVENT_KEY$9 = "." + DATA_KEY$9;
-  var DATA_API_KEY$7 = '.data-api';
-  var JQUERY_NO_CONFLICT$9 = $__default['default'].fn[NAME$9];
-  var EVENT_HIDE$3 = "hide" + EVENT_KEY$9;
-  var EVENT_HIDDEN$3 = "hidden" + EVENT_KEY$9;
-  var EVENT_SHOW$3 = "show" + EVENT_KEY$9;
-  var EVENT_SHOWN$3 = "shown" + EVENT_KEY$9;
-  var EVENT_CLICK_DATA_API$6 = "click" + EVENT_KEY$9 + DATA_API_KEY$7;
-  var CLASS_NAME_DROPDOWN_MENU = 'dropdown-menu';
-  var CLASS_NAME_ACTIVE$3 = 'active';
-  var CLASS_NAME_DISABLED$1 = 'disabled';
-  var CLASS_NAME_FADE$4 = 'fade';
-  var CLASS_NAME_SHOW$6 = 'show';
-  var SELECTOR_DROPDOWN$1 = '.dropdown';
-  var SELECTOR_NAV_LIST_GROUP$1 = '.nav, .list-group';
-  var SELECTOR_ACTIVE$2 = '.active';
-  var SELECTOR_ACTIVE_UL = '> li > .active';
-  var SELECTOR_DATA_TOGGLE$4 = '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]';
-  var SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
-  var SELECTOR_DROPDOWN_ACTIVE_CHILD = '> .dropdown-menu .active';
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
+    if (this.scrollHeight != scrollHeight) {
+      this.refresh()
+    }
 
-  var Tab = /*#__PURE__*/function () {
-    function Tab(element) {
-      this._element = element;
-    } // Getters
+    if (scrollTop >= maxScroll) {
+      return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+    }
+
+    if (activeTarget && scrollTop < offsets[0]) {
+      this.activeTarget = null
+      return this.clear()
+    }
+
+    for (i = offsets.length; i--;) {
+      activeTarget != targets[i]
+        && scrollTop >= offsets[i]
+        && (offsets[i + 1] === undefined || scrollTop < offsets[i + 1])
+        && this.activate(targets[i])
+    }
+  }
+
+  ScrollSpy.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    this.clear()
+
+    var selector = this.selector +
+      '[data-target="' + target + '"],' +
+      this.selector + '[href="' + target + '"]'
+
+    var active = $(selector)
+      .parents('li')
+      .addClass('active')
+
+    if (active.parent('.dropdown-menu').length) {
+      active = active
+        .closest('li.dropdown')
+        .addClass('active')
+    }
+
+    active.trigger('activate.bs.scrollspy')
+  }
+
+  ScrollSpy.prototype.clear = function () {
+    $(this.selector)
+      .parentsUntil(this.options.target, '.active')
+      .removeClass('active')
+  }
 
 
-    var _proto = Tab.prototype;
+  // SCROLLSPY PLUGIN DEFINITION
+  // ===========================
 
-    // Public
-    _proto.show = function show() {
-      var _this = this;
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.scrollspy')
+      var options = typeof option == 'object' && option
 
-      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $__default['default'](this._element).hasClass(CLASS_NAME_ACTIVE$3) || $__default['default'](this._element).hasClass(CLASS_NAME_DISABLED$1)) {
-        return;
-      }
+      if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
 
-      var target;
-      var previous;
-      var listElement = $__default['default'](this._element).closest(SELECTOR_NAV_LIST_GROUP$1)[0];
-      var selector = Util.getSelectorFromElement(this._element);
+  var old = $.fn.scrollspy
 
-      if (listElement) {
-        var itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE$2;
-        previous = $__default['default'].makeArray($__default['default'](listElement).find(itemSelector));
-        previous = previous[previous.length - 1];
-      }
+  $.fn.scrollspy             = Plugin
+  $.fn.scrollspy.Constructor = ScrollSpy
 
-      var hideEvent = $__default['default'].Event(EVENT_HIDE$3, {
-        relatedTarget: this._element
-      });
-      var showEvent = $__default['default'].Event(EVENT_SHOW$3, {
-        relatedTarget: previous
-      });
 
-      if (previous) {
-        $__default['default'](previous).trigger(hideEvent);
-      }
+  // SCROLLSPY NO CONFLICT
+  // =====================
 
-      $__default['default'](this._element).trigger(showEvent);
+  $.fn.scrollspy.noConflict = function () {
+    $.fn.scrollspy = old
+    return this
+  }
 
-      if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) {
-        return;
-      }
 
-      if (selector) {
-        target = document.querySelector(selector);
-      }
+  // SCROLLSPY DATA-API
+  // ==================
 
-      this._activate(this._element, listElement);
+  $(window).on('load.bs.scrollspy.data-api', function () {
+    $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this)
+      Plugin.call($spy, $spy.data())
+    })
+  })
 
-      var complete = function complete() {
-        var hiddenEvent = $__default['default'].Event(EVENT_HIDDEN$3, {
-          relatedTarget: _this._element
-        });
-        var shownEvent = $__default['default'].Event(EVENT_SHOWN$3, {
-          relatedTarget: previous
-        });
-        $__default['default'](previous).trigger(hiddenEvent);
-        $__default['default'](_this._element).trigger(shownEvent);
-      };
+}(jQuery);
 
-      if (target) {
-        this._activate(target, target.parentNode, complete);
+/* ========================================================================
+ * Bootstrap: tab.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#tabs
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // TAB CLASS DEFINITION
+  // ====================
+
+  var Tab = function (element) {
+    // jscs:disable requireDollarBeforejQueryAssignment
+    this.element = $(element)
+    // jscs:enable requireDollarBeforejQueryAssignment
+  }
+
+  Tab.VERSION = '3.4.1'
+
+  Tab.TRANSITION_DURATION = 150
+
+  Tab.prototype.show = function () {
+    var $this    = this.element
+    var $ul      = $this.closest('ul:not(.dropdown-menu)')
+    var selector = $this.data('target')
+
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    }
+
+    if ($this.parent('li').hasClass('active')) return
+
+    var $previous = $ul.find('.active:last a')
+    var hideEvent = $.Event('hide.bs.tab', {
+      relatedTarget: $this[0]
+    })
+    var showEvent = $.Event('show.bs.tab', {
+      relatedTarget: $previous[0]
+    })
+
+    $previous.trigger(hideEvent)
+    $this.trigger(showEvent)
+
+    if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
+
+    var $target = $(document).find(selector)
+
+    this.activate($this.closest('li'), $ul)
+    this.activate($target, $target.parent(), function () {
+      $previous.trigger({
+        type: 'hidden.bs.tab',
+        relatedTarget: $this[0]
+      })
+      $this.trigger({
+        type: 'shown.bs.tab',
+        relatedTarget: $previous[0]
+      })
+    })
+  }
+
+  Tab.prototype.activate = function (element, container, callback) {
+    var $active    = container.find('> .active')
+    var transition = callback
+      && $.support.transition
+      && ($active.length && $active.hasClass('fade') || !!container.find('> .fade').length)
+
+    function next() {
+      $active
+        .removeClass('active')
+        .find('> .dropdown-menu > .active')
+        .removeClass('active')
+        .end()
+        .find('[data-toggle="tab"]')
+        .attr('aria-expanded', false)
+
+      element
+        .addClass('active')
+        .find('[data-toggle="tab"]')
+        .attr('aria-expanded', true)
+
+      if (transition) {
+        element[0].offsetWidth // reflow for transition
+        element.addClass('in')
       } else {
-        complete();
-      }
-    };
-
-    _proto.dispose = function dispose() {
-      $__default['default'].removeData(this._element, DATA_KEY$9);
-      this._element = null;
-    } // Private
-    ;
-
-    _proto._activate = function _activate(element, container, callback) {
-      var _this2 = this;
-
-      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $__default['default'](container).find(SELECTOR_ACTIVE_UL) : $__default['default'](container).children(SELECTOR_ACTIVE$2);
-      var active = activeElements[0];
-      var isTransitioning = callback && active && $__default['default'](active).hasClass(CLASS_NAME_FADE$4);
-
-      var complete = function complete() {
-        return _this2._transitionComplete(element, active, callback);
-      };
-
-      if (active && isTransitioning) {
-        var transitionDuration = Util.getTransitionDurationFromElement(active);
-        $__default['default'](active).removeClass(CLASS_NAME_SHOW$6).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      } else {
-        complete();
-      }
-    };
-
-    _proto._transitionComplete = function _transitionComplete(element, active, callback) {
-      if (active) {
-        $__default['default'](active).removeClass(CLASS_NAME_ACTIVE$3);
-        var dropdownChild = $__default['default'](active.parentNode).find(SELECTOR_DROPDOWN_ACTIVE_CHILD)[0];
-
-        if (dropdownChild) {
-          $__default['default'](dropdownChild).removeClass(CLASS_NAME_ACTIVE$3);
-        }
-
-        if (active.getAttribute('role') === 'tab') {
-          active.setAttribute('aria-selected', false);
-        }
+        element.removeClass('fade')
       }
 
-      $__default['default'](element).addClass(CLASS_NAME_ACTIVE$3);
-
-      if (element.getAttribute('role') === 'tab') {
-        element.setAttribute('aria-selected', true);
+      if (element.parent('.dropdown-menu').length) {
+        element
+          .closest('li.dropdown')
+          .addClass('active')
+          .end()
+          .find('[data-toggle="tab"]')
+          .attr('aria-expanded', true)
       }
 
-      Util.reflow(element);
-
-      if (element.classList.contains(CLASS_NAME_FADE$4)) {
-        element.classList.add(CLASS_NAME_SHOW$6);
-      }
-
-      if (element.parentNode && $__default['default'](element.parentNode).hasClass(CLASS_NAME_DROPDOWN_MENU)) {
-        var dropdownElement = $__default['default'](element).closest(SELECTOR_DROPDOWN$1)[0];
-
-        if (dropdownElement) {
-          var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE$1));
-          $__default['default'](dropdownToggleList).addClass(CLASS_NAME_ACTIVE$3);
-        }
-
-        element.setAttribute('aria-expanded', true);
-      }
-
-      if (callback) {
-        callback();
-      }
-    } // Static
-    ;
-
-    Tab._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var $this = $__default['default'](this);
-        var data = $this.data(DATA_KEY$9);
-
-        if (!data) {
-          data = new Tab(this);
-          $this.data(DATA_KEY$9, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Tab, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$9;
-      }
-    }]);
-
-    return Tab;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $__default['default'](document).on(EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$4, function (event) {
-    event.preventDefault();
-
-    Tab._jQueryInterface.call($__default['default'](this), 'show');
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $__default['default'].fn[NAME$9] = Tab._jQueryInterface;
-  $__default['default'].fn[NAME$9].Constructor = Tab;
-
-  $__default['default'].fn[NAME$9].noConflict = function () {
-    $__default['default'].fn[NAME$9] = JQUERY_NO_CONFLICT$9;
-    return Tab._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$a = 'toast';
-  var VERSION$a = '4.6.0';
-  var DATA_KEY$a = 'bs.toast';
-  var EVENT_KEY$a = "." + DATA_KEY$a;
-  var JQUERY_NO_CONFLICT$a = $__default['default'].fn[NAME$a];
-  var EVENT_CLICK_DISMISS$1 = "click.dismiss" + EVENT_KEY$a;
-  var EVENT_HIDE$4 = "hide" + EVENT_KEY$a;
-  var EVENT_HIDDEN$4 = "hidden" + EVENT_KEY$a;
-  var EVENT_SHOW$4 = "show" + EVENT_KEY$a;
-  var EVENT_SHOWN$4 = "shown" + EVENT_KEY$a;
-  var CLASS_NAME_FADE$5 = 'fade';
-  var CLASS_NAME_HIDE = 'hide';
-  var CLASS_NAME_SHOW$7 = 'show';
-  var CLASS_NAME_SHOWING = 'showing';
-  var DefaultType$7 = {
-    animation: 'boolean',
-    autohide: 'boolean',
-    delay: 'number'
-  };
-  var Default$7 = {
-    animation: true,
-    autohide: true,
-    delay: 500
-  };
-  var SELECTOR_DATA_DISMISS$1 = '[data-dismiss="toast"]';
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
-
-  var Toast = /*#__PURE__*/function () {
-    function Toast(element, config) {
-      this._element = element;
-      this._config = this._getConfig(config);
-      this._timeout = null;
-
-      this._setListeners();
-    } // Getters
-
+      callback && callback()
+    }
 
-    var _proto = Toast.prototype;
+    $active.length && transition ?
+      $active
+        .one('bsTransitionEnd', next)
+        .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
+      next()
 
-    // Public
-    _proto.show = function show() {
-      var _this = this;
-
-      var showEvent = $__default['default'].Event(EVENT_SHOW$4);
-      $__default['default'](this._element).trigger(showEvent);
-
-      if (showEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      this._clearTimeout();
-
-      if (this._config.animation) {
-        this._element.classList.add(CLASS_NAME_FADE$5);
-      }
-
-      var complete = function complete() {
-        _this._element.classList.remove(CLASS_NAME_SHOWING);
-
-        _this._element.classList.add(CLASS_NAME_SHOW$7);
-
-        $__default['default'](_this._element).trigger(EVENT_SHOWN$4);
-
-        if (_this._config.autohide) {
-          _this._timeout = setTimeout(function () {
-            _this.hide();
-          }, _this._config.delay);
-        }
-      };
-
-      this._element.classList.remove(CLASS_NAME_HIDE);
-
-      Util.reflow(this._element);
-
-      this._element.classList.add(CLASS_NAME_SHOWING);
-
-      if (this._config.animation) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-        $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      } else {
-        complete();
-      }
-    };
-
-    _proto.hide = function hide() {
-      if (!this._element.classList.contains(CLASS_NAME_SHOW$7)) {
-        return;
-      }
-
-      var hideEvent = $__default['default'].Event(EVENT_HIDE$4);
-      $__default['default'](this._element).trigger(hideEvent);
-
-      if (hideEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      this._close();
-    };
-
-    _proto.dispose = function dispose() {
-      this._clearTimeout();
-
-      if (this._element.classList.contains(CLASS_NAME_SHOW$7)) {
-        this._element.classList.remove(CLASS_NAME_SHOW$7);
-      }
-
-      $__default['default'](this._element).off(EVENT_CLICK_DISMISS$1);
-      $__default['default'].removeData(this._element, DATA_KEY$a);
-      this._element = null;
-      this._config = null;
-    } // Private
-    ;
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _extends({}, Default$7, $__default['default'](this._element).data(), typeof config === 'object' && config ? config : {});
-      Util.typeCheckConfig(NAME$a, config, this.constructor.DefaultType);
-      return config;
-    };
-
-    _proto._setListeners = function _setListeners() {
-      var _this2 = this;
-
-      $__default['default'](this._element).on(EVENT_CLICK_DISMISS$1, SELECTOR_DATA_DISMISS$1, function () {
-        return _this2.hide();
-      });
-    };
-
-    _proto._close = function _close() {
-      var _this3 = this;
-
-      var complete = function complete() {
-        _this3._element.classList.add(CLASS_NAME_HIDE);
-
-        $__default['default'](_this3._element).trigger(EVENT_HIDDEN$4);
-      };
-
-      this._element.classList.remove(CLASS_NAME_SHOW$7);
-
-      if (this._config.animation) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-        $__default['default'](this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      } else {
-        complete();
-      }
-    };
-
-    _proto._clearTimeout = function _clearTimeout() {
-      clearTimeout(this._timeout);
-      this._timeout = null;
-    } // Static
-    ;
-
-    Toast._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var $element = $__default['default'](this);
-        var data = $element.data(DATA_KEY$a);
-
-        var _config = typeof config === 'object' && config;
-
-        if (!data) {
-          data = new Toast(this, _config);
-          $element.data(DATA_KEY$a, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config](this);
-        }
-      });
-    };
-
-    _createClass(Toast, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$a;
-      }
-    }, {
-      key: "DefaultType",
-      get: function get() {
-        return DefaultType$7;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$7;
-      }
-    }]);
-
-    return Toast;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-
-  $__default['default'].fn[NAME$a] = Toast._jQueryInterface;
-  $__default['default'].fn[NAME$a].Constructor = Toast;
-
-  $__default['default'].fn[NAME$a].noConflict = function () {
-    $__default['default'].fn[NAME$a] = JQUERY_NO_CONFLICT$a;
-    return Toast._jQueryInterface;
-  };
-
-  exports.Alert = Alert;
-  exports.Button = Button;
-  exports.Carousel = Carousel;
-  exports.Collapse = Collapse;
-  exports.Dropdown = Dropdown;
-  exports.Modal = Modal;
-  exports.Popover = Popover;
-  exports.Scrollspy = ScrollSpy;
-  exports.Tab = Tab;
-  exports.Toast = Toast;
-  exports.Tooltip = Tooltip;
-  exports.Util = Util;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
-//# sourceMappingURL=bootstrap.js.map
+    $active.removeClass('in')
+  }
+
+
+  // TAB PLUGIN DEFINITION
+  // =====================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this = $(this)
+      var data  = $this.data('bs.tab')
+
+      if (!data) $this.data('bs.tab', (data = new Tab(this)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.tab
+
+  $.fn.tab             = Plugin
+  $.fn.tab.Constructor = Tab
+
+
+  // TAB NO CONFLICT
+  // ===============
+
+  $.fn.tab.noConflict = function () {
+    $.fn.tab = old
+    return this
+  }
+
+
+  // TAB DATA-API
+  // ============
+
+  var clickHandler = function (e) {
+    e.preventDefault()
+    Plugin.call($(this), 'show')
+  }
+
+  $(document)
+    .on('click.bs.tab.data-api', '[data-toggle="tab"]', clickHandler)
+    .on('click.bs.tab.data-api', '[data-toggle="pill"]', clickHandler)
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: affix.js v3.4.1
+ * https://getbootstrap.com/docs/3.4/javascript/#affix
+ * ========================================================================
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // AFFIX CLASS DEFINITION
+  // ======================
+
+  var Affix = function (element, options) {
+    this.options = $.extend({}, Affix.DEFAULTS, options)
+
+    var target = this.options.target === Affix.DEFAULTS.target ? $(this.options.target) : $(document).find(this.options.target)
+
+    this.$target = target
+      .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
+      .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
+
+    this.$element     = $(element)
+    this.affixed      = null
+    this.unpin        = null
+    this.pinnedOffset = null
+
+    this.checkPosition()
+  }
+
+  Affix.VERSION  = '3.4.1'
+
+  Affix.RESET    = 'affix affix-top affix-bottom'
+
+  Affix.DEFAULTS = {
+    offset: 0,
+    target: window
+  }
+
+  Affix.prototype.getState = function (scrollHeight, height, offsetTop, offsetBottom) {
+    var scrollTop    = this.$target.scrollTop()
+    var position     = this.$element.offset()
+    var targetHeight = this.$target.height()
+
+    if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false
+
+    if (this.affixed == 'bottom') {
+      if (offsetTop != null) return (scrollTop + this.unpin <= position.top) ? false : 'bottom'
+      return (scrollTop + targetHeight <= scrollHeight - offsetBottom) ? false : 'bottom'
+    }
+
+    var initializing   = this.affixed == null
+    var colliderTop    = initializing ? scrollTop : position.top
+    var colliderHeight = initializing ? targetHeight : height
+
+    if (offsetTop != null && scrollTop <= offsetTop) return 'top'
+    if (offsetBottom != null && (colliderTop + colliderHeight >= scrollHeight - offsetBottom)) return 'bottom'
+
+    return false
+  }
+
+  Affix.prototype.getPinnedOffset = function () {
+    if (this.pinnedOffset) return this.pinnedOffset
+    this.$element.removeClass(Affix.RESET).addClass('affix')
+    var scrollTop = this.$target.scrollTop()
+    var position  = this.$element.offset()
+    return (this.pinnedOffset = position.top - scrollTop)
+  }
+
+  Affix.prototype.checkPositionWithEventLoop = function () {
+    setTimeout($.proxy(this.checkPosition, this), 1)
+  }
+
+  Affix.prototype.checkPosition = function () {
+    if (!this.$element.is(':visible')) return
+
+    var height       = this.$element.height()
+    var offset       = this.options.offset
+    var offsetTop    = offset.top
+    var offsetBottom = offset.bottom
+    var scrollHeight = Math.max($(document).height(), $(document.body).height())
+
+    if (typeof offset != 'object')         offsetBottom = offsetTop = offset
+    if (typeof offsetTop == 'function')    offsetTop    = offset.top(this.$element)
+    if (typeof offsetBottom == 'function') offsetBottom = offset.bottom(this.$element)
+
+    var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom)
+
+    if (this.affixed != affix) {
+      if (this.unpin != null) this.$element.css('top', '')
+
+      var affixType = 'affix' + (affix ? '-' + affix : '')
+      var e         = $.Event(affixType + '.bs.affix')
+
+      this.$element.trigger(e)
+
+      if (e.isDefaultPrevented()) return
+
+      this.affixed = affix
+      this.unpin = affix == 'bottom' ? this.getPinnedOffset() : null
+
+      this.$element
+        .removeClass(Affix.RESET)
+        .addClass(affixType)
+        .trigger(affixType.replace('affix', 'affixed') + '.bs.affix')
+    }
+
+    if (affix == 'bottom') {
+      this.$element.offset({
+        top: scrollHeight - height - offsetBottom
+      })
+    }
+  }
+
+
+  // AFFIX PLUGIN DEFINITION
+  // =======================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.affix')
+      var options = typeof option == 'object' && option
+
+      if (!data) $this.data('bs.affix', (data = new Affix(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.affix
+
+  $.fn.affix             = Plugin
+  $.fn.affix.Constructor = Affix
+
+
+  // AFFIX NO CONFLICT
+  // =================
+
+  $.fn.affix.noConflict = function () {
+    $.fn.affix = old
+    return this
+  }
+
+
+  // AFFIX DATA-API
+  // ==============
+
+  $(window).on('load', function () {
+    $('[data-spy="affix"]').each(function () {
+      var $spy = $(this)
+      var data = $spy.data()
+
+      data.offset = data.offset || {}
+
+      if (data.offsetBottom != null) data.offset.bottom = data.offsetBottom
+      if (data.offsetTop    != null) data.offset.top    = data.offsetTop
+
+      Plugin.call($spy, data)
+    })
+  })
+
+}(jQuery);
 
 
 /***/ }),
@@ -36930,8 +35695,39 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Zen+Antique+Soft&display=swap);"]);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@300&family=Zen+Antique+Soft&display=swap);"]);
 // Module
+___CSS_LOADER_EXPORT___.push([module.id, "html { \n    scroll-behavior: smooth; \n    \n  }\n.generalFont{\n    font-family:  cursive;\n}\n.generalBackground{\n    background-color:rgb(250, 250, 250);\n}\n.backgroundWhite{\n    background-color: white;\n}\n.flex{\n    display:flex;\n}\n.testFont{\n    font-family: 'Roboto', sans-serif;\n}\n.justifyText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: justify;\n    text-justify: inter-word;\n}\n.emptyStar{\n    color:rgb(253, 225, 149);\n}\n.centerText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: center;\n    \n}\n.textAlignCenter{\n    text-align: center;\n}\n.cursorPointer{\n    cursor:pointer;\n}\n.verticalAlign{\n    display:flex;\n    align-items: center;\n    justify-content: center;\n}\n.verticalItem{\n    display:flex;\n    align-items: center;\n}\n.flexCenter{\n    display:flex;\n    justify-content: center;\n}\n.flexColumn{\n    display:flex;\n    flex-direction: column;\n}\n.flexBetween{\n    display:flex;\n    justify-content: space-between;\n}\n.flexAround{\n    display:flex;\n    justify-content: space-around;\n}\n.lightShadowCard{\n    box-shadow: 0 0 2px 1px rgb(214, 214, 214);\n}\n.lightShadowCard1{\n    box-shadow: 0 0 2px 1px rgb(233, 233, 233);   \n}\n.lightShadowCard2{\n    box-shadow:  0 0 10px  rgba(216, 216, 216, 0.6);\n      -moz-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);\n      -webkit-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);\n      -o-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);\n}\n.underlined{\n    text-decoration: underline;\n}\n.bgWhite{\n    background-color:white;\n}\n.bgWhite1{\n    background-color:rgb(250, 250, 250);\n}\n.bgWhite2{\n    background-color:rgb(245, 245, 245);\n}\n.bgWhite3{\n    background-color:rgb(240, 240, 240);\n}\n.productCard{\n    width:200px;\n    /* height:300px; */\n    background-color: rgb(173, 199, 199);\n}\n.greyLineProduct{\n    width:100%;\n    height:1px;\n    background-color:rgb(223, 223, 223);\n}\n.lightGrey{\n    background-color:rgb(223, 223, 223);\n}\n.grey1{\n    color:rgb(92, 92, 92)\n}\n.grey2{\n    color:rgb(54, 54, 54)\n}\n.grey3{\n    color:rgb(31, 31, 31)\n}\n.cardProduct{\n    margin:6%;\n    border-radius:4px; \n    transition: all .2s ease-in-out;\n}\n.cardProduct:hover{\n    margin:6%;\n    border-radius:4px; \n    /* opacity:0.8; */\n    /* transform: scale(1.02); */\n}\n.cardProduct:hover{\n    opacity:0.8;\n}\n.cardProduct:hover .imageProduct{\n    opacity:0.3;\n}\n.hideProduct{\n    opacity:0;\n    height:50px;\n    /* margin-right:auto; */\n}\n.elementAppear{\n    font-size:1.1em;\n    font-weight:600;\n}\n.cardProduct:hover .hideProduct{\n   display:block;\n   position:relative;\n   top:-130px;\n   z-index: 100;\n   /* font-size:1.5em; */\n   background:transparent;\n   opacity:1;\n}\n.cardProduct:hover .elementAppear{\n    width:80%;\n    margin-right:auto;\n    margin-left:auto;\n    height:50px;\n    display:flex;\n    justify-content: center;\n    align-items: center;\n    /* background-color:rgb(219, 219, 219); */\n    border:2px solid grey;\n    border-radius:2px;\n }\n .hoverUnderlined:hover{\n    text-decoration: underline;\n    cursor:pointer;\n }\n .alignRight{\n    display:flex;\n    flex-direction: row-reverse;\n }\n .colorButton1{\n    background-color: rgb(235, 229, 209);\n }\n .height10{\n     height:10px;\n }\n .height20{\n     height:20px;\n }\n .height30{\n     height:30px;\n }\n .height40{\n     height:40px;\n }\n .height50{\n     height:50px;\n }\n .height60{\n     height:60px;\n }\n .height70{\n     height:70px;\n }\n .height80{\n     height:80px;\n }\n .lineHeight1{\n    line-height: 115%;\n }\n .lineHeight1{\n    line-height: 130%;\n }\n .lineHeight1{\n    line-height: 145%;\n }\n .lineHeight1{\n    line-height: 160%;\n }\n .lineHeight1{\n    line-height: 175%;\n }\n .letterSpacing1{\n     letter-spacing: 1px;\n }\n .letterSpacing2{\n     letter-spacing: 2px;\n }\n .letterSpacing3{\n     letter-spacing: 3px;\n }\n .letterSpacing4{\n     letter-spacing: 4px;\n }\n .letterSpacing5{\n     letter-spacing: 5px;\n }\n .bold100{\n     font-weight:100;\n }\n .bold200{\n     font-weight:200;\n }\n .bold300{\n     font-weight:300;\n }\n .bold400{\n     font-weight:400;\n }\n .bold500{\n     font-weight:500;\n }\n .bold600{\n     font-weight:600;\n }\n .bold700{\n     font-weight:700;\n }\n .bold800{\n     font-weight:800;\n }\n .size1{\n     font-size:1.1em;\n }\n .size2{\n     font-size:1.2em;\n }\n .size3{\n     font-size:1.3em;\n }\n .size4{\n     font-size:1.4em;\n }\n .size5{\n     font-size:1.5em;\n }\n .size6{\n     font-size:1.6em;\n }\n .size7{\n     font-size:1.7em;\n }\n .size8{\n     font-size:1.8em;\n }\n .size9{\n     font-size:1.9em;\n }\n .font1{\n    font-family: Georgia, serif;\n }\n .font2{\n    font-family: sans-serif;\n }\n .font3{\n    font-family: serif;\n }\n .font4{\n    font-family: cursive;\n }\n .font5{\n    font-family: system-ui;\n }\n .font6{\n    font-family: monospace;\n }\n .font7{\n    font-family: fantasy;\n }\n .font8{\n    font-family: 'Roboto', sans-serif;\n    font-family: 'Zen Antique Soft', serif;\n }\n .font9{\n    font-family: 'Dancing Script', cursive;\nfont-family: 'Roboto', sans-serif;\nfont-family: 'Zen Antique Soft', serif;\n }\n .opacity9{\n    opacity:0.9;\n }\n .opacity8{\n    opacity:0.8;\n }\n .opacity7{\n    opacity:0.7;\n }\n .opacity6{\n    opacity:0.6;\n }\n .opacity5{\n    opacity:0.5;\n }\n .opacity4{\n    opacity:0.4;\n }\n .opacity3{\n    opacity:0.3;\n }\n .opacity2{\n    opacity:0.2;\n }\n .opacity1{\n    opacity:0.1;\n }\n.mt-1{\n    margin-top:5px\n}\n.mt-2{\n    margin-top:10px\n}\n.mt-3{\n    margin-top:15px\n}\n.mt-4{\n    margin-top:20px\n}\n.mt-5{\n    margin-top:25px\n}\n.mt-6{\n    margin-top:30px\n}\n.mt-7{\n    margin-top:40px\n}\n.mt-8{\n    margin-top:50px\n}\n.mt-9{\n    margin-top:60px\n}\n.mt-10{\n    margin-top:70px\n}\n.mt-11{\n    margin-top:80px\n}\n.mt-12{\n    margin-top:90px\n}\n.mt-13{\n    margin-top:100px\n}\n.mt-14{\n    margin-top:120px\n}\n.mt-15{\n    margin-top:140px\n}\n.pt-1{\n    padding-top:5px\n}\n.pt-2{\n    padding-top:10px\n}\n.pt-3{\n    padding-top:15px\n}\n.pt-4{\n    padding-top:20px\n}\n.pt-5{\n    padding-top:25px\n}\n.pt-6{\n    padding-top:30px\n}\n.pt-7{\n    padding-top:40px\n}\n.pt-8{\n    padding-top:50px\n}\n.pt-9{\n    padding-top:60px\n}\n.pt-10{\n    padding-top:70px\n}\n.pt-11{\n    padding-top:80px\n}\n.pt-12{\n    padding-top:90px\n}\n.pt-13{\n    padding-top:100px\n}\n.pt-14{\n    padding-top:120px\n}\n.pt-15{\n    padding-top:140px\n}\n.m-1{\n    margin:5px\n}\n.m-2{\n    margin:10px\n}\n.m-3{\n    margin:15px\n}\n.m-4{\n    margin:20px\n}\n.m-5{\n    margin:25px\n}\n.m-6{\n    margin:30px\n}\n.m-7{\n    margin:40px\n}\n.m-8{\n    margin:50px\n}\n.m-9{\n    margin:60px\n}\n.m-10{\n    margin:70px\n}\n.m-11{\n    margin:80px\n}\n.m-12{\n    margin:90px\n}\n.m-13{\n    margin:100px\n}\n.m-14{\n    margin:120px\n}\n.m-15{\n    margin:140px\n}\n.p-1{\n    padding:5px\n}\n.p-2{\n    padding:10px\n}\n.p-3{\n    padding:15px\n}\n.p-4{\n    padding:20px\n}\n.p-5{\n    padding:25px\n}\n.p-6{\n    padding:30px\n}\n.p-7{\n    padding:40px\n}\n.p-8{\n    padding:50px\n}\n.p-9{\n    padding:60px\n}\n.p-10{\n    padding:70px\n}\n.p-11{\n    padding:80px\n}\n.p-12{\n    padding:90px\n}\n.p-13{\n    padding:100px\n}\n.p-14{\n    padding:120px\n}\n.p-15{\n    padding:140px\n}\n.ml-1{\n    margin-left:5px\n}\n.ml-2{\n    margin-left:10px\n}\n.ml-3{\n    margin-left:15px\n}\n.ml-4{\n    margin-left:20px\n}\n.ml-5{\n    margin-left:25px\n}\n.ml-6{\n    margin-left:30px\n}\n.ml-7{\n    margin-left:40px\n}\n.ml-8{\n    margin-left:50px\n}\n.ml-9{\n    margin-left:60px\n}\n.ml-10{\n    margin-left:70px\n}\n.ml-11{\n    margin-left:80px\n}\n.ml-12{\n    margin-left:90px\n}\n.ml-13{\n    margin-left:100px\n}\n.ml-14{\n    margin-left:120px\n}\n.ml-15{\n    margin-left:140px\n}\n.pl-1{\n    padding-left:5px\n}\n.pl-2{\n    padding-left:10px\n}\n.pl-3{\n    padding-left:15px\n}\n.pl-4{\n    padding-left:20px\n}\n.pl-5{\n    padding-left:25px\n}\n.pl-6{\n    padding-left:30px\n}\n.pl-7{\n    padding-left:40px\n}\n.pl-8{\n    padding-left:50px\n}\n.pl-9{\n    padding-left:60px\n}\n.pl-10{\n    padding-left:70px\n}\n.pl-11{\n    padding-left:80px\n}\n.pl-12{\n    padding-left:90px\n}\n.pl-13{\n    padding-left:100px\n}\n.pl-14{\n    padding-left:120px\n}\n.pl-15{\n    padding-left:140px\n}\n.mr-1{\n    margin-right:5px\n}\n.mr-2{\n    margin-right:10px\n}\n.mr-3{\n    margin-right:15px\n}\n.mr-4{\n    margin-right:20px\n}\n.mr-5{\n    margin-right:25px\n}\n.mr-6{\n    margin-right:30px\n}\n.mr-7{\n    margin-right:40px\n}\n.mr-8{\n    margin-right:50px\n}\n.mr-9{\n    margin-right:60px\n}\n.mr-10{\n    margin-right:70px\n}\n.mr-11{\n    margin-right:80px\n}\n.mr-12{\n    margin-right:90px\n}\n.mr-13{\n    margin-right:100px\n}\n.mr-14{\n    margin-right:120px\n}\n.mr-15{\n    margin-right:140px\n}\n.pr-1{\n    padding-right:5px\n}\n.pr-2{\n    padding-right:10px\n}\n.pr-3{\n    padding-right:15px\n}\n.pr-4{\n    padding-right:20px\n}\n.pr-5{\n    padding-right:25px\n}\n.pr-6{\n    padding-right:30px\n}\n.pr-7{\n    padding-right:40px\n}\n.pr-8{\n    padding-right:50px\n}\n.pr-9{\n    padding-right:60px\n}\n.pr-10{\n    padding-right:70px\n}\n.pr-11{\n    padding-right:80px\n}\n.pr-12{\n    padding-right:90px\n}\n.pr-13{\n    padding-right:100px\n}\n.pr-14{\n    padding-right:120px\n}\n.pr-15{\n    padding-right:140px\n}\n.mb-1{\n    margin-bottom:5px\n}\n.mb-2{\n    margin-bottom:10px\n}\n.mb-3{\n    margin-bottom:15px\n}\n.mb-4{\n    margin-bottom:20px\n}\n.mb-5{\n    margin-bottom:25px\n}\n.mb-6{\n    margin-bottom:30px\n}\n.mb-7{\n    margin-bottom:40px\n}\n.mb-8{\n    margin-bottom:50px\n}\n.mb-9{\n    margin-bottom:60px\n}\n.mb-10{\n    margin-bottom:70px\n}\n.mb-11{\n    margin-bottom:80px\n}\n.mb-12{\n    margin-bottom:90px\n}\n.mb-13{\n    margin-bottom:100px\n}\n.mb-14{\n    margin-bottom:120px\n}\n.mb-15{\n    margin-bottom:140px\n}\n.pb-1{\n    padding-bottom:5px\n}\n.pb-2{\n    padding-bottom:10px\n}\n.pb-3{\n    padding-bottom:15px\n}\n.pb-4{\n    padding-bottom:20px\n}\n.pb-5{\n    padding-bottom:25px\n}\n.pb-6{\n    padding-bottom:30px\n}\n.pb-7{\n    padding-bottom:40px\n}\n.pb-8{\n    padding-bottom:50px\n}\n.pb-9{\n    padding-bottom:60px\n}\n.pb-10{\n    padding-bottom:70px\n}\n.pb-11{\n    padding-bottom:80px\n}\n.pb-12{\n    padding-bottom:90px\n}\n.pb-13{\n    padding-bottom:100px\n}\n.pb-14{\n    padding-bottom:120px\n}\n.pb-15{\n    padding-bottom:140px\n}\n.width90{\n    width:90%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width80{\n    width:80%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width70{\n    width:70%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width60{\n    width:60%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width50{\n    width:50%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width40{\n    width:40%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/css/AboutUs.css":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/css/AboutUs.css ***!
+  \************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+<<<<<<< HEAD
 ___CSS_LOADER_EXPORT___.push([module.id, "html { \r\n    scroll-behavior: smooth; \r\n    \r\n  }\r\n.generalFont{\r\n    font-family:  cursive;\r\n}\r\n.generalBackground{\r\n    background-color:rgb(248, 248, 248);\r\n}\r\n.backgroundWhite{\r\n    background-color: white;\r\n}\r\n.flex{\r\n    display:flex;\r\n}\r\n.justifyText{\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: justify;\r\n    text-justify: inter-word;\r\n}\r\n.emptyStar{\r\n    color:rgb(253, 225, 149);\r\n}\r\n.centerText{\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: center;\r\n    \r\n}\r\n.textAlignCenter{\r\n    text-align: center;\r\n}\r\n.cursorPointer{\r\n    cursor:pointer;\r\n}\r\n.verticalAlign{\r\n    display:flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n.flexCenter{\r\n    display:flex;\r\n    justify-content: center;\r\n}\r\n.flexColumn{\r\n    display:flex;\r\n    flex-direction: column;\r\n}\r\n.flexBetween{\r\n    display:flex;\r\n    justify-content: space-between;\r\n}\r\n.lightShadowCard{\r\n    box-shadow: 0 0 2px 1px rgb(214, 214, 214);\r\n    background-color: white!important;\r\n}\r\n.lightShadowCard1{\r\n    box-shadow: 0 0 2px 1px rgb(233, 233, 233);\r\n    \r\n}\r\n.productCard{\r\n    width:200px;\r\n    /* height:300px; */\r\n    background-color: rgb(173, 199, 199);\r\n}\r\n.greyLineProduct{\r\n    width:100%;\r\n    height:1px;\r\n    background-color:rgb(223, 223, 223);\r\n}\r\n.lightGrey{\r\n    background-color:rgb(223, 223, 223);\r\n}\r\n.grey1{\r\n    color:rgb(92, 92, 92)\r\n}\r\n.grey2{\r\n    color:rgb(54, 54, 54)\r\n}\r\n.grey3{\r\n    color:rgb(31, 31, 31)\r\n}\r\n.cardProduct{\r\n    margin:6%;\r\n    border-radius:4px; \r\n    transition: all .2s ease-in-out;\r\n}\r\n.cardProduct:hover{\r\n    margin:6%;\r\n    border-radius:4px; \r\n    /* opacity:0.8; */\r\n    /* transform: scale(1.02); */\r\n}\r\n.cardProduct:hover{\r\n    opacity:0.8;\r\n}\r\n.cardProduct:hover .imageProduct{\r\n    opacity:0.3;\r\n}\r\n.hideProduct{\r\n    opacity:0;\r\n    height:50px;\r\n    /* margin-right:auto; */\r\n}\r\n.elementAppear{\r\n    font-size:1.1em;\r\n    font-weight:600;\r\n}\r\n.cardProduct:hover .hideProduct{\r\n   display:block;\r\n   position:relative;\r\n   top:-130px;\r\n   z-index: 100;\r\n   /* font-size:1.5em; */\r\n   background:transparent;\r\n   opacity:1;\r\n}\r\n.cardProduct:hover .elementAppear{\r\n    width:80%;\r\n    margin-right:auto;\r\n    margin-left:auto;\r\n    height:50px;\r\n    display:flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    /* background-color:rgb(219, 219, 219); */\r\n    border:2px solid grey;\r\n    border-radius:2px;\r\n }\r\n .bold100{\r\n     font-weight:100;\r\n }\r\n .bold200{\r\n     font-weight:200;\r\n }\r\n .bold300{\r\n     font-weight:300;\r\n }\r\n .bold400{\r\n     font-weight:400;\r\n }\r\n .bold500{\r\n     font-weight:500;\r\n }\r\n .bold600{\r\n     font-weight:600;\r\n }\r\n .bold700{\r\n     font-weight:700;\r\n }\r\n .bold800{\r\n     font-weight:800;\r\n }\r\n .size1{\r\n     font-size:1.1em;\r\n }\r\n .size2{\r\n     font-size:1.2em;\r\n }\r\n .size3{\r\n     font-size:1.3em;\r\n }\r\n .size4{\r\n     font-size:1.4em;\r\n }\r\n .size5{\r\n     font-size:1.5em;\r\n }\r\n .size6{\r\n     font-size:1.6em;\r\n }\r\n .size7{\r\n     font-size:1.7em;\r\n }\r\n .size8{\r\n     font-size:1.8em;\r\n }\r\n .size9{\r\n     font-size:1.9em;\r\n }\r\n .font1{\r\n    font-family: Georgia, serif;\r\n }\r\n .font2{\r\n    font-family: sans-serif;\r\n }\r\n .font3{\r\n    font-family: serif;\r\n }\r\n .font4{\r\n    font-family: cursive;\r\n }\r\n .font5{\r\n    font-family: system-ui;\r\n }\r\n .font6{\r\n    font-family: monospace;\r\n }\r\n .font7{\r\n    font-family: fantasy;\r\n }\r\n.mt-1{\r\n    margin-top:5px\r\n}\r\n.mt-2{\r\n    margin-top:10px\r\n}\r\n.mt-3{\r\n    margin-top:15px\r\n}\r\n.mt-4{\r\n    margin-top:20px\r\n}\r\n.mt-5{\r\n    margin-top:25px\r\n}\r\n.mt-6{\r\n    margin-top:30px\r\n}\r\n.mt-7{\r\n    margin-top:40px\r\n}\r\n.mt-8{\r\n    margin-top:50px\r\n}\r\n.mt-9{\r\n    margin-top:60px\r\n}\r\n.mt-10{\r\n    margin-top:70px\r\n}\r\n.mt-11{\r\n    margin-top:80px\r\n}\r\n.mt-12{\r\n    margin-top:90px\r\n}\r\n.mt-13{\r\n    margin-top:100px\r\n}\r\n.mt-14{\r\n    margin-top:120px\r\n}\r\n.mt-15{\r\n    margin-top:140px\r\n}\r\n.pt-1{\r\n    padding-top:5px\r\n}\r\n.pt-2{\r\n    padding-top:10px\r\n}\r\n.pt-3{\r\n    padding-top:15px\r\n}\r\n.pt-4{\r\n    padding-top:20px\r\n}\r\n.pt-5{\r\n    padding-top:25px\r\n}\r\n.pt-6{\r\n    padding-top:30px\r\n}\r\n.pt-7{\r\n    padding-top:40px\r\n}\r\n.pt-8{\r\n    padding-top:50px\r\n}\r\n.pt-9{\r\n    padding-top:60px\r\n}\r\n.pt-10{\r\n    padding-top:70px\r\n}\r\n.pt-11{\r\n    padding-top:80px\r\n}\r\n.pt-12{\r\n    padding-top:90px\r\n}\r\n.pt-13{\r\n    padding-top:100px\r\n}\r\n.pt-14{\r\n    padding-top:120px\r\n}\r\n.pt-15{\r\n    padding-top:140px\r\n}\r\n.m-1{\r\n    margin:5px\r\n}\r\n.m-2{\r\n    margin:10px\r\n}\r\n.m-3{\r\n    margin:15px\r\n}\r\n.m-4{\r\n    margin:20px\r\n}\r\n.m-5{\r\n    margin:25px\r\n}\r\n.m-6{\r\n    margin:30px\r\n}\r\n.m-7{\r\n    margin:40px\r\n}\r\n.m-8{\r\n    margin:50px\r\n}\r\n.m-9{\r\n    margin:60px\r\n}\r\n.m-10{\r\n    margin:70px\r\n}\r\n.m-11{\r\n    margin:80px\r\n}\r\n.m-12{\r\n    margin:90px\r\n}\r\n.m-13{\r\n    margin:100px\r\n}\r\n.m-14{\r\n    margin:120px\r\n}\r\n.m-15{\r\n    margin:140px\r\n}\r\n.p-1{\r\n    padding:5px\r\n}\r\n.p-2{\r\n    padding:10px\r\n}\r\n.p-3{\r\n    padding:15px\r\n}\r\n.p-4{\r\n    padding:20px\r\n}\r\n.p-5{\r\n    padding:25px\r\n}\r\n.p-6{\r\n    padding:30px\r\n}\r\n.p-7{\r\n    padding:40px\r\n}\r\n.p-8{\r\n    padding:50px\r\n}\r\n.p-9{\r\n    padding:60px\r\n}\r\n.p-10{\r\n    padding:70px\r\n}\r\n.p-11{\r\n    padding:80px\r\n}\r\n.p-12{\r\n    padding:90px\r\n}\r\n.p-13{\r\n    padding:100px\r\n}\r\n.p-14{\r\n    padding:120px\r\n}\r\n.p-15{\r\n    padding:140px\r\n}\r\n.ml-1{\r\n    margin-left:5px\r\n}\r\n.ml-2{\r\n    margin-left:10px\r\n}\r\n.ml-3{\r\n    margin-left:15px\r\n}\r\n.ml-4{\r\n    margin-left:20px\r\n}\r\n.ml-5{\r\n    margin-left:25px\r\n}\r\n.ml-6{\r\n    margin-left:30px\r\n}\r\n.ml-7{\r\n    margin-left:40px\r\n}\r\n.ml-8{\r\n    margin-left:50px\r\n}\r\n.ml-9{\r\n    margin-left:60px\r\n}\r\n.ml-10{\r\n    margin-left:70px\r\n}\r\n.ml-11{\r\n    margin-left:80px\r\n}\r\n.ml-12{\r\n    margin-left:90px\r\n}\r\n.ml-13{\r\n    margin-left:100px\r\n}\r\n.ml-14{\r\n    margin-left:120px\r\n}\r\n.ml-15{\r\n    margin-left:140px\r\n}\r\n.pl-1{\r\n    padding-left:5px\r\n}\r\n.pl-2{\r\n    padding-left:10px\r\n}\r\n.pl-3{\r\n    padding-left:15px\r\n}\r\n.pl-4{\r\n    padding-left:20px\r\n}\r\n.pl-5{\r\n    padding-left:25px\r\n}\r\n.pl-6{\r\n    padding-left:30px\r\n}\r\n.pl-7{\r\n    padding-left:40px\r\n}\r\n.pl-8{\r\n    padding-left:50px\r\n}\r\n.pl-9{\r\n    padding-left:60px\r\n}\r\n.pl-10{\r\n    padding-left:70px\r\n}\r\n.pl-11{\r\n    padding-left:80px\r\n}\r\n.pl-12{\r\n    padding-left:90px\r\n}\r\n.pl-13{\r\n    padding-left:100px\r\n}\r\n.pl-14{\r\n    padding-left:120px\r\n}\r\n.pl-15{\r\n    padding-left:140px\r\n}\r\n.mr-1{\r\n    margin-right:5px\r\n}\r\n.mr-2{\r\n    margin-right:10px\r\n}\r\n.mr-3{\r\n    margin-right:15px\r\n}\r\n.mr-4{\r\n    margin-right:20px\r\n}\r\n.mr-5{\r\n    margin-right:25px\r\n}\r\n.mr-6{\r\n    margin-right:30px\r\n}\r\n.mr-7{\r\n    margin-right:40px\r\n}\r\n.mr-8{\r\n    margin-right:50px\r\n}\r\n.mr-9{\r\n    margin-right:60px\r\n}\r\n.mr-10{\r\n    margin-right:70px\r\n}\r\n.mr-11{\r\n    margin-right:80px\r\n}\r\n.mr-12{\r\n    margin-right:90px\r\n}\r\n.mr-13{\r\n    margin-right:100px\r\n}\r\n.mr-14{\r\n    margin-right:120px\r\n}\r\n.mr-15{\r\n    margin-right:140px\r\n}\r\n.pr-1{\r\n    padding-right:5px\r\n}\r\n.pr-2{\r\n    padding-right:10px\r\n}\r\n.pr-3{\r\n    padding-right:15px\r\n}\r\n.pr-4{\r\n    padding-right:20px\r\n}\r\n.pr-5{\r\n    padding-right:25px\r\n}\r\n.pr-6{\r\n    padding-right:30px\r\n}\r\n.pr-7{\r\n    padding-right:40px\r\n}\r\n.pr-8{\r\n    padding-right:50px\r\n}\r\n.pr-9{\r\n    padding-right:60px\r\n}\r\n.pr-10{\r\n    padding-right:70px\r\n}\r\n.pr-11{\r\n    padding-right:80px\r\n}\r\n.pr-12{\r\n    padding-right:90px\r\n}\r\n.pr-13{\r\n    padding-right:100px\r\n}\r\n.pr-14{\r\n    padding-right:120px\r\n}\r\n.pr-15{\r\n    padding-right:140px\r\n}\r\n.mb-1{\r\n    margin-bottom:5px\r\n}\r\n.mb-2{\r\n    margin-bottom:10px\r\n}\r\n.mb-3{\r\n    margin-bottom:15px\r\n}\r\n.mb-4{\r\n    margin-bottom:20px\r\n}\r\n.mb-5{\r\n    margin-bottom:25px\r\n}\r\n.mb-6{\r\n    margin-bottom:30px\r\n}\r\n.mb-7{\r\n    margin-bottom:40px\r\n}\r\n.mb-8{\r\n    margin-bottom:50px\r\n}\r\n.mb-9{\r\n    margin-bottom:60px\r\n}\r\n.mb-10{\r\n    margin-bottom:70px\r\n}\r\n.mb-11{\r\n    margin-bottom:80px\r\n}\r\n.mb-12{\r\n    margin-bottom:90px\r\n}\r\n.mb-13{\r\n    margin-bottom:100px\r\n}\r\n.mb-14{\r\n    margin-bottom:120px\r\n}\r\n.mb-15{\r\n    margin-bottom:140px\r\n}\r\n.pb-1{\r\n    padding-bottom:5px\r\n}\r\n.pb-2{\r\n    padding-bottom:10px\r\n}\r\n.pb-3{\r\n    padding-bottom:15px\r\n}\r\n.pb-4{\r\n    padding-bottom:20px\r\n}\r\n.pb-5{\r\n    padding-bottom:25px\r\n}\r\n.pb-6{\r\n    padding-bottom:30px\r\n}\r\n.pb-7{\r\n    padding-bottom:40px\r\n}\r\n.pb-8{\r\n    padding-bottom:50px\r\n}\r\n.pb-9{\r\n    padding-bottom:60px\r\n}\r\n.pb-10{\r\n    padding-bottom:70px\r\n}\r\n.pb-11{\r\n    padding-bottom:80px\r\n}\r\n.pb-12{\r\n    padding-bottom:90px\r\n}\r\n.pb-13{\r\n    padding-bottom:100px\r\n}\r\n.pb-14{\r\n    padding-bottom:120px\r\n}\r\n.pb-15{\r\n    padding-bottom:140px\r\n}\r\n.width90{\r\n    width:90%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width80{\r\n    width:80%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width70{\r\n    width:70%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width60{\r\n    width:60%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width50{\r\n    width:50%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width40{\r\n    width:40%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width30{\r\n    width:30%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width30{\r\n    width:30%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n.width30{\r\n    width:30%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n}\r\n\r\n", ""]);
+=======
+___CSS_LOADER_EXPORT___.push([module.id, ".testAnim{\r\n    -webkit-animation-duration: 1s;\r\n            animation-duration: 1s;\r\n    -webkit-animation-name: slidein;\r\n            animation-name: slidein;\r\n    \r\n}\r\n\r\n@-webkit-keyframes slidein {\r\n    from {\r\n      transform: translateX(+100%);\r\n      opacity:0;\r\n      \r\n    }\r\n    to {\r\n      transform: translateX(0);\r\n      opacity:1;\r\n      \r\n  \r\n    }\r\n  }\r\n\r\n@keyframes slidein {\r\n    from {\r\n      transform: translateX(+100%);\r\n      opacity:0;\r\n      \r\n    }\r\n    to {\r\n      transform: translateX(0);\r\n      opacity:1;\r\n      \r\n  \r\n    }\r\n  }\r\n\r\n  .imgAboutUsP1{\r\n    float: right;\r\n    margin: 0px 0px 20px 30px;  }\r\n  .imgAboutUsP2{\r\n    float: left;\r\n    margin: 30px 30px 0 0;\r\n  }\r\n  .importantWords{\r\n      color:rgb(180, 136, 32)\r\n  }\r\n\r\n\r\n  \r\n\r\n  .multi-item-carousel .carousel-inner > .item {\r\n    transition: 500ms ease-in-out left;\r\n  }\r\n  .multi-item-carousel .carousel-inner .active.left {\r\n    left: -33%;\r\n  }\r\n  .multi-item-carousel .carousel-inner .active.right {\r\n    left: 33%;\r\n  }\r\n  .multi-item-carousel .carousel-inner .next {\r\n    left: 33%;\r\n  }\r\n  .multi-item-carousel .carousel-inner .prev {\r\n    left: -33%;\r\n  }\r\n  @media all and (transform-3d), (-webkit-transform-3d) {\r\n    .multi-item-carousel .carousel-inner > .item {\r\n      transition: 500ms ease-in-out left;\r\n      transition: 500ms ease-in-out all;\r\n      -webkit-backface-visibility: visible;\r\n              backface-visibility: visible;\r\n      transform: none !important;\r\n    }\r\n  }\r\n  .multi-item-carousel .carouse-control.left,\r\n  .multi-item-carousel .carouse-control.right {\r\n    background-image: none;\r\n  }", ""]);
+>>>>>>> cb71e35716ba99ffcf38b263174444b1ae255390
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36955,7 +35751,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".productLineCart{\r\n    background-color:rgb(255, 255, 255);\r\n    margin-top:20px;\r\n    display:flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    border-radius:2px;\r\n    font-size:1.1em;\r\n}\r\n.imgLineCart{\r\n    height:120px;\r\n    width:120px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    border-top-left-radius:2px;\r\n    border-bottom-left-radius:2px;\r\n\r\n}\r\n.RecapCart{\r\n    margin-top:20px;\r\n    background-color:white;\r\n    border-radius:2px;\r\n    \r\n}\r\n.quantityNameCart{\r\n    width:140px;\r\n}\r\n.fontTrash{\r\n    color:rgb(83, 83, 83);\r\n    margin-right:10px;\r\n}\r\n.itemOrItems{\r\n    margin-left:10px;\r\n}\r\n.yourOrder{\r\n    margin-top:34px;\r\n    /* border:1px solid rgb(196, 196, 196); */\r\n    border-radius:5px;\r\n}\r\n.shippingFees{\r\n    height:40px;\r\n}\r\n.buttonModifyQuantity{\r\n    border: 1px solid grey;\r\n    border-radius:2px;\r\n    width:30px;\r\n    cursor:pointer;\r\n}\r\n.testCard{\r\n    padding-top:12px;\r\n    padding-left:5px;\r\n    border: 1px solid rgb(201, 201, 201);\r\n    border-radius:5px;\r\n    height:50px;\r\n}\r\n.quantityPriceCart{\r\n    font-size:1.2em;\r\n    font-weight: bold;\r\n}\r\n.widthQuantityPrice{\r\n    width:100px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".productLineCart{\r\n    margin-top:20px;\r\n    display:flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    border-radius:2px;\r\n    font-size:1.1em;\r\n}\r\n.imgLineCart{\r\n    height:120px;\r\n    width:120px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    border-top-left-radius:2px;\r\n    border-bottom-left-radius:2px;\r\n\r\n}\r\n.RecapCart{\r\n    margin-top:20px;\r\n    background-color:white;\r\n    border-radius:2px;\r\n    \r\n}\r\n.quantityNameCart{\r\n    width:140px;\r\n}\r\n.fontTrash{\r\n    color:rgb(83, 83, 83);\r\n    margin-right:10px;\r\n}\r\n.itemOrItems{\r\n    margin-left:10px;\r\n}\r\n.yourOrder{\r\n    margin-top:34px;\r\n    /* border:1px solid rgb(196, 196, 196); */\r\n    border-radius:5px;\r\n}\r\n.shippingFees{\r\n    height:40px;\r\n}\r\n.buttonModifyQuantity{\r\n    border: 1px solid grey;\r\n    border-radius:2px;\r\n    width:30px;\r\n    cursor:pointer;\r\n}\r\n.testCard{\r\n    padding-top:12px;\r\n    padding-left:5px;\r\n    border: 1px solid rgb(201, 201, 201);\r\n    border-radius:5px;\r\n    height:50px;\r\n}\r\n.quantityPriceCart{\r\n    font-size:1.2em;\r\n    font-weight: bold;\r\n}\r\n.widthQuantityPrice{\r\n    width:100px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36985,7 +35781,11 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_assets_img_backgroundFooter1_jpg__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
+<<<<<<< HEAD
 ___CSS_LOADER_EXPORT___.push([module.id, ".widthP{\r\n    /* width:40%; */\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: justify;\r\n    text-justify: inter-word;\r\n    font-size:1.3em;\r\n    /* font-family: 'Bungee Inline', cursive; */\r\n}\r\n.backgroundFooter{\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    /* filter: blur(0.1px); */\r\n    /* background: rgb(0,0,0);\r\n    background: linear-gradient(47deg, rgba(0,0,0,1) 0%, rgba(2,2,32,1) 18%, rgba(11,11,62,1) 36%, rgba(16,15,101,1) 100%); */\r\n    color:rgb(223, 223, 223);\r\n    padding-bottom:17px;\r\n}\r\n.backgroundFooterItems{\r\n    background-color:rgb(241, 241, 241);\r\n    color:rgb(56, 56, 56);\r\n}\r\n.inputFooter{\r\n    background:white;\r\n}\r\n.ulFooter{\r\n    list-style-type:none;\r\n}\r\n.liFooter{\r\n    list-style:none;\r\n    list-style-type:none;\r\n}\r\n/* .greyLineBorders{\r\n    height:100px;\r\n    border-left:1px solid rgb(189, 189, 189);\r\n    border-right:1px solid rgb(189, 189, 189);\r\n} */\r\n.iconsSocialMedias{\r\n    display:flex;\r\n    justify-content: center;\r\n}\r\n.widthItemsFooter{\r\n    min-width:240px;\r\n    margin-top:20px;\r\n}\r\n.iconsFooter{\r\n    width:25px;\r\n}\r\n.iconsFooterTrack{\r\n    width:35px;\r\n}\r\n.heightIconsFooter{\r\n    height:50px;\r\n}\r\n\r\n", ""]);
+=======
+___CSS_LOADER_EXPORT___.push([module.id, ".widthP{\n    /* width:40%; */\n    margin-left:auto;\n    margin-right:auto;\n    text-align: justify;\n    text-justify: inter-word;\n    font-size:1.3em;\n    /* font-family: 'Bungee Inline', cursive; */\n}\n.backgroundFooter{\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    /* filter: blur(0.1px); */\n    /* background: rgb(0,0,0);\n    background: linear-gradient(47deg, rgba(0,0,0,1) 0%, rgba(2,2,32,1) 18%, rgba(11,11,62,1) 36%, rgba(16,15,101,1) 100%); */\n    color:rgb(223, 223, 223);\n    padding-bottom:17px;\n}\n.backgroundFooterItems{\n    background-color:rgb(241, 241, 241);\n    color:rgb(56, 56, 56);\n}\n.inputFooter{\n    background:white;\n}\n.ulFooter{\n    list-style-type:none;\n}\n.liFooter{\n    list-style:none;\n    list-style-type:none;\n}\n/* .greyLineBorders{\n    height:100px;\n    border-left:1px solid rgb(189, 189, 189);\n    border-right:1px solid rgb(189, 189, 189);\n} */\n.iconsSocialMedias{\n    display:flex;\n    justify-content: center;\n}\n.widthItemsFooter{\n    min-width:240px;\n    margin-top:20px;\n}\n.iconsFooter{\n    width:25px;\n}\n.iconsFooterTrack{\n    width:35px;\n}\n.heightIconsFooter{\n    height:50px;\n}\n.buttonSendNewsletters{\n    background:transparent;\n    /* margin-left:5px; */\n    border-top-right-radius:3px;\n    border-bottom-right-radius:3px;\n    color:white;\n    /* border:1px solid rgb(0, 0, 0); */\n    cursor:pointer;\n}\n\n", ""]);
+>>>>>>> cb71e35716ba99ffcf38b263174444b1ae255390
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -37009,7 +35809,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".titleHeader{\r\n    font-size:150%;\r\n    /* font-family:  cursive; */\r\n    \r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".titleHeader{\r\n    font-size:150%;\r\n    letter-spacing: 2px;\r\n    /* font-family:  cursive; */\r\n    text-shadow: 1px 1px 2px rgb(226, 226, 226);\r\n    \r\n}\r\n.itemMenu{\r\n    margin-top:24px;\r\n    letter-spacing: 2px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -37033,7 +35833,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
+<<<<<<< HEAD
 ___CSS_LOADER_EXPORT___.push([module.id, "\r\n\r\n* {\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  body { font-family: sans-serif; }\r\n  \r\n  .gallery {\r\n    background: #EEE;\r\n  }\r\n  \r\n  .gallery-cell {\r\n    width: 28%;\r\n    height: 200px;\r\n    margin-right: 10px;\r\n    background: #8C8;\r\n    counter-increment: gallery-cell;\r\n  }\r\n  \r\n  .gallery-cell.is-selected {\r\n    background: #ED2;\r\n  }\r\n  \r\n  /* cell number */\r\n  .gallery-cell:before {\r\n    display: block;\r\n    text-align: center;\r\n    content: counter(gallery-cell);\r\n    line-height: 200px;\r\n    font-size: 80px;\r\n    color: white;\r\n  }\r\n  .imgIntro{\r\n    width:100%;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n  }\r\n  .textReviews{\r\n    color:rgb(39, 39, 39);\r\n  }\r\n  .rewardIcon{\r\n    width:60px;\r\n  }\r\n  .smallIcons{\r\n    width:25px\r\n  }\r\n  .earthIcon{\r\n    width:25px\r\n  }\r\n  .backgroundIcons{\r\n   color:red;\r\n  }\r\n  .reviewIcon{\r\n    width:100px;\r\n    /* background-color:rgb(248, 248, 248); */\r\n    /* background-color:rgb(255, 0, 0); */\r\n  }\r\n \r\n\r\n  .blueBar{\r\n    width:60%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    height:4px;\r\n    background-color:rgb(234, 240, 246);\r\n    margin-top:-5px;\r\n  }\r\n  .titleHomeArguments{\r\n    font-weight:bold;\r\n  }\r\n  @media all and (min-width: 600px) {\r\n    .orangeBar{\r\n      margin-top:auto;\r\n      margin-bottom:auto;\r\n      height:80%;\r\n      width:2px;\r\n      background-color:rgb(205, 221, 236);\r\n    }\r\n  }", ""]);
+=======
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n* {\n    box-sizing: border-box;\n  }\n  \n  body { font-family: sans-serif; }\n  \n  .gallery {\n    background: #EEE;\n  }\n  \n  .gallery-cell {\n    width: 28%;\n    height: 200px;\n    margin-right: 10px;\n    background: #8C8;\n    counter-increment: gallery-cell;\n  }\n  \n  .gallery-cell.is-selected {\n    background: #ED2;\n  }\n  \n  /* cell number */\n  .gallery-cell:before {\n    display: block;\n    text-align: center;\n    content: counter(gallery-cell);\n    line-height: 200px;\n    font-size: 80px;\n    color: white;\n  }\n  .imgIntro{\n    width:100%;\n    height:300px;\n    -o-object-fit: cover;\n       object-fit: cover;\n  }\n  .textReviews{\n    color:rgb(39, 39, 39);\n  }\n  .rewardIcon{\n    width:60px;\n  }\n  .smallIcons{\n    width:25px\n  }\n  .earthIcon{\n    width:25px\n  }\n  .backgroundIcons{\n   color:red;\n  }\n  .reviewIcon{\n    width:100px;\n    margin-bottom:-20px;\n    /* background-color:rgb(248, 248, 248); */\n    /* background-color:rgb(255, 0, 0); */\n  }\n \n\n  .blueBar{\n    width:60%;\n    margin-left:auto;\n    margin-right:auto;\n    height:4px;\n    background-color:rgb(234, 240, 246);\n    margin-top:-5px;\n  }\n  .titleHomeArguments{\n    font-weight:bold;\n  }\n  @media all and (min-width: 600px) {\n    .orangeBar{\n      margin-top:auto;\n      margin-bottom:auto;\n      height:80%;\n      width:2px;\n      background-color:rgb(205, 221, 236);\n    }\n  }\n  .transitionReview {\n    -webkit-animation-duration: 1s;\n            animation-duration: 1s;\n    -webkit-animation-name: slidein;\n            animation-name: slidein;\n}\n@-webkit-keyframes slidein {\n  from {\n    transform: translateX(+100%);\n    opacity:0;\n  }\n  to {\n    transform: translateX(0);\n    opacity:1;\n\n  }\n}\n@keyframes slidein {\n  from {\n    transform: translateX(+100%);\n    opacity:0;\n  }\n  to {\n    transform: translateX(0);\n    opacity:1;\n\n  }\n}\n.show{\n  background-color: red;\n}", ""]);
+>>>>>>> cb71e35716ba99ffcf38b263174444b1ae255390
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -37057,7 +35861,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n\r\n\r\n\r\n.nameProduct{\r\n    margin-top:-40px;\r\n    font-weight:900;\r\n    width:80%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: center;\r\n    /* height:40px; */\r\n}\r\n.priceProduct{\r\n    font-weight:600;\r\n    /* font-size:em; */\r\n}\r\n.imageProduct{\r\n    width:100%;\r\n    border-top-left-radius:4px;\r\n    border-top-right-radius:4px;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:0.9;\r\n    transition: .5s ease;\r\n    -webkit-backface-visibility: hidden;\r\n            backface-visibility: hidden;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n.imageOneProduct{\r\n    width:100%;\r\n    border-radius:4px;\r\n    height:500px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:1;\r\n}\r\n.test{\r\n    background-color:red;\r\n    margin:0px;\r\n}\r\n.greyLineMenuProduct{\r\n    height:1px;\r\n    background-color:rgb(218, 218, 218);\r\n    width:100%;\r\n    margin-top:15px;\r\n}\r\n.menuButton{\r\n    margin-left:40px;\r\n    padding-bottom:18px;\r\n    color:rgb(97, 97, 253);\r\n}\r\n.menuButton:hover{\r\n    cursor:pointer;\r\n    border-bottom:1px solid black;\r\n    color:rgb(160, 216, 30);\r\n}\r\n.paragraphMenuProduct{\r\n    text-justify: inherit;\r\n    padding:30px;\r\n}\r\n.menuDetailsProduct{\r\n    padding:80px;\r\n}\r\n.alignCenter{\r\n    display:flex;\r\n    align-items: center;\r\n}\r\n.greyButton{\r\n    background-color:rgb(243, 243, 243);\r\n}\r\n.greyButton:hover{\r\n    background-color:rgb(231, 231, 231);\r\n}\r\n.buttonAdd{\r\n    cursor:pointer;\r\n    border-top:1px solid rgb(207, 207, 207);\r\n    border-bottom:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.buttonSubstract{\r\n    cursor:pointer;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius:5px;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.quantityProduct{\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.buttonAddToCart{\r\n    cursor:pointer;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:100%;\r\n    height:30px;\r\n    font-weight: 200;\r\n    border-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.boutonPagination{\r\n    color:rgb(36, 36, 36)(0, 0, 0);\r\n    /* background-color:rgb(243, 243, 243); */\r\n}\r\n\r\n\r\n.boutonPagination{\r\n    width:25px;\r\n    padding:10px;\r\n    padding-left:25px;\r\n    padding-right:32px;\r\n    /* margin:10px; */\r\n    font-size:1.1em;\r\n    border-radius:5px;\r\n}\r\n.boutonPaginationSelected{\r\n    width:25px;\r\n    padding:10px;\r\n    padding-left:25px;\r\n    padding-right:32px;\r\n    font-size:1.1em;\r\n    color:rgb(82, 82, 82);\r\n    font-weight:600;\r\n    background-color:rgb(226, 226, 226)\r\n}\r\n.boutonPagination:hover{\r\n    font-size:1.1em;\r\n    color:grey;\r\n    background-color:rgb(241, 241, 241);\r\n    cursor:pointer;\r\n}\r\n/* .productDetails{\r\n    font-size:1.9em;\r\n} */\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n\r\n\r\n\r\n.nameProduct{\r\n    margin-top:-40px;\r\n    font-weight:900;\r\n    width:80%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: center;\r\n    /* height:40px; */\r\n}\r\n.priceProduct{\r\n    font-weight:600;\r\n    /* font-size:em; */\r\n}\r\n.imageProduct{\r\n    width:100%;\r\n    border-top-left-radius:4px;\r\n    border-top-right-radius:4px;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:0.9;\r\n    transition: .5s ease;\r\n    -webkit-backface-visibility: hidden;\r\n            backface-visibility: hidden;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n.imageOneProduct{\r\n    width:100%;\r\n    border-radius:4px;\r\n    height:500px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:1;\r\n}\r\n.test{\r\n    background-color:red;\r\n    margin:0px;\r\n}\r\n.greyLineMenuProduct{\r\n    height:1px;\r\n    background-color:rgb(218, 218, 218);\r\n    width:100%;\r\n    margin-top:15px;\r\n}\r\n.menuButton{\r\n    margin-left:40px;\r\n    padding-bottom:18px;\r\n    color:rgb(97, 97, 253);\r\n}\r\n.menuButton:hover{\r\n    cursor:pointer;\r\n    border-bottom:1px solid black;\r\n    color:rgb(160, 216, 30);\r\n}\r\n.paragraphMenuProduct{\r\n    text-justify: inherit;\r\n    padding:30px;\r\n}\r\n.menuDetailsProduct{\r\n    padding:80px;\r\n}\r\n.alignCenter{\r\n    display:flex;\r\n    align-items: center;\r\n}\r\n\r\n.greyButton:hover{\r\n    background-color:rgb(231, 231, 231);\r\n}\r\n.buttonAdd{\r\n    cursor:pointer;\r\n    border-top:1px solid rgb(230, 230, 230);\r\n    border-bottom:1px solid rgb(230, 230, 230);\r\n    width:50px;\r\n    font-weight: 300;\r\n\r\n}\r\n.buttonSubstract{\r\n    cursor:pointer;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius:5px;\r\n    border:1px solid rgb(230, 230, 230);\r\n    width:50px;\r\n    font-weight: 300;\r\n    color:rgb(116, 116, 116);\r\n   \r\n}\r\n.quantityProduct{\r\n    border:1px solid rgb(230, 230, 230);\r\n    width:50px;\r\n    font-weight: 300;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.buttonAddToCart{\r\n    cursor:pointer;\r\n    border:1px solid rgb(230, 230, 230);\r\n    width:200px;\r\n    /* width:90%; */\r\n    font-weight: 200;\r\n    border-radius:5px;\r\n    color:rgb(58, 58, 58);\r\n}\r\n.boutonPagination{\r\n    color:rgb(36, 36, 36)(0, 0, 0);\r\n    /* background-color:rgb(243, 243, 243); */\r\n}\r\n\r\n\r\n.boutonPagination{\r\n    width:25px;\r\n    padding:10px;\r\n    padding-left:25px;\r\n    padding-right:32px;\r\n    /* margin:10px; */\r\n    font-size:1.1em;\r\n    border-radius:5px;\r\n}\r\n.boutonPaginationSelected{\r\n    width:25px;\r\n    padding:10px;\r\n    padding-left:25px;\r\n    padding-right:32px;\r\n    font-size:1.1em;\r\n    color:rgb(82, 82, 82);\r\n    font-weight:600;\r\n    background-color:rgb(226, 226, 226)\r\n}\r\n.boutonPagination:hover{\r\n    font-size:1.1em;\r\n    color:grey;\r\n    background-color:rgb(241, 241, 241);\r\n    cursor:pointer;\r\n}\r\n/* .productDetails{\r\n    font-size:1.9em;\r\n} */\r\n.starsProductReview{\r\n    display:flex;\r\n    flex-direction: row-reverse;\r\n}\r\n@media all and (max-width: 600px) {\r\n    .marginTop600px{\r\n      margin-top:20px;\r\n    }\r\n  }\r\n  @media all and (max-width: 400px) {\r\n  \r\n    .buttonAddToCart{\r\n        width:120px;\r\n    }\r\n  }\r\n\r\n.buttonCategory{\r\n    border-radius:20px;\r\n    background-color: rgb(232, 233, 241);\r\n    border:1px solid rgb(189, 189, 189);\r\n    color:rgb(133, 133, 133);\r\n}\r\n.buttonCategory:hover {\r\n    background-color: rgb(212, 213, 238);\r\n    cursor:pointer;\r\n}\r\n.widthFormControl{\r\n    width:140px;\r\n}\r\n.optionSelect{\r\n    height:30px;\r\n}\r\n.optionSelect:hover{\r\n    cursor:pointer;\r\n    background-color:rgb(220, 224, 241);\r\n}\r\n.hideProduct2{\r\n    opacity:0;\r\n    height:50px;\r\n    margin-bottom:20px;\r\n}\r\n.cardProduct:hover .hideProduct2{\r\n    display:block;\r\n    position:relative;\r\n    top:10px;\r\n    z-index: 100;\r\n    /* font-size:1.5em; */\r\n    background:white;\r\n    opacity:1;\r\n    color:rgb(75, 75, 75);\r\n }\r\n /* .cardProduct:hover .nameProduct{\r\n    opacity:0;\r\n }\r\n .cardProduct:hover .productDetails{\r\n    opacity:0;\r\n }\r\n .cardProduct:hover .priceProduct {\r\n    opacity:0;\r\n } */\r\n .cardProduct:hover .imageProduct2{\r\n    opacity:0.6;\r\n}\r\n.imageProduct2{\r\n    width:100%;\r\n    border-top-left-radius:4px;\r\n    border-top-right-radius:4px;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:0.9;\r\n    transition: .5s ease;\r\n    -webkit-backface-visibility: hidden;\r\n            backface-visibility: hidden;\r\n}\r\n\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -37882,9 +36686,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/img/reward1.png":
+/***/ "./resources/assets/img/reward2.svg":
 /*!******************************************!*\
-  !*** ./resources/assets/img/reward1.png ***!
+  !*** ./resources/assets/img/reward2.svg ***!
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -37893,22 +36697,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/reward1.png?b195e4dffa751670daa5c92004d0d18e");
-
-/***/ }),
-
-/***/ "./resources/assets/img/sewing1.jpg":
-/*!******************************************!*\
-  !*** ./resources/assets/img/sewing1.jpg ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/sewing1.jpg?082078f8dcbc03a56da90adf004df8d6");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/reward2.svg?30b9aded966bc197eeaa09ed69dd95b2");
 
 /***/ }),
 
@@ -37924,6 +36713,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/sewing2.jpg?2ea5da2cbbcb597c4bfbbe23671f48cb");
+
+/***/ }),
+
+/***/ "./resources/assets/img/sewing3.jpg":
+/*!******************************************!*\
+  !*** ./resources/assets/img/sewing3.jpg ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/sewing3.jpg?c255cf4629d1bdc52225fd2b144d186d");
 
 /***/ }),
 
@@ -115690,6 +114494,770 @@ var Recoil_index_35 = Recoil_index.snapshot_UNSTABLE;
 
 /***/ }),
 
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var runtime = (function (exports) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  function define(obj, key, value) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+    return obj[key];
+  }
+  try {
+    // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+    define({}, "");
+  } catch (err) {
+    define = function(obj, key, value) {
+      return obj[key] = value;
+    };
+  }
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  exports.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  define(IteratorPrototype, iteratorSymbol, function () {
+    return this;
+  });
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = GeneratorFunctionPrototype;
+  define(Gp, "constructor", GeneratorFunctionPrototype);
+  define(GeneratorFunctionPrototype, "constructor", GeneratorFunction);
+  GeneratorFunction.displayName = define(
+    GeneratorFunctionPrototype,
+    toStringTagSymbol,
+    "GeneratorFunction"
+  );
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      define(prototype, method, function(arg) {
+        return this._invoke(method, arg);
+      });
+    });
+  }
+
+  exports.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  exports.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      define(genFun, toStringTagSymbol, "GeneratorFunction");
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  exports.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator, PromiseImpl) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return PromiseImpl.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return PromiseImpl.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new PromiseImpl(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  define(AsyncIterator.prototype, asyncIteratorSymbol, function () {
+    return this;
+  });
+  exports.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+    if (PromiseImpl === void 0) PromiseImpl = Promise;
+
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList),
+      PromiseImpl
+    );
+
+    return exports.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        // Note: ["return"] must be used for ES3 parsing compatibility.
+        if (delegate.iterator["return"]) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  define(Gp, toStringTagSymbol, "Generator");
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  define(Gp, iteratorSymbol, function() {
+    return this;
+  });
+
+  define(Gp, "toString", function() {
+    return "[object Generator]";
+  });
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  exports.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  exports.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+
+  // Regardless of whether this script is executing as a CommonJS module
+  // or not, return the runtime object so that we can declare the variable
+  // regeneratorRuntime in the outer scope, which allows this module to be
+  // injected easily by `bin/regenerator --include-runtime script.js`.
+  return exports;
+
+}(
+  // If this script is executing as a CommonJS module, use module.exports
+  // as the regeneratorRuntime namespace. Otherwise create a new empty
+  // object. Either way, the resulting object will be used to initialize
+  // the regeneratorRuntime variable at the top of this file.
+   true ? module.exports : 0
+));
+
+try {
+  regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+  // This module should not be running in strict mode, so the above
+  // assignment should always work unless something is misconfigured. Just
+  // in case runtime.js accidentally runs in strict mode, in modern engines
+  // we can explicitly access globalThis. In older engines we can escape
+  // strict mode using a global Function call. This could conceivably fail
+  // if a Content Security Policy forbids using Function, but in that case
+  // the proper solution is to fix the accidental strict mode problem. If
+  // you've misconfigured your bundler to force strict mode and applied a
+  // CSP to forbid Function, and you're not willing to fix either of those
+  // problems, please detail your unique predicament in a GitHub issue.
+  if (typeof globalThis === "object") {
+    globalThis.regeneratorRuntime = runtime;
+  } else {
+    Function("r", "regeneratorRuntime = r")(runtime);
+  }
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/resolve-pathname/esm/resolve-pathname.js":
 /*!***************************************************************!*\
   !*** ./node_modules/resolve-pathname/esm/resolve-pathname.js ***!
@@ -116884,6 +116452,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_App_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/css/AboutUs.css":
+/*!**************************************!*\
+  !*** ./resources/js/css/AboutUs.css ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_AboutUs_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./AboutUs.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/css/AboutUs.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_AboutUs_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_AboutUs_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

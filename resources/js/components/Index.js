@@ -6,6 +6,7 @@ import Connect from '../components/Connect/Connect'
 import Signup from '../components/Connect/Signup'
 import Products from '../components/Products/Products'
 import Product from '../components/Products/Product'
+import AboutUs from '../components/Others/AboutUs'
 import Home from '../components/Home/Home'
 import '../App.css'
 import Header from '../layout/Header'
@@ -60,6 +61,11 @@ function Index() {
                             <Switch>
                                 <Route path="/checkout">
                                     <Checkout />
+                                </Route>
+                            </Switch>
+                            <Switch>
+                                <Route path="/aboutus">
+                                    <AboutUs />
                                 </Route>
                             </Switch>
                         </div>
