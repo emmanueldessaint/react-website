@@ -17,4 +17,9 @@ const { atom } = require("recoil");
       default: 1,
   })
 
+  export const shippingFees = atom({
+      key: 'shippingFees',
+      default: 8,
+  })
+
  
