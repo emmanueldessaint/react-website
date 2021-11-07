@@ -49,6 +49,10 @@ html {
     align-items: center;
     justify-content: center;
 }
+.verticalItem{
+    display:flex;
+    align-items: center;
+}
 .flexCenter{
     display:flex;
     justify-content: center;
@@ -80,6 +84,9 @@ html {
       -moz-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);
       -webkit-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);
       -o-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);
+}
+.underlined{
+    text-decoration: underline;
 }
 .bgWhite{
     background-color:white;

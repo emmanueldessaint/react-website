@@ -49,45 +49,37 @@ export default function Products() {
             .then(res => res.json())
             .then(
                 (result) => {
+                    
                     let averageNote = 0;
                     let newArray = [];
-                    // let allProducts = [];
-                    // allProducts = result.products
-                    newArray = result.products.slice(itemsByPage * (actuelPage - 1), itemsByPage * (actuelPage));
-                    setItems(result.products);
-                    for (var i = 0; i < result.products.length / itemsByPage; i++) {
+                    let allProducts = [];
+                    allProducts = result.products
+                    console.log(allProducts.length)
+                    for (let j = 0; j < allProducts.length; j++) {
+                        let totalNotes = 0;
+                        for (let k = 0; k < allProducts[j].reviews.length; k++) {
+                            totalNotes += allProducts[j].reviews[k].note;
+                        }
+                        averageNote = totalNotes / allProducts[j].reviews.length;
+                        allProducts[j].updated_at = averageNote;
+                    }
+                    setItems(allProducts);
+                    newArray = allProducts.slice(itemsByPage * (actuelPage - 1), itemsByPage * (actuelPage));                 
+                    for (var i = 0; i < allProducts.length / itemsByPage; i++) {
                         emptyArray.push(increment)
                         increment++
-                    }
-                    for (let j = 0; j < newArray.length; j++) {
-                        let totalNotes = 0;
-                        for (let k = 0; k < newArray[j].reviews.length; k++) {
-                            totalNotes += newArray[j].reviews[k].note;
-                        }
-                        averageNote = totalNotes / newArray[j].reviews.length;
-                        newArray[j].updated_at = averageNote;
-                    }
+                    }                   
+                    console.log('useEffect')
                     setNumberOfPages(emptyArray);
                     setItemsInCurrentPage(newArray)
                     setIsLoaded(true);
                 },
-                // Note: it's important to handle errors here
-                // instead of a catch() block so that we don't swallow
-                // exceptions from actual bugs in components.
                 (error) => {
                     setIsLoaded(true);
                     setError(error);
                 }
             )
     }, [])
-
-    const handleTest = () => {
-        console.log(actuelPage)
-    }
-
-    const averageNote = (item) => {
-        console.log(item)
-    }
 
     const handleChangePage = (item) => {
         let arrayWithItemsOnPage = [];
@@ -101,8 +93,7 @@ export default function Products() {
     const handleChange = (event) => {
         setAge(event.target.value);
       };
-
-
+ 
     if (error) {
         return <div className={classes.marginTop}>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -137,17 +128,19 @@ export default function Products() {
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <div className="alignRight">
-                                <FormControl >
-                                    <InputLabel >Filter by</InputLabel>
+                                <FormControl className="widthFormControl">
+                                    <InputLabel><span className="ml-4"></span>Filter by</InputLabel>
                                     <Select
                                         variant="outlined"
                                         value={age}
                                         onChange={handleChange}
-                                        
+                                        fullWidth
+                                        className="testSelect"
                                     >
                                         
-                                        <option value={10}>Asc</option>
-                                        <option value={20}>Desc</option>
+                                        <option className="optionSelect pl-1 pr-1 verticalItem" value={10}>Popularity</option>
+                                        <option className="optionSelect pl-1 pr-1 verticalItem" value={20}>Ascending price order</option>
+                                        <option className="optionSelect pl-1 pr-1 verticalItem" value={30}>Descending price order</option>
                                         
                                     </Select>
                                 </FormControl>
@@ -180,7 +173,7 @@ export default function Products() {
 
                                             {item.reviews.length > 0 &&
                                                 <div className="flex productDetails mt-4 mr-3 pb-1">
-                                                    <div className="grey1">({item.reviews.length})</div>
+                                                    <div className="grey1">({item.reviews.length})<span className="ml-1"></span></div>
                                                     <Rating
                                                         precision={0.5}
                                                         readOnly

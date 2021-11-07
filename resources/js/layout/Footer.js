@@ -35,6 +35,7 @@ import '../App.css';
 import '../css/Footer.css';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import '../../assets/css/fonts.css';
+import SendIcon from '@material-ui/icons/Send';
 
 const useStyles = makeStyles(theme => ({
 
@@ -133,7 +134,7 @@ export default function Footer() {
                                                 className="inputFooter"
                                                 placeholder=" Your email ..."
                                             />
-                                            <button className="buttonSendNewsletters font8">ok</button>
+                                            <button className="buttonSendNewsletters font8"><SendIcon /></button>
                                             </div>
                                     </div>
                                 </Grid>

@@ -154,10 +154,24 @@
   }
 
 .buttonCategory{
-border-radius:20px;
-background-color: rgb(198, 202, 235);
-border:1px solid grey;
-color:rgb(59, 59, 59);
+    border-radius:20px;
+    background-color: rgb(232, 233, 241);
+    border:1px solid rgb(189, 189, 189);
+    color:rgb(133, 133, 133);
+}
+.buttonCategory:hover {
+    background-color: rgb(212, 213, 238);
+    cursor:pointer;
+}
+.widthFormControl{
+    width:140px;
+}
+.optionSelect{
+    height:30px;
+}
+.optionSelect:hover{
+    cursor:pointer;
+    background-color:rgb(220, 224, 241);
 }
 
 

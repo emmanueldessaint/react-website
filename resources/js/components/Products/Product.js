@@ -109,6 +109,7 @@ export default function Product(props) {
     const [value, setValue] = React.useState(0);
     const [quantityProduct, setQuantityProduct] = useState(1);
     const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
+    const [averageNote, setAverageNote] = useState(0);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -154,6 +155,17 @@ export default function Product(props) {
         
     }
 
+    useEffect(() => {
+        console.log(product.reviews)
+        let totalNotes = 0
+        for (var i = 0; i < product.reviews.length; i++) {
+            totalNotes += (product.reviews[i].note)
+        }
+        let average = totalNotes/product.reviews.length;
+        setAverageNote(average);
+        window.moveTo(0, 0);
+    }, [])
+
     return (
         <Container className="pt-15">
             <Grid container justifyContent="center" spacing={10}>
@@ -171,10 +183,10 @@ export default function Product(props) {
                                 readOnly
                                 className=""
                                 name="simple-controlled"
-                                value={4.5}
+                                value={averageNote}
                             />
                         </span>
-                        <span onClick={scrollToReviews} className="font5 hoverUnderlined grey3">Read reviews ({product.reviews.length})</span>
+                        <span onClick={scrollToReviews} className="font5 underlined grey3 cursorPointer">Read reviews ({product.reviews.length})</span>
                     </div>
                     <div className="flexBetween mt-9">
                         <span className="width40 addSubstractCart">
