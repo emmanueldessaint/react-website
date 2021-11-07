@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/styles';
 import { styled } from '@material-ui/core/styles';
 import '../../css/Cart.css';
-import { numberOfItemsInCart } from '../Shared/globalState'
+import { numberOfItemsInCart, shippingFees } from '../Shared/globalState'
 import { useRecoilState } from 'recoil';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Link } from "react-router-dom";
@@ -29,6 +29,7 @@ export default function PaymentForm() {
   const [localStorageLength, setLocalStorageLength] = useState(0);
   const [isProcessing, setIsProcessing] = useState(false);
   const [price, setPrice] = useState(0);
+  const [shippingFeesVar, setShippingFeesVar] = useRecoilState(shippingFees);
 
   const stripe = useStripe();
   const elements = useElements();
@@ -224,7 +225,7 @@ export default function PaymentForm() {
 
               <div className="yourOrder shippingFees lightShadowCard flexBetween">
                 <span className="ml-2 mt-2">Shipping fees</span>
-                <span className="mr-2 mt-2">$13.00</span>
+                <span className="mr-2 mt-2">${shippingFeesVar}.00</span>
               </div>
 
               <div className="mt-5">

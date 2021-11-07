@@ -109,9 +109,9 @@ export default function Footer() {
                             <Grid item className="pt-5" container justifyContent="center" md={12} lg={8}>
                                 <Grid className="flexCenter" item md={4} sm={6} xs={12}>
                                     <div className="widthItemsFooter">
-                                        <h3>Amazing Sewing</h3>
-                                        <div>5 rue des oiseaux</div>
-                                        <div>27220 Fresney</div>
+                                        <h3>ParisFabrics</h3>
+                                        <div>52 rue de la porte</div>
+                                        <div>75000 Paris</div>
                                         <div>contact@amazingsewing.com</div>
                                     </div>
                                 </Grid>
@@ -140,7 +140,7 @@ export default function Footer() {
                                 </Grid>
                             </Grid>
                             <Grid item className="pt-5 verticalAlign" container justifyContent="center" md={12} lg={4}>
-                                <h1 className="verticalAlign">AmazingSewing</h1>
+                                <h1 className="verticalAlign">ParisFabrics</h1>
                             </Grid>
                         </Grid>
                     </Grid>

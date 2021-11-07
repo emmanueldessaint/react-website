@@ -29724,6 +29724,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_5__["default"])(function (theme) {
   return {
     marginTop: {
@@ -29762,6 +29763,11 @@ function Cart() {
       _useRecoilState2 = _slicedToArray(_useRecoilState, 2),
       numberInCart = _useRecoilState2[0],
       setNumberInCart = _useRecoilState2[1];
+
+  var _useRecoilState3 = (0,recoil__WEBPACK_IMPORTED_MODULE_3__.useRecoilState)(_Shared_globalState__WEBPACK_IMPORTED_MODULE_2__.shippingFees),
+      _useRecoilState4 = _slicedToArray(_useRecoilState3, 2),
+      shippingFeesVar = _useRecoilState4[0],
+      setShippingFeesVar = _useRecoilState4[1];
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState8 = _slicedToArray(_useState7, 2),
@@ -29931,13 +29937,15 @@ function Cart() {
               container: true,
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
                 xs: 0,
+                sm: 5,
                 md: 7
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
                 container: true,
                 item: true,
-                xs: 12,
-                md: 5,
                 className: "alignRight",
+                xs: 12,
+                sm: 7,
+                md: 5,
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
                   item: true,
                   xs: 12,
@@ -29954,19 +29962,38 @@ function Cart() {
                       })]
                     }), itemsInCart.map(function (product) {
                       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-                        className: "productLineCart mt-5 p-2",
+                        className: "productLineCart mt-4 pl-2 pr-2",
                         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                           children: [product.name, " x ", product.quantity]
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                           children: ["$", product.price * product.quantity, ".00"]
                         })]
                       }, product.id);
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                      className: "ml-2 mt-2",
-                      children: "Shipping fees"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                      className: "mr-2 mt-2",
-                      children: "$13.00"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                      className: "flexBetween mt-4 pl-2 pr-2",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                        children: "Total"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                        className: "greyLineCart"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+                        children: ["$", price, ".00"]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                      className: "flexBetween mt-4 pl-2 pr-2",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                        children: "Shipping fees"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+                        className: "alignRight",
+                        children: ["$", shippingFeesVar, ".00"]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                      className: "flexBetween pb-4 mt-4 pl-2 pr-2",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                        children: "Total + Shipping fees"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+                        className: "alignRight",
+                        children: ["$", price + shippingFeesVar, ".00"]
+                      })]
                     })]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                     className: "mt-5",
@@ -30171,6 +30198,11 @@ function PaymentForm() {
       _useState22 = _slicedToArray(_useState21, 2),
       price = _useState22[0],
       setPrice = _useState22[1];
+
+  var _useRecoilState = (0,recoil__WEBPACK_IMPORTED_MODULE_4__.useRecoilState)(_Shared_globalState__WEBPACK_IMPORTED_MODULE_3__.shippingFees),
+      _useRecoilState2 = _slicedToArray(_useRecoilState, 2),
+      shippingFeesVar = _useRecoilState2[0],
+      setShippingFeesVar = _useRecoilState2[1];
 
   var stripe = (0,_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_6__.useStripe)();
   var elements = (0,_stripe_react_stripe_js__WEBPACK_IMPORTED_MODULE_6__.useElements)();
@@ -30435,9 +30467,9 @@ function PaymentForm() {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                 className: "ml-2 mt-2",
                 children: "Shipping fees"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("span", {
                 className: "mr-2 mt-2",
-                children: "$13.00"
+                children: ["$", shippingFeesVar, ".00"]
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
               className: "mt-5",
@@ -32395,7 +32427,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "numberOfItemsInCart": () => (/* binding */ numberOfItemsInCart),
 /* harmony export */   "numberOfPageProducts": () => (/* binding */ numberOfPageProducts),
-/* harmony export */   "currentPageProduct": () => (/* binding */ currentPageProduct)
+/* harmony export */   "currentPageProduct": () => (/* binding */ currentPageProduct),
+/* harmony export */   "shippingFees": () => (/* binding */ shippingFees)
 /* harmony export */ });
 var _require = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js"),
     atom = _require.atom;
@@ -32411,6 +32444,10 @@ var numberOfPageProducts = atom({
 var currentPageProduct = atom({
   key: 'currentPageProduct',
   "default": 1
+});
+var shippingFees = atom({
+  key: 'shippingFees',
+  "default": 8
 });
 
 /***/ }),
@@ -32664,11 +32701,11 @@ function Footer() {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                   className: "widthItemsFooter",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h3", {
-                    children: "Amazing Sewing"
+                    children: "ParisFabrics"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    children: "5 rue des oiseaux"
+                    children: "52 rue de la porte"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-                    children: "27220 Fresney"
+                    children: "75000 Paris"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
                     children: "contact@amazingsewing.com"
                   })]
@@ -32724,7 +32761,7 @@ function Footer() {
               lg: 4,
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h1", {
                 className: "verticalAlign",
-                children: "AmazingSewing"
+                children: "ParisFabrics"
               })
             })]
           })
@@ -32932,9 +32969,9 @@ function Header(props) {
                   className: "item"
                 }, _defineProperty(_jsx2, "className", classes.routerDecoration), _defineProperty(_jsx2, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("h2", {
                   className: "titleHeader opacity8 font8",
-                  children: ["Amazing", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                  children: ["Paris", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
                     className: "ml-1"
-                  }), "Sewing"]
+                  }), "Fabrics"]
                 })), _jsx2))
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
                 xs: 6,
@@ -35747,7 +35784,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".productLineCart{\r\n    margin-top:20px;\r\n    display:flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    border-radius:2px;\r\n    font-size:1.1em;\r\n}\r\n.imgLineCart{\r\n    height:120px;\r\n    width:120px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    border-top-left-radius:2px;\r\n    border-bottom-left-radius:2px;\r\n\r\n}\r\n.RecapCart{\r\n    margin-top:20px;\r\n    background-color:white;\r\n    border-radius:2px;\r\n    \r\n}\r\n.quantityNameCart{\r\n    width:140px;\r\n}\r\n.fontTrash{\r\n    color:rgb(83, 83, 83);\r\n    margin-right:10px;\r\n}\r\n.itemOrItems{\r\n    margin-left:10px;\r\n}\r\n.yourOrder{\r\n    margin-top:34px;\r\n    /* border:1px solid rgb(196, 196, 196); */\r\n    border-radius:5px;\r\n}\r\n.shippingFees{\r\n    height:40px;\r\n}\r\n.buttonModifyQuantity{\r\n    border: 1px solid grey;\r\n    border-radius:2px;\r\n    width:30px;\r\n    cursor:pointer;\r\n}\r\n.testCard{\r\n    padding-top:12px;\r\n    padding-left:5px;\r\n    border: 1px solid rgb(201, 201, 201);\r\n    border-radius:5px;\r\n    height:50px;\r\n}\r\n.quantityPriceCart{\r\n    font-size:1.2em;\r\n    font-weight: bold;\r\n}\r\n.widthQuantityPrice{\r\n    width:100px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".productLineCart{\r\n    margin-top:20px;\r\n    display:flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    border-radius:2px;\r\n    font-size:1.1em;\r\n}\r\n.imgLineCart{\r\n    height:120px;\r\n    width:120px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    border-top-left-radius:2px;\r\n    border-bottom-left-radius:2px;\r\n\r\n}\r\n.RecapCart{\r\n    margin-top:20px;\r\n    background-color:white;\r\n    border-radius:2px;\r\n    \r\n}\r\n.quantityNameCart{\r\n    width:140px;\r\n}\r\n.fontTrash{\r\n    color:rgb(83, 83, 83);\r\n    margin-right:10px;\r\n}\r\n.itemOrItems{\r\n    margin-left:10px;\r\n}\r\n.yourOrder{\r\n    margin-top:34px;\r\n    /* border:1px solid rgb(196, 196, 196); */\r\n    border-radius:5px;\r\n}\r\n.shippingFees{\r\n    height:40px;\r\n}\r\n.buttonModifyQuantity{\r\n    border: 1px solid grey;\r\n    border-radius:2px;\r\n    width:30px;\r\n    cursor:pointer;\r\n}\r\n.testCard{\r\n    padding-top:12px;\r\n    padding-left:5px;\r\n    border: 1px solid rgb(201, 201, 201);\r\n    border-radius:5px;\r\n    height:50px;\r\n}\r\n.quantityPriceCart{\r\n    font-size:1.2em;\r\n    font-weight: bold;\r\n}\r\n.widthQuantityPrice{\r\n    width:100px;\r\n}\r\n.greyLineCart{\r\n    margin-top:11px;\r\n    margin-right:20px;\r\n    margin-left:20px;\r\n    width:100%;\r\n    height:1px;\r\n    background-color:rgb(204, 204, 204);\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35825,7 +35862,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n* {\n    box-sizing: border-box;\n  }\n  \n  body { font-family: sans-serif; }\n  \n  .gallery {\n    background: #EEE;\n  }\n  \n  .gallery-cell {\n    width: 28%;\n    height: 200px;\n    margin-right: 10px;\n    background: #8C8;\n    counter-increment: gallery-cell;\n  }\n  \n  .gallery-cell.is-selected {\n    background: #ED2;\n  }\n  \n  /* cell number */\n  .gallery-cell:before {\n    display: block;\n    text-align: center;\n    content: counter(gallery-cell);\n    line-height: 200px;\n    font-size: 80px;\n    color: white;\n  }\n  .imgIntro{\n    width:100%;\n    height:300px;\n    -o-object-fit: cover;\n       object-fit: cover;\n  }\n  .textReviews{\n    color:rgb(39, 39, 39);\n  }\n  .rewardIcon{\n    width:60px;\n  }\n  .smallIcons{\n    width:25px\n  }\n  .earthIcon{\n    width:25px\n  }\n  .backgroundIcons{\n   color:red;\n  }\n  .reviewIcon{\n    width:100px;\n    margin-bottom:-20px;\n    /* background-color:rgb(248, 248, 248); */\n    /* background-color:rgb(255, 0, 0); */\n  }\n \n\n  .blueBar{\n    width:60%;\n    margin-left:auto;\n    margin-right:auto;\n    height:4px;\n    background-color:rgb(234, 240, 246);\n    margin-top:-5px;\n  }\n  .titleHomeArguments{\n    font-weight:bold;\n  }\n  @media all and (min-width: 600px) {\n    .orangeBar{\n      margin-top:auto;\n      margin-bottom:auto;\n      height:80%;\n      width:2px;\n      background-color:rgb(205, 221, 236);\n    }\n  }\n  .transitionReview {\n    -webkit-animation-duration: 1s;\n            animation-duration: 1s;\n    -webkit-animation-name: slidein;\n            animation-name: slidein;\n}\n@-webkit-keyframes slidein {\n  from {\n    transform: translateX(+100%);\n    opacity:0;\n  }\n  to {\n    transform: translateX(0);\n    opacity:1;\n\n  }\n}\n@keyframes slidein {\n  from {\n    transform: translateX(+100%);\n    opacity:0;\n  }\n  to {\n    transform: translateX(0);\n    opacity:1;\n\n  }\n}\n.show{\n  background-color: red;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n* {\n    box-sizing: border-box;\n  }\n  \n  body { font-family: sans-serif; }\n  \n  .gallery {\n    background: #EEE;\n  }\n  \n  .gallery-cell {\n    width: 28%;\n    height: 200px;\n    margin-right: 10px;\n    background: #8C8;\n    counter-increment: gallery-cell;\n  }\n  \n  .gallery-cell.is-selected {\n    background: #ED2;\n  }\n  \n  /* cell number */\n  .gallery-cell:before {\n    display: block;\n    text-align: center;\n    content: counter(gallery-cell);\n    line-height: 200px;\n    font-size: 80px;\n    color: white;\n  }\n  .imgIntro{\n    width:100%;\n    height:300px;\n    -o-object-fit: cover;\n       object-fit: cover;\n  }\n  .textReviews{\n    color:rgb(39, 39, 39);\n  }\n  .rewardIcon{\n    width:60px;\n  }\n  .smallIcons{\n    width:25px\n  }\n  .earthIcon{\n    width:25px\n  }\n  .backgroundIcons{\n   color:red;\n  }\n  .reviewIcon{\n    width:100px;\n    margin-bottom:-20px;\n    /* background-color:rgb(248, 248, 248); */\n    /* background-color:rgb(255, 0, 0); */\n  }\n \n\n  .blueBar{\n    width:60%;\n    margin-left:auto;\n    margin-right:auto;\n    height:4px;\n    background-color:rgb(234, 240, 246);\n    margin-top:-5px;\n    opacity:0.9;\n  }\n  .titleHomeArguments{\n    font-weight:bold;\n  }\n  @media all and (min-width: 600px) {\n    .orangeBar{\n      margin-top:auto;\n      margin-bottom:auto;\n      height:70%;\n      width:2px;\n      background-color:rgb(231, 238, 245);\n    }\n  }\n  .transitionReview {\n    -webkit-animation-duration: 1s;\n            animation-duration: 1s;\n    -webkit-animation-name: slidein;\n            animation-name: slidein;\n}\n@-webkit-keyframes slidein {\n  from {\n    transform: translateX(+100%);\n    opacity:0;\n  }\n  to {\n    transform: translateX(0);\n    opacity:1;\n\n  }\n}\n@keyframes slidein {\n  from {\n    transform: translateX(+100%);\n    opacity:0;\n  }\n  to {\n    transform: translateX(0);\n    opacity:1;\n\n  }\n}\n.show{\n  background-color: red;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -58,3 +58,11 @@
 .widthQuantityPrice{
     width:100px;
 }
+.greyLineCart{
+    margin-top:11px;
+    margin-right:20px;
+    margin-left:20px;
+    width:100%;
+    height:1px;
+    background-color:rgb(204, 204, 204);
+}

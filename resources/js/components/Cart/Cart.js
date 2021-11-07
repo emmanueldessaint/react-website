@@ -7,10 +7,11 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/styles';
 import { styled } from '@material-ui/core/styles';
 import '../../css/Cart.css';
-import { numberOfItemsInCart } from '../Shared/globalState'
+import { numberOfItemsInCart, shippingFees } from '../Shared/globalState'
 import { useRecoilState } from 'recoil';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Link } from "react-router-dom";
+import { PlayCircleFilledOutlined } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
   marginTop: {
@@ -40,6 +41,7 @@ export default function Cart() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
+  const [shippingFeesVar, setShippingFeesVar] = useRecoilState(shippingFees);
   const [localStorageLength, setLocalStorageLength] = useState(0);
   const [price, setPrice] = useState(0);
 
@@ -116,7 +118,7 @@ export default function Cart() {
                 {localStorageLength > 1 && <span className="itemOrItems"> items</span>}
               </span>
             }
-            <Grid container  className="pt-5 pb-10 flexCenter">
+            <Grid container className="pt-5 pb-10 flexCenter">
 
               <Grid item xs={12}>
                 {itemsInCart.map(product => (
@@ -157,8 +159,8 @@ export default function Cart() {
 
               {localStorageLength > 0 &&
                 <Grid container>
-                  <Grid xs={0} md={7}></Grid>
-                  <Grid container item xs={12} md={5} className="alignRight">
+                  <Grid xs={0} sm={5} md={7}></Grid>
+                  <Grid container item className="alignRight" xs={12} sm={7} md={5}>
                     <Grid item xs={12} >
                       <div className="yourOrder bgWhite lightShadowCard2">
                         <div className="mt-4 flexBetween">
@@ -167,16 +169,27 @@ export default function Cart() {
                         </div>
                         {itemsInCart.map(product => (
                           <div
-                            className="productLineCart mt-5 p-2"
+                            className="productLineCart mt-4 pl-2 pr-2"
                             key={product.id}
                           >
                             <div>{product.name} x {product.quantity}</div>
                             <div>${product.price * product.quantity}.00</div>
                           </div>
                         ))}
-                      
-                        <span className="ml-2 mt-2">Shipping fees</span>
-                        <span className="mr-2 mt-2">$13.00</span>
+                        <div className="flexBetween mt-4 pl-2 pr-2">
+                          <span>Total</span>
+                          <span className="greyLineCart"></span>
+                          <span>${price}.00</span>
+                        </div>
+                        <div className="flexBetween mt-4 pl-2 pr-2">
+                          <span>Shipping fees</span>
+                          
+                          <span className="alignRight">${shippingFeesVar}.00</span>
+                        </div>
+                        <div className="flexBetween pb-4 mt-4 pl-2 pr-2">
+                          <span>Total + Shipping fees</span>
+                          <span className="alignRight">${price + shippingFeesVar}.00</span>
+                        </div>
                       </div>
                       <div className="mt-5">
                         <Link to="/checkout"  >

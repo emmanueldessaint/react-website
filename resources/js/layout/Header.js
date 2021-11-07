@@ -135,7 +135,7 @@ HideOnScroll.propTypes = {
                     <Grid item xs={3} className={classes.alignTitle} >
                         
                         <Link to="/" onClick={resetPage} className="item" className={classes.routerDecoration}>
-                          <h2 className="titleHeader opacity8 font8">Amazing<span className="ml-1"></span>Sewing</h2>
+                          <h2 className="titleHeader opacity8 font8">Paris<span className="ml-1"></span>Fabrics</h2>
                         </Link>                             
                       
                     </Grid>

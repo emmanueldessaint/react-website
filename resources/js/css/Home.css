@@ -67,6 +67,7 @@
     height:4px;
     background-color:rgb(234, 240, 246);
     margin-top:-5px;
+    opacity:0.9;
   }
   .titleHomeArguments{
     font-weight:bold;
@@ -75,9 +76,9 @@
     .orangeBar{
       margin-top:auto;
       margin-bottom:auto;
-      height:80%;
+      height:70%;
       width:2px;
-      background-color:rgb(205, 221, 236);
+      background-color:rgb(231, 238, 245);
     }
   }
   .transitionReview {
