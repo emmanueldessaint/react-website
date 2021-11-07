@@ -34,6 +34,10 @@ class ProductController extends Controller
         //
     }
 
+    public function test() {
+        return 'test';
+    }
+
     /**
      * Store a newly created resource in storage.
      *
