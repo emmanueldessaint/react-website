@@ -168,14 +168,14 @@ export default function Product(props) {
 
     return (
         <Container className="pt-15">
-            <Grid container justifyContent="center" spacing={10}>
-                <Grid item xs={12} sm={6} >
+            <Grid container justifyContent="center" spacing={6}>
+                <Grid item xs={12} md={6} >
                     <img className="imageOneProduct" src="https://picsum.photos/200/300" />
                 </Grid>
-                <Grid item xs={12} sm={5}>
-                    <h2 className="font1">{product.name}</h2>
-                    <div className="flexBetween mt-13">
-                        <span className="priceProduct font2">{product.price},00 €</span>
+                <Grid item xs={12} sm={10} md={5}>
+                    <h2 className="font1 letterSpacing2">{product.name}</h2>
+                    <div className="flexBetween mt-9">
+                        <span className="priceProduct font2 letterSpacing2">{product.price},00 €</span>
                         <span>
                             <Rating
                                 size="small"
@@ -189,17 +189,22 @@ export default function Product(props) {
                         <span onClick={scrollToReviews} className="font5 underlined grey3 cursorPointer">Read reviews ({product.reviews.length})</span>
                     </div>
                     <div className="flexBetween mt-9">
-                        <span className="width40 addSubstractCart">
-                            <button disabled className=" quantityProduct">{quantityProduct}</button>
-                            <button onClick={addQuantity} className="greyButton buttonAdd">+</button>
-                            <button onClick={substractQuantity} className="greyButton buttonSubstract">-</button>
+                        <span className=" addSubstractCart">
+                            <button disabled className=" quantityProduct size2 height30">{quantityProduct}</button>
+                            <button onClick={addQuantity} className="colorButton1 greyButton size2 buttonAdd height30">+</button>
+                            <button onClick={substractQuantity} className="colorButton1 greyButton size2 buttonSubstract height30">-</button>
                         </span>
-                        <span className="width60">
-                            <button onClick={addToLocalStorage} className="greyButton buttonAddToCart"> Add to cart</button>
+                        <span className=" alignRight">
+                        <Link to="/cart">
+                            <button onClick={addToLocalStorage} className="colorButton1 greyButton bold300 letterSpacing2 font2 buttonAddToCart height30"> Add to cart</button>
+                            </Link>  
                         </span>
                     </div>
                     <div>
                         <div className="width90 greyLineProduct m-4"></div>
+                    </div>
+                    <div>
+                        <div>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical </div>
                     </div>
                 </Grid>
             </Grid>
@@ -222,7 +227,7 @@ export default function Product(props) {
                 <TabPanel className="mt-3" value={value} index={0}>
                     <Grid container spacing={4}>
                         <Grid item xs={8} className="alignCenter"><span>unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span></Grid>
-                        <Grid item xs={4}><img src={ProductQuality} alt="ProductQuality" className={classes.imgFull} /></Grid>
+                        {/* <Grid item xs={4}><img src={ProductQuality} alt="ProductQuality" className={classes.imgFull} /></Grid> */}
                     </Grid>
 
                 </TabPanel>

@@ -177,6 +177,63 @@ html {
     display:flex;
     flex-direction: row-reverse;
  }
+ .colorButton1{
+    background-color: rgb(235, 229, 209);
+ }
+ .height10{
+     height:10px;
+ }
+ .height20{
+     height:20px;
+ }
+ .height30{
+     height:30px;
+ }
+ .height40{
+     height:40px;
+ }
+ .height50{
+     height:50px;
+ }
+ .height60{
+     height:60px;
+ }
+ .height70{
+     height:70px;
+ }
+ .height80{
+     height:80px;
+ }
+ .lineHeight1{
+    line-height: 115%;
+ }
+ .lineHeight1{
+    line-height: 130%;
+ }
+ .lineHeight1{
+    line-height: 145%;
+ }
+ .lineHeight1{
+    line-height: 160%;
+ }
+ .lineHeight1{
+    line-height: 175%;
+ }
+ .letterSpacing1{
+     letter-spacing: 1px;
+ }
+ .letterSpacing2{
+     letter-spacing: 2px;
+ }
+ .letterSpacing3{
+     letter-spacing: 3px;
+ }
+ .letterSpacing4{
+     letter-spacing: 4px;
+ }
+ .letterSpacing5{
+     letter-spacing: 5px;
+ }
  .bold100{
      font-weight:100;
  }

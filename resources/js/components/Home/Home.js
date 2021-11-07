@@ -160,12 +160,12 @@ export default function Home() {
                     <Grid item container xs={12} md={10}>
 
                         <Grid item xs={12} sm={4} className={classes.alignTitle}>
-                            <Button onClick={consoleLog}>update panier</Button>
+                            {/* <Button onClick={consoleLog}>update panier</Button> */}
                             <div className="mt-6">
                                 <span className="flexCenter"><img src={earth} alt="earth_icon" className="smallIcons " /></span>
-                                <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9">RESPECT FOR THE LAND</span>
+                                <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2">RESPECT FOR THE LAND</span>
                                 <div className="blueBar"></div>
-                                <span className="flexCenter mt-2 grey2 font4 opacity9">Environment and traditions</span>
+                                <span className="flexCenter mt-2 grey2 font4 opacity9 letterSpacing1">Environment and traditions</span>
                             </div>
                         </Grid>
 
@@ -173,9 +173,9 @@ export default function Home() {
                             <div className="orangeBar"></div>
                             <div className="mt-6">
                                 <span className="flexCenter"><LocalShippingIcon /></span>
-                                <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9">TRACKING DELIVERY</span>
+                                <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2">TRACKING DELIVERY</span>
                                 <div className="blueBar"></div>
-                                <span className="flexCenter mt-2 grey2 font4 opacity9">All around the world</span>
+                                <span className="flexCenter mt-2 grey2 font4 opacity9 letterSpacing1">All around the world</span>
                             </div>
                             <div className="orangeBar"></div>
                         </Grid>
@@ -183,16 +183,16 @@ export default function Home() {
                         <Grid item xs={12} sm={4} className={classes.alignTitle}>
                             <div className="mt-6">
                                 <span className="flexCenter"><img src={sewing} alt="sewing_icon" className="smallIcons backgroundIcons" /></span>
-                                <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9">A REAL KNOW-HOW</span>
+                                <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2">A REAL KNOW-HOW</span>
                                 <div className="blueBar"></div>
-                                <span className="flexCenter mt-2 grey2 font4 opacity9">The highest quality</span>
+                                <span className="flexCenter mt-2 grey2 font4 opacity9 letterSpacing1">The highest quality</span>
                             </div>
                         </Grid>
                     </Grid>
                 </Grid>
                 <div className="mt-10">
                     <div className="flexCenter"><img src={reward} alt="reward_svg" className="rewardIcon opacity6" /></div>
-                    <span className="flexCenter font8 size7 mt-3 bold600 grey2 opacity9">Our best sellers</span>
+                    <span className="flexCenter font8 size7 mt-3 bold600 grey2 opacity9 letterSpacing2">Our best sellers</span>
                     <span className="flexCenter font4 grey2 opacity9">Discover our customers' favorite products !</span>
                 </div>
                 {isLoaded &&
@@ -237,14 +237,14 @@ export default function Home() {
                     </div>
                 }
                 <div className="flexCenter mt-10"><img src={review} alt="reward_svg" className="reviewIcon opacity6" /></div>
-                <h2 className="flexCenter font8 size7 bold600 grey2 opacity9">They lived the experience</h2>
+                <h2 className="flexCenter font8 size7 bold600 grey2 opacity9 letterSpacing2">They lived the experience</h2>
                 <Grid className="pt-7" container justifyContent="center">
                     <Grid container item xs={11} md={11} spacing={4}>
                         <Grid item md={3} xs={12} className=" bgWhite3 verticalAlign">
                             <Grid >
-                                <div className="textAlignCenter ">
-                                    <div>{avgNote}/5</div>
-                                    <h4 className="flexCenter opacity9">Based on purchases on AmazingSewing</h4>
+                                <div className="textAlignCenter">
+                                    <div><span className="size3 bold800 mr-1">{avgNote}</span>/ 5</div>
+                                    <h4 className="flexCenter opacity9 letterSpacing1 lineHeight1">Based on purchases on AmazingSewing</h4>
                                     <div>
                                         <Rating
                                             precision={0.5}
@@ -270,7 +270,7 @@ export default function Home() {
                                             <Rating
                                                 precision={0.5}
                                                 readOnly
-                                                className="stars"
+                                                className="stars ml-2"
                                                 name="simple-controlled"
                                                 value={item.note}
                                                 emptyIcon={

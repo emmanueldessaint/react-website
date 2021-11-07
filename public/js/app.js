@@ -30830,19 +30830,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
-/* harmony import */ var _mui_material_Rating__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material/Rating */ "./node_modules/@mui/material/Rating/Rating.js");
-/* harmony import */ var _material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/icons/StarBorder */ "./node_modules/@material-ui/icons/StarBorder.js");
+/* harmony import */ var _mui_material_Rating__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material/Rating */ "./node_modules/@mui/material/Rating/Rating.js");
+/* harmony import */ var _material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/icons/StarBorder */ "./node_modules/@material-ui/icons/StarBorder.js");
 /* harmony import */ var _material_ui_core_Container__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/core/Container */ "./node_modules/@material-ui/core/esm/Container/Container.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/Button.js");
 /* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/makeStyles/makeStyles.js");
-/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/icons/LocalShipping */ "./node_modules/@material-ui/icons/LocalShipping.js");
+/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @material-ui/icons/LocalShipping */ "./node_modules/@material-ui/icons/LocalShipping.js");
 /* harmony import */ var _Constants_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Constants.js */ "./resources/js/Constants.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _assets_img_sewing3_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../assets/img/sewing3.jpg */ "./resources/assets/img/sewing3.jpg");
 /* harmony import */ var _assets_img_reward2_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../assets/img/reward2.svg */ "./resources/assets/img/reward2.svg");
 /* harmony import */ var _assets_img_earth1_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../assets/img/earth1.png */ "./resources/assets/img/earth1.png");
@@ -31045,15 +31044,12 @@ function Home() {
           container: true,
           xs: 12,
           md: 10,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
             item: true,
             xs: 12,
             sm: 4,
             className: classes.alignTitle,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_16__["default"], {
-              onClick: consoleLog,
-              children: "update panier"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
               className: "mt-6",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
                 className: "flexCenter",
@@ -31063,15 +31059,15 @@ function Home() {
                   className: "smallIcons "
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9",
+                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2",
                 children: "RESPECT FOR THE LAND"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                 className: "blueBar"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 grey2 font4 opacity9",
+                className: "flexCenter mt-2 grey2 font4 opacity9 letterSpacing1",
                 children: "Environment and traditions"
               })]
-            })]
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
             item: true,
             xs: 12,
@@ -31083,14 +31079,14 @@ function Home() {
               className: "mt-6",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
                 className: "flexCenter",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_17__["default"], {})
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_16__["default"], {})
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9",
+                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2",
                 children: "TRACKING DELIVERY"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                 className: "blueBar"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 grey2 font4 opacity9",
+                className: "flexCenter mt-2 grey2 font4 opacity9 letterSpacing1",
                 children: "All around the world"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
@@ -31111,12 +31107,12 @@ function Home() {
                   className: "smallIcons backgroundIcons"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9",
+                className: "flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2",
                 children: "A REAL KNOW-HOW"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                 className: "blueBar"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-                className: "flexCenter mt-2 grey2 font4 opacity9",
+                className: "flexCenter mt-2 grey2 font4 opacity9 letterSpacing1",
                 children: "The highest quality"
               })]
             })
@@ -31132,7 +31128,7 @@ function Home() {
             className: "rewardIcon opacity6"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
-          className: "flexCenter font8 size7 mt-3 bold600 grey2 opacity9",
+          className: "flexCenter font8 size7 mt-3 bold600 grey2 opacity9 letterSpacing2",
           children: "Our best sellers"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
           className: "flexCenter font4 grey2 opacity9",
@@ -31157,7 +31153,7 @@ function Home() {
                 lg: 3,
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                   className: "cardProduct lightShadowCard2",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Link, {
                     to: {
                       pathname: '/product',
                       state: {
@@ -31178,13 +31174,13 @@ function Home() {
                       children: item.name
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
                       className: "centerText mt-3",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_19__["default"], {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_18__["default"], {
                         precision: 0.5,
                         readOnly: true,
                         size: "small",
                         name: "simple-controlled",
                         value: item.updated_at,
-                        emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_20__["default"], {
+                        emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_19__["default"], {
                           fontSize: "inherit",
                           className: "emptyStar"
                         })
@@ -31207,7 +31203,7 @@ function Home() {
           className: "reviewIcon opacity6"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h2", {
-        className: "flexCenter font8 size7 bold600 grey2 opacity9",
+        className: "flexCenter font8 size7 bold600 grey2 opacity9 letterSpacing2",
         children: "They lived the experience"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
         className: "pt-7",
@@ -31226,19 +31222,22 @@ function Home() {
             className: " bgWhite3 verticalAlign",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
-                className: "textAlignCenter ",
+                className: "textAlignCenter",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
-                  children: [avgNote, "/5"]
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("span", {
+                    className: "size3 bold800 mr-1",
+                    children: avgNote
+                  }), "/ 5"]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("h4", {
-                  className: "flexCenter opacity9",
+                  className: "flexCenter opacity9 letterSpacing1 lineHeight1",
                   children: "Based on purchases on AmazingSewing"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)("div", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_19__["default"], {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_18__["default"], {
                     precision: 0.5,
                     readOnly: true,
                     name: "simple-controlled",
                     value: avgNote,
-                    emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_20__["default"], {
+                    emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_19__["default"], {
                       fontSize: "inherit",
                       className: "emptyStar"
                     })
@@ -31263,13 +31262,13 @@ function Home() {
                   lg: 3,
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
                     className: "transitionReview myDIV",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_19__["default"], {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_18__["default"], {
                       precision: 0.5,
                       readOnly: true,
-                      className: "stars",
+                      className: "stars ml-2",
                       name: "simple-controlled",
                       value: item.note,
-                      emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_20__["default"], {
+                      emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_19__["default"], {
                         fontSize: "inherit",
                         className: "emptyStar"
                       })
@@ -31620,18 +31619,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/makeStyles/makeStyles.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/styled.js");
-/* harmony import */ var _material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/core/Tabs */ "./node_modules/@material-ui/core/esm/Tabs/Tabs.js");
-/* harmony import */ var _material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/core/Tab */ "./node_modules/@material-ui/core/esm/Tab/Tab.js");
+/* harmony import */ var _material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/core/Tabs */ "./node_modules/@material-ui/core/esm/Tabs/Tabs.js");
+/* harmony import */ var _material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/core/Tab */ "./node_modules/@material-ui/core/esm/Tab/Tab.js");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
 /* harmony import */ var _assets_img_qualityProduct_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../assets/img/qualityProduct.png */ "./resources/assets/img/qualityProduct.png");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../App.css */ "./resources/js/App.css");
 /* harmony import */ var _css_Products_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../css/Products.css */ "./resources/js/css/Products.css");
 /* harmony import */ var _Shared_globalState__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Shared/globalState */ "./resources/js/components/Shared/globalState.js");
 /* harmony import */ var recoil__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js");
 /* harmony import */ var _mui_material_Rating__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/material/Rating */ "./node_modules/@mui/material/Rating/Rating.js");
-/* harmony import */ var _material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/icons/StarBorder */ "./node_modules/@material-ui/icons/StarBorder.js");
-/* harmony import */ var _material_ui_icons_AccountCircle__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/icons/AccountCircle */ "./node_modules/@material-ui/icons/AccountCircle.js");
+/* harmony import */ var _material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @material-ui/icons/StarBorder */ "./node_modules/@material-ui/icons/StarBorder.js");
+/* harmony import */ var _material_ui_icons_AccountCircle__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/icons/AccountCircle */ "./node_modules/@material-ui/icons/AccountCircle.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _excluded = ["children", "value", "index"];
 
@@ -31841,11 +31841,11 @@ function Product(props) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
       container: true,
       justifyContent: "center",
-      spacing: 10,
+      spacing: 6,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
         item: true,
         xs: 12,
-        sm: 6,
+        md: 6,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
           className: "imageOneProduct",
           src: "https://picsum.photos/200/300"
@@ -31853,14 +31853,15 @@ function Product(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
         item: true,
         xs: 12,
-        sm: 5,
+        sm: 10,
+        md: 5,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
-          className: "font1",
+          className: "font1 letterSpacing2",
           children: product.name
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          className: "flexBetween mt-13",
+          className: "flexBetween mt-9",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("span", {
-            className: "priceProduct font2",
+            className: "priceProduct font2 letterSpacing2",
             children: [product.price, ",00 \u20AC"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_mui_material_Rating__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -31879,31 +31880,38 @@ function Product(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "flexBetween mt-9",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("span", {
-            className: "width40 addSubstractCart",
+            className: " addSubstractCart",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
               disabled: true,
-              className: " quantityProduct",
+              className: " quantityProduct size2 height30",
               children: quantityProduct
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
               onClick: addQuantity,
-              className: "greyButton buttonAdd",
+              className: "colorButton1 greyButton size2 buttonAdd height30",
               children: "+"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
               onClick: substractQuantity,
-              className: "greyButton buttonSubstract",
+              className: "colorButton1 greyButton size2 buttonSubstract height30",
               children: "-"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
-            className: "width60",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-              onClick: addToLocalStorage,
-              className: "greyButton buttonAddToCart",
-              children: " Add to cart"
+            className: " alignRight",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Link, {
+              to: "/cart",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                onClick: addToLocalStorage,
+                className: "colorButton1 greyButton bold300 letterSpacing2 font2 buttonAddToCart height30",
+                children: " Add to cart"
+              })
             })
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "width90 greyLineProduct m-4"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            children: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical "
           })
         })]
       })]
@@ -31917,17 +31925,17 @@ function Product(props) {
           borderBottom: 1,
           borderColor: 'divider'
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_17__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Tabs__WEBPACK_IMPORTED_MODULE_18__["default"], {
           value: value,
           onChange: handleChange,
           "aria-label": "basic tabs example",
           indicatorColor: "primary",
           textColor: "primary",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_18__["default"], _objectSpread({
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_19__["default"], _objectSpread({
             label: "Description"
-          }, a11yProps(0))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_18__["default"], _objectSpread({
+          }, a11yProps(0))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_19__["default"], _objectSpread({
             label: "Fiche produit"
-          }, a11yProps(1))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_18__["default"], _objectSpread({
+          }, a11yProps(1))), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Tab__WEBPACK_IMPORTED_MODULE_19__["default"], _objectSpread({
             label: "reviews"
           }, a11yProps(2)))]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
@@ -31937,25 +31945,17 @@ function Product(props) {
         className: "mt-3",
         value: value,
         index: 0,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
           container: true,
           spacing: 4,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
             item: true,
             xs: 8,
             className: "alignCenter",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
               children: "unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_15__["default"], {
-            item: true,
-            xs: 4,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
-              src: _assets_img_qualityProduct_png__WEBPACK_IMPORTED_MODULE_2__["default"],
-              alt: "ProductQuality",
-              className: classes.imgFull
-            })
-          })]
+          })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(TabPanel, {
         value: value,
@@ -31978,7 +31978,7 @@ function Product(props) {
                   className: "mb-2",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
                     className: "mr-2",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_AccountCircle__WEBPACK_IMPORTED_MODULE_19__["default"], {})
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_AccountCircle__WEBPACK_IMPORTED_MODULE_20__["default"], {})
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
                     className: "font5 bold600 grey2",
                     children: review.title
@@ -32000,7 +32000,7 @@ function Product(props) {
                     readOnly: true,
                     name: "simple-controlled",
                     value: review.note,
-                    emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_20__["default"], {
+                    emptyIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_StarBorder__WEBPACK_IMPORTED_MODULE_21__["default"], {
                       fontSize: "inherit",
                       className: "emptyStar"
                     })
@@ -32191,11 +32191,11 @@ function Products() {
     });
   } else {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_ui_core_Container__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      className: "pt-15",
+      className: "pt-10",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
         container: true,
         justifyContent: "center",
-        className: "mt-10",
+        className: "mt-8",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
           container: true,
           item: true,
@@ -32304,10 +32304,10 @@ function Products() {
                     }
                   },
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-                    className: "imageProduct",
+                    className: "imageProduct2",
                     src: "https://picsum.photos/200/300"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                    className: "hideProduct",
+                    className: "hideProduct2",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                       className: "elementAppear",
                       children: "DISCOVER"
@@ -32930,9 +32930,11 @@ function Header(props) {
                   to: "/",
                   onClick: resetPage,
                   className: "item"
-                }, _defineProperty(_jsx2, "className", classes.routerDecoration), _defineProperty(_jsx2, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
-                  className: "titleHeader opacity8",
-                  children: "AmazingSewing"
+                }, _defineProperty(_jsx2, "className", classes.routerDecoration), _defineProperty(_jsx2, "children", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("h2", {
+                  className: "titleHeader opacity8 font8",
+                  children: ["Amazing", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                    className: "ml-1"
+                  }), "Sewing"]
                 })), _jsx2))
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_17__["default"], {
                 xs: 6,
@@ -32947,7 +32949,7 @@ function Header(props) {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
                     to: "/",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
-                      className: "opacity8",
+                      className: "opacity6 size2 itemMenu font5",
                       onClick: resetPage,
                       children: "Home"
                     })
@@ -32958,7 +32960,7 @@ function Header(props) {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
                     to: "/products",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
-                      className: "opacity8",
+                      className: "opacity6 size2 itemMenu font5",
                       onClick: resetPage,
                       children: "Catalog"
                     })
@@ -32969,7 +32971,7 @@ function Header(props) {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Link, {
                     to: "/aboutus",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
-                      className: "opacity8",
+                      className: "opacity6 size2 itemMenu font5",
                       onClick: resetPage,
                       children: "About us"
                     })
@@ -35697,7 +35699,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.c
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Zen+Antique+Soft&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@300&family=Zen+Antique+Soft&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html { \n    scroll-behavior: smooth; \n    \n  }\n.generalFont{\n    font-family:  cursive;\n}\n.generalBackground{\n    background-color:rgb(250, 250, 250);\n}\n.backgroundWhite{\n    background-color: white;\n}\n.flex{\n    display:flex;\n}\n.testFont{\n    font-family: 'Roboto', sans-serif;\n}\n.justifyText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: justify;\n    text-justify: inter-word;\n}\n.emptyStar{\n    color:rgb(253, 225, 149);\n}\n.centerText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: center;\n    \n}\n.textAlignCenter{\n    text-align: center;\n}\n.cursorPointer{\n    cursor:pointer;\n}\n.verticalAlign{\n    display:flex;\n    align-items: center;\n    justify-content: center;\n}\n.verticalItem{\n    display:flex;\n    align-items: center;\n}\n.flexCenter{\n    display:flex;\n    justify-content: center;\n}\n.flexColumn{\n    display:flex;\n    flex-direction: column;\n}\n.flexBetween{\n    display:flex;\n    justify-content: space-between;\n}\n.flexAround{\n    display:flex;\n    justify-content: space-around;\n}\n.lightShadowCard{\n    box-shadow: 0 0 2px 1px rgb(214, 214, 214);\n}\n.lightShadowCard1{\n    box-shadow: 0 0 2px 1px rgb(233, 233, 233);   \n}\n.lightShadowCard2{\n    box-shadow:  0 0 10px  rgba(216, 216, 216, 0.6);\n      -moz-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);\n      -webkit-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);\n      -o-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);\n}\n.underlined{\n    text-decoration: underline;\n}\n.bgWhite{\n    background-color:white;\n}\n.bgWhite1{\n    background-color:rgb(250, 250, 250);\n}\n.bgWhite2{\n    background-color:rgb(245, 245, 245);\n}\n.bgWhite3{\n    background-color:rgb(240, 240, 240);\n}\n.productCard{\n    width:200px;\n    /* height:300px; */\n    background-color: rgb(173, 199, 199);\n}\n.greyLineProduct{\n    width:100%;\n    height:1px;\n    background-color:rgb(223, 223, 223);\n}\n.lightGrey{\n    background-color:rgb(223, 223, 223);\n}\n.grey1{\n    color:rgb(92, 92, 92)\n}\n.grey2{\n    color:rgb(54, 54, 54)\n}\n.grey3{\n    color:rgb(31, 31, 31)\n}\n.cardProduct{\n    margin:6%;\n    border-radius:4px; \n    transition: all .2s ease-in-out;\n}\n.cardProduct:hover{\n    margin:6%;\n    border-radius:4px; \n    /* opacity:0.8; */\n    /* transform: scale(1.02); */\n}\n.cardProduct:hover{\n    opacity:0.8;\n}\n.cardProduct:hover .imageProduct{\n    opacity:0.3;\n}\n.hideProduct{\n    opacity:0;\n    height:50px;\n    /* margin-right:auto; */\n}\n.elementAppear{\n    font-size:1.1em;\n    font-weight:600;\n}\n.cardProduct:hover .hideProduct{\n   display:block;\n   position:relative;\n   top:-130px;\n   z-index: 100;\n   /* font-size:1.5em; */\n   background:transparent;\n   opacity:1;\n}\n.cardProduct:hover .elementAppear{\n    width:80%;\n    margin-right:auto;\n    margin-left:auto;\n    height:50px;\n    display:flex;\n    justify-content: center;\n    align-items: center;\n    /* background-color:rgb(219, 219, 219); */\n    border:2px solid grey;\n    border-radius:2px;\n }\n .hoverUnderlined:hover{\n    text-decoration: underline;\n    cursor:pointer;\n }\n .alignRight{\n    display:flex;\n    flex-direction: row-reverse;\n }\n .bold100{\n     font-weight:100;\n }\n .bold200{\n     font-weight:200;\n }\n .bold300{\n     font-weight:300;\n }\n .bold400{\n     font-weight:400;\n }\n .bold500{\n     font-weight:500;\n }\n .bold600{\n     font-weight:600;\n }\n .bold700{\n     font-weight:700;\n }\n .bold800{\n     font-weight:800;\n }\n .size1{\n     font-size:1.1em;\n }\n .size2{\n     font-size:1.2em;\n }\n .size3{\n     font-size:1.3em;\n }\n .size4{\n     font-size:1.4em;\n }\n .size5{\n     font-size:1.5em;\n }\n .size6{\n     font-size:1.6em;\n }\n .size7{\n     font-size:1.7em;\n }\n .size8{\n     font-size:1.8em;\n }\n .size9{\n     font-size:1.9em;\n }\n .font1{\n    font-family: Georgia, serif;\n }\n .font2{\n    font-family: sans-serif;\n }\n .font3{\n    font-family: serif;\n }\n .font4{\n    font-family: cursive;\n }\n .font5{\n    font-family: system-ui;\n }\n .font6{\n    font-family: monospace;\n }\n .font7{\n    font-family: fantasy;\n }\n .font8{\n    font-family: 'Roboto', sans-serif;\n    font-family: 'Zen Antique Soft', serif;\n }\n .font9{\n    font-family: 'Dancing Script', cursive;\nfont-family: 'Roboto', sans-serif;\nfont-family: 'Zen Antique Soft', serif;\n }\n .opacity9{\n    opacity:0.9;\n }\n .opacity8{\n    opacity:0.8;\n }\n .opacity7{\n    opacity:0.7;\n }\n .opacity6{\n    opacity:0.6;\n }\n .opacity5{\n    opacity:0.5;\n }\n .opacity4{\n    opacity:0.4;\n }\n .opacity3{\n    opacity:0.3;\n }\n .opacity2{\n    opacity:0.2;\n }\n .opacity1{\n    opacity:0.1;\n }\n.mt-1{\n    margin-top:5px\n}\n.mt-2{\n    margin-top:10px\n}\n.mt-3{\n    margin-top:15px\n}\n.mt-4{\n    margin-top:20px\n}\n.mt-5{\n    margin-top:25px\n}\n.mt-6{\n    margin-top:30px\n}\n.mt-7{\n    margin-top:40px\n}\n.mt-8{\n    margin-top:50px\n}\n.mt-9{\n    margin-top:60px\n}\n.mt-10{\n    margin-top:70px\n}\n.mt-11{\n    margin-top:80px\n}\n.mt-12{\n    margin-top:90px\n}\n.mt-13{\n    margin-top:100px\n}\n.mt-14{\n    margin-top:120px\n}\n.mt-15{\n    margin-top:140px\n}\n.pt-1{\n    padding-top:5px\n}\n.pt-2{\n    padding-top:10px\n}\n.pt-3{\n    padding-top:15px\n}\n.pt-4{\n    padding-top:20px\n}\n.pt-5{\n    padding-top:25px\n}\n.pt-6{\n    padding-top:30px\n}\n.pt-7{\n    padding-top:40px\n}\n.pt-8{\n    padding-top:50px\n}\n.pt-9{\n    padding-top:60px\n}\n.pt-10{\n    padding-top:70px\n}\n.pt-11{\n    padding-top:80px\n}\n.pt-12{\n    padding-top:90px\n}\n.pt-13{\n    padding-top:100px\n}\n.pt-14{\n    padding-top:120px\n}\n.pt-15{\n    padding-top:140px\n}\n.m-1{\n    margin:5px\n}\n.m-2{\n    margin:10px\n}\n.m-3{\n    margin:15px\n}\n.m-4{\n    margin:20px\n}\n.m-5{\n    margin:25px\n}\n.m-6{\n    margin:30px\n}\n.m-7{\n    margin:40px\n}\n.m-8{\n    margin:50px\n}\n.m-9{\n    margin:60px\n}\n.m-10{\n    margin:70px\n}\n.m-11{\n    margin:80px\n}\n.m-12{\n    margin:90px\n}\n.m-13{\n    margin:100px\n}\n.m-14{\n    margin:120px\n}\n.m-15{\n    margin:140px\n}\n.p-1{\n    padding:5px\n}\n.p-2{\n    padding:10px\n}\n.p-3{\n    padding:15px\n}\n.p-4{\n    padding:20px\n}\n.p-5{\n    padding:25px\n}\n.p-6{\n    padding:30px\n}\n.p-7{\n    padding:40px\n}\n.p-8{\n    padding:50px\n}\n.p-9{\n    padding:60px\n}\n.p-10{\n    padding:70px\n}\n.p-11{\n    padding:80px\n}\n.p-12{\n    padding:90px\n}\n.p-13{\n    padding:100px\n}\n.p-14{\n    padding:120px\n}\n.p-15{\n    padding:140px\n}\n.ml-1{\n    margin-left:5px\n}\n.ml-2{\n    margin-left:10px\n}\n.ml-3{\n    margin-left:15px\n}\n.ml-4{\n    margin-left:20px\n}\n.ml-5{\n    margin-left:25px\n}\n.ml-6{\n    margin-left:30px\n}\n.ml-7{\n    margin-left:40px\n}\n.ml-8{\n    margin-left:50px\n}\n.ml-9{\n    margin-left:60px\n}\n.ml-10{\n    margin-left:70px\n}\n.ml-11{\n    margin-left:80px\n}\n.ml-12{\n    margin-left:90px\n}\n.ml-13{\n    margin-left:100px\n}\n.ml-14{\n    margin-left:120px\n}\n.ml-15{\n    margin-left:140px\n}\n.pl-1{\n    padding-left:5px\n}\n.pl-2{\n    padding-left:10px\n}\n.pl-3{\n    padding-left:15px\n}\n.pl-4{\n    padding-left:20px\n}\n.pl-5{\n    padding-left:25px\n}\n.pl-6{\n    padding-left:30px\n}\n.pl-7{\n    padding-left:40px\n}\n.pl-8{\n    padding-left:50px\n}\n.pl-9{\n    padding-left:60px\n}\n.pl-10{\n    padding-left:70px\n}\n.pl-11{\n    padding-left:80px\n}\n.pl-12{\n    padding-left:90px\n}\n.pl-13{\n    padding-left:100px\n}\n.pl-14{\n    padding-left:120px\n}\n.pl-15{\n    padding-left:140px\n}\n.mr-1{\n    margin-right:5px\n}\n.mr-2{\n    margin-right:10px\n}\n.mr-3{\n    margin-right:15px\n}\n.mr-4{\n    margin-right:20px\n}\n.mr-5{\n    margin-right:25px\n}\n.mr-6{\n    margin-right:30px\n}\n.mr-7{\n    margin-right:40px\n}\n.mr-8{\n    margin-right:50px\n}\n.mr-9{\n    margin-right:60px\n}\n.mr-10{\n    margin-right:70px\n}\n.mr-11{\n    margin-right:80px\n}\n.mr-12{\n    margin-right:90px\n}\n.mr-13{\n    margin-right:100px\n}\n.mr-14{\n    margin-right:120px\n}\n.mr-15{\n    margin-right:140px\n}\n.pr-1{\n    padding-right:5px\n}\n.pr-2{\n    padding-right:10px\n}\n.pr-3{\n    padding-right:15px\n}\n.pr-4{\n    padding-right:20px\n}\n.pr-5{\n    padding-right:25px\n}\n.pr-6{\n    padding-right:30px\n}\n.pr-7{\n    padding-right:40px\n}\n.pr-8{\n    padding-right:50px\n}\n.pr-9{\n    padding-right:60px\n}\n.pr-10{\n    padding-right:70px\n}\n.pr-11{\n    padding-right:80px\n}\n.pr-12{\n    padding-right:90px\n}\n.pr-13{\n    padding-right:100px\n}\n.pr-14{\n    padding-right:120px\n}\n.pr-15{\n    padding-right:140px\n}\n.mb-1{\n    margin-bottom:5px\n}\n.mb-2{\n    margin-bottom:10px\n}\n.mb-3{\n    margin-bottom:15px\n}\n.mb-4{\n    margin-bottom:20px\n}\n.mb-5{\n    margin-bottom:25px\n}\n.mb-6{\n    margin-bottom:30px\n}\n.mb-7{\n    margin-bottom:40px\n}\n.mb-8{\n    margin-bottom:50px\n}\n.mb-9{\n    margin-bottom:60px\n}\n.mb-10{\n    margin-bottom:70px\n}\n.mb-11{\n    margin-bottom:80px\n}\n.mb-12{\n    margin-bottom:90px\n}\n.mb-13{\n    margin-bottom:100px\n}\n.mb-14{\n    margin-bottom:120px\n}\n.mb-15{\n    margin-bottom:140px\n}\n.pb-1{\n    padding-bottom:5px\n}\n.pb-2{\n    padding-bottom:10px\n}\n.pb-3{\n    padding-bottom:15px\n}\n.pb-4{\n    padding-bottom:20px\n}\n.pb-5{\n    padding-bottom:25px\n}\n.pb-6{\n    padding-bottom:30px\n}\n.pb-7{\n    padding-bottom:40px\n}\n.pb-8{\n    padding-bottom:50px\n}\n.pb-9{\n    padding-bottom:60px\n}\n.pb-10{\n    padding-bottom:70px\n}\n.pb-11{\n    padding-bottom:80px\n}\n.pb-12{\n    padding-bottom:90px\n}\n.pb-13{\n    padding-bottom:100px\n}\n.pb-14{\n    padding-bottom:120px\n}\n.pb-15{\n    padding-bottom:140px\n}\n.width90{\n    width:90%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width80{\n    width:80%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width70{\n    width:70%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width60{\n    width:60%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width50{\n    width:50%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width40{\n    width:40%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "html { \n    scroll-behavior: smooth; \n    \n  }\n.generalFont{\n    font-family:  cursive;\n}\n.generalBackground{\n    background-color:rgb(250, 250, 250);\n}\n.backgroundWhite{\n    background-color: white;\n}\n.flex{\n    display:flex;\n}\n.testFont{\n    font-family: 'Roboto', sans-serif;\n}\n.justifyText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: justify;\n    text-justify: inter-word;\n}\n.emptyStar{\n    color:rgb(253, 225, 149);\n}\n.centerText{\n    margin-left:auto;\n    margin-right:auto;\n    text-align: center;\n    \n}\n.textAlignCenter{\n    text-align: center;\n}\n.cursorPointer{\n    cursor:pointer;\n}\n.verticalAlign{\n    display:flex;\n    align-items: center;\n    justify-content: center;\n}\n.verticalItem{\n    display:flex;\n    align-items: center;\n}\n.flexCenter{\n    display:flex;\n    justify-content: center;\n}\n.flexColumn{\n    display:flex;\n    flex-direction: column;\n}\n.flexBetween{\n    display:flex;\n    justify-content: space-between;\n}\n.flexAround{\n    display:flex;\n    justify-content: space-around;\n}\n.lightShadowCard{\n    box-shadow: 0 0 2px 1px rgb(214, 214, 214);\n}\n.lightShadowCard1{\n    box-shadow: 0 0 2px 1px rgb(233, 233, 233);   \n}\n.lightShadowCard2{\n    box-shadow:  0 0 10px  rgba(216, 216, 216, 0.6);\n      -moz-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);\n      -webkit-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);\n      -o-box-shadow: 0 0 10px  rgba(216, 216, 216, 0.6);\n}\n.underlined{\n    text-decoration: underline;\n}\n.bgWhite{\n    background-color:white;\n}\n.bgWhite1{\n    background-color:rgb(250, 250, 250);\n}\n.bgWhite2{\n    background-color:rgb(245, 245, 245);\n}\n.bgWhite3{\n    background-color:rgb(240, 240, 240);\n}\n.productCard{\n    width:200px;\n    /* height:300px; */\n    background-color: rgb(173, 199, 199);\n}\n.greyLineProduct{\n    width:100%;\n    height:1px;\n    background-color:rgb(223, 223, 223);\n}\n.lightGrey{\n    background-color:rgb(223, 223, 223);\n}\n.grey1{\n    color:rgb(92, 92, 92)\n}\n.grey2{\n    color:rgb(54, 54, 54)\n}\n.grey3{\n    color:rgb(31, 31, 31)\n}\n.cardProduct{\n    margin:6%;\n    border-radius:4px; \n    transition: all .2s ease-in-out;\n}\n.cardProduct:hover{\n    margin:6%;\n    border-radius:4px; \n    /* opacity:0.8; */\n    /* transform: scale(1.02); */\n}\n.cardProduct:hover{\n    opacity:0.8;\n}\n.cardProduct:hover .imageProduct{\n    opacity:0.3;\n}\n.hideProduct{\n    opacity:0;\n    height:50px;\n    /* margin-right:auto; */\n}\n.elementAppear{\n    font-size:1.1em;\n    font-weight:600;\n}\n.cardProduct:hover .hideProduct{\n   display:block;\n   position:relative;\n   top:-130px;\n   z-index: 100;\n   /* font-size:1.5em; */\n   background:transparent;\n   opacity:1;\n}\n.cardProduct:hover .elementAppear{\n    width:80%;\n    margin-right:auto;\n    margin-left:auto;\n    height:50px;\n    display:flex;\n    justify-content: center;\n    align-items: center;\n    /* background-color:rgb(219, 219, 219); */\n    border:2px solid grey;\n    border-radius:2px;\n }\n .hoverUnderlined:hover{\n    text-decoration: underline;\n    cursor:pointer;\n }\n .alignRight{\n    display:flex;\n    flex-direction: row-reverse;\n }\n .colorButton1{\n    background-color: rgb(235, 229, 209);\n }\n .height10{\n     height:10px;\n }\n .height20{\n     height:20px;\n }\n .height30{\n     height:30px;\n }\n .height40{\n     height:40px;\n }\n .height50{\n     height:50px;\n }\n .height60{\n     height:60px;\n }\n .height70{\n     height:70px;\n }\n .height80{\n     height:80px;\n }\n .lineHeight1{\n    line-height: 115%;\n }\n .lineHeight1{\n    line-height: 130%;\n }\n .lineHeight1{\n    line-height: 145%;\n }\n .lineHeight1{\n    line-height: 160%;\n }\n .lineHeight1{\n    line-height: 175%;\n }\n .letterSpacing1{\n     letter-spacing: 1px;\n }\n .letterSpacing2{\n     letter-spacing: 2px;\n }\n .letterSpacing3{\n     letter-spacing: 3px;\n }\n .letterSpacing4{\n     letter-spacing: 4px;\n }\n .letterSpacing5{\n     letter-spacing: 5px;\n }\n .bold100{\n     font-weight:100;\n }\n .bold200{\n     font-weight:200;\n }\n .bold300{\n     font-weight:300;\n }\n .bold400{\n     font-weight:400;\n }\n .bold500{\n     font-weight:500;\n }\n .bold600{\n     font-weight:600;\n }\n .bold700{\n     font-weight:700;\n }\n .bold800{\n     font-weight:800;\n }\n .size1{\n     font-size:1.1em;\n }\n .size2{\n     font-size:1.2em;\n }\n .size3{\n     font-size:1.3em;\n }\n .size4{\n     font-size:1.4em;\n }\n .size5{\n     font-size:1.5em;\n }\n .size6{\n     font-size:1.6em;\n }\n .size7{\n     font-size:1.7em;\n }\n .size8{\n     font-size:1.8em;\n }\n .size9{\n     font-size:1.9em;\n }\n .font1{\n    font-family: Georgia, serif;\n }\n .font2{\n    font-family: sans-serif;\n }\n .font3{\n    font-family: serif;\n }\n .font4{\n    font-family: cursive;\n }\n .font5{\n    font-family: system-ui;\n }\n .font6{\n    font-family: monospace;\n }\n .font7{\n    font-family: fantasy;\n }\n .font8{\n    font-family: 'Roboto', sans-serif;\n    font-family: 'Zen Antique Soft', serif;\n }\n .font9{\n    font-family: 'Dancing Script', cursive;\nfont-family: 'Roboto', sans-serif;\nfont-family: 'Zen Antique Soft', serif;\n }\n .opacity9{\n    opacity:0.9;\n }\n .opacity8{\n    opacity:0.8;\n }\n .opacity7{\n    opacity:0.7;\n }\n .opacity6{\n    opacity:0.6;\n }\n .opacity5{\n    opacity:0.5;\n }\n .opacity4{\n    opacity:0.4;\n }\n .opacity3{\n    opacity:0.3;\n }\n .opacity2{\n    opacity:0.2;\n }\n .opacity1{\n    opacity:0.1;\n }\n.mt-1{\n    margin-top:5px\n}\n.mt-2{\n    margin-top:10px\n}\n.mt-3{\n    margin-top:15px\n}\n.mt-4{\n    margin-top:20px\n}\n.mt-5{\n    margin-top:25px\n}\n.mt-6{\n    margin-top:30px\n}\n.mt-7{\n    margin-top:40px\n}\n.mt-8{\n    margin-top:50px\n}\n.mt-9{\n    margin-top:60px\n}\n.mt-10{\n    margin-top:70px\n}\n.mt-11{\n    margin-top:80px\n}\n.mt-12{\n    margin-top:90px\n}\n.mt-13{\n    margin-top:100px\n}\n.mt-14{\n    margin-top:120px\n}\n.mt-15{\n    margin-top:140px\n}\n.pt-1{\n    padding-top:5px\n}\n.pt-2{\n    padding-top:10px\n}\n.pt-3{\n    padding-top:15px\n}\n.pt-4{\n    padding-top:20px\n}\n.pt-5{\n    padding-top:25px\n}\n.pt-6{\n    padding-top:30px\n}\n.pt-7{\n    padding-top:40px\n}\n.pt-8{\n    padding-top:50px\n}\n.pt-9{\n    padding-top:60px\n}\n.pt-10{\n    padding-top:70px\n}\n.pt-11{\n    padding-top:80px\n}\n.pt-12{\n    padding-top:90px\n}\n.pt-13{\n    padding-top:100px\n}\n.pt-14{\n    padding-top:120px\n}\n.pt-15{\n    padding-top:140px\n}\n.m-1{\n    margin:5px\n}\n.m-2{\n    margin:10px\n}\n.m-3{\n    margin:15px\n}\n.m-4{\n    margin:20px\n}\n.m-5{\n    margin:25px\n}\n.m-6{\n    margin:30px\n}\n.m-7{\n    margin:40px\n}\n.m-8{\n    margin:50px\n}\n.m-9{\n    margin:60px\n}\n.m-10{\n    margin:70px\n}\n.m-11{\n    margin:80px\n}\n.m-12{\n    margin:90px\n}\n.m-13{\n    margin:100px\n}\n.m-14{\n    margin:120px\n}\n.m-15{\n    margin:140px\n}\n.p-1{\n    padding:5px\n}\n.p-2{\n    padding:10px\n}\n.p-3{\n    padding:15px\n}\n.p-4{\n    padding:20px\n}\n.p-5{\n    padding:25px\n}\n.p-6{\n    padding:30px\n}\n.p-7{\n    padding:40px\n}\n.p-8{\n    padding:50px\n}\n.p-9{\n    padding:60px\n}\n.p-10{\n    padding:70px\n}\n.p-11{\n    padding:80px\n}\n.p-12{\n    padding:90px\n}\n.p-13{\n    padding:100px\n}\n.p-14{\n    padding:120px\n}\n.p-15{\n    padding:140px\n}\n.ml-1{\n    margin-left:5px\n}\n.ml-2{\n    margin-left:10px\n}\n.ml-3{\n    margin-left:15px\n}\n.ml-4{\n    margin-left:20px\n}\n.ml-5{\n    margin-left:25px\n}\n.ml-6{\n    margin-left:30px\n}\n.ml-7{\n    margin-left:40px\n}\n.ml-8{\n    margin-left:50px\n}\n.ml-9{\n    margin-left:60px\n}\n.ml-10{\n    margin-left:70px\n}\n.ml-11{\n    margin-left:80px\n}\n.ml-12{\n    margin-left:90px\n}\n.ml-13{\n    margin-left:100px\n}\n.ml-14{\n    margin-left:120px\n}\n.ml-15{\n    margin-left:140px\n}\n.pl-1{\n    padding-left:5px\n}\n.pl-2{\n    padding-left:10px\n}\n.pl-3{\n    padding-left:15px\n}\n.pl-4{\n    padding-left:20px\n}\n.pl-5{\n    padding-left:25px\n}\n.pl-6{\n    padding-left:30px\n}\n.pl-7{\n    padding-left:40px\n}\n.pl-8{\n    padding-left:50px\n}\n.pl-9{\n    padding-left:60px\n}\n.pl-10{\n    padding-left:70px\n}\n.pl-11{\n    padding-left:80px\n}\n.pl-12{\n    padding-left:90px\n}\n.pl-13{\n    padding-left:100px\n}\n.pl-14{\n    padding-left:120px\n}\n.pl-15{\n    padding-left:140px\n}\n.mr-1{\n    margin-right:5px\n}\n.mr-2{\n    margin-right:10px\n}\n.mr-3{\n    margin-right:15px\n}\n.mr-4{\n    margin-right:20px\n}\n.mr-5{\n    margin-right:25px\n}\n.mr-6{\n    margin-right:30px\n}\n.mr-7{\n    margin-right:40px\n}\n.mr-8{\n    margin-right:50px\n}\n.mr-9{\n    margin-right:60px\n}\n.mr-10{\n    margin-right:70px\n}\n.mr-11{\n    margin-right:80px\n}\n.mr-12{\n    margin-right:90px\n}\n.mr-13{\n    margin-right:100px\n}\n.mr-14{\n    margin-right:120px\n}\n.mr-15{\n    margin-right:140px\n}\n.pr-1{\n    padding-right:5px\n}\n.pr-2{\n    padding-right:10px\n}\n.pr-3{\n    padding-right:15px\n}\n.pr-4{\n    padding-right:20px\n}\n.pr-5{\n    padding-right:25px\n}\n.pr-6{\n    padding-right:30px\n}\n.pr-7{\n    padding-right:40px\n}\n.pr-8{\n    padding-right:50px\n}\n.pr-9{\n    padding-right:60px\n}\n.pr-10{\n    padding-right:70px\n}\n.pr-11{\n    padding-right:80px\n}\n.pr-12{\n    padding-right:90px\n}\n.pr-13{\n    padding-right:100px\n}\n.pr-14{\n    padding-right:120px\n}\n.pr-15{\n    padding-right:140px\n}\n.mb-1{\n    margin-bottom:5px\n}\n.mb-2{\n    margin-bottom:10px\n}\n.mb-3{\n    margin-bottom:15px\n}\n.mb-4{\n    margin-bottom:20px\n}\n.mb-5{\n    margin-bottom:25px\n}\n.mb-6{\n    margin-bottom:30px\n}\n.mb-7{\n    margin-bottom:40px\n}\n.mb-8{\n    margin-bottom:50px\n}\n.mb-9{\n    margin-bottom:60px\n}\n.mb-10{\n    margin-bottom:70px\n}\n.mb-11{\n    margin-bottom:80px\n}\n.mb-12{\n    margin-bottom:90px\n}\n.mb-13{\n    margin-bottom:100px\n}\n.mb-14{\n    margin-bottom:120px\n}\n.mb-15{\n    margin-bottom:140px\n}\n.pb-1{\n    padding-bottom:5px\n}\n.pb-2{\n    padding-bottom:10px\n}\n.pb-3{\n    padding-bottom:15px\n}\n.pb-4{\n    padding-bottom:20px\n}\n.pb-5{\n    padding-bottom:25px\n}\n.pb-6{\n    padding-bottom:30px\n}\n.pb-7{\n    padding-bottom:40px\n}\n.pb-8{\n    padding-bottom:50px\n}\n.pb-9{\n    padding-bottom:60px\n}\n.pb-10{\n    padding-bottom:70px\n}\n.pb-11{\n    padding-bottom:80px\n}\n.pb-12{\n    padding-bottom:90px\n}\n.pb-13{\n    padding-bottom:100px\n}\n.pb-14{\n    padding-bottom:120px\n}\n.pb-15{\n    padding-bottom:140px\n}\n.width90{\n    width:90%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width80{\n    width:80%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width70{\n    width:70%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width60{\n    width:60%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width50{\n    width:50%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width40{\n    width:40%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n.width30{\n    width:30%;\n    margin-left:auto;\n    margin-right:auto;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35799,7 +35801,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".titleHeader{\r\n    font-size:150%;\r\n    /* font-family:  cursive; */\r\n    \r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".titleHeader{\r\n    font-size:150%;\r\n    letter-spacing: 2px;\r\n    /* font-family:  cursive; */\r\n    text-shadow: 1px 1px 2px rgb(226, 226, 226);\r\n    \r\n}\r\n.itemMenu{\r\n    margin-top:24px;\r\n    letter-spacing: 2px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35847,7 +35849,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n\r\n\r\n\r\n.nameProduct{\r\n    margin-top:-40px;\r\n    font-weight:900;\r\n    width:80%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: center;\r\n    /* height:40px; */\r\n}\r\n.priceProduct{\r\n    font-weight:600;\r\n    /* font-size:em; */\r\n}\r\n.imageProduct{\r\n    width:100%;\r\n    border-top-left-radius:4px;\r\n    border-top-right-radius:4px;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:0.9;\r\n    transition: .5s ease;\r\n    -webkit-backface-visibility: hidden;\r\n            backface-visibility: hidden;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n.imageOneProduct{\r\n    width:100%;\r\n    border-radius:4px;\r\n    height:500px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:1;\r\n}\r\n.test{\r\n    background-color:red;\r\n    margin:0px;\r\n}\r\n.greyLineMenuProduct{\r\n    height:1px;\r\n    background-color:rgb(218, 218, 218);\r\n    width:100%;\r\n    margin-top:15px;\r\n}\r\n.menuButton{\r\n    margin-left:40px;\r\n    padding-bottom:18px;\r\n    color:rgb(97, 97, 253);\r\n}\r\n.menuButton:hover{\r\n    cursor:pointer;\r\n    border-bottom:1px solid black;\r\n    color:rgb(160, 216, 30);\r\n}\r\n.paragraphMenuProduct{\r\n    text-justify: inherit;\r\n    padding:30px;\r\n}\r\n.menuDetailsProduct{\r\n    padding:80px;\r\n}\r\n.alignCenter{\r\n    display:flex;\r\n    align-items: center;\r\n}\r\n.greyButton{\r\n    background-color:rgb(243, 243, 243);\r\n}\r\n.greyButton:hover{\r\n    background-color:rgb(231, 231, 231);\r\n}\r\n.buttonAdd{\r\n    cursor:pointer;\r\n    border-top:1px solid rgb(207, 207, 207);\r\n    border-bottom:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.buttonSubstract{\r\n    cursor:pointer;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius:5px;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n}\r\n.quantityProduct{\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:50px;\r\n    height:30px;\r\n    font-weight: 600;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.buttonAddToCart{\r\n    cursor:pointer;\r\n    border:1px solid rgb(207, 207, 207);\r\n    width:100%;\r\n    height:30px;\r\n    font-weight: 200;\r\n    border-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.boutonPagination{\r\n    color:rgb(36, 36, 36)(0, 0, 0);\r\n    /* background-color:rgb(243, 243, 243); */\r\n}\r\n\r\n\r\n.boutonPagination{\r\n    width:25px;\r\n    padding:10px;\r\n    padding-left:25px;\r\n    padding-right:32px;\r\n    /* margin:10px; */\r\n    font-size:1.1em;\r\n    border-radius:5px;\r\n}\r\n.boutonPaginationSelected{\r\n    width:25px;\r\n    padding:10px;\r\n    padding-left:25px;\r\n    padding-right:32px;\r\n    font-size:1.1em;\r\n    color:rgb(82, 82, 82);\r\n    font-weight:600;\r\n    background-color:rgb(226, 226, 226)\r\n}\r\n.boutonPagination:hover{\r\n    font-size:1.1em;\r\n    color:grey;\r\n    background-color:rgb(241, 241, 241);\r\n    cursor:pointer;\r\n}\r\n/* .productDetails{\r\n    font-size:1.9em;\r\n} */\r\n.starsProductReview{\r\n    display:flex;\r\n    flex-direction: row-reverse;\r\n}\r\n@media all and (max-width: 600px) {\r\n    .marginTop600px{\r\n      margin-top:20px;\r\n    }\r\n  }\r\n\r\n.buttonCategory{\r\n    border-radius:20px;\r\n    background-color: rgb(232, 233, 241);\r\n    border:1px solid rgb(189, 189, 189);\r\n    color:rgb(133, 133, 133);\r\n}\r\n.buttonCategory:hover {\r\n    background-color: rgb(212, 213, 238);\r\n    cursor:pointer;\r\n}\r\n.widthFormControl{\r\n    width:140px;\r\n}\r\n.optionSelect{\r\n    height:30px;\r\n}\r\n.optionSelect:hover{\r\n    cursor:pointer;\r\n    background-color:rgb(220, 224, 241);\r\n}\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n\r\n\r\n\r\n.nameProduct{\r\n    margin-top:-40px;\r\n    font-weight:900;\r\n    width:80%;\r\n    margin-left:auto;\r\n    margin-right:auto;\r\n    text-align: center;\r\n    /* height:40px; */\r\n}\r\n.priceProduct{\r\n    font-weight:600;\r\n    /* font-size:em; */\r\n}\r\n.imageProduct{\r\n    width:100%;\r\n    border-top-left-radius:4px;\r\n    border-top-right-radius:4px;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:0.9;\r\n    transition: .5s ease;\r\n    -webkit-backface-visibility: hidden;\r\n            backface-visibility: hidden;\r\n}\r\n\r\n\r\n\r\n\r\n\r\n.imageOneProduct{\r\n    width:100%;\r\n    border-radius:4px;\r\n    height:500px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:1;\r\n}\r\n.test{\r\n    background-color:red;\r\n    margin:0px;\r\n}\r\n.greyLineMenuProduct{\r\n    height:1px;\r\n    background-color:rgb(218, 218, 218);\r\n    width:100%;\r\n    margin-top:15px;\r\n}\r\n.menuButton{\r\n    margin-left:40px;\r\n    padding-bottom:18px;\r\n    color:rgb(97, 97, 253);\r\n}\r\n.menuButton:hover{\r\n    cursor:pointer;\r\n    border-bottom:1px solid black;\r\n    color:rgb(160, 216, 30);\r\n}\r\n.paragraphMenuProduct{\r\n    text-justify: inherit;\r\n    padding:30px;\r\n}\r\n.menuDetailsProduct{\r\n    padding:80px;\r\n}\r\n.alignCenter{\r\n    display:flex;\r\n    align-items: center;\r\n}\r\n\r\n.greyButton:hover{\r\n    background-color:rgb(231, 231, 231);\r\n}\r\n.buttonAdd{\r\n    cursor:pointer;\r\n    border-top:1px solid rgb(230, 230, 230);\r\n    border-bottom:1px solid rgb(230, 230, 230);\r\n    width:50px;\r\n    font-weight: 300;\r\n\r\n}\r\n.buttonSubstract{\r\n    cursor:pointer;\r\n    border-top-right-radius:5px;\r\n    border-bottom-right-radius:5px;\r\n    border:1px solid rgb(230, 230, 230);\r\n    width:50px;\r\n    font-weight: 300;\r\n    color:rgb(116, 116, 116);\r\n   \r\n}\r\n.quantityProduct{\r\n    border:1px solid rgb(230, 230, 230);\r\n    width:50px;\r\n    font-weight: 300;\r\n    border-top-left-radius:5px;\r\n    border-bottom-left-radius:5px;\r\n    color:rgb(44, 44, 44);\r\n}\r\n.buttonAddToCart{\r\n    cursor:pointer;\r\n    border:1px solid rgb(230, 230, 230);\r\n    width:200px;\r\n    /* width:90%; */\r\n    font-weight: 200;\r\n    border-radius:5px;\r\n    color:rgb(58, 58, 58);\r\n}\r\n.boutonPagination{\r\n    color:rgb(36, 36, 36)(0, 0, 0);\r\n    /* background-color:rgb(243, 243, 243); */\r\n}\r\n\r\n\r\n.boutonPagination{\r\n    width:25px;\r\n    padding:10px;\r\n    padding-left:25px;\r\n    padding-right:32px;\r\n    /* margin:10px; */\r\n    font-size:1.1em;\r\n    border-radius:5px;\r\n}\r\n.boutonPaginationSelected{\r\n    width:25px;\r\n    padding:10px;\r\n    padding-left:25px;\r\n    padding-right:32px;\r\n    font-size:1.1em;\r\n    color:rgb(82, 82, 82);\r\n    font-weight:600;\r\n    background-color:rgb(226, 226, 226)\r\n}\r\n.boutonPagination:hover{\r\n    font-size:1.1em;\r\n    color:grey;\r\n    background-color:rgb(241, 241, 241);\r\n    cursor:pointer;\r\n}\r\n/* .productDetails{\r\n    font-size:1.9em;\r\n} */\r\n.starsProductReview{\r\n    display:flex;\r\n    flex-direction: row-reverse;\r\n}\r\n@media all and (max-width: 600px) {\r\n    .marginTop600px{\r\n      margin-top:20px;\r\n    }\r\n  }\r\n  @media all and (max-width: 400px) {\r\n  \r\n    .buttonAddToCart{\r\n        width:120px;\r\n    }\r\n  }\r\n\r\n.buttonCategory{\r\n    border-radius:20px;\r\n    background-color: rgb(232, 233, 241);\r\n    border:1px solid rgb(189, 189, 189);\r\n    color:rgb(133, 133, 133);\r\n}\r\n.buttonCategory:hover {\r\n    background-color: rgb(212, 213, 238);\r\n    cursor:pointer;\r\n}\r\n.widthFormControl{\r\n    width:140px;\r\n}\r\n.optionSelect{\r\n    height:30px;\r\n}\r\n.optionSelect:hover{\r\n    cursor:pointer;\r\n    background-color:rgb(220, 224, 241);\r\n}\r\n.hideProduct2{\r\n    opacity:0;\r\n    height:50px;\r\n    margin-bottom:20px;\r\n}\r\n.cardProduct:hover .hideProduct2{\r\n    display:block;\r\n    position:relative;\r\n    top:10px;\r\n    z-index: 100;\r\n    /* font-size:1.5em; */\r\n    background:white;\r\n    opacity:1;\r\n    color:rgb(75, 75, 75);\r\n }\r\n /* .cardProduct:hover .nameProduct{\r\n    opacity:0;\r\n }\r\n .cardProduct:hover .productDetails{\r\n    opacity:0;\r\n }\r\n .cardProduct:hover .priceProduct {\r\n    opacity:0;\r\n } */\r\n .cardProduct:hover .imageProduct2{\r\n    opacity:0.6;\r\n}\r\n.imageProduct2{\r\n    width:100%;\r\n    border-top-left-radius:4px;\r\n    border-top-right-radius:4px;\r\n    height:300px;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n    opacity:0.9;\r\n    transition: .5s ease;\r\n    -webkit-backface-visibility: hidden;\r\n            backface-visibility: hidden;\r\n}\r\n\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -100,8 +100,8 @@ export default function Products() {
         return <div className={classes.marginTop}>Loading...</div>;
     } else {
         return (
-            <Container className="pt-15">
-                <Grid container justifyContent="center" className="mt-10">
+            <Container className="pt-10">
+                <Grid container justifyContent="center" className="mt-8">
                     <Grid container item xs={12} sm={12} lg={11}>
                         <Grid item xs={12}>
                             <div className="flex">
@@ -160,8 +160,8 @@ export default function Products() {
                             >
                                 <div className="cardProduct lightShadowCard2">
                                     <Link to={{ pathname: '/product', state: { product: item } }}>
-                                        <img className="imageProduct" src="https://picsum.photos/200/300" />
-                                        <div className="hideProduct">
+                                        <img className="imageProduct2" src="https://picsum.photos/200/300" />
+                                        <div className="hideProduct2">
                                             <div className="elementAppear">
                                                 DISCOVER
                                             </div>
