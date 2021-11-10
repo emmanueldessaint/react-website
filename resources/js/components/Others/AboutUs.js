@@ -88,7 +88,7 @@ export default function AboutUs() {
                 </Grid>
             </Grid>
             <Grid container justifyContent="center" className="menuQuality">
-                <Grid item container xs={11} md={10}>
+                <Grid item container xs={11} md={10} >
 
                     <h2 className="centerText opacity9 font9">A GENUINE KNOW-HOW</h2>
 

@@ -22,6 +22,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 
 
+
 const useStyles = makeStyles(theme => ({
 
 }));
@@ -37,7 +38,7 @@ export default function Products() {
     const [numberOfPages, setNumberOfPages] = useRecoilState(numberOfPageProducts);
     const [itemsInCurrentPage, setItemsInCurrentPage] = useState([]);
     const [actuelPage, setActuelPage] = useRecoilState(currentPageProduct);
-    const [age, setAge] = useState('');
+    const [filter, setFilter] = useState('');
 
 
     var itemsByPage = 12;
@@ -51,7 +52,6 @@ export default function Products() {
                 (result) => {
                     
                     let averageNote = 0;
-                    let newArray = [];
                     let allProducts = [];
                     allProducts = result.products
                     console.log(allProducts.length)
@@ -64,15 +64,10 @@ export default function Products() {
                         allProducts[j].updated_at = averageNote;
                     }
                     setItems(allProducts);
-                    newArray = allProducts.slice(itemsByPage * (actuelPage - 1), itemsByPage * (actuelPage));                 
-                    for (var i = 0; i < allProducts.length / itemsByPage; i++) {
-                        emptyArray.push(increment)
-                        increment++
-                    }                   
-                    console.log('useEffect')
-                    setNumberOfPages(emptyArray);
-                    setItemsInCurrentPage(newArray)
-                    setIsLoaded(true);
+                    
+                    
+                    
+                    
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -80,6 +75,22 @@ export default function Products() {
                 }
             )
     }, [])
+
+    useEffect(() => {
+        if (items.length !== 0) {
+        let newArray = [];
+
+        newArray = items.slice(itemsByPage * (actuelPage - 1), itemsByPage * (actuelPage));                 
+        for (var i = 0; i < items.length / itemsByPage; i++) {
+            emptyArray.push(increment)
+            increment++
+        }              
+        setItemsInCurrentPage(newArray)    
+        setNumberOfPages(emptyArray); 
+        setIsLoaded(true);
+        }
+        
+    }, [items])
 
     const handleChangePage = (item) => {
         let arrayWithItemsOnPage = [];
@@ -90,8 +101,55 @@ export default function Products() {
         setActuelPage(item);
     }
 
-    const handleChange = (event) => {
-        setAge(event.target.value);
+    function compareAsc(a, b) {
+      if (a.price < b.price) {
+        return -1;
+      }
+      if (a.price > b.price) {
+        return 1;
+      }
+      return 0;
+    }
+
+    function compareDesc(a, b) {
+      if (a.price > b.price) {
+        return -1;
+      }
+      if (a.price < b.price) {
+        return 1;
+      }
+      return 0;
+    }
+    function comparePopularity(a, b) {
+      if (a.reviews.length > b.reviews.length) {
+        return -1;
+      }
+      if (a.reviews.length < b.reviews.length) {
+        return 1;
+      }
+      return 0;
+    }
+
+    useEffect(() => {
+        if (filter === 10) {
+            let array = [...items]
+            array.sort(comparePopularity);
+            setItems(array);
+        }
+        if (filter === 20) {
+            let array = [...items]
+            array.sort(compareAsc);
+            setItems(array);
+        }
+        if (filter === 30) {
+            let array = [...items]
+            array.sort(compareDesc);
+            setItems(array);
+        }
+    }, [filter])
+
+    const changeFilter = (event) => {
+        setFilter(event.target.value);
       };
  
     if (error) {
@@ -132,8 +190,8 @@ export default function Products() {
                                     <InputLabel><span className="ml-4"></span>Filter by</InputLabel>
                                     <Select
                                         variant="outlined"
-                                        value={age}
-                                        onChange={handleChange}
+                                        // value={f}
+                                        onChange={changeFilter}
                                         fullWidth
                                         className="testSelect"
                                     >
@@ -152,7 +210,7 @@ export default function Products() {
                     </Grid>
                 </Grid>
                 <Grid container justifyContent="center">
-                    <Grid container item xs={12} sm={12} xl={10}>
+                    <Grid container item xs={12} sm={12} md={11} xl={10}>
                         {itemsInCurrentPage.map(item => (
                             <Grid
                                 item xs={12} sm={6} md={4} lg={3}
@@ -166,9 +224,9 @@ export default function Products() {
                                                 DISCOVER
                                             </div>
                                         </div>
-                                        <div className="nameProduct flexCenter font1">{item.name}</div>
+                                        <div className="nameProductProducts opacity8 letterSpacing2 flexCenter size3 font10">{item.name}</div>
                                         <div className="flexBetween font2">
-                                            <div className="priceProduct mt-4 ml-3 pb-1">${item.price}.00</div>
+                                            <div className="priceProduct opacity6 mt-4 ml-3 pb-1">${item.price}.00</div>
 
 
                                             {item.reviews.length > 0 &&
