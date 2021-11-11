@@ -39,9 +39,9 @@
     height:40px;
 }
 .buttonModifyQuantity{
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     border-radius:2px;
-    width:30px;
+    /* width:30px; */
     cursor:pointer;
 }
 .testCard{
@@ -51,10 +51,7 @@
     border-radius:5px;
     height:50px;
 }
-.quantityPriceCart{
-    font-size:1.2em;
-    font-weight: bold;
-}
+
 .widthQuantityPrice{
     width:100px;
 }
@@ -65,4 +62,43 @@
     width:100%;
     height:1px;
     background-color:rgb(204, 204, 204);
+}
+.greyLineCart2{
+    margin-top:11px;
+    margin-right:20px;
+    margin-left:20px;
+    width:100%;
+    height:1px;
+    background-color:rgb(204, 204, 204);
+}
+.totalPlusShipping{
+    min-width:145px;
+}
+.quantityProductCart{
+    /* border:1px solid black;
+    background-color:red; */
+
+}
+.buttonModifyQuantity{
+    background-color:rgb(183, 218, 197);
+    width:30px;
+}
+.buttonAddQuantityCart{
+    border-top-left-radius:3px;
+    border-bottom-left-radius:3px;
+    /* margin-right:-10px; */
+}
+.buttonSubstractQuantityCart{
+    border-top-right-radius:3px;
+    border-bottom-right-radius:3px;
+    /* margin-left:-10px; */
+}
+.productQuantityCart{
+    border-top:solid 1px rgb(183, 218, 197);
+    border-bottom:solid 1px rgb(183, 218, 197);
+    width:40px;
+    
+}
+.productPriceQuantityInCart{
+    width:50px;
 }

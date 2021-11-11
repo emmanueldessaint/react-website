@@ -1,24 +1,10 @@
 import { useState, useEffect } from 'react';
 import * as React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
-import Card from '@material-ui/core/Card';
 import Rating from '@mui/material/Rating';
-import Typography from '@material-ui/core/Typography';
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import Container from '@material-ui/core/Container';
-import TextField from '@material-ui/core/TextField';
-import PropTypes from 'prop-types';
-import Slide from '@material-ui/core/Slide';
-import Button from '@material-ui/core/Button';
-import Toolbar from '@material-ui/core/Toolbar';
-import AppBar from '@material-ui/core/AppBar';
 import { makeStyles } from '@material-ui/styles';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import { styled } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import { LoadData } from '../../Constants.js'
 import axios from 'axios';
@@ -165,7 +151,7 @@ export default function Home() {
                                 <span className="flexCenter"><img src={earth} alt="earth_icon" className="smallIcons " /></span>
                                 <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2">RESPECT FOR THE LAND</span>
                                 <div className="blueBar"></div>
-                                <span className="flexCenter mt-2 grey2 font4 opacity9 letterSpacing1">Environment and traditions</span>
+                                <span className="flexCenter mt-1 grey2 font2 opacity9 letterSpacing1">Environment and traditions</span>
                             </div>
                         </Grid>
 
@@ -175,7 +161,7 @@ export default function Home() {
                                 <span className="flexCenter"><LocalShippingIcon /></span>
                                 <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2">TRACKING DELIVERY</span>
                                 <div className="blueBar"></div>
-                                <span className="flexCenter mt-2 grey2 font4 opacity9 letterSpacing1">All around the world</span>
+                                <span className="flexCenter mt-1 grey2 font2 opacity9 letterSpacing1">All around the world</span>
                             </div>
                             <div className="orangeBar"></div>
                         </Grid>
@@ -185,7 +171,7 @@ export default function Home() {
                                 <span className="flexCenter"><img src={sewing} alt="sewing_icon" className="smallIcons backgroundIcons" /></span>
                                 <span className="flexCenter mt-2 titleHomeArguments grey2 font6 size2 opacity9 letterSpacing2">A REAL KNOW-HOW</span>
                                 <div className="blueBar"></div>
-                                <span className="flexCenter mt-2 grey2 font4 opacity9 letterSpacing1">The highest quality</span>
+                                <span className="flexCenter mt-1 grey2 font2 opacity9 letterSpacing1">The highest quality</span>
                             </div>
                         </Grid>
                     </Grid>
@@ -193,12 +179,12 @@ export default function Home() {
                 <div className="mt-10">
                     <div className="flexCenter"><img src={reward} alt="reward_svg" className="rewardIcon opacity6" /></div>
                     <span className="flexCenter font8 size7 mt-3 bold600 grey2 opacity9 letterSpacing2">Our best sellers</span>
-                    <span className="flexCenter font4 grey2 opacity9">Discover our customers' favorite products !</span>
+                    <span className="flexCenter font5 grey2 opacity9">Discover our customers' favorite products !</span>
                 </div>
                 {isLoaded &&
                     <div>
                         <Grid container justifyContent="center">
-                            <Grid item container xs={12} md={11} lg={10}>
+                            <Grid item container xs={12} md={11} lg={11}>
 
                                 {bestSellers.map(item => (
                                     <Grid
@@ -244,7 +230,7 @@ export default function Home() {
                             <Grid >
                                 <div className="textAlignCenter">
                                     <div><span className="size3 bold800 mr-1">{avgNote}</span>/ 5</div>
-                                    <h4 className="flexCenter opacity9 letterSpacing1 lineHeight1">Based on purchases on AmazingSewing</h4>
+                                    <h4 className="flexCenter opacity9 letterSpacing1 lineHeight1 font2">Based on purchases on AmazingSewing</h4>
                                     <div>
                                         <Rating
                                             precision={0.5}
@@ -278,12 +264,11 @@ export default function Home() {
                                                 }
                                             />
                                             <div className="lightShadowCard1">
-                                                <div className="mt-5 pl-2 pt-2 opacity9">{item.description.length < 60 ? item.description : item.description.substring(0, 70) + " . . ."}</div>
-                                                <div className="mt-5 pl-2 pb-2">{item.title}</div>
+                                                <div className="mt-5 pl-2 pt-2 opacity9 font2">{item.description.length < 60 ? item.description : item.description.substring(0, 70) + " . . ."}</div>
+                                                {/* <button onClick={consoleLog}>consoleLog</button> */}
+                                                <div className="mt-5 pl-2 pb-2 font2">{item.title}</div>
                                             </div>
                                         </div>
-
-
                                     </Grid>
                                 ))}
                                 {/* <button className="buttonTransition" onClick={goingRight}>right</button>

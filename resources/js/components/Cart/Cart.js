@@ -12,6 +12,7 @@ import { useRecoilState } from 'recoil';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Link } from "react-router-dom";
 import { PlayCircleFilledOutlined } from '@material-ui/icons';
+import ClearIcon from '@material-ui/icons/Clear';
 
 const useStyles = makeStyles(theme => ({
   marginTop: {
@@ -103,7 +104,7 @@ export default function Cart() {
   } else {
     return (
       <Container>
-        <Grid className="pt-15" container justifyContent="center">
+        <Grid className="pt-12" container justifyContent="center">
           <Grid item xs={12} sm={11} md={9} >
             <h2 className="flexCenter">MY CART</h2>
 
@@ -118,40 +119,37 @@ export default function Cart() {
                 {localStorageLength > 1 && <span className="itemOrItems"> items</span>}
               </span>
             }
-            <Grid container className="pt-5 pb-10 flexCenter">
+            <Grid container className="pt-5 pb-10 flexCenter ">
 
               <Grid item xs={12}>
                 {itemsInCart.map(product => (
                   <div
-                    className="productLineCart lightShadowCard mt-6"
+                    className="productLineCart lightShadowCard mt-6 bgWhite1"
                     key={product.id}
                   >
 
                     <img className="imgLineCart" src="https://picsum.photos/200/300" />
-                    <div className="quantityNameCart">{product.name}</div>
+                    <div className="quantityNameCart font10 letterSpacing2 size3 opacity9">{product.name}</div>
 
                     <div className="widthQuantityPrice">
-                      <div className="quantityPriceCart mt-2">${product.price}.00</div>
+                      <div className="letterSpacing1 mt-2">${product.price}.00</div>
                       <div className="quantityProductCart flex mb-2 mt-8">
-
-
-                        <div className="mr-2">{product.quantity}</div>
-
-                        <button className="buttonAddQuantity backgroundWhite" onClick={() => addQuantityInCart(product)}>+</button>
-                        {product.quantity > 1 && <button className="buttonModifyQuantity backgroundWhite" onClick={() => substractQuantityInCart(product)}>-</button>}
-                        {product.quantity === 1 && <button className="buttonModifyQuantity" disabled onClick={() => substractQuantityInCart(product)}>-</button>}
+                        <button className="buttonAddQuantityCart buttonModifyQuantity cursorPointer" onClick={() => addQuantityInCart(product)}>+</button>
+                        <div className="centerText productQuantityCart">{product.quantity}</div>
+                        {product.quantity > 1 && <button className="buttonSubstractQuantityCart buttonModifyQuantity " onClick={() => substractQuantityInCart(product)}>-</button>}
+                        {product.quantity === 1 && <button className="buttonModifyQuantity buttonSubstractQuantityCart">-</button>}
                       </div>
 
 
                     </div>
 
                     <div>
-                      <div>
+                      <div className="productPriceQuantityInCart">
                         ${product.price * product.quantity}.00
                       </div>
                     </div>
 
-                    <button className="backgroundWhite cursorPointer" onClick={() => removeProduct(product)}><DeleteIcon className="fontTrash" /></button>
+                    <button className=" cursorPointer bgWhite1" onClick={() => removeProduct(product)}><ClearIcon className="fontTrash" /></button>
                   </div>
                 ))}
 
@@ -159,10 +157,12 @@ export default function Cart() {
 
               {localStorageLength > 0 &&
                 <Grid container>
-                  <Grid xs={0} sm={5} md={7}></Grid>
+                  <Grid xs={0} sm={5} md={7}>
+                    <button></button>
+                  </Grid>
                   <Grid container item className="alignRight" xs={12} sm={7} md={5}>
                     <Grid item xs={12} >
-                      <div className="yourOrder bgWhite lightShadowCard2">
+                      <div className="yourOrder bgWhite lightShadowCard2 font1 bold200 bgWhite1 pl-1 pr-1 letterSpacing1">
                         <div className="mt-4 flexBetween">
                           <span className="ml-2 mt-2">Product</span>
                           <span className="mr-2 mt-2">Subtotal</span>
@@ -183,12 +183,12 @@ export default function Cart() {
                         </div>
                         <div className="flexBetween mt-4 pl-2 pr-2">
                           <span>Shipping fees</span>
-                          
                           <span className="alignRight">${shippingFeesVar}.00</span>
                         </div>
                         <div className="flexBetween pb-4 mt-4 pl-2 pr-2">
-                          <span>Total + Shipping fees</span>
-                          <span className="alignRight">${price + shippingFeesVar}.00</span>
+                          <div className="totalPlusShipping">Total + Shipping fees</div>
+                          <div className="greyLineCart2"></div>
+                          <div className="alignRight">${price + shippingFeesVar}.00</div>
                         </div>
                       </div>
                       <div className="mt-5">

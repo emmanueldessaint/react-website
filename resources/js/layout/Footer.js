@@ -60,24 +60,28 @@ export default function Footer() {
                 <Grid container justifyContent="center" >
                     <Grid spacing={2} container item xs={12} sm={11} md={9}>
                         <Grid className="textAlignCenter" item xs={12} sm={6} md={3} >
-                            <div className="heightIconsFooter "><img src={creditCard} className="iconsFooter pt-4"/></div>
+                            <div className="heightIconsFooter "><img src={creditCard} className="iconsFooter pt-4" /></div>
                             <span className="grey2 font6 size2">SECURE PAYMENT</span>
-                            <h5>With credit card or Paypal</h5>
+                            <h5 className="font2">With credit card or Paypal</h5>
                         </Grid>
-                        <Grid item xs={12} sm={6} md={3} className="greyLineBorders textAlignCenter">
-                            <div className="heightIconsFooter "><img src={trackPackage} className="iconsFooterTrack pt-4"/></div>                  
+                        <Grid item xs={12} sm={6} md={3} className="textAlignCenter">
+                            <div className="heightIconsFooter "><img src={trackPackage} className="iconsFooterTrack pt-4" /></div>
                             <span className="grey2 font6 size2">SATISFIED OR REFUNDED</span>
-                            <h5>7 days from time of delivery</h5>
+                            <h5 className="font2">7 days from time of delivery</h5>
+
                         </Grid>
-                        <Grid item xs={12} sm={6} md={3} className="greyLineBorders textAlignCenter">
-                            <div className="heightIconsFooter pt-4"><LocalShippingIcon className="iconsFooter"/></div>                  
+                        <Grid item xs={12} sm={6} md={3} className="textAlignCenter">
+
+                            <div className="heightIconsFooter pt-4"><LocalShippingIcon className="iconsFooter" /></div>
                             <span className="grey2 font6 size2">FREE SHIPPING</span>
-                            <h5>From 40$ of purchases</h5>
+                            <h5 className="font2">Guaranteed response within 24 hours</h5>
                         </Grid>
-                        <Grid className="textAlignCenter" item xs={12} sm={6} md={3} >
-                            <div className="heightIconsFooter pt-4"><LiveHelpIcon className="iconsFooter"/></div>
+
+
+                        <Grid item xs={12} sm={6} md={3} className="textAlignCenter">
+                            <div className="heightIconsFooter pt-4"><LiveHelpIcon className="iconsFooter" /></div>
                             <span className="grey2 font6 size2">RESPONSIVE CUSTOMER SERVICE</span>
-                            <h5>Guaranteed response within 24 hours</h5>
+                            <h5 className="font2">From 40$ of purchases</h5>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -98,7 +102,7 @@ export default function Footer() {
                             <Grid item xs={12} md={7} container justifyContent="center" >
                                 <Grid item xs={11} md={12}  >
                                     <div className="widthP mt-4">
-                                        <p>unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <p className="font2">unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                                     </div>
                                 </Grid>
                             </Grid>
@@ -108,39 +112,39 @@ export default function Footer() {
                         <Grid container item xs={12} md={11} lg={10} className="mt-7">
                             <Grid item className="pt-5" container justifyContent="center" md={12} lg={8}>
                                 <Grid className="flexCenter" item md={4} sm={6} xs={12}>
-                                    <div className="widthItemsFooter">
+                                    <div className="widthItemsFooter font2">
                                         <h3>ParisFabrics</h3>
                                         <div>52 rue de la porte</div>
                                         <div>75000 Paris</div>
-                                        <div>contact@amazingsewing.com</div>
+                                        <div>contact@parisfabrics.com</div>
                                     </div>
                                 </Grid>
                                 <Grid className="flexCenter" item md={4} sm={6} xs={12}>
-                                    <div className="widthItemsFooter">
-                                        <h3>About us</h3>
-                                        <div>Who are we ?</div>
-                                        <div>Our corporate values</div>
-                                        <div>Guaranty and return</div>
+                                    <div className="widthItemsFooter font2">
+                                        <h3 >About us</h3>
+                                        <div >Who are we ?</div>
+                                        <div >Our corporate values</div>
+                                        <div >Guaranty and return</div>
                                     </div>
                                 </Grid>
 
                                 <Grid className="flexCenter" item md={4} sm={6} xs={12}>
-                                    <div className="widthItemsFooter">
+                                    <div className="widthItemsFooter font2">
                                         <h3>Privates sales and newsletter</h3>
 
-                                        <div>Access privates sales and stay<br />up to date with AmazingSewing news</div>
+                                        <div>Access privates sales and stay<br />up to date with ParisFabrics news</div>
                                         <div className="flexCenter mt-4">
                                             <TextField
                                                 className="inputFooter"
                                                 placeholder=" Your email ..."
                                             />
                                             <button className="buttonSendNewsletters font8"><SendIcon /></button>
-                                            </div>
+                                        </div>
                                     </div>
                                 </Grid>
                             </Grid>
                             <Grid item className="pt-5 verticalAlign" container justifyContent="center" md={12} lg={4}>
-                                <h1 className="verticalAlign">ParisFabrics</h1>
+                                <h1 className="verticalAlign titleFooter font8">Paris<span className="ml-1"></span>Fabrics</h1>
                             </Grid>
                         </Grid>
                     </Grid>
