@@ -18,13 +18,16 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import PersonIcon from '@material-ui/icons/Person';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
-import Connect from '../components/Connect/Connect'
+import Connect from '../components/Connect/Connect';
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router } from 'react-router-dom';
 import '../App.css';
-import '../css/Header.css'
-import { numberOfItemsInCart } from '../components/Shared/globalState'
-import { currentPageProduct } from '../components/Shared/globalState'
+import '../css/Header.css';
+import { numberOfItemsInCart, items } from '../components/Shared/globalState';
+import { currentPageProduct } from '../components/Shared/globalState';
+import logoParis from "../../assets/img/logo-paris.png";
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Hamburger from 'hamburger-react';
 
 import {
   RecoilRoot,
@@ -37,16 +40,12 @@ import {
 
 
 const useStyles = makeStyles(theme => ({
-  icon: {
-    marginTop: '20px',
-    "margin-left": "30px",
-    "transform": "scale(1.3)",
-    "opacity": "0.8",
 
-  },
+
+
   alignTitle: {
     "display": "flex",
-    "justify-content": "flex-end",
+    "justify-content": "center",
 
 
   }
@@ -95,6 +94,7 @@ export default function Header(props) {
 
   const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
   const [actuelPage, setActuelPage] = useRecoilState(currentPageProduct);
+  const [isOpen, setOpen] = useState(false)
 
   var quantityInCart = 0;
   for (var i = 0; i < localStorage.length; i++) {
@@ -103,9 +103,7 @@ export default function Header(props) {
     quantityInCart += value.quantity;
   }
 
-
   useEffect(() => {
-
     setNumberInCart(quantityInCart)
   }, [quantityInCart])
 
@@ -113,6 +111,9 @@ export default function Header(props) {
     setActuelPage(1);
   }
 
+  const closeHamburger = () => {
+    setOpen(false);
+  }
 
   return (
     <React.Fragment>
@@ -121,58 +122,97 @@ export default function Header(props) {
         <AppBar style={{ background: 'rgb(240, 240, 240)' }}>
           <Toolbar>
             <Box sx={{ flexGrow: 1 }}>
-              <Grid container  >
-                <Grid item xs={3} className={classes.alignTitle} >
-
-                  <Link to="/" onClick={resetPage} className="item" className={classes.routerDecoration}>
-                    <h2 className="titleHeader opacity8 font8 mr-3">Paris<span className="ml-1"></span>Fabrics</h2>
-                  </Link>
+              <div className="header960">
+                <Grid container  >
+                  <Grid item xs={3} className={classes.alignTitle} >
+                    <Link to="/" onClick={resetPage} className="item" className={classes.routerDecoration}>
+                      <h2 className="titleHeader grey9 font8 size3">Paris<span className="ml-1"></span>Fabrics</h2>
+                    </Link>
+                    {/* <img src={logoParis} alt="parisFabricsLogo" className="logoParis height70" /> */}
+                  </Grid>
+                  <Grid xs={6} spacing={2} item container justifyContent="center" className="menuHeader">
+                    <Grid item xs={3} >
+                      <Link to="/"  >
+                        <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu  font9" onClick={resetPage}>Home</span>
+                      </Link>
+                    </Grid>
+                    <Grid item xs={3} >
+                      <Link to="/catalog"  >
+                        <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>Catalog</span>
+                      </Link>
+                    </Grid>
+                    <Grid item xs={3} >
+                      <Link to="/aboutus"  >
+                        <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>About us</span>
+                      </Link>
+                    </Grid>
+                    <Grid item xs={3} >
+                      <Link to="/aboutus"  >
+                        <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>Contact</span>
+                      </Link>
+                    </Grid>
+                  </Grid>
+                  <Grid className="alignRight" item xs={3}>
+                    <Link to="/cart" onClick={resetPage}  >
+                      <StyledBadge className="mr-8" badgeContent={numberInCart} color="primary">
+                        <ShoppingCartIcon className='iconHeader' />
+                      </StyledBadge>
+                    </Link>
+                    <div className="mr-5 ml-5 mt-1">
+                      <TextField
+                        label="Search"
+                        id="outlined-size-small"
+                        size="small"
+                        InputProps={{
+                          endAdornment: <SearchIcon className={classes.icon} />,
+                        }}
+                      />
+                    </div>
+                  </Grid>
+                </Grid>
+              </div>
+              <div className="header959">
+                <Grid container  >
+                  <Grid item xs={3}>
+                    <div className="mt-3">
+                      <Hamburger color="#000000" size={25} toggled={isOpen} toggle={setOpen} />
+                      {isOpen &&
+                        <div className="grey8 mb-2 letterSpacing1">
+                          <Link to="/" onClick={resetPage} onClick={closeHamburger}><span className="cursorPointer grey8 size3 letterSpacing2 font10 mt-2">Home</span></Link>
+                          <Link to="/catalog" onClick={resetPage} onClick={closeHamburger}><div className="cursorPointer grey8 size3 letterSpacing2 font10 mt-2">Catalog</div></Link>
+                          <Link to="/aboutus" onClick={resetPage} onClick={closeHamburger}><div className="cursorPointer grey8 size3 letterSpacing2 font10 mt-2">About Us</div></Link>
+                          <Link to="/aboutus" onClick={resetPage} onClick={closeHamburger}><div className="cursorPointer grey8 size3 letterSpacing2 font10 mt-2">Contact</div></Link>
+                        </div>
+                      }
+                    </div>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Link to="/" onClick={resetPage}>
+                      <h2 className="titleHeader grey9 font8 size3 flexCenter">Paris<span className="ml-1"></span>Fabrics</h2>
+                    </Link>
+                    {isOpen &&
+                      <div className="verticalAlign mt-6">
+                        <TextField
+                          label="Search"
+                          id="outlined-size-small"
+                          size="small"
+                          InputProps={{
+                            endAdornment: <SearchIcon className={classes.icon} />,
+                          }}
+                        />
+                      </div>
+                    }
+                  </Grid>
+                  <Grid item xs={3} className="alignRight">
+                    <Link to="/cart" onClick={resetPage}  >
+                      <StyledBadge className="mr-4 mt-1" badgeContent={numberInCart} color="primary">
+                        <ShoppingCartIcon className='iconHeader' />
+                      </StyledBadge>
+                    </Link>
+                  </Grid>
 
                 </Grid>
-                <Grid xs={7} spacing={2} item container justifyContent="center" className="menuHeader">
-                  <Grid item xs={3} >
-                    <Link to="/"  >
-                      <h4 className="verticalAlign opacity6 size2 itemMenu testHome font5" onClick={resetPage}>Home</h4>
-                    </Link>
-                  </Grid>
-
-                  <Grid item xs={3} >
-                    <Link to="/products"  >
-                      <h4 className="verticalAlign opacity6 size2 itemMenu font5" onClick={resetPage}>Catalog</h4>
-                    </Link>
-                  </Grid>
-
-                  <Grid item xs={3} >
-                    <Link to="/aboutus"  >
-                      <h4 className="verticalAlign opacity6 size2 itemMenu font5" onClick={resetPage}>About us</h4>
-                    </Link>
-                  </Grid>
-                  <Grid item xs={3} >
-                    <Link to="/aboutus"  >
-                      <h4 className="verticalAlign opacity6 size2 itemMenu font5" onClick={resetPage}>Contact</h4>
-                    </Link>
-                  </Grid>
-
-                </Grid>
-
-                <Grid className="alignRight" item xs={2}>
-
-
-
-                  <Link to="/cart" onClick={resetPage} className="iconHeader" >
-                    <StyledBadge className="mr-8" badgeContent={numberInCart} color="secondary">
-                      <ShoppingCartIcon className={classes.icon} />
-                    </StyledBadge>
-                  </Link>
-
-                  <Link to="/connect" onClick={resetPage} className="iconHeader" >
-                    <SearchIcon className={classes.icon} />
-                  </Link>
-
-
-                </Grid>
-              </Grid>
-
+              </div>
 
             </Box>
           </Toolbar>

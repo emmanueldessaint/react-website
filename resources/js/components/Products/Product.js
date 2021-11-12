@@ -38,6 +38,7 @@ import { useRecoilState } from 'recoil';
 import Rating from '@mui/material/Rating';
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { itemsProduct } from '../Shared/globalState'
 
 
 const useStyles = makeStyles(theme => ({
@@ -101,7 +102,6 @@ function a11yProps(index) {
     };
 }
 
-
 export default function Product(props) {
 
     const classes = useStyles();
@@ -110,6 +110,9 @@ export default function Product(props) {
     const [quantityProduct, setQuantityProduct] = useState(1);
     const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
     const [averageNote, setAverageNote] = useState(0);
+    const [allItems, setAllItems] = useRecoilState(itemsProduct);
+    const [product, setProduct] = useState([]);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -143,131 +146,145 @@ export default function Product(props) {
         setNumberInCart(numberInCart + quantityProduct);
     }
 
-    let data = useLocation();
-    let product = data.state.product;
-
-    
-
     const scrollToReviews = () => {
         window.scrollTo(0, 700);
         setValue(2);
         console.log(value);
-        
     }
 
     useEffect(() => {
-        console.log(product.reviews)
-        let totalNotes = 0
-        for (var i = 0; i < product.reviews.length; i++) {
-            totalNotes += (product.reviews[i].note)
-        }
-        let average = totalNotes/product.reviews.length;
-        setAverageNote(average);
-        window.moveTo(0, 0);
+        var urlProduct = window.location.pathname.split('/');
+        let decodeUrl = decodeURI(urlProduct[2]);
+        let product = allItems.find(element => element.name === decodeUrl)
+        setProduct(product);
+        setIsLoaded(true);
+        scroll(0, 0)
     }, [])
 
-    return (
-        <Container className="pt-15">
-            <Grid container justifyContent="center" spacing={6}>
-                <Grid item xs={12} md={6} >
-                    <img className="imageOneProduct" src="https://picsum.photos/200/300" />
-                </Grid>
-                <Grid item xs={12} sm={10} md={5}>
-                    <h2 className="font1 letterSpacing2">{product.name}</h2>
-                    <div className="flexBetween mt-9">
-                        <span className="priceProduct font2 letterSpacing2">{product.price},00 €</span>
-                        <span>
-                            <Rating
-                                size="small"
-                                precision={0.5}
-                                readOnly
-                                className=""
-                                name="simple-controlled"
-                                value={averageNote}
-                            />
-                        </span>
-                        <span onClick={scrollToReviews} className="font5 underlined grey3 cursorPointer">Read reviews ({product.reviews.length})</span>
-                    </div>
-                    <div className="flexBetween mt-9">
-                        <span className=" addSubstractCart">
-                            <button disabled className=" quantityProduct size2 height30">{quantityProduct}</button>
-                            <button onClick={addQuantity} className="colorButton1 greyButton size2 buttonAdd height30">+</button>
-                            <button onClick={substractQuantity} className="colorButton1 greyButton size2 buttonSubstract height30">-</button>
-                        </span>
-                        <span className=" alignRight">
-                        <Link to="/cart">
-                            <button onClick={addToLocalStorage} className="colorButton1 greyButton bold300 letterSpacing2 font2 buttonAddToCart height30"> Add to cart</button>
-                            </Link>  
-                        </span>
-                    </div>
-                    <div>
-                        <div className="width90 greyLineProduct m-4"></div>
-                    </div>
-                    <div>
-                        <div>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical </div>
-                    </div>
-                </Grid>
-            </Grid>
+    useEffect(() => {
+        if (isLoaded === true) {
+            let totalNotes = 0
+            for (var i = 0; i < product.reviews.length; i++) {
+                totalNotes += (product.reviews[i].note)
+            }
+            let average = totalNotes / product.reviews.length;
+            setAverageNote(average);
+            window.moveTo(0, 0);
+        }
+    }, [product])
 
-            <Box className="mt-13" sx={{ width: '100%' }}>
-                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <Tabs
-                        value={value}
-                        onChange={handleChange}
-                        aria-label="basic tabs example"
-                        indicatorColor="primary"
-                        textColor="primary"
-                    >
-                        <Tab label="Description" {...a11yProps(0)} />
-                        <Tab label="Fiche produit" {...a11yProps(1)} />
-                        <Tab label="reviews" {...a11yProps(2)} />
-                    </Tabs>
-                    <div className=" greyLineProduct "></div>
-                </Box>
-                <TabPanel className="mt-3" value={value} index={0}>
-                    <Grid container spacing={4}>
-                        <Grid item xs={8} className="alignCenter"><span>unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span></Grid>
-                        {/* <Grid item xs={4}><img src={ProductQuality} alt="ProductQuality" className={classes.imgFull} /></Grid> */}
+    if (!isLoaded) {
+        return <div className="marginSpinner"><div className="loader">Loading...</div>;</div>
+    } else {
+        return (
+            <Container className="pt-15">
+                <Grid container justifyContent="center" spacing={6}>
+                    <Grid container item xs={12} md={7} className="flex">
+
+                        <Grid item xs={12} md={3}>
+                            <div className="switchImg m-2"></div>
+                            <div className="switchImg m-2"></div>
+                            <div className="switchImg m-2"></div>
+                        </Grid>
+                        <Grid item xs={12} md={9}><img className="imageOneProduct" src="https://picsum.photos/200/300" /></Grid>
                     </Grid>
-
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                    Item Two
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                    {/* <Button onClick={handleConsole}>click me</Button> */}
-                    {product.reviews.map(review => (
-                        <div key={review.id} className="lightShadowCard1 p-3 mb-5">
-                            <Grid container className="flexBetween">
-                                <Grid item sm={10} xs={12}>
-                                    <div className="mb-2">
-                                        <span className="mr-2"><AccountCircleIcon /></span>
-                                        <span className="font5 bold600 grey2">{review.title}</span>
-                                    </div>
-                                    <div>
-                                        <span className="font3 grey1">{review.description}</span>
-                                    </div>
-                                </Grid>
-
-                                <Grid item sm={2} xs={12}>
-                                    <div className="starsProductReview marginTop600px">
-                                        <Rating
-                                            precision={0.5}
-                                            readOnly
-                                            name="simple-controlled"
-                                            value={review.note}
-                                            emptyIcon={
-                                                <StarBorderIcon fontSize="inherit" className="emptyStar" />
-                                            }
-                                        /> 
-                                    </div>
-                                </Grid>
-                            </Grid>
+                    <Grid item xs={12} sm={10} md={5}>
+                        <div className="font10 size3 grey8 letterSpacing2">{product.name}</div>
+                        <div className="flexBetween mt-9">
+                            <span className="priceProduct font2 letterSpacing2">{product.price},00 €</span>
+                            <span>
+                                <Rating
+                                    size="small"
+                                    precision={0.5}
+                                    readOnly
+                                    className=""
+                                    name="simple-controlled"
+                                    value={averageNote}
+                                />
+                            </span>
+                            <span onClick={scrollToReviews} className="font5 underlined grey8 cursorPointer">Read reviews ({product.reviews.length})</span>
                         </div>
-                    ))}
+                        <div className="flexBetween mt-9">
+                            <span className=" addSubstractCart">
+                                <button disabled className=" quantityProduct size2 height30">{quantityProduct}</button>
+                                <button onClick={addQuantity} className="colorButton1  size2 buttonAdd height30">+</button>
+                                <button onClick={substractQuantity} className="colorButton1  size2 buttonSubstract height30">-</button>
+                            </span>
+                            <span className=" alignRight">
+                                <Link to="/cart">
+                                    <button onClick={addToLocalStorage} className="colorButton1  bold300 letterSpacing2 font2 buttonAddToCart height30"> Add to cart</button>
+                                </Link>
+                            </span>
+                        </div>
+                        <div>
+                            <div className="width90 greyLineProduct m-4"></div>
+                        </div>
+                        <div>
+                            <div>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical </div>
+                        </div>
+                    </Grid>
+                </Grid>
 
-                </TabPanel>
-            </Box>
-        </Container>
-    )
+                <Box className="mt-10" sx={{ width: '100%' }}>
+                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                        <Tabs
+                            value={value}
+                            onChange={handleChange}
+                            aria-label="basic tabs example"
+                            indicatorColor="primary"
+                            textColor="primary"
+                        >
+                            <Tab label="Description" {...a11yProps(0)} />
+                            <Tab label="Fiche produit" {...a11yProps(1)} />
+                            <Tab label="reviews" {...a11yProps(2)} />
+                        </Tabs>
+                        <div className=" greyLineProduct "></div>
+                    </Box>
+                    <TabPanel className="mt-3" value={value} index={0}>
+                        <Grid container spacing={4}>
+                            <Grid item xs={8} className="alignCenter"><span>unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span></Grid>
+                            {/* <Grid item xs={4}><img src={ProductQuality} alt="ProductQuality" className={classes.imgFull} /></Grid> */}
+                        </Grid>
+
+                    </TabPanel>
+                    <TabPanel value={value} index={1}>
+                        Item Two
+                    </TabPanel>
+                    <TabPanel value={value} index={2}>
+                        {/* <Button onClick={handleConsole}>click me</Button> */}
+                        {product.reviews.map(review => (
+                            <div key={review.id} className="lightShadowCard1 p-3 mb-5">
+                                <Grid container className="flexBetween">
+                                    <Grid item sm={10} xs={12}>
+                                        <div className="mb-2">
+                                            <span className="mr-2"><AccountCircleIcon /></span>
+                                            <span className="font5 bold600 grey9">{review.title}</span>
+                                        </div>
+                                        <div>
+                                            <span className="font3 grey7">{review.description}</span>
+                                        </div>
+                                    </Grid>
+
+                                    <Grid item sm={2} xs={12}>
+                                        <div className="starsProductReview marginTop600px opacity8">
+                                            <Rating
+                                                precision={0.5}
+                                                readOnly
+                                                name="simple-controlled"
+                                                value={review.note}
+                                                emptyIcon={
+                                                    <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                }
+                                            />
+                                        </div>
+                                    </Grid>
+                                </Grid>
+                            </div>
+                        ))}
+
+                    </TabPanel>
+                </Box>
+            </Container>
+        )
+    }
 }

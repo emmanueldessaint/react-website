@@ -42,6 +42,7 @@
   }
   .rewardIcon{
     width:60px;
+    
   }
   .smallIcons{
     width:25px
@@ -70,6 +71,7 @@
     opacity:0.9;
   }
   .titleHomeArguments{
+    color: #4c4c78;
     font-weight:bold;
   }
   @media all and (min-width: 600px) {
@@ -98,4 +100,10 @@
 }
 .show{
   background-color: red;
+}
+.linkItemComment{
+  color: rgb(110 106 149);
+}
+.bestSellers{
+  color: #4d6164;
 }

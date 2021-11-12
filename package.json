@@ -38,6 +38,7 @@
         "@mui/styled-engine-sc": "^5.0.3",
         "@stripe/react-stripe-js": "^1.6.0",
         "@stripe/stripe-js": "^1.20.3",
+        "hamburger-react": "^2.4.1",
         "react-router": "^5.2.1",
         "react-router-dom": "^5.3.0",
         "recoil": "^0.4.1",

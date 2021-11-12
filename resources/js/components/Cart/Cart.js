@@ -73,6 +73,7 @@ export default function Cart() {
       price: `${product.price}`,
       quantity: findPlus,
     }
+    setPrice(price + parseInt(itemProperties.price));
     setItemsInCart(thisArray);
     setNumberInCart(numberInCart + 1);
     localStorage.setItem(`${product.name}`, JSON.stringify(itemProperties));
@@ -88,6 +89,7 @@ export default function Cart() {
         price: `${product.price}`,
         quantity: findPlus,
       }
+      setPrice(price - parseInt(itemProperties.price));
       setItemsInCart(thisArray);
       setNumberInCart(numberInCart - 1);
       localStorage.setItem(`${product.name}`, JSON.stringify(itemProperties));
@@ -106,17 +108,17 @@ export default function Cart() {
       <Container>
         <Grid className="pt-12" container justifyContent="center">
           <Grid item xs={12} sm={11} md={9} >
-            <h2 className="flexCenter">MY CART</h2>
+            <h2 className="flexCenter letterSpacing1 font5">MY CART</h2>
 
             {localStorageLength === 0 &&
-              <div className="textAlignCenter">Your cart is empty</div>
+              <div className="textAlignCenter font2">Your cart is empty</div>
             }
 
             {localStorageLength > 0 &&
-              <span className="flexCenter">
+              <span className="flexCenter numberItemsCart">
                 {localStorageLength}
-                {localStorageLength < 2 && <span className="itemOrItems">item</span>}
-                {localStorageLength > 1 && <span className="itemOrItems"> items</span>}
+                {localStorageLength < 2 && <span className="itemOrItems font5">item</span>}
+                {localStorageLength > 1 && <span className="itemOrItems font5"> items</span>}
               </span>
             }
             <Grid container className="pt-5 pb-10 flexCenter ">
@@ -124,7 +126,7 @@ export default function Cart() {
               <Grid item xs={12}>
                 {itemsInCart.map(product => (
                   <div
-                    className="productLineCart lightShadowCard mt-6 bgWhite1"
+                    className="productLineCart lightShadowCard mt-6 bgBlue"
                     key={product.id}
                   >
 
@@ -132,24 +134,24 @@ export default function Cart() {
                     <div className="quantityNameCart font10 letterSpacing2 size3 opacity9">{product.name}</div>
 
                     <div className="widthQuantityPrice">
-                      <div className="letterSpacing1 mt-2">${product.price}.00</div>
+                      <div className="letterSpacing1 font5 bold600 grey8 mt-2">${product.price}.00</div>
                       <div className="quantityProductCart flex mb-2 mt-8">
-                        <button className="buttonAddQuantityCart buttonModifyQuantity cursorPointer" onClick={() => addQuantityInCart(product)}>+</button>
-                        <div className="centerText productQuantityCart">{product.quantity}</div>
-                        {product.quantity > 1 && <button className="buttonSubstractQuantityCart buttonModifyQuantity " onClick={() => substractQuantityInCart(product)}>-</button>}
-                        {product.quantity === 1 && <button className="buttonModifyQuantity buttonSubstractQuantityCart">-</button>}
+                        <button className="buttonAddQuantityCart buttonModifyQuantity cursorPointer size1" onClick={() => addQuantityInCart(product)}>+</button>
+                        <div className="centerText productQuantityCart bgWhite">{product.quantity}</div>
+                        {product.quantity > 1 && <button className="buttonSubstractQuantityCart buttonModifyQuantity size1" onClick={() => substractQuantityInCart(product)}>-</button>}
+                        {product.quantity === 1 && <button className="buttonModifyQuantity buttonSubstractQuantityCart size1">-</button>}
                       </div>
 
 
                     </div>
 
                     <div>
-                      <div className="productPriceQuantityInCart">
+                      <div className="productPriceQuantityInCart letterSpacing1 font5 bold600 grey8 size1">
                         ${product.price * product.quantity}.00
                       </div>
                     </div>
 
-                    <button className=" cursorPointer bgWhite1" onClick={() => removeProduct(product)}><ClearIcon className="fontTrash" /></button>
+                    <button className=" cursorPointer " onClick={() => removeProduct(product)}><ClearIcon className="fontTrash" /></button>
                   </div>
                 ))}
 

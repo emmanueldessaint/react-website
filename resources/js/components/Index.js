@@ -11,6 +11,7 @@ import Home from '../components/Home/Home'
 import '../App.css'
 import Header from '../layout/Header'
 import Footer from '../layout/Footer'
+import Request from '../components/Shared/Request'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {
     RecoilRoot,
@@ -26,6 +27,7 @@ function Index() {
             <RecoilRoot>     
                 <Router>
                     <div className="generalFont">
+                        <Request />
                         <Header />
                         <div className="generalBackground">
                             <Switch>
@@ -49,12 +51,12 @@ function Index() {
                                 </Route>
                             </Switch>
                             <Switch>
-                                <Route path="/products">
+                                <Route path="/catalog">
                                     <Products />
                                 </Route>
                             </Switch>
                             <Switch>
-                                <Route path="/product">
+                                <Route path='/product/:name' >
                                     <Product />
                                 </Route>
                             </Switch>
