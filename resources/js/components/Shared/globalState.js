@@ -1,7 +1,5 @@
 const { atom } = require("recoil");
 
-
-
   export  const numberOfItemsInCart = atom({
     key: 'numberOfItemsInCart',
     default: 0,
@@ -21,5 +19,20 @@ const { atom } = require("recoil");
       key: 'shippingFees',
       default: 8,
   })
+
+  export const itemsProduct = atom({
+      key: 'itemsProduct',
+      default: [],
+  })
+
+  export const itemsBestSellers = atom({
+    key: 'itemsBestSellers',
+    default: [],
+})
+
+  export const changingPage = atom({
+    key: 'changingPage',
+    default: false,
+})
 
  

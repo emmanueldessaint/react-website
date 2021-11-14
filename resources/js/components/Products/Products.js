@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/styles';
 import {
     BrowserRouter as Router,
     Switch,
@@ -19,18 +18,11 @@ import StarBorderIcon from "@material-ui/icons/StarBorder";
 import Select from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
-
-
-
-
-const useStyles = makeStyles(theme => ({
-
-}));
+import { itemsProduct } from '../Shared/globalState'
 
 
 export default function Products() {
 
-    const classes = useStyles();
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -39,58 +31,25 @@ export default function Products() {
     const [itemsInCurrentPage, setItemsInCurrentPage] = useState([]);
     const [actuelPage, setActuelPage] = useRecoilState(currentPageProduct);
     const [filter, setFilter] = useState('');
-
+    const [allItems, setAllItems] = useRecoilState(itemsProduct);
 
     var itemsByPage = 12;
     var increment = 1;
     var emptyArray = [];
 
     useEffect(() => {
-        fetch("http://localhost:8000/api/products")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    
-                    let averageNote = 0;
-                    let allProducts = [];
-                    allProducts = result.products
-                    console.log(allProducts.length)
-                    for (let j = 0; j < allProducts.length; j++) {
-                        let totalNotes = 0;
-                        for (let k = 0; k < allProducts[j].reviews.length; k++) {
-                            totalNotes += allProducts[j].reviews[k].note;
-                        }
-                        averageNote = totalNotes / allProducts[j].reviews.length;
-                        allProducts[j].updated_at = averageNote;
-                    }
-                    setItems(allProducts);
-                    
-                    
-                    
-                    
-                },
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, [])
-
-    useEffect(() => {
-        if (items.length !== 0) {
-        let newArray = [];
-
-        newArray = items.slice(itemsByPage * (actuelPage - 1), itemsByPage * (actuelPage));                 
-        for (var i = 0; i < items.length / itemsByPage; i++) {
-            emptyArray.push(increment)
-            increment++
-        }              
-        setItemsInCurrentPage(newArray)    
-        setNumberOfPages(emptyArray); 
-        setIsLoaded(true);
+        if (allItems.length !== 0) {       
+            let newArray = [];
+            newArray = allItems.slice(itemsByPage * (actuelPage - 1), itemsByPage * (actuelPage));
+            for (var i = 0; i < allItems.length / itemsByPage; i++) {
+                emptyArray.push(increment)
+                increment++
+            }
+            setItemsInCurrentPage(newArray)
+            setNumberOfPages(emptyArray);
+            setIsLoaded(true);
         }
-        
-    }, [items])
+    }, [allItems, actuelPage])
 
     const handleChangePage = (item) => {
         let arrayWithItemsOnPage = [];
@@ -102,72 +61,74 @@ export default function Products() {
     }
 
     function compareAsc(a, b) {
-      if (a.price < b.price) {
-        return -1;
-      }
-      if (a.price > b.price) {
-        return 1;
-      }
-      return 0;
+        if (a.price < b.price) {
+            return -1;
+        }
+        if (a.price > b.price) {
+            return 1;
+        }
+        return 0;
     }
 
     function compareDesc(a, b) {
-      if (a.price > b.price) {
-        return -1;
-      }
-      if (a.price < b.price) {
-        return 1;
-      }
-      return 0;
+        if (a.price > b.price) {
+            return -1;
+        }
+        if (a.price < b.price) {
+            return 1;
+        }
+        return 0;
     }
+
     function comparePopularity(a, b) {
-      if (a.reviews.length > b.reviews.length) {
-        return -1;
-      }
-      if (a.reviews.length < b.reviews.length) {
-        return 1;
-      }
-      return 0;
+        if (a.reviews.length > b.reviews.length) {
+            return -1;
+        }
+        if (a.reviews.length < b.reviews.length) {
+            return 1;
+        }
+        return 0;
     }
 
     useEffect(() => {
         if (filter === 10) {
-            let array = [...items]
+            let array = [...allItems]
             array.sort(comparePopularity);
-            setItems(array);
+            setAllItems(array);
         }
         if (filter === 20) {
-            let array = [...items]
+            let array = [...allItems]
             array.sort(compareAsc);
-            setItems(array);
+            setAllItems(array);
         }
         if (filter === 30) {
-            let array = [...items]
+            let array = [...allItems]
             array.sort(compareDesc);
-            setItems(array);
+            setAllItems(array);
         }
     }, [filter])
 
     const changeFilter = (event) => {
         setFilter(event.target.value);
-      };
- 
+    };
+
     if (error) {
-        return <div className={classes.marginTop}>Error: {error.message}</div>;
+        return <div >Error: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div className={classes.marginTop}>Loading...</div>;
+        // return <div className="mt-15 font2 size8 bold700">Loading...</div>;
+        return <div className="marginSpinner"><div className="loader">Loading...</div>;</div>
     } else {
         return (
             <Container className="pt-10">
                 <Grid container justifyContent="center" className="mt-8">
-                    <Grid container item xs={12} sm={12} lg={11}>
-                        <Grid item xs={12}>
+                    <Grid container item xs={12} sm={12} md={11} lg={11}>
+                        {/* <Grid item xs={12}>
                             <div className="flex">
                                 <button className="buttonCategory p-2 pl-4 pr-4 mb-8 ml-4 font5 bold500">Category 1</button>
                                 <button className="buttonCategory p-2 pl-4 pr-4 mb-8 ml-4 font5 bold500">Category 2</button>
                                 <button className="buttonCategory p-2 pl-4 pr-4 mb-8 ml-4 font5 bold500">Category 3</button>
                             </div>
-                        </Grid>
+                        </Grid> */}
                         <Grid item xs={12} sm={6}>
                             <div className="flex ml-5 mb-5 ">
                                 {/* lightShadowCard */}
@@ -185,28 +146,22 @@ export default function Products() {
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <div className="alignRight">
+                            <div className="alignRight mr-4">
                                 <FormControl className="widthFormControl">
                                     <InputLabel><span className="ml-4"></span>Filter by</InputLabel>
                                     <Select
                                         variant="outlined"
-                                        // value={f}
                                         onChange={changeFilter}
                                         fullWidth
                                         className="testSelect"
                                     >
-                                        
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={10}>Popularity</option>
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={20}>Ascending price order</option>
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={30}>Descending price order</option>
-                                        
                                     </Select>
                                 </FormControl>
                             </div>
                         </Grid>
-
-
-
                     </Grid>
                 </Grid>
                 <Grid container justifyContent="center">
@@ -217,21 +172,19 @@ export default function Products() {
                                 key={item.id}
                             >
                                 <div className="cardProduct lightShadowCard2">
-                                    <Link to={{ pathname: '/product', state: { product: item } }}>
-                                        <img className="imageProduct2" src="https://picsum.photos/200/300" />
-                                        <div className="hideProduct2">
+                                    <Link to={`/product/${item.name} `} >
+                                        <img className="imageProduct" src="https://picsum.photos/200/300" />
+                                        <div className="hideProduct">
                                             <div className="elementAppear">
                                                 DISCOVER
                                             </div>
                                         </div>
-                                        <div className="nameProductProducts opacity8 letterSpacing2 flexCenter size3 font10">{item.name}</div>
+                                        <div className="nameProduct font10 letterSpacing2 size3 grey8 flexCenter">{item.name}</div>
                                         <div className="flexBetween font2">
-                                            <div className="priceProduct opacity6 mt-4 ml-3 pb-1">${item.price}.00</div>
-
-
+                                            <div className="priceProduct grey8 letterSpacing2 mt-4 ml-3 pb-1">${item.price}.00</div>
                                             {item.reviews.length > 0 &&
-                                                <div className="flex productDetails mt-4 mr-3 pb-1">
-                                                    <div className="grey1">({item.reviews.length})<span className="ml-1"></span></div>
+                                                <div className="flex productDetails mt-4 mr-3 pb-1 opacity8">
+                                                    <div className="">({item.reviews.length})<span className="ml-1"></span></div>
                                                     <Rating
                                                         precision={0.5}
                                                         readOnly
@@ -244,7 +197,6 @@ export default function Products() {
                                                     />
                                                 </div>
                                             }
-
                                         </div>
                                     </Link>
                                 </div>
@@ -257,7 +209,6 @@ export default function Products() {
                         <div className="flex lightShadowCard">
                             {numberOfPages.map(item => (
                                 <div
-
                                     key={item}
                                 >
                                     {item === actuelPage

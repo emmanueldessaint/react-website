@@ -36,6 +36,7 @@ import '../css/Footer.css';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import '../../assets/css/fonts.css';
 import SendIcon from '@material-ui/icons/Send';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
 const useStyles = makeStyles(theme => ({
 
@@ -56,31 +57,31 @@ export default function Footer() {
 
     return (
         <div className="pt-10 generalBackground">
-            <div className=" backgroundFooterItems">
+            <div className=" backgroundFooterItems bgBlue">
                 <Grid container justifyContent="center" >
                     <Grid spacing={2} container item xs={12} sm={11} md={9}>
                         <Grid className="textAlignCenter" item xs={12} sm={6} md={3} >
                             <div className="heightIconsFooter "><img src={creditCard} className="iconsFooter pt-4" /></div>
-                            <span className="grey2 font6 size2">SECURE PAYMENT</span>
+                            <span className="grey7 font6 size2">SECURE PAYMENT</span>
                             <h5 className="font2">With credit card or Paypal</h5>
                         </Grid>
                         <Grid item xs={12} sm={6} md={3} className="textAlignCenter">
                             <div className="heightIconsFooter "><img src={trackPackage} className="iconsFooterTrack pt-4" /></div>
-                            <span className="grey2 font6 size2">SATISFIED OR REFUNDED</span>
+                            <span className="grey7 font6 size2">SATISFIED OR REFUNDED</span>
                             <h5 className="font2">7 days from time of delivery</h5>
 
                         </Grid>
                         <Grid item xs={12} sm={6} md={3} className="textAlignCenter">
 
                             <div className="heightIconsFooter pt-4"><LocalShippingIcon className="iconsFooter" /></div>
-                            <span className="grey2 font6 size2">FREE SHIPPING</span>
+                            <span className="grey7 font6 size2">FREE SHIPPING</span>
                             <h5 className="font2">Guaranteed response within 24 hours</h5>
                         </Grid>
 
 
                         <Grid item xs={12} sm={6} md={3} className="textAlignCenter">
                             <div className="heightIconsFooter pt-4"><LiveHelpIcon className="iconsFooter" /></div>
-                            <span className="grey2 font6 size2">RESPONSIVE CUSTOMER SERVICE</span>
+                            <span className="grey7 font6 size2">RESPONSIVE CUSTOMER SERVICE</span>
                             <h5 className="font2">From 40$ of purchases</h5>
                         </Grid>
                     </Grid>
@@ -138,7 +139,7 @@ export default function Footer() {
                                                 className="inputFooter"
                                                 placeholder=" Your email ..."
                                             />
-                                            <button className="buttonSendNewsletters font8"><SendIcon /></button>
+                                            <button className="buttonSendNewsletters font8"><MailOutlineIcon className=""/></button>
                                         </div>
                                     </div>
                                 </Grid>
