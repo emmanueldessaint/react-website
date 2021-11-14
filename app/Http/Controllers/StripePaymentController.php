@@ -8,28 +8,33 @@ use App\Models\Product;
 use App\Models\Payment;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use App\Mail\OrderConfirmation;
+use Stripe;
+use Mail;
 
 class StripePaymentController extends Controller
 {
     public function charge(Request $request)
     {
+        // return $request;
+        // return $request->id;
         // Calculer le total 
-        if (1 == 1) {
-            return response('Le paiement a réussi', 200);
-        } else {
-            return response('Le paiement a échoué', 403);
-        }
+        // if (1 == 1) {
+        //     return response('Le paiement a réussi', 200);
+        // } else {
+        //     return response('Le paiement a échoué', 403);
+        // }
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET_DEV'));
         Stripe\Charge::create ([
                 "amount" => $request->amount, // Prix total
                 "currency" => "eur",
-                "source" => $request->stripeToken,
+                "source" => 'pm_1JueZnH85dp4EuRtudr7ePUM',
                 "description" => "This payment is a test"
         ]);
    
         Session::flash('success', 'Payment successful!');
 
-        Mail::to($request->payer_email)->send(new OrderConfirmation($order));
+        // Mail::to($request->payer_email)->send(new OrderConfirmation($order));
 
         return back();
 
