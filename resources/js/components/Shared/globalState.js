@@ -25,4 +25,14 @@ const { atom } = require("recoil");
       default: [],
   })
 
+  export const itemsBestSellers = atom({
+    key: 'itemsBestSellers',
+    default: [],
+})
+
+  export const changingPage = atom({
+    key: 'changingPage',
+    default: false,
+})
+
  

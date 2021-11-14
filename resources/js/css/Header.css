@@ -37,15 +37,63 @@
 }
 
 @media all and (max-width: 960px) {
-    .header960{
+    .headerPc{
         display:none;
     }
   }
 @media all and (min-width: 961px) {
-    .header959{
+    .headerMobile{
         display:none;
     }
   }
-
+.dataSearch{
+    width:500px;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    margin-top:100px;
+    margin-right:80px;
+    color: black;
+    border:1px solid rgb(216, 216, 216);
+    border-radius:9px;
+    
+}
+.dataSearchMobile{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:200px;
+    background-color: rgba(168, 168, 168, 0.9);
+    
+    color: black;
+}
+.imgProductSearch{
+    width:40px;
+    height:40px;
+    background-color:brown;
+    border-radius:4px;
+}
+.productHoverSearch:hover{
+    background-color:rgb(240, 240, 240);
+}
+/* .productHoverSearch{
+    border-top:1px solid rgb(206, 206, 206);
+} */
+.menuMobileItem{
+    border-bottom:1px solid rgb(173, 173, 173);
+}
+.menuMobile{
+    border-top:1px solid rgb(173, 173, 173);
+    
+}
+.buttonSearchMobile{
+    background-color:white;
+    border-radius:20px;
+    border:1px solid rgb(172, 172, 172);
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:8px;
+    padding-bottom:5px;
+    /* box-shadow: 2px 2px 4px rgb(202, 202, 202); */
+}
 
   

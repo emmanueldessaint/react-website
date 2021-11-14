@@ -33,13 +33,15 @@ import {
 import '../../App.css';
 import '../../css/Products.css';
 import YouTubeIcon from '@material-ui/icons/YouTube';
-import { numberOfItemsInCart } from '../Shared/globalState'
 import { useRecoilState } from 'recoil';
 import Rating from '@mui/material/Rating';
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import { itemsProduct } from '../Shared/globalState'
-
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import { itemsBestSellers, changingPage, itemsProduct, numberOfItemsInCart } from '../Shared/globalState';
+import reward from "../../../assets/img/reward1.png";
+import review from "../../../assets/img/review1.png";
 
 const useStyles = makeStyles(theme => ({
     marginTop: {
@@ -113,6 +115,26 @@ export default function Product(props) {
     const [allItems, setAllItems] = useRecoilState(itemsProduct);
     const [product, setProduct] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [userReviews, setUserReviews] = useState([]);
+    const [avgNote, setAvgNote] = useState('');
+    const [bestSellers, setBestSellers] = useRecoilState(itemsBestSellers);
+    const [changePage, setChangePage] = useRecoilState(changingPage);
+
+    useEffect(() => {
+        fetch("http://localhost:8000/api/reviews")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    for (var i = 0; i < result.allReviews.length; i++) {
+                        result.allReviews[i].updated_at = allItems.find(element => element.id === result.allReviews[i].id_product)
+                    }
+                    setUserReviews(result.allReviews);
+                },
+                (error) => {
+                    console.log('error', error)
+                }
+            )
+    }, [allItems])
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -153,13 +175,16 @@ export default function Product(props) {
     }
 
     useEffect(() => {
-        var urlProduct = window.location.pathname.split('/');
-        let decodeUrl = decodeURI(urlProduct[2]);
-        let product = allItems.find(element => element.name === decodeUrl)
-        setProduct(product);
-        setIsLoaded(true);
-        scroll(0, 0)
-    }, [])
+        if (allItems.length !== 0) {
+            var urlProduct = window.location.pathname.split('/');
+            let decodeUrl = decodeURI(urlProduct[2]);
+            let product = allItems.find(element => element.name === decodeUrl)
+            setProduct(product);
+            setIsLoaded(true);
+            setChangePage(false);
+            scroll(0, 0)
+        }
+    }, [changePage])
 
     useEffect(() => {
         if (isLoaded === true) {
@@ -171,7 +196,30 @@ export default function Product(props) {
             setAverageNote(average);
             window.moveTo(0, 0);
         }
-    }, [product])
+    }, [])
+
+    const changeProduct = () => {
+        setChangePage(true);
+    }
+
+    const bestSellersCarousel = {
+        large: {
+            breakpoint: { max: 4000, min: 1200 },
+            items: 4
+        },
+        desktop: {
+            breakpoint: { max: 1200, min: 960 },
+            items: 3
+        },
+        tablet: {
+            breakpoint: { max: 960, min: 600 },
+            items: 2
+        },
+        mobile: {
+            breakpoint: { max: 600, min: 0 },
+            items: 1
+        }
+    };
 
     if (!isLoaded) {
         return <div className="marginSpinner"><div className="loader">Loading...</div>;</div>
@@ -258,10 +306,10 @@ export default function Product(props) {
                                     <Grid item sm={10} xs={12}>
                                         <div className="mb-2">
                                             <span className="mr-2"><AccountCircleIcon /></span>
-                                            <span className="font5 bold600 grey9">{review.title}</span>
+                                            <span className="font5 bold600 grey8">{review.title}</span>
                                         </div>
                                         <div>
-                                            <span className="font3 grey7">{review.description}</span>
+                                            <span className="font2 grey6">{review.description}</span>
                                         </div>
                                     </Grid>
 
@@ -284,7 +332,112 @@ export default function Product(props) {
 
                     </TabPanel>
                 </Box>
-            </Container>
+                {/* <div className="flexCenter mt-15"><img src={review} alt="reward_svg" className="reviewIcon opacity6" /></div>
+                <h2 className="flexCenter font8 size7 bold600 bestSellers opacity9 letterSpacing2">They lived the experience</h2>
+                <Grid className="pt-5" container justifyContent="center">
+                    <Grid container item xs={11} md={11} spacing={4}>
+                        <Grid item md={3} xs={12} className=" bgBlue verticalAlign">
+                            <Grid >
+                                <div className="textAlignCenter">
+                                    <div><span className="size3 bold800 mr-1">{avgNote}</span>/ 5</div>
+                                    <h4 className="flexCenter opacity9 letterSpacing1 lineHeight1 font2">Based on purchases on {product.name}</h4>
+                                    <div>
+                                        <Rating
+                                            precision={0.5}
+                                            readOnly
+                                            name="simple-controlled"
+                                            value={avgNote}
+                                            emptyIcon={
+                                                <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                            </Grid>
+                        </Grid>
+                        <Grid item md={9} xs={12}>
+                            <Carousel
+                                responsive={reviewsCarousel}
+                                infinite={true}
+                                autoPlay={true}
+                                autoPlaySpeed={10000}
+                            >
+                                {userReviews.map(item => (
+                                    <div
+                                        className="m-2"
+                                        key={item.id}
+                                    >
+                                        <div className=''>
+                                            <Rating
+                                                precision={0.5}
+                                                readOnly
+                                                size="small"
+                                                className="stars ml-2 opacity8"
+                                                name="simple-controlled"
+                                                value={item.note}
+                                                emptyIcon={
+                                                    <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                }
+                                            />
+                                            <div className="lightShadowCard3">
+
+                                                <div className="mt-2 pl-2 pt-2 grey6 bold100 font2">{item.description.length < 60 ? item.description : item.description.substring(0, 70) + " . . ."}</div>
+                                                <div className="mt-5 pl-2 pb-2 font2 bold500 grey9">{item.title}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </Carousel>
+                        </Grid>
+                    </Grid>
+                </Grid> */}
+                <Grid className="pt-10" container justifyContent="center">
+                    <Grid  item xs={11} md={11}>
+                        <div className="mt-10">
+                            <div className="flexCenter"><img src={reward} alt="reward_svg" className="rewardIcon opacity6" /></div>
+                            <span className="flexCenter font8 size7 mt-3 bold600 bestSellers opacity9 letterSpacing2">Our customers also like ...</span>
+                        </div>
+                        {isLoaded &&
+                            <div>
+                                <Carousel
+                                    responsive={bestSellersCarousel}
+                                    infinite={true}
+                                    autoPlaySpeed={1000}
+                                >
+                                    {bestSellers.map(item => (
+                                        <div className="cardProduct lightShadowCard2" key={item.id}>
+                                            <Link to={`/product/${item.name} `} onClick={changeProduct}>
+                                                <img className="imageProduct" src="https://picsum.photos/200/300" />
+                                                <div className="hideProduct">
+                                                    <div className="elementAppear font5 letterSpacing1">
+                                                        DISCOVER
+                                                    </div>
+                                                </div>
+                                                <div className="nameProduct font11 letterSpacing1 size3 grey7 flexCenter">{item.name}</div>
+                                                <div className="centerText mt-3 opacity8">
+                                                    <Rating
+                                                        precision={0.5}
+                                                        readOnly
+                                                        size="small"
+                                                        name="simple-controlled"
+                                                        value={item.updated_at}
+                                                        emptyIcon={
+                                                            <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                        }
+                                                    />
+                                                </div>
+                                                <div className="priceProduct font2 grey8 letterSpacing2 mt-2 ml-3 pb-1 opacity9">${item.price}.00</div>
+                                            </Link>
+                                        </div>
+                                    ))}
+                                </Carousel>
+                            </div>
+                        }
+                    </Grid>
+                </Grid>
+
+
+            </Container >
         )
     }
 }

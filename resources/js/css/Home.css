@@ -107,3 +107,11 @@
 .bestSellers{
   color: #4d6164;
 }
+.react-multiple-carousel__arrow--left {
+  left: calc(0% + 1px);
+  background: rgba(168, 168, 168, 0.5);
+}
+.react-multiple-carousel__arrow--right {
+  right: calc(0% + 1px);
+  background: rgba(168, 168, 168, 0.5);
+}

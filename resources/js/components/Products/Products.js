@@ -38,14 +38,13 @@ export default function Products() {
     var emptyArray = [];
 
     useEffect(() => {
-        if (allItems.length !== 0) {
+        if (allItems.length !== 0) {       
             let newArray = [];
             newArray = allItems.slice(itemsByPage * (actuelPage - 1), itemsByPage * (actuelPage));
             for (var i = 0; i < allItems.length / itemsByPage; i++) {
                 emptyArray.push(increment)
                 increment++
             }
-            console.log(actuelPage)
             setItemsInCurrentPage(newArray)
             setNumberOfPages(emptyArray);
             setIsLoaded(true);
@@ -80,6 +79,7 @@ export default function Products() {
         }
         return 0;
     }
+
     function comparePopularity(a, b) {
         if (a.reviews.length > b.reviews.length) {
             return -1;
@@ -112,12 +112,6 @@ export default function Products() {
         setFilter(event.target.value);
     };
 
-    // useEffect(() => {
-    //     console.log(allItems);
-    // }, [allItems])
-
-
-
     if (error) {
         return <div >Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -127,7 +121,7 @@ export default function Products() {
         return (
             <Container className="pt-10">
                 <Grid container justifyContent="center" className="mt-8">
-                    <Grid container item xs={12} sm={12} lg={11}>
+                    <Grid container item xs={12} sm={12} md={11} lg={11}>
                         {/* <Grid item xs={12}>
                             <div className="flex">
                                 <button className="buttonCategory p-2 pl-4 pr-4 mb-8 ml-4 font5 bold500">Category 1</button>
@@ -152,28 +146,22 @@ export default function Products() {
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <div className="alignRight">
+                            <div className="alignRight mr-4">
                                 <FormControl className="widthFormControl">
                                     <InputLabel><span className="ml-4"></span>Filter by</InputLabel>
                                     <Select
                                         variant="outlined"
-                                        // value={f}
                                         onChange={changeFilter}
                                         fullWidth
                                         className="testSelect"
                                     >
-
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={10}>Popularity</option>
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={20}>Ascending price order</option>
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={30}>Descending price order</option>
-
                                     </Select>
                                 </FormControl>
                             </div>
                         </Grid>
-
-
-
                     </Grid>
                 </Grid>
                 <Grid container justifyContent="center">
@@ -184,8 +172,6 @@ export default function Products() {
                                 key={item.id}
                             >
                                 <div className="cardProduct lightShadowCard2">
-
-                                    {/* <Link to={'/product'  }> */}
                                     <Link to={`/product/${item.name} `} >
                                         <img className="imageProduct" src="https://picsum.photos/200/300" />
                                         <div className="hideProduct">
@@ -196,8 +182,6 @@ export default function Products() {
                                         <div className="nameProduct font10 letterSpacing2 size3 grey8 flexCenter">{item.name}</div>
                                         <div className="flexBetween font2">
                                             <div className="priceProduct grey8 letterSpacing2 mt-4 ml-3 pb-1">${item.price}.00</div>
-
-
                                             {item.reviews.length > 0 &&
                                                 <div className="flex productDetails mt-4 mr-3 pb-1 opacity8">
                                                     <div className="">({item.reviews.length})<span className="ml-1"></span></div>
@@ -213,7 +197,6 @@ export default function Products() {
                                                     />
                                                 </div>
                                             }
-
                                         </div>
                                     </Link>
                                 </div>
@@ -226,7 +209,6 @@ export default function Products() {
                         <div className="flex lightShadowCard">
                             {numberOfPages.map(item => (
                                 <div
-
                                     key={item}
                                 >
                                     {item === actuelPage

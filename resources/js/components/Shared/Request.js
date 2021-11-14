@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as React from 'react';
-import { itemsProduct } from './globalState'
+import { itemsProduct, itemsBestSellers } from './globalState'
 import {
     RecoilRoot,
     atom,
@@ -12,7 +12,7 @@ import {
 export default function Request() {
 
     const [allItems, setAllItems] = useRecoilState(itemsProduct);
-
+    const [bestSellers, setBestSellers] = useRecoilState(itemsBestSellers);
 
 
     useEffect(() => {
@@ -22,6 +22,7 @@ export default function Request() {
                 (result) => {
                     let averageNote = 0;
                     let allProducts = [];
+                    let arrayBestSellers = [];
                     allProducts = result.products
                     for (let j = 0; j < allProducts.length; j++) {
                         let totalNotes = 0;
@@ -31,6 +32,11 @@ export default function Request() {
                         averageNote = totalNotes / allProducts[j].reviews.length;
                         allProducts[j].updated_at = averageNote;
                     }
+                    arrayBestSellers.push(result.products[0]);
+                    arrayBestSellers.push(result.products[1]);
+                    arrayBestSellers.push(result.products[2]);
+                    arrayBestSellers.push(result.products[3]);
+                    setBestSellers(arrayBestSellers);
                     setAllItems(allProducts);
                 },
                 (error) => {
