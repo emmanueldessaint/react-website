@@ -114,7 +114,13 @@ export default function PaymentForm() {
         const { id } = paymentMethod
         const response = await axios.post("http://localhost:8000/api/charge", {
           amount: price * 100,
-          id
+          id,
+          firstName: firstName,
+          lastName: lastName,
+          city: city,
+          zipCode: zipCode,
+          email: email,
+          address: address,
         })
 
         if (response.data.success) {
@@ -158,6 +164,8 @@ export default function PaymentForm() {
                 variant="outlined"
                 fullWidth
                 label="Firstname"
+                value={firstName}
+                onChange={e => setFirstName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -165,6 +173,8 @@ export default function PaymentForm() {
                 variant="outlined"
                 fullWidth
                 label="Lastname"
+                value={lastName}
+                onChange={e => setLastName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} >
@@ -172,6 +182,8 @@ export default function PaymentForm() {
                 variant="outlined"
                 fullWidth
                 label="Email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
               />
             </Grid>
             <Grid item xs={5} >
@@ -179,6 +191,8 @@ export default function PaymentForm() {
                 variant="outlined"
                 fullWidth
                 label="Address"
+                value={address}
+                onChange={e => setAddress(e.target.value)}
               />
             </Grid>
             <Grid item xs={4} >
@@ -186,6 +200,8 @@ export default function PaymentForm() {
                 variant="outlined"
                 fullWidth
                 label="City"
+                value={city}
+                onChange={e => setCity(e.target.value)}
               />
             </Grid>
             <Grid item xs={3} >
@@ -193,6 +209,8 @@ export default function PaymentForm() {
                 variant="outlined"
                 fullWidth
                 label="Zip code"
+                value={zipCode}
+                onChange={e => setZipCode(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} >

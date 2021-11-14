@@ -6,9 +6,7 @@
     color:rgb(41, 41, 41);
 }
 .itemMenu{
-    transition: 0.3s;
-    color:rgb(75, 75, 75);
-    
+  
     /* background-color:white; */
     /* width:100px; */
 }
@@ -48,7 +46,7 @@
   }
 .dataSearch{
     width:500px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 251, 238, 0.95);
     position: absolute;
     margin-top:100px;
     margin-right:80px;
@@ -58,11 +56,11 @@
     
 }
 .dataSearchMobile{
-    width:90%;
+    width:100%;
     margin-left:auto;
     margin-right:auto;
     padding-top:200px;
-    background-color: rgba(168, 168, 168, 0.9);
+    background-color: rgba(255, 255, 255, 1);
     
     color: black;
 }

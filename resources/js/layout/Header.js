@@ -133,9 +133,15 @@ export default function Header(props) {
     setChangePage(true);
   }
 
+  const resetMenuMobile = () => {
+    console.log('click hamburger')
+    setMenuMobileOpen(true);
+    setSearchMobileOpen(false);
+  }
+
   const changeMenuMobile = () => {
-    setMenuMobileOpen(false);
-    setSearchMobileOpen(true);
+    setMenuMobileOpen(!menuMobileOpen);
+    setSearchMobileOpen(!searchMobileOpen);
   }
 
   useEffect(() => {
@@ -233,7 +239,7 @@ export default function Header(props) {
                   <Grid container  >
                     <Grid item xs={3}>
                       <div className="mt-3">
-                        <Hamburger color="#000000" size={25} toggled={isOpen} toggle={setOpen} />
+                        <div onClick={resetMenuMobile}><Hamburger color="#000000" size={25} toggled={isOpen} toggle={setOpen} /></div>
 
                       </div>
                     </Grid>
@@ -266,18 +272,24 @@ export default function Header(props) {
                         </div>
                       }
                       {isOpen && searchMobileOpen &&
-                        <div className="verticalAlign mt-4 mb-6">
-                          <TextField
-                          variant="outlined"
-                            label="Search"
-                            id="outlined-size-small"
-                            size="small"
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                            InputProps={{
-                              endAdornment: <SearchIcon className={classes.icon} />,
-                            }}
-                          />
+                        <div>
+                          <div className="verticalAlign mt-4 mb-6">
+                            <TextField
+                              variant="outlined"
+                              label="Search"
+                              id="outlined-size-small"
+                              size="small"
+                              value={searchTerm}
+                              onChange={(e) => setSearchTerm(e.target.value)}
+                              InputProps={{
+                                endAdornment: <SearchIcon className={classes.icon} />,
+                              }}
+                            />
+                          </div>
+                          <div className="flexBetween grey8 underlined mb-1">
+                              <div onClick={changeMenuMobile}>Close the search</div>
+                              <div>See our catalog</div>
+                          </div>
                         </div>
                       }
                     </Grid>
