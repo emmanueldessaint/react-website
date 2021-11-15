@@ -22,13 +22,13 @@ import {
     Link
 } from "react-router-dom";
 import logo from "../../../assets/img/sewing3.jpg";
-import reward from "../../../assets/img/reward1.png";
+import reward from "../../../assets/img/reward2.png";
 import earth from "../../../assets/img/earth1.png";
 import sewing from "../../../assets/img/sewing2.jpg";
-import review from "../../../assets/img/review1.png";
+import review from "../../../assets/img/review3.png";
 import '../../App.css';
 import '../../css/Home.css';
-import { itemsProduct, itemsBestSellers } from '../Shared/globalState';
+import { itemsProduct, itemsBestSellers, mobileMenuOn, averageNoteArticles } from '../Shared/globalState';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -43,6 +43,9 @@ export default function Home() {
     const [arrayCarousel, setArrayCarousel] = useState([])
     const [p, setP] = useState(1);
     const [allItems, setAllItems] = useRecoilState(itemsProduct);
+    const [isOpen, setOpen] = useRecoilState(mobileMenuOn);
+    const [averageNotes, setAverageNotes] = useRecoilState(averageNoteArticles);
+
 
     useEffect(() => {
         fetch("http://localhost:8000/api/reviews")
@@ -103,8 +106,12 @@ export default function Home() {
         }
     };
 
+    const consoleLog = () => {
+        console.log(allItems);
+    }
+
     return (
-        <div className="mt-9">
+        <div className="pt-9">
             <div>
                 <img src={logo} alt="Logo" className="imgIntro" />
             </div>
@@ -112,9 +119,9 @@ export default function Home() {
                 <Grid container justifyContent="center" className="menuQuality">
                     <Grid item container xs={12} md={11}>
                         <Grid item xs={12} sm={4}>
-                            <div className="mt-6 textAlignCenter">
+                            <div className="mt-6 ">
                                 <span className="flexCenter"><img src={earth} alt="earth_icon" className="smallIcons " /></span>
-                                <span className=" mt-2 titleHomeArguments size1 font6  opacity9 letterSpacing2">RESPECT FOR THE LAND</span>
+                                <span className="flexCenter mt-2 titleHomeArguments grey7 font6 size1 opacity9 letterSpacing2">RESPECT FOR THE LAND</span>
                                 <div className="blueBar"></div>
                                 <span className="flexCenter mt-1 grey7 font2 opacity9 letterSpacing1">Environment and traditions</span>
                             </div>
@@ -143,10 +150,11 @@ export default function Home() {
                 </Grid>
 
                 <div className="mt-10">
-                    <div className="flexCenter"><img src={reward} alt="reward_svg" className="rewardIcon opacity6" /></div>
+                    <div className="flexCenter"><img src={reward} alt="reward_svg" className="rewardIcon opacity8" /></div>
                     <span className="flexCenter font8 size7 mt-3 bold600 bestSellers opacity9 letterSpacing2">Our best sellers</span>
                     <span className="flexCenter font5 mt-1 bold400 bestSellers opacity9">Discover our customers' favorite products !</span>
                 </div>
+                <button onClick={consoleLog}>consoleLog</button>
                 {isLoaded &&
                     <div>
                         <Carousel
@@ -169,7 +177,7 @@ export default function Home() {
                                                 readOnly
                                                 size="small"
                                                 name="simple-controlled"
-                                                value={item.updated_at}
+                                                value={item.avg}
                                                 emptyIcon={
                                                     <StarBorderIcon fontSize="inherit" className="emptyStar" />
                                                 }
@@ -182,21 +190,21 @@ export default function Home() {
                         </Carousel>
                     </div>
                 }
-                <div className="flexCenter mt-10"><img src={review} alt="reward_svg" className="reviewIcon opacity6" /></div>
+                <div className="flexCenter mt-10"><img src={review} alt="reward_svg" className="reviewIcon opacity8" /></div>
                 <h2 className="flexCenter font8 size7 bold600 bestSellers opacity9 letterSpacing2">They lived the experience</h2>
                 <Grid className="pt-7" container justifyContent="center">
                     <Grid container item xs={11} md={11} spacing={4}>
                         <Grid item md={3} xs={12} className=" bgBlue verticalAlign">
                             <Grid >
                                 <div className="textAlignCenter">
-                                    <div><span className="size3 bold800 mr-1">{avgNote}</span>/ 5</div>
+                                    <div><span className="size3 bold600 mr-1">{averageNotes}</span>/ 5</div>
                                     <h4 className="flexCenter opacity9 letterSpacing1 lineHeight1 font2">Based on purchases on AmazingSewing</h4>
                                     <div>
                                         <Rating
                                             precision={0.5}
                                             readOnly
                                             name="simple-controlled"
-                                            value={avgNote}
+                                            value={averageNotes}
                                             emptyIcon={
                                                 <StarBorderIcon fontSize="inherit" className="emptyStar" />
                                             }

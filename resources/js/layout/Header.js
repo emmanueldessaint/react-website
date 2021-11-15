@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 import { BrowserRouter as Router } from 'react-router-dom';
 import '../App.css';
 import '../css/Header.css';
-import { numberOfItemsInCart, items, itemsProduct, changingPage } from '../components/Shared/globalState';
+import { numberOfItemsInCart, items, itemsProduct, changingPage, mobileMenuOn } from '../components/Shared/globalState';
 import { currentPageProduct } from '../components/Shared/globalState';
 import logoParis from "../../assets/img/logo-paris.png";
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -94,14 +94,13 @@ export default function Header(props) {
 
   const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
   const [actuelPage, setActuelPage] = useRecoilState(currentPageProduct);
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useRecoilState(mobileMenuOn);
   const [searchTerm, setSearchTerm] = useState('');
   const [allItems, setAllItems] = useRecoilState(itemsProduct);
   const [isLoaded, setIsLoaded] = useState(false);
   const [changePage, setChangePage] = useRecoilState(changingPage);
   const [menuMobileOpen, setMenuMobileOpen] = useState(true);
   const [searchMobileOpen, setSearchMobileOpen] = useState(false);
-
 
   var quantityInCart = 0;
   for (var i = 0; i < localStorage.length; i++) {
@@ -116,9 +115,6 @@ export default function Header(props) {
 
   const resetPage = () => {
     setActuelPage(1);
-  }
-
-  const closeHamburger = () => {
     setOpen(false);
   }
 
@@ -140,6 +136,7 @@ export default function Header(props) {
   }
 
   const changeMenuMobile = () => {
+    setSearchTerm('');
     setMenuMobileOpen(!menuMobileOpen);
     setSearchMobileOpen(!searchMobileOpen);
   }
@@ -153,149 +150,58 @@ export default function Header(props) {
         } else {
           // Clicked outside the box
           setSearchTerm('');
+          console.log('clicked outside the box')
         }
       });
     }
   })
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <HideOnScroll {...props}>
-        <div>
-          <AppBar style={{ background: 'rgb(240, 240, 240)' }}>
-            <Toolbar>
-              <Box sx={{ flexGrow: 1 }}>
-                <div className="headerPc">
-                  <Grid container  >
-                    <Grid item xs={3} className={classes.alignTitle} >
-                      <Link to="/" onClick={resetPage} className="item" className={classes.routerDecoration}>
-                        <h2 className="titleHeader grey9 font8 size3">Paris<span className="ml-1"></span>Fabrics</h2>
-                      </Link>
-                      {/* <img src={logoParis} alt="parisFabricsLogo" className="logoParis height70" /> */}
-                    </Grid>
-                    <Grid xs={6} spacing={2} item container justifyContent="center" className="menuHeader">
-                      <Grid item xs={3} >
-                        <Link to="/"  >
-                          <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu  font9" onClick={resetPage}>Home</span>
+    <div>
+      <div className="headerPc">
+        <React.Fragment>
+          <CssBaseline />
+          <HideOnScroll {...props}>
+            <div>
+              <AppBar style={{ background: 'rgb(240, 240, 240)' }}>
+                <Toolbar>
+                  <Box sx={{ flexGrow: 1 }}>
+                    <Grid container  >
+                      <Grid item xs={3} className={classes.alignTitle} >
+                        <Link to="/" onClick={resetPage} className="item" className={classes.routerDecoration}>
+                          <h2 className="titleHeader grey9 font8 size3">Paris<span className="ml-1"></span>Fabrics</h2>
                         </Link>
+                        {/* <img src={logoParis} alt="parisFabricsLogo" className="logoParis height70" /> */}
                       </Grid>
-                      <Grid item xs={3} >
-                        <Link to="/catalog"  >
-                          <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>Catalog</span>
+                      <Grid xs={6} spacing={2} item container justifyContent="center" className="menuHeader">
+                        <Grid item xs={3} >
+                          <Link to="/"  >
+                            <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu  font9" onClick={resetPage}>Home</span>
+                          </Link>
+                        </Grid>
+                        <Grid item xs={3} >
+                          <Link to="/catalog"  >
+                            <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>Catalog</span>
+                          </Link>
+                        </Grid>
+                        <Grid item xs={3} >
+                          <Link to="/aboutus"  >
+                            <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>About us</span>
+                          </Link>
+                        </Grid>
+                        <Grid item xs={3} >
+                          <Link to="/aboutus"  >
+                            <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>Contact</span>
+                          </Link>
+                        </Grid>
+                      </Grid>
+                      <Grid className="alignRight" item xs={3}>
+                        <Link to="/cart" onClick={resetPage}  >
+                          <StyledBadge className="mr-8" badgeContent={numberInCart} color="primary">
+                            <ShoppingCartIcon className='iconHeader' />
+                          </StyledBadge>
                         </Link>
-                      </Grid>
-                      <Grid item xs={3} >
-                        <Link to="/aboutus"  >
-                          <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>About us</span>
-                        </Link>
-                      </Grid>
-                      <Grid item xs={3} >
-                        <Link to="/aboutus"  >
-                          <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>Contact</span>
-                        </Link>
-                      </Grid>
-                    </Grid>
-                    <Grid className="alignRight" item xs={3}>
-                      <Link to="/cart" onClick={resetPage}  >
-                        <StyledBadge className="mr-8" badgeContent={numberInCart} color="primary">
-                          <ShoppingCartIcon className='iconHeader' />
-                        </StyledBadge>
-                      </Link>
-                      <div className="mr-5 ml-5 mt-1">
-                        <TextField
-                          label="Search"
-                          id="outlined-size-small"
-                          size="small"
-                          value={searchTerm}
-                          onChange={(e) => setSearchTerm(e.target.value)}
-                          InputProps={{
-                            endAdornment: <SearchIcon className={classes.icon} />,
-                          }}
-                        />
-                      </div>
-                      {isLoaded === true && searchTerm.length > 1 &&
-                        <div className="dataSearch" id="clickbox">
-                          {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).map(filteredName => (
-                            <div key={filteredName.id}>
-                              <Link to={`/product/${filteredName.name}`} onClick={closeSearch} className="m-1 flex pt-1 pb-1 productHoverSearch">
-                                <div className="imgProductSearch ml-1"></div>
-                                <div className="font10 grey6 letterSpacing2 size3 verticalItem pl-3">{filteredName.name}</div>
-                              </Link>
-                            </div>
-                          ))}
-                          {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).length === 0 &&
-                            <div className="verticalAlign font10 grey6 letterSpacing2 size3 height70">
-                              No result for your search
-                            </div>
-                          }
-
-                        </div>
-                      }
-                    </Grid>
-                  </Grid>
-                </div>
-                <div className="headerMobile">
-                  <Grid container  >
-                    <Grid item xs={3}>
-                      <div className="mt-3">
-                        <div onClick={resetMenuMobile}><Hamburger color="#000000" size={25} toggled={isOpen} toggle={setOpen} /></div>
-
-                      </div>
-                    </Grid>
-                    <Grid item xs={6}>
-                      <Link to="/" onClick={resetPage}>
-                        <h2 className="titleHeader grey9 font8 size3 flexCenter">Paris<span className="ml-1"></span>Fabrics</h2>
-                      </Link>
-
-                    </Grid>
-                    <Grid item xs={3} className="alignRight">
-                      <Link to="/cart" onClick={resetPage}  >
-                        <StyledBadge className="mr-4 mt-1" badgeContent={numberInCart} color="primary">
-                          <ShoppingCartIcon className='iconHeader' />
-                        </StyledBadge>
-                      </Link>
-                    </Grid>
-                    <Grid item xs={12}>
-                      {isOpen && menuMobileOpen &&
-                        <div className="grey7  letterSpacing2 font10 menuMobile">
-                          <Link to="/" onClick={resetPage} onClick={closeHamburger}><div className="cursorPointer menuMobileItem  size6  pl-2 pt-2 pb-2">Home</div></Link>
-                          <Link to="/catalog" onClick={resetPage} onClick={closeHamburger}><div className="cursorPointer menuMobileItem  size6 pl-2  pt-2 pb-2">Catalog</div></Link>
-                          <Link to="/aboutus" onClick={resetPage} onClick={closeHamburger}><div className="cursorPointer menuMobileItem  size6 pl-2 pt-2 pb-2">About Us</div></Link>
-                          <Link to="/aboutus" onClick={resetPage} onClick={closeHamburger}><div className="cursorPointer menuMobileItem  size6 pl-2  pt-2 pb-2">Contact</div></Link>
-                          <div className="verticalAlign mt-5 mb-5">
-
-                            <button onClick={changeMenuMobile} className="buttonSearchMobile lightShadowCard letterSpacing2 font2 size2 grey7">Search articles<SearchIcon className="ml-2" /></button>
-
-
-                          </div>
-                        </div>
-                      }
-                      {isOpen && searchMobileOpen &&
-                        <div>
-                          <div className="verticalAlign mt-4 mb-6">
-                            <TextField
-                              variant="outlined"
-                              label="Search"
-                              id="outlined-size-small"
-                              size="small"
-                              value={searchTerm}
-                              onChange={(e) => setSearchTerm(e.target.value)}
-                              InputProps={{
-                                endAdornment: <SearchIcon className={classes.icon} />,
-                              }}
-                            />
-                          </div>
-                          <div className="flexBetween grey8 underlined mb-1">
-                              <div onClick={changeMenuMobile}>Close the search</div>
-                              <div>See our catalog</div>
-                          </div>
-                        </div>
-                      }
-                    </Grid>
-                    {/* <Grid item xs={12}>
-                      {isOpen &&
-                        <div className="verticalAlign mt-6 mr-2">
+                        <div className="mr-5 ml-5 mt-1">
                           <TextField
                             label="Search"
                             id="outlined-size-small"
@@ -306,42 +212,109 @@ export default function Header(props) {
                               endAdornment: <SearchIcon className={classes.icon} />,
                             }}
                           />
-
                         </div>
-                      }
-                    </Grid> */}
-
-
-
-                  </Grid>
-
+                        {isLoaded === true && searchTerm.length > 1 &&
+                          <div className="dataSearch" id="clickbox">
+                            {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).map(filteredName => (
+                              <div key={filteredName.id}>
+                                <Link to={`/product/${filteredName.name}`} onClick={closeSearch} className="m-1 flex pt-1 pb-1 productHoverSearch">
+                                  <div className="imgProductSearch ml-1"></div>
+                                  <div className="font10 grey6 letterSpacing2 size3 verticalItem pl-3">{filteredName.name}</div>
+                                </Link>
+                              </div>
+                            ))}
+                            {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).length === 0 &&
+                              <div className="verticalAlign font10 grey6 letterSpacing2 size3 height70">
+                                No result for your search
+                              </div>
+                            }
+                          </div>
+                        }
+                      </Grid>
+                    </Grid>
+                  </Box>
+                </Toolbar>
+              </AppBar>
+            </div>
+          </HideOnScroll>
+        </React.Fragment>
+      </div>
+      <div className="headerMobile">
+        <Grid container  >
+          <Grid item xs={3}>
+            <div className="mt-3">
+              <div onClick={resetMenuMobile}><Hamburger color="#000000" size={25} toggled={isOpen} toggle={setOpen} /></div>
+            </div>
+          </Grid>
+          <Grid item xs={6}>
+            <Link to="/" onClick={resetPage}>
+              <h2 className="titleHeader grey9 font8 size3 flexCenter">Paris<span className="ml-1"></span>Fabrics</h2>
+            </Link>
+          </Grid>
+          <Grid item xs={3} className="alignRight">
+            <Link to="/cart" onClick={resetPage}  >
+              <StyledBadge className="mr-4 mt-1" badgeContent={numberInCart} color="primary">
+                <ShoppingCartIcon className='iconHeader' />
+              </StyledBadge>
+            </Link>
+          </Grid>
+          <Grid item xs={12}>
+            {isOpen && menuMobileOpen &&
+              <div className="grey7  letterSpacing2 font10 menuMobile">
+                <Link to="/" onClick={resetPage}><div className="cursorPointer menuMobileItem  size6  pl-2 pt-2 pb-2">Home</div></Link>
+                <Link to="/catalog" onClick={resetPage}><div className="cursorPointer menuMobileItem  size6 pl-2  pt-2 pb-2">Catalog</div></Link>
+                <Link to="/aboutus" onClick={resetPage}><div className="cursorPointer menuMobileItem  size6 pl-2 pt-2 pb-2">About Us</div></Link>
+                <Link to="/aboutus" onClick={resetPage}><div className="cursorPointer menuMobileItem  size6 pl-2  pt-2 pb-2">Contact</div></Link>
+                <div className="verticalAlign mt-5 mb-5">
+                  <button onClick={changeMenuMobile} className="buttonSearchMobile lightShadowCard letterSpacing2 font2 size2 grey7">Search articles<SearchIcon className="ml-2" /></button>
                 </div>
-
-              </Box>
-            </Toolbar>
-
-          </AppBar>
-          <div className="headerMobile">
-            {isLoaded === true && searchTerm.length > 1 &&
-
-              <div className="dataSearchMobile">
-                {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).map(filteredName => (
-                  <div key={filteredName.id}>
-                    <Link to={`/product/${filteredName.name}`} onClick={closeSearch}>
-                      {filteredName.name}
-
-
-
-                    </Link>
-
-                  </div>
-                ))}
               </div>
-
+            }
+            {isOpen && searchMobileOpen &&
+              <div>
+                <div className="verticalAlign mt-4 mb-6">
+                  <TextField
+                    variant="outlined"
+                    label="Search"
+                    id="outlined-size-small"
+                    size="small"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    InputProps={{
+                      endAdornment: <SearchIcon className={classes.icon} />,
+                    }}
+                  />
+                </div>
+                <div className="flexBetween grey8 underlined mb-1">
+                  <div className="ml-1" onClick={changeMenuMobile}>Close the search</div>
+                  <div className="mr-1">See our catalog</div>
+                </div>
+              </div>
+            }
+          </Grid>
+        </Grid>
+        {isLoaded === true && searchTerm.length > 0 &&
+          <div className="dataSearchMobile ">
+            {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).map(filteredName => (
+              <div key={filteredName.id}>
+                <Link to={`/product/${filteredName.name}`} onClick={closeSearch} className="m-1 flex pt-1 pb-1 productHoverSearch">
+                  <div className="imgProductSearch ml-1"></div>
+                  <div className="font10 grey6 letterSpacing2 size3 verticalItem pl-3">{filteredName.name}</div>
+                </Link>
+              </div>
+            ))}
+            {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).length === 0 &&
+              <div className="verticalAlign font10 grey6 letterSpacing2 size3 height70">
+                No result for your search
+              </div>
             }
           </div>
-        </div>
-      </HideOnScroll>
-    </React.Fragment>
+        }
+      </div>
+    </div >
   );
 }
+
+
+
+
