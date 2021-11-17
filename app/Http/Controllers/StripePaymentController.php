@@ -22,6 +22,9 @@ class StripePaymentController extends Controller
         $paymentIntentId = $request->get('paymentIntentId');
     
         $intent = null;
+
+        $totalAmount = 0;
+
         try {
             if (isset($paymentMethodId)) {
                 # Create the PaymentIntent
@@ -29,7 +32,7 @@ class StripePaymentController extends Controller
                     'payment_method' => $paymentMethodId,
                     'confirmation_method' => 'manual',
                     'confirm' => true,
-                    'amount'   => 5000,
+                    'amount'   => $totalAmount,
                     'currency' => 'eur',
                     'description' => "Mon paiement"
                 ]);
@@ -49,7 +52,13 @@ class StripePaymentController extends Controller
                 ]);
             } else if ($intent->status == 'succeeded') {
                 // Paiement Stripe accepté
-    
+
+                // Session::flash('success', 'Payment successful!')
+                // créer payment
+                // gérer commande
+                
+                Mail::to($request->payer_email)->send(new OrderConfirmation($order));
+
                 return json_encode([
                     "success" => true
                 ]);
@@ -63,69 +72,5 @@ class StripePaymentController extends Controller
                 'error' => $e->getMessage()
             ]);
         }
-    }
-
-    public function oldCharge(Request $request)
-    {
-        // // return $request;
-        // // return $request->id;
-        // // Calculer le total 
-        // // if (1 == 1) {
-        // //     return response('Le paiement a réussi', 200);
-        // // } else {
-        // //     return response('Le paiement a échoué', 403);
-        // // }
-        // Stripe\Stripe::setApiKey(env('STRIPE_SECRET_DEV'));
-        // Stripe\Charge::create ([
-        //         "amount" => $request->amount, // Prix total
-        //         "currency" => "eur",
-        //         "source" => 'pm_1JueZnH85dp4EuRtudr7ePUM',
-        //         "description" => "This payment is a test"
-        // ]);
-   
-        // Session::flash('success', 'Payment successful!');
-
-        // // Mail::to($request->payer_email)->send(new OrderConfirmation($order));
-
-        // return back();
-
-        // // if ($request->input('stripeToken')) {
-  
-        // //     $gateway = Omnipay::create('Stripe');
-        // //     $gateway->setApiKey(env('STRIPE_SECRET_KEY'));
-           
-        // //     $token = $request->input('stripeToken');
-           
-        // //     $response = $gateway->purchase([
-        // //         'amount' => $request->input('amount'),
-        // //         'currency' => env('STRIPE_CURRENCY'),
-        // //         'token' => $token,
-        // //     ])->send();
-           
-        // //     if ($response->isSuccessful()) {
-        // //         // payment was successful
-        // //         $arr_payment_data = $response->getData();
-                  
-        // //         $isPaymentExist = Payment::where('payment_id', $arr_payment_data['id'])->first();
-           
-        // //         if(!$isPaymentExist)
-        // //         {
-        // //             $payment = new Payment;
-        // //             $payment->payment_id = $arr_payment_data['id'];
-        // //             $payment->payer_email = $request->input('email');
-        // //             $payment->amount = $arr_payment_data['amount']/100;
-        // //             $payment->currency = env('STRIPE_CURRENCY');
-        // //             $payment->payment_status = $arr_payment_data['status'];
-        // //             $payment->save();
-        // //         }
-
-        // //         // Création commande
-
-  
-        // //         return "Payment is successful.";
-        // //     } else {
-        // //         return response('Le paiement a échoué', 403);
-        // //     }
-        // // }
     }
 }

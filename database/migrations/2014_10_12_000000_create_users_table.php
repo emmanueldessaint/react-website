@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('city')->nullable();
             $table->string('tel')->nullable();
             $table->string('birthday')->nullable();
+            $table->boolean('subscribed')->default(1);
             $table->timestamps();
         });
     }
