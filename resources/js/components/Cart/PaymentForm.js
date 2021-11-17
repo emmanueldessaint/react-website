@@ -102,19 +102,54 @@ export default function PaymentForm() {
   //       }
   // }
 
+    const handleServerResponse = (response) => {
+        if (response.data.error) {
+            // gérer l'erreur
+        } 
 
-  const handlePaymentSubmit = async () => {
+        else if (response.data.requires_action) {
+            // Use Stripe.js to handle required card action
+            stripe.handleCardAction(
+                response.data.payment_intent_client_secret
+            ).then(function(result) {
+                if (result.error) {
+                    // gérer l'erreur
+                } else {
+                    handlePaymentSubmit(result.paymentIntent.id)
+                }
+            });
+        }
+
+        else if (response.data.success) {
+            console.log("Successful payment")
+            // gérer le succés, renvoyé sur page réussie
+            //   setSuccess(true)
+        }
+        else {
+            console.log(response)
+            // gérer erreur
+        }
+    }
+
+  const handlePaymentSubmit = async (paymentIntentId) => {
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement)
     })
 
+    if (typeof paymentIntentId == 'string') {
+        var paymentIntentId = paymentIntentId
+     } else {
+        var paymentIntentId = 0
+    }
+
     if (!error) {
-      try {
+        try {   
         const { id } = paymentMethod
         const response = await axios.post("http://localhost:8000/api/charge", {
           amount: price * 100,
           id,
+          paymentIntentId: paymentIntentId,
           firstName: firstName,
           lastName: lastName,
           city: city,
@@ -123,16 +158,15 @@ export default function PaymentForm() {
           address: address,
         })
 
-        if (response.data.success) {
-          console.log("Successful payment")
-          setSuccess(true)
-        }
+        handleServerResponse(response)
 
       } catch (error) {
         console.log("Error", error)
+        // gérer l'erreur
       }
     } else {
       console.log(error.message)
+      // gérer l'erreur
     }
   }
 
