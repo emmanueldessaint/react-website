@@ -16,6 +16,19 @@ class StripePaymentController extends Controller
 {
     function charge(Request $request) { 
 
+        /////////////// EMAIL TEST /////////////////////////
+
+        $order = [
+            'id' => 123,
+        ];
+
+        // Mail::to('mathieu.dessaint10@gmail.com')->send(new OrderConfirmation($order));
+
+
+        // return $order;
+
+        /////////////// EMAIL TEST /////////////////////////
+
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET_DEV'));
 
         $paymentMethodId = $request->get('id');
@@ -23,7 +36,7 @@ class StripePaymentController extends Controller
     
         $intent = null;
 
-        $totalAmount = 0;
+        $totalAmount = 2000;
 
         try {
             if (isset($paymentMethodId)) {
@@ -57,7 +70,7 @@ class StripePaymentController extends Controller
                 // créer payment
                 // gérer commande
                 
-                Mail::to($request->payer_email)->send(new OrderConfirmation($order));
+                // Mail::to($request->payer_email)->send(new OrderConfirmation($order));
 
                 return json_encode([
                     "success" => true

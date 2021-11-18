@@ -14,7 +14,7 @@ class ModifyProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('sales_price')->nullable();
+            $table->integer('sales_price')->nullable();
             $table->text('details')->nullable();
             $table->text('colors')->nullable();
             $table->text('variants')->nullable();
