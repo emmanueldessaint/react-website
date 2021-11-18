@@ -119,7 +119,7 @@ export default function Products() {
         return <div className="marginSpinner"><div className="loader">Loading...</div>;</div>
     } else {
         return (
-            <Container className="pt-10">
+            <Container className="pt-13">
                 <Grid container justifyContent="center" className="mt-8">
                     <Grid container item xs={12} sm={12} md={11} lg={11}>
                         {/* <Grid item xs={12}>
@@ -131,10 +131,8 @@ export default function Products() {
                         </Grid> */}
                         <Grid item xs={12} sm={6}>
                             <div className="flex ml-5 mb-5 ">
-                                {/* lightShadowCard */}
                                 {numberOfPages.map(item => (
                                     <div
-
                                         key={item}
                                     >
                                         {item === actuelPage
@@ -190,7 +188,7 @@ export default function Products() {
                                                         readOnly
                                                         size="small"
                                                         name="simple-controlled"
-                                                        value={item.updated_at}
+                                                        value={item.avg}
                                                         emptyIcon={
                                                             <StarBorderIcon fontSize="inherit" className="emptyStar" />
                                                         }

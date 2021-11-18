@@ -68,7 +68,7 @@ export default function AboutUs() {
 
 
     return (
-        <div className="mt-13">
+        <div className="pt-13">
             <Grid container justifyContent="center" className="menuQuality">
                 <Grid item container xs={12} md={10} spacing={2}>
                     <Grid xs={12}>

@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
 
 html { 
-    scroll-behavior: smooth; 
+    
     
   }
 .generalFont{
@@ -281,6 +281,33 @@ html {
  }
  .bold800{
      font-weight:800;
+ }
+ .size01{
+     font-size:0.1em;
+ }
+ .size02{
+     font-size:0.2em;
+ }
+ .size03{
+     font-size:0.3em;
+ }
+ .size04{
+     font-size:0.4em;
+ }
+ .size05{
+     font-size:0.5em;
+ }
+ .size06{
+     font-size:0.6em;
+ }
+ .size07{
+     font-size:0.7em;
+ }
+ .size08{
+     font-size:0.8em;
+ }
+ .size09{
+     font-size:0.9em;
  }
  .size1{
      font-size:1.1em;

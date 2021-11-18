@@ -35,4 +35,15 @@ const { atom } = require("recoil");
     default: false,
 })
 
+export const mobileMenuOn = atom({
+  key: 'mobileMenuOn',
+  default: false,
+})
+
+export const averageNoteArticles = atom({
+  key: 'averageNoteArticles',
+  default: 5,
+})
+
+
  

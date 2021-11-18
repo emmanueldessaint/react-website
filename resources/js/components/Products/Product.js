@@ -238,6 +238,7 @@ export default function Product(props) {
                     </Grid>
                     <Grid item xs={12} sm={10} md={5}>
                         <div className="font10 size3 grey8 letterSpacing2">{product.name}</div>
+                        <div>img here{product.image}img here</div>
                         <div className="flexBetween mt-9">
                             <span className="priceProduct font2 letterSpacing2">{product.price},00 €</span>
                             <span>
@@ -247,10 +248,10 @@ export default function Product(props) {
                                     readOnly
                                     className=""
                                     name="simple-controlled"
-                                    value={averageNote}
+                                    value={product.avg}
                                 />
-                            </span>
-                            <span onClick={scrollToReviews} className="font5 underlined grey8 cursorPointer">Read reviews ({product.reviews.length})</span>
+                            </span> 
+                            <span onClick={scrollToReviews} className="font5 underlined grey8 cursorPointer scrollSmooth">Read reviews ({product.reviews.length})</span>
                         </div>
                         <div className="flexBetween mt-9">
                             <span className=" addSubstractCart">
@@ -273,7 +274,7 @@ export default function Product(props) {
                     </Grid>
                 </Grid>
 
-                <Box className="mt-10" sx={{ width: '100%' }}>
+                <Box className="pt-10" sx={{ width: '100%' }}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <Tabs
                             value={value}
@@ -307,6 +308,7 @@ export default function Product(props) {
                                         <div className="mb-2">
                                             <span className="mr-2"><AccountCircleIcon /></span>
                                             <span className="font5 bold600 grey8">{review.title}</span>
+                                            <span className="ml-3 bold500 size08 font07 grey6">{review.created_at}</span>
                                         </div>
                                         <div>
                                             <span className="font2 grey6">{review.description}</span>
@@ -420,7 +422,7 @@ export default function Product(props) {
                                                         readOnly
                                                         size="small"
                                                         name="simple-controlled"
-                                                        value={item.updated_at}
+                                                        value={item.avg}
                                                         emptyIcon={
                                                             <StarBorderIcon fontSize="inherit" className="emptyStar" />
                                                         }
