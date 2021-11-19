@@ -222,7 +222,7 @@ export default function Product(props) {
     };
 
     if (!isLoaded) {
-        return <div className="marginSpinner"><div className="loader">Loading...</div>;</div>
+        return <div className="marginSpinner"><div className="loader">Loading...</div></div>
     } else {
         return (
             <Container className="pt-15">
@@ -230,15 +230,16 @@ export default function Product(props) {
                     <Grid container item xs={12} md={7} className="flex">
 
                         <Grid item xs={12} md={3}>
-                            <div className="switchImg m-2"></div>
-                            <div className="switchImg m-2"></div>
-                            <div className="switchImg m-2"></div>
+                            <Grid item xs={12} md={4}><div className="switchImg m-2"></div></Grid>
+                            <Grid item xs={12} md={4}><div className="switchImg m-2"></div></Grid>
+                            <Grid item xs={12} md={4}><div className="switchImg m-2"></div></Grid>
                         </Grid>
                         <Grid item xs={12} md={9}><img className="imageOneProduct" src="https://picsum.photos/200/300" /></Grid>
                     </Grid>
                     <Grid item xs={12} sm={10} md={5}>
                         <div className="font10 size3 grey8 letterSpacing2">{product.name}</div>
-                        <div>img here{product.image}img here</div>
+                        
+                        {/* <img src={window.location.origin + `/images/${product.image}`}></img> */}
                         <div className="flexBetween mt-9">
                             <span className="priceProduct font2 letterSpacing2">{product.price},00 €</span>
                             <span>

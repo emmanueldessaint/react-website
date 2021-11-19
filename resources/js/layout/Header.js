@@ -266,7 +266,7 @@ export default function Header(props) {
                 <Link to="/aboutus" onClick={resetPage}><div className="cursorPointer menuMobileItem  size6 pl-2 pt-2 pb-2">About Us</div></Link>
                 <Link to="/aboutus" onClick={resetPage}><div className="cursorPointer menuMobileItem  size6 pl-2  pt-2 pb-2">Contact</div></Link>
                 <div className="verticalAlign mt-5 mb-5">
-                  <button onClick={changeMenuMobile} className="buttonSearchMobile lightShadowCard letterSpacing2 font2 size2 grey7">Search articles<SearchIcon className="ml-2" /></button>
+                  <button onClick={changeMenuMobile} className="buttonSearchMobile cursorPointer lightShadowCard letterSpacing2 font2 size2 grey7">Search articles<SearchIcon className="ml-2" /></button>
                 </div>
               </div>
             }

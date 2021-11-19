@@ -156,6 +156,7 @@ export default function PaymentForm() {
           zipCode: zipCode,
           email: email,
           address: address,
+          cart : itemsInCart,
         })
 
         handleServerResponse(response)
@@ -287,7 +288,7 @@ export default function PaymentForm() {
                   margin="normal"
                   onClick={handlePaymentSubmit}
                 >
-                  {isProcessing ? "Processing..." : `Pay $${price}.00`}
+                  {isProcessing ? "Processing..." : `Pay $${price + shippingFeesVar}.00`}
 
                 </Button>
               </div>
