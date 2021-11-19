@@ -190,7 +190,7 @@ export default function Header(props) {
                           </Link>
                         </Grid>
                         <Grid item xs={3} >
-                          <Link to="/aboutus"  >
+                          <Link to="/contact"  >
                             <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>Contact</span>
                           </Link>
                         </Grid>
@@ -242,7 +242,7 @@ export default function Header(props) {
       <div className="headerMobile">
         <Grid container  >
           <Grid item xs={3}>
-            <div className="mt-3">
+            <div className="mt-3 marginLeftHamburger">
               <div onClick={resetMenuMobile}><Hamburger color="#000000" size={25} toggled={isOpen} toggle={setOpen} /></div>
             </div>
           </Grid>
@@ -252,8 +252,8 @@ export default function Header(props) {
             </Link>
           </Grid>
           <Grid item xs={3} className="alignRight">
-            <Link to="/cart" onClick={resetPage}  >
-              <StyledBadge className="mr-4 mt-1" badgeContent={numberInCart} color="primary">
+            <Link to="/cart" onClick={resetPage}>
+              <StyledBadge className=" mr-5 mt-1" badgeContent={numberInCart} color="primary">
                 <ShoppingCartIcon className='iconHeader' />
               </StyledBadge>
             </Link>

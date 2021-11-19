@@ -17,6 +17,7 @@ import RefundPolicy from './Others/RefundPolicy';
 import Faq from './Others/Faq';
 import TermsOfService from './Others/TermsOfService';
 import ShippingPolicy from './Others/ShippingPolicy';
+import Contact from './Others/Contact';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {
     RecoilRoot,
@@ -73,6 +74,11 @@ function Index() {
                             <Switch>
                                 <Route path="/aboutus">
                                     <AboutUs />
+                                </Route>
+                            </Switch>
+                            <Switch>
+                                <Route path="/contact">
+                                    <Contact />
                                 </Route>
                             </Switch>
                             <Switch>
