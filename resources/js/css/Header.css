@@ -51,6 +51,9 @@
     .headerMobile{
         display:none;
     }
+    /* .headerPc{
+        background-color:rgb(240, 240, 240);
+    } */
   }
 .dataSearch{
     width:500px;
@@ -110,5 +113,12 @@
 }
 .marginLeftCartMobile{
     margin-right:calc(16%+20px);
+}
+.cartHeader{
+    transform: scale(1.1);
+}
+.cartHeaderMobile{
+    transform: scale(1.1);
+    margin-right:8vw;
 }
   

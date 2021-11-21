@@ -107,8 +107,8 @@ export default function Cart() {
     return (
       <Container>
         <Grid className="pt-12" container justifyContent="center">
-          <Grid item xs={12} sm={11} md={9} >
-            <h2 className="flexCenter letterSpacing1 font5">MY CART</h2>
+          <Grid item xs={12} sm={11} md={10} >
+            <h2 className="flexCenter letterSpacing1 font5">My cart</h2>
 
             {localStorageLength === 0 &&
               <div className="textAlignCenter font2">Your cart is empty</div>
@@ -121,57 +121,51 @@ export default function Cart() {
                 {localStorageLength > 1 && <span className="itemOrItems font5"> items</span>}
               </span>
             }
-            <Grid container className="pt-5 pb-10 flexCenter ">
-
-              <Grid item xs={12}>
+            <Grid container className="pt-5 pb-10" >
+              <Grid item xs={12} md={8}>
                 {itemsInCart.map(product => (
                   <div
-                    className="productLineCart lightShadowCard mt-6 bgBlue"
+                    className="productLineCart lightShadowCard2 bgBlue mb-5"
                     key={product.id}
                   >
 
                     <img className="imgLineCart" src="https://picsum.photos/200/300" />
-                    <div className="quantityNameCart font10 letterSpacing2 size3 opacity9">{product.name}</div>
-
-                    <div className="widthQuantityPrice">
-                      <div className="letterSpacing1 font5 bold600 grey8 mt-2">${product.price}.00</div>
-                      <div className="quantityProductCart flex mb-2 mt-8">
-                        <button className="buttonAddQuantityCart buttonModifyQuantity cursorPointer size1" onClick={() => addQuantityInCart(product)}>+</button>
-                        <div className="centerText productQuantityCart bgWhite">{product.quantity}</div>
-                        {product.quantity > 1 && <button className="buttonSubstractQuantityCart buttonModifyQuantity size1" onClick={() => substractQuantityInCart(product)}>-</button>}
-                        {product.quantity === 1 && <button className="buttonModifyQuantity buttonSubstractQuantityCart size1">-</button>}
+                    <div className="flexBetween bgWhite productDetailsCart">
+                      <div className="quantityNameCart font10 letterSpacing2 size3 opacity9 ml-8">
+                        <div>{product.name}</div>
+                        <button className=" cursorPointer bgWhite" onClick={() => removeProduct(product)}><ClearIcon className="fontTrash" /></button>
                       </div>
 
-
-                    </div>
-
-                    <div>
-                      <div className="productPriceQuantityInCart letterSpacing1 font5 bold600 grey8 size1">
-                        ${product.price * product.quantity}.00
+                      <div className="widthQuantityPrice">
+                        <div className="letterSpacing1 font5 bold600 grey8 mt-2">${product.price}.00</div>
+                        <div className="quantityProductCart flex mb-2 mt-8">
+                          <button className="buttonAddQuantityCart buttonModifyQuantity cursorPointer size1" onClick={() => addQuantityInCart(product)}>+</button>
+                          <div className="centerText productQuantityCart bgWhite">{product.quantity}</div>
+                          {product.quantity > 1 && <button className="buttonSubstractQuantityCart buttonModifyQuantity size1" onClick={() => substractQuantityInCart(product)}>-</button>}
+                          {product.quantity === 1 && <button className="buttonModifyQuantity buttonSubstractQuantityCart size1">-</button>}
+                        </div>
+                      </div>
+                      <div>
+                        <div className="productPriceQuantityInCart letterSpacing1 font5 bold600 grey8 size1 mr-8">
+                          ${product.price * product.quantity}.00
+                        </div>
                       </div>
                     </div>
-
-                    <button className=" cursorPointer " onClick={() => removeProduct(product)}><ClearIcon className="fontTrash" /></button>
                   </div>
                 ))}
-
               </Grid>
-
               {localStorageLength > 0 &&
-                <Grid container>
-                  <Grid xs={0} sm={5} md={7}>
-                    <button></button>
-                  </Grid>
-                  <Grid container item className="alignRight" xs={12} sm={7} md={5}>
+                <Grid container xs={12} md={4}>
+                  <Grid container item className="" xs={12}>
                     <Grid item xs={12} >
                       <div className="yourOrder bgWhite lightShadowCard2 font1 bold200  pl-1 pr-1 letterSpacing1">
-                        <div className="mt-4 flexBetween">
+                        <div className=" flexBetween">
                           <span className="ml-2 mt-2">Product</span>
                           <span className="mr-2 mt-2">Subtotal</span>
                         </div>
                         {itemsInCart.map(product => (
                           <div
-                            className="productLineCart mt-4 pl-2 pr-2"
+                            className="productLineCart flexBetween mt-4 pl-2 pr-2"
                             key={product.id}
                           >
                             <div>{product.name} x {product.quantity}</div>

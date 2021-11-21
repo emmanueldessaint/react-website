@@ -242,19 +242,23 @@ export default function Product(props) {
                 <Grid container justifyContent="center" spacing={6}>
                     <Grid container item xs={12} md={7} className="flex">
                         <Grid item xs={12} sm={3} md={3} className="productComputer">
-                            <Grid item xs={12} md={4}><img className="switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
-                            <Grid item xs={12} md={4}><img className="switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
-                            <Grid item xs={12} md={4}><img className="switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
+                            <Grid item xs={12} ><img className="cursorPointer switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
+                            <Grid item xs={12}><img className="switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
+                            <Grid item xs={12}><img className="switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
                         </Grid>
                         <Grid item xs={12} sm={9} md={9}><img className="imageOneProduct" src="https://picsum.photos/200/300" /></Grid>
-
-                        <Grid container justifyContent="center">
+                        <div className="flex">
+                            <div><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></div>
+                            <div><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></div>
+                            <div><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></div>
+                        </div>
+                        {/* <Grid container justifyContent="center">
                             <Grid item xs={12} container className="productMobile" spacing={1}>
                                 <Grid item xs={4}><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></Grid>
                                 <Grid item xs={4}><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></Grid>
                                 <Grid item xs={4}><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></Grid>
                             </Grid>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                     {/* <img src={window.location.origin + `/images/${product.image}`}></img> */}
                     <Grid item xs={12} sm={10} md={5}>
@@ -328,7 +332,7 @@ export default function Product(props) {
                     <TabPanel value={value} index={2}>
                         {/* <Button onClick={handleConsole}>click me</Button> */}
                         {product.reviews.map(review => (
-                            <div key={review.id} className="lightShadowCard1 p-3 mb-5">
+                            <div key={review.id} className="lightShadowCard2 p-3 mb-5">
                                 <Grid container className="flexBetween">
                                     <Grid item sm={10} xs={12}>
                                         <div className="mb-2">
@@ -406,7 +410,7 @@ export default function Product(props) {
                             <AccordionDetails>
                                 <div>
                                     {product.reviews.map(review => (
-                                        <div key={review.id} className="lightShadowCard1 p-3 mb-5">
+                                        <div key={review.id} className="lightShadowCard2 p-3 mb-5">
                                             <Grid container className="flexBetween">
                                                 <Grid item sm={10} xs={12}>
                                                     <div className="mb-2">

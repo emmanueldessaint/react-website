@@ -127,6 +127,7 @@ export default function Header(props) {
   const closeSearch = () => {
     setSearchTerm('');
     setChangePage(true);
+    setOpen(false);
   }
 
   const resetMenuMobile = () => {
@@ -163,9 +164,9 @@ export default function Header(props) {
           <CssBaseline />
           <HideOnScroll {...props}>
             <div>
-              <AppBar style={{ background: 'rgb(240, 240, 240)' }}>
-                <Toolbar>
-                  <Box sx={{ flexGrow: 1 }}>
+              <AppBar>
+                <Toolbar className="bgBlue">
+                  <Box sx={{ flexGrow: 1 }} >
                     <Grid container  >
                       <Grid item xs={3} className={classes.alignTitle} >
                         <Link to="/" onClick={resetPage} className="item" className={classes.routerDecoration}>
@@ -197,8 +198,8 @@ export default function Header(props) {
                       </Grid>
                       <Grid className="alignRight" item xs={3}>
                         <Link to="/cart" onClick={resetPage}  >
-                          <StyledBadge className="mr-8" badgeContent={numberInCart} color="primary">
-                            <ShoppingCartIcon className='iconHeader' />
+                          <StyledBadge className="mr-8 cartHeader" badgeContent={numberInCart} color="primary">
+                            <ShoppingCartIcon className='iconHeader cartHeader' />
                           </StyledBadge>
                         </Link>
                         <div className="mr-5 ml-5 mt-1">
@@ -239,7 +240,7 @@ export default function Header(props) {
           </HideOnScroll>
         </React.Fragment>
       </div>
-      <div className="headerMobile">
+      <div className="headerMobile" id="clickbox">
         <Grid container  >
           <Grid item xs={3}>
             <div className="mt-3 marginLeftHamburger">
@@ -253,7 +254,7 @@ export default function Header(props) {
           </Grid>
           <Grid item xs={3} className="alignRight">
             <Link to="/cart" onClick={resetPage}>
-              <StyledBadge className=" mr-5 mt-1" badgeContent={numberInCart} color="primary">
+              <StyledBadge className="cartHeaderMobile mt-1" badgeContent={numberInCart} color="primary">
                 <ShoppingCartIcon className='iconHeader' />
               </StyledBadge>
             </Link>
@@ -287,7 +288,7 @@ export default function Header(props) {
                 </div>
                 <div className="flexBetween grey8 underlined mb-1">
                   <div className="ml-3" onClick={changeMenuMobile}>Close the search</div>
-                  <div className="mr-3">See our catalog</div>
+                  <Link to="/catalog" onClick={resetPage} className="mr-3">See our catalog</Link>
                 </div>
               </div>
             }

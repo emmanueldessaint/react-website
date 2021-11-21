@@ -19,7 +19,7 @@ import Select from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import { itemsProduct } from '../Shared/globalState'
-
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 export default function Products() {
 
@@ -135,6 +135,7 @@ export default function Products() {
                                     <div
                                         key={item}
                                     >
+
                                         {item === actuelPage
                                             ? <button className="boutonPaginationSelected  generalBackground" onClick={() => handleChangePage(item)}>{item}</button>
                                             : <button className="boutonPagination generalBackground" onClick={() => handleChangePage(item)}>{item}</button>
@@ -145,7 +146,7 @@ export default function Products() {
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <div className="alignRight mr-4">
-                                <FormControl className="widthFormControl">
+                                <FormControl size="small" className="widthFormControl">
                                     <InputLabel><span className="ml-4"></span>Filter by</InputLabel>
                                     <Select
                                         variant="outlined"
@@ -213,7 +214,8 @@ export default function Products() {
                                     <div className="flex productMobile productMobileCatalog mb-3 mt-3">
 
                                         <img className="imageProductMobile" src="https://picsum.photos/200/300" />
-                                        <div className="ml-2">
+
+                                        <div className="pl-2 width100">
                                             <div className="mt-1 font10 letterSpacing2 grey7">{item.name}</div>
                                             {item.reviews.length > 0 &&
                                                 <div className="flex productDetails mt-1 opacity6">
@@ -230,9 +232,14 @@ export default function Products() {
                                                     <div className="ml-1">({item.reviews.length})<span className="ml-1"></span></div>
                                                 </div>
                                             }
-                                            <div className="mt-4">${item.price}.00</div>
-                                        </div>
 
+                                            <div className="flexBetween ">
+                                                <div className="mt-4">${item.price}.00</div>
+                                                <div className="flexEnd opacity8"><AddShoppingCartIcon /></div>
+
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </Link>
                                 <div className="greyBarProductMobile"></div>

@@ -1,10 +1,12 @@
 .productLineCart{
-    margin-top:20px;
+   
     display:flex;
-    justify-content: space-between;
-    align-items: center;
     border-radius:2px;
     font-size:1.1em;
+}
+.productDetailsCart{
+    width:100%;
+    align-items: center;
 }
 .imgLineCart{
     height:120px;
@@ -35,7 +37,7 @@
     position:relative;
 }
 .yourOrder{
-    margin-top:34px;
+   
     /* border:1px solid rgb(196, 196, 196); */
     border-radius:5px;
 }
@@ -47,6 +49,8 @@
     border-radius:2px;
     /* width:30px; */
     cursor:pointer;
+    background-color:rgb(240, 240, 240);
+    width:30px;
 }
 .testCard{
     padding-top:12px;
@@ -83,10 +87,7 @@
     background-color:red; */
 
 }
-.buttonModifyQuantity{
-    background-color:rgb(183, 218, 197);
-    width:30px;
-}
+
 .buttonAddQuantityCart{
     border-top-left-radius:3px;
     border-bottom-left-radius:3px;
@@ -98,8 +99,8 @@
     /* margin-left:-10px; */
 }
 .productQuantityCart{
-    border-top:solid 1px rgb(183, 218, 197);
-    border-bottom:solid 1px rgb(183, 218, 197);
+    border-top:solid 1px rgb(240, 240, 240);
+    border-bottom:solid 1px rgb(240, 240, 240);
     width:40px;
     
 }

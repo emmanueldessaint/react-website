@@ -53,7 +53,7 @@ export default function Home() {
             .then(
                 (result) => {
                     for (var i = 0; i < result.allReviews.length; i++) {
-                        result.allReviews[i].updated_at = allItems.find(element => element.id === result.allReviews[i].id_product)
+                        result.allReviews[i].product = allItems.find(element => element.id === result.allReviews[i].id_product)
                     }
                     setUserReviews(result.allReviews);
                 },
@@ -107,7 +107,7 @@ export default function Home() {
     };
 
     const consoleLog = () => {
-        console.log(allItems);
+        console.log(userReviews);
     }
 
     return (
@@ -115,11 +115,12 @@ export default function Home() {
             <div>
                 <img src={logo} alt="Logo" className="imgIntro" />
             </div>
-            <Container>
+            <Container >
                 <Grid container justifyContent="center" className="menuQuality">
                     <Grid item container xs={12} md={11}>
                         <Grid item xs={12} sm={4}>
                             <div className="mt-6 ">
+                                
                                 <span className="flexCenter"><img src={earth} alt="earth_icon" className="smallIcons " /></span>
                                 <span className="flexCenter mt-2 titleHomeArguments grey7 font6 size1 opacity9 letterSpacing2">RESPECT FOR THE LAND</span>
                                 <div className="blueBar"></div>
@@ -191,7 +192,7 @@ export default function Home() {
                     </div>
                 }
                 <div className="flexCenter mt-10"><img src={review} alt="reward_svg" className="reviewIcon opacity8" /></div>
-                <h2 className="flexCenter font8 size7 bold600 bestSellers opacity9 letterSpacing2">They lived the experience</h2>
+                <h2 className="centerText font8 size7 bold600 bestSellers opacity9 letterSpacing2">They enjoyed the experience</h2>
                 <Grid className="pt-7" container justifyContent="center">
                     <Grid container item xs={11} md={11} spacing={4}>
                         <Grid item md={3} xs={12} className=" bgBlue verticalAlign">
@@ -225,7 +226,7 @@ export default function Home() {
                                         className="m-2"
                                         key={item.id}
                                     >
-                                        <div className=''>
+                                        {item.product !== undefined && <Link to={`/product/${item.product.name}`}>
                                             <Rating
                                                 precision={0.5}
                                                 readOnly
@@ -237,13 +238,13 @@ export default function Home() {
                                                     <StarBorderIcon fontSize="inherit" className="emptyStar" />
                                                 }
                                             />
-                                            <div className="ml-2 linkItemComment">{item.updated_at !== undefined && <Link to={`/product/${item.updated_at.name} `} >{item.updated_at.name}</Link>}</div>
+                                            <div className="ml-2 linkItemComment">{item.product.name}</div>
                                             <div className="lightShadowCard3">
 
                                                 <div className="mt-2 pl-2 pt-2 grey6 bold100 font2">{item.description.length < 60 ? item.description : item.description.substring(0, 70) + " . . ."}</div>
                                                 <div className="mt-5 pl-2 pb-2 font2 bold500 grey9">{item.title}</div>
                                             </div>
-                                        </div>
+                                        </Link>}
                                     </div>
                                 ))}
                             </Carousel>
