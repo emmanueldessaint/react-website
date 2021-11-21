@@ -240,7 +240,7 @@ export default function Product(props) {
         return (
             <Container className="pt-15 singleProduct">
                 <Grid container justifyContent="center" spacing={6}>
-                    <Grid container item xs={12} md={7} className="flex">
+                    <Grid container item xs={12} sm={11} md={7} className="flex">
                         <Grid item xs={12} sm={3} md={3} className="productComputer">
                             <Grid item xs={12} ><img className="cursorPointer switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
                             <Grid item xs={12}><img className="switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
@@ -279,20 +279,25 @@ export default function Product(props) {
                             <span onClick={scrollToReviews} className="font5 underlined grey8 cursorPointer scrollSmooth">Read reviews ({product.reviews.length})</span>
                         </div>
                         <div className="flexBetween mt-9">
-                            <Grid container justifyContent="center" item>
-                                <Grid item xs={12} md={6}>
+                            <Grid container justifyContent="center" >
+                                <Grid item xs={11} sm={6}>
                                     <span className=" addSubstractCart">
                                         <button disabled className=" quantityProduct size2 height30">{quantityProduct}</button>
                                         <button onClick={addQuantity} className="colorButton1  size2 buttonAdd height30">+</button>
                                         <button onClick={substractQuantity} className="colorButton1  size2 buttonSubstract height30">-</button>
                                     </span>
                                 </Grid>
-                                <Grid item xs={12} md={6}>
-                                    <span className=" alignRight">
+                                <Grid item xs={11} sm={6}>
+                                    <div className="divPc alignRight">
                                         <Link to="/cart">
                                             <button onClick={addToLocalStorage} className="colorButton1  bold300 letterSpacing2 font2 buttonAddToCart height30"> Add to cart</button>
                                         </Link>
-                                    </span>
+                                    </div>
+                                    <div className="divMobile">
+                                        <Link to="/cart">
+                                            <button onClick={addToLocalStorage} className="mt-5 colorButton1  bold300 letterSpacing2 font2 buttonAddToCartMobile height30"> Add to cart</button>
+                                        </Link>
+                                    </div>
                                 </Grid>
                             </Grid>
                         </div>
