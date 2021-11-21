@@ -154,7 +154,7 @@ export default function Home() {
                     <span className="flexCenter font8 size7 mt-3 bold600 bestSellers opacity9 letterSpacing2">Our best sellers</span>
                     <span className="flexCenter font5 mt-1 bold400 bestSellers opacity9">Discover our customers' favorite products !</span>
                 </div>
-                <button onClick={consoleLog}>consoleLog</button>
+                
                 {isLoaded &&
                     <div>
                         <Carousel

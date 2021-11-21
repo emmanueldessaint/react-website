@@ -232,6 +232,48 @@
 .scrollSmooth{
     scroll-behavior: smooth;
 }
+@media all and (max-width: 600px) {
+    .productComputer{
+        display:none;
+    }
+  }
+@media all and (min-width: 601px) {
+    .productMobile{
+        display:none;
+    }
+  }
+.switchImgMobile{
+    border: 1px solid grey;
+    border-radius:3px;
+    height:100px;
+    width:100%;
+    object-fit: cover;
+}
+.singleProduct{
+    overflow-x: hidden;
+}
+.MuiPaper-root{
+    background-color:rgb(255, 251, 238) !important;
+}
+.MuiPaper-elevation1{
+    box-shadow: 0px 0px 0px 0px black !important;
+}
+.MuiAccordionSummary-root{
+    padding:0px !important;
+}
+.imageProductMobile{
+    width:25vw;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    height:100px;
+    object-fit: cover;
+    opacity:0.9;
+}
+.greyBarProductMobile{
+    width:100%;
+    height:1px;
+    background-color: rgb(218, 218, 218);
+}
 
 
 

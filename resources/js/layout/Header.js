@@ -286,8 +286,8 @@ export default function Header(props) {
                   />
                 </div>
                 <div className="flexBetween grey8 underlined mb-1">
-                  <div className="ml-1" onClick={changeMenuMobile}>Close the search</div>
-                  <div className="mr-1">See our catalog</div>
+                  <div className="ml-3" onClick={changeMenuMobile}>Close the search</div>
+                  <div className="mr-3">See our catalog</div>
                 </div>
               </div>
             }

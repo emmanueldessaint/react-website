@@ -4,24 +4,12 @@ import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import Container from '@material-ui/core/Container';
-import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
-import Slide from '@material-ui/core/Slide';
-import Button from '@material-ui/core/Button';
-import Toolbar from '@material-ui/core/Toolbar';
-// import AppBar from '@mui/material/AppBar';
-import AppBar from '@material-ui/core/AppBar';
 import { makeStyles } from '@material-ui/styles';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { styled } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-import ProductQuality from "../../../assets/img/qualityProduct.png";
-
-import PersonIcon from '@material-ui/icons/Person';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import {
     BrowserRouter as Router,
     ReactDom,
@@ -32,7 +20,6 @@ import {
 } from "react-router-dom";
 import '../../App.css';
 import '../../css/Products.css';
-import YouTubeIcon from '@material-ui/icons/YouTube';
 import { useRecoilState } from 'recoil';
 import Rating from '@mui/material/Rating';
 import StarBorderIcon from "@material-ui/icons/StarBorder";
@@ -40,8 +27,12 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { itemsBestSellers, changingPage, itemsProduct, numberOfItemsInCart } from '../Shared/globalState';
-import reward from "../../../assets/img/reward1.png";
+import reward from "../../../assets/img/reward2.png";
 import review from "../../../assets/img/review1.png";
+import Accordion from '@material-ui/core/Accordion';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
     marginTop: {
@@ -104,6 +95,21 @@ function a11yProps(index) {
     };
 }
 
+// const useStyles = makeStyles((theme) => ({
+//     root: {
+//         width: '100%',
+//     },
+//     heading: {
+//         fontSize: theme.typography.pxToRem(15),
+//         flexBasis: '33.33%',
+//         flexShrink: 0,
+//     },
+//     secondaryHeading: {
+//         fontSize: theme.typography.pxToRem(15),
+//         color: theme.palette.text.secondary,
+//     },
+// }));
+
 export default function Product(props) {
 
     const classes = useStyles();
@@ -119,6 +125,12 @@ export default function Product(props) {
     const [avgNote, setAvgNote] = useState('');
     const [bestSellers, setBestSellers] = useRecoilState(itemsBestSellers);
     const [changePage, setChangePage] = useRecoilState(changingPage);
+
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleChangeAccordion = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
 
     useEffect(() => {
         fetch("http://localhost:8000/api/reviews")
@@ -221,25 +233,33 @@ export default function Product(props) {
         }
     };
 
+
     if (!isLoaded) {
         return <div className="marginSpinner"><div className="loader">Loading...</div></div>
     } else {
         return (
-            <Container className="pt-15">
+            <Container className="pt-15 singleProduct">
                 <Grid container justifyContent="center" spacing={6}>
                     <Grid container item xs={12} md={7} className="flex">
-
-                        <Grid item xs={12} md={3}>
-                            <Grid item xs={12} md={4}><div className="switchImg m-2"></div></Grid>
-                            <Grid item xs={12} md={4}><div className="switchImg m-2"></div></Grid>
-                            <Grid item xs={12} md={4}><div className="switchImg m-2"></div></Grid>
+                        <Grid item xs={12} sm={3} md={3} className="productComputer">
+                            <Grid item xs={12} md={4}><img className="switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
+                            <Grid item xs={12} md={4}><img className="switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
+                            <Grid item xs={12} md={4}><img className="switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
                         </Grid>
-                        <Grid item xs={12} md={9}><img className="imageOneProduct" src="https://picsum.photos/200/300" /></Grid>
+                        <Grid item xs={12} sm={9} md={9}><img className="imageOneProduct" src="https://picsum.photos/200/300" /></Grid>
+
+                        <Grid container justifyContent="center">
+                            <Grid item xs={12} container className="productMobile" spacing={1}>
+                                <Grid item xs={4}><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></Grid>
+                                <Grid item xs={4}><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></Grid>
+                                <Grid item xs={4}><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></Grid>
+                            </Grid>
+                        </Grid>
                     </Grid>
+                    {/* <img src={window.location.origin + `/images/${product.image}`}></img> */}
                     <Grid item xs={12} sm={10} md={5}>
                         <div className="font10 size3 grey8 letterSpacing2">{product.name}</div>
-                        
-                        {/* <img src={window.location.origin + `/images/${product.image}`}></img> */}
+
                         <div className="flexBetween mt-9">
                             <span className="priceProduct font2 letterSpacing2">{product.price},00 €</span>
                             <span>
@@ -251,20 +271,26 @@ export default function Product(props) {
                                     name="simple-controlled"
                                     value={product.avg}
                                 />
-                            </span> 
+                            </span>
                             <span onClick={scrollToReviews} className="font5 underlined grey8 cursorPointer scrollSmooth">Read reviews ({product.reviews.length})</span>
                         </div>
                         <div className="flexBetween mt-9">
-                            <span className=" addSubstractCart">
-                                <button disabled className=" quantityProduct size2 height30">{quantityProduct}</button>
-                                <button onClick={addQuantity} className="colorButton1  size2 buttonAdd height30">+</button>
-                                <button onClick={substractQuantity} className="colorButton1  size2 buttonSubstract height30">-</button>
-                            </span>
-                            <span className=" alignRight">
-                                <Link to="/cart">
-                                    <button onClick={addToLocalStorage} className="colorButton1  bold300 letterSpacing2 font2 buttonAddToCart height30"> Add to cart</button>
-                                </Link>
-                            </span>
+                            <Grid container justifyContent="center" item>
+                                <Grid item xs={12} md={6}>
+                                    <span className=" addSubstractCart">
+                                        <button disabled className=" quantityProduct size2 height30">{quantityProduct}</button>
+                                        <button onClick={addQuantity} className="colorButton1  size2 buttonAdd height30">+</button>
+                                        <button onClick={substractQuantity} className="colorButton1  size2 buttonSubstract height30">-</button>
+                                    </span>
+                                </Grid>
+                                <Grid item xs={12} md={6}>
+                                    <span className=" alignRight">
+                                        <Link to="/cart">
+                                            <button onClick={addToLocalStorage} className="colorButton1  bold300 letterSpacing2 font2 buttonAddToCart height30"> Add to cart</button>
+                                        </Link>
+                                    </span>
+                                </Grid>
+                            </Grid>
                         </div>
                         <div>
                             <div className="width90 greyLineProduct m-4"></div>
@@ -275,7 +301,7 @@ export default function Product(props) {
                     </Grid>
                 </Grid>
 
-                <Box className="pt-10" sx={{ width: '100%' }}>
+                <Box className="pt-10 productComputer" sx={{ width: '100%' }}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <Tabs
                             value={value}
@@ -295,7 +321,6 @@ export default function Product(props) {
                             <Grid item xs={8} className="alignCenter"><span>unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span></Grid>
                             {/* <Grid item xs={4}><img src={ProductQuality} alt="ProductQuality" className={classes.imgFull} /></Grid> */}
                         </Grid>
-
                     </TabPanel>
                     <TabPanel value={value} index={1}>
                         Item Two
@@ -335,6 +360,86 @@ export default function Product(props) {
 
                     </TabPanel>
                 </Box>
+                <Grid container justifyContent="center" className="productMobile mt-7">
+                    <Grid container item xs={12} md={7}>
+                        <Accordion expanded={expanded === 'panel1'} onChange={handleChangeAccordion('panel1')} className="productMobile">
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1bh-content"
+                                id="panel1bh-header"
+
+                            >
+                                <div>Description</div>
+
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
+                                    maximus est, id dignissim quam.
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion expanded={expanded === 'panel2'} onChange={handleChangeAccordion('panel2')} className="productMobile">
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel2bh-content"
+                                id="panel2bh-header"
+                            >
+                                <div>Fiche Produit</div>
+
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar
+                                    diam eros in elit. Pellentesque convallis laoreet laoreet.
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion expanded={expanded === 'panel3'} onChange={handleChangeAccordion('panel3')} className="productMobile">
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel3bh-content"
+                                id="panel3bh-header"
+                            >
+                                <div>Reviews ({product.reviews.length})</div>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <div>
+                                    {product.reviews.map(review => (
+                                        <div key={review.id} className="lightShadowCard1 p-3 mb-5">
+                                            <Grid container className="flexBetween">
+                                                <Grid item sm={10} xs={12}>
+                                                    <div className="mb-2">
+                                                        <span className="mr-2"><AccountCircleIcon /></span>
+                                                        <span className="font5 bold600 grey8">{review.title}</span><br/>
+                                                        <span className="ml-3 bold500 size08 font07 grey6">{review.created_at}</span>
+                                                    </div>
+                                                    <div>
+                                                        <span className="font2 grey6">{review.description}</span>
+                                                    </div>
+                                                </Grid>
+
+                                                <Grid item sm={2} xs={12}>
+                                                    <div className="starsProductReview marginTop600px opacity8">
+                                                        <Rating
+                                                            precision={0.5}
+                                                            readOnly
+                                                            name="simple-controlled"
+                                                            value={review.note}
+                                                            emptyIcon={
+                                                                <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                            }
+                                                        />
+                                                    </div>
+                                                </Grid>
+                                            </Grid>
+                                        </div>
+                                    ))}
+                                </div>
+                            </AccordionDetails>
+                        </Accordion>
+                    </Grid>
+                </Grid>
                 {/* <div className="flexCenter mt-15"><img src={review} alt="reward_svg" className="reviewIcon opacity6" /></div>
                 <h2 className="flexCenter font8 size7 bold600 bestSellers opacity9 letterSpacing2">They lived the experience</h2>
                 <Grid className="pt-5" container justifyContent="center">
@@ -395,7 +500,7 @@ export default function Product(props) {
                     </Grid>
                 </Grid> */}
                 <Grid className="pt-10" container justifyContent="center">
-                    <Grid  item xs={11} md={11}>
+                    <Grid item xs={11} md={11}>
                         <div className="mt-10">
                             <div className="flexCenter"><img src={reward} alt="reward_svg" className="rewardIcon opacity6" /></div>
                             <span className="flexCenter font8 size7 mt-3 bold600 bestSellers opacity9 letterSpacing2">Our customers also like ...</span>
