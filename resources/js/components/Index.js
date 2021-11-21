@@ -12,6 +12,7 @@ import '../App.css'
 import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 import Request from '../components/Shared/Request'
+import ReactGA from 'react-ga'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {
     RecoilRoot,
@@ -22,6 +23,10 @@ import {
   } from 'recoil';
 
 function Index() {
+    
+    ReactGA.initialize('UA-213345073-1')
+    ReactGA.pageview(window.location.pathname + window.location.search)
+
     return (
         
             <RecoilRoot>     

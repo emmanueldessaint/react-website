@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\ProductReviews;
+use App\Models\ProductImages;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,6 +22,10 @@ class Product extends Model
 
     public function reviews() {
         return $this->hasMany(ProductReviews::class, 'id_product');
+    }
+
+    public function images() {
+        return $this->hasMany(ProductImages::class, 'id_product');
     }
 
     public function order() {

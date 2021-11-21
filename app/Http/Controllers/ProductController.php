@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductReviews;
+use App\Models\ProductImages;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -16,7 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('reviews')->get();
+        $products = Product::with('reviews', 'images')->get();
 
         return response()->json([
             'products' => $products

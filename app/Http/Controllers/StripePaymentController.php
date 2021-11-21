@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Payment;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use App\Models\User;
 use App\Mail\OrderConfirmation;
 use Stripe;
 use Mail;
@@ -16,31 +17,36 @@ class StripePaymentController extends Controller
 {
     function charge(Request $request) { 
 
-        /////////////// EMAIL TEST /////////////////////////
-
-        $order = [
-            'id' => 123,
-        ];
+        // $order = [
+        //     'id' => 123
+        // ];
 
         // Mail::to('mathieu.dessaint10@gmail.com')->send(new OrderConfirmation($order));
 
+        // return "ok";
 
-        // return $order;
-
-        /////////////// EMAIL TEST /////////////////////////
-
+        $totalAmount = 0;
+        $productsToShip = [];
+        foreach ($request->get('cart') as $item) {
+            $product = Product::where('id', $item['id'])->first();
+            $totalAmount += $product->price * $item['quantity'];
+            $productInfo = [
+                'product' => $product,
+                'quantity' => $item['id']
+            ];
+            array_push($productsToShip, $productInfo);
+        }
+        $totalAmount += env('SHIPPING_FEES');
+        
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET_DEV'));
-
         $paymentMethodId = $request->get('id');
         $paymentIntentId = $request->get('paymentIntentId');
-    
+        
         $intent = null;
-
-        $totalAmount = 2000;
-
+        
         try {
             if (isset($paymentMethodId)) {
-                # Create the PaymentIntent
+                
                 $intent = Stripe\PaymentIntent::create([
                     'payment_method' => $paymentMethodId,
                     'confirmation_method' => 'manual',
@@ -58,7 +64,7 @@ class StripePaymentController extends Controller
             }
             if ($intent->status == 'requires_action' &&
                 $intent->next_action->type == 'use_stripe_sdk' || $intent->status == 'requires_source_action') {
-                # Tell the client to handle the action
+                
                 return json_encode([
                     'requires_action' => true,
                     'payment_intent_client_secret' => $intent->client_secret
@@ -66,11 +72,57 @@ class StripePaymentController extends Controller
             } else if ($intent->status == 'succeeded') {
                 // Paiement Stripe accepté
 
-                // Session::flash('success', 'Payment successful!')
-                // créer payment
-                // gérer commande
+                // $payment = Payment::create([
+                //     'payer_email' => $request->get('email'),
+                //     'amount' => $totalAmount,
+                //     'currency' => 'usd',
+                //     'payment_status' => 'OK'
+                // ]);
+                // $payment->save();
+
+                $user = User::where('email', $request->get('email'))->first();
+
+                if (!isset($user)) {
+                    $user = User::create([
+                        'firstname' => $request->get('firstName'),
+                        'lastname' => $request->get('lasName'),
+                        'email' => $request->get('email'),
+                        'address' => $request->get('address'),
+                        'zip_code' => $request->get('zipCode'),
+                        'city' => $request->get('city')
+                    ]);
+                    $user->save();
+                }
+
+                $order = Order::create([
+                    'id_customer_order' => rand(10000000, 99999999),
+                    'id_user' => $user->id,
+                    'payer_firstname' => $request->get('firstName'),
+                    'payer_lastname' => $request->get('lastName'),
+                    'payer_email' => $request->get('email'),
+                    'payer_tel' => $request->get('tel'),
+                    'payment_method' => 'Stripe',
+                    'status' => 'Processed',
+                    'total' => $totalAmount,
+                    'shipping_country' => $request->get('country'),
+                    'shipping_address' => $request->get('address'),
+                    'shipping_city' => $request->get('city'),
+                    'shipping_zipcode' => $request->get('zipCode'),
+                    'shipping_additional_info' => $request->get('additionalInfo'),
+                ]);
+                $order->save();
+
+                foreach($productsToShip as $product) {
+                    $orderProduct = OrderProduct::create([
+                        'id_order' => $order->id,
+                        'id_product' => $product['product']->id,
+                        'quantity' => $product['quantity'],
+                        'shipped' => 0
+                    ]);
+                    $orderProduct->save();
+                }
                 
-                // Mail::to($request->payer_email)->send(new OrderConfirmation($order));
+                Mail::to($request->get('email'))->send(new OrderConfirmation($order));
 
                 return json_encode([
                     "success" => true
@@ -80,7 +132,7 @@ class StripePaymentController extends Controller
                 return json_encode(['error' => 'Invalid PaymentIntent status']);
             }
         } catch (\Exception $e) {
-            # Display error on client
+            
             return json_encode([
                 'error' => $e->getMessage()
             ]);
