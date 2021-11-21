@@ -105,5 +105,10 @@
     background-color:brown;
     border-radius:4px;
 }
-
+.marginLeftHamburger{
+    margin-left:16%;
+}
+.marginLeftCartMobile{
+    margin-right:calc(16%+20px);
+}
   

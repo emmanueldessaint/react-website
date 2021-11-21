@@ -164,7 +164,7 @@ export default function Cart() {
                   </Grid>
                   <Grid container item className="alignRight" xs={12} sm={7} md={5}>
                     <Grid item xs={12} >
-                      <div className="yourOrder bgWhite lightShadowCard2 font1 bold200 bgWhite1 pl-1 pr-1 letterSpacing1">
+                      <div className="yourOrder bgWhite lightShadowCard2 font1 bold200  pl-1 pr-1 letterSpacing1">
                         <div className="mt-4 flexBetween">
                           <span className="ml-2 mt-2">Product</span>
                           <span className="mr-2 mt-2">Subtotal</span>

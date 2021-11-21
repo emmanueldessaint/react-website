@@ -38,7 +38,7 @@ export default function Products() {
     var emptyArray = [];
 
     useEffect(() => {
-        if (allItems.length !== 0) {       
+        if (allItems.length !== 0) {
             let newArray = [];
             newArray = allItems.slice(itemsByPage * (actuelPage - 1), itemsByPage * (actuelPage));
             for (var i = 0; i < allItems.length / itemsByPage; i++) {
@@ -162,14 +162,14 @@ export default function Products() {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid container justifyContent="center">
+                <Grid container justifyContent="center" className="productComputer">
                     <Grid container item xs={12} sm={12} md={11} xl={10}>
                         {itemsInCurrentPage.map(item => (
                             <Grid
                                 item xs={12} sm={6} md={4} lg={3}
                                 key={item.id}
                             >
-                                <div className="cardProduct lightShadowCard2">
+                                <div className="cardProduct lightShadowCard2 productComputer">
                                     <Link to={`/product/${item.name} `} >
                                         <img className="imageProduct" src="https://picsum.photos/200/300" />
                                         <div className="hideProduct">
@@ -198,6 +198,44 @@ export default function Products() {
                                         </div>
                                     </Link>
                                 </div>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Grid>
+                <Grid container justifyContent="center" className="productMobile">
+                    <Grid container item xs={12} sm={12} md={11} xl={10}>
+                        {itemsInCurrentPage.map(item => (
+                            <Grid
+                                item xs={12}
+                                key={item.id}
+                            >
+                                <Link to={`/product/${item.name} `} >
+                                    <div className="flex productMobile productMobileCatalog mb-3 mt-3">
+
+                                        <img className="imageProductMobile" src="https://picsum.photos/200/300" />
+                                        <div className="ml-2">
+                                            <div className="mt-1 font10 letterSpacing2 grey7">{item.name}</div>
+                                            {item.reviews.length > 0 &&
+                                                <div className="flex productDetails mt-1 opacity6">
+                                                    <Rating
+                                                        precision={0.5}
+                                                        readOnly
+                                                        size="small"
+                                                        name="simple-controlled"
+                                                        value={item.avg}
+                                                        emptyIcon={
+                                                            <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                        }
+                                                    />
+                                                    <div className="ml-1">({item.reviews.length})<span className="ml-1"></span></div>
+                                                </div>
+                                            }
+                                            <div className="mt-4">${item.price}.00</div>
+                                        </div>
+
+                                    </div>
+                                </Link>
+                                <div className="greyBarProductMobile"></div>
                             </Grid>
                         ))}
                     </Grid>

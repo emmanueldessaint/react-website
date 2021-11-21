@@ -190,7 +190,7 @@ export default function Header(props) {
                           </Link>
                         </Grid>
                         <Grid item xs={3} >
-                          <Link to="/aboutus"  >
+                          <Link to="/contact"  >
                             <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>Contact</span>
                           </Link>
                         </Grid>
@@ -242,7 +242,7 @@ export default function Header(props) {
       <div className="headerMobile">
         <Grid container  >
           <Grid item xs={3}>
-            <div className="mt-3">
+            <div className="mt-3 marginLeftHamburger">
               <div onClick={resetMenuMobile}><Hamburger color="#000000" size={25} toggled={isOpen} toggle={setOpen} /></div>
             </div>
           </Grid>
@@ -252,8 +252,8 @@ export default function Header(props) {
             </Link>
           </Grid>
           <Grid item xs={3} className="alignRight">
-            <Link to="/cart" onClick={resetPage}  >
-              <StyledBadge className="mr-4 mt-1" badgeContent={numberInCart} color="primary">
+            <Link to="/cart" onClick={resetPage}>
+              <StyledBadge className=" mr-5 mt-1" badgeContent={numberInCart} color="primary">
                 <ShoppingCartIcon className='iconHeader' />
               </StyledBadge>
             </Link>
@@ -266,7 +266,7 @@ export default function Header(props) {
                 <Link to="/aboutus" onClick={resetPage}><div className="cursorPointer menuMobileItem  size6 pl-2 pt-2 pb-2">About Us</div></Link>
                 <Link to="/aboutus" onClick={resetPage}><div className="cursorPointer menuMobileItem  size6 pl-2  pt-2 pb-2">Contact</div></Link>
                 <div className="verticalAlign mt-5 mb-5">
-                  <button onClick={changeMenuMobile} className="buttonSearchMobile lightShadowCard letterSpacing2 font2 size2 grey7">Search articles<SearchIcon className="ml-2" /></button>
+                  <button onClick={changeMenuMobile} className="buttonSearchMobile cursorPointer lightShadowCard letterSpacing2 font2 size2 grey7">Search articles<SearchIcon className="ml-2" /></button>
                 </div>
               </div>
             }
@@ -286,8 +286,8 @@ export default function Header(props) {
                   />
                 </div>
                 <div className="flexBetween grey8 underlined mb-1">
-                  <div className="ml-1" onClick={changeMenuMobile}>Close the search</div>
-                  <div className="mr-1">See our catalog</div>
+                  <div className="ml-3" onClick={changeMenuMobile}>Close the search</div>
+                  <div className="mr-3">See our catalog</div>
                 </div>
               </div>
             }

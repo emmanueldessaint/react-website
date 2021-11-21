@@ -13,6 +13,12 @@ import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 import Request from '../components/Shared/Request'
 import ReactGA from 'react-ga'
+import PrivacyPolicy from './Others/PrivacyPolicy';
+import RefundPolicy from './Others/RefundPolicy';
+import Faq from './Others/Faq';
+import TermsOfService from './Others/TermsOfService';
+import ShippingPolicy from './Others/ShippingPolicy';
+import Contact from './Others/Contact';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {
     RecoilRoot,
@@ -73,6 +79,36 @@ function Index() {
                             <Switch>
                                 <Route path="/aboutus">
                                     <AboutUs />
+                                </Route>
+                            </Switch>
+                            <Switch>
+                                <Route path="/contact">
+                                    <Contact />
+                                </Route>
+                            </Switch>
+                            <Switch>
+                                <Route path="/refundpolicy">
+                                    <RefundPolicy />
+                                </Route>
+                            </Switch>
+                            <Switch>
+                                <Route path="/shippingpolicy">
+                                    <ShippingPolicy />
+                                </Route>
+                            </Switch>
+                            <Switch>
+                                <Route path="/faq">
+                                    <Faq />
+                                </Route>
+                            </Switch>
+                            <Switch>
+                                <Route path="/termsofservice">
+                                    <TermsOfService />
+                                </Route>
+                            </Switch>
+                            <Switch>
+                                <Route path="/privacypolicy">
+                                    <PrivacyPolicy />
                                 </Route>
                             </Switch>
                         </div>

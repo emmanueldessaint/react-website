@@ -34,7 +34,7 @@ export default function Checkout() {
    
     
       return (
-        <div className="mt-15">
+        <div className="pt-13">
           <Elements stripe={stripePromise}>
             <PaymentForm />
           
