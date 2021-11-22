@@ -145,7 +145,22 @@ export default function Products() {
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <div className="alignRight mr-4">
+                            <div className="divPc alignRight mr-4">
+                                <FormControl size="small" className="widthFormControl">
+                                    <InputLabel><span className="ml-4"></span>Filter by</InputLabel>
+                                    <Select
+                                        variant="outlined"
+                                        onChange={changeFilter}
+                                        fullWidth
+                                        className="testSelect"
+                                    >
+                                        <option className="optionSelect pl-1 pr-1 verticalItem" value={10}>Popularity</option>
+                                        <option className="optionSelect pl-1 pr-1 verticalItem" value={20}>Ascending price order</option>
+                                        <option className="optionSelect pl-1 pr-1 verticalItem" value={30}>Descending price order</option>
+                                    </Select>
+                                </FormControl>
+                            </div>
+                            <div className="divMobile mr-4">
                                 <FormControl size="small" className="widthFormControl">
                                     <InputLabel><span className="ml-4"></span>Filter by</InputLabel>
                                     <Select

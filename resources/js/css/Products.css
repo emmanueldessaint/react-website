@@ -110,6 +110,14 @@
     border-radius:5px;
     color:rgb(58, 58, 58);
 }
+.buttonAddToCartMobile{
+    cursor:pointer;
+    border:1px solid rgb(230, 230, 230);
+    width:100%;
+    font-weight: 200;
+    border-radius:5px;
+    color:rgb(58, 58, 58);
+}
 .boutonPagination{
     color:rgb(36, 36, 36)(0, 0, 0);
     /* background-color:rgb(243, 243, 243); */
@@ -273,10 +281,22 @@
     opacity:0.9;
 }
 .greyBarProductMobile{
-    width:100%;
+    position: relative;
+    right:15px;
+    width:106%;
     height:1px;
     background-color: rgb(218, 218, 218);
 }
+@media all and (max-width: 600px) {
+    .divPc{
+        display:none;
+    }
+  }
+@media all and (min-width: 601px) {
+    .divMobile{
+        display:none;
+    }
+  }
 
 
 
