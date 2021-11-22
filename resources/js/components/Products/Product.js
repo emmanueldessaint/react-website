@@ -133,7 +133,7 @@ export default function Product(props) {
     };
 
     useEffect(() => {
-        fetch("http://localhost:8000/api/reviews")
+        fetch(process.env.MIX_REACT_APP_API + "/api/reviews")
             .then(res => res.json())
             .then(
                 (result) => {

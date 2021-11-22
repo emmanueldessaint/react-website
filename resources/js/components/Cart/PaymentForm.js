@@ -99,7 +99,7 @@ export default function PaymentForm() {
     if (!error) {
       try {
         const { id } = paymentMethod
-        const response = await axios.post("http://localhost:8000/api/charge", {
+        const response = await axios.post(process.env.MIX_REACT_APP_API + "/api/charge", {
           amount: price * 100,
           id,
           paymentIntentId: paymentIntentId,
