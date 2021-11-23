@@ -153,6 +153,7 @@ export default function PaymentForm() {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  
                   variant="outlined"
                   fullWidth
                   label="Firstname"
@@ -165,6 +166,7 @@ export default function PaymentForm() {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  
                   variant="outlined"
                   fullWidth
                   label="Lastname"

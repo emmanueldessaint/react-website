@@ -121,7 +121,7 @@ export default function Cart() {
                 {localStorageLength > 1 && <span className="itemOrItems font5"> items</span>}
               </span>
             }
-            <Grid container className="pt-5 pb-10" >
+            <Grid container className="pt-5 pb-10" spacing={2}>
               <Grid item xs={12} md={8}>
                 {itemsInCart.map(product => (
                   <div
@@ -153,11 +153,14 @@ export default function Cart() {
                     </div>
                   </div>
                 ))}
+                <div>
+                  Hello
+                </div>
               </Grid>
+              
               {localStorageLength > 0 &&
-                <Grid container xs={12} md={4}>
-                  <Grid container item className="" xs={12}>
-                    <Grid item xs={12} >
+                <Grid container xs={12} md={4} item>
+                  
                       <div className="yourOrder bgWhite lightShadowCard2 font1 bold200  pl-1 pr-1 letterSpacing1">
                         <div className=" flexBetween">
                           <span className="ml-2 mt-2">Product</span>
@@ -199,9 +202,7 @@ export default function Cart() {
                         </Link>
                       </div>
 
-                    </Grid>
-
-                  </Grid>
+                    
                 </Grid>
               }
 
