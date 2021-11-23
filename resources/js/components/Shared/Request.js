@@ -15,9 +15,9 @@ export default function Request() {
     const [bestSellers, setBestSellers] = useRecoilState(itemsBestSellers);
     const [averageNotes, setAverageNotes] = useRecoilState(averageNoteArticles);
 
-
+    
     useEffect(() => {
-        fetch("http://localhost:8000/api/products")
+        fetch(process.env.MIX_REACT_APP_API + "/api/products")
             .then(res => res.json())
             .then(
                 (result) => {
