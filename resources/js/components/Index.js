@@ -67,9 +67,8 @@ function Index() {
                                 </Route>
                             </Switch>
                             <Switch>
-                                <Route path='/product/:name' >
-                                    <Product />
-                                </Route>
+                                <Route path='/product/:name' component={Product} />
+                                    
                             </Switch>
                             <Switch>
                                 <Route path="/checkout">
