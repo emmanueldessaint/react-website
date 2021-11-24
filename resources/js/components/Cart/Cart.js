@@ -71,6 +71,7 @@ export default function Cart() {
       id: `${product.id}`,
       name: `${product.name}`,
       price: `${product.price}`,
+      image: `${product.image}`,
       quantity: findPlus,
     }
     setPrice(price + parseInt(itemProperties.price));
@@ -87,6 +88,7 @@ export default function Cart() {
         id: `${product.id}`,
         name: `${product.name}`,
         price: `${product.price}`,
+        image: `${product.image}`,
         quantity: findPlus,
       }
       setPrice(price - parseInt(itemProperties.price));
@@ -129,7 +131,7 @@ export default function Cart() {
                     key={product.id}
                   >
 
-                    <img className="imgLineCart" src="https://picsum.photos/200/300" />
+                    <img className="imgLineCart" src={window.location.origin + `/images/${product.image}`} />
                     <div className="flexBetween bgWhite productDetailsCart">
                       <div className="quantityNameCart font10 letterSpacing2 size3 opacity9 ml-8">
                         <div>{product.name}</div>
@@ -137,7 +139,7 @@ export default function Cart() {
                       </div>
 
                       <div className="widthQuantityPrice">
-                        <div className="letterSpacing1 font5 bold600 grey8 mt-2">${product.price}.00</div>
+                        <div className="letterSpacing1 font5 bold600 grey8 mt-2">${product.price}</div>
                         <div className="quantityProductCart flex mb-2 mt-8">
                           <button className="buttonAddQuantityCart buttonModifyQuantity cursorPointer size1" onClick={() => addQuantityInCart(product)}>+</button>
                           <div className="centerText productQuantityCart bgWhite">{product.quantity}</div>
@@ -147,70 +149,64 @@ export default function Cart() {
                       </div>
                       <div>
                         <div className="productPriceQuantityInCart letterSpacing1 font5 bold600 grey8 size1 mr-8">
-                          ${product.price * product.quantity}.00
+                          ${product.price * product.quantity}
                         </div>
                       </div>
                     </div>
                   </div>
                 ))}
-                <div>
+                <Button variant="contained" className=" height30 width30 cursorPointer ">
                   Hello
-                </div>
+                </Button>
               </Grid>
-              
+
               {localStorageLength > 0 &&
                 <Grid container xs={12} md={4} item>
-                  
-                      <div className="yourOrder bgWhite lightShadowCard2 font1 bold200  pl-1 pr-1 letterSpacing1">
-                        <div className=" flexBetween">
-                          <span className="ml-2 mt-2">Product</span>
-                          <span className="mr-2 mt-2">Subtotal</span>
-                        </div>
-                        {itemsInCart.map(product => (
-                          <div
-                            className="productLineCart flexBetween mt-4 pl-2 pr-2"
-                            key={product.id}
-                          >
-                            <div>{product.name} x {product.quantity}</div>
-                            <div>${product.price * product.quantity}.00</div>
-                          </div>
-                        ))}
-                        <div className="flexBetween mt-4 pl-2 pr-2">
-                          <span>Total</span>
-                          <span className="greyLineCart"></span>
-                          <span>${price}.00</span>
-                        </div>
-                        <div className="flexBetween mt-4 pl-2 pr-2">
-                          <span>Shipping fees</span>
-                          <span className="alignRight">${shippingFeesVar}.00</span>
-                        </div>
-                        <div className="flexBetween pb-4 mt-4 pl-2 pr-2">
-                          <div className="totalPlusShipping">Total + Shipping fees</div>
-                          <div className="greyLineCart2"></div>
-                          <div className="alignRight">${price + shippingFeesVar}.00</div>
-                        </div>
+                  <div className="yourOrder bgWhite lightShadowCard2 font1 bold200  pl-1 pr-1 letterSpacing1">
+                    <div className=" flexBetween">
+                      <span className="ml-2 mt-2">Product</span>
+                      <span className="mr-2 mt-2">Subtotal</span>
+                    </div>
+                    {itemsInCart.map(product => (
+                      <div
+                        className="productLineCart flexBetween mt-4 pl-2 pr-2"
+                        key={product.id}
+                      >
+                        <div>{product.name} x {product.quantity}</div>
+                        <div>${product.price * product.quantity}</div>
                       </div>
-                      <div className="mt-5">
-                        <Link to="/checkout"  >
-                          <Button
-                            fullWidth
-                            variant="contained"
-                            margin="normal"
-                          >
-                            Go to checkout
-                          </Button>
-                        </Link>
-                      </div>
+                    ))}
+                    <div className="flexBetween mt-4 pl-2 pr-2">
+                      <span>Total</span>
+                      <span className="greyLineCart"></span>
+                      <span>${price}</span>
+                    </div>
+                    <div className="flexBetween mt-4 pl-2 pr-2">
+                      <span>Shipping fees</span>
+                      <span className="alignRight">${shippingFeesVar}</span>
+                    </div>
+                    <div className="flexBetween pb-4 mt-4 pl-2 pr-2">
+                      <div className="totalPlusShipping">Total + Shipping fees</div>
+                      <div className="greyLineCart2"></div>
+                      <div className="alignRight">${price + shippingFeesVar}</div>
+                    </div>
 
-                    
+                  </div>
+                  <div className="mt-5 width100">
+                    <Link to="/checkout"  >
+                      <Button
+                        fullWidth
+                        variant="contained"
+                        margin="normal"
+                      >
+                        Go to checkout
+                      </Button>
+                    </Link>
+                  </div>
                 </Grid>
               }
-
-
             </Grid>
           </Grid>
-
-
         </Grid>
       </Container>
 

@@ -219,7 +219,7 @@ export default function Header(props) {
                             {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).map(filteredName => (
                               <div key={filteredName.id}>
                                 <Link to={`/product/${filteredName.name}`} onClick={closeSearch} className="m-1 flex pt-1 pb-1 productHoverSearch">
-                                  <div className="imgProductSearch ml-1"></div>
+                                  <img className="imgProductSearch ml-1" src={window.location.origin + `/images/${filteredName.image}`}/>
                                   <div className="font10 grey6 letterSpacing2 size3 verticalItem pl-3">{filteredName.name}</div>
                                 </Link>
                               </div>
@@ -299,7 +299,7 @@ export default function Header(props) {
             {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).map(filteredName => (
               <div key={filteredName.id}>
                 <Link to={`/product/${filteredName.name}`} onClick={closeSearch} className="m-1 flex pt-1 pb-1 productHoverSearch">
-                  <div className="imgProductSearch ml-1"></div>
+                  <img className="imgProductSearch ml-1" src={window.location.origin + `/images/${filteredName.image}`}/>
                   <div className="font10 grey6 letterSpacing2 size3 verticalItem pl-3">{filteredName.name}</div>
                 </Link>
               </div>

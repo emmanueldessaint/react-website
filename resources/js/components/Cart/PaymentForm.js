@@ -276,7 +276,7 @@ export default function PaymentForm() {
                     key={product.id}
                   >
                     <div>{product.name} x {product.quantity}</div>
-                    <div>${product.price * product.quantity}.00</div>
+                    <div>${product.price * product.quantity}</div>
                   </div>
                 ))}
 
@@ -294,7 +294,7 @@ export default function PaymentForm() {
                   margin="normal"
                   onClick={handlePaymentSubmit}
                 >
-                  {isProcessing ? "Processing..." : `Pay $${price + shippingFeesVar}.00`}
+                  {isProcessing ? "Processing..." : `Pay $${price + shippingFeesVar}`}
 
                 </Button>
               </div>

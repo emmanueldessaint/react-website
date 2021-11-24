@@ -125,8 +125,8 @@ export default function Product(props) {
     const [avgNote, setAvgNote] = useState('');
     const [bestSellers, setBestSellers] = useRecoilState(itemsBestSellers);
     const [changePage, setChangePage] = useRecoilState(changingPage);
-
     const [expanded, setExpanded] = React.useState(false);
+    const [defaultImage, setDefaultImage] = useState('');
 
     const handleChangeAccordion = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
@@ -167,6 +167,7 @@ export default function Product(props) {
             id: `${product.id}`,
             name: `${product.name}`,
             price: `${product.price}`,
+            image: `${product.image}`,
             quantity: 0
         }
         if (localStorage.getItem(`${product.name}`) === null) {
@@ -192,9 +193,11 @@ export default function Product(props) {
             let decodeUrl = decodeURI(urlProduct[2]);
             let product = allItems.find(element => element.name === decodeUrl)
             setProduct(product);
+            console.log(product);
+            setDefaultImage(product.images[0].url);
             setIsLoaded(true);
             setChangePage(false);
-            scroll(0, 0)
+            scroll(0, 0);
         }
     }, [changePage])
 
@@ -212,6 +215,10 @@ export default function Product(props) {
 
     const changeProduct = () => {
         setChangePage(true);
+    }
+
+    const changeImage = (image) => {
+        setDefaultImage(image);
     }
 
     const bestSellersCarousel = {
@@ -242,30 +249,27 @@ export default function Product(props) {
                 <Grid container justifyContent="center" spacing={6}>
                     <Grid container item xs={12} sm={11} md={7} className="flex">
                         <Grid item xs={12} sm={3} md={3} className="productComputer">
-                            <Grid item xs={12} ><img className="cursorPointer switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
-                            <Grid item xs={12}><img className="switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
-                            <Grid item xs={12}><img className="switchImg m-1" src="https://picsum.photos/200/300"></img></Grid>
+                            {product.images.map(image => (
+                                <div key={image.id}>
+                                    <Grid item xs={12} onClick={() => changeImage(image.url)} ><img className="cursorPointer switchImg m-1"  src={window.location.origin + `/images/${image.url}`}></img></Grid>
+                                </div>
+                            ))}
                         </Grid>
-                        <Grid item xs={12} sm={9} md={9}><img className="imageOneProduct" src="https://picsum.photos/200/300" /></Grid>
+                        <Grid item xs={12} sm={9} md={9}><img className="imageOneProduct" src={window.location.origin + `/images/${defaultImage}`} /></Grid>
                         <div className="flex">
-                            <div><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></div>
-                            <div><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></div>
-                            <div><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></div>
+                            {product.images.map(image => (
+                                <div key={image.id}>
+                                    <div onClick={() => changeImage(image.url)}><img className="switchImgMobile productMobile" src={window.location.origin + `/images/${image.url}`}></img></div>
+                                </div>
+                            ))}                           
                         </div>
-                        {/* <Grid container justifyContent="center">
-                            <Grid item xs={12} container className="productMobile" spacing={1}>
-                                <Grid item xs={4}><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></Grid>
-                                <Grid item xs={4}><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></Grid>
-                                <Grid item xs={4}><img className="switchImgMobile productMobile" src="https://picsum.photos/200/300"></img></Grid>
-                            </Grid>
-                        </Grid> */}
                     </Grid>
                     {/* <img src={window.location.origin + `/images/${product.image}`}></img> */}
                     <Grid item xs={12} sm={10} md={5}>
                         <div className="font10 size3 grey8 letterSpacing2">{product.name}</div>
 
                         <div className="flexBetween mt-9">
-                            <span className="priceProduct font2 letterSpacing2">{product.price},00 €</span>
+                            <span className="priceProduct font2 letterSpacing2">${product.price}</span>
                             <span>
                                 <Rating
                                     size="small"
@@ -420,7 +424,7 @@ export default function Product(props) {
                                                 <Grid item sm={10} xs={12}>
                                                     <div className="mb-2">
                                                         <span className="mr-2"><AccountCircleIcon /></span>
-                                                        <span className="font5 bold600 grey8">{review.title}</span><br/>
+                                                        <span className="font5 bold600 grey8">{review.title}</span><br />
                                                         <span className="ml-3 bold500 size08 font07 grey6">{review.created_at}</span>
                                                     </div>
                                                     <div>
