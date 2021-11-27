@@ -253,7 +253,7 @@
     }
   }
 .switchImgMobile{
-    border: 1px solid grey;
+    border: 1px solid rgb(199, 199, 199);
     border-radius:3px;
     height:60px;
     width:60px;
@@ -287,6 +287,18 @@
     height:1px;
     background-color: rgb(218, 218, 218);
 }
+.imgAppearTransition{
+    /* transition-delay: 250ms; */
+    animation: 1s fadeIn;
+}
+@keyframes fadeIn {
+    50% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
 @media all and (max-width: 600px) {
     .divPc{
         display:none;
@@ -297,6 +309,7 @@
         display:none;
     }
   }
+  
 
 
 

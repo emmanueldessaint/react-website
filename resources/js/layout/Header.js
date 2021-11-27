@@ -170,13 +170,13 @@ export default function Header(props) {
                     <Grid container  >
                       <Grid item xs={3} className={classes.alignTitle} >
                         <Link to="/" onClick={resetPage} className="item" className={classes.routerDecoration}>
-                          <h2 className="titleHeader grey9 font8 size3">Paris<span className="ml-1"></span>Fabrics</h2>
+                          <h2  className="titleHeader grey9 font8 size3">Paris<span className="ml-1"></span>Fabrics</h2>
                         </Link>
                         {/* <img src={logoParis} alt="parisFabricsLogo" className="logoParis height70" /> */}
                       </Grid>
                       <Grid xs={6} spacing={2} item container justifyContent="center" className="menuHeader">
                         <Grid item xs={3} >
-                          <Link to="/"  >
+                          <Link id="demotext" to="/"  >
                             <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu  font9" onClick={resetPage}>Home</span>
                           </Link>
                         </Grid>

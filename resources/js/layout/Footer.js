@@ -139,11 +139,11 @@ export default function Footer() {
                                 <Grid className="flexCenter" item md={4} sm={6} xs={12}>
                                     <div className="widthItemsFooter font2">
                                         <h3 >About us</h3>
-                                        <Link to="/shippingpolicy" onClick={resetPage}><div >Shipping policy</div></Link>
-                                        <Link to="/refundpolicy" onClick={resetPage}><div >Refund policy</div></Link>
-                                        <Link to="/faq" onClick={resetPage}><div >FAQ's</div></Link>
-                                        <Link to="/termsofservice" onClick={resetPage}><div >Terms of service</div></Link>
-                                        <Link to="/privacypolicy" onClick={resetPage}><div >Privacy policy</div></Link>
+                                        <Link to="/shippingpolicy" onClick={resetPage}><div className="hoverUnderlined" >Shipping policy</div></Link>
+                                        <Link to="/refundpolicy" onClick={resetPage}><div className="hoverUnderlined" >Refund policy</div></Link>
+                                        <Link to="/faq" onClick={resetPage}><div className="hoverUnderlined" >FAQ's</div></Link>
+                                        <Link to="/termsofservice" onClick={resetPage}><div className="hoverUnderlined" >Terms of service</div></Link>
+                                        <Link to="/privacypolicy" onClick={resetPage}><div className="hoverUnderlined" >Privacy policy</div></Link>
                                     </div>
                                 </Grid>
 

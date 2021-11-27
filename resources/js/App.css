@@ -92,6 +92,9 @@ html {
     -moz-box-shadow: 0 0 2px 1px rgb(239, 239, 239);
     box-shadow: 0 0 2px 1px rgb(239, 239, 239);   
 }
+.shadowProduct1{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
 .underlined{
     text-decoration: underline;
 }
@@ -151,6 +154,7 @@ html {
     margin:6%;
     border-radius:4px; 
     transition: all .2s ease-in-out;
+    background-color: white;
 }
 .cardProduct:hover{
     margin:6%;
@@ -215,8 +219,29 @@ html {
  .height20{
      height:20px;
  }
+ .height27{
+     height:27px;
+ }
+ .height28{
+     height:28px;
+ }
+ .height29{
+     height:29px;
+ }
  .height30{
      height:30px;
+ }
+ .height31{
+     height:31px;
+ }
+ .height32{
+     height:32px;
+ }
+ .height33{
+     height:33px;
+ }
+ .height34{
+     height:34px;
  }
  .height40{
      height:40px;
@@ -262,6 +287,9 @@ html {
  }
  .letterSpacing5{
      letter-spacing: 5px;
+ }
+ .textShadow1{
+    text-shadow: 2px 4px 5px rgb(212, 212, 212);
  }
  .bold100{
      font-weight:100;

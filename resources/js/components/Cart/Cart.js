@@ -47,8 +47,10 @@ export default function Cart() {
   const [price, setPrice] = useState(0);
 
   var localLength = localStorage.length
-
+  scroll(0, 0);
+  
   useEffect(() => {
+    
     var myPrice = 0;
     var array = [];
     for (var i = 0; i < localStorage.length; i++) {
@@ -125,39 +127,87 @@ export default function Cart() {
             }
             <Grid container className="pt-5 pb-10" spacing={2}>
               <Grid item xs={12} md={8}>
-                {itemsInCart.map(product => (
-                  <div
-                    className="productLineCart lightShadowCard2 bgBlue mb-5"
-                    key={product.id}
-                  >
+                <div className="divPc">
+                  {itemsInCart.map(product => (
+                    <div
+                      className="productLineCart lightShadowCard2 bgBlue mb-5"
+                      key={product.id}
+                    >
 
-                    <img className="imgLineCart" src={window.location.origin + `/images/${product.image}`} />
-                    <div className="flexBetween bgWhite productDetailsCart">
-                      <div className="quantityNameCart font10 letterSpacing2 size3 opacity9 ml-8">
-                        <div>{product.name}</div>
-                        <button className=" cursorPointer bgWhite" onClick={() => removeProduct(product)}><ClearIcon className="fontTrash" /></button>
-                      </div>
-
-                      <div className="widthQuantityPrice">
-                        <div className="letterSpacing1 font5 bold600 grey8 mt-2">${product.price}</div>
-                        <div className="quantityProductCart flex mb-2 mt-8">
-                          <button className="buttonAddQuantityCart buttonModifyQuantity cursorPointer size1" onClick={() => addQuantityInCart(product)}>+</button>
-                          <div className="centerText productQuantityCart bgWhite">{product.quantity}</div>
-                          {product.quantity > 1 && <button className="buttonSubstractQuantityCart buttonModifyQuantity size1" onClick={() => substractQuantityInCart(product)}>-</button>}
-                          {product.quantity === 1 && <button className="buttonModifyQuantity buttonSubstractQuantityCart size1">-</button>}
+                      <Link to={`/product/${product.name} `} ><img className="imgLineCart" src={window.location.origin + `/images/${product.image}`} /></Link>
+                      <div className="flexBetween bgWhite productDetailsCart">
+                        <div className="quantityNameCart font10 letterSpacing2 size3 opacity9 ml-8">
+                          <Link to={`/product/${product.name} `} >{product.name}</Link>
+                          <button className=" cursorPointer bgWhite" onClick={() => removeProduct(product)}><ClearIcon className="fontTrash" /></button>
                         </div>
-                      </div>
-                      <div>
-                        <div className="productPriceQuantityInCart letterSpacing1 font5 bold600 grey8 size1 mr-8">
-                          ${product.price * product.quantity}
+
+                        <div className="widthQuantityPrice">
+                          <div className="letterSpacing1 font5 bold600 grey8 mt-2">${product.price}</div>
+                          <div className="quantityProductCart flex mb-2 mt-8">
+                            <button className="buttonAddQuantityCart buttonModifyQuantity cursorPointer size1" onClick={() => addQuantityInCart(product)}>+</button>
+                            <div className="centerText productQuantityCart bgWhite">{product.quantity}</div>
+                            {product.quantity > 1 && <button className="buttonSubstractQuantityCart buttonModifyQuantity size1" onClick={() => substractQuantityInCart(product)}>-</button>}
+                            {product.quantity === 1 && <button className="buttonModifyQuantity buttonSubstractQuantityCart size1">-</button>}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="productPriceQuantityInCart letterSpacing1 font5 bold600 grey8 size1 mr-8">
+                            ${product.price * product.quantity}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-                <Button variant="contained" className=" height30 width30 cursorPointer ">
-                  Hello
-                </Button>
+                  ))}
+                </div>
+                <div className="divMobile">
+                  {itemsInCart.map(product => (
+                    <div
+                      className="productLineCart lightShadowCard2 bgBlue mb-5"
+                      key={product.id}
+                    >
+                      <div>
+                        <div className="flex productMobile productMobileCatalog mb-3 mt-3">
+                          <img className="imageProductMobile cursorPointer" src={window.location.origin + `/images/${product.image}`} />
+                          <div className="pl-2 width100">
+                            <div className="mt-1 font10 letterSpacing2 grey7 cursorPointer">{product.name}</div>
+                            
+                            <div className="flexBetween ">
+                              <div className="mt-4 cursorPointer">${product.price}</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="greyBarProductMobile"></div>
+                      {/* <Link to={`/product/${product.name} `} ><img className="imgCartMobile" src={window.location.origin + `/images/${product.image}`} /></Link>
+                      <div className=" bgWhite productDetailsCart">
+                        <div className="quantityNameCart font10 letterSpacing2 size3 opacity9 ml-8">
+                          <Link to={`/product/${product.name} `} >{product.name}</Link>
+                          <button className=" cursorPointer bgWhite" onClick={() => removeProduct(product)}><ClearIcon className="fontTrash" /></button>
+                        </div>
+
+                        <div className="widthQuantityPrice">
+                          <div className="letterSpacing1 font5 bold600 grey8 mt-2">${product.price}</div>
+                          <div className="quantityProductCart flex mb-2 mt-8">
+                            <button className="buttonAddQuantityCart buttonModifyQuantity cursorPointer size1" onClick={() => addQuantityInCart(product)}>+</button>
+                            <div className="centerText productQuantityCart bgWhite">{product.quantity}</div>
+                            {product.quantity > 1 && <button className="buttonSubstractQuantityCart buttonModifyQuantity size1" onClick={() => substractQuantityInCart(product)}>-</button>}
+                            {product.quantity === 1 && <button className="buttonModifyQuantity buttonSubstractQuantityCart size1">-</button>}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="productPriceQuantityInCart letterSpacing1 font5 bold600 grey8 size1 mr-8">
+                            ${product.price * product.quantity}
+                          </div>
+                        </div>
+                      </div> */}
+                    </div>
+                  ))}
+                </div>
+                {localStorageLength > 0 &&
+                  <Button variant="contained" className=" height30 width30 cursorPointer ">
+                    Hello
+                  </Button>
+                }
               </Grid>
 
               {localStorageLength > 0 &&

@@ -5,8 +5,10 @@ import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
-import { styled } from '@material-ui/core/styles';
+import { makeStyles, styled } from '@material-ui/styles';
+import { createTheme, withStyles, ThemeProvider } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import { green, purple } from '@material-ui/core/colors';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
@@ -48,7 +50,10 @@ const useStyles = makeStyles(theme => ({
     },
     menuDescriptionProduct: {
         marginTop: "100px",
-    }
+    },
+    margin: {
+        margin: 10,
+    },
 
 }));
 
@@ -95,20 +100,21 @@ function a11yProps(index) {
     };
 }
 
-// const useStyles = makeStyles((theme) => ({
-//     root: {
-//         width: '100%',
-//     },
-//     heading: {
-//         fontSize: theme.typography.pxToRem(15),
-//         flexBasis: '33.33%',
-//         flexShrink: 0,
-//     },
-//     secondaryHeading: {
-//         fontSize: theme.typography.pxToRem(15),
-//         color: theme.palette.text.secondary,
-//     },
-// }));
+
+
+const ColorButton = withStyles((theme) => ({
+    root: {
+        color: '#020202',
+        backgroundColor: '#B7C1DA',
+        borderRadius: 0,
+        opacity: 0.9,
+        '&:hover': {
+            backgroundColor: '#ADB4D0',
+        },
+    },
+}))(Button);
+
+
 
 export default function Product(props) {
 
@@ -251,25 +257,25 @@ export default function Product(props) {
                         <Grid item xs={12} sm={3} md={3} className="productComputer">
                             {product.images.map(image => (
                                 <div key={image.id}>
-                                    <Grid item xs={12} onClick={() => changeImage(image.url)} ><img className="cursorPointer switchImg m-1"  src={window.location.origin + `/images/${image.url}`}></img></Grid>
+                                    <Grid item xs={12} onClick={() => changeImage(image.url)} ><img className="cursorPointer switchImg m-1" src={window.location.origin + `/images/${image.url}`}></img></Grid>
                                 </div>
                             ))}
                         </Grid>
-                        <Grid item xs={12} sm={9} md={9}><img className="imageOneProduct" src={window.location.origin + `/images/${defaultImage}`} /></Grid>
+                        <Grid item xs={12} sm={9} md={9}><img className="imageOneProduct shadowProduct1 imgAppearTransition" src={window.location.origin + `/images/${defaultImage}`} /></Grid>
                         <div className="flex">
                             {product.images.map(image => (
                                 <div key={image.id}>
-                                    <div onClick={() => changeImage(image.url)}><img className="switchImgMobile productMobile" src={window.location.origin + `/images/${image.url}`}></img></div>
+                                    <div onClick={() => changeImage(image.url)}><img className="switchImgMobile productMobile cursorPointer" src={window.location.origin + `/images/${image.url}`}></img></div>
                                 </div>
-                            ))}                           
+                            ))}
                         </div>
                     </Grid>
                     {/* <img src={window.location.origin + `/images/${product.image}`}></img> */}
                     <Grid item xs={12} sm={10} md={5}>
-                        <div className="font10 size3 grey8 letterSpacing2">{product.name}</div>
+                        <div className="font10 size3 grey8 letterSpacing2 textShadow1">{product.name}</div>
 
                         <div className="flexBetween mt-9">
-                            <span className="priceProduct font2 letterSpacing2">${product.price}</span>
+                            <span className="priceProduct font2 letterSpacing2 ">${product.price}</span>
                             <span>
                                 <Rating
                                     size="small"
@@ -285,21 +291,33 @@ export default function Product(props) {
                         <div className="flexBetween mt-9">
                             <Grid container justifyContent="center" >
                                 <Grid item xs={11} sm={6}>
-                                    <span className=" addSubstractCart">
-                                        <button disabled className=" quantityProduct size2 height30">{quantityProduct}</button>
-                                        <button onClick={addQuantity} className="colorButton1  size2 buttonAdd height30">+</button>
-                                        <button onClick={substractQuantity} className="colorButton1  size2 buttonSubstract height30">-</button>
-                                    </span>
+                                    <div className=" addSubstractCart flex">
+
+                                        <div  className="verticalAlign quantityProduct size2 height27 lightShadowCard2">{quantityProduct}</div>
+                                        <ColorButton style={{ minWidth: '50px', minHeight: '25px', maxHeight: '25px'}}  variant="contained" color="primary" onClick={addQuantity}>
+                                            +
+                                        </ColorButton>
+
+                                        {quantityProduct > 1
+                                            ? <ColorButton style={{ minWidth: '50px', minHeight: '25px', maxHeight: '25px', borderTopRightRadius: '3px', borderBottomRightRadius: '3px', }} size="small" variant="contained" color="primary" onClick={substractQuantity}>
+                                                -
+                                            </ColorButton>
+                                            : <ColorButton style={{ minWidth: '50px', minHeight: '25px', maxHeight: '25px', borderTopRightRadius: '3px', borderBottomRightRadius: '3px',}} size="small" variant="contained" color="primary" >
+                                                -
+                                            </ColorButton>
+                                        }
+
+                                    </div>
                                 </Grid>
                                 <Grid item xs={11} sm={6}>
                                     <div className="divPc alignRight">
-                                        <Link to="/cart">
-                                            <button onClick={addToLocalStorage} className="colorButton1  bold300 letterSpacing2 font2 buttonAddToCart height30"> Add to cart</button>
-                                        </Link>
+                                        
+                                            <ColorButton onClick={addToLocalStorage} variant="contained" style={{ minWidth: '180px', minHeight: '25px', maxHeight: '25px', fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em' }}> Add to cart</ColorButton>
+                                        
                                     </div>
                                     <div className="divMobile">
                                         <Link to="/cart">
-                                            <button onClick={addToLocalStorage} className="mt-5 colorButton1  bold300 letterSpacing2 font2 buttonAddToCartMobile height30"> Add to cart</button>
+                                            <ColorButton onClick={addToLocalStorage} variant="contained" fullWidth style={{ minHeight: '25px', maxHeight: '25px', fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em', marginTop: '20px' }}> Add to cart</ColorButton>
                                         </Link>
                                     </div>
                                 </Grid>
@@ -340,6 +358,13 @@ export default function Product(props) {
                     </TabPanel>
                     <TabPanel value={value} index={2}>
                         {/* <Button onClick={handleConsole}>click me</Button> */}
+                        <Grid container className="flexBetween">
+                            <Grid item sm={10} xs={12}>
+
+                            </Grid>
+                        </Grid>
+
+
                         {product.reviews.map(review => (
                             <div key={review.id} className="lightShadowCard2 p-3 mb-5">
                                 <Grid container className="flexBetween">
@@ -357,6 +382,7 @@ export default function Product(props) {
                                     <Grid item sm={2} xs={12}>
                                         <div className="starsProductReview marginTop600px opacity8">
                                             <Rating
+                                                size="small"
                                                 precision={0.5}
                                                 readOnly
                                                 name="simple-controlled"
@@ -435,6 +461,7 @@ export default function Product(props) {
                                                 <Grid item sm={2} xs={12}>
                                                     <div className="starsProductReview marginTop600px opacity8">
                                                         <Rating
+                                                            size="small"
                                                             precision={0.5}
                                                             readOnly
                                                             name="simple-controlled"
@@ -528,7 +555,7 @@ export default function Product(props) {
                                     {bestSellers.map(item => (
                                         <div className="cardProduct lightShadowCard2" key={item.id}>
                                             <Link to={`/product/${item.name} `} onClick={changeProduct}>
-                                                <img className="imageProduct" src="https://picsum.photos/200/300" />
+                                                <img className="imageProduct" src={window.location.origin + `/images/${item.image}`} />
                                                 <div className="hideProduct">
                                                     <div className="elementAppear font5 letterSpacing1">
                                                         DISCOVER

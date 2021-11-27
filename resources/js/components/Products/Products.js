@@ -18,13 +18,14 @@ import StarBorderIcon from "@material-ui/icons/StarBorder";
 import Select from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
-import { itemsProduct } from '../Shared/globalState'
+import { itemsProduct, numberOfItemsInCart } from '../Shared/globalState'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 export default function Products() {
 
 
     const [error, setError] = useState(null);
+    const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
     const [numberOfPages, setNumberOfPages] = useRecoilState(numberOfPageProducts);
@@ -50,6 +51,25 @@ export default function Products() {
             setIsLoaded(true);
         }
     }, [allItems, actuelPage])
+
+    const addToCart = (item) => {
+        let itemProperties = {
+            id: `${item.id}`,
+            name: `${item.name}`,
+            price: `${item.price}`,
+            image: `${item.image}`,
+            quantity: 1
+        }
+        if (localStorage.getItem(`${item.name}`) === null) {
+            itemProperties.quantity = 1;
+        } else {
+            let itemAlreadyInCart = JSON.parse(localStorage.getItem(`${item.name}`));
+            itemProperties.quantity = 1 + itemAlreadyInCart.quantity;
+        }
+        localStorage.setItem(`${item.name}`, JSON.stringify(itemProperties));
+        setNumberInCart(numberInCart + 1);
+
+    }
 
     const handleChangePage = (item) => {
         let arrayWithItemsOnPage = [];
@@ -122,20 +142,12 @@ export default function Products() {
             <Container className="pt-13">
                 <Grid container justifyContent="center" className="mt-8">
                     <Grid container item xs={12} sm={12} md={11} lg={11}>
-                        {/* <Grid item xs={12}>
-                            <div className="flex">
-                                <button className="buttonCategory p-2 pl-4 pr-4 mb-8 ml-4 font5 bold500">Category 1</button>
-                                <button className="buttonCategory p-2 pl-4 pr-4 mb-8 ml-4 font5 bold500">Category 2</button>
-                                <button className="buttonCategory p-2 pl-4 pr-4 mb-8 ml-4 font5 bold500">Category 3</button>
-                            </div>
-                        </Grid> */}
                         <Grid item xs={12} sm={6}>
                             <div className="flex ml-5 mb-5 ">
                                 {numberOfPages.map(item => (
                                     <div
                                         key={item}
                                     >
-
                                         {item === actuelPage
                                             ? <button className="boutonPaginationSelected  generalBackground" onClick={() => handleChangePage(item)}>{item}</button>
                                             : <button className="boutonPagination generalBackground" onClick={() => handleChangePage(item)}>{item}</button>
@@ -225,38 +237,35 @@ export default function Products() {
                                 item xs={12}
                                 key={item.id}
                             >
-                                <Link to={`/product/${item.name} `} >
+                                <div>
                                     <div className="flex productMobile productMobileCatalog mb-3 mt-3">
-
-                                        <img className="imageProductMobile" src="https://picsum.photos/200/300" />
-
+                                        <img className="imageProductMobile cursorPointer" src={window.location.origin + `/images/${item.image}`} />
                                         <div className="pl-2 width100">
-                                            <div className="mt-1 font10 letterSpacing2 grey7">{item.name}</div>
-                                            {item.reviews.length > 0 &&
-                                                <div className="flex productDetails mt-1 opacity6">
-                                                    <Rating
-                                                        precision={0.5}
-                                                        readOnly
-                                                        size="small"
-                                                        name="simple-controlled"
-                                                        value={item.avg}
-                                                        emptyIcon={
-                                                            <StarBorderIcon fontSize="inherit" className="emptyStar" />
-                                                        }
-                                                    />
-                                                    <div className="ml-1">({item.reviews.length})<span className="ml-1"></span></div>
-                                                </div>
-                                            }
-
+                                            <div className="mt-1 font10 letterSpacing2 grey7 cursorPointer">{item.name}</div>
+                                            <Link to={`/product/${item.name} `} >
+                                                {item.reviews.length > 0 &&
+                                                    <div className="flex productDetails mt-1 opacity6 cursorPointer">
+                                                        <Rating
+                                                            precision={0.5}
+                                                            readOnly
+                                                            size="small"
+                                                            name="simple-controlled"
+                                                            value={item.avg}
+                                                            emptyIcon={
+                                                                <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                            }
+                                                        />
+                                                        <div className="ml-1">({item.reviews.length})<span className="ml-1"></span></div>
+                                                    </div>
+                                                }
+                                            </Link>
                                             <div className="flexBetween ">
-                                                <div className="mt-4">${item.price}</div>
-                                                <div className="flexEnd opacity8"><AddShoppingCartIcon /></div>
-
+                                                <div className="mt-4 cursorPointer">${item.price}</div>
+                                                <div className="flexEnd opacity8 cursorPointer" onClick={() => addToCart(item)}><AddShoppingCartIcon /></div>
                                             </div>
-
                                         </div>
                                     </div>
-                                </Link>
+                                </div>
                                 <div className="greyBarProductMobile"></div>
                             </Grid>
                         ))}
