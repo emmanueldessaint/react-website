@@ -26,4 +26,5 @@
         </div>
     </body>
     <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=Adde6XQocy9o35kXj-ERgxZuUr9E_nVf7YGdmNV6A9e0vE5Ki6_qoUf695e6dCVWUIFZ-A42c0rH8i2G"></script>
 </html>

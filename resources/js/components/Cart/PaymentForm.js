@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import * as React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -37,7 +38,6 @@ export default function PaymentForm() {
   const stripe = useStripe();
   const elements = useElements();
 
-
   var localLength = localStorage.length
 
   useEffect(() => {
@@ -55,6 +55,7 @@ export default function PaymentForm() {
     setIsLoaded(true);
   }, [localLength])
 
+  // Stripe payment code 
   const handleServerResponse = (response) => {
     if (response.data.error) {
       // gérer l'erreur
@@ -64,7 +65,7 @@ export default function PaymentForm() {
       // Use Stripe.js to handle required card action
       stripe.handleCardAction(
         response.data.payment_intent_client_secret
-      ).then(function (result) {
+      ).then((result) => {
         if (result.error) {
           // gérer l'erreur
         } else {
@@ -138,8 +139,44 @@ export default function PaymentForm() {
       }
     },
     hidePostalCode: true,
-  };
+  }
 
+
+  // Paypal payment code 
+  const createOrder = async (data, actions) => {
+        return await axios.post(process.env.MIX_REACT_APP_API + "/api/createOrder", {
+            amount: price * 100,
+            firstName: firstName,
+            lastName: lastName,
+            city: city,
+            zipCode: zipCode,
+            email: email,
+            address: address,
+            additionalInformation: additionalInformation,
+            country: country,
+            phoneNumber: phoneNumber,
+            cart: itemsInCart,
+        })
+        .then((res) => {
+            return res
+        })
+        .then((data) => {
+            return data.data.result.id
+        })
+    //.catch(console.log(response))
+  }
+
+  const onApprove = async (data, actions) => {
+    return await axios.post(process.env.MIX_REACT_APP_API + "/api/captureOrder", {
+        orderID: data.orderID
+    })
+    .then((res) => {
+        return res
+    })
+    .then((details) => {
+        // gérer le succés, renvoyé sur page réussie
+    })
+  }
 
   return (
     <div>
@@ -297,10 +334,16 @@ export default function PaymentForm() {
                 </Button>
               </div>
 
+              <PayPalScriptProvider>
+                <PayPalButtons
+                    style={{ layout: "horizontal" }}
+                    createOrder={(data, actions) => createOrder(data, actions)}
+                    onApprove={(data, actions) => onApprove(data, actions)} 
+                />
+              </PayPalScriptProvider>
+
             </Grid>
-
           </Grid>
-
         </Grid>
       </Grid>
 

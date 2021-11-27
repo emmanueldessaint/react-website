@@ -22,6 +22,7 @@ class ProductReviews extends Migration
             $table->integer('note');
             $table->string('title');
             $table->text('description')->nullable();
+            $table->date('date');
             $table->timestamps();
         });
     }

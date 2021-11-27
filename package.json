@@ -34,6 +34,7 @@
         "@material-ui/icons": "^4.11.2",
         "@mui/material": "^5.0.3",
         "@mui/styled-engine-sc": "^5.0.3",
+        "@paypal/react-paypal-js": "^7.4.2",
         "@stripe/react-stripe-js": "^1.6.0",
         "@stripe/stripe-js": "^1.20.3",
         "hamburger-react": "^2.4.1",

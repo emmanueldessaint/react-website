@@ -100,7 +100,7 @@ class StripePaymentController extends Controller
                     'payer_firstname' => $request->get('firstName'),
                     'payer_lastname' => $request->get('lastName'),
                     'payer_email' => $request->get('email'),
-                    'payer_tel' => $request->get('tel'),
+                    'payer_tel' => $request->get('phoneNumber'),
                     'payment_method' => 'Stripe',
                     'status' => 'Processed',
                     'total' => $totalAmount,
@@ -108,7 +108,7 @@ class StripePaymentController extends Controller
                     'shipping_address' => $request->get('address'),
                     'shipping_city' => $request->get('city'),
                     'shipping_zipcode' => $request->get('zipCode'),
-                    'shipping_additional_info' => $request->get('additionalInfo'),
+                    'shipping_additional_info' => $request->get('additionalInformation'),
                 ]);
                 $order->save();
 
