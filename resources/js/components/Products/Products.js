@@ -187,7 +187,7 @@ export default function Products() {
                             >
                                 <div className="cardProduct lightShadowCard2 productComputer">
                                     <Link to={`/product/${item.name} `} >
-                                        <img className="imageProduct" src="https://picsum.photos/200/300" />
+                                        <img className="imageProduct" src={window.location.origin + `/images/${item.image}`} />
                                         <div className="hideProduct">
                                             <div className="elementAppear">
                                                 DISCOVER
@@ -195,7 +195,7 @@ export default function Products() {
                                         </div>
                                         <div className="nameProduct font10 letterSpacing2 size3 grey8 flexCenter">{item.name}</div>
                                         <div className="flexBetween font2">
-                                            <div className="priceProduct grey8 letterSpacing2 mt-4 ml-3 pb-1">${item.price}.00</div>
+                                            <div className="priceProduct grey8 letterSpacing2 mt-4 ml-3 pb-1">${item.price}</div>
                                             {item.reviews.length > 0 &&
                                                 <div className="flex productDetails mt-4 mr-3 pb-1 opacity8">
                                                     <div className="">({item.reviews.length})<span className="ml-1"></span></div>
@@ -249,7 +249,7 @@ export default function Products() {
                                             }
 
                                             <div className="flexBetween ">
-                                                <div className="mt-4">${item.price}.00</div>
+                                                <div className="mt-4">${item.price}</div>
                                                 <div className="flexEnd opacity8"><AddShoppingCartIcon /></div>
 
                                             </div>

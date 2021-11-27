@@ -165,7 +165,7 @@ export default function Home() {
                             {bestSellers.map(item => (
                                 <div className="cardProduct lightShadowCard2" key={item.id}>
                                     <Link to={`/product/${item.name} `} >
-                                        <img className="imageProduct" src="https://picsum.photos/200/300" />
+                                        <img className="imageProduct" src={window.location.origin + `/images/${item.image}`} />
                                         <div className="hideProduct">
                                             <div className="elementAppear font5 letterSpacing1">
                                                 DISCOVER
@@ -184,7 +184,7 @@ export default function Home() {
                                                 }
                                             />
                                         </div>
-                                        <div className="priceProduct font2 grey8 letterSpacing2 mt-2 ml-3 pb-1 opacity9">${item.price}.00</div>
+                                        <div className="priceProduct font2 grey8 letterSpacing2 mt-2 ml-3 pb-1 opacity9">${item.price}</div>
                                     </Link>
                                 </div>
                             ))}
