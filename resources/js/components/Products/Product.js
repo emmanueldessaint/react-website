@@ -176,13 +176,30 @@ export default function Product(props) {
             image: `${product.image}`,
             quantity: 0
         }
-        if (localStorage.getItem(`${product.name}`) === null) {
+
+        var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"));
+
+        var itemExistInCart = false;
+        if(ourCart === null) {
             itemProperties.quantity = quantityProduct;
-        } else {
-            let itemAlreadyInCart = JSON.parse(localStorage.getItem(`${product.name}`));
-            itemProperties.quantity = quantityProduct + itemAlreadyInCart.quantity;
+            localStorage.setItem('cart_Paris_Fabrics', JSON.stringify([itemProperties]));
+            return;
         }
-        localStorage.setItem(`${product.name}`, JSON.stringify(itemProperties));
+        for (var i = 0; i < ourCart.length; i++) {
+            if (ourCart[i].name === product.name) {
+                let quantityInCart = ourCart[i].quantity;
+                itemProperties.quantity = quantityInCart + quantityProduct;
+                ourCart[i] = itemProperties;
+                localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(ourCart));
+                itemExistInCart = true;
+            }
+        }
+        
+        if (itemExistInCart === false) {
+            itemProperties.quantity = quantityProduct;
+            ourCart.push(itemProperties);
+            localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(ourCart));
+        }
         setQuantityProduct(1);
         setNumberInCart(numberInCart + quantityProduct);
     }
@@ -293,8 +310,8 @@ export default function Product(props) {
                                 <Grid item xs={11} sm={6}>
                                     <div className=" addSubstractCart flex">
 
-                                        <div  className="verticalAlign quantityProduct size2 height27 lightShadowCard2">{quantityProduct}</div>
-                                        <ColorButton style={{ minWidth: '50px', minHeight: '25px', maxHeight: '25px'}}  variant="contained" color="primary" onClick={addQuantity}>
+                                        <div className="verticalAlign quantityProduct size2 height27 lightShadowCard2">{quantityProduct}</div>
+                                        <ColorButton style={{ minWidth: '50px', minHeight: '25px', maxHeight: '25px' }} variant="contained" color="primary" onClick={addQuantity}>
                                             +
                                         </ColorButton>
 
@@ -302,7 +319,7 @@ export default function Product(props) {
                                             ? <ColorButton style={{ minWidth: '50px', minHeight: '25px', maxHeight: '25px', borderTopRightRadius: '3px', borderBottomRightRadius: '3px', }} size="small" variant="contained" color="primary" onClick={substractQuantity}>
                                                 -
                                             </ColorButton>
-                                            : <ColorButton style={{ minWidth: '50px', minHeight: '25px', maxHeight: '25px', borderTopRightRadius: '3px', borderBottomRightRadius: '3px',}} size="small" variant="contained" color="primary" >
+                                            : <ColorButton style={{ minWidth: '50px', minHeight: '25px', maxHeight: '25px', borderTopRightRadius: '3px', borderBottomRightRadius: '3px', }} size="small" variant="contained" color="primary" >
                                                 -
                                             </ColorButton>
                                         }
@@ -311,9 +328,9 @@ export default function Product(props) {
                                 </Grid>
                                 <Grid item xs={11} sm={6}>
                                     <div className="divPc alignRight">
-                                        
-                                            <ColorButton onClick={addToLocalStorage} variant="contained" style={{ minWidth: '180px', minHeight: '25px', maxHeight: '25px', fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em' }}> Add to cart</ColorButton>
-                                        
+
+                                        <ColorButton onClick={addToLocalStorage} variant="contained" style={{ minWidth: '180px', minHeight: '25px', maxHeight: '25px', fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em' }}> Add to cart</ColorButton>
+
                                     </div>
                                     <div className="divMobile">
                                         <Link to="/cart">

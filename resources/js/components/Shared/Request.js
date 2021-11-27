@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as React from 'react';
-import { itemsProduct, itemsBestSellers, averageNoteArticles } from './globalState'
+import { itemsProduct, itemsBestSellers, averageNoteArticles, allItemsInCart } from './globalState'
 import {
     RecoilRoot,
     atom,
@@ -14,7 +14,7 @@ export default function Request() {
     const [allItems, setAllItems] = useRecoilState(itemsProduct);
     const [bestSellers, setBestSellers] = useRecoilState(itemsBestSellers);
     const [averageNotes, setAverageNotes] = useRecoilState(averageNoteArticles);
-
+    const [itemsInCart, setItemsInCart] = useRecoilState(allItemsInCart);
     
     useEffect(() => {
         fetch(process.env.MIX_REACT_APP_API + "/api/products")
@@ -51,6 +51,11 @@ export default function Request() {
                     console.log('error')
                 }
             )
+    }, [])
+
+    useEffect(() => {
+        var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"))
+        setItemsInCart(ourCart);
     }, [])
 
     return (<div></div>)

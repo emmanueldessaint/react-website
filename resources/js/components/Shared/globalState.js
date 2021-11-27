@@ -45,5 +45,12 @@ export const averageNoteArticles = atom({
   default: 5,
 })
 
+export const allItemsInCart = atom({
+  key : 'allItemsInCart',
+  default: []
+})
+
+
+
 
  

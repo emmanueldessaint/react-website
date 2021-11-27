@@ -7,8 +7,8 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/styles';
 import { styled } from '@material-ui/core/styles';
 import '../../css/Cart.css';
-import { numberOfItemsInCart, shippingFees } from '../Shared/globalState'
-import { useRecoilState } from 'recoil';
+import { numberOfItemsInCart, shippingFees, allItemsInCart } from '../Shared/globalState'
+import { useRecoilState, selector, atom } from 'recoil';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Link } from "react-router-dom";
 import { PlayCircleFilledOutlined } from '@material-ui/icons';
@@ -37,72 +37,79 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function Cart() {
 
   const classes = useStyles();
-  var myArray = [];
-  const [itemsInCart, setItemsInCart] = useState([]);
+
+
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
+  const [itemsInCart, setItemsInCart] = useState([]);
   const [shippingFeesVar, setShippingFeesVar] = useRecoilState(shippingFees);
   const [localStorageLength, setLocalStorageLength] = useState(0);
-  const [price, setPrice] = useState(0);
 
+  const [price, setPrice] = useState(0);
+  // const globalPrice = selector({
+  //   key: 'globalPrice',
+  //   get: ({get}) => 
+  // })
+
+  console.log(itemsInCart)
   var localLength = localStorage.length
-  scroll(0, 0);
-  
+
+
   useEffect(() => {
-    
     var myPrice = 0;
-    var array = [];
-    for (var i = 0; i < localStorage.length; i++) {
-      var key = localStorage.key(i);
-      var value = JSON.parse(localStorage[key]);
-      array.push(value);
-      myPrice += (value.price * value.quantity);
+    var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"));
+    if (ourCart !== null) {
+      for (var i = 0; i < ourCart.length; i++) {
+        myPrice += (ourCart[i].quantity * ourCart[i].price);
+      }
+      setItemsInCart(ourCart);
+      setPrice(myPrice);
+      setLocalStorageLength(ourCart.length);
     }
-    setPrice(myPrice);
-    setLocalStorageLength(array.length);
-    setItemsInCart(array);
+
+    console.log(itemsInCart)
     setIsLoaded(true);
-  }, [localLength])
+    scroll(0, 0);
+  }, [])
 
   const addQuantityInCart = (product) => {
-    var thisArray = [...itemsInCart];
-    var find = thisArray.find(element => element.name === product.name).quantity++;
-    var findPlus = find + 1;
-    var itemProperties = {
-      id: `${product.id}`,
-      name: `${product.name}`,
-      price: `${product.price}`,
-      image: `${product.image}`,
-      quantity: findPlus,
-    }
-    setPrice(price + parseInt(itemProperties.price));
-    setItemsInCart(thisArray);
+    var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"))
+    var find = ourCart.find(element => element.name === product.name)
+    find.quantity++;
+    console.log(14.90 + 15.20)
+
+
+    setPrice(price + find.price);
+    setItemsInCart(ourCart);
     setNumberInCart(numberInCart + 1);
-    localStorage.setItem(`${product.name}`, JSON.stringify(itemProperties));
+    localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(ourCart));
+
   }
+
   const substractQuantityInCart = (product) => {
-    var thisArray = [...itemsInCart];
-    var find = thisArray.find(element => element.name === product.name).quantity--;
-    if (find > 1) {
-      var findPlus = find - 1;
-      var itemProperties = {
-        id: `${product.id}`,
-        name: `${product.name}`,
-        price: `${product.price}`,
-        image: `${product.image}`,
-        quantity: findPlus,
-      }
-      setPrice(price - parseInt(itemProperties.price));
-      setItemsInCart(thisArray);
-      setNumberInCart(numberInCart - 1);
-      localStorage.setItem(`${product.name}`, JSON.stringify(itemProperties));
+    var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"))
+    var find = ourCart.find(element => element.name === product.name)
+    if (find === 1) {
+      return;
     }
+    find.quantity--;
+    setPrice(price - find.price);
+    setItemsInCart(ourCart);
+    setNumberInCart(numberInCart - 1);
+    localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(ourCart));
   }
 
   const removeProduct = (product) => {
-    localStorage.removeItem(product.name)
-    setNumberInCart(numberInCart - product.quantity);
+    var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"));
+    console.log(ourCart)
+    var find = ourCart.find(element => element.name === product.name);
+    var quantity = find.quantity;
+    var filteredCart = ourCart.filter(item => item.name !== find.name);
+    localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(filteredCart));
+    setItemsInCart(filteredCart);
+    setNumberInCart(numberInCart - quantity);
+    setLocalStorageLength(localStorageLength - 1);
   }
 
   if (!isLoaded) {
@@ -165,48 +172,28 @@ export default function Cart() {
                       className="productLineCart lightShadowCard2 bgBlue mb-5"
                       key={product.id}
                     >
-                      <div>
-                        <div className="flex productMobile productMobileCatalog mb-3 mt-3">
-                          <img className="imageProductMobile cursorPointer" src={window.location.origin + `/images/${product.image}`} />
-                          <div className="pl-2 width100">
-                            <div className="mt-1 font10 letterSpacing2 grey7 cursorPointer">{product.name}</div>
-                            
-                            <div className="flexBetween ">
-                              <div className="mt-4 cursorPointer">${product.price}</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="greyBarProductMobile"></div>
-                      {/* <Link to={`/product/${product.name} `} ><img className="imgCartMobile" src={window.location.origin + `/images/${product.image}`} /></Link>
-                      <div className=" bgWhite productDetailsCart">
-                        <div className="quantityNameCart font10 letterSpacing2 size3 opacity9 ml-8">
-                          <Link to={`/product/${product.name} `} >{product.name}</Link>
-                          <button className=" cursorPointer bgWhite" onClick={() => removeProduct(product)}><ClearIcon className="fontTrash" /></button>
-                        </div>
-
-                        <div className="widthQuantityPrice">
-                          <div className="letterSpacing1 font5 bold600 grey8 mt-2">${product.price}</div>
-                          <div className="quantityProductCart flex mb-2 mt-8">
-                            <button className="buttonAddQuantityCart buttonModifyQuantity cursorPointer size1" onClick={() => addQuantityInCart(product)}>+</button>
-                            <div className="centerText productQuantityCart bgWhite">{product.quantity}</div>
+                      <div className="bgWhite">
+                        <Link to={`/product/${product.name} `}><img className="imageProductMobileCart cursorPointer" src={window.location.origin + `/images/${product.image}`} /></Link>
+                        <Link to={`/product/${product.name} `} className="verticalAlign font10 letterSpacing2 size3 opacity9">{product.name}</Link>
+                        <div className="flexBetween mt-5">
+                          <Link to={`/product/${product.name} `} className="ml-5">${product.price}</Link>
+                          <div className="flex mr-5">
+                            <button className="buttonAddQuantityCart buttonModifyQuantity cursorPointer size1 " onClick={() => addQuantityInCart(product)}>+</button>
+                            <div className="centerText productQuantityCart bgWhite ">{product.quantity}</div>
                             {product.quantity > 1 && <button className="buttonSubstractQuantityCart buttonModifyQuantity size1" onClick={() => substractQuantityInCart(product)}>-</button>}
                             {product.quantity === 1 && <button className="buttonModifyQuantity buttonSubstractQuantityCart size1">-</button>}
                           </div>
                         </div>
-                        <div>
-                          <div className="productPriceQuantityInCart letterSpacing1 font5 bold600 grey8 size1 mr-8">
-                            ${product.price * product.quantity}
-                          </div>
-                        </div>
-                      </div> */}
+                      </div>
                     </div>
                   ))}
                 </div>
                 {localStorageLength > 0 &&
-                  <Button variant="contained" className=" height30 width30 cursorPointer ">
-                    Hello
-                  </Button>
+                  <Link to="/catalog" >
+                    <Button variant="contained" className=" height30  cursorPointer ">
+                      Back to shopping
+                    </Button>
+                  </Link>
                 }
               </Grid>
 

@@ -40,6 +40,7 @@ export default function Products() {
 
     useEffect(() => {
         if (allItems.length !== 0) {
+            scroll(0, 0);
             let newArray = [];
             newArray = allItems.slice(itemsByPage * (actuelPage - 1), itemsByPage * (actuelPage));
             for (var i = 0; i < allItems.length / itemsByPage; i++) {
@@ -53,6 +54,9 @@ export default function Products() {
     }, [allItems, actuelPage])
 
     const addToCart = (item) => {
+
+        var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"));
+
         let itemProperties = {
             id: `${item.id}`,
             name: `${item.name}`,
@@ -60,13 +64,22 @@ export default function Products() {
             image: `${item.image}`,
             quantity: 1
         }
-        if (localStorage.getItem(`${item.name}`) === null) {
-            itemProperties.quantity = 1;
-        } else {
-            let itemAlreadyInCart = JSON.parse(localStorage.getItem(`${item.name}`));
-            itemProperties.quantity = 1 + itemAlreadyInCart.quantity;
+        var itemExistInCart = false;
+        if(ourCart === null) {
+            localStorage.setItem('cart_Paris_Fabrics', JSON.stringify([itemProperties]));
+            return;
         }
-        localStorage.setItem(`${item.name}`, JSON.stringify(itemProperties));
+        for (var i = 0; i < ourCart.length; i++) {
+            if (ourCart[i].name === item.name) {
+                ourCart[i].quantity ++;
+                localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(ourCart));
+                itemExistInCart = true;
+            }
+        }
+        if (itemExistInCart === false) {
+            ourCart.push(itemProperties);
+            localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(ourCart));
+        }
         setNumberInCart(numberInCart + 1);
 
     }

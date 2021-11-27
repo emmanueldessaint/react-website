@@ -110,8 +110,19 @@ export default function Header(props) {
   }
 
   useEffect(() => {
+    var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"));
+    if (ourCart === null) {
+      var quantityInCart = 0;
+    } else {
+      var quantityInCart = 0;
+      for (var i = 0; i < ourCart.length; i++) {
+        quantityInCart += ourCart[i].quantity;
+      }
+
+    }
+
     setNumberInCart(quantityInCart)
-  }, [quantityInCart])
+  }, [])
 
   const resetPage = () => {
     setActuelPage(1);
@@ -170,7 +181,7 @@ export default function Header(props) {
                     <Grid container  >
                       <Grid item xs={3} className={classes.alignTitle} >
                         <Link to="/" onClick={resetPage} className="item" className={classes.routerDecoration}>
-                          <h2  className="titleHeader grey9 font8 size3">Paris<span className="ml-1"></span>Fabrics</h2>
+                          <h2 className="titleHeader grey9 font8 size3">Paris<span className="ml-1"></span>Fabrics</h2>
                         </Link>
                         {/* <img src={logoParis} alt="parisFabricsLogo" className="logoParis height70" /> */}
                       </Grid>
@@ -219,7 +230,7 @@ export default function Header(props) {
                             {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).map(filteredName => (
                               <div key={filteredName.id}>
                                 <Link to={`/product/${filteredName.name}`} onClick={closeSearch} className="m-1 flex pt-1 pb-1 productHoverSearch">
-                                  <img className="imgProductSearch ml-1" src={window.location.origin + `/images/${filteredName.image}`}/>
+                                  <img className="imgProductSearch ml-1" src={window.location.origin + `/images/${filteredName.image}`} />
                                   <div className="font10 grey6 letterSpacing2 size3 verticalItem pl-3">{filteredName.name}</div>
                                 </Link>
                               </div>
@@ -299,7 +310,7 @@ export default function Header(props) {
             {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).map(filteredName => (
               <div key={filteredName.id}>
                 <Link to={`/product/${filteredName.name}`} onClick={closeSearch} className="m-1 flex pt-1 pb-1 productHoverSearch">
-                  <img className="imgProductSearch ml-1" src={window.location.origin + `/images/${filteredName.image}`}/>
+                  <img className="imgProductSearch ml-1" src={window.location.origin + `/images/${filteredName.image}`} />
                   <div className="font10 grey6 letterSpacing2 size3 verticalItem pl-3">{filteredName.name}</div>
                 </Link>
               </div>
