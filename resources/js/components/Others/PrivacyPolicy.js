@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
                 <Grid item container xs={11} sm={10} md={9} lg={8} spacing={2}>
                     <div className="mt-7 centerText size5 letterSpacing2">Privacy policy</div>
                     <div className="grey7 font2 size2 mt-7">
-                        <div className="mt-4">This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from amazing-sewing.com.</div>
+                        <div className="mt-4">This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from parisfabrics.com.</div>
                         <div className="mt-4">PERSONAL INFORMATION WE COLLECT</div>
                         <div className="mt-4">When you visit the Site, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device. Additionally, as you browse the Site, we collect information about the individual web pages or products that you view, what websites or search terms referred you to the Site, and information about how you interact with the Site. We refer to this automatically-collected information as “Device Information”.</div>
                         <div className="mt-4">We collect Device Information using the following technologies:</div>
@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
                         We may update this privacy policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal or regulatory reasons.
                         CONTACT US
                         For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us here.
-                        Amazing Sewing
+                        Paris Fabrics.
                     </div>
                 </Grid>
             </Grid>
