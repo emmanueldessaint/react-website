@@ -20,9 +20,28 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import { itemsProduct, numberOfItemsInCart } from '../Shared/globalState'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+import { makeStyles } from '@material-ui/core/styles';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        width: '100%',
+        '& > * + *': {
+            marginTop: 10,
+        },
+    },
+}));
 
 export default function Products() {
 
+    const classes = useStyles();
+    const [open, setOpen] = useState(false);
 
     const [error, setError] = useState(null);
     const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
@@ -33,6 +52,18 @@ export default function Products() {
     const [actuelPage, setActuelPage] = useRecoilState(currentPageProduct);
     const [filter, setFilter] = useState('');
     const [allItems, setAllItems] = useRecoilState(itemsProduct);
+
+    const handleClick = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
 
     var itemsByPage = 12;
     var increment = 1;
@@ -54,7 +85,7 @@ export default function Products() {
     }, [allItems, actuelPage])
 
     const addToCart = (item) => {
-
+        setOpen(true);
         var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"));
 
         let itemProperties = {
@@ -65,13 +96,14 @@ export default function Products() {
             quantity: 1
         }
         var itemExistInCart = false;
-        if(ourCart === null) {
+        if (ourCart === null) {
             localStorage.setItem('cart_Paris_Fabrics', JSON.stringify([itemProperties]));
+            setNumberInCart(numberInCart + 1);
             return;
         }
         for (var i = 0; i < ourCart.length; i++) {
             if (ourCart[i].name === item.name) {
-                ourCart[i].quantity ++;
+                ourCart[i].quantity++;
                 localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(ourCart));
                 itemExistInCart = true;
             }
@@ -274,7 +306,20 @@ export default function Products() {
                                             </Link>
                                             <div className="flexBetween ">
                                                 <div className="mt-4 cursorPointer">${item.price}</div>
-                                                <div className="flexEnd opacity8 cursorPointer" onClick={() => addToCart(item)}><AddShoppingCartIcon /></div>
+                                                <div className="flexEnd opacity8 cursorPointer" onClick={() =>addToCart(item)}><AddShoppingCartIcon /></div>
+                                                <Snackbar  open={open} autoHideDuration={1000} onClose={handleClose}>
+                                                    <div className="bgSuccess opacity9 bgBlue pl-5 pr-5 font2 p-1  bold200 textWhite borderRadius5 boxShadowButton" onClose={handleClose} severity="success">
+                                                        <span><CheckCircleOutlineIcon className="mb-1"/></span><span className="ml-3 size2 mt-3 font2">item added to cart !</span>
+                                                    </div>
+                        
+                                                </Snackbar>
+                                                    {/* <div className="bgSuccess opacity9 bgBlue pl-4 pr-4 font2 p-2 grey8 bold500 textWhite borderRadius3 boxShadowButton" onClose={handleClose} severity="success">
+                                                        <span><CheckCircleOutlineIcon /></span><span className="ml-3 size2">Item added to cart !</span>
+                                                    </div> */}
+                        
+                                               
+                                                {/* onClick={() => addToCart(item)} */}
+                                                {/* <Alert severity="success">This is a success message!</Alert> */}
                                             </div>
                                         </div>
                                     </div>

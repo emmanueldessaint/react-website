@@ -128,6 +128,7 @@ export default function Cart() {
     setItemsInCart([]);
     setNumberInCart(0);
     setLocalStorageLength(0);
+    scroll(0, 0);
   }
 
   if (!isLoaded) {

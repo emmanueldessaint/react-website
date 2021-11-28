@@ -36,7 +36,7 @@ export default function Request() {
                         }
                         averageNote = totalNotes / allProducts[j].reviews.length;
                         
-                        allProducts[j].avg = averageNote;
+                        allProducts[j].avg = averageNote.toFixed(2);
                     }
                     setAverageNotes(totalAverageNote/NumberOfNotes);
                     console.log(totalAverageNote/NumberOfNotes);

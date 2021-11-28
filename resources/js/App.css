@@ -21,6 +21,9 @@ html {
 .bgBlue{
     background-color:rgb(240, 240, 240);
 }
+.bgSuccess{
+    background-color:rgb(38 165 38);
+}
 .flex{
     display:flex;
 }
@@ -95,6 +98,9 @@ html {
 .shadowProduct1{
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
+.boxShadowButton{
+    box-shadow: rgba(199, 199, 199, 0.24) 0px 3px 8px;
+ }
 .underlined{
     text-decoration: underline;
 }
@@ -122,6 +128,21 @@ html {
 }
 .lightGrey{
     background-color:rgb(223, 223, 223);
+}
+.borderRadius1{
+    border-radius: 1px;
+}
+.borderRadius2{
+    border-radius: 2px;
+}
+.borderRadius3{
+    border-radius: 3px;
+}
+.borderRadius4{
+    border-radius: 4px;
+}
+.borderRadius5{
+    border-radius: 5px;
 }
 .grey1{
     color:rgb(225, 225, 225)
@@ -213,6 +234,12 @@ html {
  .colorButton1{
     background-color: rgb(235, 229, 209);
  }
+ .textWhite{
+     color:white;
+ }
+ .textRed{
+     color:red;
+ }
  .height10{
      height:10px;
  }
@@ -287,6 +314,21 @@ html {
  }
  .letterSpacing5{
      letter-spacing: 5px;
+ }
+ .wordSpacing1{
+     word-spacing: 1px;
+ }
+ .wordSpacing2{
+     word-spacing: 2px;
+ }
+ .wordSpacing3{
+     word-spacing: 3px;
+ }
+ .wordSpacing4{
+     word-spacing: 4px;
+ }
+ .wordSpacing5{
+     word-spacing: 5px;
  }
  .textShadow1{
     text-shadow: 2px 4px 5px rgb(212, 212, 212);
@@ -369,6 +411,24 @@ html {
  .size9{
      font-size:1.9em;
  }
+ .size10{
+     font-size:2em;
+ }
+ .size11{
+     font-size:2.1em;
+ }
+ .size12{
+     font-size:2.2em;
+ }
+ .size13{
+     font-size:2.3em;
+ }
+ .size14{
+     font-size:2.4em;
+ }
+ .size15{
+     font-size:2.5em;
+ }
  .font1{
     font-family: Georgia, serif;
  }
@@ -430,6 +490,156 @@ html {
  }
  .opacity1{
     opacity:0.1;
+ }
+ .mw-1{
+     margin: 2vw;
+ }
+ .mw-2{
+     margin: 4vw;
+ }
+ .mw-3{
+     margin: 6vw;
+ }
+ .mw-4{
+     margin: 8vw;
+ }
+ .mw-5{
+     margin: 10vw;
+ }
+ .mw-6{
+     margin: 14vw;
+ }
+ .mw-7{
+     margin: 18vw;
+ }
+ .mw-8{
+     margin: 22vw;
+ }
+ .mw-9{
+     margin: 26vw;
+ }
+ .mw-10{
+     margin: 30vw;
+ }
+ .mtw-1{
+     margin-top: 2vw;
+ }
+ .mtw-2{
+    margin-top: 4vw;
+ }
+ .mtw-3{
+    margin-top: 6vw;
+ }
+ .mtw-4{
+    margin-top: 8vw;
+ }
+ .mtw-5{
+    margin-top: 10vw;
+ }
+ .mtw-6{
+    margin-top: 14vw;
+ }
+ .mtw-7{
+    margin-top: 18vw;
+ }
+ .mtw-8{
+    margin-top: 22vw;
+ }
+ .mtw-9{
+    margin-top: 26vw;
+ }
+ .mtw-10{
+    margin-top: 30vw;
+ }
+ .mrw-1{
+     margin-right: 2vw;
+ }
+ .mrw-2{
+    margin-right: 4vw;
+ }
+ .mrw-3{
+    margin-right: 6vw;
+ }
+ .mrw-4{
+    margin-right: 8vw;
+ }
+ .mrw-5{
+    margin-right: 10vw;
+ }
+ .mrw-6{
+    margin-right: 14vw;
+ }
+ .mrw-7{
+    margin-right: 18vw;
+ }
+ .mrw-8{
+    margin-right: 22vw;
+ }
+ .mrw-9{
+    margin-right: 26vw;
+ }
+ .mrw-10{
+    margin-right: 30vw;
+ }
+ .mlw-1{
+     margin-left: 2vw;
+ }
+ .mlw-2{
+    margin-left: 4vw;
+ }
+ .mlw-3{
+    margin-left: 6vw;
+ }
+ .mlw-4{
+    margin-left: 8vw;
+ }
+ .mlw-5{
+    margin-left: 10vw;
+ }
+ .mlw-6{
+    margin-left: 14vw;
+ }
+ .mlw-7{
+    margin-left: 18vw;
+ }
+ .mlw-8{
+    margin-left: 22vw;
+ }
+ .mlw-9{
+    margin-left: 26vw;
+ }
+ .mlw-10{
+    margin-left: 30vw;
+ }
+ .mbw-1{
+     margin-bottom: 2vw;
+ }
+ .mbw-2{
+    margin-bottom: 4vw;
+ }
+ .mbw-3{
+    margin-bottom: 6vw;
+ }
+ .mbw-4{
+    margin-bottom: 8vw;
+ }
+ .mbw-5{
+    margin-bottom: 10vw;
+ }
+ .mbw-6{
+    margin-bottom: 14vw;
+ }
+ .mbw-7{
+    margin-bottom: 18vw;
+ }
+ .mbw-8{
+    margin-bottom: 22vw;
+ }
+ .mbw-9{
+    margin-bottom: 26vw;
+ }
+ .mbw-10{
+    margin-bottom: 30vw;
  }
 .mt-1{
     margin-top:5px
@@ -880,6 +1090,81 @@ html {
 }
 .pb-15{
     padding-bottom:140px
+}
+.m--1{
+    margin:-5px;
+}
+.m--2{
+    margin:-10px;
+}
+.m--3{
+    margin:-15px;
+}
+.m--4{
+    margin:-20px;
+}
+.m--5{
+    margin:-25px;
+}
+.mt--1{
+    margin-top:-5px;
+}
+.mt--2{
+    margin-top:-10px;
+}
+.mt--3{
+    margin-top:-15px;
+}
+.mt--4{
+    margin-top:-20px;
+}
+.mt--5{
+    margin-top:-25px;
+}
+.mb--1{
+    margin-bottom:-5px;
+}
+.mb--2{
+    margin-bottom:-10px;
+}
+.mb--3{
+    margin-bottom:-15px;
+}
+.mb--4{
+    margin-bottom:-20px;
+}
+.mb--5{
+    margin-bottom:-25px;
+}
+.ml--1{
+    margin-left:-5px;
+}
+.ml--2{
+    margin-left:-10px;
+}
+.ml--3{
+    margin-left:-15px;
+}
+.ml--4{
+    margin-left:-20px;
+}
+.ml--5{
+    margin-left:-25px;
+}
+.mr--1{
+    margin-right:-5px;
+}
+.mr--2{
+    margin-right:-10px;
+}
+.mr--3{
+    margin-right:-15px;
+}
+.mr--4{
+    margin-right:-20px;
+}
+.mr--5{
+    margin-right:-25px;
 }
 .width100{
     width:100%;
