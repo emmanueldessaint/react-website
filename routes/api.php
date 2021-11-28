@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\PaypalPaymentController;
 
@@ -21,13 +22,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Products
 Route::get('products', [ProductController::class, 'index']);
-
 // Route::get('products/{id}', [ProductController::class, 'show']);
-
 Route::get('product/{id}', [ProductController::class, 'getOneProduct']);
 
+
+// Reviews
 Route::get('reviews', [ProductController::class, 'homeRequest']);
+Route::post('createReview', [ReviewController::class, 'create']);
 
 Route::get('averageProductReview/{id}', [ProductController::class, 'averageProductReview']);
 

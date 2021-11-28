@@ -15,6 +15,7 @@ class ProductReviews extends Model
         'title',
         'description',
         'note',
+        'date',
     ];
 
     public function product() {

@@ -25,6 +25,7 @@ class CreateOrdersTable extends Migration
             $table->string('payment_method');
             $table->string('status');
             $table->string('total');
+            $table->string('currency');
             $table->string('shipping_country');
             $table->string('shipping_address');
             $table->string('shipping_city');

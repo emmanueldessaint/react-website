@@ -16,15 +16,6 @@ use Mail;
 class StripePaymentController extends Controller
 {
     function charge(Request $request) { 
-
-        // $order = [
-        //     'id' => 123
-        // ];
-
-        // Mail::to('mathieu.dessaint10@gmail.com')->send(new OrderConfirmation($order));
-
-        // return "ok";
-
         $totalAmount = 0;
         $productsToShip = [];
         foreach ($request->get('cart') as $item) {
@@ -32,7 +23,7 @@ class StripePaymentController extends Controller
             $totalAmount += $product->price * $item['quantity'];
             $productInfo = [
                 'product' => $product,
-                'quantity' => $item['id']
+                'quantity' => $item['quantity']
             ];
             array_push($productsToShip, $productInfo);
         }
@@ -52,7 +43,7 @@ class StripePaymentController extends Controller
                     'confirmation_method' => 'manual',
                     'confirm' => true,
                     'amount'   => $totalAmount,
-                    'currency' => 'eur',
+                    'currency' => 'usd',
                     'description' => "Mon paiement"
                 ]);
             }
@@ -104,6 +95,7 @@ class StripePaymentController extends Controller
                     'payment_method' => 'Stripe',
                     'status' => 'Processed',
                     'total' => $totalAmount,
+                    'currency' => env("MIX_REACT_APP_PAYPAL_CURRENCY"),
                     'shipping_country' => $request->get('country'),
                     'shipping_address' => $request->get('address'),
                     'shipping_city' => $request->get('city'),

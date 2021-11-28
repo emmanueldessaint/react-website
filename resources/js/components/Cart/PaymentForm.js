@@ -42,18 +42,18 @@ export default function PaymentForm() {
 
   useEffect(() => {
     var myPrice = 0;
-    var array = [];
-    for (var i = 0; i < localStorage.length; i++) {
-      var key = localStorage.key(i);
-      var value = JSON.parse(localStorage[key]);
-      array.push(value);
-      myPrice += (value.price * value.quantity);
+    var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"));
+    if (ourCart !== null) {
+      for (var i = 0; i < ourCart.length; i++) {
+        myPrice += (ourCart[i].quantity * ourCart[i].price);
+      }
+      setItemsInCart(ourCart);
+      setPrice(myPrice);
+      setLocalStorageLength(ourCart.length);
     }
-    setPrice(myPrice);
-    setLocalStorageLength(array.length);
-    setItemsInCart(array);
     setIsLoaded(true);
-  }, [localLength])
+    scroll(0, 0);
+  }, [])
 
   // Stripe payment code 
   const handleServerResponse = (response) => {
