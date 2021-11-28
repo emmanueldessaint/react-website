@@ -35,6 +35,7 @@ import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
     marginTop: {
@@ -110,6 +111,34 @@ const ColorButton = withStyles((theme) => ({
         opacity: 0.9,
         '&:hover': {
             backgroundColor: '#ADB4D0',
+            fontWeight: '600',
+        },
+    },
+}))(Button);
+
+const ReviewButton = withStyles((theme) => ({
+    root: {
+        color: '#ffffff',
+        backgroundColor: '#413138',
+        borderRadius: 0,
+        '&:hover': {
+            backgroundColor: '#ffffff',
+            color: '#505050',
+            border: '1px solid',
+            borderColor: '#505050',
+            fontWeight: '600',
+        },
+    },
+}))(Button);
+
+const ButtonSubmitComment = withStyles((theme) => ({
+    root: {
+        color: '#ffffff',
+        backgroundColor: '#119c2c',
+        borderRadius: 5,
+        opacity: 0.9,
+        '&:hover': {
+            backgroundColor: '#1dbf3c',
         },
     },
 }))(Button);
@@ -123,36 +152,23 @@ export default function Product(props) {
     const [value, setValue] = React.useState(0);
     const [quantityProduct, setQuantityProduct] = useState(1);
     const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
-    const [averageNote, setAverageNote] = useState(0);
     const [allItems, setAllItems] = useRecoilState(itemsProduct);
     const [product, setProduct] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [userReviews, setUserReviews] = useState([]);
-    const [avgNote, setAvgNote] = useState('');
     const [bestSellers, setBestSellers] = useRecoilState(itemsBestSellers);
     const [changePage, setChangePage] = useRecoilState(changingPage);
     const [expanded, setExpanded] = React.useState(false);
     const [defaultImage, setDefaultImage] = useState('');
+    const [numberOfStars, setNumberOfStars] = useState({});
+    const [writeReviews, setWriteReviews] = useState(false);
+    const [valueComment, setValueComment] = useState(0);
+    const [newCommentContent, setNewCommentContent] = useState('');
+    const [newCommentTitle, setNewCommentTitle] = useState('');
+    const [noRating, setNoRating] = useState(false);
 
     const handleChangeAccordion = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
     };
-
-    useEffect(() => {
-        fetch(process.env.MIX_REACT_APP_API + "/api/reviews")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    for (var i = 0; i < result.allReviews.length; i++) {
-                        result.allReviews[i].updated_at = allItems.find(element => element.id === result.allReviews[i].id_product)
-                    }
-                    setUserReviews(result.allReviews);
-                },
-                (error) => {
-                    console.log('error', error)
-                }
-            )
-    }, [allItems])
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -169,6 +185,8 @@ export default function Product(props) {
     }
 
     const addToLocalStorage = () => {
+        // var priceRounded = product.price;
+        // var newPrice = priceRounded.parseFloat().toFixed(2);
         let itemProperties = {
             id: `${product.id}`,
             name: `${product.name}`,
@@ -180,7 +198,7 @@ export default function Product(props) {
         var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"));
 
         var itemExistInCart = false;
-        if(ourCart === null) {
+        if (ourCart === null) {
             itemProperties.quantity = quantityProduct;
             localStorage.setItem('cart_Paris_Fabrics', JSON.stringify([itemProperties]));
             setQuantityProduct(1);
@@ -196,7 +214,7 @@ export default function Product(props) {
                 itemExistInCart = true;
             }
         }
-        
+
         if (itemExistInCart === false) {
             itemProperties.quantity = quantityProduct;
             ourCart.push(itemProperties);
@@ -228,15 +246,37 @@ export default function Product(props) {
 
     useEffect(() => {
         if (isLoaded === true) {
-            let totalNotes = 0
+            let fiveStars = 0;
+            let fourStars = 0;
+            let threeStars = 0;
+            let twoStars = 0;
+            let oneStar = 0;
+            let collection = {};
             for (var i = 0; i < product.reviews.length; i++) {
-                totalNotes += (product.reviews[i].note)
+                if (product.reviews[i].note === 5) {
+                    fiveStars++;
+                }
+                if (product.reviews[i].note === 4) {
+                    fourStars++;
+                }
+                if (product.reviews[i].note === 3) {
+                    threeStars++;
+                }
+                if (product.reviews[i].note === 2) {
+                    twoStars++;
+                }
+                if (product.reviews[i].note === 1) {
+                    oneStar++;
+                }
             }
-            let average = totalNotes / product.reviews.length;
-            setAverageNote(average);
-            window.moveTo(0, 0);
+            collection.fiveStars = fiveStars;
+            collection.fourStars = fourStars;
+            collection.threeStars = threeStars;
+            collection.twoStars = twoStars;
+            collection.oneStar = oneStar;
+            setNumberOfStars(collection)
         }
-    }, [])
+    }, [product])
 
     const changeProduct = () => {
         setChangePage(true);
@@ -244,6 +284,34 @@ export default function Product(props) {
 
     const changeImage = (image) => {
         setDefaultImage(image);
+    }
+
+    const handleReviews = () => {
+        setWriteReviews(!writeReviews)
+    }
+
+    const submitReview = () => {
+        if (valueComment === 0) {
+            setNoRating(true);
+            return;
+        }
+        setNoRating(false);
+
+        var newComment = {};
+        newComment.description = newCommentContent;
+        newComment.title = newCommentTitle;
+        newComment.note = valueComment;
+        newComment.id_user = "";
+        newComment.id_product = product.id;
+
+        axios.post(process.env.MIX_REACT_APP_API + "/api/createReview ", { 
+            newComment: newComment,
+        }).then((res) => {
+            // return res
+            console.log(res)
+        }).catch((err) => {
+            console.log(err);
+        })
     }
 
     const bestSellersCarousel = {
@@ -276,7 +344,7 @@ export default function Product(props) {
                         <Grid item xs={12} sm={3} md={3} className="productComputer">
                             {product.images.map(image => (
                                 <div key={image.id}>
-                                    <Grid item xs={12} onClick={() => changeImage(image.url)} ><img className="cursorPointer switchImg m-1" src={window.location.origin + `/images/${image.url}`}></img></Grid>
+                                    <Grid item xs={12} onClick={() => changeImage(image.url)} ><img className="cursorPointer switchImg m-1 shadowProduct1" src={window.location.origin + `/images/${image.url}`}></img></Grid>
                                 </div>
                             ))}
                         </Grid>
@@ -377,12 +445,146 @@ export default function Product(props) {
                     </TabPanel>
                     <TabPanel value={value} index={2}>
                         {/* <Button onClick={handleConsole}>click me</Button> */}
-                        <Grid container className="flexBetween">
-                            <Grid item sm={10} xs={12}>
+                        <Grid container >
+                            <Grid item sm={12} xs={12}>
+                                <div className="flexBetween mt-2 mb-4">
+                                    <div>
+                                        <div className="flex">
+                                            <div className="size11 bold600">{product.avg}</div>
+                                            <div className="height50 ml-2">
+                                                <div className="">
+                                                    <Rating
+                                                        size="small"
+                                                        precision={0.5}
+                                                        readOnly
+                                                        className=""
+                                                        name="simple-controlled"
+                                                        value={product.avg}
+                                                    />
+                                                </div>
+                                                <div className="font2 size08 grey7">based on {product.reviews.length} {product.reviews.length > 1 ? <span>reviews</span> : <span>review</span>}</div>
+                                            </div>
+                                        </div>
+                                        <ReviewButton onClick={handleReviews} style={{ borderRadius: '3px', minWidth: '190px', marginTop: '20px', letterSpacing: '1px', wordSpacing: '3px', }}>write a review</ReviewButton>
+                                        {/* <div>Notre examiner le lignes directires aide les clients à rédiger des avis honnetes</div> */}
+                                    </div>
+                                    <div className="">
+                                        <div>
+                                            <div className="flex">
+                                                <div className="numberStars mr-1 bold800 ">{numberOfStars.fiveStars}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={5}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex">
+                                                <div className="numberStars mr-1 bold800 ">{numberOfStars.fourStars}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={4}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex">
+                                                <div className="numberStars mr-1 bold800 ">{numberOfStars.threeStars}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={3}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex">
+                                                <div className="numberStars mr-1 bold800 ">{numberOfStars.twoStars}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={2}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex">
+                                                <div className="numberStars mr-1 bold800 ">{numberOfStars.oneStar}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={1}
+                                                />
+                                            </div>
+                                        </div>
 
+                                    </div>
+                                </div>
                             </Grid>
                         </Grid>
+                        {writeReviews === true &&
+                            <div className="mb-3">
+                                <div>
+                                    <Rating
+                                        precision={1}
+                                        className="mb--5"
+                                        name="simple-controlled"
+                                        value={valueComment}
+                                        onChange={(event, newValue) => {
+                                            setValueComment(newValue);
+                                        }}
+                                        emptyIcon={
+                                            <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                        }
+                                    />
+                                </div>
+                                <TextField
+                                    margin="normal"
+                                    variant="outlined"
 
+                                    size="small"
+                                    label="Your title"
+                                    value={newCommentTitle}
+                                    onChange={(e) => setNewCommentTitle(e.target.value)}
+                                ></TextField>
+
+                                {noRating &&
+                                    <div className="errorRating textRed">
+                                        You must chose a note !
+                                    </div>
+                                }
+
+                                <TextField
+                                    margin="normal"
+                                    variant="outlined"
+                                    fullWidth
+                                    multiline
+                                    maxRows={10}
+                                    label="Your comment"
+                                    className="mt--5"
+                                    value={newCommentContent}
+                                    onChange={(e) => setNewCommentContent(e.target.value)}
+                                ></TextField>
+                                <ButtonSubmitComment variant="contained" onClick={submitReview} style={{ minWidth: '140px', marginBottom: '15px', marginTop: '10px', letterSpacing: '1px', wordSpacing: '3px', }}>Submit</ButtonSubmitComment>
+                            </div>
+                        }
 
                         {product.reviews.map(review => (
                             <div key={review.id} className="lightShadowCard2 p-3 mb-5">
@@ -462,6 +664,96 @@ export default function Product(props) {
                                 <div>Reviews ({product.reviews.length})</div>
                             </AccordionSummary>
                             <AccordionDetails>
+                            <div className=" mt-2 mb-4">
+                                    <div>
+                                        <div className="flex">
+                                            <div className="size11 bold600">{product.avg}</div>
+                                            <div className="height50 ml-2">
+                                                <div className="">
+                                                    <Rating
+                                                        size="small"
+                                                        precision={0.5}
+                                                        readOnly
+                                                        className=""
+                                                        name="simple-controlled"
+                                                        value={product.avg}
+                                                    />
+                                                </div>
+                                                <div className="font2 size08 grey7">based on {product.reviews.length} {product.reviews.length > 1 ? <span>reviews</span> : <span>review</span>}</div>
+                                            </div>
+                                        </div>
+                                        <ReviewButton onClick={handleReviews} style={{ borderRadius: '3px', minWidth: '190px', marginTop: '20px', letterSpacing: '1px', wordSpacing: '3px', }}>write a review</ReviewButton>
+                                        {/* <div>Notre examiner le lignes directires aide les clients à rédiger des avis honnetes</div> */}
+                                    </div>
+                                    <div className="">
+                                        <div>
+                                            <div className="flex">
+                                                <div className="numberStars mr-1 bold800 ">{numberOfStars.fiveStars}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={5}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex">
+                                                <div className="numberStars mr-1 bold800 ">{numberOfStars.fourStars}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={4}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex">
+                                                <div className="numberStars mr-1 bold800 ">{numberOfStars.threeStars}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={3}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex">
+                                                <div className="numberStars mr-1 bold800 ">{numberOfStars.twoStars}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={2}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex">
+                                                <div className="numberStars mr-1 bold800 ">{numberOfStars.oneStar}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={1}
+                                                />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
                                 <div>
                                     {product.reviews.map(review => (
                                         <div key={review.id} className="lightShadowCard2 p-3 mb-5">
@@ -499,65 +791,7 @@ export default function Product(props) {
                         </Accordion>
                     </Grid>
                 </Grid>
-                {/* <div className="flexCenter mt-15"><img src={review} alt="reward_svg" className="reviewIcon opacity6" /></div>
-                <h2 className="flexCenter font8 size7 bold600 bestSellers opacity9 letterSpacing2">They lived the experience</h2>
-                <Grid className="pt-5" container justifyContent="center">
-                    <Grid container item xs={11} md={11} spacing={4}>
-                        <Grid item md={3} xs={12} className=" bgBlue verticalAlign">
-                            <Grid >
-                                <div className="textAlignCenter">
-                                    <div><span className="size3 bold800 mr-1">{avgNote}</span>/ 5</div>
-                                    <h4 className="flexCenter opacity9 letterSpacing1 lineHeight1 font2">Based on purchases on {product.name}</h4>
-                                    <div>
-                                        <Rating
-                                            precision={0.5}
-                                            readOnly
-                                            name="simple-controlled"
-                                            value={avgNote}
-                                            emptyIcon={
-                                                <StarBorderIcon fontSize="inherit" className="emptyStar" />
-                                            }
-                                        />
-                                    </div>
-                                </div>
-                            </Grid>
-                        </Grid>
-                        <Grid item md={9} xs={12}>
-                            <Carousel
-                                responsive={reviewsCarousel}
-                                infinite={true}
-                                autoPlay={true}
-                                autoPlaySpeed={10000}
-                            >
-                                {userReviews.map(item => (
-                                    <div
-                                        className="m-2"
-                                        key={item.id}
-                                    >
-                                        <div className=''>
-                                            <Rating
-                                                precision={0.5}
-                                                readOnly
-                                                size="small"
-                                                className="stars ml-2 opacity8"
-                                                name="simple-controlled"
-                                                value={item.note}
-                                                emptyIcon={
-                                                    <StarBorderIcon fontSize="inherit" className="emptyStar" />
-                                                }
-                                            />
-                                            <div className="lightShadowCard3">
 
-                                                <div className="mt-2 pl-2 pt-2 grey6 bold100 font2">{item.description.length < 60 ? item.description : item.description.substring(0, 70) + " . . ."}</div>
-                                                <div className="mt-5 pl-2 pb-2 font2 bold500 grey9">{item.title}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </Carousel>
-                        </Grid>
-                    </Grid>
-                </Grid> */}
                 <Grid className="pt-10" container justifyContent="center">
                     <Grid item xs={11} md={11}>
                         <div className="mt-10">
@@ -602,8 +836,6 @@ export default function Product(props) {
                         }
                     </Grid>
                 </Grid>
-
-
             </Container >
         )
     }
