@@ -183,6 +183,8 @@ export default function Product(props) {
         if(ourCart === null) {
             itemProperties.quantity = quantityProduct;
             localStorage.setItem('cart_Paris_Fabrics', JSON.stringify([itemProperties]));
+            setQuantityProduct(1);
+            setNumberInCart(numberInCart + quantityProduct);
             return;
         }
         for (var i = 0; i < ourCart.length; i++) {
