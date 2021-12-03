@@ -112,7 +112,7 @@ export default function PaymentForm() {
           address: address,
           additionalInformation: additionalInformation,
           country: country,
-          phoneNumber: phoneNumber,
+        //   phoneNumber: phoneNumber,
           cart: itemsInCart,
         })
 
@@ -154,7 +154,7 @@ export default function PaymentForm() {
             address: address,
             additionalInformation: additionalInformation,
             country: country,
-            phoneNumber: phoneNumber,
+            // phoneNumber: phoneNumber,
             cart: itemsInCart,
         })
         .then((res) => {
@@ -280,7 +280,7 @@ export default function PaymentForm() {
                   size="small"
                 />
               </Grid>
-              <Grid item xs={12} >
+              {/* <Grid item xs={12} >
                 <TextField
                   variant="outlined"
                   fullWidth
@@ -289,7 +289,7 @@ export default function PaymentForm() {
                   onChange={e => setPhoneNumber(e.target.value)}
                   size="small"
                 />
-              </Grid>
+              </Grid> */}
               <Grid item xs={12} >
                 <div className="">
                   <CardElement className="testCard" options={cardElementOptions} />

@@ -188,22 +188,22 @@ export default function Header(props) {
                       <Grid xs={6} spacing={2} item container justifyContent="center" className="menuHeader">
                         <Grid item xs={3} >
                           <Link id="demotext" to="/"  >
-                            <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu  font9" onClick={resetPage}>Home</span>
+                            <span className="verticalAlign grey7 letterSpacing2 size8 mt-4 itemMenu font10" onClick={resetPage}>Home</span>
                           </Link>
                         </Grid>
                         <Grid item xs={3} >
                           <Link to="/catalog"  >
-                            <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>Catalog</span>
+                            <span className="verticalAlign grey7 letterSpacing2 size8 mt-4 itemMenu font10" onClick={resetPage}>Catalog</span>
                           </Link>
                         </Grid>
                         <Grid item xs={3} >
                           <Link to="/aboutus"  >
-                            <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>About us</span>
+                            <span className="verticalAlign  grey7  letterSpacing2 size8 mt-4 itemMenu font10" onClick={resetPage}>About Us</span>
                           </Link>
                         </Grid>
                         <Grid item xs={3} >
                           <Link to="/contact"  >
-                            <span className="verticalAlign letterSpacing5 size9 mt-3 bold600 itemMenu font9" onClick={resetPage}>Contact</span>
+                            <span className="verticalAlign  grey7  letterSpacing2 size8 mt-4 itemMenu font10" onClick={resetPage}>Contact</span>
                           </Link>
                         </Grid>
                       </Grid>
