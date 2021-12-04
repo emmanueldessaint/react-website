@@ -15,8 +15,10 @@ export default function Request() {
     const [bestSellers, setBestSellers] = useRecoilState(itemsBestSellers);
     const [averageNotes, setAverageNotes] = useRecoilState(averageNoteArticles);
     const [itemsInCart, setItemsInCart] = useRecoilState(allItemsInCart);
-    
+
+
     useEffect(() => {
+        console.log("requete lancée ! ")
         fetch(process.env.MIX_REACT_APP_API + "/api/products")
             .then(res => res.json())
             .then(
@@ -38,7 +40,7 @@ export default function Request() {
                         
                         allProducts[j].avg = averageNote.toFixed(2);
                     }
-                    setAverageNotes(totalAverageNote/NumberOfNotes);
+                    setAverageNotes((totalAverageNote/NumberOfNotes).toFixed(2));
                     console.log(totalAverageNote/NumberOfNotes);
                     arrayBestSellers.push(result.products[0]);
                     arrayBestSellers.push(result.products[1]);

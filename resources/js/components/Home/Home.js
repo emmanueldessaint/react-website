@@ -157,15 +157,15 @@ export default function Home() {
                 </div>
                 
                 {isLoaded &&
-                    <div>
+                    <div className="">
                         <Carousel
                             responsive={bestSellersCarousel}
                             infinite={true}
                         >
                             {bestSellers.map(item => (
-                                <div className="cardProduct lightShadowCard2" key={item.id}>
-                                    <Link to={`/product/${item.name} `} >
-                                        <img className="imageProduct" src={window.location.origin + `/images/${item.image}`} />
+                                <div className="cardProductCarousel lightShadowCard2" key={item.id}>
+                                    <Link to={`/${item.name} `} >
+                                        <img className="imageProductCarousel" src={window.location.origin + `/images/${item.image}`} />
                                         <div className="hideProduct">
                                             <div className="elementAppear font5 letterSpacing1">
                                                 DISCOVER
@@ -226,7 +226,7 @@ export default function Home() {
                                         className="m-2"
                                         key={item.id}
                                     >
-                                        {item.product !== undefined && <Link to={`/product/${item.product.name}`}>
+                                        {item.product !== undefined && <Link to={`/${item.product.name}`}>
                                             <Rating
                                                 precision={0.5}
                                                 readOnly
@@ -241,7 +241,7 @@ export default function Home() {
                                             <div className="ml-2 linkItemComment">{item.product.name}</div>
                                             <div className="lightShadowCard3">
 
-                                                <div className="mt-2 pl-2 pt-2 grey6 bold100 font2">{item.description.length < 60 ? item.description : item.description.substring(0, 70) + " . . ."}</div>
+                                                {/* <div className="mt-2 pl-2 pt-2 grey6 bold100 font2">{item.description.length < 60 ? item.description : item.description.substring(0, 70) + " . . ."}</div> */}
                                                 <div className="mt-5 pl-2 pb-2 font2 bold500 grey9">{item.title}</div>
                                             </div>
                                         </Link>}

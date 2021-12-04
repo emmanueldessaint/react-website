@@ -116,3 +116,8 @@
   right: calc(0% + 1px);
   background: rgba(168, 168, 168, 0.5);
 }
+.react-multi-carousel-list{
+  width:90%;
+  margin-left:auto;
+  margin-right: auto;
+}

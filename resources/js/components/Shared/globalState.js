@@ -50,6 +50,12 @@ export const allItemsInCart = atom({
   default: []
 })
 
+// export const newCommentAdded = atom({
+//   key : 'newCommentAdded',
+//   default: false
+// })
+
+
 
 
 

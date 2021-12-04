@@ -26,96 +26,85 @@ import {
     selector,
     useRecoilState,
     useRecoilValue,
-  } from 'recoil';
+} from 'recoil';
 
 function Index() {
-    
+
     ReactGA.initialize('UA-213345073-1')
     ReactGA.pageview(window.location.pathname + window.location.search)
 
     return (
-        
-            <RecoilRoot>     
-                <Router>
-                    <div className="generalFont">
-                        <Request />
-                        <Header />
-                        <div className="generalBackground">
-                            <Switch>
-                                <Route path="/connect">
-                                    <Connect />
-                                </Route>                           
-                            </Switch>
-                            <Switch>
-                                <Route path="/signup">
-                                    <Signup />
-                                </Route>                           
-                            </Switch>
-                            <Switch>
-                                <Route path="/cart">
-                                    <Cart />
-                                </Route>
-                            </Switch>
-                            <Switch>
-                                <Route exact path="/">
-                                    <Home />
-                                </Route>
-                            </Switch>
-                            <Switch>
-                                <Route path="/catalog">
-                                    <Products />
-                                </Route>
-                            </Switch>
-                            <Switch>
-                                <Route path='/product/:name' component={Product} />
-                                    
-                            </Switch>
-                            <Switch>
-                                <Route path="/checkout">
-                                    <Checkout />
-                                </Route>
-                            </Switch>
-                            <Switch>
-                                <Route path="/aboutus">
-                                    <AboutUs />
-                                </Route>
-                            </Switch>
-                            <Switch>
-                                <Route path="/contact">
-                                    <Contact />
-                                </Route>
-                            </Switch>
-                            <Switch>
-                                <Route path="/refundpolicy">
-                                    <RefundPolicy />
-                                </Route>
-                            </Switch>
-                            <Switch>
-                                <Route path="/shippingpolicy">
-                                    <ShippingPolicy />
-                                </Route>
-                            </Switch>
-                            <Switch>
-                                <Route path="/faq">
-                                    <Faq />
-                                </Route>
-                            </Switch>
-                            <Switch>
-                                <Route path="/termsofservice">
-                                    <TermsOfService />
-                                </Route>
-                            </Switch>
-                            <Switch>
-                                <Route path="/privacypolicy">
-                                    <PrivacyPolicy />
-                                </Route>
-                            </Switch>
-                        </div>
-                        <Footer />
+
+        <RecoilRoot>
+            <Router>
+                <div className="generalFont">
+                    <Request />
+                    <Header />
+                    <div className="generalBackground">
+                        <Switch>
+                            <Route path="/connect">
+                                <Connect />
+                            </Route>
+
+                            <Route path="/signup">
+                                <Signup />
+                            </Route>
+
+                            <Route path="/cart">
+                                <Cart />
+                            </Route>
+
+                            <Route exact path="/">
+                                <Home />
+                            </Route>
+
+                            <Route path="/catalog">
+                                <Products />
+                            </Route>
+
+                            
+
+                            <Route path="/checkout">
+                                <Checkout />
+                            </Route>
+
+                            <Route path="/aboutus">
+                                <AboutUs />
+                            </Route>
+
+                            <Route path="/contact">
+                                <Contact />
+                            </Route>
+
+                            <Route path="/refundpolicy">
+                                <RefundPolicy />
+                            </Route>
+
+                            <Route path="/shippingpolicy">
+                                <ShippingPolicy />
+                            </Route>
+
+                            <Route path="/faq">
+                                <Faq />
+                            </Route>
+
+                            <Route path="/termsofservice">
+                                <TermsOfService />
+                            </Route>
+
+                            <Route path="/privacypolicy">
+                                <PrivacyPolicy />
+                            </Route>
+                            <Route path='/:name' >
+                                <Product />
+                            </Route>
+                        </Switch>
                     </div>
-                </Router>
-            </RecoilRoot>
-        
+                    <Footer />
+                </div>
+            </Router>
+        </RecoilRoot>
+
     );
 }
 

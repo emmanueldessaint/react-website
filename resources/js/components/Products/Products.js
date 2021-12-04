@@ -21,9 +21,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import { itemsProduct, numberOfItemsInCart } from '../Shared/globalState'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
+// import MuiAlert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import ReactPaginate from 'react-paginate';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -50,7 +53,7 @@ export default function Products() {
     const [numberOfPages, setNumberOfPages] = useRecoilState(numberOfPageProducts);
     const [itemsInCurrentPage, setItemsInCurrentPage] = useState([]);
     const [actuelPage, setActuelPage] = useRecoilState(currentPageProduct);
-    const [filter, setFilter] = useState('');
+    const [filter, setFilter] = useState(10);
     const [allItems, setAllItems] = useRecoilState(itemsProduct);
 
     const handleClick = () => {
@@ -177,6 +180,33 @@ export default function Products() {
         setFilter(event.target.value);
     };
 
+    // We start with an empty list of items.
+    const [currentItems, setCurrentItems] = useState(null);
+    const [pageCount, setPageCount] = useState(0);
+    // Here we use item offsets; we could also use page offsets
+    // following the API or data you're working with.
+    const [itemOffset, setItemOffset] = useState(0);
+    const itemsPerPage = 12;
+
+    useEffect(() => {
+        if (isLoaded === true) {
+            // Fetch items from another resources.
+            const endOffset = itemOffset + itemsPerPage;
+            console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+            setCurrentItems(allItems.slice(itemOffset, endOffset));
+            setPageCount(Math.ceil(allItems.length / itemsPerPage));
+        }
+    }, [itemOffset, itemsPerPage, isLoaded]);
+
+    // Invoke when user click to request another page.
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % allItems.length;
+        console.log(
+            `User requested page number ${event.selected}, which is offset ${newOffset}`
+        );
+        setItemOffset(newOffset);
+    };
+
     if (error) {
         return <div >Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -188,28 +218,43 @@ export default function Products() {
                 <Grid container justifyContent="center" className="mt-8">
                     <Grid container item xs={12} sm={12} md={11} lg={11}>
                         <Grid item xs={12} sm={6}>
-                            <div className="flex ml-5 mb-5 ">
-                                {numberOfPages.map(item => (
-                                    <div
-                                        key={item}
-                                    >
-                                        {item === actuelPage
-                                            ? <button className="boutonPaginationSelected  generalBackground" onClick={() => handleChangePage(item)}>{item}</button>
-                                            : <button className="boutonPagination generalBackground" onClick={() => handleChangePage(item)}>{item}</button>
-                                        }
-                                    </div>
-                                ))}
+                            <div className="flex ml-5 mb-5 divPaginationComputer">
+                                <ReactPaginate
+                                    breakLabel="..."
+                                    nextLabel=""
+                                    previousLabel=""
+                                    onPageChange={handlePageClick}
+                                    pageRangeDisplayed={3}
+                                    marginPagesDisplayed={1}
+                                    pageCount={pageCount}
+                                    renderOnZeroPageCount={null}
+                                    pageClassName="pageClassName"
+                                    containerClassName="containerClassName"
+                                    pageLinkClassName="pageLinkClassName"
+                                    activeLinkClassName="activeLinkClassName"
+                                    previousLinkClassName="previousLinkClassName"
+                                    nextLinkClassName="nextLinkClassName"
+                                    pageClassName="pageClassName"
+                                    previousClassName="previousClassName"
+                                    nextClassName="nextClassName"
+                                    breakClassName="breakClassName"
+                                />
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <div className="divPc alignRight mr-4">
-                                <FormControl size="small" className="widthFormControl">
-                                    <InputLabel><span className="ml-4"></span>Filter by</InputLabel>
+                                <FormControl variant="outlined" size="small" className="widthFormControl">
+                                    <InputLabel htmlFor="age-native-simple">Filter by</InputLabel>
                                     <Select
-                                        variant="outlined"
+                                        native
+                                        value={filter}
                                         onChange={changeFilter}
                                         fullWidth
-                                        className="testSelect"
+                                        label="Filter by"
+                                        inputProps={{
+                                            name: 'Filter',
+                                            id: 'age-native-simple',
+                                          }}
                                     >
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={10}>Popularity</option>
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={20}>Ascending price order</option>
@@ -219,12 +264,17 @@ export default function Products() {
                             </div>
                             <div className="divMobile mr-4">
                                 <FormControl size="small" className="widthFormControl">
-                                    <InputLabel><span className="ml-4"></span>Filter by</InputLabel>
+                                    <InputLabel htmlFor="age-native-simple">Filter by</InputLabel>
                                     <Select
-                                        variant="outlined"
+                                        native
+                                        value={filter}
                                         onChange={changeFilter}
                                         fullWidth
-                                        className="testSelect"
+                                        label="Filter by"
+                                        inputProps={{
+                                            name: 'Filter',
+                                            id: 'age-native-simple',
+                                          }}
                                     >
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={10}>Popularity</option>
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={20}>Ascending price order</option>
@@ -236,14 +286,12 @@ export default function Products() {
                     </Grid>
                 </Grid>
                 <Grid container justifyContent="center" className="productComputer">
-                    <Grid container item xs={12} sm={12} md={11} xl={10}>
-                        {itemsInCurrentPage.map(item => (
-                            <Grid
-                                item xs={12} sm={6} md={4} lg={3}
-                                key={item.id}
-                            >
-                                <div className="cardProduct lightShadowCard2 productComputer">
-                                    <Link to={`/product/${item.name} `} >
+                    <Grid container item xs={12} sm={12} md={12} xl={11}>
+                        <div className="contentProducts">
+                            {currentItems && currentItems.map((item, index) => (
+
+                                <div className="cardProduct lightShadowCard2 productComputer" key={index}>
+                                    <Link to={`/${item.name} `} >
                                         <img className="imageProduct" src={window.location.origin + `/images/${item.image}`} />
                                         <div className="hideProduct">
                                             <div className="elementAppear">
@@ -270,9 +318,16 @@ export default function Products() {
                                             }
                                         </div>
                                     </Link>
+
                                 </div>
-                            </Grid>
-                        ))}
+                                // <Grid
+                                //     item xs={12} sm={6} md={4} lg={3}
+                                //     key={item.id}
+                                // >
+
+                                // </Grid>
+                            ))}
+                        </div>
                     </Grid>
                 </Grid>
                 <Grid container justifyContent="center" className="productMobile">
@@ -284,10 +339,10 @@ export default function Products() {
                             >
                                 <div>
                                     <div className="flex productMobile productMobileCatalog mb-3 mt-3">
-                                        <img className="imageProductMobile cursorPointer" src={window.location.origin + `/images/${item.image}`} />
+                                        <Link to={`/${item.name} `} style={{ width: '40vw' }} ><img className="imageProductMobile cursorPointer" src={window.location.origin + `/images/${item.image}`} /></Link>
                                         <div className="pl-2 width100">
-                                            <div className="mt-1 font10 letterSpacing2 grey7 cursorPointer">{item.name}</div>
-                                            <Link to={`/product/${item.name} `} >
+                                            <Link to={`/${item.name} `} ><div className="mt-1 font10 letterSpacing2 grey7 cursorPointer">{item.name}</div> </Link>
+                                            <Link to={`/${item.name} `} >
                                                 {item.reviews.length > 0 &&
                                                     <div className="flex productDetails mt-1 opacity6 cursorPointer">
                                                         <Rating
@@ -305,19 +360,18 @@ export default function Products() {
                                                 }
                                             </Link>
                                             <div className="flexBetween ">
-                                                <div className="mt-4 cursorPointer">${item.price}</div>
-                                                <div className="flexEnd opacity8 cursorPointer" onClick={() =>addToCart(item)}><AddShoppingCartIcon /></div>
-                                                <Snackbar  open={open} autoHideDuration={1000} onClose={handleClose}>
+                                                <Link to={`/${item.name} `} ><div className="mt-4 cursorPointer">${item.price}</div></Link>
+                                                <div className="flexEnd opacity8 cursorPointer" onClick={() => addToCart(item)}><AddShoppingCartIcon /></div>
+                                                <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
                                                     <div className="bgSuccess opacity9 bgBlue pl-5 pr-5 font2 p-1  bold200 textWhite borderRadius5 boxShadowButton" onClose={handleClose} severity="success">
-                                                        <span><CheckCircleOutlineIcon className="mb-1"/></span><span className="ml-3 size2 mt-3 font2">item added to cart !</span>
+                                                        <span><CheckCircleOutlineIcon className="mb-1" /></span><span className="ml-3 size2 mt-3 font2">item added to cart !</span>
                                                     </div>
-                        
                                                 </Snackbar>
-                                                    {/* <div className="bgSuccess opacity9 bgBlue pl-4 pr-4 font2 p-2 grey8 bold500 textWhite borderRadius3 boxShadowButton" onClose={handleClose} severity="success">
+                                                {/* <div className="bgSuccess opacity9 bgBlue pl-4 pr-4 font2 p-2 grey8 bold500 textWhite borderRadius3 boxShadowButton" onClose={handleClose} severity="success">
                                                         <span><CheckCircleOutlineIcon /></span><span className="ml-3 size2">Item added to cart !</span>
                                                     </div> */}
-                        
-                                               
+
+
                                                 {/* onClick={() => addToCart(item)} */}
                                                 {/* <Alert severity="success">This is a success message!</Alert> */}
                                             </div>

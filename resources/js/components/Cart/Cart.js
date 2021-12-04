@@ -160,10 +160,10 @@ export default function Cart() {
                       key={product.id}
                     >
 
-                      <Link to={`/product/${product.name} `} className="bgWhite" ><img className="imgLineCart" src={window.location.origin + `/images/${product.image}`} /></Link>
+                      <Link to={`/${product.name} `} className="bgWhite" ><img className="imgLineCart" src={window.location.origin + `/images/${product.image}`} /></Link>
                       <div className="flexBetween bgWhite productDetailsCart">
                         <div className="quantityNameCart font10 letterSpacing2 size3 opacity9 ml-5">
-                          <Link to={`/product/${product.name} `} >{product.name}</Link>
+                          <Link to={`/${product.name} `} >{product.name}</Link>
                           <button className=" cursorPointer bgWhite" onClick={() => removeProduct(product)}><ClearIcon className="fontTrash" /></button>
                         </div>
 
@@ -192,10 +192,10 @@ export default function Cart() {
                       key={product.id}
                     >
                       <div className="bgWhite">
-                        <Link to={`/product/${product.name} `}><img className="imageProductMobileCart cursorPointer" src={window.location.origin + `/images/${product.image}`} /></Link>
-                        <Link to={`/product/${product.name} `} className="verticalAlign font10 letterSpacing2 size3 opacity9 mt-3">{product.name}</Link>
+                        <Link to={`/${product.name} `}><img className="imageProductMobileCart cursorPointer" src={window.location.origin + `/images/${product.image}`} /></Link>
+                        <Link to={`/${product.name} `} className="verticalAlign font10 letterSpacing2 size3 opacity9 mt-3">{product.name}</Link>
                         <div className="flexBetween mt-6">
-                          <Link to={`/product/${product.name} `} className="ml-5">${product.price}</Link>
+                          <Link to={`/${product.name} `} className="ml-5">${product.price}</Link>
                           <div className="flex mr-5">
                           <ColorButton style={{ minWidth: '25px', maxWidth: '25px', minHeight: '25px', maxHeight: '25px' }} variant="contained" onClick={() => addQuantityInCart(product)} >+</ColorButton >
                             <div className="centerText productQuantityCart bgWhite ">{product.quantity}</div>

@@ -229,7 +229,7 @@ export default function Header(props) {
                           <div className="dataSearch" id="clickbox">
                             {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).map(filteredName => (
                               <div key={filteredName.id}>
-                                <Link to={`/product/${filteredName.name}`} onClick={closeSearch} className="m-1 flex pt-1 pb-1 productHoverSearch">
+                                <Link to={`/${filteredName.name}`} onClick={closeSearch} className="m-1 flex pt-1 pb-1 productHoverSearch">
                                   <img className="imgProductSearch ml-1" src={window.location.origin + `/images/${filteredName.image}`} />
                                   <div className="font10 grey6 letterSpacing2 size3 verticalItem pl-3">{filteredName.name}</div>
                                 </Link>
@@ -309,7 +309,7 @@ export default function Header(props) {
           <div className="dataSearchMobile ">
             {allItems.filter(element => element.name.toLowerCase().includes(searchTerm)).map(filteredName => (
               <div key={filteredName.id}>
-                <Link to={`/product/${filteredName.name}`} onClick={closeSearch} className="m-1 flex pt-1 pb-1 productHoverSearch">
+                <Link to={`/${filteredName.name}`} onClick={closeSearch} className="m-1 flex pt-1 pb-1 productHoverSearch">
                   <img className="imgProductSearch ml-1" src={window.location.origin + `/images/${filteredName.image}`} />
                   <div className="font10 grey6 letterSpacing2 size3 verticalItem pl-3">{filteredName.name}</div>
                 </Link>

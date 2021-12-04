@@ -30,18 +30,21 @@
     transition: .5s ease;
     backface-visibility: hidden;
 }
-
-
-
-
-
-.imageOneProduct{
+.imageProductCarousel{
     width:100%;
-    border-radius:4px;
-    height:400px;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    height:100%;
     object-fit: cover;
-    opacity:1;
+    opacity:0.9;
+    transition: .5s ease;
+    backface-visibility: hidden;
 }
+
+
+
+
+
 .test{
     background-color:red;
     margin:0px;
@@ -235,8 +238,8 @@
 .switchImg{
     /* border: 1px solid rgb(206, 206, 206); */
     border-radius:3px;
-    height:120px;
-    width:90%;
+    /* height:120px; */
+    width:90px;
     object-fit: cover;
 }
 .scrollSmooth{
@@ -273,7 +276,7 @@
     padding:0px !important;
 }
 .imageProductMobile{
-    width:40vw;
+    width:100%;
     border-top-left-radius:4px;
     border-top-right-radius:4px;
     height:100px;
@@ -298,6 +301,94 @@
     position: relative;
     bottom:3px;
 }
+.cardExample{
+    background-color:rgb(151, 151, 199);
+    width:260px;
+    height:300px;
+    margin:10px;
+}
+.contentProducts{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    /* margin-right:40px;
+    margin-left:40px; */
+    /* max-width:1800px; */
+}
+.pageClassName{
+    display:flex;
+    justify-content: center;
+}
+.containerClassName{
+    display:flex;
+    list-style: none;
+    margin:0;
+    padding:0;
+    margin-bottom:20px;
+    
+}
+.previousClassName{
+    color:grey;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+.nextClassName{
+    color:grey;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+.pageLinkClassName{
+    width:25px;
+    height:25px;
+    cursor:pointer;
+    margin:7px;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+.pageLinkClassNameReview{
+    width:25px;
+    height:30px;
+    cursor:pointer;
+    margin:7px;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+.activeLinkClassName{
+    background-color:rgb(255, 255, 255);
+    color:rgb(184, 184, 219);
+    border:1px solid rgb(195, 195, 195);
+    border-radius: 2px;
+    text-align: center;
+    
+}
+.breakClassName{
+    
+    width:25px;
+    height:30px;
+    margin:7px;
+    text-align: center;
+}
+.previousLinkClassName{
+    width:25px;
+    height:30px;
+    margin-left:10px;
+    margin-right:10px;
+    cursor:pointer;
+    margin-top:4px;
+}
+.nextLinkClassName{
+    width:25px;
+    height:30px;
+    margin-left:10px;
+    margin-right:10px;
+    cursor:pointer;
+    margin-top:4px;
+}
+
 .imgAppearTransition{
     /* transition-delay: 250ms; */
     animation: 1s fadeIn;
@@ -320,7 +411,53 @@
         display:none;
     }
   }
-  
+@media all and (min-width:1201px) {
+    .imageOneProduct{
+        width:400px;
+        border-radius:4px;
+        object-fit: cover;
+        opacity:1;
+    }
+    .dispositionImageProduct{
+        display:flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+}
+@media all and (max-width:1200px) and (min-width:961px) {
+    .imageOneProduct{
+        width:320px;
+        border-radius:4px;
+        object-fit: cover;
+        opacity:1;
+    }
+    .dispositionImageProduct{
+        display:flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+}
+@media all and (max-width:960px) and (min-width:601px) {
+    .imageOneProduct{
+        width:390px;
+        border-radius:4px;
+        object-fit: cover;
+        opacity:1;
+    }
+    .dispositionImageProduct{
+        display:flex;
+        margin-left:200px;
+    }
+}
+
+@media all and (max-width:600px) {
+    .imageOneProduct{
+        width:100%;
+        border-radius:4px;
+        object-fit: cover;
+        opacity:1;
+    }
+}
 
 
 
