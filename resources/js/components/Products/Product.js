@@ -33,9 +33,7 @@ import TextField from '@material-ui/core/TextField';
 import ReactPaginate from 'react-paginate';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-<<<<<<< HEAD
 import ReactHtmlParser from 'react-html-parser'; 
-=======
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -45,7 +43,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
->>>>>>> f2bfbcf895034f68d8f8cbcf10b62c81a810db48
 
 const useStyles = makeStyles(theme => ({
 
