@@ -30,18 +30,23 @@ export default function Request() {
                     let arrayBestSellers = [];
                     allProducts = result.products
                     for (let j = 0; j < allProducts.length; j++) {
-                        let totalNotes = 0;
-                        for (let k = 0; k < allProducts[j].reviews.length; k++) {
-                            totalNotes += allProducts[j].reviews[k].note;
-                            totalAverageNote += allProducts[j].reviews[k].note;
-                            NumberOfNotes ++;
+                        if (allProducts[j].reviews.length !== 0) {
+                            let totalNotes = 0;
+                            for (let k = 0; k < allProducts[j].reviews.length; k++) {                              
+                                totalNotes += +allProducts[j].reviews[k].note;
+                                totalAverageNote += +allProducts[j].reviews[k].note;
+                                NumberOfNotes ++;
+                            }
+                            averageNote = totalNotes / allProducts[j].reviews.length;
+                            console.log(averageNote)
+                            allProducts[j].avg = averageNote;
                         }
-                        averageNote = totalNotes / allProducts[j].reviews.length;
                         
-                        allProducts[j].avg = averageNote.toFixed(2);
                     }
                     setAverageNotes((totalAverageNote/NumberOfNotes).toFixed(2));
-                    console.log(totalAverageNote/NumberOfNotes);
+                    console.log((totalAverageNote/NumberOfNotes).toFixed(2));
+                    console.log(totalAverageNote);
+                    console.log(NumberOfNotes);
                     arrayBestSellers.push(result.products[0]);
                     arrayBestSellers.push(result.products[1]);
                     arrayBestSellers.push(result.products[2]);

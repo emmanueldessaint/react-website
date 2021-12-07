@@ -33,6 +33,15 @@ import TextField from '@material-ui/core/TextField';
 import ReactPaginate from 'react-paginate';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 const useStyles = makeStyles(theme => ({
 
@@ -156,15 +165,24 @@ export default function Product(props) {
     const [valueComment, setValueComment] = useState(0);
     const [newCommentContent, setNewCommentContent] = useState('');
     const [noRating, setNoRating] = useState(false);
+    const [filter, setFilter] = useState(0);
+    const [open, setOpen] = useState(false);
 
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     useEffect(() => {
         if (allItems.length !== 0) {
             var urlProduct = window.location.pathname.split('/');
             let decodeUrl = decodeURI(urlProduct[1]);
             let product = allItems.find(element => element.name === decodeUrl)
+            console.log(product.avg)
             setProduct(product);
-            console.log(product);
             setDefaultImage(product.images[0].url);
             setIsLoaded(true);
             setChangePage(false);
@@ -197,7 +215,7 @@ export default function Product(props) {
             id: `${product.id}`,
             name: `${product.name}`,
             price: `${product.price}`,
-            image: `${product.image}`,
+            image: `${product.images[0].url}`,
             quantity: 0
         }
 
@@ -234,7 +252,6 @@ export default function Product(props) {
         window.scrollTo(0, 700);
         setValue(2);
         handleChangeAccordion('panel3');
-        console.log(value);
     }
 
     useEffect(() => {
@@ -334,7 +351,7 @@ export default function Product(props) {
         if (isLoaded === true) {
             // Fetch items from another resources.
             const endOffset = itemOffset + itemsPerPage;
-            console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+            // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
             setCurrentItems(product.reviews.slice(itemOffset, endOffset));
             setPageCount(Math.ceil(product.reviews.length / itemsPerPage));
         }
@@ -349,8 +366,57 @@ export default function Product(props) {
         setItemOffset(newOffset);
     };
 
+    function compareAsc(a, b) {
+        if (a.price < b.price) {
+            return -1;
+        }
+        if (a.price > b.price) {
+            return 1;
+        }
+        return 0;
+    }
 
+    function compareDesc(a, b) {
+        if (a.price > b.price) {
+            return -1;
+        }
+        if (a.price < b.price) {
+            return 1;
+        }
+        return 0;
+    }
 
+    function highestRated(a, b) {
+        if (a.note > b.note) {
+            return -1;
+        }
+        if (a.note < b.note) {
+            return 1;
+        }
+        return 0;
+    }
+
+    // useEffect(() => {
+    //     if (isLoaded === true) {
+    //         if (filter === 10) {
+
+    //         }
+    //         if (filter === 20) {
+    //             let array = JSON.parse(JSON.stringify(product))
+    //             array.reviews.sort(highestRated);
+    //             setProduct(array);
+    //             console.log('filter go')
+    //         }
+    //         if (filter === 30) {
+
+    //         }
+    //     }
+    // }, [filter, isLoaded])
+
+    const changeFilter = (event) => {
+        setFilter(event.target.value);
+        console.log(filter)
+    };
 
     const bestSellersCarousel = {
         large: {
@@ -387,7 +453,7 @@ export default function Product(props) {
                                 </div>
                             ))}
                         </div>
-                        <div className="m-1"><img className="imageOneProduct shadowProduct1 imgAppearTransition" src={window.location.origin + `/images/${defaultImage}`} /></div>
+                        <div className="m-1"><img className="imageOneProduct shadowProduct1 imgAppearTransition" src={window.location.origin + `/images/${product.images[0].url}`} /></div>
                         <div className="flex">
                             {product.images.map(image => (
                                 <div key={image.id}>
@@ -400,7 +466,7 @@ export default function Product(props) {
                         <div className="font10 size3 grey8 letterSpacing2 textShadow1">{product.name}</div>
 
                         <div className="flexBetween mt-9">
-                            <span className="priceProduct font2 letterSpacing2 ">${product.price}</span>
+                            <span className="priceProduct font2 letterSpacing2 ">${(product.price / 100).toFixed(2)}</span>
                             <span>
                                 <Rating
                                     size="small"
@@ -468,7 +534,7 @@ export default function Product(props) {
                             textColor="primary"
                         >
                             <Tab label="Description" {...a11yProps(0)} />
-                            <Tab label="Fiche produit" {...a11yProps(1)} />
+                            <Tab label="Product quality" {...a11yProps(1)} />
                             <Tab label="reviews" {...a11yProps(2)} />
                         </Tabs>
                         <div className=" greyLineProduct "></div>
@@ -480,16 +546,18 @@ export default function Product(props) {
                         </Grid>
                     </TabPanel>
                     <TabPanel value={value} index={1}>
-                        Item Two
+                        <div>
+                            hello loremp
+                        </div>
                     </TabPanel>
                     <TabPanel value={value} index={2}>
-                        {/* <Button onClick={handleConsole}>click me</Button> */}
                         <Grid container >
                             <Grid item sm={12} xs={12}>
                                 <div className="flexBetween mt-2 mb-4">
                                     <div>
+                                    {product.avg !== undefined ?
                                         <div className="flex">
-                                            <div className="size11 bold600">{product.avg}</div>
+                                            <div className="size11 bold600">{(Number(product.avg)).toFixed(2)}</div>
                                             <div className="height50 ml-2">
                                                 <div className="">
                                                     <Rating
@@ -503,14 +571,14 @@ export default function Product(props) {
                                                 </div>
                                                 <div className="font2 size08 grey7">based on {product.reviews.length} {product.reviews.length > 1 ? <span>reviews</span> : <span>review</span>}</div>
                                             </div>
-                                        </div>
+                                        </div> : <Typography>Be the first to comment !</Typography>}
                                         <ReviewButton onClick={handleReviews} style={{ borderRadius: '3px', minWidth: '190px', marginTop: '20px', letterSpacing: '1px', wordSpacing: '3px', }}>write a review</ReviewButton>
                                         {/* <div>Notre examiner le lignes directires aide les clients à rédiger des avis honnetes</div> */}
                                     </div>
                                     <div className="">
                                         <div>
                                             <div className="flex">
-                                                <div className="numberStars mr-1 bold800 width20">{numberOfStars.fiveStars}</div>
+                                                <div className="numberStars mr-1 bold800 width20 alignRight">{numberOfStars.fiveStars}</div>
                                                 <Rating
                                                     size="small"
                                                     precision={0.5}
@@ -523,7 +591,7 @@ export default function Product(props) {
                                         </div>
                                         <div>
                                             <div className="flex">
-                                                <div className="numberStars mr-1 bold800 width20">{numberOfStars.fourStars}</div>
+                                                <div className="numberStars mr-1 bold800 width20 alignRight">{numberOfStars.fourStars}</div>
                                                 <Rating
                                                     size="small"
                                                     precision={0.5}
@@ -536,7 +604,7 @@ export default function Product(props) {
                                         </div>
                                         <div>
                                             <div className="flex">
-                                                <div className="numberStars mr-1 bold800 width20">{numberOfStars.threeStars}</div>
+                                                <div className="numberStars mr-1 bold800 width20 alignRight">{numberOfStars.threeStars}</div>
                                                 <Rating
                                                     size="small"
                                                     precision={0.5}
@@ -549,7 +617,7 @@ export default function Product(props) {
                                         </div>
                                         <div>
                                             <div className="flex">
-                                                <div className="numberStars mr-1 bold800 width20">{numberOfStars.twoStars}</div>
+                                                <div className="numberStars mr-1 bold800 width20 alignRight">{numberOfStars.twoStars}</div>
                                                 <Rating
                                                     size="small"
                                                     precision={0.5}
@@ -562,7 +630,7 @@ export default function Product(props) {
                                         </div>
                                         <div>
                                             <div className="flex">
-                                                <div className="numberStars mr-1 bold800 width20">{numberOfStars.oneStar}</div>
+                                                <div className="numberStars mr-1 bold800 width20 alignRight">{numberOfStars.oneStar}</div>
                                                 <Rating
                                                     size="small"
                                                     precision={0.5}
@@ -577,6 +645,33 @@ export default function Product(props) {
                                 </div>
                             </Grid>
                         </Grid>
+                        {/* <div>
+                            <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+                                Open alert dialog
+                            </Button>
+                            <Dialog
+                                open={open}
+                                onClose={handleClose}
+                                aria-labelledby="alert-dialog-title"
+                                aria-describedby="alert-dialog-description"
+                            >
+                                <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText id="alert-dialog-description">
+                                        Let Google help apps determine location. This means sending anonymous location data to
+                                        Google, even when no apps are running.
+                                    </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                    <Button onClick={handleClose} color="primary">
+                                        Disagree
+                                    </Button>
+                                    <Button onClick={handleClose} color="primary" autoFocus>
+                                        Agree
+                                    </Button>
+                                </DialogActions>
+                            </Dialog>
+                        </div> */}
                         {writeReviews === true &&
                             <div className="mb-3">
                                 <div className="flexBetween">
@@ -635,6 +730,29 @@ export default function Product(props) {
                             nextClassName="nextClassName"
                             breakClassName="breakClassName"
                         />
+                        {/* <div className="flexBetween">
+                            <div className="flexEnd grey7 ml-3 size09 mb-2">Reviews from {itemOffset} to {itemOffset + itemsPerPage}</div>
+                            <div>
+                                <FormControl variant="outlined" size="small" className="widthFormControl">
+                                    <InputLabel htmlFor="age-native-simple">Filter by</InputLabel>
+                                    <Select
+                                        native
+                                        value={filter}
+                                        onChange={changeFilter}
+                                        fullWidth
+                                        label="Filter by"
+                                        inputProps={{
+                                            name: 'Filter',
+                                            id: 'age-native-simple',
+                                        }}
+                                    >
+                                        <option className="optionSelect pl-1 pr-1 verticalItem" value={10}>Default</option>
+                                        <option className="optionSelect pl-1 pr-1 verticalItem" value={20}>The most recent</option>
+                                        <option className="optionSelect pl-1 pr-1 verticalItem" value={30}>The highest-rated</option>
+                                    </Select>
+                                </FormControl>
+                            </div>
+                        </div> */}
                         {currentItems && currentItems.map((review, index) => (
                             <div key={index} className="lightShadowCard2 p-3 mb-5">
                                 <Grid container className="flexBetween">
@@ -705,7 +823,7 @@ export default function Product(props) {
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
-                        <Accordion expanded={expanded === 'panel3'} onChange={handleChangeAccordion('panel3')} className="productMobile">
+                        <Accordion expanded={expanded === 'panel3'} onChange={handleChangeAccordion('panel3')} className="productMobile" style={{ width: '100vw' }}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel3bh-content"
@@ -713,12 +831,18 @@ export default function Product(props) {
                             >
                                 <div>Reviews ({product.reviews.length})</div>
                             </AccordionSummary>
-                            <AccordionDetails>
-                                <div>
-                                    <div className="mlw-1 mb-4">
-                                        <div>
+                            <AccordionDetails className="flexColumn">
+
+
+
+
+
+
+                                <div className="mlw-1 mb-4 ">
+                                    <div>
+                                        {product.avg !== undefined ?
                                             <div className="flex">
-                                                <div className="size11 bold600">{product.avg}</div>
+                                                <div className="size11 bold600">{(Number(product.avg)).toFixed(2)}</div>
                                                 <div className="height50 ml-2">
                                                     <div className="">
                                                         <Rating
@@ -733,166 +857,168 @@ export default function Product(props) {
                                                     <div className="font2 size08 grey7">based on {product.reviews.length} {product.reviews.length > 1 ? <span>reviews</span> : <span>review</span>}</div>
                                                 </div>
                                             </div>
-                                            <ReviewButtonMobile onClick={handleReviews} style={{ borderRadius: '3px', minWidth: '190px', marginTop: '10px', paddingTop: '5px', letterSpacing: '1px', wordSpacing: '3px', }}>write a review</ReviewButtonMobile>
-                                            {/* <div>Notre examiner le lignes directires aide les clients à rédiger des avis honnetes</div> */}
-                                        </div>
-                                        <div className="mt-4">
-                                            <div>
-                                                <div className="flex">
-                                                    <div className=" mr-1 bold800 width20">{numberOfStars.fiveStars}</div>
-                                                    <Rating
-                                                        size="small"
-                                                        precision={0.5}
-                                                        readOnly
-                                                        className=""
-                                                        name="simple-controlled"
-                                                        value={5}
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="flex">
-                                                    <div className=" mr-1 bold800 width20">{numberOfStars.fourStars}</div>
-                                                    <Rating
-                                                        size="small"
-                                                        precision={0.5}
-                                                        readOnly
-                                                        className=""
-                                                        name="simple-controlled"
-                                                        value={4}
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="flex">
-                                                    <div className=" mr-1 bold800 width20">{numberOfStars.threeStars}</div>
-                                                    <Rating
-                                                        size="small"
-                                                        precision={0.5}
-                                                        readOnly
-                                                        className=""
-                                                        name="simple-controlled"
-                                                        value={3}
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="flex">
-                                                    <div className=" mr-1 bold800 width20">{numberOfStars.twoStars}</div>
-                                                    <Rating
-                                                        size="small"
-                                                        precision={0.5}
-                                                        readOnly
-                                                        className=""
-                                                        name="simple-controlled"
-                                                        value={2}
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="flex">
-                                                    <div className=" mr-1 bold800 width20">{numberOfStars.oneStar}</div>
-                                                    <Rating
-                                                        size="small"
-                                                        precision={0.5}
-                                                        readOnly
-                                                        className=""
-                                                        name="simple-controlled"
-                                                        value={1}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                        </div>
+                                            : <Typography>Be the first to comment !</Typography>}
+                                        <ReviewButtonMobile onClick={handleReviews} style={{ borderRadius: '3px', minWidth: '190px', marginTop: '10px', paddingTop: '5px', letterSpacing: '1px', wordSpacing: '3px', }}>write a review</ReviewButtonMobile>
                                     </div>
-                                    {writeReviews === true &&
-                                        <div className="mb-3">
-                                            <div>
+                                    <div className="mt-4">
+                                        <div>
+                                            <div className="flex">
+                                                <div className=" mr-1 bold800 width20 alignRight">{numberOfStars.fiveStars}</div>
                                                 <Rating
-                                                    precision={1}
-                                                    className="mb--5"
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
                                                     name="simple-controlled"
-                                                    value={valueComment}
-                                                    onChange={(event, newValue) => {
-                                                        setValueComment(newValue);
-                                                    }}
-                                                    emptyIcon={
-                                                        <StarBorderIcon fontSize="inherit" className="emptyStar" />
-                                                    }
+                                                    value={5}
                                                 />
                                             </div>
-                                            {noRating &&
-                                                <div className="errorRating textRed">
-                                                    You must chose a note !
-                                                </div>
-                                            }
-                                            <TextField
-                                                margin="normal"
-                                                variant="outlined"
-                                                fullWidth
-                                                multiline
-                                                maxRows={10}
-                                                label="Your comment"
-                                                className="mt--5"
-                                                value={newCommentContent}
-                                                onChange={(e) => setNewCommentContent(e.target.value)}
-                                            ></TextField>
-                                            <ButtonSubmitComment variant="contained" onClick={submitReview} style={{ minWidth: '140px', marginBottom: '15px', marginTop: '10px', letterSpacing: '1px', wordSpacing: '3px', }}>Submit</ButtonSubmitComment>
                                         </div>
-                                    }
-                                    <ReactPaginate
-                                        breakLabel="..."
-                                        nextLabel={<ArrowForwardIosIcon />}
-                                        previousLabel={<ArrowBackIosIcon />}
-                                        onPageChange={handlePageClick}
-                                        pageRangeDisplayed={3}
-                                        marginPagesDisplayed={1}
-                                        pageCount={pageCount}
-                                        renderOnZeroPageCount={null}
-                                        pageClassName="pageClassName"
-                                        containerClassName="containerClassName"
-                                        pageLinkClassName="pageLinkClassNameReview"
-                                        activeLinkClassName="activeLinkClassName"
-                                        previousLinkClassName="previousLinkClassName"
-                                        nextLinkClassName="nextLinkClassName"
-                                        pageClassName="pageClassName"
-                                        previousClassName="previousClassName"
-                                        nextClassName="nextClassName"
-                                        breakClassName="breakClassName"
-                                    />
-                                    {currentItems && currentItems.map((review, index) => (
-                                        <div key={index} className="lightShadowCard2 p-3 mb-5">
-                                            <Grid container className="flexBetween">
-                                                <Grid item sm={10} xs={12}>
-                                                    <div className="mb-2">
-                                                        <span className="mr-2"><AccountCircleIcon /></span>
-                                                        <span className="font5 bold600 grey8">{review.title}</span><br />
-                                                        <span className="ml-3 bold500 size08 font07 grey6">{review.created_at}</span>
-                                                    </div>
-                                                    <div>
-                                                        <span className="font2 grey6">{review.description}</span>
-                                                    </div>
-                                                </Grid>
-
-                                                <Grid item sm={2} xs={12}>
-                                                    <div className="starsProductReview marginTop600px opacity8">
-                                                        <Rating
-                                                            size="small"
-                                                            precision={0.5}
-                                                            readOnly
-                                                            name="simple-controlled"
-                                                            value={review.note}
-                                                            emptyIcon={
-                                                                <StarBorderIcon fontSize="inherit" className="emptyStar" />
-                                                            }
-                                                        />
-                                                    </div>
-                                                </Grid>
-                                            </Grid>
+                                        <div>
+                                            <div className="flex">
+                                                <div className=" mr-1 bold800 width20 alignRight">{numberOfStars.fourStars}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={4}
+                                                />
+                                            </div>
                                         </div>
-                                    ))}
+                                        <div>
+                                            <div className="flex">
+                                                <div className=" mr-1 bold800 width20 alignRight">{numberOfStars.threeStars}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={3}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex">
+                                                <div className=" mr-1 bold800 width20 alignRight">{numberOfStars.twoStars}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={2}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="flex">
+                                                <div className=" mr-1 bold800 width20 alignRight">{numberOfStars.oneStar}</div>
+                                                <Rating
+                                                    size="small"
+                                                    precision={0.5}
+                                                    readOnly
+                                                    className=""
+                                                    name="simple-controlled"
+                                                    value={1}
+                                                />
+                                            </div>
+                                        </div>
 
+                                    </div>
                                 </div>
+
+
+                                {writeReviews === true &&
+                                    <div className="mb-3">
+                                        <div>
+                                            <Rating
+                                                precision={1}
+                                                className="mb--5"
+                                                name="simple-controlled"
+                                                value={valueComment}
+                                                onChange={(event, newValue) => {
+                                                    setValueComment(newValue);
+                                                }}
+                                                emptyIcon={
+                                                    <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                }
+                                            />
+                                        </div>
+                                        {noRating &&
+                                            <div className="errorRating textRed">
+                                                You must chose a note !
+                                            </div>
+                                        }
+                                        <TextField
+                                            margin="normal"
+                                            variant="outlined"
+                                            fullWidth
+                                            multiline
+                                            maxRows={10}
+                                            label="Your comment"
+                                            className="mt--5"
+                                            value={newCommentContent}
+                                            onChange={(e) => setNewCommentContent(e.target.value)}
+                                        ></TextField>
+                                        <ButtonSubmitComment variant="contained" onClick={submitReview} style={{ minWidth: '140px', marginBottom: '15px', marginTop: '10px', letterSpacing: '1px', wordSpacing: '3px', }}>Submit</ButtonSubmitComment>
+                                    </div>
+                                }
+                                <ReactPaginate
+                                    breakLabel="..."
+                                    nextLabel={<ArrowForwardIosIcon />}
+                                    previousLabel={<ArrowBackIosIcon />}
+                                    onPageChange={handlePageClick}
+                                    pageRangeDisplayed={3}
+                                    marginPagesDisplayed={1}
+                                    pageCount={pageCount}
+                                    renderOnZeroPageCount={null}
+                                    pageClassName="pageClassName"
+                                    containerClassName="containerClassName"
+                                    pageLinkClassName="pageLinkClassNameReview"
+                                    activeLinkClassName="activeLinkClassName"
+                                    previousLinkClassName="previousLinkClassName"
+                                    nextLinkClassName="nextLinkClassName"
+                                    pageClassName="pageClassName"
+                                    previousClassName="previousClassName"
+                                    nextClassName="nextClassName"
+                                    breakClassName="breakClassName"
+                                />
+
+                                {currentItems && currentItems.map((review, index) => (
+                                    <div key={index} className="lightShadowCard2 p-3 mb-5 minWidth500">
+                                        <Grid container className="flexBetween" >
+                                            <Grid item sm={10} xs={12}>
+                                                <div className="mb-2 flex">
+                                                    <div className="mr-2"><AccountCircleIcon /></div>
+                                                    <div className="font5 bold600 grey8">{review.title}</div><br />
+                                                    <div className="ml-3 bold500 size08 font07 grey6">{review.created_at}</div>
+                                                </div>
+                                                <div>
+                                                    <div className="font2 grey6 width100">{review.description}</div>
+                                                </div>
+                                            </Grid>
+
+                                            <Grid item sm={2} xs={12}>
+                                                <div className="starsProductReview marginTop600px opacity8">
+                                                    <Rating
+                                                        size="small"
+                                                        precision={0.5}
+                                                        readOnly
+                                                        name="simple-controlled"
+                                                        value={review.note}
+                                                        emptyIcon={
+                                                            <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                        }
+                                                    />
+                                                </div>
+                                            </Grid>
+                                        </Grid>
+                                    </div>
+                                ))}
+
                             </AccordionDetails>
                         </Accordion>
                     </Grid>
@@ -900,21 +1026,20 @@ export default function Product(props) {
 
                 <Grid className="pt-10" container justifyContent="center">
                     <Grid item xs={11} md={11}>
-                        <div className="mt-10">
+                        <div className="mt-10 mb-3">
                             <div className="flexCenter"><img src={reward} alt="reward_svg" className="rewardIcon opacity6" /></div>
                             <span className="flexCenter font8 size7 mt-3 bold600 bestSellers opacity9 letterSpacing2">Our customers also like ...</span>
                         </div>
                         {isLoaded &&
-                            <div>
+                            <div className="">
                                 <Carousel
                                     responsive={bestSellersCarousel}
                                     infinite={true}
-                                    autoPlaySpeed={1000}
                                 >
                                     {bestSellers.map(item => (
-                                        <div className="cardProduct lightShadowCard2" key={item.id}>
-                                            <Link to={`/${item.name} `} onClick={changeProduct}>
-                                                <img className="imageProduct" src={window.location.origin + `/images/${item.image}`} />
+                                        <div className="cardProductCarousel lightShadowCard2" key={item.id}>
+                                            <Link onClick={changeProduct} to={`/${item.name} `} >
+                                                <img className="imageProductCarousel" src={window.location.origin + `/images/${item.images[0].url}`} />
                                                 <div className="hideProduct">
                                                     <div className="elementAppear font5 letterSpacing1">
                                                         DISCOVER
@@ -933,7 +1058,7 @@ export default function Product(props) {
                                                         }
                                                     />
                                                 </div>
-                                                <div className="priceProduct font2 grey8 letterSpacing2 mt-2 ml-3 pb-1 opacity9">${item.price}.00</div>
+                                                <div className="priceProduct font2 grey8 letterSpacing2 mt-2 ml-3 pb-1 opacity9">${(item.price / 100).toFixed(2)}</div>
                                             </Link>
                                         </div>
                                     ))}

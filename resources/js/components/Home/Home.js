@@ -120,7 +120,7 @@ export default function Home() {
                     <Grid item container xs={12} md={11}>
                         <Grid item xs={12} sm={4}>
                             <div className="mt-6 ">
-                                
+
                                 <span className="flexCenter"><img src={earth} alt="earth_icon" className="smallIcons " /></span>
                                 <span className="flexCenter mt-2 titleHomeArguments grey7 font6 size1 opacity9 letterSpacing2">RESPECT FOR THE LAND</span>
                                 <div className="blueBar"></div>
@@ -150,12 +150,12 @@ export default function Home() {
                     </Grid>
                 </Grid>
 
-                <div className="mt-10">
+                <div className="mt-10 mb-5">
                     <div className="flexCenter"><img src={reward} alt="reward_svg" className="rewardIcon opacity8" /></div>
                     <span className="flexCenter font8 size7 mt-3 bold600 bestSellers opacity9 letterSpacing2">Our best sellers</span>
                     <span className="flexCenter font5 mt-1 bold400 bestSellers opacity9">Discover our customers' favorite products !</span>
                 </div>
-                
+
                 {isLoaded &&
                     <div className="">
                         <Carousel
@@ -165,7 +165,7 @@ export default function Home() {
                             {bestSellers.map(item => (
                                 <div className="cardProductCarousel lightShadowCard2" key={item.id}>
                                     <Link to={`/${item.name} `} >
-                                        <img className="imageProductCarousel" src={window.location.origin + `/images/${item.image}`} />
+                                        <img className="imageProductCarousel" src={window.location.origin + `/images/${item.images[0].url}`} />
                                         <div className="hideProduct">
                                             <div className="elementAppear font5 letterSpacing1">
                                                 DISCOVER
@@ -184,7 +184,7 @@ export default function Home() {
                                                 }
                                             />
                                         </div>
-                                        <div className="priceProduct font2 grey8 letterSpacing2 mt-2 ml-3 pb-1 opacity9">${item.price}</div>
+                                        <div className="priceProduct font2 grey8 letterSpacing2 mt-2 ml-3 pb-1 opacity9">${(item.price/100).toFixed(2)}</div>
                                     </Link>
                                 </div>
                             ))}
@@ -221,30 +221,35 @@ export default function Home() {
                                 autoPlay={true}
                                 autoPlaySpeed={10000}
                             >
-                                {userReviews.map(item => (
+                                {userReviews.map((review, index) => (
                                     <div
                                         className="m-2"
-                                        key={item.id}
+                                        key={index}
                                     >
-                                        {item.product !== undefined && <Link to={`/${item.product.name}`}>
-                                            <Rating
-                                                precision={0.5}
-                                                readOnly
-                                                size="small"
-                                                className="stars ml-2 opacity8"
-                                                name="simple-controlled"
-                                                value={item.note}
-                                                emptyIcon={
-                                                    <StarBorderIcon fontSize="inherit" className="emptyStar" />
-                                                }
-                                            />
-                                            <div className="ml-2 linkItemComment">{item.product.name}</div>
-                                            <div className="lightShadowCard3">
 
-                                                {/* <div className="mt-2 pl-2 pt-2 grey6 bold100 font2">{item.description.length < 60 ? item.description : item.description.substring(0, 70) + " . . ."}</div> */}
-                                                <div className="mt-5 pl-2 pb-2 font2 bold500 grey9">{item.title}</div>
-                                            </div>
-                                        </Link>}
+                                        {/* {item.product !== undefined && */}
+                                        {/* <Link to={`/${item.product.name}`}> */}
+                                        <Rating
+                                            precision={0.5}
+                                            readOnly
+                                            size="small"
+                                            className="stars ml-2 opacity8"
+                                            name="simple-controlled"
+                                            value={review.note}
+                                            emptyIcon={
+                                                <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                            }
+                                        />
+                                        {/* <div className="ml-2 linkItemComment minHeight30">{item.product.name}</div> */}
+                                        <div className="lightShadowCard3">
+
+                                            {review.description.length !== null &&
+                                                <div className="mt-2 pl-2 pt-2 grey6 bold100 font2 minHeight90">{review.description.length < 60 ? review.description : review.description.substring(0, 70) + " . . ."}</div>
+                                            }
+                                            <div className="mt-5 pl-2 pb-2 font2 bold500 grey9">{review.title}</div>
+                                        </div>
+                                        {/* </Link> */}
+                                        {/* } */}
                                     </div>
                                 ))}
                             </Carousel>

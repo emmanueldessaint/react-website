@@ -1,9 +1,4 @@
-.productLineCart{
-   
-    display:flex;
-    border-radius:2px;
-    font-size:1.1em;
-}
+
 .productDetailsCart{
     width:100%;
     align-items: center;
