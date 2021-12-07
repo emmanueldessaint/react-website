@@ -20,7 +20,7 @@ class ProductReviews extends Migration
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
             $table->integer('note');
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->date('date');
             $table->timestamps();

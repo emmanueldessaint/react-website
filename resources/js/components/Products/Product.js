@@ -33,6 +33,7 @@ import TextField from '@material-ui/core/TextField';
 import ReactPaginate from 'react-paginate';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ReactHtmlParser from 'react-html-parser'; 
 
 const useStyles = makeStyles(theme => ({
 
@@ -452,7 +453,7 @@ export default function Product(props) {
                             <div className="width90 greyLineProduct m-4"></div>
                         </div>
                         <div>
-                            <div>{product.description}</div>
+                            <div>{ReactHtmlParser (product.description)}</div>
                         </div>
                     </Grid>
                     <Grid item xs={false} md={1}></Grid>
