@@ -95,7 +95,7 @@ export default function Products() {
             id: `${item.id}`,
             name: `${item.name}`,
             price: `${item.price}`,
-            image: `${item.image}`,
+            image: `${item.images[0].url}`,
             quantity: 1
         }
         var itemExistInCart = false;
@@ -159,12 +159,16 @@ export default function Products() {
     }
 
     useEffect(() => {
+        console.log("go filter useEffect")
         if (filter === 10) {
+            console.log("go filter 10")
             let array = [...allItems]
             array.sort(comparePopularity);
             setAllItems(array);
+            
         }
         if (filter === 20) {
+            console.log("go filter 20")
             let array = [...allItems]
             array.sort(compareAsc);
             setAllItems(array);
@@ -178,6 +182,7 @@ export default function Products() {
 
     const changeFilter = (event) => {
         setFilter(event.target.value);
+        
     };
 
     // We start with an empty list of items.
@@ -243,7 +248,7 @@ export default function Products() {
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <div className="divPc alignRight mr-4">
-                                <FormControl variant="outlined" size="small" className="widthFormControl">
+                                <FormControl variant="outlined" size="small" className="widthFormControl" >
                                     <InputLabel htmlFor="age-native-simple">Filter by</InputLabel>
                                     <Select
                                         native
@@ -255,6 +260,7 @@ export default function Products() {
                                             name: 'Filter',
                                             id: 'age-native-simple',
                                           }}
+                                          style={{backgroundColor:'white'}}
                                     >
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={10}>Popularity</option>
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={20}>Ascending price order</option>
@@ -288,11 +294,11 @@ export default function Products() {
                 <Grid container justifyContent="center" className="productComputer">
                     <Grid container item xs={12} sm={12} md={12} xl={11}>
                         <div className="contentProducts">
-                            {currentItems && currentItems.map((item, index) => (
+                        {itemsInCurrentPage.map((item,index) => (
 
                                 <div className="cardProduct lightShadowCard2 productComputer" key={index}>
                                     <Link to={`/${item.name} `} >
-                                        <img className="imageProduct" src={window.location.origin + `/images/${item.image}`} />
+                                        <img className="imageProduct" src={window.location.origin + `/images/${item.images[0].url}`} />
                                         <div className="hideProduct">
                                             <div className="elementAppear">
                                                 DISCOVER
@@ -300,7 +306,7 @@ export default function Products() {
                                         </div>
                                         <div className="nameProduct font10 letterSpacing2 size3 grey8 flexCenter">{item.name}</div>
                                         <div className="flexBetween font2">
-                                            <div className="priceProduct grey8 letterSpacing2 mt-4 ml-3 pb-1">${item.price}</div>
+                                            <div className="priceProduct grey8 letterSpacing2 mt-4 ml-3 pb-1">${(item.price/100).toFixed(2)}</div>
                                             {item.reviews.length > 0 &&
                                                 <div className="flex productDetails mt-4 mr-3 pb-1 opacity8">
                                                     <div className="">({item.reviews.length})<span className="ml-1"></span></div>
@@ -339,7 +345,7 @@ export default function Products() {
                             >
                                 <div>
                                     <div className="flex productMobile productMobileCatalog mb-3 mt-3">
-                                        <Link to={`/${item.name} `} style={{ width: '40vw' }} ><img className="imageProductMobile cursorPointer" src={window.location.origin + `/images/${item.image}`} /></Link>
+                                        <Link to={`/${item.name} `} style={{ width: '40vw' }} ><img className="imageProductMobile cursorPointer" src={window.location.origin + `/images/${item.images[0].url}`} /></Link>
                                         <div className="pl-2 width100">
                                             <Link to={`/${item.name} `} ><div className="mt-1 font10 letterSpacing2 grey7 cursorPointer">{item.name}</div> </Link>
                                             <Link to={`/${item.name} `} >
@@ -360,7 +366,7 @@ export default function Products() {
                                                 }
                                             </Link>
                                             <div className="flexBetween ">
-                                                <Link to={`/${item.name} `} ><div className="mt-4 cursorPointer">${item.price}</div></Link>
+                                                <Link to={`/${item.name} `} ><div className="mt-4 cursorPointer">${(item.price/100).toFixed(2)}</div></Link>
                                                 <div className="flexEnd opacity8 cursorPointer" onClick={() => addToCart(item)}><AddShoppingCartIcon /></div>
                                                 <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
                                                     <div className="bgSuccess opacity9 bgBlue pl-5 pr-5 font2 p-1  bold200 textWhite borderRadius5 boxShadowButton" onClose={handleClose} severity="success">

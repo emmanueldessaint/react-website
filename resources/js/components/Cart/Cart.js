@@ -78,12 +78,13 @@ export default function Cart() {
     var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"));
     if (ourCart !== null) {
       for (var i = 0; i < ourCart.length; i++) {
-        myPrice += (ourCart[i].quantity * ourCart[i].price);
+        myPrice += Number(Number(ourCart[i].quantity) * Number(ourCart[i].price));
       }
       setItemsInCart(ourCart);
       setPrice(myPrice);
       setLocalStorageLength(ourCart.length);
     }
+    console.log(ourCart)
     setIsLoaded(true);
     scroll(0, 0);
   }, [])
@@ -92,7 +93,7 @@ export default function Cart() {
     var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"))
     var find = ourCart.find(element => element.name === product.name)
     find.quantity++;
-    setPrice(price + find.price);
+    setPrice(Number(price) + Number(find.price));
     setItemsInCart(ourCart);
     setNumberInCart(numberInCart + 1);
     localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(ourCart));
@@ -106,7 +107,7 @@ export default function Cart() {
       return;
     }
     find.quantity--;
-    setPrice(price - find.price);
+    setPrice(Number(price) - Number(find.price));
     setItemsInCart(ourCart);
     setNumberInCart(numberInCart - 1);
     localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(ourCart));
@@ -141,7 +142,15 @@ export default function Cart() {
             <h2 className="flexCenter letterSpacing1 font5">My cart</h2>
 
             {localStorageLength === 0 &&
-              <div className="textAlignCenter font2">Your cart is empty</div>
+              <div>
+                <div className="textAlignCenter font2">Your cart is empty</div>
+                <Link to="/catalog" className=" flexCenter mt-3">
+                  <ColorButton variant="contained" style={{ fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em' }}  >
+                    Back to shopping
+                  </ColorButton>
+                </Link>
+                
+              </div>
             }
 
             {localStorageLength > 0 &&
@@ -156,7 +165,7 @@ export default function Cart() {
                 <div className="divPc">
                   {itemsInCart.map(product => (
                     <div
-                      className="productLineCart lightShadowCard2 bgBlue mb-4"
+                      className="flex lightShadowCard2 bgBlue mb-4"
                       key={product.id}
                     >
 
@@ -168,7 +177,7 @@ export default function Cart() {
                         </div>
 
                         <div className="widthQuantityPrice">
-                          <div className="letterSpacing1 font5 bold600 grey8 mt-2">${product.price}</div>
+                          <div className="letterSpacing1 font5 bold600 grey8 mt-2">${(product.price/100).toFixed(2)}</div>
                           <div className="quantityProductCart flex mb-2 mt-8">
                             <ColorButton style={{ minWidth: '25px', maxWidth: '25px', minHeight: '25px', maxHeight: '25px' }} variant="contained" onClick={() => addQuantityInCart(product)} >+</ColorButton >
                             <div className="centerText productQuantityCart bgWhite">{product.quantity}</div>
@@ -178,7 +187,7 @@ export default function Cart() {
                         </div>
                         <div>
                           <div className="productPriceQuantityInCart letterSpacing1 font5 bold600 grey8 size1 mr-8">
-                            ${product.price * product.quantity}
+                            ${(Number(product.price/100) * Number(product.quantity)).toFixed(2)}
                           </div>
                         </div>
                       </div>
@@ -188,16 +197,16 @@ export default function Cart() {
                 <div className="divMobile">
                   {itemsInCart.map(product => (
                     <div
-                      className="productLineCart lightShadowCard2 bgBlue mb-4"
+                      className="flex lightShadowCard2 bgBlue mb-4"
                       key={product.id}
                     >
                       <div className="bgWhite">
                         <Link to={`/${product.name} `}><img className="imageProductMobileCart cursorPointer" src={window.location.origin + `/images/${product.image}`} /></Link>
                         <Link to={`/${product.name} `} className="verticalAlign font10 letterSpacing2 size3 opacity9 mt-3">{product.name}</Link>
                         <div className="flexBetween mt-6">
-                          <Link to={`/${product.name} `} className="ml-5">${product.price}</Link>
+                          <Link to={`/${product.name} `} className="ml-5">${(product.price/100).toFixed(2)}</Link>
                           <div className="flex mr-5">
-                          <ColorButton style={{ minWidth: '25px', maxWidth: '25px', minHeight: '25px', maxHeight: '25px' }} variant="contained" onClick={() => addQuantityInCart(product)} >+</ColorButton >
+                            <ColorButton style={{ minWidth: '25px', maxWidth: '25px', minHeight: '25px', maxHeight: '25px' }} variant="contained" onClick={() => addQuantityInCart(product)} >+</ColorButton >
                             <div className="centerText productQuantityCart bgWhite ">{product.quantity}</div>
                             {product.quantity > 1 && <ColorButton style={{ minWidth: '25px', maxWidth: '25px', minHeight: '25px', maxHeight: '25px' }} variant="contained" onClick={() => substractQuantityInCart(product)} >-</ColorButton >}
                             {product.quantity === 1 && <ColorButton style={{ minWidth: '25px', maxWidth: '25px', minHeight: '25px', maxHeight: '25px' }} variant="contained"  >-</ColorButton >}
@@ -205,72 +214,76 @@ export default function Cart() {
                         </div>
                         <div className="flexBetween mt-5 mb-3">
                           <div className="ml-5 grey6 size08 underlined" onClick={() => removeProduct(product)}>remove</div>
-                          {product.quantity > 1 && <div className="mr-9">${product.price * product.quantity}</div>}
+                          {product.quantity > 1 && <div className="mr-9">${(Number(product.price/100) * Number(product.quantity)).toFixed(2)}</div>}
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
                 {localStorageLength > 0 &&
-                  <div className="flexBetween mb-1">
+                  <div className="flex mb-1">
                     <Link to="/catalog" className="mr-2">
                       <ColorButton variant="contained" style={{ fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em' }}  >
                         Back to shopping
                       </ColorButton>
                     </Link>
-                    <ColorButton variant="contained" style={{ fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em' }} onClick={clearCart} >
+                    <ColorButton variant="contained" style={{ fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em', marginLeft: '10px', }} onClick={clearCart} >
                       Clear cart
                     </ColorButton>
 
                   </div>
                 }
               </Grid>
+              <Grid xs={12} md={4} item>
 
-              {localStorageLength > 0 &&
-                <Grid container xs={12} md={4} item>
-                  <div className="yourOrder bgWhite lightShadowCard2 font1 bold200  pl-1 pr-1 letterSpacing1">
-                    <div className=" flexBetween">
-                      <span className="ml-2 mt-2">Product</span>
-                      <span className="mr-2 mt-2">Subtotal</span>
+                {localStorageLength > 0 &&
+
+
+
+                  <div className=" bgWhite lightShadowCard2 font1 bold200  pl-1 pr-1 size1">
+                    <div className="flexBetween ">
+                      <div className="ml-2 mt-2 grey8 bold400 size2 letterSpacing1 height30">Product</div>
+                      <div className="mr-2 mt-2 grey8 bold400 size2 letterSpacing1 height30">Subtotal</div>
                     </div>
                     {itemsInCart.map(product => (
                       <div
-                        className="productLineCart flexBetween mt-4 pl-2 pr-2"
+                        className="flex flexBetween mt-4 pl-2 pr-2 "
                         key={product.id}
                       >
-                        <div>{product.name} x {product.quantity}</div>
-                        <div>${product.price * product.quantity}</div>
+                        <div className="font2 grey8">{product.name} <span className="bold500">x</span> {product.quantity}</div>
+                        <div className="font3">${(Number(product.price/100) * Number(product.quantity)).toFixed(2)}</div>
                       </div>
                     ))}
                     <div className="flexBetween mt-4 pl-2 pr-2">
-                      <span>Total</span>
+                      <div className="font2 grey8">Total</div>
                       <span className="greyLineCart"></span>
-                      <span>${price}</span>
+                      <div className="font3">${(price/100).toFixed(2)}</div>
                     </div>
                     <div className="flexBetween mt-4 pl-2 pr-2">
-                      <span>Shipping fees</span>
-                      <span className="alignRight">${shippingFeesVar}</span>
+                      <div className="font2 grey8">Shipping fees</div>
+                      <div className="alignRight font3">${shippingFeesVar}</div>
                     </div>
                     <div className="flexBetween pb-4 mt-4 pl-2 pr-2">
-                      <div className="totalPlusShipping">Total + Shipping fees</div>
+                      <div className="totalPlusShipping font2 grey8">Total + Shipping fees</div>
                       <div className="greyLineCart2"></div>
-                      <div className="alignRight">${price + shippingFeesVar}</div>
+                      <div className="alignRight font3">${(Number(price/100) + Number(shippingFeesVar)).toFixed(2)}</div>
                     </div>
+                    <div className="mt-4 ">
+                      <Link to="/checkout"  >
+                        <ColorButton
+                          fullWidth
+                          variant="contained"
+                          margin="normal"
+                          style={{ fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em', }}
+                        >
+                          Go to checkout
+                        </ColorButton>
+                      </Link>
+                    </div>
+                  </div>
 
-                  </div>
-                  <div className="mt-5 width100">
-                    <Link to="/checkout"  >
-                      <Button
-                        fullWidth
-                        variant="contained"
-                        margin="normal"
-                      >
-                        Go to checkout
-                      </Button>
-                    </Link>
-                  </div>
-                </Grid>
-              }
+                }
+              </Grid>
             </Grid>
           </Grid>
         </Grid>

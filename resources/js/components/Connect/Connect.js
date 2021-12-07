@@ -20,34 +20,35 @@ import {
     Switch,
     Route,
     Link
-  } from "react-router-dom";
+} from "react-router-dom";
+import Container from '@material-ui/core/Container';
 
-  const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(theme => ({
     marginTopBanner: {
-    "margin-top":"170px;",
-    
-    "width":"70%",
-    "margin-left":"auto",
-    "margin-right":"auto",
+        "margin-top": "170px;",
+
+        "width": "70%",
+        "margin-left": "auto",
+        "margin-right": "auto",
     },
     button: {
-        "margin-top":"30px",
+        "margin-top": "30px",
         // height:50,
     },
     greyLine: {
-        height:1,
-        "width":"99%",
-        "margin-left":"auto",
-        "margin-right":"auto",
-        "background-color":"grey",
-        marginTop:10,
+        height: 1,
+        "width": "99%",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "background-color": "grey",
+        marginTop: 10,
     },
     forgotPassword: {
-        "display":"flex",
-        "justify-content":"center",
+        "display": "flex",
+        "justify-content": "center",
 
     }
-    
+
 }));
 
 export default function Connect(props) {
@@ -55,55 +56,57 @@ export default function Connect(props) {
     const classes = useStyles();
 
     return (
-        <div className={classes.marginTopBanner}>
-            <Grid container justifyContent="center" spacing={8}>
-                <Grid item  xs={12} sm={6}>
-                    <Box
-                    >
-                        <h3>Deja client?</h3>
-                        <TextField
-                        margin="normal"
-                        className={classes.textField}
-                        fullWidth
-                        label="Votre adresse mail"
-                        
-                        ></TextField>
+        <div className="pt-13">
+            <Container>
+                <Grid container justifyContent="center" spacing={8}>
+                    <Grid item xs={12} sm={6}>
+                        <Box
+                        >
+                            <h3>Deja client?</h3>
+                            <TextField
+                                margin="normal"
+                                className={classes.textField}
+                                fullWidth
+                                label="Votre adresse mail"
 
-                        <TextField
-                        margin="normal"
-                        
-                        fullWidth
-                        label="Votre mot de passe"
-                        ></TextField>
+                            ></TextField>
 
-                        <Button 
-                        className={classes.button}
-                        fullWidth 
-                        variant="contained"
-                        margin="normal">Se Connecter</Button>
-                        <div className={classes.greyLine}></div>
-                        <h5 className={classes.forgotPassword}>Ou vous avez oublié votre mot de passe ?</h5>
+                            <TextField
+                                margin="normal"
+
+                                fullWidth
+                                label="Votre mot de passe"
+                            ></TextField>
+
+                            <Button
+                                className={classes.button}
+                                fullWidth
+                                variant="contained"
+                                margin="normal">Se Connecter</Button>
+                            <div className={classes.greyLine}></div>
+                            <h5 className={classes.forgotPassword}>Ou vous avez oublié votre mot de passe ?</h5>
 
 
-                    </Box>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <h3>Nouveau Client ?</h3>
+
+
+                        <Link to="/signup" className="item" className={classes.routerDecoration}>
+
+
+                            <Button
+                                className={classes.button}
+                                fullWidth
+                                variant="contained"
+                                margin="normal">Créer un compte
+                            </Button>
+                        </Link>
+                    </Grid>
+
                 </Grid>
-                <Grid item  xs={12} sm={6}>
-                    <h3>Nouveau Client ?</h3>
-                    
-
-                    <Link to="/signup" className="item" className={classes.routerDecoration}>
-                        
-                    
-                        <Button 
-                            className={classes.button}
-                            fullWidth 
-                            variant="contained"
-                            margin="normal">Créer un compte
-                        </Button>
-                    </Link>
-                </Grid>
-
-            </Grid>
+            </Container>
         </div>
     )
 }

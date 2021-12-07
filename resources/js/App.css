@@ -27,7 +27,10 @@ html {
 .flex{
     display:flex;
 }
-
+.flexColumn{
+    display:flex;
+    flex-direction: column;
+}
 .justifyText{
     margin-left:auto;
     margin-right:auto;
@@ -301,6 +304,36 @@ html {
  }
  .height80{
      height:80px;
+ }
+ .minHeight10{
+     min-height:10px;
+ }
+ .minHeight20{
+     min-height:20px;
+ }
+ .minHeight30{
+     min-height:30px;
+ }
+ .minHeight40{
+     min-height:40px;
+ }
+ .minHeight50{
+     min-height:50px;
+ }
+ .minHeight60{
+     min-height:60px;
+ }
+ .minHeight70{
+     min-height:70px;
+ }
+ .minHeight80{
+     min-height:80px;
+ }
+ .minHeight90{
+     min-height:90px;
+ }
+ .minHeight100{
+     min-height:100px;
  }
  .lineHeight1{
     line-height: 115%;
@@ -1197,5 +1230,36 @@ html {
 }
 .width50{
     width:50px;
+}
+.width100{
+    width:100%;
+}
+
+.scale1{
+    transform: scale(1.1);
+}
+.scale2{
+    transform: scale(1.2);
+}
+.scale3{
+    transform: scale(1.3);
+}
+.scale4{
+    transform: scale(1.4);
+}
+.scale5{
+    transform: scale(1.5);
+}
+.scale6{
+    transform: scale(1.6);
+}
+.scale7{
+    transform: scale(1.7);
+}
+.scale8{
+    transform: scale(1.8);
+}
+.scale9{
+    transform: scale(1.9);
 }
 

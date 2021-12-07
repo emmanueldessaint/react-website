@@ -28,7 +28,7 @@ import { currentPageProduct } from '../components/Shared/globalState';
 import logoParis from "../../assets/img/logo-paris.png";
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Hamburger from 'hamburger-react';
-
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import {
   RecoilRoot,
   atom,
@@ -142,7 +142,6 @@ export default function Header(props) {
   }
 
   const resetMenuMobile = () => {
-    console.log('click hamburger')
     setMenuMobileOpen(true);
     setSearchMobileOpen(false);
   }
@@ -158,11 +157,11 @@ export default function Header(props) {
       window.addEventListener('click', function (e) {
         if (document.getElementById('clickbox').contains(e.target)) {
           // Clicked in box
-          console.log('clicked in box')
+
         } else {
           // Clicked outside the box
           setSearchTerm('');
-          console.log('clicked outside the box')
+
         }
       });
     }
@@ -209,11 +208,14 @@ export default function Header(props) {
                       </Grid>
                       <Grid className="alignRight" item xs={3}>
                         <Link to="/cart" onClick={resetPage}  >
-                          <StyledBadge className="mr-8 cartHeader" badgeContent={numberInCart} color="primary">
+                          <StyledBadge className="mr-4 cartHeader" badgeContent={numberInCart} color="primary">
                             <ShoppingCartIcon className='iconHeader cartHeader' />
                           </StyledBadge>
                         </Link>
-                        <div className="mr-5 ml-5 mt-1">
+                        <Link className="mr-2" to="/Connect" onClick={resetPage}>
+                          <AccountCircleIcon className="iconHeader cartHeader" />
+                        </Link>
+                        <div className="mr-3 ml-5 mt-1">
                           <TextField
                             label="Search"
                             id="outlined-size-small"
@@ -277,9 +279,23 @@ export default function Header(props) {
                 <Link to="/catalog" onClick={resetPage}><div className="cursorPointer menuMobileItem  size6 pl-2  pt-2 pb-2">Catalog</div></Link>
                 <Link to="/aboutus" onClick={resetPage}><div className="cursorPointer menuMobileItem  size6 pl-2 pt-2 pb-2">About Us</div></Link>
                 <Link to="/aboutus" onClick={resetPage}><div className="cursorPointer menuMobileItem  size6 pl-2  pt-2 pb-2">Contact</div></Link>
-                <div className="verticalAlign mt-5 mb-5">
-                  <button onClick={changeMenuMobile} className="buttonSearchMobile cursorPointer lightShadowCard letterSpacing2 font2 size2 grey7">Search articles<SearchIcon className="ml-2" /></button>
-                </div>
+
+
+                <Grid container>
+                  <Grid item sm={3} xs={4} className="verticalAlign">
+                    <Link  to="/Connect" onClick={resetPage}>
+                      <AccountCircleIcon className=" scale3" />
+                    </Link>
+                  </Grid>
+                  <Grid item s={6} xs={7}>
+                    <div className="verticalAlign mt-5 mb-5">
+                      <button onClick={changeMenuMobile} className="buttonSearchMobile cursorPointer lightShadowCard letterSpacing2 font2 size2 grey7">Search articles<SearchIcon className="ml-2" /></button>
+                    </div>
+                  </Grid>
+                  <Grid item sm={3} xs={1}></Grid>
+                </Grid>
+
+
               </div>
             }
             {isOpen && searchMobileOpen &&
