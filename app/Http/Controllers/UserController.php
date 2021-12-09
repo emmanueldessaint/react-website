@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Contact;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -25,6 +26,19 @@ class UserController extends Controller
 
         return json_encode([
             "success" => 'User subscribed!'
+        ]);
+    }
+
+    public function contact(Request $request) {
+        $contact = Contact::create([
+            'email' => $request->email,
+            'name' => $request->name,
+            'message' => $request->message
+        ]);
+        $contact->save();
+
+        return json_encode([
+            "success" => 'Message sent!'
         ]);
     }
 }

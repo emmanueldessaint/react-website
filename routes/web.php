@@ -29,6 +29,11 @@ Route::post('register', [RegisterController::class, 'register']);
 // Subscribe
 Route::post('subscribe', [UserController::class], 'subscribe');
 
+// Contact
+Route::post('contact', [UserController::class], 'contact');
+
+
+
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
