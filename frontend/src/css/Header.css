@@ -1,0 +1,128 @@
+.titleHeader{
+    font-size:180%;
+    letter-spacing: 2px;
+    /* font-family:  cursive; */
+    text-shadow: 1px 1px 2px rgb(226, 226, 226);
+    color:rgb(41, 41, 41);
+}
+
+.itemMenu:hover{
+    transition: 0.3;
+    color: rgb(190, 181, 52);
+}
+.menuHeader{
+    text-decoration: none;
+    color:black;
+}
+.iconHeader{
+    margin-top:20px;
+    margin-left:20px;
+    scale:1.3;
+ 
+    color:rgb(58, 58, 58);
+}
+.iconHeader:hover{
+    transition: 0.3;
+    color: rgb(190, 181, 52);
+}
+.logoParis{
+    position:absolute;
+    top:0px;
+}
+
+@media all and (max-width: 960px) {
+    .headerPc{
+        display:none;
+    }
+    .headerMobile{
+        /* margin-bottom:-60px; */
+        background-color:rgb(240, 240, 240);
+        z-index:999999;
+        position:absolute;
+        width: 100%;
+        box-shadow: 0 4px 6px 0px rgb(160, 160, 160);
+    }
+  }
+@media all and (min-width: 961px) {
+    .headerMobile{
+        display:none;
+    }
+    /* .headerPc{
+        background-color:rgb(240, 240, 240);
+    } */
+  }
+.dataSearch{
+    width:500px;
+    background-color: rgba(255, 251, 238, 0.95);
+    position: absolute;
+    margin-top:100px;
+    margin-right:80px;
+    color: black;
+    border:1px solid rgb(216, 216, 216);
+    border-radius:9px;
+    
+}
+.dataSearchMobile{
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    
+    color: black;
+}
+.imgProductSearch{
+    width:40px;
+    height:40px;
+    background-color:brown;
+    border-radius:4px;
+}
+.productHoverSearch:hover{
+    background-color:rgb(240, 240, 240);
+}
+/* .productHoverSearch{
+    border-top:1px solid rgb(206, 206, 206);
+} */
+.menuMobileItem{
+    border-bottom:1px solid rgb(173, 173, 173);
+}
+.menuMobile{
+    border-top:1px solid rgb(173, 173, 173);
+    
+}
+.buttonSearchMobile{
+    display:flex;
+    align-items: center;
+    background-color:white;
+    border-radius:20px;
+    border:1px solid rgb(172, 172, 172);
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:8px;
+    padding-bottom:5px;
+    /* box-shadow: 2px 2px 4px rgb(202, 202, 202); */
+}
+.imgProductSearchMobile{
+    width:40px;
+    height:40px;
+    background-color:brown;
+    border-radius:4px;
+}
+.marginLeftHamburger{
+    margin-left:16%;
+}
+.marginLeftCartMobile{
+    margin-right:calc(16%+20px);
+}
+.cartHeader{
+    transform: scale(1.1);
+}
+.cartHeaderMobile{
+    transform: scale(1.1);
+    margin-right:8vw;
+}
+/* #demotext {
+    color: #444444;
+    background: #FFFFFF;
+    text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+    color: #444444;
+    background: #FFFFFF;
+    } */
