@@ -84,7 +84,7 @@ export default function Footer() {
                             <Grid item xs={12} md={7} container justifyContent="center" >
                                 <Grid item xs={11} md={12}  >
                                     <div className="widthP mt-4">
-                                        <p className="font2">unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <p className="font2">Paris Fabrics has been founded in 2019. We currently are located in France, in the city of Paris.The main reason we're here today is you. 99% of our customers are happy with what we offer, and we often get messages to thank us. It goes both ways!</p>
                                     </div>
                                 </Grid>
                             </Grid>
@@ -116,7 +116,7 @@ export default function Footer() {
                                     <div className="widthItemsFooter font2">
                                         <h3>Privates sales and newsletter</h3>
 
-                                        <div>Access privates sales and stay<br />up to date with ParisFabrics news</div>
+                                        <div>Access privates sales and stay<br />up to date with Paris Fabrics news</div>
                                         <div className="flexCenter mt-4">
                                             <TextField
                                                 className="inputFooter"

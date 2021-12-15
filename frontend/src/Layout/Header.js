@@ -153,22 +153,22 @@ export default function Header(props) {
                       <Grid xs={6} spacing={2} item container justifyContent="center" className="menuHeader">
                         <Grid item xs={3} >
                           <Link id="demotext" to="/" className="textDecorationNone">
-                            <span className="verticalAlign grey7 letterSpacing2 size8 mt-4 itemMenu font10" onClick={resetPage}>Home</span>
+                            <span className="verticalAlign grey7 letterSpacing2 size8 mt-4 itemMenu font12" onClick={resetPage}>Home</span>
                           </Link>
                         </Grid>
                         <Grid item xs={3} >
                           <Link to="/catalog" className="textDecorationNone" >
-                            <span className="verticalAlign grey7 letterSpacing2 size8 mt-4 itemMenu font10" onClick={resetPage}>Catalog</span>
+                            <span className="verticalAlign grey7 letterSpacing2 size8 mt-4 itemMenu font12" onClick={resetPage}>Catalog</span>
                           </Link>
                         </Grid>
                         <Grid item xs={3} >
                           <Link to="/aboutus" className="textDecorationNone" >
-                            <div className="textCenter  grey7  letterSpacing2 size8 mt-4 itemMenu font10" onClick={resetPage}>About Us</div>
+                            <div className="textCenter  grey7  letterSpacing2 size8 mt-4 itemMenu font12" onClick={resetPage}>About Us</div>
                           </Link>
                         </Grid>
                         <Grid item xs={3} >
                           <Link to="/contact" className="textDecorationNone" >
-                            <span className="verticalAlign  grey7  letterSpacing2 size8 mt-4 itemMenu font10" onClick={resetPage}>Contact</span>
+                            <span className="verticalAlign  grey7  letterSpacing2 size8 mt-4 itemMenu font12" onClick={resetPage}>Contact</span>
                           </Link>
                         </Grid>
                       </Grid>
@@ -240,7 +240,7 @@ export default function Header(props) {
           </Grid>
           <Grid item xs={12}>
             {isOpen && menuMobileOpen &&
-              <div className="grey7  letterSpacing2 font10 menuMobile">
+              <div className="grey7  letterSpacing2 font12 menuMobile">
                 <Link to="/" onClick={resetPage} className="textDecorationNone"><div className="cursorPointer menuMobileItem  size6  pl-2 pt-2 pb-2 grey9">Home</div></Link>
                 <Link to="/catalog" onClick={resetPage} className="textDecorationNone"><div className="cursorPointer menuMobileItem  size6 pl-2  pt-2 pb-2 grey9">Catalog</div></Link>
                 <Link to="/aboutus" onClick={resetPage} className="textDecorationNone"><div className="cursorPointer menuMobileItem  size6 pl-2 pt-2 pb-2 grey9">About Us</div></Link>

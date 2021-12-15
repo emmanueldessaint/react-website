@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@300&family=Zen+Antique+Soft&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&family=Roboto:wght@300&family=Zen+Antique+Soft&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Baloo+Bhaijaan+2&family=Roboto+Mono&family=Source+Code+Pro&display=swap');
 
 html { 
     
@@ -511,6 +512,21 @@ html {
  .size15{
      font-size:2.5em;
  }
+ .size16{
+     font-size:2.6em;
+ }
+ .size17{
+     font-size:2.7em;
+ }
+ .size18{
+     font-size:2.8em;
+ }
+ .size19{
+     font-size:2.9em;
+ }
+ .size20{
+     font-size:3em;
+ }
  .font1{
     font-family: Georgia, serif;
  }
@@ -545,6 +561,10 @@ html {
  }
  .font11{
     font-family: 'Oswald', sans-serif;
+ }
+
+ .font12{
+    font-family: 'Alice', serif;
  }
  .opacity9{
     opacity:0.9;

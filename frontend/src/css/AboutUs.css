@@ -29,6 +29,11 @@
       color:rgb(180, 136, 32)
   }
 
+  .imgBg{
+    background-image: linear-gradient(
+        90deg,#FFFBEE 30%,rgba(213,222,232,0) 100%),url(https://ussewing.com/wp-content/uploads/2019/03/bernina_foot_cord.jpg)!important;
+  }
+
 
   
 
