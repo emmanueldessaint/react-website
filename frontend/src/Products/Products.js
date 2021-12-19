@@ -18,6 +18,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import { makeStyles } from '@material-ui/core/styles';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import { Helmet } from "react-helmet";
+import MenuItem from '@material-ui/core/MenuItem';
 
 // function Alert(props) {
 //     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -108,7 +109,6 @@ export default function Products() {
             localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(ourCart));
         }
         setNumberInCart(numberInCart + 1);
-
     }
 
     const handleChangePage = (item) => {
@@ -201,15 +201,15 @@ export default function Products() {
                                         key={item}
                                     >
                                         {item === actuelPage
-                                            ? <button className="boutonPaginationSelected  generalBackground borderNone" onClick={() => handleChangePage(item)}>{item}</button>
-                                            : <button className="boutonPagination generalBackground borderNone" onClick={() => handleChangePage(item)}>{item}</button>
+                                            ? <button className="boutonPaginationSelected  generalBackground borderNone borderRadius5" onClick={() => handleChangePage(item)}>{item}</button>
+                                            : <button className="boutonPagination generalBackground borderNone borderRadius5" onClick={() => handleChangePage(item)}>{item}</button>
                                         }
                                     </div>
                                 ))}
                             </div>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <div className="divPc alignRight mr-4">
+                            <div className="divPc alignRight mr-4 mt-4">
                                 <FormControl variant="outlined" size="small" className="widthFormControl" >
                                     <InputLabel htmlFor="age-native-simple">Filter by</InputLabel>
                                     <Select
@@ -229,6 +229,19 @@ export default function Products() {
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={30}>Descending price order</option>
                                     </Select>
                                 </FormControl>
+                                {/* <FormControl variant="outlined" size="small" className="widthFormControl" >
+                                    <InputLabel htmlFor="age-native-simple">Filter by</InputLabel>
+                                    <Select
+                                        value={filter}
+                                        onChange={changeFilter}
+                                        fullWidth
+                                        label="Filter by"
+                                     >
+                                        <MenuItem value={10}>Popularity</MenuItem>
+                                        <MenuItem value={20}>Ascending price order</MenuItem>
+                                        <MenuItem value={30}>Descending price order</MenuItem>
+                                    </Select>
+                                </FormControl> */}
                             </div>
                             <div className="divMobile mr-4 mt-3 mb-1">
                                 <FormControl size="small" className="widthFormControl">
@@ -253,74 +266,82 @@ export default function Products() {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid container justifyContent="center" className="productComputer">
-                    <Grid container item xs={12} sm={12} md={12} xl={11}>
-                        <div className="contentProducts">
-                            {itemsInCurrentPage.map((item, index) => (
-                                <div>
-                                    {item.coup_de_coeur === "1" && <span className="divFavoriteProduct grey7 lightShadowCard2 opacity8 ">FAVOURITE</span>}
-                                    {item.new === "1" && <span className="divNewProduct grey7 lightShadowCard2 opacity8 ">NEW</span>}
-                                    {item.coup_de_coeur === "0" && item.new === "0" && <div className="height20"></div>}
-                                    <div className="cardProduct lightShadowCard2 productComputer" key={index}>
+                <div className="productComputer">
+                    <Grid container justifyContent="center">
+                        <Grid container item xs={12} sm={12} md={12} xl={11}>
+                            <div className="contentProducts">
+                                {itemsInCurrentPage.map((item, index) => (
+                                    <div>
+                                        {item.coup_de_coeur === "1" && <span className="divFavoriteProduct grey7 lightShadowCard2 opacity8 ">FAVOURITE</span>}
+                                        {item.new === "1" && <span className="divNewProduct grey7 lightShadowCard2 opacity8 ">NEW</span>}
+                                        {item.coup_de_coeur === "0" && item.new === "0" && <div className="height20"></div>}
+                                        <div className="cardProduct lightShadowCard2" key={index}>
 
-                                        <Link to={`/${item.name} `} className="textDecorationNone">
-                                            <img className="imageProduct" src={window.location.origin + `/images/${item.images[0].url}`} />
-                                            <div className="hideProduct">
-                                                <div className="elementAppear grey7">
-                                                    DISCOVER
-                                                </div>
-                                            </div>
-                                            <div className="nameProduct font10 letterSpacing2 size3 grey8 flexCenter">{item.name}</div>
-                                            <div className="flexBetween font2">
-                                                <div>
-                                                    {item.sales_price !== "0" && item.sales_price !== null && <div className="priceProduct font2 letterSpacing2 mt-2 ml-3 pb-1 opacity9 textDecorationLineThrough grey6">${(item.sales_price / 100).toFixed(2)}</div>}
-                                                    <div className="priceProduct grey8 letterSpacing2 mt-4 ml-3 pb-1 height40">${(item.price / 100).toFixed(2)}</div>
-                                                </div>
-                                                {item.reviews.length > 0 &&
-                                                    <div className="flex productDetails mt-4 mr-3 pb-1 opacity8">
-                                                        <div className="">({item.reviews.length})<span className="ml-1"></span></div>
-                                                        <Rating
-                                                            precision={0.5}
-                                                            readOnly
-                                                            size="small"
-                                                            name="simple-controlled"
-                                                            value={item.avg}
-                                                            emptyIcon={
-                                                                <StarBorderIcon fontSize="inherit" className="emptyStar" />
-                                                            }
-                                                        />
+                                            <Link to={`/${item.name} `} className="textDecorationNone">
+                                                <img className="imageProduct" src={window.location.origin + `/images/${item.images[0].url}`} />
+                                                <div className="hideProduct">
+                                                    <div className="elementAppear grey7">
+                                                        DISCOVER
                                                     </div>
-                                                }
-                                                {item.reviews.length < 1 &&
-                                                    <div className="flex productDetails mt-4 mr-3 pb-1 opacity8">
-                                                        <div className="grey6">(0)<span className="ml-1"></span></div>
-                                                        <Rating
-                                                            precision={0.5}
-                                                            readOnly
-                                                            size="small"
-                                                            name="simple-controlled"
-                                                            value={0}
-                                                            emptyIcon={
-                                                                <StarBorderIcon fontSize="inherit" className="emptyStar" />
-                                                            }
-                                                        />
+                                                </div>
+                                                <div className="nameProduct font10 letterSpacing2 size3 grey8 flexCenter">{item.name}</div>
+                                                <div className="flexBetween font2">
+                                                    <div>
+                                                        {
+                                                            item.sales_price !== "0" && item.sales_price !== null
+                                                                ? <div>
+                                                                    <div className="priceProduct font2 letterSpacing2 mt-2 ml-3 pb-1 opacity9 textDecorationLineThrough grey6">${(item.sales_price / 100).toFixed(2)}</div>
+                                                                    <div className="priceProduct grey8 letterSpacing2 ml-3 height25">${(item.price / 100).toFixed(2)}</div>
+                                                                </div>
+                                                                : <div className="priceProduct grey8 letterSpacing2 mt-4 ml-3 pb-1 height40">${(item.price / 100).toFixed(2)}</div>
+                                                        }
                                                     </div>
-                                                }
-                                            </div>
-                                        </Link>
+                                                    {item.reviews.length > 0 &&
+                                                        <div className="flex productDetails mt-4 mr-3 pb-1 opacity8">
+                                                            <div className="">({item.reviews.length})<span className="ml-1"></span></div>
+                                                            <Rating
+                                                                precision={0.5}
+                                                                readOnly
+                                                                size="small"
+                                                                name="simple-controlled"
+                                                                value={item.avg}
+                                                                emptyIcon={
+                                                                    <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                                }
+                                                            />
+                                                        </div>
+                                                    }
+                                                    {item.reviews.length < 1 &&
+                                                        <div className="flex productDetails mt-4 mr-3 pb-1 opacity8">
+                                                            <div className="grey6">(0)<span className="ml-1"></span></div>
+                                                            <Rating
+                                                                precision={0.5}
+                                                                readOnly
+                                                                size="small"
+                                                                name="simple-controlled"
+                                                                value={0}
+                                                                emptyIcon={
+                                                                    <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                                }
+                                                            />
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </Link>
 
+                                        </div>
                                     </div>
-                                </div>
-                                // <Grid
-                                //     item xs={12} sm={6} md={4} lg={3}
-                                //     key={item.id}
-                                // >
+                                    // <Grid
+                                    //     item xs={12} sm={6} md={4} lg={3}
+                                    //     key={item.id}
+                                    // >
 
-                                // </Grid>
-                            ))}
-                        </div>
+                                    // </Grid>
+                                ))}
+                            </div>
+                        </Grid>
                     </Grid>
-                </Grid>
+                </div>
                 <Grid container justifyContent="center" className="productMobile">
                     <Grid container item xs={12} sm={12} md={11} xl={10}>
                         {itemsInCurrentPage.map(item => (
@@ -335,7 +356,7 @@ export default function Products() {
                                             <Link to={`/${item.name} `} className="textDecorationNone"><div className="mt-1 font10 letterSpacing2 grey7 cursorPointer">{item.name}</div> </Link>
                                             <Link to={`/${item.name} `} className="textDecorationNone">
                                                 {item.reviews.length > 0 &&
-                                                    <div className="flex productDetails mt-1 opacity6 cursorPointer">
+                                                    <div className="flex productDetails mt-1 opacity6 cursorPointer mb-2">
                                                         <Rating
                                                             precision={0.5}
                                                             readOnly
@@ -350,7 +371,7 @@ export default function Products() {
                                                     </div>
                                                 }
                                                 {item.reviews.length < 1 &&
-                                                    <div className="flex productDetails mt-1 opacity6 cursorPointer">
+                                                    <div className="flex productDetails mt-1 opacity6 cursorPointer mb-2">
                                                         <Rating
                                                             precision={0.5}
                                                             readOnly
@@ -366,7 +387,12 @@ export default function Products() {
                                                 }
                                             </Link>
                                             <div className="flexBetween ">
-                                                <Link to={`/${item.name} `} className="textDecorationNone"><div className="mt-4 cursorPointer grey8" >${(item.price / 100).toFixed(2)}</div></Link>
+                                                <div>
+                                                    {item.coup_de_coeur === "1" && <span className="divFavoriteProductMobile grey7 lightShadowCard2 opacity8 size07">FAVOURITE</span>}
+                                                    {item.new === "1" && <span className="divNewProductMobile grey7 lightShadowCard2 opacity8 size07">NEW</span>}
+                                                    {item.coup_de_coeur === "0" && item.new === "0" && <div className="height20"></div>}
+                                                    <Link to={`/${item.name} `} className="textDecorationNone"><div className="cursorPointer grey8" >${(item.price / 100).toFixed(2)}</div></Link>
+                                                </div>
                                                 <div className="flexEnd opacity8 cursorPointer" onClick={() => addToCart(item)}><AddShoppingCartIcon /></div>
                                                 <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
                                                     <div className="bgSuccess opacity9 bgBlue pl-5 pr-5 font2 p-1  bold200 textWhite borderRadius5 boxShadowButton verticalAlign" onClose={handleClose} severity="success">

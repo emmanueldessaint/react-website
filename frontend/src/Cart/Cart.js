@@ -96,25 +96,22 @@ export default function Cart() {
     return (
       <Container>
         <Helmet>
-                <meta charSet="utf-8" />
-                <title>Your cart - Paris Fabrics</title>
-            </Helmet>
+          <meta charSet="utf-8" />
+          <title>Your cart - Paris Fabrics</title>
+        </Helmet>
         <Grid className="pt-12" container justifyContent="center">
           <Grid item xs={12} sm={11} md={11} >
             {/* <div className="flexCenter letterSpacing1 font5 grey7 mb-4 mt-2 size4">Here is your cart ...</div> */}
-
             {localStorageLength === 0 &&
               <div>
-                <div className="textAlignCenter font2">Your cart is empty</div>
+                <div className="textAlignCenter font2 mt-7">Your cart is empty</div>
                 <Link to="/catalog" className=" flexCenter mt-3 textDecorationNone">
                   <ColorButton variant="contained" style={{ fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em' }}  >
                     Back to shopping
                   </ColorButton>
                 </Link>
-
               </div>
             }
-
             {localStorageLength > 0 &&
               <span className="flexCenter numberItemsCart mt-7 mb-3">
                 {localStorageLength < 2 && <div className="itemOrItems font5 grey5 size4 bold200"> Your cart contains {localStorageLength} product</div>}
@@ -181,7 +178,7 @@ export default function Cart() {
                   ))}
                 </div>
                 {localStorageLength > 0 &&
-                  <div className="flex mb-1">
+                  <div className="flex mb-3">
                     <Link to="/catalog" className="mr-2 textDecorationNone">
                       <ColorButton variant="contained" style={{ fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em', backgroundColor: '#5ea6b4', borderRadius: '3px', }}  >
                         Back to shopping
@@ -205,7 +202,7 @@ export default function Cart() {
                           className="flex flexBetween mt-2 mb-2 pl-2 pr-2 "
                           key={product.id}
                         >
-                          <div className="font2 grey8">{product.name} <span className="bold500">x</span> {product.quantity}</div>
+                          <div className="font2 grey8">{product.name} <span className="bold300">x</span> {product.quantity}</div>
                           <div className="font3">${(Number(product.price / 100) * Number(product.quantity)).toFixed(2)}</div>
                         </div>
                       ))}
@@ -219,7 +216,7 @@ export default function Cart() {
                         <div className="alignRight font3">${(shippingFeesVar * 1).toFixed(2)}</div>
                       </div>
                       <div className="flexBetween totalAndShipping pb-1 mt-2 pt-2 pl-2 pr-2 bgBlue">
-                        <div className="totalPlusShipping font2 grey8">Total</div>
+                        <div className=" font2 grey8">Total</div>
                         <span className="greyLineCart"></span>
                         <div className="font3">${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</div>
                       </div>

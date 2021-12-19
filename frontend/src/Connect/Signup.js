@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as React from 'react';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import Container from '@material-ui/core/Container';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import { Helmet } from "react-helmet";
 import axios from 'axios';
+import '../css/Connect.css';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 const CustomButton = withStyles((theme) => ({
     root: {
@@ -38,8 +41,6 @@ const CustomCheckbox = withStyles({
 
 export default function Signup(props) {
 
-    window.scroll(0, 0);
-
     const [firstName, setFirstName] = useState('');
     const [errorInFirstName, setErrorInFirstName] = useState(false);
     const [lastName, setLastName] = useState('');
@@ -48,6 +49,8 @@ export default function Signup(props) {
     const [errorInEmail, setErrorInEmail] = useState(false);
     const [password, setPassword] = useState('');
     const [errorInPassword, setErrorInPassword] = useState(false);
+    const [acceptConditions, setAcceptConditions] = useState(false);
+    const [errorAcceptConditions, setErrorAcceptConditions] = useState(false);
 
     const SignupRequest = () => {
         let errorInForm = false
@@ -75,6 +78,12 @@ export default function Signup(props) {
         } else {
             setErrorInLastName(false);
         }
+        if (acceptConditions === false) {
+            setErrorAcceptConditions(true);
+            errorInForm = true;
+        } else {
+            setErrorAcceptConditions(false);
+        }
         if (errorInForm === true) {
             return;
         }
@@ -84,11 +93,19 @@ export default function Signup(props) {
         axios.post("https://parisfabrics.com/api/signup ", {
             userInfo: user,
         }).then((res) => {
-           
+
 
         }).catch((err) => {
             console.log(err);
         })
+    }
+
+    useEffect(() => {
+        window.scroll(0, 0);
+    }, [])
+
+    const checkboxConditions = () => {
+        setAcceptConditions(!acceptConditions)
     }
 
     return (
@@ -115,7 +132,6 @@ export default function Signup(props) {
                         </TextField>
                     </Grid >
                     <Grid item xs={12} sm={6}>
-
                         <TextField
                             variant="outlined"
                             fullWidth
@@ -153,14 +169,15 @@ export default function Signup(props) {
                         >
                         </TextField>
                     </Grid>
-
                     <Grid item xs={12} className="" style={{ marginTop: '-10px' }}>
                         <FormControlLabel control={<CustomCheckbox />} label="I accept to receive the newsletters from ParisFabrics" />
                     </Grid>
                     <Grid item xs={12} className="" style={{ marginTop: '-20px' }}>
-                        <FormControlLabel control={<CustomCheckbox />} label="I accept the general conditions" />
+                        <FormControl required error={errorAcceptConditions}>
+                            <FormControlLabel control={<CustomCheckbox checked={acceptConditions} onChange={checkboxConditions} />} label="I accept the general conditions" />
+                            {errorAcceptConditions && <FormHelperText>You must accept the general conditions !</FormHelperText>}
+                        </FormControl>
                     </Grid>
-
                     <Grid item xs={12} className="pt-5" >
                         <CustomButton
                             margin="normal"

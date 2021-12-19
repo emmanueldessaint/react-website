@@ -13,7 +13,7 @@ html {
     font-family: sans-serif;
 }
 .generalBackground{
-    background-color:rgb(255, 251, 238);
+    background-color:rgb(251, 245, 245);
     /* background-color:rgb(255, 255, 255); */
 }
 .backgroundWhite{
@@ -37,6 +37,9 @@ html {
     margin-right:auto;
     text-align: justify;
     text-justify: inter-word;
+}
+.textJustify{
+    text-align: justify;
 }
 .emptyStar{
     color:rgb(253, 225, 149);
@@ -290,6 +293,9 @@ html {
  .textWhite{
      color:white;
  }
+ .textGreen{
+     color:green;
+ }
  .textRed{
      color:red;
  }
@@ -298,6 +304,21 @@ html {
  }
  .height20{
      height:20px;
+ }
+ .height21{
+     height:21px;
+ }
+ .height22{
+     height:22px;
+ }
+ .height23{
+     height:23px;
+ }
+ .height24{
+     height:24px;
+ }
+ .height25{
+     height:25px;
  }
  .height27{
      height:27px;
@@ -371,16 +392,16 @@ html {
  .lineHeight1{
     line-height: 115%;
  }
- .lineHeight1{
+ .lineHeight2{
     line-height: 130%;
  }
- .lineHeight1{
+ .lineHeight3{
     line-height: 145%;
  }
- .lineHeight1{
+ .lineHeight4{
     line-height: 160%;
  }
- .lineHeight1{
+ .lineHeight5{
     line-height: 175%;
  }
  .letterSpacing1{
@@ -528,43 +549,43 @@ html {
      font-size:3em;
  }
  .font1{
-    font-family: Georgia, serif;
+    font-family: Georgia, serif, "Gill Sans", sans-serif, serif;
  }
  .font2{
-    font-family: sans-serif;
+    font-family: "Gill Sans", sans-serif, serif;
  }
  .font3{
-    font-family: serif;
+    font-family: serif, "Gill Sans", sans-serif;
  }
  .font4{
-    font-family: cursive;
+    font-family: cursive, "Gill Sans", sans-serif, serif;
  }
  .font5{
-    font-family: system-ui;
+    font-family: system-ui, "Gill Sans", sans-serif, serif;
  }
  .font6{
-    font-family: monospace;
+    font-family: monospace, "Gill Sans", sans-serif, serif;
  }
  .font7{
-    font-family: fantasy;
+    font-family: fantasy, "Gill Sans", sans-serif, serif;
  }
  .font8{
     font-family: 'Roboto', sans-serif;
-    font-family: 'Zen Antique Soft', serif;
+    font-family: 'Zen Antique Soft', serif, "Gill Sans", sans-serif, serif;
  }
  .font9{
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', cursive, "Gill Sans", sans-serif, serif;
  }
  /* font 10 sympa  */
  .font10{ 
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster', cursive, "Gill Sans", sans-serif, serif;
  }
  .font11{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif, "Gill Sans", sans-serif, serif;
  }
 
  .font12{
-    font-family: 'Alice', serif;
+    font-family: 'Alice', serif, "Gill Sans", sans-serif, serif;
  }
  .opacity9{
     opacity:0.9;

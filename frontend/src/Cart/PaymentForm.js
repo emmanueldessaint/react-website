@@ -12,6 +12,17 @@ import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import { withStyles } from '@material-ui/core/styles';
 import { Helmet } from "react-helmet";
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import { Link } from "react-router-dom";
+import Box from '@material-ui/core/Box';
+import ClearIcon from '@material-ui/icons/Clear';
+import { useHistory } from 'react-router-dom';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+
 
 const CustomButton = withStyles((theme) => ({
   root: {
@@ -68,6 +79,8 @@ export default function PaymentForm() {
   const [country, setCountry] = useState('');
   const [errorInCountry, setErrorInCountry] = useState(false);
   const [additionalInformation, setAdditionalInformation] = useState('');
+  const [nameOnCard, setNameOnCard] = useState('');
+  const [errorInNameOnCard, setErrorInNameOnCard] = useState(false);
   const [itemsInCart, setItemsInCart] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -75,9 +88,11 @@ export default function PaymentForm() {
   const shippingFeesVar = useRecoilValue(shippingFees);
   const [billingsDetails, setBillingsDetails] = useState(false);
   const [cardInformation, setCardInformation] = useState(false);
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const [openFailed, setOpenFailed] = useState(false);
 
   const stripe = useStripe();
-
+  const history = useHistory();
   const elements = useElements();
 
   useEffect(() => {
@@ -273,12 +288,18 @@ export default function PaymentForm() {
     setCardInformation(true);
   }
 
+  const handleClose = () => {
+    setOpenSuccess(false);
+    history.push("/catalog");
+  };
+
+ 
   return (
     <Container>
       <Helmet>
-                <meta charSet="utf-8" />
-                <title>Checkout - Paris Fabrics</title>
-            </Helmet>
+        <meta charSet="utf-8" />
+        <title>Checkout - Paris Fabrics</title>
+      </Helmet>
       <Grid container justifyContent="center">
         <Grid container spacing={5} item xs={12} sm={12} md={12} lg={12}>
           {billingsDetails === false && cardInformation === false &&
@@ -307,7 +328,6 @@ export default function PaymentForm() {
               </Grid>
             </Grid>
           }
-
           {billingsDetails === true &&
             <Grid item xs={12} md={8}>
               <Grid spacing={2} container>
@@ -325,6 +345,7 @@ export default function PaymentForm() {
                     onChange={e => setFirstName(e.target.value)}
                     required
                     size="small"
+                    style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -338,6 +359,7 @@ export default function PaymentForm() {
                     onChange={e => setLastName(e.target.value)}
                     required
                     size="small"
+                    style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
                 </Grid>
                 <Grid item xs={12} >
@@ -351,6 +373,7 @@ export default function PaymentForm() {
                     onChange={e => setEmail(e.target.value)}
                     required
                     size="small"
+                    style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
                 </Grid>
                 <Grid item xs={12} >
@@ -364,6 +387,7 @@ export default function PaymentForm() {
                     onChange={e => setCountry(e.target.value)}
                     required
                     size="small"
+                    style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
                 </Grid>
                 <Grid item xs={6} >
@@ -377,6 +401,7 @@ export default function PaymentForm() {
                     onChange={e => setCity(e.target.value)}
                     required
                     size="small"
+                    style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
                 </Grid>
                 <Grid item xs={6} >
@@ -390,6 +415,7 @@ export default function PaymentForm() {
                     onChange={e => setZipCode(e.target.value)}
                     required
                     size="small"
+                    style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} >
@@ -403,6 +429,7 @@ export default function PaymentForm() {
                     onChange={e => setAddress(e.target.value)}
                     required
                     size="small"
+                    style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -413,12 +440,12 @@ export default function PaymentForm() {
                     value={additionalInformation}
                     onChange={e => setAdditionalInformation(e.target.value)}
                     size="small"
+                    style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
                 </Grid>
                 <Grid item xs={12} >
                   <div className="">
                     {/* <CardElement options={cardElementOptions} /> */}
-
                   </div>
                 </Grid>
                 <Grid xs={12} item>
@@ -432,20 +459,37 @@ export default function PaymentForm() {
             <Grid item xs={12} md={8}>
               <Grid spacing={2} container>
                 <Grid item xs={12} >
-                  <h2 className=" centerText grey6">Billing details</h2>
+                  <h2 className=" centerText grey6">Card information</h2>
                 </Grid>
-                <div className="numbersCard"><CardNumberElement /></div>
-                <CardExpiryElement />
-                <CardCvcElement />
                 <Grid item xs={12} >
-                  <ButtonBillingDetails fullWidth variant='contained' onClick={GoToPayment}>Go to payment</ButtonBillingDetails>
+                  <div className="cardInformationField"><CardNumberElement /></div>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <div className="cardInformationField"><CardExpiryElement /></div>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <div className="cardInformationField"><CardCvcElement /></div>
+                </Grid>
+                <Grid item xs={12} >
+                  <TextField
+                    variant="outlined"
+                    fullWidth
+                    label="Name on card"
+                    error={errorInNameOnCard}
+                    helperText={errorInNameOnCard ? "You must enter a name !" : ""}
+                    value={nameOnCard}
+                    onChange={e => setNameOnCard(e.target.value)}
+                    required
+                    size="small"
+                    style={{ backgroundColor: 'rgb(216, 216, 216)' }}
+                  />
+                </Grid>
+                <Grid item xs={12} >
+                  <ButtonBillingDetails fullWidth variant='contained' onClick={GoToPayment}>Pay ${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</ButtonBillingDetails>
+                  <button onClick={() => setOpenSuccess(true)}>testPopUp</button>
                 </Grid>
               </Grid>
             </Grid>
-
-
-
-
           }
           <Grid container item xs={12} md={4}>
             <Grid item xs={12} >
@@ -472,13 +516,40 @@ export default function PaymentForm() {
                   <div className="alignRight font3">${(shippingFeesVar * 1).toFixed(2)}</div>
                 </div>
                 <div className="flexBetween totalAndShipping pb-1 mt-2 pt-2 pl-2 pr-2 bgBlue">
-                  <div className="totalPlusShipping font2 grey8">Total</div>
+                  <div className=" font2 grey8">Total</div>
                   <span className="greyLineCart"></span>
                   <div className="font3">${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</div>
                 </div>
               </div>
             </Grid>
           </Grid>
+          <Dialog
+            open={openSuccess}
+            onClose={handleClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+            fullWidth={true}
+          >
+            <DialogTitle id="alert-dialog-title" className="centerText bgBlue">
+              <div className="textGreen mb-3">Payment successfull !</div>
+              <div className="textGreen"><CheckCircleOutlineIcon className="size3" /></div>
+            </DialogTitle>
+            {/* <h3 className="centerText">You must be registered to let a review !</h3> */}
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                <tr className="flexBetween width100%">
+                  <td>Amount Paid</td>
+                  <td>${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</td>
+                </tr>
+                <tr className="flexBetween width100% mt-3">
+                  <td>Transaction Id</td>
+                  <td>02162844</td>
+                </tr>
+                <div className="centerText size1 bold700">OK</div>
+
+              </DialogContentText>
+            </DialogContent>
+          </Dialog>
         </Grid>
       </Grid>
     </Container>

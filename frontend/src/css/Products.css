@@ -518,6 +518,31 @@
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 }
+.divNewProductMobile{
+    color: rgb(239 239 239);
+    padding-bottom:2px;
+    padding-left:7px;
+    padding-top:5px;
+    padding-right:7px;
+    letter-spacing: 2px;
+    background-color: #3a3a3a;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+.divFavoriteProductMobile{
+    color: rgb(239 239 239);
+    padding-bottom:2px;
+    padding-left:7px;
+    padding-top:5px;
+    padding-right:7px;
+    letter-spacing: 2px;
+    background-color: #881212;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+.linkInformation{
+    color: #881212;
+}
 
 
 
