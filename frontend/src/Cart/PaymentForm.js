@@ -141,9 +141,10 @@ export default function PaymentForm() {
   }
 
   const handlePaymentSubmit = async (paymentIntentId) => {
+      console.log('test')
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
-      card: elements.getElement(CardElement)
+      card: elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement)
     })
 
     if (typeof paymentIntentId == 'string') {
@@ -485,7 +486,7 @@ export default function PaymentForm() {
                   />
                 </Grid>
                 <Grid item xs={12} >
-                  <ButtonBillingDetails fullWidth variant='contained' onClick={GoToPayment}>Pay ${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</ButtonBillingDetails>
+                  <ButtonBillingDetails fullWidth variant='contained' onClick={handlePaymentSubmit}>Pay ${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</ButtonBillingDetails>
                   <button onClick={() => setOpenSuccess(true)}>testPopUp</button>
                 </Grid>
               </Grid>

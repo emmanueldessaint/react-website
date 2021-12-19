@@ -27,10 +27,10 @@ Route::get('logout', [LoginController::class, 'logout']);
 Route::post('register', [RegisterController::class, 'register']);
 
 // Subscribe
-Route::post('subscribe', [UserController::class], 'subscribe');
+Route::post('subscribe', [UserController::class, 'subscribe']);
 
 // Contact
-Route::post('contact', [UserController::class], 'contact');
+Route::post('contact', [UserController::class, 'contact']);
 
 
 

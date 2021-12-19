@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -8,17 +8,18 @@ use App\Models\User;
 use App\Models\Contact;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
 
 class UserController extends Controller
 {
     public function subscribe(Request $request) {
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email', $request->userInfo)->first();
 
         if (isset($user)) {
             $user->subscribed = 1;
         } else {
             $user = User::create([
-                'email' => $request->email,
+                'email' => $request->userInfo,
                 'subscribed' => 1
             ]);
         }
