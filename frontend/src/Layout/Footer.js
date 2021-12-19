@@ -37,7 +37,7 @@ export default function Footer() {
     };
 
     const addUserNewsletter = () => {
-        axios.post("https://parisfabrics.com/subscribe ", {
+        axios.post("https://parisfabrics.com/api/subscribe ", {
             userInfo: email,
         }).then((res) => {
             setOpen(true)

@@ -104,7 +104,7 @@ export default function Connect(props) {
         var user = {};
         user.email = email;
         user.password = password;
-        axios.post("https://parisfabrics.com/api/connect ", {
+        axios.post("https://parisfabrics.com/api/login ", {
             userInfo: user,
         }).then((res) => {
            

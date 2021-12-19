@@ -95,7 +95,7 @@ export default function Signup(props) {
         user.email = email;
         user.password = password;
         user.repeatPassword = password;
-        axios.post("https://parisfabrics.com/api/signup ", {
+        axios.post("https://parisfabrics.com/api/register ", {
             userInfo: user,
         }).then((res) => {
 

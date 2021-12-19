@@ -40,3 +40,16 @@ Route::post('charge', [StripePaymentController::class, 'charge']);
 // Paypal
 Route::post('createOrder', [PaypalPaymentController::class, 'createOrder']);
 Route::post('captureOrder', [PaypalPaymentController::class, 'captureOrder']);
+
+// Login
+Route::post('login', [LoginController::class, 'login']);
+
+Route::get('logout', [LoginController::class, 'logout']);
+
+Route::post('register', [RegisterController::class, 'register']);
+
+// Subscribe
+Route::post('subscribe', [UserController::class, 'subscribe']);
+
+// Contact
+Route::post('contact', [UserController::class, 'contact']);
