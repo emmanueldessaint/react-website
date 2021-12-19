@@ -49,6 +49,7 @@ export default function Signup(props) {
     const [errorInEmail, setErrorInEmail] = useState(false);
     const [password, setPassword] = useState('');
     const [errorInPassword, setErrorInPassword] = useState(false);
+    const [repeatPassword, setRepeatPassword] = useState('');
     const [acceptConditions, setAcceptConditions] = useState(false);
     const [errorAcceptConditions, setErrorAcceptConditions] = useState(false);
 
@@ -84,12 +85,16 @@ export default function Signup(props) {
         } else {
             setErrorAcceptConditions(false);
         }
+        // if (repeatPassword !== password)
         if (errorInForm === true) {
             return;
         }
         var user = {};
+        user.firstName = firstName;
+        user.lastName = lastName;
         user.email = email;
         user.password = password;
+        user.repeatPassword = password;
         axios.post("https://parisfabrics.com/api/signup ", {
             userInfo: user,
         }).then((res) => {
@@ -164,6 +169,20 @@ export default function Signup(props) {
                             error={errorInPassword}
                             helperText={errorInPassword ? "You must enter a password !" : ""}
                             onChange={(e) => setPassword(e.target.value)}
+                            margin="none"
+                            type="password"
+                        >
+                        </TextField>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <TextField
+                            margin="normal"
+                            variant="outlined"
+                            fullWidth
+                            label="Your password"
+                            error={errorInPassword}
+                            helperText={errorInPassword ? "You must enter a password !" : ""}
+                            onChange={(e) => setRepeatPassword(e.target.value)}
                             margin="none"
                             type="password"
                         >

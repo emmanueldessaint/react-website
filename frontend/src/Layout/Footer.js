@@ -3,34 +3,45 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import LiveHelpIcon from '@material-ui/icons/LiveHelp';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import creditCard from "../assets/img/creditCard1.png";
 import MoodIcon from '@material-ui/icons/Mood';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import '../App.css';
 import '../css/Footer.css';
 import YouTubeIcon from '@material-ui/icons/YouTube';
-import {useRecoilValue} from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { currentPageProduct } from '../Shared/globalState';
 import { InsertEmoticon } from '@material-ui/icons';
 import { useState } from 'react';
 import axios from 'axios';
+import Snackbar from '@material-ui/core/Snackbar';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 
 export default function Footer() {
 
     const setActuelPage = useRecoilValue(currentPageProduct);
     const [email, setEmail] = useState('');
+    const [open, setOpen] = useState(false);
 
     const resetPage = () => {
         setActuelPage(1);
-      }
+    }
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
 
     const addUserNewsletter = () => {
-        axios.post("https://parisfabrics.com/api/addPersonNewsletter ", {
+        axios.post("https://parisfabrics.com/subscribe ", {
             userInfo: email,
         }).then((res) => {
-           
-
+            setOpen(true)
+            console.log('testestetst')
         }).catch((err) => {
             console.log(err);
         })
@@ -42,7 +53,7 @@ export default function Footer() {
                 <Grid container justifyContent="center" >
                     <Grid spacing={2} container item xs={12} sm={11} md={9}>
                         <Grid className="textAlignCenter" item xs={12} sm={6} md={3} >
-                            <div className="heightIconsFooter "><img src={creditCard} className="iconsFooter pt-4" alt="logo credit card"/></div>
+                            <div className="heightIconsFooter "><img src={creditCard} className="iconsFooter pt-4" alt="logo credit card" /></div>
                             <div className="grey7 font6 size2 minHeight50Footer">SECURE PAYMENT</div>
                             <h5 className="font2">With credit card or Paypal</h5>
                         </Grid>
@@ -54,7 +65,7 @@ export default function Footer() {
                         </Grid>
                         <Grid item xs={12} sm={6} md={3} className="textAlignCenter">
 
-                            <div className="heightIconsFooter pt-4"><LocalShippingIcon className="iconsFooter"/></div>
+                            <div className="heightIconsFooter pt-4"><LocalShippingIcon className="iconsFooter" /></div>
                             <div className="grey7 font6 size2 minHeight50Footer">FREE SHIPPING</div>
                             <h5 className="font2">From 40$ of purchases</h5>
                         </Grid>
@@ -104,11 +115,11 @@ export default function Footer() {
                                 <Grid className="flexCenter" item md={4} sm={6} xs={12}>
                                     <div className="widthItemsFooter font2">
                                         <h3 >About us</h3>
-                                        <Link to="/shippingpolicy" onClick={resetPage} className="textDecorationNone"><div className="hoverUnderlined" style={{color:'rgb(223, 223, 223)'}}>Shipping policy</div></Link>
-                                        <Link to="/refundpolicy" onClick={resetPage} className="textDecorationNone"><div className="hoverUnderlined" style={{color:'rgb(223, 223, 223)'}}>Refund policy</div></Link>
-                                        <Link to="/faq" onClick={resetPage} className="textDecorationNone"><div className="hoverUnderlined" style={{color:'rgb(223, 223, 223)'}}>FAQ's</div></Link>
-                                        <Link to="/termsofservice" onClick={resetPage} className="textDecorationNone"><div className="hoverUnderlined" style={{color:'rgb(223, 223, 223)'}}>Terms of service</div></Link>
-                                        <Link to="/privacypolicy" onClick={resetPage} className="textDecorationNone"><div className="hoverUnderlined" style={{color:'rgb(223, 223, 223)'}}>Privacy policy</div></Link>
+                                        <Link to="/shippingpolicy" onClick={resetPage} className="textDecorationNone"><div className="hoverUnderlined" style={{ color: 'rgb(223, 223, 223)' }}>Shipping policy</div></Link>
+                                        <Link to="/refundpolicy" onClick={resetPage} className="textDecorationNone"><div className="hoverUnderlined" style={{ color: 'rgb(223, 223, 223)' }}>Refund policy</div></Link>
+                                        <Link to="/faq" onClick={resetPage} className="textDecorationNone"><div className="hoverUnderlined" style={{ color: 'rgb(223, 223, 223)' }}>FAQ's</div></Link>
+                                        <Link to="/termsofservice" onClick={resetPage} className="textDecorationNone"><div className="hoverUnderlined" style={{ color: 'rgb(223, 223, 223)' }}>Terms of service</div></Link>
+                                        <Link to="/privacypolicy" onClick={resetPage} className="textDecorationNone"><div className="hoverUnderlined" style={{ color: 'rgb(223, 223, 223)' }}>Privacy policy</div></Link>
                                     </div>
                                 </Grid>
 
@@ -122,11 +133,16 @@ export default function Footer() {
                                                 className="inputFooter"
                                                 placeholder=" Your email ..."
                                                 margin="normal"
-                                                style={{paddingLeft:'10px', borderTopLeftRadius:'5px', borderBottomLeftRadius:'5px',}}
+                                                style={{ paddingLeft: '10px', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px', }}
                                                 onChange={(e) => setEmail(e.target.value)}
                                             />
                                             {/* <button className="buttonSendNewsletters font8 borderNone mt-2"><MailOutlineIcon className=""/></button> */}
                                             <button onClick={addUserNewsletter} className="buttonSendNewsletters font2 mt-2 letterSpacing1 size2">OK </button>
+                                            <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
+                                                <div className="bgSuccess opacity9 bgBlue pl-5 pr-5 font2 p-1  bold200 textWhite borderRadius5 boxShadowButton verticalAlign" onClose={handleClose} severity="success">
+                                                    <span><CheckCircleOutlineIcon className="mt-1" /></span><span className="ml-3 size2 font2">item added to cart !</span>
+                                                </div>
+                                            </Snackbar>
                                         </div>
                                     </div>
                                 </Grid>
