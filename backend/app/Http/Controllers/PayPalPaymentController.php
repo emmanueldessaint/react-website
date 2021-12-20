@@ -61,7 +61,7 @@ class PayPalPaymentController extends Controller
                         array(
                             'amount' =>
                                 array(
-                                    'currency_code' => env("MIX_REACT_APP_PAYPAL_CURRENCY"),
+                                    'currency_code' => 'USD',
                                     'value' => $totalAmount
                                 )
                         )
@@ -100,7 +100,7 @@ class PayPalPaymentController extends Controller
                 'payment_method' => 'Paypal',
                 'status' => 'Processed',
                 'total' => Session::get('totalAmount'),
-                'currency' => env("MIX_REACT_APP_PAYPAL_CURRENCY"),
+                'currency' => 'USD',
                 'shipping_country' => $response->result->purchase_units[0]->shipping->address->country_code,
                 'shipping_address' => $response->result->purchase_units[0]->shipping->address->address_line_1,
                 'shipping_city' => $response->result->purchase_units[0]->shipping->address->admin_area_2,
@@ -121,8 +121,8 @@ class PayPalPaymentController extends Controller
                 $orderProduct->save();
             }
 
-            Mail::to('contact@parisfabrics.com')->send(new OrderConfirmation($order));
-            // Mail::to($order->payer_email)->send(new OrderConfirmation($order));
+            // Mail::to('contact@parisfabrics.com')->send(new OrderConfirmation($order));
+            Mail::to($order->payer_email)->send(new OrderConfirmation($order));
 
             Session::forget('order');
             Session::forget('totalAmount');

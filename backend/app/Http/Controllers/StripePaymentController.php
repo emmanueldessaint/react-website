@@ -29,7 +29,7 @@ class StripePaymentController extends Controller
         }
         $totalAmount += env('SHIPPING_FEES');
         
-        Stripe\Stripe::setApiKey(env('STRIPE_SECRET_DEV'));
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
         $paymentMethodId = $request->get('id');
         $paymentIntentId = $request->get('paymentIntentId');
         
@@ -117,7 +117,7 @@ class StripePaymentController extends Controller
                 Mail::to($request->get('email'))->send(new OrderConfirmation($order));
 
                 return json_encode([
-                    "success" => true
+                    "success" => $order
                 ]);
             } else {
                 http_response_code(500);

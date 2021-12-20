@@ -324,7 +324,7 @@ export default function PaymentForm() {
                   <div className="greyLinePayment"></div>
                 </Grid>
                 <Grid item xs={12} sm={5} container className="verticalAlign">
-                  <CustomButton variant="contained" onClick={() => setBillingsDetails(true)}>Pay width card</CustomButton>
+                  <CustomButton variant="contained" onClick={() => setBillingsDetails(true)}>Pay with card</CustomButton>
                 </Grid>
               </Grid>
             </Grid>
