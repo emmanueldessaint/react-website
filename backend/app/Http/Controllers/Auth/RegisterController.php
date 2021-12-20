@@ -76,25 +76,28 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        $rules = array(
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'email' => 'required', 'unique:users',
-            'password' => 'required',
-            'password-repeat' => 'required',
-        );
-        $validator = Validator::make($request->all(), $rules);
+        // return json_encode([
+        //     "success" => 'Registered!'
+        // ]);
+        // $rules = array(
+        //     'firstname' => 'required',
+        //     'lastname' => 'required',
+        //     'email' => 'required', 'unique:users',
+        //     'password' => 'required',
+        //     'repeatPassword' => 'required',
+        // );
+        // $validator = Validator::make($request->all(), $rules);
 
-        // Check fields.
-        if ($validator->fails()) {
-            Session::flash('error', trans('Un des champs est manquant.'));
-            return Redirect::back()->withInput($request->except('password'))->withErrors($validator);
-        }
+        // // Check fields.
+        // if ($validator->fails()) {
+        //     Session::flash('error', trans('Un des champs est manquant.'));
+        //     return Redirect::back()->withInput($request->except('password'))->withErrors($validator);
+        // }
 
-        if($request->get('password') != $request->get('password-repeat')){
-            Session::flash('error', trans('Les deux mots de passe doivent être identiques.'));
-            return Redirect::back()->withInput($request->except('mdp'))->withErrors($validator);
-        }
+        // if($request->get('password') != $request->get('repeatPassword')){
+        //     Session::flash('error', trans('Les deux mots de passe doivent être identiques.'));
+        //     return Redirect::back()->withInput($request->except('mdp'))->withErrors($validator);
+        // }
 
         $user = new User;
         $user->firstname = $request->get('firstname');
@@ -102,5 +105,9 @@ class RegisterController extends Controller
         $user->email = $request->get('email');
         $user->password = Hash::make($request->get('password'));
         $user->save();
+
+        return json_encode([
+            "success" => 'Registered!'
+        ]);
     }
 }

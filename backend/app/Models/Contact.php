@@ -13,7 +13,7 @@ class Contact extends Model
     protected $fillable = [
         'name',
         'email',
-        'description',
+        'message',
     ];
     
     protected $guarded = [];

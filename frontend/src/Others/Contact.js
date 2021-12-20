@@ -64,12 +64,14 @@ export default function Contact() {
         if (errorInForm === true) {
             return;
         }
-        var user = {};
-        user.name = name;
-        user.email = email;
-        user.message = message;
+        // var user = {};
+        // user.name = name;
+        // user.email = email;
+        // user.message = message;
         axios.post("https://parisfabrics.com/api/contact ", {
-            userInfo: user,
+            name: name,
+            email: email,
+            message: message
         }).then((res) => {
 
 

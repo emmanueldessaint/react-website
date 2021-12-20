@@ -89,14 +89,18 @@ export default function Signup(props) {
         if (errorInForm === true) {
             return;
         }
-        var user = {};
-        user.firstName = firstName;
-        user.lastName = lastName;
-        user.email = email;
-        user.password = password;
-        user.repeatPassword = password;
+        // var user = {};
+        // firstName = firstName;
+        // lastName = lastName;
+        // email = email;
+        // password = password;
+        // repeatPassword = password;
         axios.post("https://parisfabrics.com/api/register ", {
-            userInfo: user,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password,
+            repeatPassword: password
         }).then((res) => {
 
 
