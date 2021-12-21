@@ -22,6 +22,9 @@ import {
   changingPage,
   itemsProduct,
   numberOfItemsInCart,
+  previousUrl,
+  account,
+  idUser,
 } from "../Shared/globalState";
 import reward from "../assets/img/reward2.png";
 import Accordion from "@material-ui/core/Accordion";
@@ -45,6 +48,7 @@ import StarRateIcon from "@material-ui/icons/StarRate";
 import { Helmet } from "react-helmet";
 import Snackbar from "@material-ui/core/Snackbar";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+import { useLocation } from 'react-router-dom';
 
 const LinkButton = withStyles((theme) => ({
   root: {
@@ -154,6 +158,9 @@ const ButtonSubmitComment = withStyles((theme) => ({
 }))(Button);
 
 export default function Product(props) {
+
+  const { pathname } = useLocation();
+
   const [value, setValue] = React.useState(0);
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [numberInCart, setNumberInCart] = useRecoilState(numberOfItemsInCart);
@@ -172,9 +179,22 @@ export default function Product(props) {
   const [filter, setFilter] = useState(0);
   const [open, setOpen] = useState(false);
   const [addToCartPopUp, setAddToCartPopUp] = useState(false);
+  const [thisUrl, setThisUrl] = useRecoilState(previousUrl);
+  const [accountName, setAccountName] = useRecoilState(account);
+  const [id, setId] = useRecoilState(idUser);
+  const [createdAccount, setCreatedAccount] = useState(false);
+
+  useEffect(() => {
+    if (thisUrl === "/signup") {
+      setCreatedAccount(true);
+      // setCreatedAccount(false);
+      console.log('signup true')
+    }
+  }, [])
 
   const handleClose = () => {
     setOpen(false);
+    setCreatedAccount(false);
   };
 
   const handleClosePopUp = (event, reason) => {
@@ -183,6 +203,7 @@ export default function Product(props) {
     }
 
     setAddToCartPopUp(false);
+    setCreatedAccount(false);
   };
 
   useEffect(() => {
@@ -312,8 +333,11 @@ export default function Product(props) {
   };
 
   const handleReviews = () => {
-    setWriteReviews(!writeReviews);
-    setOpen(true);
+    if (accountName !== "") {
+      setWriteReviews(!writeReviews);
+    } else if (accountName === "") {
+      setOpen(true);
+    }
   };
 
   const submitReview = () => {
@@ -321,35 +345,36 @@ export default function Product(props) {
       setNoRating(true);
       return;
     }
-
     var newComment = {};
     newComment.description = newCommentContent;
-    newComment.title = "Jean-Jacques";
+    newComment.title = accountName;
     newComment.note = valueComment;
-    newComment.id_user = "";
+    newComment.id_user = id;
     newComment.id_product = product.id;
     axios
       .post("https://parisfabrics.com/api/createReview ", {
-        newComment: newComment,
+        description: newCommentContent,
+        title: accountName,
+        note: valueComment,
+        id_user: id,
+        id_product: product.id,
       })
       .then((res) => {
         setNewCommentContent("");
         setValueComment(0);
         setNoRating(false);
-        var truc = JSON.stringify(product);
-        var machin = JSON.parse(truc);
+        var productParsed = JSON.parse(JSON.stringify(product));
 
-        var truc2 = JSON.stringify(allItems);
-        var machin2 = JSON.parse(truc2);
+        var allItemsParsed = JSON.parse(JSON.stringify(allItems));
 
-        let indexItem = machin2.findIndex(
+        let indexItem = allItemsParsed.findIndex(
           (element) => element.name === product.name
         );
-        machin2[indexItem].reviews[machin2[indexItem].reviews.length] =
-          newComment;
-        machin.reviews[machin.reviews.length] = newComment;
-        setProduct(machin);
-        setAllItems(machin2);
+        allItemsParsed[indexItem].reviews[allItemsParsed[indexItem].reviews.length] = newComment;
+
+        productParsed.reviews[productParsed.reviews.length] = newComment;
+        setProduct(productParsed);
+        setAllItems(allItemsParsed);
       })
       .catch((err) => {
         console.log(err);
@@ -435,6 +460,10 @@ export default function Product(props) {
       items: 1,
     },
   };
+
+  const updatePrevious = () => {
+    setThisUrl(pathname);
+  }
 
   if (!isLoaded) {
     return (
@@ -606,6 +635,28 @@ export default function Product(props) {
                       </span>
                     </div>
                   </Snackbar>
+                  <Snackbar
+                    open={createdAccount}
+                    autoHideDuration={2000}
+                    onClose={handleClosePopUp}
+                    anchorOrigin={{
+                      vertical: 'top',
+                      horizontal: 'center',
+                    }}
+                  >
+                    <div
+                      className="snackBarLoginCreated opacity9 bgBlue pl-5 pr-5 font2 p-1  bold200 textWhite borderRadius5 boxShadowButton verticalAlign"
+                      onClose={handleClose}
+                      severity="success"
+                    >
+                      <span>
+                        <CheckCircleOutlineIcon className="mt-1" />
+                      </span>
+                      <span className="ml-3 size2 font2">
+                        Account created with success !
+                      </span>
+                    </div>
+                  </Snackbar>
                   <div className="divMobile">
                     <Link to="/cart" className="textDecorationNone">
                       <ColorButton
@@ -650,12 +701,13 @@ export default function Product(props) {
               indicatorColor="primary"
               textColor="primary"
             >
-              <Tab label="Information" {...a11yProps(1)} />
               <Tab label="reviews" {...a11yProps(2)} />
+              <Tab label="Information" {...a11yProps(1)} />
+              
             </Tabs>
             <div className=" greyLineProduct "></div>
           </Box>
-          <TabPanel value={value} index={0}>
+          <TabPanel value={value} index={1}>
             <div>
               We always improve our products to make them perfect. We strongly
               believe that the aesthetic aspect is as important as the
@@ -670,7 +722,7 @@ export default function Product(props) {
               </Link>
             </div>
           </TabPanel>
-          <TabPanel value={value} index={1}>
+          <TabPanel value={value} index={0}>
             <Grid container>
               <Grid item sm={12} xs={12}>
                 <div className="flexBetween mt-2 mb-4">
@@ -732,7 +784,6 @@ export default function Product(props) {
                         <DialogTitle id="alert-dialog-title">
                           {"You must be registered to write a review !"}
                         </DialogTitle>
-                        {/* <h3 className="centerText">You must be registered to let a review !</h3> */}
                         <DialogContent>
                           <DialogContentText id="alert-dialog-description">
                             <Grid container>
@@ -742,7 +793,7 @@ export default function Product(props) {
                                     to="/Connect"
                                     className="textDecorationNone"
                                   >
-                                    <LinkButton fullWidth variant="contained">
+                                    <LinkButton fullWidth variant="contained" onClick={updatePrevious}>
                                       Connect
                                     </LinkButton>
                                   </Link>
@@ -754,7 +805,7 @@ export default function Product(props) {
                                     to="/Signup"
                                     className="textDecorationNone grey9"
                                   >
-                                    <LinkButton fullWidth variant="contained">
+                                    <LinkButton fullWidth variant="contained" onClick={updatePrevious}>
                                       Register now
                                     </LinkButton>
                                   </Link>
@@ -764,6 +815,7 @@ export default function Product(props) {
                           </DialogContentText>
                         </DialogContent>
                       </Dialog>
+
                     </div>
                     {/* <div>Notre examiner le lignes directires aide les clients à rédiger des avis honnetes</div> */}
                   </div>

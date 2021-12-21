@@ -37,7 +37,7 @@
     .headerMobile{
         /* margin-bottom:-60px; */
         background-color:rgb(240, 240, 240);
-        z-index:999999;
+        z-index:1000;
         position:absolute;
         width: 100%;
         box-shadow: 0 4px 6px 0px rgb(160, 160, 160);

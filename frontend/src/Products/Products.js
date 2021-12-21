@@ -201,7 +201,7 @@ export default function Products() {
                                         key={item}
                                     >
                                         {item === actuelPage
-                                            ? <button className="boutonPaginationSelected  generalBackground borderNone borderRadius5" onClick={() => handleChangePage(item)}>{item}</button>
+                                            ? <button className="boutonPaginationSelected  generalBackground borderNone borderRadius5">{item}</button>
                                             : <button className="boutonPagination generalBackground borderNone borderRadius5" onClick={() => handleChangePage(item)}>{item}</button>
                                         }
                                     </div>
@@ -271,12 +271,11 @@ export default function Products() {
                         <Grid container item xs={12} sm={12} md={12} xl={11}>
                             <div className="contentProducts">
                                 {itemsInCurrentPage.map((item, index) => (
-                                    <div>
+                                    <div key={item.id}>
                                         {item.coup_de_coeur === "1" && <span className="divFavoriteProduct grey7 lightShadowCard2 opacity8 ">FAVOURITE</span>}
                                         {item.new === "1" && <span className="divNewProduct grey7 lightShadowCard2 opacity8 ">NEW</span>}
                                         {item.coup_de_coeur === "0" && item.new === "0" && <div className="height20"></div>}
-                                        <div className="cardProduct lightShadowCard2" key={index}>
-
+                                        <div className={item.in_stock === "1" ? "cardProduct lightShadowCard2" : "cardProduct lightShadowCard2 opacity3"} key={index}>
                                             <Link to={`/${item.name} `} className="textDecorationNone">
                                                 <img className="imageProduct" src={window.location.origin + `/images/${item.images[0].url}`} />
                                                 <div className="hideProduct">
@@ -297,7 +296,7 @@ export default function Products() {
                                                         }
                                                     </div>
                                                     {item.reviews.length > 0 &&
-                                                        <div className="flex productDetails mt-4 mr-3 pb-1 opacity8">
+                                                        <div className="flex productDetails mt-4 mr-3 pb-1 grey6">
                                                             <div className="">({item.reviews.length})<span className="ml-1"></span></div>
                                                             <Rating
                                                                 precision={0.5}
@@ -344,19 +343,19 @@ export default function Products() {
                 </div>
                 <Grid container justifyContent="center" className="productMobile">
                     <Grid container item xs={12} sm={12} md={11} xl={10}>
-                        {itemsInCurrentPage.map(item => (
+                        {itemsInCurrentPage.map((item, index) => (
                             <Grid
                                 item xs={12}
-                                key={item.id}
+                                key={index}
                             >
                                 <div>
-                                    <div className="flex productMobile productMobileCatalog mb-3 mt-3">
+                                    <div className={item.in_stock === "1" ? "flex productMobile productMobileCatalog mb-3 mt-3" : "flex productMobile productMobileCatalog mb-3 mt-3 opacity3"}>
                                         <Link to={`/${item.name} `} style={{ width: '40vw' }}><img className="imageProductMobile cursorPointer" src={window.location.origin + `/images/${item.images[0].url}`} /></Link>
                                         <div className="pl-2 width100">
                                             <Link to={`/${item.name} `} className="textDecorationNone"><div className="mt-1 font10 letterSpacing2 grey7 cursorPointer">{item.name}</div> </Link>
                                             <Link to={`/${item.name} `} className="textDecorationNone">
                                                 {item.reviews.length > 0 &&
-                                                    <div className="flex productDetails mt-1 opacity6 cursorPointer mb-2">
+                                                    <div className=" grey6 flex productDetails mt-1 cursorPointer mb-2">
                                                         <Rating
                                                             precision={0.5}
                                                             readOnly
@@ -422,7 +421,7 @@ export default function Products() {
                                     key={item}
                                 >
                                     {item === actuelPage
-                                        ? <button className="boutonPaginationSelected  generalBackground borderNone" onClick={() => handleChangePage(item)}>{item}</button>
+                                        ? <button className="boutonPaginationSelected  generalBackground borderNone">{item}</button>
                                         : <button className="boutonPagination generalBackground borderNone" onClick={() => handleChangePage(item)}>{item}</button>
                                     }
                                 </div>

@@ -12,9 +12,35 @@ import { Helmet } from "react-helmet";
 import axios from 'axios';
 import '../css/Connect.css';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
+import { useRecoilValue, useRecoilState } from "recoil";
+import {previousUrl, account, idUser} from "../Shared/globalState";
 
-const CustomButton = withStyles((theme) => ({
+
+const CustomCheckbox = withStyles({
     root: {
+        color: '#413138',
+        '&$checked': {
+            color: '#413138',
+        },
+    },
+    checked: {},
+})((props) => <Checkbox color="default" {...props} />);
+
+const useStyles = makeStyles((theme) => ({
+
+    buttonProgress: {
+        color: '#413138',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        marginTop: -12,
+        marginLeft: -12,
+    },
+    defaultButton: {
         color: '#ffffff',
         backgroundColor: '#413138',
         borderColor: '#413138',
@@ -27,19 +53,13 @@ const CustomButton = withStyles((theme) => ({
             borderColor: '#505050',
             fontWeight: '600',
         },
-    },
-}))(Button);
-const CustomCheckbox = withStyles({
-    root: {
-        color: '#413138',
-        '&$checked': {
-            color: '#413138',
-        },
-    },
-    checked: {},
-})((props) => <Checkbox color="default" {...props} />);
+    }
+}));
 
-export default function Signup(props) {
+export default function Signup() {
+
+    let history = useHistory();
+    const classes = useStyles();
 
     const [firstName, setFirstName] = useState('');
     const [errorInFirstName, setErrorInFirstName] = useState(false);
@@ -50,8 +70,13 @@ export default function Signup(props) {
     const [password, setPassword] = useState('');
     const [errorInPassword, setErrorInPassword] = useState(false);
     const [repeatPassword, setRepeatPassword] = useState('');
-    const [acceptConditions, setAcceptConditions] = useState(false);
+    const [acceptConditions, setAcceptConditions] = useState(true);
     const [errorAcceptConditions, setErrorAcceptConditions] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [thisUrl, setThisUrl] = useRecoilState(previousUrl);
+    const [accountName, setAccountName] = useRecoilState(account);
+    const [id, setId] = useRecoilState(idUser);
 
     const SignupRequest = () => {
         let errorInForm = false
@@ -85,16 +110,20 @@ export default function Signup(props) {
         } else {
             setErrorAcceptConditions(false);
         }
-        // if (repeatPassword !== password)
+        if (repeatPassword !== password) {
+            setErrorInPassword(true);
+            errorInForm = true;
+        } else {
+            setErrorInPassword(false);
+        }
         if (errorInForm === true) {
             return;
         }
-        // var user = {};
-        // firstName = firstName;
-        // lastName = lastName;
-        // email = email;
-        // password = password;
-        // repeatPassword = password;
+        if (!loading) {
+            setSuccess(false);
+            setLoading(true);
+        }
+
         axios.post("https://parisfabrics.com/api/register ", {
             firstName: firstName,
             lastName: lastName,
@@ -102,10 +131,23 @@ export default function Signup(props) {
             password: password,
             repeatPassword: password
         }).then((res) => {
-
-
+            console.log(res)
+            setSuccess(true);
+            setLoading(false);
+            setAccountName(firstName);
+            setId(res.data.success.id);
+            console.log(thisUrl);
+            if (thisUrl === "/Connect") {
+                history.push("/catalog");
+            } else {
+                setThisUrl("/signup");
+                history.goBack();
+                
+            }
         }).catch((err) => {
             console.log(err);
+            setSuccess(true);
+            setLoading(false);
         })
     }
 
@@ -132,7 +174,7 @@ export default function Signup(props) {
                         <TextField
                             variant="outlined"
                             fullWidth
-                            label="Your Firstname"
+                            label="Firstname"
                             error={errorInFirstName}
                             helperText={errorInFirstName ? "You must enter a firstname !" : ""}
                             onChange={(e) => setFirstName(e.target.value)}
@@ -144,7 +186,7 @@ export default function Signup(props) {
                         <TextField
                             variant="outlined"
                             fullWidth
-                            label="Your Lastname"
+                            label="Lastname"
                             error={errorInLastName}
                             helperText={errorInLastName ? "You must enter a lastname !" : ""}
                             onChange={(e) => setLastName(e.target.value)}
@@ -156,7 +198,7 @@ export default function Signup(props) {
                         <TextField
                             variant="outlined"
                             fullWidth
-                            label="Your email"
+                            label="Email"
                             error={errorInEmail}
                             helperText={errorInEmail ? "You must enter an email !" : ""}
                             onChange={(e) => setEmail(e.target.value)}
@@ -169,7 +211,7 @@ export default function Signup(props) {
                             margin="normal"
                             variant="outlined"
                             fullWidth
-                            label="Your password"
+                            label="Password"
                             error={errorInPassword}
                             helperText={errorInPassword ? "You must enter a password !" : ""}
                             onChange={(e) => setPassword(e.target.value)}
@@ -183,7 +225,7 @@ export default function Signup(props) {
                             margin="normal"
                             variant="outlined"
                             fullWidth
-                            label="Your password"
+                            label="Password confirmation"
                             error={errorInPassword}
                             helperText={errorInPassword ? "You must enter a password !" : ""}
                             onChange={(e) => setRepeatPassword(e.target.value)}
@@ -193,7 +235,7 @@ export default function Signup(props) {
                         </TextField>
                     </Grid>
                     <Grid item xs={12} className="" style={{ marginTop: '-10px' }}>
-                        <FormControlLabel control={<CustomCheckbox />} label="I accept to receive the newsletters from ParisFabrics" />
+                        <FormControlLabel control={<CustomCheckbox defaultChecked={true} />} label="I accept to receive the newsletters from ParisFabrics" />
                     </Grid>
                     <Grid item xs={12} className="" style={{ marginTop: '-20px' }}>
                         <FormControl required error={errorAcceptConditions}>
@@ -202,15 +244,18 @@ export default function Signup(props) {
                         </FormControl>
                     </Grid>
                     <Grid item xs={12} className="pt-5" >
-                        <CustomButton
+                        <Button
                             margin="normal"
                             variant="contained"
+                            className={classes.defaultButton}
                             fullWidth
                             style={{ letterSpacing: 1, wordSpacing: 2, }}
                             onClick={SignupRequest}
+                            disabled={loading}
                         >
-                            Create account
-                        </CustomButton>
+                            Create account {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
+                        </Button>
+
                     </Grid>
                 </Grid>
             </Grid>

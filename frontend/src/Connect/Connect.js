@@ -12,6 +12,9 @@ import {withStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import { useState } from 'react';
 import { Helmet } from "react-helmet";
+import { useLocation } from 'react-router-dom';
+import { useRecoilValue, useRecoilState } from "recoil";
+import {previousUrl, account} from "../Shared/globalState";
 
 const useStyles = makeStyles(theme => ({
     marginTopBanner: {
@@ -29,12 +32,10 @@ const useStyles = makeStyles(theme => ({
         "margin-left": "auto",
         "margin-right": "auto",
         "background-color": "grey",
+        opacity:"0.6",
         marginTop: 10,
     },
-    forgotPassword: {
-        "display": "flex",
-        "justify-content": "center",
-    }
+
 }));
 
 const CustomButton = withStyles((theme) => ({
@@ -78,11 +79,14 @@ export default function Connect(props) {
     window.scroll(0, 0);
 
     const classes = useStyles();
+    const { pathname } = useLocation();
 
     const [email, setEmail] = useState('');
     const [errorInEmail, setErrorInEmail] = useState(false);
     const [password, setPassword] = useState('');
     const [errorInPassword, setErrorInPassword] = useState(false);
+    const [thisUrl, setThisUrl] = useRecoilState(previousUrl);
+    const [accountName, setAccountName] = useRecoilState(account);
 
     const connectRequest = () => {
         let errorInForm = false
@@ -101,17 +105,19 @@ export default function Connect(props) {
         if (errorInForm === true) {
             return;
         }
-        var user = {};
-        user.email = email;
-        user.password = password;
         axios.post("https://parisfabrics.com/api/login ", {
-            userInfo: user,
+            email: email,
+            password: password
         }).then((res) => {
-           
+            setAccountName(email);
 
         }).catch((err) => {
             console.log(err);
         })
+    }
+
+    const updatePrevious = () => {
+        setThisUrl(pathname);
     }
 
     return (
@@ -151,16 +157,17 @@ export default function Connect(props) {
                                     style={{letterSpacing:1, wordSpacing:2,}}
                                     margin="normal">Connect</CustomButton>
                                 <div className={classes.greyLine}></div>
-                                <h5 className={classes.forgotPassword}>Forgot your <Link to="/ForgotPassword" className="grey9 ml-1"> password ?</Link></h5>
+                                <h5 className="flexCenter grey6">Forgot your <Link to="/ForgotPassword" className="grey7 ml-1"> password ?</Link></h5>
                             </Box>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <h3>New customer ?</h3>
-                            <Link to="/signup" className="item textDecorationNone">
+                            <Link to={{pathname: "/signup", state: { from: pathname} }}className="item textDecorationNone">
                                 <CustomButtonCreate
                                     className={classes.button}
                                     fullWidth
                                     style={{letterSpacing:1, wordSpacing:2,}}
+                                    onClick={updatePrevious}
                                     margin="normal">Create account
                                 </CustomButtonCreate>
                             </Link>

@@ -543,6 +543,10 @@
 .linkInformation{
     color: #881212;
 }
+.snackBarLoginCreated{
+    z-index:30000;
+    background-color: rgb(67, 67, 209);
+}
 
 
 

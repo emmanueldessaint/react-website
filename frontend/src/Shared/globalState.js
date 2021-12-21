@@ -17,7 +17,7 @@ const { atom } = require("recoil");
 
   export const shippingFees = atom({
       key: 'shippingFees',
-      default: 8,
+      default: 5,
   })
 
   export const itemsProduct = atom({
@@ -48,6 +48,21 @@ export const averageNoteArticles = atom({
 export const allItemsInCart = atom({
   key : 'allItemsInCart',
   default: []
+})
+
+export const previousUrl = atom({
+  key : 'previousUrl',
+  default: '/home'
+})
+
+export const account = atom({
+  key : 'account',
+  default: ''
+})
+
+export const idUser = atom({
+  key: 'idUser',
+  default: 0
 })
 
 // export const newCommentAdded = atom({
