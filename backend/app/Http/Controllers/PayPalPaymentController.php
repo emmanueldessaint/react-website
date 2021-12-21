@@ -62,7 +62,7 @@ class PayPalPaymentController extends Controller
                             'amount' =>
                                 array(
                                     'currency_code' => 'USD',
-                                    'value' => $totalAmount
+                                    'value' => ($totalAmount / 100)
                                 )
                         )
                 )
