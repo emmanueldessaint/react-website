@@ -42,4 +42,8 @@ class UserController extends Controller
             "success" => 'Message sent!'
         ]);
     }
+
+    public function test(Request $request) {
+        return 'test!';
+    }
 }

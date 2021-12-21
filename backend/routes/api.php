@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\StripePaymentController;
-use App\Http\Controllers\PaypalPaymentController;
+use App\Http\Controllers\PayPalPaymentController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\UserController;
@@ -41,8 +41,10 @@ Route::get('averageProductReview/{id}', [ProductController::class, 'averageProdu
 Route::post('charge', [StripePaymentController::class, 'charge']);
 
 // Paypal
-Route::post('createOrder', [PaypalPaymentController::class, 'createOrder']);
-Route::post('captureOrder', [PaypalPaymentController::class, 'captureOrder']);
+Route::post('createOrder', [PayPalPaymentController::class, 'createOrder']);
+// Route::post('createOrder', [PaypalPaymentController::class, 'createOrder']);
+// Route::post('createOrder', [UserController::class, 'test']);
+Route::post('captureOrder', [PayPalPaymentController::class, 'captureOrder']);
 
 // Login
 Route::post('login', [LoginController::class, 'login']);

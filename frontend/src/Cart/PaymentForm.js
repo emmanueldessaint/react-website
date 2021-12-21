@@ -311,7 +311,7 @@ export default function PaymentForm() {
               <Grid container item xs={12}>
                 <Grid item xs={12} sm={5} container className="heightPaypalCreditCardDiv">
                   <div className="paypalButton" style={{ width: '100%' }}>
-                    <PayPalScriptProvider>
+                    <PayPalScriptProvider options={{ "client-id": "AcYdsM1Logzb3vJxXo8Ifq_zPiZxcdJjzkOgfMjNWXGzJbad4QC7cW2oKuQJWWBFIP23TIwId6IGpv9H" }}>
                       <PayPalButtons
                         style={{ layout: "horizontal" }}
                         createOrder={(data, actions) => createOrder(data, actions)}

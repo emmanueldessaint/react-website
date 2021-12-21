@@ -29,7 +29,7 @@ class StripePaymentController extends Controller
         }
         $totalAmount += env('SHIPPING_FEES');
         
-        Stripe\Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET_DEV'));
         $paymentMethodId = $request->get('id');
         $paymentIntentId = $request->get('paymentIntentId');
         
@@ -95,7 +95,7 @@ class StripePaymentController extends Controller
                     'payment_method' => 'Stripe',
                     'status' => 'Processed',
                     'total' => $totalAmount,
-                    'currency' => env("MIX_REACT_APP_PAYPAL_CURRENCY"),
+                    'currency' => env("STRIPE_CURRENCY"),
                     'shipping_country' => $request->get('country'),
                     'shipping_address' => $request->get('address'),
                     'shipping_city' => $request->get('city'),

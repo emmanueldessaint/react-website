@@ -76,9 +76,7 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        // return json_encode([
-        //     "success" => 'Registered!'
-        // ]);
+
         // $rules = array(
         //     'firstname' => 'required',
         //     'lastname' => 'required',
@@ -99,15 +97,30 @@ class RegisterController extends Controller
         //     return Redirect::back()->withInput($request->except('mdp'))->withErrors($validator);
         // }
 
-        $user = new User;
-        $user->firstname = $request->get('firstname');
-        $user->lastname = $request->get('lastname');
-        $user->email = $request->get('email');
-        $user->password = Hash::make($request->get('password'));
-        $user->save();
+        if ($request->get('firstName') && $request->get('lastName') && $request->get('email') && $request->get('password') && $request->get('repeatPassword')) {
+            if ($request->get('password') === $request->get('repeatPassword')) {
 
-        return json_encode([
-            "success" => 'Registered!'
-        ]);
+                $exist = User::where('email', $request->get('email'))->first();
+
+                if (!$exist) {
+                    $user = new User;
+                    $user->firstname = $request->get('firstName');
+                    $user->lastname = $request->get('lastName');
+                    $user->email = $request->get('email');
+                    $user->password = Hash::make($request->get('password'));
+                    $user->save();
+            
+                    return json_encode([
+                        "success" => $user
+                    ]);
+                }
+
+            }
+            else {
+                return response('Passwords are differents', 402);
+            }
+
+        }
+        return response('Wrong logins', 403);
     }
 }

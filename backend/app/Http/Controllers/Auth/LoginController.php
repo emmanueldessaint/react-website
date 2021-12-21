@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -46,28 +47,31 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $rules = array(
-            'email' => 'required',
-            'password' => 'required',
-        );
-        $validator = Validator::make($request->all(), $rules);
+        // $rules = array(
+        //     'email' => 'required',
+        //     'password' => 'required',
+        // );
+        // $validator = Validator::make($request->all(), $rules);
 
-        // Check fields.
-        if ($validator->fails()) {
-            Session::flash('error', trans('Un des champs est manquant.'));
-            return Redirect::back()->withInput()->withErrors($validator);
-        }
+        // // Check fields.
+        // if ($validator->fails()) {
+        //     Session::flash('error', trans('Un des champs est manquant.'));
+        //     return Redirect::back()->withInput()->withErrors($validator);
+        // }
 
-        $user_found = User::where('email', '=', $request->get('email'))->first();
+        $user_found = User::where('email', $request->get('email'))->first();
         if($user_found == null) {
-            return response('Identifiants incorrects', 403);
+            return response('Wrong email', 403);
         }
 
-        if(Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')], true)) {
-            return Redirect::back();
+        if(Hash::check($request->password, $user_found->password)) {
+            return json_encode([
+                "success" => $user_found
+            ]);         
+            // return Redirect::back();
         }
         else{
-            return response('Identifiants incorrects', 403);
+            return response('Wrong logins', 403);
         }
     }
 
