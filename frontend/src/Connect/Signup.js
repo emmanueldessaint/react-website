@@ -17,7 +17,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { useRecoilValue, useRecoilState } from "recoil";
-import {previousUrl, account, idUser} from "../Shared/globalState";
+import { previousUrl, account, idUser } from "../Shared/globalState";
 
 
 const CustomCheckbox = withStyles({
@@ -70,6 +70,7 @@ export default function Signup() {
     const [password, setPassword] = useState('');
     const [errorInPassword, setErrorInPassword] = useState(false);
     const [repeatPassword, setRepeatPassword] = useState('');
+    const [errorInRepeatPassword, setErrorInRepeatPassword] = useState(false);
     const [acceptConditions, setAcceptConditions] = useState(true);
     const [errorAcceptConditions, setErrorAcceptConditions] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -77,6 +78,8 @@ export default function Signup() {
     const [thisUrl, setThisUrl] = useRecoilState(previousUrl);
     const [accountName, setAccountName] = useRecoilState(account);
     const [id, setId] = useRecoilState(idUser);
+    const [alreadyConnected, setAlreadyConnected] = useState(false);
+    const [errorSignup, setErrorSignup] = useState(false);
 
     const SignupRequest = () => {
         let errorInForm = false
@@ -86,7 +89,7 @@ export default function Signup() {
         } else {
             setErrorInEmail(false);
         }
-        if (password.length < 2) {
+        if (password.length < 5) {
             setErrorInPassword(true);
             errorInForm = true;
         } else {
@@ -111,11 +114,12 @@ export default function Signup() {
             setErrorAcceptConditions(false);
         }
         if (repeatPassword !== password) {
-            setErrorInPassword(true);
+            setErrorInRepeatPassword(true);
             errorInForm = true;
         } else {
-            setErrorInPassword(false);
+            setErrorInRepeatPassword(false);
         }
+
         if (errorInForm === true) {
             return;
         }
@@ -124,6 +128,8 @@ export default function Signup() {
             setLoading(true);
         }
 
+
+
         axios.post("https://parisfabrics.com/api/register ", {
             firstName: firstName,
             lastName: lastName,
@@ -131,23 +137,33 @@ export default function Signup() {
             password: password,
             repeatPassword: password
         }).then((res) => {
-            console.log(res)
             setSuccess(true);
             setLoading(false);
             setAccountName(firstName);
             setId(res.data.success.id);
-            console.log(thisUrl);
-            if (thisUrl === "/Connect") {
-                history.push("/catalog");
-            } else {
-                setThisUrl("/signup");
-                history.goBack();
-                
-            }
+
+            localStorage.setItem(
+                "loggin_Paris_Fabrics",
+                JSON.stringify([{
+                    name: firstName,
+                    id: res.data.success.id,
+                }])
+            );
+            console.log(thisUrl)
+            history.push("/home");
+
+            // if (thisUrl === "/Connect") {
+            //     history.push("/home");
+            // } else {
+            //     setThisUrl("/signup");
+            //     history.goBack();
+
+            // }
         }).catch((err) => {
             console.log(err);
             setSuccess(true);
             setLoading(false);
+            setErrorSignup(true);
         })
     }
 
@@ -213,7 +229,7 @@ export default function Signup() {
                             fullWidth
                             label="Password"
                             error={errorInPassword}
-                            helperText={errorInPassword ? "You must enter a password !" : ""}
+                            helperText={errorInPassword ? "your password must contain at least 6 characters !" : ""}
                             onChange={(e) => setPassword(e.target.value)}
                             margin="none"
                             type="password"
@@ -226,8 +242,8 @@ export default function Signup() {
                             variant="outlined"
                             fullWidth
                             label="Password confirmation"
-                            error={errorInPassword}
-                            helperText={errorInPassword ? "You must enter a password !" : ""}
+                            error={errorInRepeatPassword}
+                            helperText={errorInRepeatPassword ? "passwords are not the same !" : ""}
                             onChange={(e) => setRepeatPassword(e.target.value)}
                             margin="none"
                             type="password"
@@ -244,6 +260,7 @@ export default function Signup() {
                         </FormControl>
                     </Grid>
                     <Grid item xs={12} className="pt-5" >
+                    {errorSignup && <div className="flexCenter textRed opacity4 mb-2">Error, this email address is already in use !</div>}
                         <Button
                             margin="normal"
                             variant="contained"
@@ -252,10 +269,11 @@ export default function Signup() {
                             style={{ letterSpacing: 1, wordSpacing: 2, }}
                             onClick={SignupRequest}
                             disabled={loading}
+                            type="submit"
                         >
                             Create account {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
                         </Button>
-
+                        
                     </Grid>
                 </Grid>
             </Grid>

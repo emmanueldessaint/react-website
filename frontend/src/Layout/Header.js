@@ -257,7 +257,7 @@ export default function Header(props) {
                                   <Link
                                     to={`/${filteredName.name}`}
                                     onClick={closeSearch}
-                                    className="m-1 flex pt-1 pb-1 productHoverSearch"
+                                    className="m-1 flex pt-1 pb-1 productHoverSearch textDecorationNone grey6"
                                   >
                                     <img
                                       className="imgProductSearch ml-1"
@@ -266,7 +266,7 @@ export default function Header(props) {
                                         `/images/${filteredName.images[0].url}`
                                       }
                                     />
-                                    <div className="font10 grey6 letterSpacing2 size3 verticalItem pl-3">
+                                    <div className="font10 letterSpacing2 size3 verticalItem pl-3">
                                       {filteredName.name}
                                     </div>
                                   </Link>
@@ -416,7 +416,7 @@ export default function Header(props) {
                   <Link
                     to={`/${filteredName.name}`}
                     onClick={closeSearch}
-                    className="m-1 flex pt-1 pb-1 productHoverSearch"
+                    className="m-1 flex pt-1 pb-1 productHoverSearch textDecorationNone grey6"
                   >
                     <img
                       className="imgProductSearch ml-1"

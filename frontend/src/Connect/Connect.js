@@ -8,13 +8,16 @@ import {
     Link
 } from "react-router-dom";
 import Container from '@material-ui/core/Container';
-import {withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import { useState } from 'react';
 import { Helmet } from "react-helmet";
 import { useLocation } from 'react-router-dom';
 import { useRecoilValue, useRecoilState } from "recoil";
-import {previousUrl, account} from "../Shared/globalState";
+import { previousUrl, account, idUser } from "../Shared/globalState";
+import { useHistory } from "react-router-dom";
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 
 const useStyles = makeStyles(theme => ({
     marginTopBanner: {
@@ -32,8 +35,16 @@ const useStyles = makeStyles(theme => ({
         "margin-left": "auto",
         "margin-right": "auto",
         "background-color": "grey",
-        opacity:"0.6",
+        opacity: "0.6",
         marginTop: 10,
+    },
+    buttonProgress: {
+        color: 'white',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        marginTop: -12,
+        marginLeft: -12,
     },
 
 }));
@@ -45,7 +56,7 @@ const CustomButton = withStyles((theme) => ({
         borderColor: '#413138',
         borderRadius: 5,
         border: '1px solid',
-        opacity:0.9,
+        opacity: 0.9,
         '&:hover': {
             backgroundColor: 'transparent',
             color: '#505050',
@@ -69,7 +80,7 @@ const CustomButtonCreate = withStyles((theme) => ({
             border: '1px solid',
             borderColor: '#505050',
             fontWeight: '600',
-            opacity:0.9,
+            opacity: 0.9,
         },
     },
 }))(Button);
@@ -78,6 +89,7 @@ export default function Connect(props) {
 
     window.scroll(0, 0);
 
+    let history = useHistory();
     const classes = useStyles();
     const { pathname } = useLocation();
 
@@ -87,6 +99,9 @@ export default function Connect(props) {
     const [errorInPassword, setErrorInPassword] = useState(false);
     const [thisUrl, setThisUrl] = useRecoilState(previousUrl);
     const [accountName, setAccountName] = useRecoilState(account);
+    const [id, setId] = useRecoilState(idUser);
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     const connectRequest = () => {
         let errorInForm = false
@@ -105,12 +120,34 @@ export default function Connect(props) {
         if (errorInForm === true) {
             return;
         }
+        if (!loading) {
+            setSuccess(false);
+            setLoading(true);
+        }
         axios.post("https://parisfabrics.com/api/login ", {
             email: email,
             password: password
         }).then((res) => {
-            setAccountName(email);
+            setSuccess(true);
+            setLoading(false);
+            setAccountName(res.data.success.firstname);
+            setId(res.data.success.id);
 
+            localStorage.setItem(
+                "loggin_Paris_Fabrics",
+                JSON.stringify([{
+                    name: res.data.success.firstname,
+                    id: res.data.success.id,
+                }])
+            );
+
+            if (thisUrl === "/signup" || thisUrl === "/home" || thisUrl === "/catalog" || thisUrl === "/aboutus") {
+                history.push("/home");
+            } else {
+                setThisUrl("/Connect");
+                history.goBack();
+
+            }
         }).catch((err) => {
             console.log(err);
         })
@@ -123,10 +160,10 @@ export default function Connect(props) {
     return (
         <div className="pt-13">
             <Container>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>Connect - Paris Fabrics</title>
-            </Helmet>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Connect - Paris Fabrics</title>
+                </Helmet>
                 <Grid container justifyContent="center">
                     <Grid container justifyContent="center" spacing={8} item xs={11} sm={12} md={11}>
                         <Grid item xs={12} sm={6}>
@@ -154,21 +191,25 @@ export default function Connect(props) {
                                     className={classes.button}
                                     fullWidth
                                     onClick={connectRequest}
-                                    style={{letterSpacing:1, wordSpacing:2,}}
-                                    margin="normal">Connect</CustomButton>
+                                    style={{ letterSpacing: 1, wordSpacing: 2, }}
+                                    disabled={loading}
+                                    margin="normal">Connect {loading && <CircularProgress size={24} className={classes.buttonProgress} />}</CustomButton>
                                 <div className={classes.greyLine}></div>
                                 <h5 className="flexCenter grey6">Forgot your <Link to="/ForgotPassword" className="grey7 ml-1"> password ?</Link></h5>
                             </Box>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <h3>New customer ?</h3>
-                            <Link to={{pathname: "/signup", state: { from: pathname} }}className="item textDecorationNone">
+                            <Link to={{ pathname: "/signup", state: { from: pathname } }} className="item textDecorationNone">
                                 <CustomButtonCreate
                                     className={classes.button}
                                     fullWidth
-                                    style={{letterSpacing:1, wordSpacing:2,}}
+                                    style={{ letterSpacing: 1, wordSpacing: 2, }}
                                     onClick={updatePrevious}
-                                    margin="normal">Create account
+                                    margin="normal"
+                                    
+                                >
+                                    Create account 
                                 </CustomButtonCreate>
                             </Link>
                         </Grid>

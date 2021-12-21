@@ -62,7 +62,9 @@
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px rgb(46, 46, 46);
 }
-
+.snackbarFooter{
+    background-color: rgb(231, 141, 23);
+}
 
 
 

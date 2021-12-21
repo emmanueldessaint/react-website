@@ -70,7 +70,9 @@ export default function Home() {
         }
     }, [allItems])
 
-    window.scroll(0, 0);
+    useEffect(() => {
+        window.scroll(0, 0);
+    }, [])
 
     const bestSellersCarousel = {
         large: {
@@ -221,36 +223,40 @@ export default function Home() {
                                 responsive={reviewsCarousel}
                                 infinite={true}
                                 autoPlay={true}
-                                autoPlaySpeed={5000}
+                                autoPlaySpeed={500000}
                                 removeArrowOnDeviceType={["tablet", "mobile"]}
                             >
-                                {userReviews.map((review, index) => (
+                                {bestSellers.map((item, index) => (
                                     <div
-                                        className="m-2 bgWhite lightShadowCard3 pt-2 cursorPointer"
+
+                                        className="m-2 bgWhite lightShadowCard3 pt-2 textDecorationNone divLinkHome"
                                         key={index}
                                     >
-                                        {/* {item.product !== undefined && */}
-                                        {/* <Link to={`/${item.product.name}`}> */}
-                                        <Rating
-                                            precision={0.5}
-                                            readOnly
-                                            size="small"
-                                            className="stars ml-2 opacity8 "
-                                            name="simple-controlled"
-                                            value={review.note}
-                                            emptyIcon={
-                                                <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                        <Link to={`/${item.name}`} className="flexBetween textDecorationNone">
+                                            <div className="mt-1">
+                                                <Rating
+                                                    precision={0.5}
+                                                    readOnly
+                                                    size="small"
+                                                    className="stars ml-2 opacity8 verticalAlign"
+                                                    name="simple-controlled"
+                                                    value={item.reviews[0].note}
+                                                    emptyIcon={
+                                                        <StarBorderIcon fontSize="inherit" className="emptyStar" />
+                                                    }
+                                                />
+                                                <div className="textDecorationNone ml-2 grey6 size09">{item.name}</div>
+                                            </div>
+                                            <img alt="item sewing kit order customer " src={window.location.origin + `/images/${item.images[0].url}`} className="imgReviewsHome mr-2" />
+                                        </Link>
+                                        <Link className="lightShadowCard3 textDecorationNone">
+
+                                            {item.reviews[0].description.length !== null &&
+                                                <div className="mt-2 pl-2 pt-2 pr-2 grey6 bold100 font2 minHeight90 lightShadowCard3">{item.reviews[0].description.length < 120 ? item.reviews[0].description : item.reviews[0].description.substring(0, 120) + " (...)"}</div>
                                             }
-                                        />
-                                        {/* <div className="ml-2 linkItemComment minHeight30">{item.product.name}</div> */}
-                                        <div className="lightShadowCard3">
-                                            {review.description.length !== null &&
-                                                <div className="mt-2 pl-2 pt-2 pr-2 grey6 bold100 font2 minHeight90">{review.description.length < 120 ? review.description : review.description.substring(0, 120) + " (...)"}</div>
-                                            }
-                                            <div className="mt-5 pl-2 pb-2 font2 bold500 grey9 lightShadowCard3 pt-2">{review.title}</div>
-                                        </div>
-                                        {/* </Link> */}
-                                        {/* } */}
+                                            <div className="mt-2 pl-2 pb-2 font2 bold500 grey9  pt-2">{item.reviews[0].title}</div>
+                                        </Link>
+
                                     </div>
                                 ))}
                             </Carousel>

@@ -16,7 +16,7 @@ import { InsertEmoticon } from '@material-ui/icons';
 import { useState } from 'react';
 import axios from 'axios';
 import Snackbar from '@material-ui/core/Snackbar';
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
 export default function Footer() {
 
@@ -138,9 +138,9 @@ export default function Footer() {
                                             />
                                             {/* <button className="buttonSendNewsletters font8 borderNone mt-2"><MailOutlineIcon className=""/></button> */}
                                             <button onClick={addUserNewsletter} className="buttonSendNewsletters font2 mt-2 letterSpacing1 size2">OK </button>
-                                            <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
-                                                <div className="bgSuccess opacity9 bgBlue pl-5 pr-5 font2 p-1  bold200 textWhite borderRadius5 boxShadowButton verticalAlign" onClose={handleClose} severity="success">
-                                                    <span><CheckCircleOutlineIcon className="mt-1" /></span><span className="ml-3 size2 font2">item added to cart !</span>
+                                            <Snackbar open={open} autoHideDuration={2000} onClose={handleClose} >
+                                                <div className="snackbarFooter opacity9 bgBlue pl-5 pr-5 font2 p-1  bold200 textWhite borderRadius5 boxShadowButton verticalAlign" onClose={handleClose} severity="success">
+                                                    <span><MailOutlineIcon className="mt-1" /></span><span className="ml-3 size2 font2">You are subscribeb to our newsletter !</span>
                                                 </div>
                                             </Snackbar>
                                         </div>

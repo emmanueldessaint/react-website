@@ -21,6 +21,7 @@ export default function Request() {
                     let averageNote = 0;
                     let allProducts = [];
                     let arrayBestSellers = [];
+                    // let arrayReviews = [];
                     allProducts = result.products
                     for (let j = 0; j < allProducts.length; j++) {
                         if (allProducts[j].reviews.length !== 0) {
@@ -33,7 +34,6 @@ export default function Request() {
                             averageNote = totalNotes / allProducts[j].reviews.length;
                             allProducts[j].avg = Number(averageNote);
                         }
-                        
                     }
                     setAverageNotes((totalAverageNote/NumberOfNotes).toFixed(2));
                     arrayBestSellers.push(result.products[0]);

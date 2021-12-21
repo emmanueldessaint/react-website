@@ -183,18 +183,22 @@ export default function Product(props) {
   const [accountName, setAccountName] = useRecoilState(account);
   const [id, setId] = useRecoilState(idUser);
   const [createdAccount, setCreatedAccount] = useState(false);
+  const [loggedAccount, setLoggedAccount] = useState(false);
 
   useEffect(() => {
     if (thisUrl === "/signup") {
       setCreatedAccount(true);
+      setWriteReviews(true);
+      setThisUrl("/product");
       // setCreatedAccount(false);
-      console.log('signup true')
     }
+    
   }, [])
 
   const handleClose = () => {
     setOpen(false);
     setCreatedAccount(false);
+    setLoggedAccount(false);
   };
 
   const handleClosePopUp = (event, reason) => {
@@ -204,6 +208,7 @@ export default function Product(props) {
 
     setAddToCartPopUp(false);
     setCreatedAccount(false);
+    setLoggedAccount(false);
   };
 
   useEffect(() => {
@@ -283,8 +288,6 @@ export default function Product(props) {
 
   const scrollToReviews = () => {
     window.scrollTo(0, 700);
-    setValue(2);
-    handleChangeAccordion("panel3");
   };
 
   useEffect(() => {
@@ -657,6 +660,28 @@ export default function Product(props) {
                       </span>
                     </div>
                   </Snackbar>
+                  <Snackbar
+                    open={loggedAccount}
+                    autoHideDuration={2000}
+                    onClose={handleClosePopUp}
+                    anchorOrigin={{
+                      vertical: 'top',
+                      horizontal: 'center',
+                    }}
+                  >
+                    <div
+                      className="snackBarLoginCreated opacity9 bgBlue pl-5 pr-5 font2 p-1  bold200 textWhite borderRadius5 boxShadowButton verticalAlign"
+                      onClose={handleClose}
+                      severity="success"
+                    >
+                      <span>
+                        <CheckCircleOutlineIcon className="mt-1" />
+                      </span>
+                      <span className="ml-3 size2 font2">
+                        Logged with success !
+                      </span>
+                    </div>
+                  </Snackbar>
                   <div className="divMobile">
                     <Link to="/cart" className="textDecorationNone">
                       <ColorButton
@@ -716,9 +741,9 @@ export default function Product(props) {
               <br></br>
               <br></br>
               <Link to="/aboutus" className="textDecorationNone">
-                <Link fullWidth variant="contained" className="grey8 bold800 textDecorationNone linkInformation hoverUnderlined">
+                <div className="grey8 bold800 textDecorationNone linkInformation hoverUnderlined">
                   More about our story
-                </Link>
+                </div>
               </Link>
             </div>
           </TabPanel>
@@ -1198,8 +1223,9 @@ export default function Product(props) {
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel2bh-content"
                 id="panel2bh-header"
+                style={{margin:10}}
               >
-                <div>Fiche Produit</div>
+                <div>Information</div>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography>
@@ -1219,6 +1245,7 @@ export default function Product(props) {
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel3bh-content"
                 id="panel3bh-header"
+                style={{margin:10}}
               >
                 <div>Reviews ({product.reviews.length})</div>
               </AccordionSummary>
