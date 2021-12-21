@@ -10,6 +10,7 @@ import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import '../App.css';
 import '../css/Footer.css';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import FacebookIcon from '@material-ui/icons/Facebook';
 import { useRecoilValue } from 'recoil';
 import { currentPageProduct } from '../Shared/globalState';
 import { InsertEmoticon } from '@material-ui/icons';
@@ -41,7 +42,7 @@ export default function Footer() {
             userInfo: email,
         }).then((res) => {
             setOpen(true)
-            console.log('testestetst')
+            setEmail('');
         }).catch((err) => {
             console.log(err);
         })
@@ -86,10 +87,8 @@ export default function Footer() {
 
                             <Grid container justifyContent="center" item xs={12} md={5}>
                                 <div className="flexCenter pt-5 mt-2">
-                                    <YouTubeIcon className="m-3" />
-                                    <YouTubeIcon className="m-3" />
-                                    <YouTubeIcon className="m-3" />
-                                    <YouTubeIcon className="m-3" />
+                                    <YouTubeIcon className="m-3 cursorPointer" />
+                                    <FacebookIcon className="m-3 cursorPointer" />
                                 </div>
                             </Grid>
                             <Grid item xs={12} md={7} container justifyContent="center" >
@@ -135,6 +134,7 @@ export default function Footer() {
                                                 margin="normal"
                                                 style={{ paddingLeft: '10px', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px', }}
                                                 onChange={(e) => setEmail(e.target.value)}
+                                                value={email}
                                             />
                                             {/* <button className="buttonSendNewsletters font8 borderNone mt-2"><MailOutlineIcon className=""/></button> */}
                                             <button onClick={addUserNewsletter} className="buttonSendNewsletters font2 mt-2 letterSpacing1 size2">OK </button>

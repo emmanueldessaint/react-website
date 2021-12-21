@@ -36,6 +36,22 @@ body { font-family: sans-serif; }
   width:100%;
   height:300px;
   object-fit: cover;
+  filter: brightness(65%);
+}
+.divImgHome{
+  position: relative;
+  bottom:200px;
+  max-width:500px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:-100px;
+}
+.titleImgHome{
+  color: rgb(238, 238, 238);
+  word-spacing: 2px;
+}
+.textImgHome{
+  color: rgb(238, 238, 238);
 }
 .textReviews{
   color:rgb(39, 39, 39);

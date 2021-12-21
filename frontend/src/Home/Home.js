@@ -111,7 +111,12 @@ export default function Home() {
         <div className="pt-9">
             <div>
                 <img src={logo} alt="Logo" className="imgIntro" />
+                <div className="divImgHome">
+                    <span className="flexCenter textCenter titleImgHome font12 letterSpacing2 mb-2 size13 bold500">Eat, sleep, craft, repeat.</span>
+                    <span className="flexCenter textImgHome textCenter size3 font12">Let's face it, life is just a bunch of obstacles preventing you from sewing.</span>
+                    </div>
             </div>
+          
             <Container >
                 <Helmet>
                     <meta charSet="utf-8" />
@@ -223,7 +228,7 @@ export default function Home() {
                                 responsive={reviewsCarousel}
                                 infinite={true}
                                 autoPlay={true}
-                                autoPlaySpeed={500000}
+                                autoPlaySpeed={6000}
                                 removeArrowOnDeviceType={["tablet", "mobile"]}
                             >
                                 {bestSellers.map((item, index) => (
