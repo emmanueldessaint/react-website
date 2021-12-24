@@ -148,7 +148,7 @@ const ReviewButtonMobile = withStyles((theme) => ({
 const ButtonSubmitComment = withStyles((theme) => ({
   root: {
     color: "#ffffff",
-    backgroundColor: "#119c2c",
+    backgroundColor: "#15892b",
     borderRadius: 5,
     opacity: 0.9,
     "&:hover": {
@@ -184,6 +184,7 @@ export default function Product(props) {
   const [id, setId] = useRecoilState(idUser);
   const [createdAccount, setCreatedAccount] = useState(false);
   const [loggedAccount, setLoggedAccount] = useState(false);
+  const [alreadyCommented, setAlreadyCommented] = useState(false);
 
   useEffect(() => {
     if (thisUrl === "/signup") {
@@ -192,7 +193,7 @@ export default function Product(props) {
       setThisUrl("/product");
       // setCreatedAccount(false);
     }
-    
+
   }, [])
 
   const handleClose = () => {
@@ -291,6 +292,7 @@ export default function Product(props) {
   };
 
   useEffect(() => {
+    console.log('useEffect stars part 1')
     if (isLoaded === true) {
       let fiveStars = 0;
       let fourStars = 0;
@@ -299,22 +301,23 @@ export default function Product(props) {
       let oneStar = 0;
       let collection = {};
       for (var i = 0; i < product.reviews.length; i++) {
-        if (product.reviews[i].note === "5") {
+        if (product.reviews[i].note == "5") {
           fiveStars++;
         }
-        if (product.reviews[i].note === "4") {
+        if (product.reviews[i].note == "4") {
           fourStars++;
         }
-        if (product.reviews[i].note === "3") {
+        if (product.reviews[i].note == "3") {
           threeStars++;
         }
-        if (product.reviews[i].note === "2") {
+        if (product.reviews[i].note == "2") {
           twoStars++;
         }
-        if (product.reviews[i].note === "1") {
+        if (product.reviews[i].note == "1") {
           oneStar++;
         }
       }
+      console.log(product.reviews)
       collection.fiveStars = fiveStars;
       collection.fourStars = fourStars;
       collection.threeStars = threeStars;
@@ -336,21 +339,32 @@ export default function Product(props) {
   };
 
   const handleReviews = () => {
-    if (accountName !== "") {
-      setWriteReviews(!writeReviews);
-    } else if (accountName === "") {
+    if (JSON.parse(localStorage.getItem("loggin_Paris_Fabrics")) !== null) {
+
+      // if(JSON.parse(localStorage.getItem("loggin_Paris_Fabrics")[0].name)
+      console.log(product.reviews)
+      console.log(JSON.parse(localStorage.getItem("loggin_Paris_Fabrics"))[0].name)
+
+      console.log(product.reviews.findIndex(element => element.title === JSON.parse(localStorage.getItem("loggin_Paris_Fabrics"))[0].name))
+
+      if (product.reviews.findIndex(element => element.title === JSON.parse(localStorage.getItem("loggin_Paris_Fabrics"))[0].name) == -1) {
+        setWriteReviews(!writeReviews);
+      } else {
+        setAlreadyCommented(true);
+      }
+    } else if (JSON.parse(localStorage.getItem("loggin_Paris_Fabrics")) === null) {
       setOpen(true);
     }
   };
 
   const submitReview = () => {
-    if (valueComment === 0) {
+    if (valueComment == 0) {
       setNoRating(true);
       return;
     }
     var newComment = {};
     newComment.description = newCommentContent;
-    newComment.title = accountName;
+    newComment.title = JSON.parse(localStorage.getItem("loggin_Paris_Fabrics"))[0].name;
     newComment.note = valueComment;
     newComment.id_user = id;
     newComment.id_product = product.id;
@@ -363,6 +377,7 @@ export default function Product(props) {
         id_product: product.id,
       })
       .then((res) => {
+        setWriteReviews(false);
         setNewCommentContent("");
         setValueComment(0);
         setNoRating(false);
@@ -400,7 +415,7 @@ export default function Product(props) {
       setCurrentItems(product.reviews.slice(itemOffset, endOffset));
       setPageCount(Math.ceil(product.reviews.length / itemsPerPage));
     }
-  }, [itemOffset, itemsPerPage, isLoaded]);
+  }, [itemOffset, itemsPerPage, isLoaded, product]);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
@@ -728,7 +743,7 @@ export default function Product(props) {
             >
               <Tab label="reviews" {...a11yProps(2)} />
               <Tab label="Information" {...a11yProps(1)} />
-              
+
             </Tabs>
             <div className=" greyLineProduct "></div>
           </Box>
@@ -752,7 +767,7 @@ export default function Product(props) {
               <Grid item sm={12} xs={12}>
                 <div className="flexBetween mt-2 mb-4">
                   <div>
-                    {product.avg !== undefined ? (
+                    {product.reviews.length > 0 ? (
                       <div className="flex">
                         <div className="size11 bold600">
                           {Number(product.avg).toFixed(2)}
@@ -793,6 +808,9 @@ export default function Product(props) {
                     >
                       write a review
                     </ReviewButton>
+                    {alreadyCommented && <div className="mt-2 grey6">
+                      You already commented this product !
+                    </div>}
                     <div>
                       <Dialog
                         open={open}
@@ -1093,11 +1111,11 @@ export default function Product(props) {
                     close
                   </div>
                 </div>
-                {noRating && (
-                  <div className="errorRating textRed">
+                {noRating &&
+                  <div className="errorRating textRed opacity7 mt-2">
                     You must chose a note !
                   </div>
-                )}
+                }
                 <TextField
                   margin="normal"
                   variant="outlined"
@@ -1223,7 +1241,7 @@ export default function Product(props) {
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel2bh-content"
                 id="panel2bh-header"
-                style={{margin:10}}
+                style={{ margin: 10 }}
               >
                 <div>Information</div>
               </AccordionSummary>
@@ -1245,7 +1263,7 @@ export default function Product(props) {
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel3bh-content"
                 id="panel3bh-header"
-                style={{margin:10}}
+                style={{ margin: 10 }}
               >
                 <div>Reviews ({product.reviews.length})</div>
               </AccordionSummary>
@@ -1294,6 +1312,9 @@ export default function Product(props) {
                     >
                       write a review
                     </ReviewButtonMobile>
+                    {alreadyCommented && <div className="mt-2 grey6">
+                      You already commented this product !
+                    </div>}
                   </div>
                   <div className="mt-4">
                     <div>
@@ -1536,11 +1557,11 @@ export default function Product(props) {
                         }
                       />
                     </div>
-                    {noRating && (
-                      <div className="errorRating textRed">
+                    {noRating &&
+                      <div className="errorRating textRed opacity7 mt-2">
                         You must chose a note !
                       </div>
-                    )}
+                    }
                     <TextField
                       margin="normal"
                       variant="outlined"

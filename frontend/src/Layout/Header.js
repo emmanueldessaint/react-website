@@ -173,7 +173,7 @@ export default function Header(props) {
                             className="textDecorationNone"
                           >
                             <span
-                              className="verticalAlign grey7 letterSpacing2 size8 mt-4 itemMenu font12"
+                              className="verticalAlign grey7 letterSpacing2 size6 mt-4 itemMenu font12"
                               onClick={resetPage}
                             >
                               Home
@@ -183,7 +183,7 @@ export default function Header(props) {
                         <Grid item xs={3}>
                           <Link to="/catalog" className="textDecorationNone">
                             <span
-                              className="verticalAlign grey7 letterSpacing2 size8 mt-4 itemMenu font12"
+                              className="verticalAlign grey7 letterSpacing2 size6 mt-4 itemMenu font12"
                               onClick={resetPage}
                             >
                               Catalog
@@ -193,7 +193,7 @@ export default function Header(props) {
                         <Grid item xs={3}>
                           <Link to="/aboutus" className="textDecorationNone">
                             <div
-                              className="textCenter  grey7  letterSpacing2 size8 mt-4 itemMenu font12"
+                              className="textCenter  grey7  letterSpacing2 size6 mt-4 itemMenu font12"
                               onClick={resetPage}
                             >
                               Our Story
@@ -203,7 +203,7 @@ export default function Header(props) {
                         <Grid item xs={3}>
                           <Link to="/contact" className="textDecorationNone">
                             <span
-                              className="verticalAlign  grey7  letterSpacing2 size8 mt-4 itemMenu font12"
+                              className="verticalAlign  grey7  letterSpacing2 size6 mt-4 itemMenu font12"
                               onClick={resetPage}
                             >
                               Contact

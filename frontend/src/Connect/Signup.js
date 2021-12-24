@@ -149,16 +149,12 @@ export default function Signup() {
                     id: res.data.success.id,
                 }])
             );
-            console.log(thisUrl)
-            history.push("/home");
-
-            // if (thisUrl === "/Connect") {
-            //     history.push("/home");
-            // } else {
-            //     setThisUrl("/signup");
-            //     history.goBack();
-
-            // }
+            if (thisUrl === "/Connect") {
+                history.push("/");
+            } else {
+                setThisUrl("/signup");
+                history.goBack();
+            }
         }).catch((err) => {
             console.log(err);
             setSuccess(true);

@@ -141,12 +141,11 @@ export default function Connect(props) {
                 }])
             );
 
-            if (thisUrl === "/signup" || thisUrl === "/home" || thisUrl === "/catalog" || thisUrl === "/aboutus") {
-                history.push("/home");
+            if (thisUrl === "/signup" || thisUrl === "/" || thisUrl === "/catalog" || thisUrl === "/aboutus") {
+                history.push("/");
             } else {
                 setThisUrl("/Connect");
                 history.goBack();
-
             }
         }).catch((err) => {
             console.log(err);
