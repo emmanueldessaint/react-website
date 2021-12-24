@@ -9,18 +9,17 @@ class ReviewController extends Controller
 {
     public function create(Request $request) {
         $review = ProductReviews::create([
-            'id_product' => $request->newComment['id_product'],
-            'id_user' => 1,
-            // 'id_user' => $request->newComment['id_user'],
-            'note' => $request->newComment['note'],
-            'title' => $request->newComment['title'],
-            'description' => $request->newComment['description'],
+            'id_product' => $request->id_product,
+            'id_user' => $request->id_user,
+            'note' => $request->note,
+            'title' => $request->title,
+            'description' => $request->description,
             'date' => now(),
         ]);
         $review->save();
         
         return json_encode([
-            "success" => 'Review published!'
+            "success" => $review
         ]);
     }
 }
