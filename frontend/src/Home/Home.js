@@ -49,22 +49,6 @@ export default function Home() {
     const [averageNotes] = useRecoilState(averageNoteArticles);
 
     useEffect(() => {
-        fetch("https://parisfabrics.com/api/reviews")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    for (var i = 0; i < result.allReviews.length; i++) {
-                        result.allReviews[i].product = allItems.find(element => element.id === result.allReviews[i].id_product)
-                    }
-                    setUserReviews(result.allReviews);
-                },
-                (error) => {
-                    console.log('error', error)
-                }
-            )
-    }, [allItems])
-
-    useEffect(() => {
         if (allItems.length !== 0) {
             setIsLoaded(true);
         }

@@ -27,6 +27,8 @@ import {
 import Hamburger from "hamburger-react";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { useRecoilState } from "recoil";
+import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 const useStyles = makeStyles((theme) => ({
   alignTitle: {
@@ -225,13 +227,23 @@ export default function Header(props) {
                             <ShoppingCartIcon className="iconHeader cartHeader" />
                           </StyledBadge>
                         </Link>
-                        <Link
-                          className="mr-2 textDecorationNone"
-                          to="/Connect"
-                          onClick={resetPage}
-                        >
-                          <AccountCircleIcon className="iconHeader cartHeader" />
-                        </Link>
+                        {JSON.parse(localStorage.getItem("loggin_Paris_Fabrics")) !== null
+                          ? <Link
+                            className="mr-2 textDecorationNone"
+                            to="/Account"
+                            onClick={resetPage}
+                          >
+                            <SupervisedUserCircleIcon className="iconHeader cartHeader" />
+                          </Link>
+                          : <Link
+                            className="mr-2 textDecorationNone"
+                            to="/Connect"
+                            onClick={resetPage}
+                          >
+                            <PersonAddIcon className="iconHeader cartHeader" />
+                          </Link>
+                        }
+
                         <div className="mr-3 ml-5 mt-1">
                           <TextField
                             label="Search"
@@ -275,10 +287,10 @@ export default function Header(props) {
                             {allItems.filter((element) =>
                               element.name.toLowerCase().includes(searchTerm)
                             ).length === 0 && (
-                              <div className="verticalAlign font10 grey6 letterSpacing2 size3 height70">
-                                No result for your search
-                              </div>
-                            )}
+                                <div className="verticalAlign font10 grey6 letterSpacing2 size3 height70">
+                                  No result for your search
+                                </div>
+                              )}
                           </div>
                         )}
                       </Grid>
@@ -359,9 +371,14 @@ export default function Header(props) {
                 </Link>
                 <Grid container>
                   <Grid item sm={3} xs={4} className="verticalAlign">
-                    <Link to="/Connect" onClick={resetPage}>
-                      <AccountCircleIcon className=" scale3 grey9" />
+                    {JSON.parse(localStorage.getItem("loggin_Paris_Fabrics")) !== null
+                      ? <Link to="/Account" onClick={resetPage}>
+                      <SupervisedUserCircleIcon className=" scale3 grey9" />
                     </Link>
+                      : <Link to="/Connect" onClick={resetPage}>
+                        <AccountCircleIcon className=" scale3 grey9" />
+                      </Link>
+                    }
                   </Grid>
                   <Grid item s={6} xs={7}>
                     <div className="verticalAlign mt-5 mb-5">
@@ -434,10 +451,10 @@ export default function Header(props) {
             {allItems.filter((element) =>
               element.name.toLowerCase().includes(searchTerm)
             ).length === 0 && (
-              <div className="verticalAlign font10 grey6 letterSpacing2 size3 height70">
-                No result for your search
-              </div>
-            )}
+                <div className="verticalAlign font10 grey6 letterSpacing2 size3 height70">
+                  No result for your search
+                </div>
+              )}
           </div>
         )}
       </div>

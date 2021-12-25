@@ -3,6 +3,7 @@ import Cart from './Cart/Cart'
 import Checkout from './Cart/Checkout'
 import Connect from './Connect/Connect'
 import Signup from './Connect/Signup'
+import Account from './Connect/Account'
 import Products from './Products/Products'
 import Product from './Products/Product'
 import AboutUs from './Others/AboutUs'
@@ -24,7 +25,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 export default function App() {
 
   ReactGA.initialize('UA-213345073-1')
-    ReactGA.pageview(window.location.pathname + window.location.search)
+  ReactGA.pageview(window.location.pathname + window.location.search)
 
   return (
     <Router>
@@ -33,6 +34,10 @@ export default function App() {
         <Header />
         <div className="generalBackground">
           <Switch>
+            <Route path="/account">
+              <Account />
+            </Route>
+
             <Route path="/connect">
               <Connect />
             </Route>
