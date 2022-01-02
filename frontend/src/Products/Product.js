@@ -369,7 +369,7 @@ export default function Product(props) {
     newComment.id_user = id;
     newComment.id_product = product.id;
     axios
-      .post("https://parisfabrics.com/api/createReview ", {
+      .post("http://localhost:8000/api/createReview ", {
         description: newCommentContent,
         title: accountName,
         note: valueComment,
@@ -537,13 +537,23 @@ export default function Product(props) {
             </div>
           </Grid>
           <Grid item xs={12} sm={10} md={5}>
-            <div className="font10 size3 grey8 letterSpacing2 textShadow1">
-              {product.name}
+            <div className="flexBetween mb-6">
+              <div className="font10 size3 grey8 letterSpacing2 textShadow1 ">
+                {product.name}
+              </div>
+              <div>
+                {product.coup_de_coeur == "1" && <span className="divFavoriteProduct grey7 lightShadowCard2 opacity8 ">FAVOURITE</span>}
+                {product.new == "1" && <span className="divNewProduct grey7 lightShadowCard2 opacity8 ">NEW</span>}
+                {product.in_stock == "0" && <span className="divOutOfStockProduct grey7 lightShadowCard2 opacity8 ">OUT OF STOCK</span>}
+              </div>
             </div>
-            <div className="flexBetween mt-7">
-              <span className="priceProduct font2 letterSpacing2 ">
-                ${(product.price / 100).toFixed(2)}
-              </span>
+            <div>
+              {product.sales_price !== "0" && product.sales_price !== null && <span className="priceProduct font2 letterSpacing2 textDecorationLineThrough grey5">${(product.sales_price / 100).toFixed(2)}</span>}
+            </div>
+            <div className="flexBetween mt-1">
+              <div className="priceProduct font2 letterSpacing2 ">
+                <span>${(product.price / 100).toFixed(2)}</span>
+              </div>
               <span>
                 <Rating
                   size="small"
@@ -560,6 +570,7 @@ export default function Product(props) {
               >
                 Read reviews ({product.reviews.length})
               </span>
+
             </div>
             <div className="flexBetween mt-6">
               <Grid container justifyContent="center">
@@ -618,6 +629,7 @@ export default function Product(props) {
                 <Grid item xs={11} sm={6}>
                   <div className="divPc alignRight">
                     <ColorButton
+                      disabled={product.in_stock != "1"}
                       onClick={addToLocalStorage}
                       variant="contained"
                       style={{
@@ -700,6 +712,7 @@ export default function Product(props) {
                   <div className="divMobile">
                     <Link to="/cart" className="textDecorationNone">
                       <ColorButton
+                        disabled={product.in_stock != "1"}
                         onClick={addToLocalStorage}
                         variant="contained"
                         fullWidth
@@ -811,55 +824,52 @@ export default function Product(props) {
                     {alreadyCommented && <div className="mt-2 grey6">
                       You already commented this product !
                     </div>}
-                    <div>
-                      <Dialog
-                        open={open}
-                        onClose={handleClose}
-                        aria-labelledby="alert-dialog-title"
-                        aria-describedby="alert-dialog-description"
-                      >
-                        <DialogActions className="mb--3  mr-2">
-                          <ClearIcon
-                            onClick={handleClose}
-                            className=" cursorPointer"
-                          />
-                        </DialogActions>
-                        <DialogTitle id="alert-dialog-title">
-                          {"You must be registered to write a review !"}
-                        </DialogTitle>
-                        <DialogContent>
-                          <DialogContentText id="alert-dialog-description">
-                            <Grid container>
-                              <Grid item xs={12} sm={6}>
-                                <Box m={1}>
-                                  <Link
-                                    to="/Connect"
-                                    className="textDecorationNone"
-                                  >
-                                    <LinkButton fullWidth variant="contained" onClick={updatePrevious}>
-                                      Connect
-                                    </LinkButton>
-                                  </Link>
-                                </Box>
-                              </Grid>
-                              <Grid item xs={12} sm={6}>
-                                <Box m={1}>
-                                  <Link
-                                    to="/Signup"
-                                    className="textDecorationNone grey9"
-                                  >
-                                    <LinkButton fullWidth variant="contained" onClick={updatePrevious}>
-                                      Register now
-                                    </LinkButton>
-                                  </Link>
-                                </Box>
-                              </Grid>
+                    <Dialog
+                      open={open}
+                      onClose={handleClose}
+                      aria-labelledby="alert-dialog-title"
+                      aria-describedby="alert-dialog-description"
+                    >
+                      <DialogActions className="mb--3  mr-2">
+                        <ClearIcon
+                          onClick={handleClose}
+                          className=" cursorPointer"
+                        />
+                      </DialogActions>
+                      <DialogTitle id="alert-dialog-title">
+                        {"You must be registered to write a review !"}
+                      </DialogTitle>
+                      <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                          <Grid container>
+                            <Grid item xs={12} sm={6}>
+                              <Box m={1}>
+                                <Link
+                                  to="/Connect"
+                                  className="textDecorationNone"
+                                >
+                                  <LinkButton fullWidth variant="contained" onClick={updatePrevious}>
+                                    Connect
+                                  </LinkButton>
+                                </Link>
+                              </Box>
                             </Grid>
-                          </DialogContentText>
-                        </DialogContent>
-                      </Dialog>
-
-                    </div>
+                            <Grid item xs={12} sm={6}>
+                              <Box m={1}>
+                                <Link
+                                  to="/Signup"
+                                  className="textDecorationNone grey9"
+                                >
+                                  <LinkButton fullWidth variant="contained" onClick={updatePrevious}>
+                                    Register now
+                                  </LinkButton>
+                                </Link>
+                              </Box>
+                            </Grid>
+                          </Grid>
+                        </DialogContentText>
+                      </DialogContent>
+                    </Dialog>
                     {/* <div>Notre examiner le lignes directires aide les clients à rédiger des avis honnetes</div> */}
                   </div>
                   <div className="">

@@ -12,7 +12,7 @@ export default function Request() {
 
 
     useEffect(() => {
-        fetch('https://parisfabrics.com/api/products')
+        fetch('http://localhost:8000/api/products')
             .then(res => res.json())
             .then(
                 (result) => {

@@ -56,7 +56,6 @@ export default function Products() {
         if (reason === 'clickaway') {
             return;
         }
-
         setOpen(false);
     };
 
@@ -229,19 +228,6 @@ export default function Products() {
                                         <option className="optionSelect pl-1 pr-1 verticalItem" value={30}>Descending price order</option>
                                     </Select>
                                 </FormControl>
-                                {/* <FormControl variant="outlined" size="small" className="widthFormControl" >
-                                    <InputLabel htmlFor="age-native-simple">Filter by</InputLabel>
-                                    <Select
-                                        value={filter}
-                                        onChange={changeFilter}
-                                        fullWidth
-                                        label="Filter by"
-                                     >
-                                        <MenuItem value={10}>Popularity</MenuItem>
-                                        <MenuItem value={20}>Ascending price order</MenuItem>
-                                        <MenuItem value={30}>Descending price order</MenuItem>
-                                    </Select>
-                                </FormControl> */}
                             </div>
                             <div className="divMobile mr-4 mt-3 mb-1">
                                 <FormControl size="small" className="widthFormControl">
@@ -272,10 +258,11 @@ export default function Products() {
                             <div className="contentProducts">
                                 {itemsInCurrentPage.map((item, index) => (
                                     <div key={item.id}>
-                                        {item.coup_de_coeur === "1" && <span className="divFavoriteProduct grey7 lightShadowCard2 opacity8 ">FAVOURITE</span>}
-                                        {item.new === "1" && <span className="divNewProduct grey7 lightShadowCard2 opacity8 ">NEW</span>}
-                                        {item.coup_de_coeur === "0" && item.new === "0" && <div className="height20"></div>}
-                                        <div className={item.in_stock === "1" ? "cardProduct lightShadowCard2" : "cardProduct lightShadowCard2 opacity3"} key={index}>
+                                        {item.coup_de_coeur == "1" && <span className="divFavoriteProduct grey7 lightShadowCard2 opacity8 ">FAVOURITE</span>}
+                                        {item.new == "1" && <span className="divNewProduct grey7 lightShadowCard2 opacity8 ">NEW</span>}
+                                        {item.in_stock != "1" && <span className="divOutOfStockProduct grey7 lightShadowCard2 opacity8 ">OUT OF STOCK</span>}
+                                        {item.coup_de_coeur == "0" && item.new == "0" && item.in_stock == "1" && <div className="height20"></div>}
+                                        <div className={item.in_stock == "1" ? "cardProduct lightShadowCard2" : "cardProduct lightShadowCard2 opacity3"} key={index}>
                                             <Link to={`/${item.name} `} className="textDecorationNone">
                                                 <img className="imageProduct" src={window.location.origin + `/images/${item.images[0].url}`} />
                                                 <div className="hideProduct">
@@ -349,7 +336,7 @@ export default function Products() {
                                 key={index}
                             >
                                 <div>
-                                    <div className={item.in_stock === "1" ? "flex productMobile productMobileCatalog mb-3 mt-3" : "flex productMobile productMobileCatalog mb-3 mt-3 opacity3"}>
+                                    <div className={item.in_stock == "1" ? "flex productMobile productMobileCatalog mb-3 mt-3" : "flex productMobile productMobileCatalog mb-3 mt-3 opacity3"}>
                                         <Link to={`/${item.name} `} style={{ width: '40vw' }}><img className="imageProductMobile cursorPointer" src={window.location.origin + `/images/${item.images[0].url}`} /></Link>
                                         <div className="pl-2 width100">
                                             <Link to={`/${item.name} `} className="textDecorationNone"><div className="mt-1 font10 letterSpacing2 grey7 cursorPointer">{item.name}</div> </Link>

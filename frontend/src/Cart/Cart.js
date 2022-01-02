@@ -9,6 +9,8 @@ import { numberOfItemsInCart, shippingFees } from '../Shared/globalState';
 import { useRecoilState } from 'recoil';
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import imgCart from "../assets/img/sewingCart4.png";
 
 const ColorButton = withStyles((theme) => ({
   root: {
@@ -126,8 +128,10 @@ export default function Cart() {
                       className="flex  mb-4"
                       key={product.id}
                     >
-                      <Link to={`/${product.name} `} className="bgWhite" ><img className="imgLineCart" src={window.location.origin + `/images/${product.image}`} alt="img product sewing" /></Link>
-                      <div className="flexBetween bgWhite productDetailsCart radiusCartPc lightShadowCard2">
+                      <Link to={`/${product.name} `} className="bgWhite containerImgCart" >
+                        <img className="imgLineCart" src={window.location.origin + `/images/${product.image}`} alt="cart product sewing" />
+                      </Link>
+                      <div className="flexBetween bgWhite productDetailsCart radiusCartPc">
                         <div className="quantityNameCart font10 letterSpacing2 size3 opacity9 ml-5 flexColumn">
                           <Link to={`/${product.name} `} className="textDecorationNone grey9 ">{product.name}</Link>
                           <button className=" cursorPointer bgWhite borderNone underlined size07 mt-3 width50" onClick={() => removeProduct(product)}>remove</button>
@@ -193,32 +197,35 @@ export default function Cart() {
               <Grid xs={12} md={4} item>
                 {localStorageLength > 0 &&
                   <div>
-                    <div className="bgWhite borderRadius20 lightShadowCard2 font1 bold200 size1 ">
-                      <div className="flexCenter bgBlue font12 grey7 ProductSubtotal pb-1">
-                        <div className="ml-2 mt-2 bold400 size2 letterSpacing1 height30">Your recap</div>
+                    <div className="cartBackground grey8 lightShadowCard2 font1 bold200 size1 " style={{ backgroundImage: `url(${imgCart})` }}>
+                      {/* <img src={imgCart} className="imgBackgroundCart"/> */}
+                      <div className="flexBetween  font12 grey7 ProductSubtotal">
+                        <span><ShoppingBasketIcon className="cartIcon ml-2 mt-1" /></span>
+                        <div className="ml-2 mt-1 bold400 size2 letterSpacing1 height30">Your cart</div>
+                        <span><ShoppingBasketIcon className="cartIcon mr-2 mt-1" /></span>
                       </div>
                       {itemsInCart.map(product => (
                         <div
-                          className="flex flexBetween mt-2 mb-2 pl-2 pr-2 "
+                          className="flex flexBetween mt-1 mb-1 pl-2 pr-2 "
                           key={product.id}
                         >
-                          <div className="font2 grey8">{product.name} <span className="bold300">x</span> {product.quantity}</div>
-                          <div className="font3">${(Number(product.price / 100) * Number(product.quantity)).toFixed(2)}</div>
+                          <div className="font12  bold600">{product.name} x <span className="size5">{product.quantity}</span></div>
+                          <div className="font12 size2 mt-1 bold600">${(Number(product.price / 100) * Number(product.quantity)).toFixed(2)}</div>
                         </div>
                       ))}
-                      <div className="flexBetween pt-2 mt-2 pb-2 pl-2 pr-2 bgBlue ">
-                        <div className="font2 grey8">Subtotal</div>
+                      <div className="flexBetween pt-1 mt-2 pb-1 pl-2 pr-2  ">
+                        <div className="font12  bold600">Subtotal</div>
                         <span className="greyLineCart"></span>
-                        <div className="font3">${(price / 100).toFixed(2)}</div>
+                        <div className="font12 size2  bold600">${(price / 100).toFixed(2)}</div>
                       </div>
                       <div className="flexBetween mt-2 pl-2 pr-2">
-                        <div className="font2 grey8">Shipping fees</div>
-                        <div className="alignRight font3">${(shippingFeesVar * 1).toFixed(2)}</div>
+                        <div className="font12  bold600">Shipping fees</div>
+                        <div className="alignRight size2 font12  bold600">${(shippingFeesVar * 1).toFixed(2)}</div>
                       </div>
-                      <div className="flexBetween totalAndShipping pb-1 mt-2 pt-2 pl-2 pr-2 bgBlue">
-                        <div className=" font2 grey8">Total</div>
+                      <div className="flexBetween totalAndShipping pb-3 mt-2 pt-1 pl-2 pr-2">
+                        <div className="font12  bold600">Total</div>
                         <span className="greyLineCart"></span>
-                        <div className="font3">${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</div>
+                        <div className="font12 size2 bold600">${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</div>
                       </div>
                     </div>
                     <div className="mt-4 ">
@@ -227,7 +234,7 @@ export default function Cart() {
                           fullWidth
                           variant="contained"
                           margin="normal"
-                          style={{ height: '40px', borderRadius: '30px', fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '300', fontSize: '0.8em', backgroundColor: 'rgb(250 132 0 / 83%)', }}
+                          style={{ height: '40px', borderRadius: '30px', fontFamily: 'sans-serif', letterSpacing: '2px', fontWeight: '600', fontSize: '0.9em', backgroundColor: 'rgb(250 132 0 / 83%)', }}
                         >
                           Go to checkout
                         </ColorButton>

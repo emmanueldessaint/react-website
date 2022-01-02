@@ -7,21 +7,19 @@ import Button from '@material-ui/core/Button';
 import '../css/Cart.css';
 import { shippingFees } from '../Shared/globalState'
 import { useRecoilValue } from 'recoil';
-import { CardElement, useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcElement } from "@stripe/react-stripe-js";
+import { useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcElement,  } from "@stripe/react-stripe-js";
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import { withStyles } from '@material-ui/core/styles';
 import { Helmet } from "react-helmet";
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { Link } from "react-router-dom";
-import Box from '@material-ui/core/Box';
-import ClearIcon from '@material-ui/icons/Clear';
 import { useHistory } from 'react-router-dom';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import imgCart from "../assets/img/sewingCart4.png";
 
 
 const CustomButton = withStyles((theme) => ({
@@ -141,7 +139,7 @@ export default function PaymentForm() {
   }
 
   const handlePaymentSubmit = async (paymentIntentId) => {
-      console.log('test')
+    
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement)
@@ -156,7 +154,7 @@ export default function PaymentForm() {
     if (!error) {
       try {
         const { id } = paymentMethod
-        const response = await axios.post("https://parisfabrics.com/api/charge", {
+        const response = await axios.post("http://localhost:8000/api/charge", {
           amount: price * 100,
           id,
           paymentIntentId: paymentIntentId,
@@ -168,11 +166,11 @@ export default function PaymentForm() {
           address: address,
           additionalInformation: additionalInformation,
           country: country,
-          //   phoneNumber: phoneNumber,
           cart: itemsInCart,
         })
 
         handleServerResponse(response)
+        // setOpenSuccess(true);
 
       } catch (error) {
         console.log("Error", error)
@@ -186,24 +184,24 @@ export default function PaymentForm() {
 
   const cardElementOptions = {
 
-    theme: 'stripe',
-
     style: {
       base: {
-        fontSize: '10px',
-        color: 'black'
+        fontSize: '15px',
+        color: 'black',
+        fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
+        fontWeight: '100',
       },
       invalid: {
 
       }
     },
-    hidePostalCode: true,
+
   }
 
 
   // Paypal payment code 
   const createOrder = async (data, actions) => {
-    return await axios.post("https://parisfabrics.com/api/createOrder", {
+    return await axios.post("http://localhost:8000/api/createOrder", {
       amount: price * 100,
       firstName: firstName,
       lastName: lastName,
@@ -226,7 +224,7 @@ export default function PaymentForm() {
   }
 
   const onApprove = async (data, actions) => {
-    return await axios.post("https://parisfabrics.com/api/captureOrder", {
+    return await axios.post("http://localhost:8000/api/captureOrder", {
       orderID: data.orderID
     })
       .then((res) => {
@@ -291,10 +289,10 @@ export default function PaymentForm() {
 
   const handleClose = () => {
     setOpenSuccess(false);
-    history.push("/catalog");
+    history.push("/");
   };
 
- 
+
   return (
     <Container>
       <Helmet>
@@ -302,7 +300,7 @@ export default function PaymentForm() {
         <title>Checkout - Paris Fabrics</title>
       </Helmet>
       <Grid container justifyContent="center">
-        <Grid container spacing={5} item xs={12} sm={12} md={12} lg={12}>
+        <Grid justifyContent="center" container spacing={5} item xs={12} sm={12} md={12} lg={12}>
           {billingsDetails === false && cardInformation === false &&
             <Grid item xs={12} md={8} >
               <Grid item xs={12} className="height70">
@@ -341,27 +339,28 @@ export default function PaymentForm() {
                     fullWidth
                     label="Firstname"
                     error={errorInFirstName}
-                    helperText={errorInFirstName ? "You must enter a firstname !" : ""}
                     value={firstName}
                     onChange={e => setFirstName(e.target.value)}
                     required
                     size="small"
                     style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
+                  {errorInFirstName && <div className="errorDivBilling"> You must enter a firstname ! </div>}
                 </Grid>
+
                 <Grid item xs={12} sm={6}>
                   <TextField
                     variant="outlined"
                     fullWidth
                     label="Lastname"
                     error={errorInLastName}
-                    helperText={errorInLastName ? "You must enter a lastname !" : ""}
                     value={lastName}
                     onChange={e => setLastName(e.target.value)}
                     required
                     size="small"
                     style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
+                  {errorInLastName && <div className="errorDivBilling"> You must enter a lastname ! </div>}
                 </Grid>
                 <Grid item xs={12} >
                   <TextField
@@ -369,13 +368,13 @@ export default function PaymentForm() {
                     fullWidth
                     label="Email"
                     error={errorInEmail}
-                    helperText={errorInEmail ? "You must enter an email !" : ""}
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     required
                     size="small"
                     style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
+                  {errorInEmail && <div className="errorDivBilling"> You must enter an email ! </div>}
                 </Grid>
                 <Grid item xs={12} >
                   <TextField
@@ -383,13 +382,13 @@ export default function PaymentForm() {
                     fullWidth
                     label="Country"
                     error={errorInCountry}
-                    helperText={errorInCountry ? "You must enter a country !" : ""}
                     value={country}
                     onChange={e => setCountry(e.target.value)}
                     required
                     size="small"
                     style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
+                  {errorInCountry && <div className="errorDivBilling"> You must enter a country ! </div>}
                 </Grid>
                 <Grid item xs={6} >
                   <TextField
@@ -397,13 +396,13 @@ export default function PaymentForm() {
                     fullWidth
                     label="City"
                     error={errorInCity}
-                    helperText={errorInCity ? "You must enter a city !" : ""}
                     value={city}
                     onChange={e => setCity(e.target.value)}
                     required
                     size="small"
                     style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
+                  {errorInCity && <div className="errorDivBilling"> You must enter a city ! </div>}
                 </Grid>
                 <Grid item xs={6} >
                   <TextField
@@ -411,13 +410,14 @@ export default function PaymentForm() {
                     fullWidth
                     label="Zip code"
                     error={errorInZipCode}
-                    helperText={errorInZipCode ? "You must enter a zip Code !" : ""}
                     value={zipCode}
                     onChange={e => setZipCode(e.target.value)}
                     required
                     size="small"
                     style={{ backgroundColor: 'rgb(216, 216, 216)' }}
+                    type="number"
                   />
+                  {errorInZipCode && <div className="errorDivBilling"> You must enter a zip Code ! </div>}
                 </Grid>
                 <Grid item xs={12} sm={6} >
                   <TextField
@@ -425,13 +425,13 @@ export default function PaymentForm() {
                     fullWidth
                     label="Address"
                     error={errorInAddress}
-                    helperText={errorInAddress ? "You must enter a valid address !" : ""}
                     value={address}
                     onChange={e => setAddress(e.target.value)}
                     required
                     size="small"
                     style={{ backgroundColor: 'rgb(216, 216, 216)' }}
                   />
+                  {errorInAddress && <div className="errorDivBilling"> You must enter a valid address ! </div>}
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <TextField
@@ -457,19 +457,19 @@ export default function PaymentForm() {
           }
 
           {cardInformation === true &&
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12} md={4}>
               <Grid spacing={2} container>
                 <Grid item xs={12} >
                   <h2 className=" centerText grey6">Card information</h2>
                 </Grid>
                 <Grid item xs={12} >
-                  <div className="cardInformationField"><CardNumberElement /></div>
+                  <div className="cardInformationField"><CardNumberElement options={cardElementOptions} /></div>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <div className="cardInformationField"><CardExpiryElement /></div>
+                  <div className="cardInformationField"><CardExpiryElement options={cardElementOptions} /></div>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <div className="cardInformationField"><CardCvcElement /></div>
+                  <div className="cardInformationField"><CardCvcElement options={cardElementOptions} /></div>
                 </Grid>
                 <Grid item xs={12} >
                   <TextField
@@ -493,33 +493,36 @@ export default function PaymentForm() {
             </Grid>
           }
           <Grid container item xs={12} md={4}>
-            <Grid item xs={12} >
-              <div className="bgWhite borderRadius20 lightShadowCard2 font1 bold200 size1 mt-10">
-                <div className="flexCenter bgBlue font12 grey7 ProductSubtotal pb-1">
-                  <div className="ml-2 mt-2 bold400 size2 letterSpacing1 height30">Your recap</div>
+            <Grid item xs={12}>
+              <div className="cartBackground grey8 lightShadowCard2 font1 bold200 size1 cartCheckout" style={{ backgroundImage: `url(${imgCart})` }}>
+                {/* <img src={imgCart} className="imgBackgroundCart"/> */}
+                <div className="flexBetween  font12 grey7 ProductSubtotal">
+                  <span><ShoppingBasketIcon className="cartIcon ml-2 mt-1" /></span>
+                  <div className="ml-2 mt-1 bold400 size2 letterSpacing1 height30">Your cart</div>
+                  <span><ShoppingBasketIcon className="cartIcon mr-2 mt-1" /></span>
                 </div>
                 {itemsInCart.map(product => (
                   <div
-                    className="flex flexBetween mt-4 pl-2 pr-2 "
+                    className="flex flexBetween mt-1 mb-1 pl-2 pr-2 "
                     key={product.id}
                   >
-                    <div className="font2 grey8">{product.name} <span className="bold500">x</span> {product.quantity}</div>
-                    <div className="font3">${(Number(product.price / 100) * Number(product.quantity)).toFixed(2)}</div>
+                    <div className="font12  bold600">{product.name} x <span className="size5">{product.quantity}</span></div>
+                    <div className="font12  bold600">${(Number(product.price / 100) * Number(product.quantity)).toFixed(2)}</div>
                   </div>
                 ))}
-                <div className="flexBetween pt-2 mt-2 pb-2 pl-2 pr-2 bgBlue ">
-                  <div className="font2 grey8">Subtotal</div>
+                <div className="flexBetween pt-1 mt-2 pb-1 pl-2 pr-2  ">
+                  <div className="font12  bold600">Subtotal</div>
                   <span className="greyLineCart"></span>
-                  <div className="font3">${(price / 100).toFixed(2)}</div>
+                  <div className="font12  bold600">${(price / 100).toFixed(2)}</div>
                 </div>
                 <div className="flexBetween mt-2 pl-2 pr-2">
-                  <div className="font2 grey8">Shipping fees</div>
-                  <div className="alignRight font3">${(shippingFeesVar * 1).toFixed(2)}</div>
+                  <div className="font12  bold600">Shipping fees</div>
+                  <div className="alignRight font12  bold600">${(shippingFeesVar * 1).toFixed(2)}</div>
                 </div>
-                <div className="flexBetween totalAndShipping pb-1 mt-2 pt-2 pl-2 pr-2 bgBlue">
-                  <div className=" font2 grey8">Total</div>
+                <div className="flexBetween totalAndShipping pb-3 mt-2 pt-1 pl-2 pr-2 ">
+                  <div className="font12  bold600">Total</div>
                   <span className="greyLineCart"></span>
-                  <div className="font3">${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</div>
+                  <div className="font12  bold600">${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</div>
                 </div>
               </div>
             </Grid>

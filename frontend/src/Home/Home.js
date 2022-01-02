@@ -8,10 +8,11 @@ import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import { useRecoilState } from 'recoil';
 import { Link } from "react-router-dom";
 import logo from "../assets/img/sewing3.jpg";
-import reward from "../assets/img/reward2.png";
+import reward from "../assets/img/reward3.png";
 import earth from "../assets/img/earth1.png";
 import sewing from "../assets/img/sewing2.jpg";
-import review from "../assets/img/review3.png";
+import review from "../assets/img/review4.png";
+import story from "../assets/img/story2.png";
 import aboutUsImg from '../assets/img/aboutusHome.png';
 import '../App.css';
 import '../css/Home.css';
@@ -98,9 +99,9 @@ export default function Home() {
                 <div className="divImgHome">
                     <span className="flexCenter textCenter titleImgHome font12 letterSpacing2 mb-2 size13 bold500">Eat, sleep, craft, repeat.</span>
                     <span className="flexCenter textImgHome textCenter size3 font12">Let's face it, life is just a bunch of obstacles preventing you from sewing.</span>
-                    </div>
+                </div>
             </div>
-          
+
             <Container >
                 <Helmet>
                     <meta charSet="utf-8" />
@@ -149,9 +150,9 @@ export default function Home() {
                         >
                             {bestSellers.map((item, index) => (
                                 <div>
-                                    {item.coup_de_coeur === "1" && <span className="divFavoriteBestsellers grey7 lightShadowCard2 opacity8 ">FAVOURITE</span>}
-                                    {item.new === "1" && <span className="divNewBestsellers grey7 lightShadowCard2 opacity8 ">NEW</span>}
-                                    {item.coup_de_coeur === "0" && item.new === "0" && <div className="height20"></div>}
+                                    {item.coup_de_coeur == "1" && <span className="divFavoriteBestsellers grey7 lightShadowCard2 opacity8 ">FAVOURITE</span>}
+                                    {item.new == "1" && <span className="divNewBestsellers grey7 lightShadowCard2 opacity8 ">NEW</span>}
+                                    {item.coup_de_coeur == "0" && item.new == "0" && <div className="height20"></div>}
                                     <div className="cardProductCarousel lightShadowCard2" key={index}>
                                         <Link to={`/${item.name} `} className="textDecorationNone">
                                             <img className="imageProductCarousel" src={window.location.origin + `/images/${item.images[0].url}`} alt="product bestsellers" />
@@ -185,7 +186,7 @@ export default function Home() {
                     </div>
                 }
                 <div className="flexCenter mt-10"><img src={review} alt="reward_svg" className="reviewIcon opacity8" /></div>
-                <h2 className="centerText font8 size7 bold600 bestSellers opacity9 letterSpacing2">They enjoyed the experience</h2>
+                <h2 className="centerText font8 size7 bold600 bestSellers opacity9 letterSpacing2">Some happy customers</h2>
                 <Grid className="pt-7" container justifyContent="center">
                     <Grid container item xs={11} md={11} spacing={4}>
                         <Grid item md={3} xs={12} className="bgBlue verticalAlign">
@@ -238,7 +239,7 @@ export default function Home() {
                                             </div>
                                             <img alt="item sewing kit order customer " src={window.location.origin + `/images/${item.images[0].url}`} className="imgReviewsHome mr-2" />
                                         </Link>
-                                        <Link className="lightShadowCard3 textDecorationNone">
+                                        <Link to={`/${item.name}`} className="lightShadowCard3 textDecorationNone">
 
                                             {item.reviews[0].description.length !== null &&
                                                 <div className="mt-2 pl-2 pt-2 pr-2 grey6 bold100 font2 minHeight90 lightShadowCard3">{item.reviews[0].description.length < 120 ? item.reviews[0].description : item.reviews[0].description.substring(0, 120) + " (...)"}</div>
@@ -252,18 +253,18 @@ export default function Home() {
                         </Grid>
                     </Grid>
                 </Grid>
-                <div className="flexCenter mt-10"><img src={review} alt="reward_svg" className="reviewIcon opacity8" /></div>
+                <div className="flexCenter mt-10"><img src={story} alt="reward_svg" className="reviewIcon opacity8" /></div>
                 <h2 className="centerText font8 size7 bold600 bestSellers opacity9 letterSpacing2">Our story ...</h2>
                 <Grid className="pt-7" container justifyContent="center">
                     <Grid container item xs={11} md={11} spacing={4}>
                         <Grid item md={6} xs={12} style={{ display: 'flex', alignItems: 'center' }}>
                             <div>
                                 <h2 className="grey7 mt--5">... Started with you</h2>
-                                <div className="grey7 lineHeight4 textJustify">It is with you that we have started to grow. If we can still provide quality materials, it is thanks to you. For the past few months, we have constantly received suggestions to improve our store and design our next creation.
+                                <div className="grey7 lineHeight5 textJustify size2">It is with you that we have started to grow. If we can still provide quality materials, it is thanks to you. For the past few months, we have constantly received suggestions to improve our store and design our next creation.
                                 </div>
-                                <div className="grey7 lineHeight4 mt-2">We thank you all !</div>
+                                <div className="grey7 lineHeight4 mt-2 size2">We thank you all !</div>
                                 <Grid container justifyContent="center">
-                                    <Grid xs={10} sm={6} md={6} className="pt-5 pb-5">
+                                    <Grid item xs={10} sm={6} md={6} className="pt-5 pb-5">
                                         <Link to="/aboutus" className="textDecorationNone">
                                             <LinkButton fullWidth variant="contained" className="grey8">More about us</LinkButton>
                                         </Link>

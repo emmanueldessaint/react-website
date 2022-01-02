@@ -38,7 +38,7 @@ export default function Footer() {
     };
 
     const addUserNewsletter = () => {
-        axios.post("https://parisfabrics.com/api/subscribe ", {
+        axios.post("http://localhost:8000/api/subscribe ", {
             userInfo: email,
         }).then((res) => {
             setOpen(true)
@@ -68,7 +68,7 @@ export default function Footer() {
 
                             <div className="heightIconsFooter pt-4"><LocalShippingIcon className="iconsFooter" /></div>
                             <div className="grey7 font6 size2 minHeight50Footer">FREE SHIPPING</div>
-                            <h5 className="font2">From 40$ of purchases</h5>
+                            <h5 className="font2">From 65$ of purchases</h5>
                         </Grid>
 
 
@@ -94,7 +94,7 @@ export default function Footer() {
                             <Grid item xs={12} md={7} container justifyContent="center" >
                                 <Grid item xs={11} md={12}  >
                                     <div className="widthP mt-4">
-                                        <p className="font2">Paris Fabrics has been founded in 2019. We currently are located in France, in the city of Paris.The main reason we're here today is you. 99% of our customers are happy with what we offer, and we often get messages to thank us. It goes both ways!</p>
+                                        <p className="font2">Paris Fabrics has been founded in 2011. We currently are located in France, in the city of Paris.The main reason we're here today is you. 96% of our customers are happy with what we offer, and we often get messages to thank us. It goes both ways!</p>
                                     </div>
                                 </Grid>
                             </Grid>

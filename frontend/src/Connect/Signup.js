@@ -15,8 +15,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { previousUrl, account, idUser } from "../Shared/globalState";
 
 
@@ -78,7 +77,6 @@ export default function Signup() {
     const [thisUrl, setThisUrl] = useRecoilState(previousUrl);
     const [accountName, setAccountName] = useRecoilState(account);
     const [id, setId] = useRecoilState(idUser);
-    const [alreadyConnected, setAlreadyConnected] = useState(false);
     const [errorSignup, setErrorSignup] = useState(false);
 
     const SignupRequest = () => {
@@ -130,7 +128,7 @@ export default function Signup() {
 
 
 
-        axios.post("https://parisfabrics.com/api/register ", {
+        axios.post("http://localhost:8000/api/register ", {
             firstName: firstName,
             lastName: lastName,
             email: email,

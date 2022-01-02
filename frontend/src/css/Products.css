@@ -121,30 +121,27 @@
     border-radius:5px;
     color:rgb(58, 58, 58);
 }
-.boutonPagination{
-    color:rgb(36, 36, 36)(0, 0, 0);
-    /* background-color:rgb(243, 243, 243); */
-}
-
 
 .boutonPagination{
-    width:25px;
-    padding:10px;
-    padding-left:25px;
-    padding-right:32px;
-    /* margin:10px; */
-    font-size:1.1em;
-    border-radius:5px;
-}
-.boutonPaginationSelected{
-    width:25px;
-    padding:10px;
-    padding-left:25px;
-    padding-right:32px;
+    width:18px;
+    padding:6px;
+    padding-left:18px;
+    padding-right:26px;
     font-size:1.1em;
     color:rgb(82, 82, 82);
     font-weight:600;
-    background-color:rgb(226, 226, 226)
+    border:1px solid rgb(197, 197, 197);
+}
+.boutonPaginationSelected{
+    width:18px;
+    padding:6px;
+    padding-left:18px;
+    padding-right:26px;
+    font-size:1.1em;
+    color:rgb(82, 82, 82);
+    font-weight:600;
+    border:1px solid rgb(197, 197, 197);
+    background-color:rgb(255, 255, 255)
 }
 .boutonPagination:hover{
     font-size:1.1em;
@@ -499,6 +496,21 @@
     padding-right:10px;
     letter-spacing: 2px;
     background-color: #3a3a3a;
+    position:relative;
+    top:10px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+.divOutOfStockProduct{
+    opacity:0.7;
+    color: rgb(239 239 239);
+    margin-left:10px;
+    padding-bottom:2px;
+    padding-left:10px;
+    padding-top:5px;
+    padding-right:10px;
+    letter-spacing: 2px;
+    background-color: #547d88;
     position:relative;
     top:10px;
     border-top-left-radius: 2px;

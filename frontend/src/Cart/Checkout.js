@@ -10,6 +10,7 @@ const stripePromise = loadStripe(PUBLIC_KEY);
 
 export default function Checkout() {
 
+
     // const options = {
     //     // passing the client secret obtained from the server
     //     clientSecret: process.env.REACT_APP_STRIPE_SK_KEY,
@@ -20,7 +21,14 @@ export default function Checkout() {
 
     return (
         <div className="pt-13">
-            <Elements stripe={stripePromise}>
+            <Elements stripe={stripePromise} options={{
+                fonts: [
+                    {
+                        cssSrc:
+                            'http://fonts.googleapis.com/css?family=Roboto'
+                    }
+                ]
+            }}>
                 <PaymentForm />
             </Elements>
         </div>

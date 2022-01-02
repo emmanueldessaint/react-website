@@ -29,6 +29,15 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { useRecoilState } from "recoil";
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import ClearIcon from "@material-ui/icons/Clear";
+import Button from "@material-ui/core/Button";
+import { withStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   alignTitle: {
@@ -45,6 +54,22 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     padding: "0 4px",
   },
 }));
+
+const DisconectButton = withStyles((theme) => ({
+  root: {
+      color: '#020202',
+      backgroundColor: '#dbb013',
+      borderRadius: 4,
+      opacity: 0.9,
+      wordSpacing: 3,
+      letterSpacing: 1,
+      fontWeight: 800,
+      '&:hover': {
+          opacity: 1,
+          backgroundColor: '#dbb013',
+      },
+  },
+}))(Button);
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -83,6 +108,7 @@ export default function Header(props) {
   const [changePage, setChangePage] = useRecoilState(changingPage);
   const [menuMobileOpen, setMenuMobileOpen] = useState(true);
   const [searchMobileOpen, setSearchMobileOpen] = useState(false);
+  const [logoutDialog, setLogoutDialog] = useState(false);
 
   useEffect(() => {
     var ourCart = JSON.parse(localStorage.getItem("cart_Paris_Fabrics"));
@@ -124,6 +150,15 @@ export default function Header(props) {
     setSearchMobileOpen(!searchMobileOpen);
   };
 
+  const closeDialogLogout = () => {
+    setLogoutDialog(false);
+  }
+
+  const disconnect = () => {
+    setLogoutDialog(false);
+    localStorage.removeItem("loggin_Paris_Fabrics");
+  }
+
   useEffect(() => {
     if (isLoaded === true && searchTerm.length > 1) {
       window.addEventListener("click", function (e) {
@@ -136,6 +171,7 @@ export default function Header(props) {
       });
     }
   });
+
 
   return (
     <div>
@@ -228,13 +264,13 @@ export default function Header(props) {
                           </StyledBadge>
                         </Link>
                         {JSON.parse(localStorage.getItem("loggin_Paris_Fabrics")) !== null
-                          ? <Link
-                            className="mr-2 textDecorationNone"
-                            to="/Account"
-                            onClick={resetPage}
+                          ? <div
+                            className="mr-2 textDecorationNone cursorPointer"
+
+                            onClick={() => setLogoutDialog(true)}
                           >
-                            <SupervisedUserCircleIcon className="iconHeader cartHeader" />
-                          </Link>
+                            <ExitToAppIcon className="iconHeader cartHeader" />
+                          </div>
                           : <Link
                             className="mr-2 textDecorationNone"
                             to="/Connect"
@@ -243,6 +279,33 @@ export default function Header(props) {
                             <PersonAddIcon className="iconHeader cartHeader" />
                           </Link>
                         }
+                        <Dialog
+                          open={logoutDialog}
+                          onClose={closeDialogLogout}
+                          aria-labelledby="alert-dialog-title"
+                          aria-describedby="alert-dialog-description"
+                        >
+                          <DialogActions className="mb--3  mr-2">
+                            <ClearIcon
+                              onClick={closeDialogLogout}
+                              className=" cursorPointer"
+                            />
+                          </DialogActions>
+                          <DialogTitle id="alert-dialog-title">
+                            {"Are you sure you want to disconnect ?"}
+                          </DialogTitle>
+                          <DialogContent>
+                            <DialogContentText id="alert-dialog-description">
+                              <div
+                                className="textDecorationNone flexCenter"
+                              >
+                                <DisconectButton  variant="contained" onClick={disconnect}>
+                                  Disconect
+                                </DisconectButton>
+                              </div>
+                            </DialogContentText>
+                          </DialogContent>
+                        </Dialog>
 
                         <div className="mr-3 ml-5 mt-1">
                           <TextField
@@ -373,8 +436,8 @@ export default function Header(props) {
                   <Grid item sm={3} xs={4} className="verticalAlign">
                     {JSON.parse(localStorage.getItem("loggin_Paris_Fabrics")) !== null
                       ? <Link to="/Account" onClick={resetPage}>
-                      <SupervisedUserCircleIcon className=" scale3 grey9" />
-                    </Link>
+                        <ExitToAppIcon className=" scale3 grey9" />
+                      </Link>
                       : <Link to="/Connect" onClick={resetPage}>
                         <AccountCircleIcon className=" scale3 grey9" />
                       </Link>
