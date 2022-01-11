@@ -266,7 +266,6 @@ export default function Header(props) {
                         {JSON.parse(localStorage.getItem("loggin_Paris_Fabrics")) !== null
                           ? <div
                             className="mr-2 textDecorationNone cursorPointer"
-
                             onClick={() => setLogoutDialog(true)}
                           >
                             <ExitToAppIcon className="iconHeader cartHeader" />

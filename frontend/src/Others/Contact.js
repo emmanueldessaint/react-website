@@ -71,7 +71,7 @@ export default function Contact() {
         // user.name = name;
         // user.email = email;
         // user.message = message;
-        axios.post("http://localhost:8000/api/contact ", {
+        axios.post("https://parisfabrics.com/api/contact ", {
             name: name,
             email: email,
             message: message

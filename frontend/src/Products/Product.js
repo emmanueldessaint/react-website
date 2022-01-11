@@ -369,7 +369,7 @@ export default function Product(props) {
     newComment.id_user = id;
     newComment.id_product = product.id;
     axios
-      .post("http://localhost:8000/api/createReview ", {
+      .post("https://parisfabrics.com/api/createReview ", {
         description: newCommentContent,
         title: accountName,
         note: valueComment,

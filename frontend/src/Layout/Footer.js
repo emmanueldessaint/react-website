@@ -38,7 +38,7 @@ export default function Footer() {
     };
 
     const addUserNewsletter = () => {
-        axios.post("http://localhost:8000/api/subscribe ", {
+        axios.post("https://parisfabrics.com/api/subscribe ", {
             userInfo: email,
         }).then((res) => {
             setOpen(true)
@@ -106,8 +106,8 @@ export default function Footer() {
                                 <Grid className="flexCenter" item md={4} sm={6} xs={12}>
                                     <div className="widthItemsFooter font2">
                                         <h3>ParisFabrics</h3>
-                                        <div>52 rue de la porte</div>
-                                        <div>75000 Paris</div>
+                                        <div>234 Avenue Daumesnil</div>
+                                        <div>75012 Paris</div>
                                         <div>contact@parisfabrics.com</div>
                                     </div>
                                 </Grid>

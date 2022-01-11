@@ -124,7 +124,7 @@ export default function Connect(props) {
             setSuccess(false);
             setLoading(true);
         }
-        axios.post("http://localhost:8000/api/login ", {
+        axios.post("https://parisfabrics.com/api/login ", {
             email: email,
             password: password
         }).then((res) => {

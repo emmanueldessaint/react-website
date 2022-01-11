@@ -81,7 +81,9 @@ export default function Cart() {
     localStorage.setItem('cart_Paris_Fabrics', JSON.stringify(filteredCart));
     setItemsInCart(filteredCart);
     setNumberInCart(numberInCart - quantity);
+    setPrice(Number(price) - (Number(find.quantity) * Number(find.price)))
     setLocalStorageLength(localStorageLength - 1);
+    console.log(find)
   }
 
   const clearCart = () => {
@@ -198,7 +200,6 @@ export default function Cart() {
                 {localStorageLength > 0 &&
                   <div>
                     <div className="cartBackground grey8 lightShadowCard2 font1 bold200 size1 " style={{ backgroundImage: `url(${imgCart})` }}>
-                      {/* <img src={imgCart} className="imgBackgroundCart"/> */}
                       <div className="flexBetween  font12 grey7 ProductSubtotal">
                         <span><ShoppingBasketIcon className="cartIcon ml-2 mt-1" /></span>
                         <div className="ml-2 mt-1 bold400 size2 letterSpacing1 height30">Your cart</div>
@@ -220,7 +221,11 @@ export default function Cart() {
                       </div>
                       <div className="flexBetween mt-2 pl-2 pr-2">
                         <div className="font12  bold600">Shipping fees</div>
-                        <div className="alignRight size2 font12  bold600">${(shippingFeesVar * 1).toFixed(2)}</div>
+                        {(Number(price / 100) + Number(shippingFeesVar)).toFixed(2) <= 65
+                          ? <div className="alignRight size2 font12  bold600">${(shippingFeesVar * 1).toFixed(2)}</div>
+                          : <div className="alignRight size2 font12  bold600">$0</div>
+                        }
+
                       </div>
                       <div className="flexBetween totalAndShipping pb-3 mt-2 pt-1 pl-2 pr-2">
                         <div className="font12  bold600">Total</div>

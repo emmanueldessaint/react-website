@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import '../css/Cart.css';
 import { shippingFees } from '../Shared/globalState'
 import { useRecoilValue } from 'recoil';
-import { useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcElement,  } from "@stripe/react-stripe-js";
+import { useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcElement, } from "@stripe/react-stripe-js";
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import { withStyles } from '@material-ui/core/styles';
@@ -20,7 +20,15 @@ import { useHistory } from 'react-router-dom';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import imgCart from "../assets/img/sewingCart4.png";
+import { MdSmsFailed } from "react-icons/md";
+import Snackbar from '@material-ui/core/Snackbar';
+import { makeStyles } from '@material-ui/core/styles';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
+// function Alert(props) {
+//   return <MuiAlert elevation={6} variant="filled" {...props} />;
+// }
 
 const CustomButton = withStyles((theme) => ({
   root: {
@@ -92,6 +100,7 @@ export default function PaymentForm() {
   const stripe = useStripe();
   const history = useHistory();
   const elements = useElements();
+  // const classes = useStyles();
 
   useEffect(() => {
     var myPrice = 0;
@@ -122,6 +131,7 @@ export default function PaymentForm() {
         if (result.error) {
           // gérer l'erreur
         } else {
+          console.log('test')
           handlePaymentSubmit(result.paymentIntent.id)
         }
       });
@@ -139,7 +149,7 @@ export default function PaymentForm() {
   }
 
   const handlePaymentSubmit = async (paymentIntentId) => {
-    
+
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement)
@@ -154,7 +164,7 @@ export default function PaymentForm() {
     if (!error) {
       try {
         const { id } = paymentMethod
-        const response = await axios.post("http://localhost:8000/api/charge", {
+        const response = await axios.post("https://parisfabrics.com/api/charge", {
           amount: price * 100,
           id,
           paymentIntentId: paymentIntentId,
@@ -201,7 +211,7 @@ export default function PaymentForm() {
 
   // Paypal payment code 
   const createOrder = async (data, actions) => {
-    return await axios.post("http://localhost:8000/api/createOrder", {
+    return await axios.post("https://parisfabrics.com/api/createOrder", {
       amount: price * 100,
       firstName: firstName,
       lastName: lastName,
@@ -224,7 +234,7 @@ export default function PaymentForm() {
   }
 
   const onApprove = async (data, actions) => {
-    return await axios.post("http://localhost:8000/api/captureOrder", {
+    return await axios.post("https://parisfabrics.com/api/captureOrder", {
       orderID: data.orderID
     })
       .then((res) => {
@@ -289,8 +299,15 @@ export default function PaymentForm() {
 
   const handleClose = () => {
     setOpenSuccess(false);
-    history.push("/");
+    // history.push("/");
   };
+  const handleCloseFailed = () => {
+    setOpenFailed(false);
+  };
+
+  const spinnerPayment = () => {
+    console.log('test')
+  }
 
 
   return (
@@ -487,8 +504,13 @@ export default function PaymentForm() {
                 </Grid>
                 <Grid item xs={12} >
                   <ButtonBillingDetails fullWidth variant='contained' onClick={handlePaymentSubmit}>Pay ${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</ButtonBillingDetails>
-                  <button onClick={() => setOpenSuccess(true)}>testPopUp</button>
+                  <button onClick={() => setOpenSuccess(true)}>testPopUpSuccess</button>
                 </Grid>
+                <Snackbar open={openFailed} autoHideDuration={2000} onClose={handleCloseFailed} >
+                  <div className="snackbarPaymentFailed opacity7 pl-5 pr-5  p-1 borderRadius5 verticalAlign" onClose={handleClose} severity="success">
+                    <span><MdSmsFailed className="mt-1 size3" /></span><span className="ml-3  bold300 ">Your payment failed !</span>
+                  </div>
+                </Snackbar>
               </Grid>
             </Grid>
           }
@@ -507,22 +529,25 @@ export default function PaymentForm() {
                     key={product.id}
                   >
                     <div className="font12  bold600">{product.name} x <span className="size5">{product.quantity}</span></div>
-                    <div className="font12  bold600">${(Number(product.price / 100) * Number(product.quantity)).toFixed(2)}</div>
+                    <div className="font12 size2 bold600">${(Number(product.price / 100) * Number(product.quantity)).toFixed(2)}</div>
                   </div>
                 ))}
                 <div className="flexBetween pt-1 mt-2 pb-1 pl-2 pr-2  ">
                   <div className="font12  bold600">Subtotal</div>
                   <span className="greyLineCart"></span>
-                  <div className="font12  bold600">${(price / 100).toFixed(2)}</div>
+                  <div className="font12 size2 bold600">${(price / 100).toFixed(2)}</div>
                 </div>
                 <div className="flexBetween mt-2 pl-2 pr-2">
                   <div className="font12  bold600">Shipping fees</div>
-                  <div className="alignRight font12  bold600">${(shippingFeesVar * 1).toFixed(2)}</div>
+                  {(Number(price / 100) + Number(shippingFeesVar)).toFixed(2) <= 65
+                    ? <div className="alignRight size2 font12  bold600">${(shippingFeesVar * 1).toFixed(2)}</div>
+                    : <div className="alignRight size2 font12  bold600">$0</div>
+                  }
                 </div>
                 <div className="flexBetween totalAndShipping pb-3 mt-2 pt-1 pl-2 pr-2 ">
                   <div className="font12  bold600">Total</div>
                   <span className="greyLineCart"></span>
-                  <div className="font12  bold600">${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</div>
+                  <div className="font12 size2 bold600">${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</div>
                 </div>
               </div>
             </Grid>
@@ -533,6 +558,7 @@ export default function PaymentForm() {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
             fullWidth={true}
+            maxWidth={'xs'}
           >
             <DialogTitle id="alert-dialog-title" className="centerText bgBlue">
               <div className="textGreen mb-3">Payment successfull !</div>
@@ -541,16 +567,17 @@ export default function PaymentForm() {
             {/* <h3 className="centerText">You must be registered to let a review !</h3> */}
             <DialogContent>
               <DialogContentText id="alert-dialog-description">
-                <tr className="flexBetween width100%">
+                <tr className="flexBetween width100% mt-2">
                   <td>Amount Paid</td>
                   <td>${(Number(price / 100) + Number(shippingFeesVar)).toFixed(2)}</td>
                 </tr>
                 <tr className="flexBetween width100% mt-3">
-                  <td>Transaction Id</td>
+                  <td>Order number</td>
                   <td>02162844</td>
                 </tr>
-                <div className="centerText size1 bold700">OK</div>
-
+                <div className="flexCenter mt-3">
+                  <Button variant="text" onClick={handleClose} className="centerText size1 bold700 cursorPointer">OK</Button>
+                </div>
               </DialogContentText>
             </DialogContent>
           </Dialog>

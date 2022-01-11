@@ -4,13 +4,10 @@ import Grid from '@material-ui/core/Grid';
 import Rating from '@mui/material/Rating';
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import Container from '@material-ui/core/Container';
-import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import { useRecoilState } from 'recoil';
 import { Link } from "react-router-dom";
 import logo from "../assets/img/sewing3.jpg";
 import reward from "../assets/img/reward3.png";
-import earth from "../assets/img/earth1.png";
-import sewing from "../assets/img/sewing2.jpg";
 import review from "../assets/img/review4.png";
 import story from "../assets/img/story2.png";
 import aboutUsImg from '../assets/img/aboutusHome.png';
@@ -19,11 +16,12 @@ import '../css/Home.css';
 import { itemsProduct, itemsBestSellers, averageNoteArticles } from '../Shared/globalState';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import trackPackage from "../assets/img/trackPackage1.png";
 import { Helmet } from "react-helmet";
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
-
+import { IoEarth } from 'react-icons/io5';
+import { GiSewingMachine } from "react-icons/gi";
+import { MdLocationPin } from "react-icons/md";
 
 const LinkButton = withStyles((theme) => ({
     root: {
@@ -111,7 +109,8 @@ export default function Home() {
                     <Grid item container xs={12} md={11}>
                         <Grid item xs={12} sm={4}>
                             <div className="mt-6 ">
-                                <span className="flexCenter minHeight40"><img src={earth} alt="earth_icon" className="smallIcons " /></span>
+                                <span className="flexCenter minHeight40"><IoEarth className="smallIcons backgroundIcons"/></span>
+                                {/* <span className="flexCenter minHeight40"><img src={earth} alt="earth_icon" className="smallIcons " /></span> */}
                                 <span className="flexCenter mt-2 titleHomeArguments grey7 font6 size1 opacity9 letterSpacing2">RESPECT FOR THE LAND</span>
                                 <div className="blueBar"></div>
                                 <span className="flexCenter mt-1 grey7 font2 opacity9 letterSpacing1">Environment and traditions</span>
@@ -120,7 +119,7 @@ export default function Home() {
                         <Grid item xs={12} sm={4} className="flexBetween">
                             <div className="orangeBar"></div>
                             <div className="mt-6 ">
-                                <span className="flexCenter minHeight40"><img src={trackPackage} alt="sewing_icon" className="smallIconsTrack backgroundIcons" /></span>
+                                <span className="flexCenter minHeight40"><MdLocationPin className="smallIconsTrack backgroundIcons" /></span>
                                 <span className="flexCenter mt-2 titleHomeArguments grey7 font6 size1 opacity9 letterSpacing2">TRACKING DELIVERY</span>
                                 <div className="blueBar"></div>
                                 <span className="flexCenter mt-1 grey7 font2 opacity9 letterSpacing1">All around the world</span>
@@ -129,7 +128,8 @@ export default function Home() {
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <div className="mt-6">
-                                <span className="flexCenter minHeight40"><img src={sewing} alt="sewing_icon" className="smallIcons backgroundIcons" /></span>
+                                {/* <span className="flexCenter minHeight40"><img src={sewing} alt="sewing_icon" className="smallIcons backgroundIcons" /></span> */}
+                                <span className="flexCenter minHeight40"><GiSewingMachine className="smallIcons backgroundIcons"/></span>
                                 <span className="flexCenter mt-2 titleHomeArguments grey7 font6 size1 opacity9 letterSpacing1">A REAL KNOW-HOW</span>
                                 <div className="blueBar"></div>
                                 <span className="flexCenter mt-1 grey7 font2 opacity9 letterSpacing1">The highest quality</span>

@@ -128,7 +128,7 @@ export default function Signup() {
 
 
 
-        axios.post("http://localhost:8000/api/register ", {
+        axios.post("https://parisfabrics.com/api/register ", {
             firstName: firstName,
             lastName: lastName,
             email: email,
